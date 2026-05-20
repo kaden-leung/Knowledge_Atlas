@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cook &amp; Campbell Self-Check — Knowledge Atlas (Stub)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1C3D3A; --amber: #B45F14; --cream: #F7F4EF; --green: #2A7868;
+      --text: #2D2010; --muted: #6A5E50; --border: #DDD6CD;
+    }
+    body { font-family: Arial, sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
+    .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #163230 100%); padding: 56px 40px 48px; border-bottom: 3px solid var(--amber); }
+    .page-hero .eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #7AACA0; margin-bottom: 12px; }
+    .page-hero h1 { font-family: Georgia, serif; font-size: 2rem; font-weight: 400; color: #F5F0E8; line-height: 1.25; margin-bottom: 14px; }
+    .page-hero p { font-size: 1rem; color: #A8C8BF; line-height: 1.7; max-width: 720px; }
+    .container { max-width: 860px; margin: 0 auto; padding: 36px 32px 80px; }
+    .tbd-box { background: #FCEEDC; border: 1px dashed #B45F14; border-radius: 6px; padding: 18px 22px; margin-bottom: 28px; }
+    .tbd-box h2 { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 400; color: #B45F14; margin-bottom: 8px; }
+    .tbd-box p { font-size: 0.9rem; color: var(--text); line-height: 1.65; margin-bottom: 8px; }
+    .tbd-box ul { margin: 8px 0 8px 22px; color: var(--text); font-size: 0.9rem; line-height: 1.7; }
+    .meta { font-size: 0.84rem; color: var(--muted); margin-top: 14px; }
+    .back-link { display: inline-block; margin-top: 24px; color: var(--green); text-decoration: none; font-weight: 600; }
+    .back-link:hover { text-decoration: underline; }
+    code { font-family: Consolas, Monaco, monospace; font-size: 0.84rem; background: #EDE8E0; padding: 1px 5px; border-radius: 3px; }
+  </style>
+  <script src="../ka_canonical_navbar.js" defer></script>
+  <script src="../ka_user_type.js" defer></script>
+</head>
+<body data-ka-regime="160sp" data-ka-crumbs='[["Home","ka_student_setup.html"],["Validities Self-Check",""]]'>
+<div id="ka-navbar-slot"></div>
+<div id="ka-breadcrumb-slot"></div>
+
+<div class="page-hero">
+  <div class="eyebrow">Cook &amp; Campbell — Self-Check</div>
+  <h1>Validity Self-Check — Coming Soon</h1>
+  <p>This page will let you check your own experiment design against Cook and Campbell's four-validities framework: internal, external, construct, and statistical conclusion validity. A structured checklist with feedback on each threat.</p>
+</div>
+
+<div class="container">
+
+  <div class="tbd-box">
+    <h2>Status: Planned — Surface 7b follow-on</h2>
+    <p>The Cook and Campbell content is drafted as a standalone source-of-truth at <code>160sp/ka_validities_showcase_content_2026-05-18.md</code>. The showcase page (Surface 7b) is the read-side of that content. <em>This</em> page — the self-check — is the active companion where a student can run their own design through the framework.</p>
+    <p>What the self-check is expected to do:</p>
+    <ul>
+      <li>Walk a student through each of the four validities in turn, with the threat list from Shadish, Cook, and Campbell (2002) §2.</li>
+      <li>Ask, for each threat, whether the student's design is exposed and how they intend to mitigate it.</li>
+      <li>Score the design on each validity dimension and surface the weakest links.</li>
+      <li>Cross-reference the substitution skill: if a VR substitution is being made, flag the validity implications of the substitution explicitly (the substitution can trade off one validity dimension for another, and that trade-off should be visible).</li>
+      <li>Save the self-check to the student's profile so it travels with the project across weeks.</li>
+    </ul>
+    <p class="meta">Owner: CW + Codex. Blocked on the methodological-pitfalls page (Sprint UJ-6) and on VOI panel review of the validity-tagging conventions. See <code>TASKS.md</code> UJ-14 and UJ-6 for context.</p>
+  </div>
+
+  <p style="color:var(--muted); font-size:0.9rem;">The showcase content (read-side) is ready to lift onto a live HTML page; the self-check (active side) is the bigger build because it has to persist student state.</p>
+
+  <a class="back-link" href="ka_journey_map.html">← Back to the journey map</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What VR can measure — and what it cannot · COGS 160 Fall</title>
+<link rel="stylesheet" href="ka_fall_journey.css">
+<script src="../ka_canonical_navbar.js" defer></script>
+<script src="../ka_user_type.js" defer></script>
+</head>
+<body data-ka-regime="160sp" data-ka-crumbs='[["COGS 160 Fall","ka_fall_week1.html"],["Week 1","ka_fall_week1.html"],["What VR can measure",""]]'>
+<div id="ka-navbar-slot"></div>
+<div id="ka-breadcrumb-slot"></div>
+
+<div class="surface-hero">
+  <div class="eyebrow">COGS 160 Fall · Week 1 · Reference</div>
+  <h1>What VR can measure — and what it cannot</h1>
+  <p>Read this before you commit to a topic. The most consequential decision you will make in the first two weeks is which outcome measure your study uses. This page is the positive taxonomy of measures a class VR project can obtain, the negative list of measures it cannot, and the substitution principle for when your paper's measure is on the negative list.</p>
+</div>
+
+<div class="phase-strip">
+  <span class="phase-pill current">Wk 1 · Find a topic</span>
+  <span class="phase-pill">Wk 2 · Theory + hypothesis</span>
+  <span class="phase-pill">Wk 3 · VR stimulus spec</span>
+  <span class="phase-pill">Wk 4 · Scene assembly</span>
+  <span class="phase-pill">Wk 5 · Design + protocol</span>
+  <span class="phase-pill">Wk 6 · Pre-registration</span>
+  <span class="phase-pill">Wk 7 · Implementation</span>
+  <span class="phase-pill">Wk 8 · Implementation</span>
+  <span class="phase-pill">Wk 9 · Pilot</span>
+  <span class="phase-pill">Wk 10 · Run + write</span>
+  <span class="phase-pill">Wk 11 · Submit</span>
+</div>
+
+<div class="wrap">
+
+  <div class="section">
+    <h2>Why this page exists</h2>
+    <p class="lead">If you are designing a virtual-reality experiment for COGS 160 Fall, the most consequential decision you will make in the first two weeks is which outcome measure your study will use to detect the effect you care about.</p>
+    <p>The choice is not free. Some measures are routinely deployable in a classroom VR project; others require equipment, time, or participant access that the seven-to-ten-week envelope of the course does not allow. This page lays out the distinction explicitly. The first half is a positive taxonomy of measures that <em>can</em> be obtained in a class VR project. The second half is a negative list of measures that <em>cannot</em>, with a brief explanation in each case so you understand the constraint rather than just registering it. The closing section addresses the practical question that will come up almost immediately: what do I do when the paper I am replicating used a measure on the negative list? The answer is the substitution principle, and it is the foundation of the Week-1-to-Week-3 measure-handling pipeline.</p>
+  </div>
+
+  <div class="section">
+    <h2>Positive taxonomy — measures available in a class VR project</h2>
+    <p class="lead">There are four families of measures you can plan around. They are ordered roughly by how much extra hardware they require beyond the base headset, beginning with the family that is essentially free.</p>
+
+    <h3>Family 1 — Behavioural traces from the headset and controllers themselves</h3>
+    <p>The headset is recording you constantly. Head pose, locomotion path, hand pose (on the better controllers), gaze direction (on the headsets with built-in eye-tracking — Meta Quest Pro, HTC Vive Pro Eye, Varjo XR-3; the consumer-grade Quest 2 does not), and time-stamped interaction events (button presses, object grabs, teleport events) are all logged by the engine without any additional instrumentation. These traces are valid behavioural measures rather than mere telemetry — the founding methodological argument for using VR as a behavioural laboratory was precisely that these traces give you a degree of stimulus and recording control that the natural environment does not (Loomis, Blascovich &amp; Beall, 1999), and the substantial body of work that has followed treats them as the natural-history record of the participant's interaction (Pan &amp; Hamilton, 2018).</p>
+    <p>For your project this means: if your dependent variable can be expressed as a function of where the participant looks, how long they look, how they move through the environment, or what they reach for, you can collect the data without buying a single peripheral. This is the cheapest path to a defensible measure. The price you pay is that the <em>interpretation</em> of these traces is not always straightforward — head pose is a proxy for attention only under specific conditions, locomotion is a proxy for exploration only when the environment affords it, and so on. Use the traces; do not over-claim what they index.</p>
+
+    <h3>Family 2 — Task-embedded performance measures</h3>
+    <p>A more deliberate kind of behavioural measure: design a task that the participant performs inside the VR environment, and record their performance. The task can be anything that produces a number. Response latency on a probe; accuracy on a change-detection or recognition task; choice fraction on a forced-choice task; memory accuracy after a delay; error rate on a navigation task. These measures do not require any sensor beyond the headset; they require only that you design the task and arrange for its performance to produce data the engine can log. The lineage is the long tradition of cognitive-psychology task-design — the Stroop task, the flanker task, the Posner cueing paradigm — moved into immersive contexts (Bohil, Alicea &amp; Biocca, 2011; Parsons, 2015).</p>
+    <p>For COGS 160 specifically, task-embedded performance measures are usually the strongest combination of feasibility, defensibility, and clarity. You design a task whose performance maps to a construct, you collect the numbers across conditions, you compare. The grading-relevant property is that the resulting data are unambiguously yours to interpret rather than being mediated by a piece of unfamiliar hardware. Among the families on this page, this is the one we will encourage you to use unless you have a reason not to.</p>
+    <p>Three sub-types in this family have particularly clear translations into VR and are worth describing in detail because the course will encourage their use.</p>
+
+    <div class="card accent">
+      <div class="card-title">The Implicit Association Test (IAT) and its VR-adapted variants</div>
+      <p>The IAT (Greenwald, McGhee &amp; Schwartz, 1998) is a reaction-time task in which the participant sorts stimuli into categories using two response keys; the difference in response time between congruent and incongruent pairings is taken to index the strength of an implicit association. In VR the two response keys map naturally onto the two controller triggers, or onto two button positions on a single controller. Stimuli appear in the visual field; the participant responds as quickly as possible. The construct typically targeted is implicit attitude toward a category (objects, faces, environments, brands), and IAT-style designs are well suited to architectural-cognition questions where the explicit-versus-implicit attitude split is itself the substantive contrast.</p>
+      <p><strong>Ease of use:</strong> moderate. The task structure is well-documented and the timing logic is straightforward to implement in any engine; what is harder is reasoning about whether VR's millisecond-scale timing jitter (which can run 10&ndash;20 ms in consumer headsets) compromises the inference. For a first IAT in VR, build in a calibration check (a known-strong association as a sanity benchmark) and treat your effects above that benchmark as the substantive findings.</p>
+    </div>
+
+    <div class="card accent">
+      <div class="card-title">Q-sort and the twenty-card sort</div>
+      <p>Q-methodology (Stephenson, 1953; for a contemporary review, see Watts &amp; Stenner, 2012) asks participants to sort a fixed set of items into a forced distribution — typically a quasi-normal grid of "most agree" to "most disagree" — and analyses the resulting matrix factorially. The twenty-card variant is a compact version: twenty items, sorted into ranks, no forced distribution required. Q-sort gives the experimenter access to the participant's <em>configuration</em> of preferences rather than just isolated ratings, which is what makes it the natural choice when you want to know how attitudes hang together rather than which way each one points. In VR the sort affordance translates beautifully: cards or 3D objects float in front of the participant; the participant grabs and places them in bins; the placement is logged.</p>
+      <p><strong>Ease of use:</strong> moderate. The task is intuitive for participants and the data is rich; the design work is in choosing the twenty items and writing them so they discriminate. Q-sort in VR is rarer in the literature than IATs and stands out as a methodological contribution if you do it well.</p>
+    </div>
+
+    <div class="card accent">
+      <div class="card-title">Adaptive-preference and discrete-choice tasks</div>
+      <p>In an adaptive-preference design, the participant makes a sequence of pairwise (or N-wise) choices between stimuli; the algorithm uses each response to choose the next pair so as to narrow the participant's preference structure efficiently (Toubia, Hauser &amp; Garcia, 2007; for the adaptive-conjoint-analysis tradition, Green &amp; Srinivasan, 1990). The classic application in psychophysics is the adaptive staircase, in which threshold estimation converges rapidly; in marketing and decision research, adaptive conjoint analysis estimates preference weights across attributes with far fewer trials than a non-adaptive design. In VR the affordance is natural — two scenes appear, the participant picks, the algorithm composes the next pair — and the cognitive load on the participant per trial is low.</p>
+      <p><strong>Ease of use:</strong> moderate to advanced. The task structure is simple; the design work is in writing the adaptation rule. For a first project, use one of the published adaptive-staircase or adaptive-choice protocols rather than inventing your own.</p>
+    </div>
+
+    <h3>Family 3 — Verbal and questionnaire-based self-report</h3>
+    <p>A scale of established validity, administered to the participant either inside the headset or immediately on exit. Presence questionnaires — the Slater-Usoh-Steed presence questionnaire and its descendants (Schubert, Friedmann &amp; Regenbrecht, 2001) — affective state inventories, perceived restorativeness scales, mood-and-stress checklists, the post-experimental open-ended interview. The substantive point about self-report in immersive contexts is that it is legitimate evidence of a specific kind: it indexes what the participant is willing and able to report about their experience, not the underlying processes that produced the experience (this is the longstanding lesson from introspectionist psychology and the careful work of contemporary phenomenology in cognitive science).</p>
+    <p>For your project: self-report is fast to administer and produces immediately comparable numbers across conditions. The risk is demand characteristics — the participant guesses what the experimenter wants and obliges them, sometimes unconsciously (Orne, 1962). The standard mitigation is to pair self-report with a behavioural measure: if both measures move in the same direction, the inference is stronger; if they diverge, you have a substantive finding to interpret rather than a methodological hole. Class projects that rely on self-report alone are weaker than they need to be. Plan to pair.</p>
+
+    <h3>Family 4 — Physiological and motion signals from wearable peripherals</h3>
+    <p>For a more ambitious class project: a defined set of sensors is available in the lab, with a few more that can be added if the project warrants. The methodological appeal of physiological measures is that they are difficult for the participant to fake and that they index processes operating on timescales the behavioural measures cannot resolve. Below is the inventory of what we have, what each sensor measures, and how easy or hard it is to deploy responsibly in a class project.</p>
+
+    <div class="card">
+      <div class="card-title">Confirmed available in the lab kit</div>
+      <p>These sensors are on the shelf and can be combined with any VR scenario without additional procurement.</p>
+      <ul class="tight">
+        <li><strong>Electrodermal activity (EDA / galvanic skin response).</strong> A wrist- or finger-worn sensor measures skin conductance, which varies with sympathetic-nervous-system arousal (Boucsein, 2012). <em>Ease of use:</em> easy to acquire signal; moderate to interpret. The interpretive caution is that EDA is a non-specific arousal measure: it does not distinguish positive arousal from negative arousal, and it does not localise to a cognitive process. Pair it with a behavioural or self-report measure that tells you what kind of arousal you are seeing.</li>
+        <li><strong>Heart rate (HR) and heart-rate variability (HRV).</strong> A chest strap (preferred for HRV) or wrist-worn device measures inter-beat intervals; HRV indexes parasympathetic regulation and autonomic balance (Laborde, Mosley &amp; Thayer, 2017). <em>Ease of use:</em> HR is easy; HRV is moderate. The principal pitfall with HRV in class projects is that the recording window required for a stable estimate often does not fit the within-trial design students initially propose. If you want HRV, plan blocks of 3&ndash;5 minutes per condition rather than trial-by-trial sampling.</li>
+        <li><strong>Respiration.</strong> A chest band or thermistor at the nostrils measures breathing rate and amplitude (Grossman &amp; Taylor, 2007). Respiration is mechanistically coupled to HRV (respiratory sinus arrhythmia). <em>Ease of use:</em> moderate. The pitfall is that participants modulate their breathing voluntarily when they become aware of the sensor — instruct participants to breathe normally, and where possible obscure the moment when the sensor begins recording.</li>
+        <li><strong>Three-axis (3D) wrist accelerometers.</strong> The wrist devices record acceleration in three orthogonal axes at a high sampling rate, capturing fine motor activity, hand movement during interaction, fidgeting, and gesture (Bonomi et al., 2009). <em>Ease of use:</em> easy to acquire signal; moderate to analyse. The pitfall is over-interpreting raw acceleration as a behavioural measure when it is mediated by hand-controller use; isolate periods of controller interaction from periods of free hand movement before computing the derived measure.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Uncertain availability — confirm before planning</div>
+      <p>Two capabilities depend on which headset model the lab assigns to you.</p>
+      <ul class="tight">
+        <li><strong>Eye tracking (gaze direction).</strong> On a Meta Quest Pro, HTC Vive Pro Eye, Varjo XR-3, or Pico Neo 3 Pro Eye, gaze is sampled continuously and can be logged as an additional behavioural trace. On a consumer Quest 2 or Quest 3, no eye-tracking is available. <em>Ease of use, when available:</em> easy to acquire; moderate to analyse. The fixation-extraction step is the analysis bottleneck; choose your software pipeline early. The pitfall is calibration drift across long sessions — re-calibrate between blocks.</li>
+        <li><strong>Pupillometry.</strong> The same eye-tracking headsets also provide pupil diameter at the same sampling rate. Pupillometry indexes mental effort, arousal, and reward-related processes (Math&ocirc;t, 2018). <em>Ease of use, when available:</em> easy to acquire; moderate to interpret. The principal pitfall is luminance confound: pupil diameter changes dramatically with the brightness of the visual field. Either equate luminance across conditions, or measure ambient luminance and partial it out statistically.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Available on request — talk to the instructor early</div>
+      <p>Two further capabilities can be added if the project's design genuinely requires them.</p>
+      <ul class="tight">
+        <li><strong>Additional motion-tracking sensors.</strong> External markers (Vive Trackers, body-mounted inertial measurement units, OptiTrack camera systems if the lab has access) extend the wrist-accelerometer capability to whole-body or limb-level motion tracking. Useful for studies that need to record posture, gait, or whole-body gesture. <em>Ease of use:</em> moderate to advanced. The setup is more involved and the data pipeline is more complex; plan an extra week for it.</li>
+        <li><strong>Surface electromyography (EMG) for muscle tension.</strong> Skin-surface electrodes record the electrical activity of an underlying muscle group; the standard targets are the corrugator (frowning, negative affect) and zygomaticus (smiling, positive affect) muscles of the face, and the trapezius (shoulder tension under stress) on the upper back (Tassinary, Cacioppo &amp; Vanman, 2007). <em>Ease of use:</em> advanced. EMG requires careful electrode placement, skin preparation, and noise control. It is feasible for a class project but only if the project leans on it for a substantive contribution.</li>
+      </ul>
+    </div>
+
+    <div class="card amber">
+      <div class="card-title">The honest counsel on physiology</div>
+      <p>Be candid with yourself about the cost. Physiological instrumentation in a 7-to-10-week class project trades reliability for ambition. The signals named above are all real measures that real research labs use to real effect, but they are also signals that require attention to acquisition quality before the substantive analysis can begin. If your design plan includes physiology, budget two of your seven-to-ten weeks for getting the signal acquisition right before you start collecting data, and plan to pair the physiological measure with a behavioural or self-report measure so that you have a second source of evidence if the physiology is noisier than expected. If your topic does not genuinely require physiology, do not add it because it sounds advanced; a clean task-embedded performance measure (Family 2) plus a self-report (Family 3) is usually a stronger class deliverable than a noisy physiological signal.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Negative taxonomy — measures not available in a class VR project</h2>
+    <p class="lead">The exclusions matter as much as the inclusions, because the most common derailing of class projects is choosing a topic whose canonical outcome measure is on this list and only realising late that the measure cannot be obtained. Read this list before you commit to a topic.</p>
+
+    <h3>Exclusion 1 — fMRI BOLD signals</h3>
+    <p>Functional magnetic-resonance imaging requires the participant to be inside a large, narrow-bore magnet that excludes any head-mounted display we can use. Studies in the literature that combine VR with fMRI exist, but they use either projection-screen-into-the-scanner setups that we do not have or dedicated MR-compatible headsets that we cannot afford. If your paper uses fMRI to localise the effect, you cannot replicate the fMRI measurement in our setting. The path forward, if there is one, is via substitution to a behavioural or psychophysiological measure of the same construct. If no such substitute exists for your topic, that is the signal to change topics.</p>
+
+    <h3>Exclusion 2 — Long-term field outcomes</h3>
+    <p>Measures that require weeks or months of follow-up to detect — reductions in real-world clinical symptoms, long-term cognitive change, durable behavioural change in everyday life, any outcome whose unit of observation is "the next month of the participant's life" — are not obtainable in seven to ten weeks. The course's timeline forces a within-session or near-session measurement window. If your paper's central claim depends on the <em>duration</em> of the effect rather than its <em>presence</em>, the duration claim is outside what you can test. You can still test whether the effect is detectable at all in a within-session design, but you must be explicit that you are testing presence, not persistence.</p>
+
+    <h3>Exclusion 3 — Naturalistic multi-party social signals</h3>
+    <p>VR can support two-person interaction studies. The technical infrastructure for synchronised multi-headset experiments is real, well-developed in published research (Pan &amp; Hamilton, 2018), and within reach of a class project if the project explicitly plans for it. What is not within reach is multi-party (three-plus) social-physiological synchrony in unrestricted interaction. Studies that measure heart-rate coupling across three or more interacting participants, or pupillometric synchrony in a group conversation, or shared neural signals across a small crowd — those depend on coupled hardware and high-fidelity time-synchronised acquisition that classroom labs typically lack. If your topic requires this, you need to either scale down to a two-participant design or change topics.</p>
+
+    <h3>Exclusion 4 — Real-world transfer claims</h3>
+    <p>Many papers' central claim is that an effect demonstrated in the lab transfers to the real world: that restorative VR exposure improves attention in subsequent real-world tasks; that VR training improves real-world motor skill; that VR exposure to a stressor inoculates the participant against real-world stressors. These claims cannot be settled within VR alone. The within-VR study can test whether the effect is <em>present</em> in VR; it cannot test whether the effect <em>transfers</em>. If your paper's claim is specifically about transfer, your project will not be able to test the transfer claim. You can still test the within-VR effect — that is a respectable contribution — but you must be candid in your write-up about what you are and are not testing.</p>
+
+    <h3>Exclusion 5 — Pharmacological and clinical biomarkers</h3>
+    <p>Measures that require blood draws, saliva collection, urine analysis, or other tissue sampling fall outside what classes can do without dedicated lab support. The IRB envelope for class projects is also tighter than for full research studies; collecting biological samples introduces compliance and consent requirements the course will not approve. If your paper's outcome is salivary cortisol, plasma oxytocin, or a similar biomarker, the path is again either substitution to a behavioural or self-report measure of the same construct, or a change of topic.</p>
+  </div>
+
+  <div class="section">
+    <h2>The substitution principle — what to do when your paper's measure is on the negative list</h2>
+    <p class="lead">This is the section to read carefully if your candidate paper uses an excluded measure.</p>
+    <p>The principle, briefly: the fact that the original paper's measure is on the negative list does <em>not</em> automatically mean the underlying construct is unmeasurable in your project. If the construct can be indexed by a measure on the positive list, the project remains viable. The question is whether a defensible <em>substitute</em> exists.</p>
+    <p>A defensible substitute satisfies two conditions. First, the field has used both the original measure and the substitute to index the same construct, in studies that compare them or treat them as alternative operationalisations. Second, the substitute is in one of the four positive families above. Both conditions must hold; either alone is not enough. A measure that the field treats as a valid alternative but that is on the negative list does not help you. A measure that is on the positive list but that the field treats as indexing a different construct does not help you either.</p>
+    <p>When both conditions hold, you have a substitution path. The substitution skill in the Knowledge Atlas — invoked through the <em>Evaluate-a-paper-for-VR</em> surface (Week 1, admit-mode) and the <em>Choose-a-measure</em> surface (Week 3, choice-mode) — automates this check across the corpus's papers and produces a ranked list of admissible substitutes, with the construct-validity arguments that link each substitute to your target construct and the psychometric profile (reliability, known weaknesses, hardware requirements) of each.</p>
+    <p>What you should <em>not</em> do is invent your own substitute on the fly. The class project envelope does not permit measurement-development as a side-project; you have neither the time nor the population access to validate a new measure. Your substitute should be one the field has already accepted as indexing your construct, and the justification you write into your project proposal should cite the paper or papers that established the substitute as valid.</p>
+    <p>What you <em>should</em> do, the first time you encounter the substitution question, is bring the candidate paper to the <em>Evaluate-a-paper-for-VR</em> surface. The skill will tell you whether a substitution path exists, what the candidate substitutes are, and what trade-offs you would be making by choosing one. If no substitution path exists for your paper, the skill says so explicitly, and the recommendation is to switch papers within the same topic or to switch topics. Both are honest moves at Week 1; both are very expensive at Week 4.</p>
+    <div class="cta-row">
+      <a class="cta" href="ka_evaluate_paper_for_vr.html">Evaluate a paper for your VR experiment</a>
+      <span class="cta-hint">Paste a DOI; see whether its measure admits, substitutes, or rejects</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>A short note on what "VR-tractable" really means</h2>
+    <p>Throughout this page, and across the Knowledge Atlas wireframes, you will see the term <em>VR-tractable</em>. It is a compressed term and it means three things at once. First, the <em>hardware</em> required to obtain the measure is available to the class. Second, the <em>time</em> required to administer the measure across a sample of the size you can recruit is within the course envelope. Third, the <em>interpretation</em> of the measure does not depend on infrastructure (a longitudinal follow-up, a clinical population, an fMRI scanner) that we cannot provide. A measure that fails any of the three is not VR-tractable for our purposes. A measure that satisfies all three is VR-tractable and admissible into your project.</p>
+    <p>The reason to make the three conditions explicit is that students sometimes encounter measures that satisfy two of the three and not the third, and the mismatch is easy to overlook. A measure that is technically deployable in VR (hardware available) but takes ninety minutes per participant (time-infeasible for a class sample) is <em>not</em> VR-tractable; a measure that takes ten minutes per participant (time-feasible) but requires comparing the participant's score to a normative database we do not have (interpretation-infeasible) is <em>not</em> VR-tractable. The substitution skill checks all three. You should too.</p>
+  </div>
+
+  <div class="section">
+    <h2>How to use this page in Weeks 1, 2, and 3</h2>
+    <p>In <strong>Week 1</strong>, read this page once, in full. It is the foundation for the rest of the course's measurement decisions. After you have read it, you do not need to read it again unless you are revisiting a measure you had not previously considered.</p>
+    <p>In <strong>Week 1</strong>, when you have selected a candidate paper for your project, bring it to the <em>Evaluate-a-paper-for-VR</em> surface. The surface will tell you whether the paper's outcome measure is on the positive list (admit), on the negative list with a defensible substitute (substitute), or on the negative list without a defensible substitute (reject). If the paper is admitted or substituted, the surface produces a brief justification that you can copy into your project notes.</p>
+    <p>In <strong>Week 3</strong>, when you are committing to a specific measure for your study, bring the topic to the <em>Choose-a-measure</em> surface. The surface lays out the candidate measures side by side and produces a ranked recommendation with the trade-offs articulated. You can override the recommendation if your topic or your access to hardware warrants it, but the override should be a deliberate decision rather than an oversight.</p>
+    <p>In <strong>Weeks 4&ndash;7</strong>, this page is no longer your primary reference; the methodological-pitfalls page is. But the measure you committed to in Week 3 should be the measure you actually run, and any reason for changing it should be documented.</p>
+  </div>
+
+  <div class="section">
+    <h2>Quick reference — measures available, with ease-of-use ratings</h2>
+    <p class="lead">Each measure named here can be referred to by its short code; ease-of-use is rated easy / moderate / advanced on the dimensions that matter for a 7-to-10-week class project (signal acquisition difficulty, analysis effort, interpretive risk).</p>
+    <table class="data">
+      <thead>
+        <tr><th>Family · Measure</th><th>Short code</th><th>What it indexes</th><th>Hardware needed</th><th>Ease of use</th><th>Principal pitfall</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>F1: Head pose / locomotion</td><td><code>f1.head_pose</code>, <code>f1.locomotion</code></td><td>Spatial attention, exploration</td><td>Headset only</td><td>Easy</td><td>Construct-mapping; gaze &ne; attention always</td></tr>
+        <tr><td>F1: Hand pose / interaction events</td><td><code>f1.hand_pose</code>, <code>f1.interaction</code></td><td>Reach, gesture, choice action</td><td>Controllers</td><td>Easy</td><td>Engine-specific event logging quirks</td></tr>
+        <tr><td>F2: Response latency / accuracy</td><td><code>f2.rt</code>, <code>f2.acc</code></td><td>Cognitive processing speed, attention</td><td>None beyond headset</td><td>Easy</td><td>Floor/ceiling effects depending on dosage</td></tr>
+        <tr><td>F2: IAT (Implicit Association Test)</td><td><code>f2.iat</code></td><td>Implicit attitudes between two categories</td><td>Controller two-key</td><td>Moderate</td><td>Consumer-VR ~10&ndash;20 ms timing jitter</td></tr>
+        <tr><td>F2: Q-sort / twenty-card sort</td><td><code>f2.qsort</code>, <code>f2.20card</code></td><td>Configurational preferences / attitudes</td><td>Controllers (drag/place)</td><td>Moderate</td><td>Item selection is the design problem</td></tr>
+        <tr><td>F2: Adaptive preference / discrete-choice</td><td><code>f2.adaptpref</code>, <code>f2.dchoice</code></td><td>Preference weights, thresholds</td><td>Controllers</td><td>Moderate&ndash;advanced</td><td>Adaptation-rule design</td></tr>
+        <tr><td>F3: Presence questionnaires</td><td><code>f3.presence</code></td><td>Subjective immersion</td><td>None</td><td>Easy</td><td>Established scales only; do not invent</td></tr>
+        <tr><td>F3: Affect / mood inventories</td><td><code>f3.affect</code>, <code>f3.prs</code></td><td>Reportable affective state</td><td>None</td><td>Easy</td><td>Demand characteristics — pair with F2</td></tr>
+        <tr><td>F3: Construct-specific scales</td><td><code>f3.{construct}</code></td><td>Whatever the scale was validated for</td><td>None</td><td>Easy</td><td>Validate the scale for your population</td></tr>
+        <tr><td>F4 (confirmed): EDA</td><td><code>f4.eda</code></td><td>Sympathetic arousal</td><td>Wrist/finger sensor</td><td>Easy &rarr; Moderate</td><td>Non-specific arousal; pair with another signal</td></tr>
+        <tr><td>F4 (confirmed): HR</td><td><code>f4.hr</code></td><td>Cardiac arousal</td><td>Chest strap / wrist</td><td>Easy</td><td>Coarse measure; HRV is richer</td></tr>
+        <tr><td>F4 (confirmed): HRV</td><td><code>f4.hrv</code></td><td>Parasympathetic regulation</td><td>Chest strap preferred</td><td>Moderate</td><td>3&ndash;5 min recording blocks required</td></tr>
+        <tr><td>F4 (confirmed): Respiration</td><td><code>f4.resp</code></td><td>Breathing rate / depth</td><td>Chest band</td><td>Moderate</td><td>Voluntary modulation when participant aware</td></tr>
+        <tr><td>F4 (confirmed): 3D wrist accelerometer</td><td><code>f4.accel3d</code></td><td>Fine motor activity, gesture</td><td>Wrist device</td><td>Easy &rarr; Moderate</td><td>Choice of derived measure (RMS, jerk, counts)</td></tr>
+        <tr><td>F4 (maybe): Eye tracking</td><td><code>f4.gaze</code></td><td>Gaze direction, fixations</td><td>Quest Pro / Vive Pro Eye / Varjo</td><td>Easy &rarr; Moderate</td><td>Calibration drift; need fixation pipeline</td></tr>
+        <tr><td>F4 (maybe): Pupillometry</td><td><code>f4.pupil</code></td><td>Mental effort, arousal</td><td>Same as eye tracking</td><td>Easy &rarr; Moderate</td><td>Luminance confound; equate or partial out</td></tr>
+        <tr><td>F4 (request): Motion-tracking add-ons</td><td><code>f4.motion_ext</code></td><td>Whole-body / limb motion</td><td>Vive Trackers / OptiTrack</td><td>Moderate &rarr; Advanced</td><td>Extra setup week</td></tr>
+        <tr><td>F4 (request): Surface EMG</td><td><code>f4.emg</code></td><td>Muscle activation (corrugator, zygomaticus, trapezius)</td><td>Skin electrodes</td><td>Advanced</td><td>Electrode placement, noise control</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Exclusions — the five negative-list items</h3>
+    <table class="data">
+      <thead>
+        <tr><th>Exclusion</th><th>Short code</th><th>Why excluded</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>fMRI BOLD</td><td><code>x1.fmri</code></td><td>Cannot wear headset in scanner</td></tr>
+        <tr><td>Long-term field outcomes</td><td><code>x2.longfield</code></td><td>Course window is 7&ndash;10 weeks</td></tr>
+        <tr><td>Naturalistic multi-party (&gt;2) social signals</td><td><code>x3.multiparty</code></td><td>Synchronisation hardware not available</td></tr>
+        <tr><td>Real-world transfer claims</td><td><code>x4.transfer</code></td><td>Within-VR study cannot test transfer</td></tr>
+        <tr><td>Pharmacological / biomarker outcomes</td><td><code>x5.biomarker</code></td><td>IRB + lab-support not available</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>References</h2>
+    <ul class="tight">
+      <li>Bohil, C. J., Alicea, B., &amp; Biocca, F. A. (2011). Virtual reality in neuroscience research and therapy. <em>Nature Reviews Neuroscience</em>, 12(12), 752&ndash;762.</li>
+      <li>Bonomi, A. G., Goris, A. H. C., Yin, B., &amp; Westerterp, K. R. (2009). Detection of type, duration, and intensity of physical activity using an accelerometer. <em>Medicine and Science in Sports and Exercise</em>, 41(9), 1770&ndash;1777.</li>
+      <li>Boucsein, W. (2012). <em>Electrodermal activity</em> (2nd ed.). Springer.</li>
+      <li>Green, P. E., &amp; Srinivasan, V. (1990). Conjoint analysis in marketing: New developments with implications for research and practice. <em>Journal of Marketing</em>, 54(4), 3&ndash;19.</li>
+      <li>Greenwald, A. G., McGhee, D. E., &amp; Schwartz, J. L. K. (1998). Measuring individual differences in implicit cognition: The implicit association test. <em>Journal of Personality and Social Psychology</em>, 74(6), 1464&ndash;1480.</li>
+      <li>Grossman, P., &amp; Taylor, E. W. (2007). Toward understanding respiratory sinus arrhythmia: Relations to cardiac vagal tone, evolution and biobehavioral functions. <em>Biological Psychology</em>, 74(2), 263&ndash;285.</li>
+      <li>Laborde, S., Mosley, E., &amp; Thayer, J. F. (2017). Heart rate variability and cardiac vagal tone in psychophysiological research — Recommendations for experiment planning, data analysis, and data reporting. <em>Frontiers in Psychology</em>, 8, 213.</li>
+      <li>Loomis, J. M., Blascovich, J. J., &amp; Beall, A. C. (1999). Immersive virtual environment technology as a basic research tool in psychology. <em>Behavior Research Methods, Instruments, &amp; Computers</em>, 31(4), 557&ndash;564.</li>
+      <li>Math&ocirc;t, S. (2018). Pupillometry: Psychology, physiology, and function. <em>Journal of Cognition</em>, 1(1), 16.</li>
+      <li>Orne, M. T. (1962). On the social psychology of the psychological experiment: With particular reference to demand characteristics and their implications. <em>American Psychologist</em>, 17(11), 776&ndash;783.</li>
+      <li>Pan, X., &amp; Hamilton, A. F. de C. (2018). Why and how to use virtual reality to study human social interaction: The challenges of exploring a new research landscape. <em>British Journal of Psychology</em>, 109(3), 395&ndash;417.</li>
+      <li>Parsons, T. D. (2015). Virtual reality for enhanced ecological validity and experimental control in the clinical, affective and social neurosciences. <em>Frontiers in Human Neuroscience</em>, 9, 660.</li>
+      <li>Schubert, T., Friedmann, F., &amp; Regenbrecht, H. (2001). The experience of presence: Factor analytic insights. <em>Presence: Teleoperators and Virtual Environments</em>, 10(3), 266&ndash;281.</li>
+      <li>Stephenson, W. (1953). <em>The study of behavior: Q-technique and its methodology</em>. University of Chicago Press.</li>
+      <li>Tassinary, L. G., Cacioppo, J. T., &amp; Vanman, E. J. (2007). The skeletomotor system: Surface electromyography. In J. T. Cacioppo, L. G. Tassinary, &amp; G. G. Berntson (Eds.), <em>Handbook of psychophysiology</em> (3rd ed., pp. 267&ndash;299). Cambridge University Press.</li>
+      <li>Toubia, O., Hauser, J., &amp; Garcia, R. (2007). Probabilistic polyhedral methods for adaptive choice-based conjoint analysis: Theory and application. <em>Marketing Science</em>, 26(5), 596&ndash;610.</li>
+      <li>Watts, S., &amp; Stenner, P. (2012). <em>Doing Q methodological research: Theory, method and interpretation</em>. SAGE Publications.</li>
+    </ul>
+  </div>
+
+  <!-- ── Bottom annotations ──────────────────────────────── -->
+  <div class="annotations">
+    <h2>Annotations — design commentary</h2>
+    <div class="annot-sub">For the instructor's review of the Fall journey. Not student-facing copy; sits at the bottom so the page above reads as a student would experience it.</div>
+
+    <h3>What this surface is</h3>
+    <p>Surface 6 of the nine-surface Week-1 journey: the single-page explainer on what a 7-to-10-week VR experiment can and cannot measure. Reached from Surface 1 (the Week-1 hub) and from anywhere on the site that touches a measure. The wireframe source is <code>ka_week1_wireframe_2026-05-17.html</code> §Surface 6.</p>
+
+    <h3>Content provenance</h3>
+    <p>The body is rendered faithfully from the authoritative content file <code>ka_vr_measurability_content_2026-05-18.md</code> — the source of truth for the Knowledge Atlas substitution skill. The markdown's headings became <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code>, its two quick-reference tables became <code>table.data</code>, the physiology inventory and references became <code>ul.tight</code>, and the IAT / Q-sort / adaptive-preference sub-types became <code>.card.accent</code> blocks. All four positive measurement families, all five negative-list exclusions, the substitution principle, the "VR-tractable" note, the Weeks 1–3 usage guidance, both reference tables, and the full reference list are carried through. The wireframe mock showed only an abbreviated two-table version; this page renders the full ~3,000-word source.</p>
+
+    <h3>What is mocked</h3>
+    <p>Nothing on this page is wired to the live corpus. The phase strip is hard-coded with Week 1 marked current; production should pull the week list from the canonical Fall schedule. The page is structurally and content-complete but operationally static.</p>
+
+    <h3>Dependencies</h3>
+    <p>The structured-data version of this content — the JSON the substitution skill consumes — is the more important deliverable than the explainer page itself; the page is the human-facing render of the same data. The build pipeline that propagates updates from the markdown source into the skill's knowledge base is the gating upstream item. The <em>Evaluate-a-paper-for-VR</em> (Surface 4) and <em>Choose-a-measure</em> (Surface 4b) surfaces this page cross-links to are themselves new pages built in this same pass.</p>
+
+    <h3>Last updated</h3>
+    <p>2026-05-19. Built from the 2026-05-17 wireframe and the 2026-05-18 content source of truth. Companion surfaces: <code>ka_fall_week1.html</code>, <code>ka_evaluate_paper_for_vr.html</code>, <code>ka_choose_measure_for_vr.html</code>, <code>ka_methodological_pitfalls.html</code>, <code>ka_validities_showcase.html</code>, <code>ka_vr_exemplars.html</code>.</p>
+  </div>
+
+</div>
+
+<div class="surface-foot">
+  <a href="ka_fall_week1.html">COGS 160 Fall · Week 1</a>
+  <a href="ka_journey_map.html">Journey map</a>
+</div>
+
+</body>
+</html>
