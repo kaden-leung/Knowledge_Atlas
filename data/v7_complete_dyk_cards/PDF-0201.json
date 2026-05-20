@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0201",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:58Z",
+  "cards": [
+    {
+      "id": "dyk_6b78afd208",
+      "paper_id": "PDF-0201",
+      "source_claim_ids": [
+        "288"
+      ],
+      "title": "Watching a river may be more restorative than just hearing it",
+      "body": "How you spend your break affects how tired you feel. This study compared different post-work recovery periods and found that watching a nature movie with river sounds tended to reduce yawning more than just listening to the river sounds or continuing to hear office noise. The statistical difference was marginal, but it suggests that a richer, multi-sensory nature experience might be more effective for recovery. This implies that designing restorative spaces is not just about quiet, but about providing engaging, positive content to help people reset after cognitively demanding work.",
+      "expanded_summary": "The finding on yawning is part of a broader pattern of results about post-work recovery. After a two-hour work session in simulated office noise, participants were exposed to one of four break conditions. Those who watched the nature movie not only yawned slightly less but also reported having significantly more energy afterward compared to those who just heard river sounds or office noise. Conversely, participants who continued to hear office noise during their break reported the lowest levels of motivation. Together, these results show that the content of a break matters. A short, multi-sensory nature experience can actively support recovery from fatigue and restore motivation, while continued exposure to the stressor (office noise) can hinder it.",
+      "measurables": "Researchers measured post-work fatigue using self-report ratings. Following a two-hour work session, participants experienced different break conditions. A post hoc analysis compared tiredness, specifically the rating for yawning, between the group that watched a nature movie, the group that heard river sounds, and the group that continued to hear office noise. The differences between the movie condition and the other two were marginal.",
+      "short_science_summary": "This dissertation investigated how open-plan office noise affects cognitive performance and post-work restoration through a series of experiments. In a key study, forty-seven students performed cognitive tasks for two hours in a simulated office under either low-noise (39 dBA) or high-noise (51 dBA) conditions. Researchers measured working memory, attention, logical reasoning, and collected self-reports of mood, fatigue, and motivation. The results showed that increasing the background sound level by 12 dBA significantly decreased word memory performance, increased ratings of tiredness, and lowered motivation. Following the work session, participants were assigned to one of four restorative break conditions: watching a nature movie with sound, listening to river sounds, continuing to hear office noise, or silence. This phase aimed to measure how different environments support recovery. Participants who watched the nature movie reported the highest subsequent energy levels. In contrast, those who continued to hear office noise during their break had the lowest motivation. A more specific analysis found a marginal tendency for participants in the movie condition to report less tiredness (via yawning) compared to those in the river sound or office noise conditions. While the study unexpectedly found no direct effect of noise on stress hormone levels, the combined behavioral and self-report data strongly suggest that noise impairs performance and that nature-based breaks, especially multi-sensory ones, can effectively counteract work-induced fatigue. The findings highlight that acoustics should be treated as a critical design variable for both productivity and recovery, though the results from a student sample in a lab may not perfectly reflect all field office environments.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "288"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:24Z",
+        "tokens_in": 2759,
+        "tokens_out": 730,
+        "cost_estimate_usd": 0.019227
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0201",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0201",
+      "source_link": "ka_article_view.html?id=PDF-0201",
+      "apa_citation": "Open-plan office noise: Cognitive performance and restoration."
+    }
+  ],
+  "failures": []
+}

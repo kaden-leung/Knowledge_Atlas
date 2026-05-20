@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0367",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:24:51Z",
+  "cards": [
+    {
+      "id": "dyk_272f59003e",
+      "paper_id": "PDF-0367",
+      "source_claim_ids": [
+        "460"
+      ],
+      "title": "Visually 'unstable' spaces reveal more as you move",
+      "body": "The amount of new visual information you gain while moving through a space depends on its geometric layout. Spaces with a high \"revelation coefficient\" are visually unstable; a small step reveals a large new area. This contrasts with visually stable areas, where the view changes little as you move. High-revelation spaces promise a greater information gain during locomotion, which can make them feel more complex or engaging. This concept helps quantify why exploring a winding alley feels different from walking down a long, straight corridor, connecting architectural form to cognitive experience.",
+      "expanded_summary": "Researchers are developing a formal language to connect a building's geometry to human experience, moving from 'space syntax' to 'space semantics.' They use isovists—the total visible area from a single point—to create a graph of a space. From this graph, they derive metrics like the revelation coefficient. This particular measure quantifies how much of your view is new after taking a step. It's contrasted with the 'clustering coefficient,' which measures how much your neighbors' views overlap with your own (high clustering means high visual stability). By translating qualitative feelings like 'openness' or 'complexity' into these measurable terms, architects and cognitive scientists can compare environments and better predict how a design will influence behavior and perception.",
+      "measurables": "The study uses graph-based measurands derived from isovists (the field of view from any given point). Key measures include the revelation coefficient, which calculates the proportion of newly visible area after a step, and the clustering coefficient. The researchers test these formal geometric descriptions against participant judgments of spatial qualities within virtual environments. These methods translate subjective architectural experience into quantifiable data for analysis.",
+      "short_science_summary": "To bridge the gap between architectural psychology and spatial cognition, researchers require a common language for describing how the built environment influences human experience and behavior. This paper proposes a methodology rooted in isovist-based graphs to provide that shared language. An isovist represents the entire volume of space visible from a single point. By sampling isovists at various locations and treating them as nodes in a graph, researchers can mathematically describe the geometry and topology of a space. The authors argue that this approach can operationalize classic qualitative theories from environmental psychology. For example, subjective feelings like 'spaciousness,' 'complexity,' or 'safety' can be translated into measurable graph properties. The paper outlines methods for selecting reference points for analysis and integrating them into a comprehensive graph structure, validated through experiments in virtual environments where participants rated spatial characteristics. One key metric derived from this graph is the 'revelation coefficient.' A high revelation coefficient signifies low visual stability, meaning a small movement significantly changes the visible area. As the source claim states, this promises a high rate of information gain during locomotion, which might correspond to experiences of discovery or complexity. This contrasts with measures like the 'clustering coefficient,' which indicates high visual stability. The overall project aims to move from space syntax (the formal structure of space) to space semantics (the meaning people derive from it), providing a rigorous, psychologically-oriented framework for analyzing architectural environments. While theoretical in character, the work provides a formalized bridge for future empirical studies in both virtual and real-world settings.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "460"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:24:24Z",
+        "tokens_in": 2388,
+        "tokens_out": 724,
+        "cost_estimate_usd": 0.018024
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0367",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0367",
+      "source_link": "ka_article_view.html?id=PDF-0367",
+      "apa_citation": "Franz, Gerald, Wiener, Jan M (2008). From Space Syntax to Space Semantics: A Behaviorally and Perceptually Oriented Methodology for the Efficient Description of the Geometry and Topology of Environments. https://doi.org/10.1068/b33050"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0117",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:24Z",
+  "cards": [
+    {
+      "id": "dyk_73029bb805",
+      "paper_id": "PDF-0117",
+      "source_claim_ids": [
+        "158"
+      ],
+      "title": "A stable viewpoint helps you reconstruct your path from visual motion",
+      "body": "When moving through an environment, the visual world flows past you. This 'optic flow' provides enough information to reconstruct your path, but accuracy depends on your orientation. Perception is best when you look where you are going, with your orientation fixed relative to your trajectory. A single, stable landmark can also improve accuracy. This matters for designing virtual environments or navigation aids, where providing stable visual references can help users better interpret their own motion.",
+      "expanded_summary": "In a study using head-mounted displays, subjects viewed simulated travel over a ground plane and then reproduced the path with a model vehicle. Their ability to reconstruct the path was good when their simulated orientation was fixed relative to the trajectory. However, when the simulated head turn (yaw) did not match the path's curve, subjects misperceived the trajectory. They tended to assume their orientation was fixed to the path, wrongly attributing the independent head turn to a change in the path itself. This suggests our perceptual system has a strong default assumption that we look in the direction we are moving.",
+      "measurables": "Researchers showed 32 subjects simulated 2D trajectories in a head-mounted display, with and without a landmark. Afterwards, subjects used a model vehicle to reproduce the path they perceived. The study recorded and analyzed errors in the reproduced position, orientation, and path shape to quantify perceptual accuracy under different conditions of simulated motion.",
+      "short_science_summary": "It is well established that human observers can detect their heading from optic flow—the pattern of visual motion experienced during self-movement—over very short timescales. This study investigated whether people can also integrate this information over time to reconstruct a two-dimensional trajectory. Researchers explored this question by simulating passive travel for seated subjects wearing a head-mounted display. The stimuli depicted movement over a horizontal ground plane, with some trials including a single landmark. The simulated trajectories were either linear or curvilinear, and the observer's orientation (yaw) was varied: it was either fixed in space, fixed relative to the path, or changed independently. After viewing each simulated manoeuvre, 32 subjects reproduced the perceived path using a model vehicle, allowing researchers to analyze errors in perceived position and orientation. The results showed that while subjects perceived their orientation (yaw) correctly, their perception of the travelled path was less accurate. Path reconstruction was good, however, under conditions where the simulated orientation was fixed relative to the trajectory. A key finding emerged when the amount of yaw was not equal to the path's rotation: subjects tended to perceive their orientation as if it were fixed to the trajectory anyway. This caused significant misperception of the path, as the independent yaw was wrongly attributed to a rotation of the path itself. The presence of a single landmark was found to improve perception, but primarily when it provided a fixed, stable reference point. The study's findings are constrained by its laboratory setting and simulated motion, highlighting the need for replication in real-world contexts. These results contribute to navigation research and have implications for the design of virtual environments, suggesting that stable visual references are crucial for helping users correctly interpret complex motion cues.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "158"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:57Z",
+        "tokens_in": 2420,
+        "tokens_out": 714,
+        "cost_estimate_usd": 0.01797
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0117",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0117",
+      "source_link": "ka_article_view.html?id=PDF-0117",
+      "apa_citation": "(2000)."
+    }
+  ],
+  "failures": []
+}

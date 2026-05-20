@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0195",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:24:21Z",
+  "cards": [
+    {
+      "id": "dyk_f69a455184",
+      "paper_id": "PDF-0195",
+      "source_claim_ids": [
+        "278"
+      ],
+      "title": "Lighting patterns, not just brightness, shape a room's impression.",
+      "body": "The way a room is lit changes how people perceive its size, purpose, and mood. A 1973 study demonstrated that in an otherwise unchanged conference room, different lighting schemes significantly altered impressions. For instance, focusing light on the walls made the room feel more spacious and was evaluated more positively. In contrast, uniform overhead lighting was linked to formality and perceptual clarity. This suggests that light distribution is a powerful tool for environmental design, allowing architects to shape social experience rather than just ensuring visibility.",
+      "expanded_summary": "The study systematically broke down participants' impressions into distinct dimensions: general evaluation (pleasant vs. unpleasant), perceptual clarity, spaciousness, and formality. The researchers then mapped these psychological factors to physical lighting arrangements with impressive precision. For example, the bright-to-dim lighting axis correlated almost perfectly with perceptual clarity (r=0.99). Meanwhile, factors like evaluative impression and the sense of spaciousness were strongly linked to the balance between overhead and peripheral light (r=0.92 and r=0.94). This work established that the architectural 'reading' of a room is heavily influenced by light patterns, transforming its character without altering its physical form.",
+      "measurables": "In a controlled conference room setting, 96 adult participants rated their impressions of the space under six distinct lighting arrangements. Researchers used semantic differential scales, where participants placed their judgment on a spectrum between two opposite words (e.g., 'pleasant/unpleasant,' 'clear/hazy,' 'spacious/cramped'). A smaller group was used for a multidimensional scaling comparison to validate the perceptual structure.",
+      "short_science_summary": "The 1973 paper by Flynn et al. argues that illumination is not a single knob to be turned up or down, but a multi-faceted tool that shapes human experience. The central finding is that a medium-sized conference room can feel meaningfully different under six lighting arrangements even when the physical room remains unchanged. The study showed that higher intensity does not simply improve all aspects of perception; rather, the distribution of light—including the balance between overhead and peripheral sources and the use of wall lighting—is critical. These patterns influence what people think the room is for and how open it feels, positioning the paper as an early, rich demonstration of lighting as environmental psychology, not just visibility engineering. The experiment was conducted in a conference room at the General Electric Lighting Institute, where 96 adults provided semantic differential ratings. A secondary multidimensional-scaling comparison with 46 subjects was used to confirm the factor structure of these ratings. The results separated perceptions into distinct dimensions: general evaluative impression, perceptual clarity, spaciousness, and formality. The correlations were notably strong: the bright/dim dimension correlated with perceptual clarity at r=0.99, while the overhead/peripheral and uniform/non-uniform dimensions correlated with evaluative impression at r=0.92 and with spaciousness at r=0.94. The practical lesson for designers is to think in terms of distribution, contrast, and perimeter emphasis. Limited wall lighting, for example, can make a room feel more spacious and be evaluated more positively. While robust in design, the study is limited to a lab-like setting with adult subjects, and its outcomes are perceptual judgments, not direct behaviors. Nonetheless, it provides strong evidence that the experience of a lighted space is shared, with groups of occupants forming similar impressions based on lighting cues.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "278"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:50Z",
+        "tokens_in": 1943,
+        "tokens_out": 719,
+        "cost_estimate_usd": 0.016614
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0195",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0195",
+      "source_link": "ka_article_view.html?id=PDF-0195",
+      "apa_citation": "John E. Flynn et al. (1973). Interim Study of Procedures for Inveﬆigating the Eﬀect of Light on Impression and Behavior. https://doi.org/10.1080/00994480.1973.10732231"
+    }
+  ],
+  "failures": []
+}

@@ -25,10 +25,13 @@
         "Environmental Appraisal"
       ],
       "dominant_iv_families": [
-        "acoustic"
+        "acoustic",
+        "material",
+        "spatial"
       ],
       "dominant_dv_families": [
-        "affect.soundscape"
+        "affect.soundscape",
+        "affect.wellbeing"
       ],
       "maturity": "developing",
       "mean_credence": 0.0,
@@ -41,34 +44,35 @@
       "paper_count": 7
     },
     {
-      "front_id": "RF_09299C0E",
-      "title": "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
-      "description": "Research front: Circadian Lighting studies investigating Luminous Environment effects on Mechanism / Pathway.",
+      "front_id": "RF_B74A5ED8",
+      "title": "Nature & Biophilia \u00d7 Restoration / Recovery (Attention)",
+      "description": "Research front: Attention Restoration Theory studies investigating Nature & Biophilia effects on Restoration / Recovery.",
       "paper_ids": [
-        "PDF-0759",
-        "PDF-0762",
-        "PDF-0763",
-        "PDF-0769",
-        "PDF-0771",
-        "PDF-0850"
+        "PDF-0045",
+        "PDF-0180",
+        "PDF-0345",
+        "PDF-0545",
+        "PDF-0863",
+        "PDF-0892"
       ],
       "topic_ids": [
-        "luminous__mechanism"
+        "natural__affect_restoration"
       ],
       "shared_theories": [
-        "Circadian Lighting",
-        "Non-Visual Effects of Light",
-        "Occupational Health",
-        "Chronobiology",
-        "Daylighting Design"
+        "Attention Restoration Theory",
+        "Biophilia Hypothesis",
+        "Stress Reduction Theory",
+        "Biophilic Design",
+        "Environmental Restorativeness"
       ],
       "dominant_iv_families": [
-        "luminous"
+        "natural",
+        "material"
       ],
       "dominant_dv_families": [
-        "mechanism",
-        "affect.wellbeing",
-        "physio"
+        "affect.restoration",
+        "affect.negative.stress",
+        "affect.wellbeing"
       ],
       "maturity": "developing",
       "mean_credence": 0.0,
@@ -76,7 +80,7 @@
       "contradiction_count": 0,
       "replication_count": 0,
       "open_questions": [
-        "What spectral quality and dose parameters produce reliable circadian entrainment effects?"
+        "Is dose-response relationship with nature exposure monotonic or threshold-gated?"
       ],
       "paper_count": 6
     },
@@ -116,27 +120,74 @@
       "paper_count": 5
     },
     {
-      "front_id": "RF_B74A5ED8",
-      "title": "Nature & Biophilia \u00d7 Restoration / Recovery (Attention)",
-      "description": "Research front: Attention Restoration Theory studies investigating Nature & Biophilia effects on Restoration / Recovery.",
+      "front_id": "RF_09299C0E",
+      "title": "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+      "description": "Research front: Circadian Lighting studies investigating Luminous Environment effects on Mechanism / Pathway.",
       "paper_ids": [
-        "PDF-0180",
-        "PDF-0345",
-        "PDF-0545",
-        "PDF-0892"
+        "PDF-0759",
+        "PDF-0762",
+        "PDF-0763",
+        "PDF-0769",
+        "PDF-0850"
       ],
       "topic_ids": [
-        "natural__affect_restoration"
+        "luminous__mechanism"
       ],
       "shared_theories": [
-        "Attention Restoration Theory",
-        "Stress Reduction Theory"
+        "Circadian Lighting",
+        "Non-Visual Effects of Light",
+        "Occupational Health",
+        "Chronobiology",
+        "Light and Health"
       ],
       "dominant_iv_families": [
-        "natural"
+        "luminous",
+        "thermal",
+        "material"
       ],
       "dominant_dv_families": [
-        "affect.restoration",
+        "mechanism",
+        "affect.wellbeing",
+        "cog.performance"
+      ],
+      "maturity": "developing",
+      "mean_credence": 0.0,
+      "mean_omega": 0.0,
+      "contradiction_count": 0,
+      "replication_count": 0,
+      "open_questions": [
+        "What spectral quality and dose parameters produce reliable circadian entrainment effects?"
+      ],
+      "paper_count": 5
+    },
+    {
+      "front_id": "RF_E9398121",
+      "title": "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)",
+      "description": "Research front: Neuroarchitecture studies investigating Spatial Form effects on Wellbeing.",
+      "paper_ids": [
+        "PDF-0723",
+        "PDF-0878",
+        "PDF-0887",
+        "PDF-0893"
+      ],
+      "topic_ids": [
+        "spatial__affect_wellbeing"
+      ],
+      "shared_theories": [
+        "Neuroarchitecture",
+        "Embodied Cognition",
+        "Allostatic Load",
+        "Architectural Health",
+        "Neuroimmunology"
+      ],
+      "dominant_iv_families": [
+        "spatial",
+        "thermal",
+        "acoustic"
+      ],
+      "dominant_dv_families": [
+        "affect.wellbeing",
+        "cog.cognitive_load",
         "affect.negative.stress"
       ],
       "maturity": "developing",
@@ -145,46 +196,6 @@
       "contradiction_count": 0,
       "replication_count": 0,
       "open_questions": [
-        "Is dose-response relationship with nature exposure monotonic or threshold-gated?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 4
-    },
-    {
-      "front_id": "RF_CDEFD9FE",
-      "title": "Luminous Environment \u00d7 Cognitive Performance (Circadian)",
-      "description": "Research front: Circadian Lighting studies investigating Luminous Environment effects on Cognitive Performance.",
-      "paper_ids": [
-        "PDF-0758",
-        "PDF-0866",
-        "PDF-0883",
-        "PDF-0902"
-      ],
-      "topic_ids": [
-        "luminous__cog_performance"
-      ],
-      "shared_theories": [
-        "Circadian Lighting",
-        "Non-visual Light Effects",
-        "Dynamic Lighting",
-        "Biophilic Design",
-        "Daylighting"
-      ],
-      "dominant_iv_families": [
-        "luminous"
-      ],
-      "dominant_dv_families": [
-        "cog.performance",
-        "affect.restoration",
-        "cog.attention"
-      ],
-      "maturity": "developing",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "What spectral quality and dose parameters produce reliable circadian entrainment effects?",
         "Insufficient replication: needs \u22653 independent labs before causal claim."
       ],
       "paper_count": 4
@@ -221,98 +232,33 @@
       "paper_count": 3
     },
     {
-      "front_id": "RF_76D7C1B4",
-      "title": "Nature & Biophilia \u00d7 Stress Response (Attention)",
-      "description": "Research front: Attention Restoration Theory studies investigating Nature & Biophilia effects on Stress Response.",
+      "front_id": "RF_1B2E4607",
+      "title": "Luminous Environment \u00d7 Restoration / Recovery (Attention)",
+      "description": "Research front: Attention Restoration Theory studies investigating Luminous Environment effects on Restoration / Recovery.",
       "paper_ids": [
-        "PDF-0045",
-        "PDF-0109",
-        "PDF-0783"
+        "PDF-0051",
+        "PDF-0285",
+        "PDF-0780"
       ],
       "topic_ids": [
-        "natural__affect_negative_stress"
+        "luminous__affect_restoration"
       ],
       "shared_theories": [
         "Attention Restoration Theory",
-        "Biophilia Hypothesis",
+        "Prospect-Refuge Theory",
+        "Stress Reduction Theory",
         "Biophilic Design",
         "Stress Recovery Theory"
       ],
       "dominant_iv_families": [
-        "natural"
-      ],
-      "dominant_dv_families": [
-        "affect.negative.stress"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "Is dose-response relationship with nature exposure monotonic or threshold-gated?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_BB104F62",
-      "title": "Nature & Biophilia \u00d7 Stress Response (Biophilia)",
-      "description": "Research front: Biophilia Hypothesis studies investigating Nature & Biophilia effects on Stress Response.",
-      "paper_ids": [
-        "PDF-0045",
-        "PDF-0049",
-        "PDF-0471"
-      ],
-      "topic_ids": [
-        "natural__affect_negative_stress"
-      ],
-      "shared_theories": [
-        "Biophilia Hypothesis",
-        "Attention Restoration Theory",
-        "Stress Reduction Theory"
-      ],
-      "dominant_iv_families": [
-        "natural"
-      ],
-      "dominant_dv_families": [
-        "affect.negative.stress"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "Is dose-response relationship with nature exposure monotonic or threshold-gated?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_0BCE22B3",
-      "title": "Spatial Form \u00d7 Spatial Navigation (Spatial)",
-      "description": "Research front: Spatial Cognition studies investigating Spatial Form effects on Spatial Navigation.",
-      "paper_ids": [
-        "PDF-0122",
-        "PDF-0385",
-        "PDF-0911"
-      ],
-      "topic_ids": [
-        "spatial__behav_navigation"
-      ],
-      "shared_theories": [
-        "Spatial Cognition",
-        "Environmental Cognition",
-        "Wayfinding Theory",
-        "Environmental Psychology",
-        "Universal Design"
-      ],
-      "dominant_iv_families": [
+        "luminous",
+        "thermal",
         "spatial"
       ],
       "dominant_dv_families": [
-        "behav.navigation"
+        "affect.restoration",
+        "affect.negative.stress",
+        "affect.wellbeing"
       ],
       "maturity": "emerging",
       "mean_credence": 0.0,
@@ -320,6 +266,47 @@
       "contradiction_count": 0,
       "replication_count": 0,
       "open_questions": [
+        "What spectral quality and dose parameters produce reliable circadian entrainment effects?",
+        "Insufficient replication: needs \u22653 independent labs before causal claim."
+      ],
+      "paper_count": 3
+    },
+    {
+      "front_id": "RF_936013DA",
+      "title": "Spatial Form \u00d7 Neural Activity (Neuroarchitecture)",
+      "description": "Research front: Neuroarchitecture studies investigating Spatial Form effects on Neural Activity.",
+      "paper_ids": [
+        "PDF-0140",
+        "PDF-0729",
+        "PDF-0914"
+      ],
+      "topic_ids": [
+        "spatial__neural"
+      ],
+      "shared_theories": [
+        "Neuroarchitecture",
+        "Environmental Psychology",
+        "Neuroaesthetics",
+        "Approach-Avoidance",
+        "Ceiling Height"
+      ],
+      "dominant_iv_families": [
+        "spatial",
+        "luminous",
+        "thermal"
+      ],
+      "dominant_dv_families": [
+        "neural",
+        "physio",
+        "cog.performance"
+      ],
+      "maturity": "emerging",
+      "mean_credence": 0.0,
+      "mean_omega": 0.0,
+      "contradiction_count": 0,
+      "replication_count": 0,
+      "open_questions": [
+        "What is the mechanistic pathway linking environmental stimulus to physiological response?",
         "Insufficient replication: needs \u22653 independent labs before causal claim."
       ],
       "paper_count": 3
@@ -397,6 +384,43 @@
       "paper_count": 3
     },
     {
+      "front_id": "RF_A1F1CE00",
+      "title": "Luminous Environment \u00d7 Wellbeing (Circadian)",
+      "description": "Research front: Circadian Photobiology studies investigating Luminous Environment effects on Wellbeing.",
+      "paper_ids": [
+        "PDF-0221",
+        "PDF-0518",
+        "PDF-0792"
+      ],
+      "topic_ids": [
+        "luminous__affect_wellbeing"
+      ],
+      "shared_theories": [
+        "Circadian Photobiology",
+        "Daylighting Design"
+      ],
+      "dominant_iv_families": [
+        "luminous",
+        "material",
+        "thermal"
+      ],
+      "dominant_dv_families": [
+        "affect.wellbeing",
+        "health",
+        "cog.performance"
+      ],
+      "maturity": "emerging",
+      "mean_credence": 0.0,
+      "mean_omega": 0.0,
+      "contradiction_count": 0,
+      "replication_count": 0,
+      "open_questions": [
+        "What spectral quality and dose parameters produce reliable circadian entrainment effects?",
+        "Insufficient replication: needs \u22653 independent labs before causal claim."
+      ],
+      "paper_count": 3
+    },
+    {
       "front_id": "RF_4E1CF4CC",
       "title": "Nature & Biophilia \u00d7 Wellbeing (Evidence-Based)",
       "description": "Research front: Evidence-Based Design studies investigating Nature & Biophilia effects on Wellbeing.",
@@ -416,7 +440,9 @@
         "Sustainability"
       ],
       "dominant_iv_families": [
-        "natural"
+        "natural",
+        "spatial",
+        "luminous"
       ],
       "dominant_dv_families": [
         "affect.wellbeing"
@@ -428,6 +454,42 @@
       "replication_count": 0,
       "open_questions": [
         "Is dose-response relationship with nature exposure monotonic or threshold-gated?",
+        "Insufficient replication: needs \u22653 independent labs before causal claim."
+      ],
+      "paper_count": 3
+    },
+    {
+      "front_id": "RF_5554F523",
+      "title": "Luminous Environment \u00d7 Mechanism / Pathway (Place)",
+      "description": "Research front: Place Attachment Theory studies investigating Luminous Environment effects on Mechanism / Pathway.",
+      "paper_ids": [
+        "PDF-0339",
+        "PDF-0508",
+        "PDF-0730"
+      ],
+      "topic_ids": [
+        "luminous__mechanism"
+      ],
+      "shared_theories": [
+        "Place Attachment Theory"
+      ],
+      "dominant_iv_families": [
+        "luminous",
+        "spatial",
+        "material"
+      ],
+      "dominant_dv_families": [
+        "mechanism",
+        "cog.performance",
+        "affect.restoration"
+      ],
+      "maturity": "emerging",
+      "mean_credence": 0.0,
+      "mean_omega": 0.0,
+      "contradiction_count": 0,
+      "replication_count": 0,
+      "open_questions": [
+        "What spectral quality and dose parameters produce reliable circadian entrainment effects?",
         "Insufficient replication: needs \u22653 independent labs before causal claim."
       ],
       "paper_count": 3
@@ -457,189 +519,6 @@
         "physio",
         "neural",
         "affect.negative.stress"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "What is the mechanistic pathway linking environmental stimulus to physiological response?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_81E5EE37",
-      "title": "Acoustic Environment \u00d7 Mechanism / Pathway (Soundscape)",
-      "description": "Research front: Soundscape Theory studies investigating Acoustic Environment effects on Mechanism / Pathway.",
-      "paper_ids": [
-        "PDF-0691",
-        "PDF-0701",
-        "PDF-0836"
-      ],
-      "topic_ids": [
-        "acoustic__mechanism"
-      ],
-      "shared_theories": [
-        "Soundscape Theory",
-        "Appraisal Theory",
-        "Core Affect Theory",
-        "Individual Differences",
-        "Urban Acoustics"
-      ],
-      "dominant_iv_families": [
-        "acoustic"
-      ],
-      "dominant_dv_families": [
-        "mechanism"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "What acoustic thresholds reliably distinguish restorative from masking soundscape effects?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_F3410218",
-      "title": "Luminous Environment \u00d7 Physiological Response (Circadian)",
-      "description": "Research front: Circadian Lighting studies investigating Luminous Environment effects on Physiological Response.",
-      "paper_ids": [
-        "PDF-0767",
-        "PDF-0858",
-        "PDF-0859"
-      ],
-      "topic_ids": [
-        "luminous__physio"
-      ],
-      "shared_theories": [
-        "Circadian Lighting",
-        "Non-visual Light Effects",
-        "Non-Visual Effects of Light",
-        "Workplace Design",
-        "Alertness"
-      ],
-      "dominant_iv_families": [
-        "luminous"
-      ],
-      "dominant_dv_families": [
-        "physio"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "What is the mechanistic pathway linking environmental stimulus to physiological response?",
-        "What spectral quality and dose parameters produce reliable circadian entrainment effects?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_751D22AE",
-      "title": "Nature & Biophilia \u00d7 Wellbeing (Biophilic)",
-      "description": "Research front: Biophilic Design studies investigating Nature & Biophilia effects on Wellbeing.",
-      "paper_ids": [
-        "PDF-0780",
-        "PDF-0816",
-        "PDF-0885"
-      ],
-      "topic_ids": [
-        "natural__affect_wellbeing"
-      ],
-      "shared_theories": [
-        "Biophilic Design",
-        "Attention Restoration Theory",
-        "Stress Recovery Theory",
-        "Green Building",
-        "Salutogenic Design"
-      ],
-      "dominant_iv_families": [
-        "natural"
-      ],
-      "dominant_dv_families": [
-        "affect.wellbeing"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "Is dose-response relationship with nature exposure monotonic or threshold-gated?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_D9C69C30",
-      "title": "Nature & Biophilia \u00d7 Stress Response (Biophilic)",
-      "description": "Research front: Biophilic Design studies investigating Nature & Biophilia effects on Stress Response.",
-      "paper_ids": [
-        "PDF-0783",
-        "PDF-0784",
-        "PDF-0876"
-      ],
-      "topic_ids": [
-        "natural__affect_negative_stress"
-      ],
-      "shared_theories": [
-        "Biophilic Design",
-        "Stress Recovery Theory",
-        "Attention Restoration Theory",
-        "Cognitive Science",
-        "Neuroarchitecture"
-      ],
-      "dominant_iv_families": [
-        "natural"
-      ],
-      "dominant_dv_families": [
-        "affect.negative.stress"
-      ],
-      "maturity": "emerging",
-      "mean_credence": 0.0,
-      "mean_omega": 0.0,
-      "contradiction_count": 0,
-      "replication_count": 0,
-      "open_questions": [
-        "Is dose-response relationship with nature exposure monotonic or threshold-gated?",
-        "Insufficient replication: needs \u22653 independent labs before causal claim."
-      ],
-      "paper_count": 3
-    },
-    {
-      "front_id": "RF_401C04F4",
-      "title": "Material & Surface \u00d7 Physiological Response (Biophilic)",
-      "description": "Research front: Biophilic Design studies investigating Material & Surface effects on Physiological Response.",
-      "paper_ids": [
-        "PDF-0797",
-        "PDF-0852",
-        "PDF-0853"
-      ],
-      "topic_ids": [
-        "material__physio"
-      ],
-      "shared_theories": [
-        "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "Natural Materials",
-        "Psychophysiology"
-      ],
-      "dominant_iv_families": [
-        "material"
-      ],
-      "dominant_dv_families": [
-        "physio",
-        "affect.restoration",
-        "mechanism"
       ],
       "maturity": "emerging",
       "mean_credence": 0.0,

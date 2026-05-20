@@ -1,14 +1,6 @@
 {
   "exclusion_queue": [
     {
-      "paper_id": "PDF-0151",
-      "title": "\u20ddPleiades Publishing, Ltd., 2011. Original Russian Text c Bending of a Piecewise Developable Surface M. I. Shtogrin a",
-      "year": 2011,
-      "claim_count": 1,
-      "article_type": "theoretical",
-      "exclusion_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
       "paper_id": "PDF-0260",
       "title": "Experiments on transformation thermodynamics: Molding the flow of heat",
       "year": null,
@@ -17,52 +9,12 @@
       "exclusion_reason": "contaminant: out-of-scope paper"
     },
     {
-      "paper_id": "PDF-0261",
-      "title": "Metric Signature Transitions in Optical Metamaterials",
-      "year": null,
-      "claim_count": 1,
-      "article_type": "empirical_research",
-      "exclusion_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0264",
-      "title": "Hybrid Visualization of the Medical Images Data Sets",
-      "year": null,
-      "claim_count": 1,
-      "article_type": "not_applicable",
-      "exclusion_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0267",
-      "title": "ROCs in rats? Response to Wixted and Squire",
-      "year": null,
-      "claim_count": 1,
-      "article_type": "not_applicable",
-      "exclusion_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0269",
-      "title": "Constructing receiver operating characteristics (ROCs) with experimental animals: Cautionary notes",
-      "year": null,
-      "claim_count": 1,
-      "article_type": "not_applicable",
-      "exclusion_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
       "paper_id": "PDF-0273",
       "title": "Topology Classes of Flat U(1) Bundles and Diffeomorphic Covariant Representations of the Heisenberg Algebra",
       "year": null,
       "claim_count": 1,
       "article_type": "not_applicable",
       "exclusion_reason": "contaminant: out-of-scope paper"
-    },
-    {
-      "paper_id": "PDF-0789",
-      "title": "Japan's 2011 earthquake and tsunami (Fukushima disaster)",
-      "year": null,
-      "claim_count": 1,
-      "article_type": "empirical_research",
-      "exclusion_reason": "unresolvable_iv|unresolvable_dv"
     }
   ]
 }

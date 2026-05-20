@@ -1,0 +1,11 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0043",
+  "status": "dyk_generation_failed",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:59Z",
+  "cards": [],
+  "failures": [
+    "PDF-0043:63: dyk_b786cc0a30: short_science_summary word count 243 outside 250-450"
+  ]
+}

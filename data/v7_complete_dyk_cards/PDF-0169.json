@@ -1,0 +1,11 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0169",
+  "status": "dyk_generation_failed",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:25:21Z",
+  "cards": [],
+  "failures": [
+    "PDF-0169:226: HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 1000, model: gemini-2.5-pro\\nPlease retry in 17h34m38.911697236s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\","
+  ]
+}

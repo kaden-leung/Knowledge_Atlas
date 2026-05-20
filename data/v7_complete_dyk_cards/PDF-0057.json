@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0057",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:42Z",
+  "cards": [
+    {
+      "id": "dyk_d3685be9e3",
+      "paper_id": "PDF-0057",
+      "source_claim_ids": [
+        "76"
+      ],
+      "title": "Subjective perception of light, not just its brightness, affects mood.",
+      "body": "How you feel about your office lighting matters more for your mood than its objective brightness. A large cross-cultural study of 988 workers found that mood was highest when lighting was experienced as 'just right'. Mood declined when lighting was perceived as either too dark or too bright, regardless of the measured illuminance. This suggests that designing for subjective comfort, not just technical specifications, is crucial for creating healthier work environments that support well-being. These real-world findings demonstrate stronger, more nuanced effects than those typically found in laboratory studies.",
+      "expanded_summary": "This large-scale field study tracked workers in four different countries, revealing that context is key. In countries at higher latitudes, psychological mood varied significantly with the seasons, an effect not seen closer to the equator. The study also found that mood was linked to the distance from a window and that good colour design could contribute to a more positive emotional state. By moving beyond controlled lab settings, the research demonstrates that light and colour are not isolated factors. Instead, they are part of a complex environmental system. The findings push designers to consider the entire built environment as a whole to support occupant well-being.",
+      "measurables": "Researchers analyzed emotional responses from 988 workers using self-report scales. They used a multivariate analysis of variance (MANOVA) to test how these mood scores were affected by factors like gender, age, and country. The study compared these subjective mood reports against both the workers' personal experience of the lighting and objective physical measurements of illuminance, finding that the subjective assessment was the more powerful predictor of mood.",
+      "short_science_summary": "This research aimed to determine how indoor lighting and colour systematically impact the mood of people in real work environments, moving beyond prior laboratory studies that typically isolated single variables. A large cross-cultural field study was conducted with 988 participants across four countries at different latitudes, with data collected across various seasons. The study's central finding highlights a critical distinction between objective environmental metrics and subjective human experience. While objective illuminance (measured brightness) showed no significant impact on mood, workers' subjective assessment of the lighting had a strong, non-linear effect. Mood was reported at its lowest when lighting was experienced as 'much too dark,' improved to its highest level when perceived as 'just right,' and then declined again as it became 'too bright.' The study also uncovered contextual nuances. In countries situated far north of the equator, a significant seasonal variation in psychological mood was observed, a pattern that did not appear in countries closer to the equator. Furthermore, the distance to the nearest window showed a bimodal relationship with mood, and the use of good colour design was found to contribute to a more positive atmosphere. The results underscore that in real-world settings, environmental factors have stronger and more complex effects than in labs. For design, the practical implication is that achieving a subjective fit of light and colour is paramount for occupant well-being. These elements should be treated as an active part of a complex system that makes up a healthy building.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "76"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:16Z",
+        "tokens_in": 3068,
+        "tokens_out": 702,
+        "cost_estimate_usd": 0.019734
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0057",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0057",
+      "source_link": "ka_article_view.html?id=PDF-0057",
+      "apa_citation": "The Impact of Light and Colour on Psychological Mood: A Cross-Cultural Study of Indoor Work Environments."
+    }
+  ],
+  "failures": []
+}

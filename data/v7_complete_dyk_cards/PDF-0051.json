@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0051",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:02Z",
+  "cards": [
+    {
+      "id": "dyk_650e84923c",
+      "paper_id": "PDF-0051",
+      "source_claim_ids": [
+        "71"
+      ],
+      "title": "To make nightscapes feel safer, light the trees, not just the pavement.",
+      "body": "Outdoor lighting after dark does more than just make things brighter; it changes how a place feels. A Finnish thesis found that when light is focused on natural features like trees, people rate the scene as more restorative, safe, and pleasant. In contrast, when the same light is focused on urban features like parking lots or roads, ratings for restorativeness and safety drop. This suggests that the quality and focus of light—not just its brightness—can help make neighborhoods more supportive for mental recovery and recreation in the evening.",
+      "expanded_summary": "This research frames outdoor lighting as a tool for supporting mental recovery, drawing on Attention Restoration Theory. The theory posits that modern life fatigues our directed attention, and environments that support restoration can help us recover. The thesis used a series of studies with both simulated and real-world Finnish nightscapes to test this idea. By analyzing ratings of fear, preference, and restorativeness alongside qualitative comments, the author found a consistent pattern. Lighting that highlights pleasant, natural content supports the psychological conditions for restoration. This provides a new framework for lighting design that goes beyond simple visibility to consider the psychological impact of what the light reveals.",
+      "measurables": "The research was based on subjective assessments of both simulated and real-world outdoor environments after dark. Participants rated scenes on scales for perceived restorativeness, fear, preference, and pleasantness. In later studies, these quantitative ratings were supplemented with qualitative data from free-response comments. The Perceived Restorativeness Scale (PRS) was a key instrument, and its internal consistency was found to be high across all test images (Cronbach's α > 0.88), indicating its reliability for this research context.",
+      "short_science_summary": "Outdoor lighting changes how restorative, safe, and pleasant a place feels after dark. The thesis argues that people do not read light only as brightness. They read it as a scene cue that can support recovery, lower fear, and make a neighborhood feel usable. When light falls on natural or pleasant content, ratings of restorative potential rise. When light falls on urban or unpleasant content, the same people give lower restorative ratings and often more fear. The thesis combines a literature review with several empirical studies. It uses simulated scenes and field scenes, then asks people to rate restorativeness, fear, preference, pleasantness, and related lighting attributes. The design also includes free responses in later studies, so the author can compare numbers with open comments. The work uses ANOVA, linear regression, and appendix brightness checks, which makes it a multi-study thesis rather than a single lab test. That setup lets the author connect theory, scene content, and outdoor use after dark. The thesis organizes four studies on restoration, scene content, and focus of light. The abstract does not give one thesis-wide N, because the sample changes across chapters, but the thesis reports repeated significance checks at p < .05 and uses a mean age of 40 years in one field sample. The Roihuvuori and Herttoniemi studies compare outdoor night scenes, and the appendix brightness checks use 12 external raters with Friedman tests. Those details matter because they show both scale and caution, and they keep the chapter from sounding like a single anecdotal case. The main design move is to stop treating better lighting as just more light. The thesis argues for quality-based lighting that tracks scene content, user expectation, and neighborhood use. Natural and pleasant focal content seems to support restorativeness and safety, while urban or harsh content pulls the other way. That means designers should think about where the light lands, what the light reveals, and how the scene reads after dark. It also means near-home lighting can support recreation and recovery, not only circulation. The work stays close to Finnish nightscapes and to ratings taken from people who can describe and compare scenes. It also faces the usual risk of self-report: people may tell a story about lighting that is cleaner than the one their behavior would show. The thesis itself notes cultural, climatic, and scale issues, and some brightness judgments may depend on how the task was set up. The local record should keep that uncertainty visible and should not turn the result into a universal rule for every street or every climate.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "71"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:37Z",
+        "tokens_in": 2449,
+        "tokens_out": 952,
+        "cost_estimate_usd": 0.021627
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0051",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0051",
+      "source_link": "ka_article_view.html?id=PDF-0051",
+      "apa_citation": "Perceptions of lighting, perceived restorativeness, preference and fear in outdoor spaces."
+    }
+  ],
+  "failures": []
+}

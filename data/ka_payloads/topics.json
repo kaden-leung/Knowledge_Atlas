@@ -1,15 +1,68 @@
 {
   "topics": [
     {
+      "id": "RF_1B2E4607",
+      "cat": "Neuroscience",
+      "n": 3,
+      "voi": 0.639,
+      "name": "Luminous Environment \u00d7 Restoration / Recovery (Attention)",
+      "desc": "Theories: Attention Restoration Theory, Prospect-Refuge Theory, Stress Reduction Theory Constructs: luminous  affect restoration Maturity: emerging.",
+      "maturity": "emerging",
+      "mean_credence": 0.794,
+      "mean_omega": 0.639,
+      "shared_theories": [
+        "Attention Restoration Theory",
+        "Prospect-Refuge Theory",
+        "Stress Reduction Theory",
+        "Biophilic Design",
+        "Stress Recovery Theory"
+      ],
+      "shared_constructs": [
+        "luminous  affect restoration"
+      ],
+      "contradictions": 0,
+      "replications": 0,
+      "paper_ids": [
+        "PDF-0051",
+        "PDF-0285",
+        "PDF-0780"
+      ]
+    },
+    {
+      "id": "RF_A1F1CE00",
+      "cat": "Neuroscience",
+      "n": 3,
+      "voi": 0.633,
+      "name": "Luminous Environment \u00d7 Wellbeing (Circadian)",
+      "desc": "Theories: Circadian Photobiology, Daylighting Design Constructs: luminous  affect wellbeing Maturity: emerging.",
+      "maturity": "emerging",
+      "mean_credence": 0.796,
+      "mean_omega": 0.633,
+      "shared_theories": [
+        "Circadian Photobiology",
+        "Daylighting Design"
+      ],
+      "shared_constructs": [
+        "luminous  affect wellbeing"
+      ],
+      "contradictions": 0,
+      "replications": 0,
+      "paper_ids": [
+        "PDF-0221",
+        "PDF-0518",
+        "PDF-0792"
+      ]
+    },
+    {
       "id": "RF_53DA3A44",
       "cat": "Neuroscience",
       "n": 3,
-      "voi": 0.621,
+      "voi": 0.632,
       "name": "Spatial Form \u00d7 Aesthetic Preference (Neuroaesthetics)",
       "desc": "Theories: Neuroaesthetics Constructs: spatial  affect preference Maturity: emerging.",
       "maturity": "emerging",
-      "mean_credence": 0.794,
-      "mean_omega": 0.621,
+      "mean_credence": 0.809,
+      "mean_omega": 0.632,
       "shared_theories": [
         "Neuroaesthetics"
       ],
@@ -25,70 +78,15 @@
       ]
     },
     {
-      "id": "RF_0BCE22B3",
-      "cat": "Methodology",
-      "n": 3,
-      "voi": 0.621,
-      "name": "Spatial Form \u00d7 Spatial Navigation (Spatial)",
-      "desc": "Theories: Spatial Cognition, Environmental Cognition, Wayfinding Theory Constructs: spatial  behav navigation Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.774,
-      "mean_omega": 0.621,
-      "shared_theories": [
-        "Spatial Cognition",
-        "Environmental Cognition",
-        "Wayfinding Theory",
-        "Environmental Psychology",
-        "Universal Design"
-      ],
-      "shared_constructs": [
-        "spatial  behav navigation"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0122",
-        "PDF-0385",
-        "PDF-0911"
-      ]
-    },
-    {
-      "id": "RF_76D7C1B4",
-      "cat": "Neuroscience",
-      "n": 3,
-      "voi": 0.615,
-      "name": "Nature & Biophilia \u00d7 Stress Response (Attention)",
-      "desc": "Theories: Attention Restoration Theory, Biophilia Hypothesis, Biophilic Design Constructs: natural  affect negative stress Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.79,
-      "mean_omega": 0.615,
-      "shared_theories": [
-        "Attention Restoration Theory",
-        "Biophilia Hypothesis",
-        "Biophilic Design",
-        "Stress Recovery Theory"
-      ],
-      "shared_constructs": [
-        "natural  affect negative stress"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0045",
-        "PDF-0109",
-        "PDF-0783"
-      ]
-    },
-    {
       "id": "RF_DB748AA0",
       "cat": "Methodology",
       "n": 7,
-      "voi": 0.604,
+      "voi": 0.617,
       "name": "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)",
       "desc": "Theories: Soundscape Theory, Natural Ventilation Design, Architectural Education Constructs: acoustic  affect soundscape Maturity: developing.",
       "maturity": "developing",
-      "mean_credence": 0.742,
-      "mean_omega": 0.604,
+      "mean_credence": 0.759,
+      "mean_omega": 0.617,
       "shared_theories": [
         "Soundscape Theory",
         "Natural Ventilation Design",
@@ -114,16 +112,19 @@
     {
       "id": "RF_B74A5ED8",
       "cat": "Neuroscience",
-      "n": 4,
-      "voi": 0.602,
+      "n": 6,
+      "voi": 0.615,
       "name": "Nature & Biophilia \u00d7 Restoration / Recovery (Attention)",
-      "desc": "Theories: Attention Restoration Theory, Stress Reduction Theory Constructs: natural  affect restoration Maturity: developing.",
+      "desc": "Theories: Attention Restoration Theory, Biophilia Hypothesis, Stress Reduction Theory Constructs: natural  affect restoration Maturity: developing.",
       "maturity": "developing",
-      "mean_credence": 0.743,
-      "mean_omega": 0.602,
+      "mean_credence": 0.764,
+      "mean_omega": 0.615,
       "shared_theories": [
         "Attention Restoration Theory",
-        "Stress Reduction Theory"
+        "Biophilia Hypothesis",
+        "Stress Reduction Theory",
+        "Biophilic Design",
+        "Environmental Restorativeness"
       ],
       "shared_constructs": [
         "natural  affect restoration"
@@ -131,76 +132,24 @@
       "contradictions": 0,
       "replications": 0,
       "paper_ids": [
+        "PDF-0045",
         "PDF-0180",
         "PDF-0345",
         "PDF-0545",
+        "PDF-0863",
         "PDF-0892"
-      ]
-    },
-    {
-      "id": "RF_BB104F62",
-      "cat": "Neuroscience",
-      "n": 3,
-      "voi": 0.6,
-      "name": "Nature & Biophilia \u00d7 Stress Response (Biophilia)",
-      "desc": "Theories: Biophilia Hypothesis, Attention Restoration Theory, Stress Reduction Theory Constructs: natural  affect negative stress Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.734,
-      "mean_omega": 0.6,
-      "shared_theories": [
-        "Biophilia Hypothesis",
-        "Attention Restoration Theory",
-        "Stress Reduction Theory"
-      ],
-      "shared_constructs": [
-        "natural  affect negative stress"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0045",
-        "PDF-0049",
-        "PDF-0471"
-      ]
-    },
-    {
-      "id": "RF_D9C69C30",
-      "cat": "Neuroscience",
-      "n": 3,
-      "voi": 0.599,
-      "name": "Nature & Biophilia \u00d7 Stress Response (Biophilic)",
-      "desc": "Theories: Biophilic Design, Stress Recovery Theory, Attention Restoration Theory Constructs: natural  affect negative stress Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.752,
-      "mean_omega": 0.599,
-      "shared_theories": [
-        "Biophilic Design",
-        "Stress Recovery Theory",
-        "Attention Restoration Theory",
-        "Cognitive Science",
-        "Neuroarchitecture"
-      ],
-      "shared_constructs": [
-        "natural  affect negative stress"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0783",
-        "PDF-0784",
-        "PDF-0876"
       ]
     },
     {
       "id": "RF_4E1CF4CC",
       "cat": "Physiological",
       "n": 3,
-      "voi": 0.596,
+      "voi": 0.607,
       "name": "Nature & Biophilia \u00d7 Wellbeing (Evidence-Based)",
       "desc": "Theories: Evidence-Based Design, Biophilia Hypothesis, Stress Reduction Theory Constructs: natural  affect wellbeing Maturity: emerging.",
       "maturity": "emerging",
-      "mean_credence": 0.713,
-      "mean_omega": 0.596,
+      "mean_credence": 0.726,
+      "mean_omega": 0.607,
       "shared_theories": [
         "Evidence-Based Design",
         "Biophilia Hypothesis",
@@ -223,12 +172,12 @@
       "id": "RF_D339EF64",
       "cat": "Neuroscience",
       "n": 3,
-      "voi": 0.595,
+      "voi": 0.604,
       "name": "Nature & Biophilia \u00d7 Mechanism / Pathway (Biophilia)",
       "desc": "Theories: Biophilia Hypothesis, Attention Restoration Theory, 14 Patterns of Biophilic Design Constructs: natural  mechanism Maturity: emerging.",
       "maturity": "emerging",
-      "mean_credence": 0.728,
-      "mean_omega": 0.595,
+      "mean_credence": 0.74,
+      "mean_omega": 0.604,
       "shared_theories": [
         "Biophilia Hypothesis",
         "Attention Restoration Theory",
@@ -246,43 +195,15 @@
       ]
     },
     {
-      "id": "RF_751D22AE",
-      "cat": "Neuroscience",
-      "n": 3,
-      "voi": 0.592,
-      "name": "Nature & Biophilia \u00d7 Wellbeing (Biophilic)",
-      "desc": "Theories: Biophilic Design, Attention Restoration Theory, Stress Recovery Theory Constructs: natural  affect wellbeing Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.708,
-      "mean_omega": 0.592,
-      "shared_theories": [
-        "Biophilic Design",
-        "Attention Restoration Theory",
-        "Stress Recovery Theory",
-        "Green Building",
-        "Salutogenic Design"
-      ],
-      "shared_constructs": [
-        "natural  affect wellbeing"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0780",
-        "PDF-0816",
-        "PDF-0885"
-      ]
-    },
-    {
       "id": "RF_9A8C8821",
       "cat": "Neuroscience",
       "n": 3,
-      "voi": 0.589,
+      "voi": 0.6,
       "name": "Acoustic Environment \u00d7 Physiological Response (Soundscape)",
       "desc": "Theories: Soundscape Theory, Attention Restoration Theory Constructs: acoustic  physio Maturity: emerging.",
       "maturity": "emerging",
-      "mean_credence": 0.749,
-      "mean_omega": 0.589,
+      "mean_credence": 0.764,
+      "mean_omega": 0.6,
       "shared_theories": [
         "Soundscape Theory",
         "Attention Restoration Theory"
@@ -299,15 +220,43 @@
       ]
     },
     {
+      "id": "RF_936013DA",
+      "cat": "Neuroscience",
+      "n": 3,
+      "voi": 0.599,
+      "name": "Spatial Form \u00d7 Neural Activity (Neuroarchitecture)",
+      "desc": "Theories: Neuroarchitecture, Environmental Psychology, Neuroaesthetics Constructs: spatial  neural Maturity: emerging.",
+      "maturity": "emerging",
+      "mean_credence": 0.713,
+      "mean_omega": 0.599,
+      "shared_theories": [
+        "Neuroarchitecture",
+        "Environmental Psychology",
+        "Neuroaesthetics",
+        "Approach-Avoidance",
+        "Ceiling Height"
+      ],
+      "shared_constructs": [
+        "spatial  neural"
+      ],
+      "contradictions": 0,
+      "replications": 0,
+      "paper_ids": [
+        "PDF-0140",
+        "PDF-0729",
+        "PDF-0914"
+      ]
+    },
+    {
       "id": "RF_622DE4B3",
       "cat": "Neuroscience",
       "n": 3,
-      "voi": 0.586,
+      "voi": 0.597,
       "name": "Spatial Form \u00d7 Physiological Response (Stress)",
       "desc": "Theories: Stress Reduction Theory, Attention Restoration Theory, high-rise mental health and restorative environment framing Constructs: spatial  physio Maturity: emerging.",
       "maturity": "emerging",
-      "mean_credence": 0.723,
-      "mean_omega": 0.586,
+      "mean_credence": 0.737,
+      "mean_omega": 0.597,
       "shared_theories": [
         "Stress Reduction Theory",
         "Attention Restoration Theory",
@@ -329,12 +278,12 @@
       "id": "RF_1214616B",
       "cat": "Neuroscience",
       "n": 5,
-      "voi": 0.581,
+      "voi": 0.592,
       "name": "Nature & Biophilia \u00d7 Wellbeing (Biophilia)",
       "desc": "Theories: Biophilia Hypothesis, Evidence-Based Design, Circadian Lighting Theory Constructs: natural  affect wellbeing Maturity: developing.",
       "maturity": "developing",
-      "mean_credence": 0.681,
-      "mean_omega": 0.581,
+      "mean_credence": 0.695,
+      "mean_omega": 0.592,
       "shared_theories": [
         "Biophilia Hypothesis",
         "Evidence-Based Design",
@@ -354,106 +303,21 @@
       ]
     },
     {
-      "id": "RF_81E5EE37",
-      "cat": "Methodology",
-      "n": 3,
-      "voi": 0.58,
-      "name": "Acoustic Environment \u00d7 Mechanism / Pathway (Soundscape)",
-      "desc": "Theories: Soundscape Theory, Appraisal Theory, Core Affect Theory Constructs: acoustic  mechanism Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.697,
-      "mean_omega": 0.58,
-      "shared_theories": [
-        "Soundscape Theory",
-        "Appraisal Theory",
-        "Core Affect Theory",
-        "Individual Differences",
-        "Urban Acoustics"
-      ],
-      "shared_constructs": [
-        "acoustic  mechanism"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0691",
-        "PDF-0701",
-        "PDF-0836"
-      ]
-    },
-    {
-      "id": "RF_F3410218",
-      "cat": "Neuroscience",
-      "n": 3,
-      "voi": 0.577,
-      "name": "Luminous Environment \u00d7 Physiological Response (Circadian)",
-      "desc": "Theories: Circadian Lighting, Non-visual Light Effects, Non-Visual Effects of Light Constructs: luminous  physio Maturity: emerging.",
-      "maturity": "emerging",
-      "mean_credence": 0.737,
-      "mean_omega": 0.577,
-      "shared_theories": [
-        "Circadian Lighting",
-        "Non-visual Light Effects",
-        "Non-Visual Effects of Light",
-        "Workplace Design",
-        "Alertness"
-      ],
-      "shared_constructs": [
-        "luminous  physio"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0767",
-        "PDF-0858",
-        "PDF-0859"
-      ]
-    },
-    {
-      "id": "RF_CDEFD9FE",
-      "cat": "Neuroscience",
-      "n": 4,
-      "voi": 0.57,
-      "name": "Luminous Environment \u00d7 Cognitive Performance (Circadian)",
-      "desc": "Theories: Circadian Lighting, Non-visual Light Effects, Dynamic Lighting Constructs: luminous  cog performance Maturity: developing.",
-      "maturity": "developing",
-      "mean_credence": 0.686,
-      "mean_omega": 0.57,
-      "shared_theories": [
-        "Circadian Lighting",
-        "Non-visual Light Effects",
-        "Dynamic Lighting",
-        "Biophilic Design",
-        "Daylighting"
-      ],
-      "shared_constructs": [
-        "luminous  cog performance"
-      ],
-      "contradictions": 0,
-      "replications": 0,
-      "paper_ids": [
-        "PDF-0758",
-        "PDF-0866",
-        "PDF-0883",
-        "PDF-0902"
-      ]
-    },
-    {
       "id": "RF_09299C0E",
       "cat": "Neuroscience",
-      "n": 6,
-      "voi": 0.556,
+      "n": 5,
+      "voi": 0.588,
       "name": "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
       "desc": "Theories: Circadian Lighting, Non-Visual Effects of Light, Occupational Health Constructs: luminous  mechanism Maturity: developing.",
       "maturity": "developing",
-      "mean_credence": 0.694,
-      "mean_omega": 0.556,
+      "mean_credence": 0.756,
+      "mean_omega": 0.588,
       "shared_theories": [
         "Circadian Lighting",
         "Non-Visual Effects of Light",
         "Occupational Health",
         "Chronobiology",
-        "Daylighting Design"
+        "Light and Health"
       ],
       "shared_constructs": [
         "luminous  mechanism"
@@ -465,44 +329,68 @@
         "PDF-0762",
         "PDF-0763",
         "PDF-0769",
-        "PDF-0771",
         "PDF-0850"
       ]
     },
     {
-      "id": "RF_401C04F4",
-      "cat": "Environmental",
+      "id": "RF_5554F523",
+      "cat": "Methodology",
       "n": 3,
-      "voi": 0.522,
-      "name": "Material & Surface \u00d7 Physiological Response (Biophilic)",
-      "desc": "Theories: Biophilic Design, Material Perception, Physiological Relaxation Constructs: material  physio Maturity: emerging.",
+      "voi": 0.587,
+      "name": "Luminous Environment \u00d7 Mechanism / Pathway (Place)",
+      "desc": "Theories: Place Attachment Theory Constructs: luminous  mechanism Maturity: emerging.",
       "maturity": "emerging",
-      "mean_credence": 0.631,
-      "mean_omega": 0.522,
+      "mean_credence": 0.697,
+      "mean_omega": 0.587,
       "shared_theories": [
-        "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "Natural Materials",
-        "Psychophysiology"
+        "Place Attachment Theory"
       ],
       "shared_constructs": [
-        "material  physio"
+        "luminous  mechanism"
       ],
       "contradictions": 0,
       "replications": 0,
       "paper_ids": [
-        "PDF-0797",
-        "PDF-0852",
-        "PDF-0853"
+        "PDF-0339",
+        "PDF-0508",
+        "PDF-0730"
+      ]
+    },
+    {
+      "id": "RF_E9398121",
+      "cat": "Neuroscience",
+      "n": 4,
+      "voi": 0.571,
+      "name": "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)",
+      "desc": "Theories: Neuroarchitecture, Embodied Cognition, Allostatic Load Constructs: spatial  affect wellbeing Maturity: developing.",
+      "maturity": "developing",
+      "mean_credence": 0.659,
+      "mean_omega": 0.571,
+      "shared_theories": [
+        "Neuroarchitecture",
+        "Embodied Cognition",
+        "Allostatic Load",
+        "Architectural Health",
+        "Neuroimmunology"
+      ],
+      "shared_constructs": [
+        "spatial  affect wellbeing"
+      ],
+      "contradictions": 0,
+      "replications": 0,
+      "paper_ids": [
+        "PDF-0723",
+        "PDF-0878",
+        "PDF-0887",
+        "PDF-0893"
       ]
     }
   ],
   "summary": {
-    "front_count": 18,
-    "unique_paper_count": 61,
+    "front_count": 14,
+    "unique_paper_count": 53,
     "front_source": "research_fronts_v7",
-    "front_covered_paper_count": 61,
+    "front_covered_paper_count": 53,
     "article_count": 760
   }
 }

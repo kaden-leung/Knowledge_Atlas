@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0025",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:38Z",
+  "cards": [
+    {
+      "id": "dyk_3e48f331c8",
+      "paper_id": "PDF-0025",
+      "source_claim_ids": [
+        "36"
+      ],
+      "title": "Daylight may boost performance through visibility, mood, and health pathways.",
+      "body": "While studies show a strong link between daylight in buildings and better human performance, the exact reasons why are still being explored. Researchers suggest three potential mechanisms. Daylight can improve performance by enhancing visibility for tasks, improving people's mood, and supporting better overall health through pathways like circadian rhythm regulation. Understanding these pathways is critical for designing schools and offices that don't just save energy, but actively support the wellbeing and productivity of occupants.",
+      "expanded_summary": "A landmark study by Heschong et al. (2002) found students in classrooms with the most daylight progressed 20% faster in math and 26% faster in reading over one year. While the study established this powerful link, it could not isolate the specific mechanism. The statistical analysis controlled for over 20 variables like teacher quality and student demographics, but the reason for the effect remained unspecified. Subsequent analysis suggests several plausible pathways. These include direct visual benefits like reduced eye strain (visibility), psychological effects from a more pleasant environment (enhanced mood), and physiological impacts such as the regulation of sleep-wake cycles via circadian entrainment (improved health). This highlights that the benefits of daylight likely extend beyond simple illumination.",
+      "measurables": "This mechanism was not directly measured in the foundational study. Researchers instead correlated daylighting conditions with academic outcomes. Daylighting was rated by observers on a multi-point scale based on window area, orientation, and skylights. Student performance was measured by standardized test score improvements in math and reading over one academic year, controlling for confounding variables.",
+      "short_science_summary": "A landmark study by Heschong, Wright, and Okura (2002) provided strong quantitative evidence linking daylight in schools to academic performance. Analyzing data from approximately 21,000 students in over 2,000 classrooms, they found that students in classrooms with the most daylight progressed 20% faster on math tests and 26% faster on reading tests over one year compared to those with the least daylight. This large effect size persisted even after statistical models controlled for over 20 confounding variables, including teacher quality, class size, and student demographics. The study used a quasi-experimental design where trained observers rated each classroom's daylighting based on window area, orientation, glazing, and the presence of skylights. Student performance was measured by improvement in standardized test scores. The findings had significant implications, suggesting that architectural design is a powerful and cost-effective lever for improving educational outcomes, and influencing design standards like LEED. However, the study has known limitations. A key critique is that the mechanism for the effect is unspecified. The research established a strong correlation but could not determine *why* daylight improved performance. Researchers have since proposed several potential pathways to explain the finding. These include: (1) increased visibility, where better quality light reduces eye strain and improves visual comfort for learning tasks; (2) enhanced mood, where a daylit environment has a positive psychological impact on students and teachers; and (3) improved health, through physiological processes like the regulation of circadian rhythms which affect alertness and sleep. Disentangling these potential mechanisms remains an important area for future research.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "36"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:02Z",
+        "tokens_in": 2843,
+        "tokens_out": 688,
+        "cost_estimate_usd": 0.018849
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0025",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0025",
+      "source_link": "ka_article_view.html?id=PDF-0025",
+      "apa_citation": "Daylighting Impacts on Human Performance in School."
+    }
+  ],
+  "failures": []
+}

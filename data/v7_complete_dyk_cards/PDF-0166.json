@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0166",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:48Z",
+  "cards": [
+    {
+      "id": "dyk_5f246ed8a1",
+      "paper_id": "PDF-0166",
+      "source_claim_ids": [
+        "223"
+      ],
+      "title": "The visual system uses five cues to perceive heading amid moving objects",
+      "body": "When you walk through a scene with moving cars or people, your brain must distinguish their motion from the background to know where you're going. A mathematical model shows how this is possible using five specific cues from the pattern of visual motion, such as the expansion or acceleration of objects. By combining these cues, the visual system can cancel out the visual 'noise' from moving objects, reducing heading perception errors from a potential 6-8 degrees down to just 1-2 degrees. This explains our robust ability to navigate complex, dynamic environments.",
+      "expanded_summary": "The model identifies five key segmentation cues: accretion/deletion (how objects cover/uncover the background), expansion/contraction, acceleration/deceleration, spatial curvature, and temporal curvature. The paper derives these cues mathematically from the principles of optic flow. It does not present new experiments, but instead shows that a linear combination of these cues can successfully explain the results of three previous psychological studies on heading perception. For example, the model demonstrates that acceleration/deceleration cues are highly effective, correctly distinguishing moving objects from static background features in 83-98% of simulated cases. This provides a concrete framework for understanding how multiple, redundant visual signals support robust navigation.",
+      "measurables": "This paper is analytical, deriving mathematical expressions for five visual cues from optic flow equations. The model's performance is not tested in new experiments but is evaluated by fitting its predictions to three published psychophysical datasets. The key measure from these datasets is heading bias—the error in degrees between a participant's perceived direction of travel and their actual direction—in the presence of independently moving objects. The model's success is gauged by its ability to reduce this bias.",
+      "short_science_summary": "Humans are remarkably adept at determining their direction of travel (heading) from the visual motion of the world, known as optic flow, even in complex scenes with independently moving objects (IMOs). This paper presents an analytical model to explain this robustness. It posits that the visual system does not need to fully segment a scene before calculating heading. Instead, it can use a set of five specific segmentation cues derivable from the optic flow field: accretion/deletion, expansion/contraction, acceleration/deceleration, spatial curvature, and temporal curvature. The authors provide closed-form expressions for each cue, showing how they can be linearly combined to cancel the heading bias introduced by IMOs. The model is not tested with new experiments but is validated against three published psychophysical datasets (Warren and Saunders, 1995; Royden and Hildreth, 1996; Fajen and Kim, 2002). The central result is that these cues are highly effective at distinguishing IMOs from the static background. For instance, acceleration/deceleration cues achieve 83-98% distinction rates. When the model incorporates these cues, it successfully reduces simulated heading bias from approximately 6-8 degrees down to 1-2 degrees, closely matching human performance in the original studies. The authors acknowledge limitations, such as using instantaneous flow fields rather than integrating over time, assuming simple IMO motion, and hand-fitting parameters to the data. The model also slightly overestimates heading bias by about 2 degrees in scenarios where the observer's and IMO's paths cross. Nevertheless, the work provides a powerful mathematical framework for understanding human navigation and offers concrete tools for improving computational vision systems in autonomous agents.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "223"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:22Z",
+        "tokens_in": 2392,
+        "tokens_out": 727,
+        "cost_estimate_usd": 0.018081
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0166",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0166",
+      "source_link": "ka_article_view.html?id=PDF-0166",
+      "apa_citation": "Florian Raudies et al. (2013). Modeling heading and path perception from optic ﬂow in the case of independently moving objects. https://doi.org/10.3389/fnbeh.2013.00023"
+    }
+  ],
+  "failures": []
+}

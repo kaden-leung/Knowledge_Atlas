@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0206",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:24:02Z",
+  "cards": [
+    {
+      "id": "dyk_6e06fc6752",
+      "paper_id": "PDF-0206",
+      "source_claim_ids": [
+        "295"
+      ],
+      "title": "Feeling crowded depends on whether you're cooperating or competing.",
+      "body": "The feeling of being crowded is not simply a matter of physical density. An experiment showed that while a small room felt more crowded than a large one under competitive conditions, room size had no effect when participants were cooperating on a task. For men, being in a small, competitive room significantly increased feelings of aggression and discomfort. This suggests the experience of crowding is psychological, shaped by social context. For designers, this means arranging a space to promote cooperation can make high-density environments feel less stressful, while layouts that encourage competition may amplify negative feelings.",
+      "expanded_summary": "The study's authors propose that density becomes psychologically stressful when it is perceived as a constraint on one's goals. In a competitive setting, the presence of others directly interferes with the individual goal of winning, and a small space amplifies this interference. Conversely, in a cooperative setting, others are instrumental to the shared goal, so high density does not trigger the same negative experience. Notably, the researchers found no main effect of room size on general enjoyment or anxiety. This confirms that high density is not inherently distressing; it only becomes the negative experience of 'crowding' when physical, social, and personal factors interact to threaten individual control or goal attainment.",
+      "measurables": "After participating in a 30-minute trivia game, students rated their experience on 9-point scales. These self-report measures assessed perceived crowding (e.g., 'crowded–uncrowded,' 'restricted–free'), physical comfort, anxiety, and aggressiveness. Observers also recorded behavioral indices at 5-minute intervals, counting the number of friendly jokes, hostile comments, and the amount of group laughter, though these observations were largely non-significant.",
+      "short_science_summary": "To investigate whether the perception of crowding is a simple function of physical density or a more complex psychological state, researchers conducted a 2 × 2 × 2 factorial experiment with 128 undergraduates. The study manipulated room size (large vs. small), task orientation (competitive vs. cooperative), and the sex of participants (all-male vs. all-female groups). Groups of eight played a 30-minute trivia game. In the competitive condition, individuals vied for cash prizes; in the cooperative condition, the group worked as a team. Afterward, participants completed questionnaires rating their feelings of crowding, aggressiveness, and comfort. The results demonstrated that crowding is irreducible to spatial metrics alone. A significant interaction (p < 0.05) revealed that the small room was perceived as more crowded only under competitive conditions; when the task was cooperative, room size had no significant effect. Furthermore, another interaction showed that males in small, competitive rooms reported significantly more crowding, aggressiveness, and physical discomfort than any other group. Importantly, room size did not significantly affect overall enjoyment or anxiety, suggesting that high density does not automatically produce generalized distress. The study establishes that the experience of crowding emerges from an interaction between physical space, social context, and personal characteristics. For designers, this implies that spatial arrangements that promote cooperation (e.g., circular layouts) can mitigate the stress of high density, a crucial insight for shared workspaces or public areas. The study's limitations include its homogenous undergraduate sample from 1973, the short 30-minute exposure time, and its reliance on self-report measures without physiological corroboration.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "295"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:25Z",
+        "tokens_in": 2201,
+        "tokens_out": 710,
+        "cost_estimate_usd": 0.017253
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0206",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0206",
+      "source_link": "ka_article_view.html?id=PDF-0206",
+      "apa_citation": "Physical, Social, and Personal Determinants of the Perception of Crowding."
+    }
+  ],
+  "failures": []
+}

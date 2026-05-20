@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0091",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:58Z",
+  "cards": [
+    {
+      "id": "dyk_f39e68ad7c",
+      "paper_id": "PDF-0091",
+      "source_claim_ids": [
+        "132"
+      ],
+      "title": "It's not the crowd, it's the closeness: personal space violations drive the feeling of crowding.",
+      "body": "The feeling of being crowded is not just about the number of people in a room, but about having your personal space violated. A classic experiment found that people felt more crowded when sitting close together, even in a low-density room. Interestingly, adding pictures to the walls reduced the feeling of crowding, but only for those sitting close. This suggests crowding is a two-step process: arousal from the personal space violation, followed by blaming other people. The pictures provide a distraction, changing the attribution and easing the stress. This matters for designing shared spaces like offices and waiting rooms.",
+      "expanded_summary": "To test this \"two-factor\" theory, researchers varied room density and interaction distance independently. In some conditions, they placed pictures and wind chimes on the walls as \"attribution inhibitors.\" The results supported the theory: interaction distance was a stronger predictor of crowding than density. Supporting this, participants reported being more attracted to fellow group members in low-density conditions and when sitting farther apart. The pictures only helped reduce crowding in the close-interaction conditions, where the social threat was highest and a distraction was most needed. This highlights a key lesson for designers: managing personal space is the first priority, and visual elements can only mitigate stress when social cues are already intense.",
+      "measurables": "Researchers measured the experience of crowding using questionnaires administered after participants worked on two tasks in groups. These self-report instruments gathered ratings of the room, feelings of being crowded, and attraction to other group members. The study also measured task performance, time estimates, and punitiveness to see how the experience of crowding affected behavior and cognition.",
+      "short_science_summary": "This 1976 paper proposes a two-factor theory for the experience of crowding, separating raw density from the social interpretation of space. The theory posits that crowding occurs in two steps: first, an individual feels aroused by a violation of their personal space, and second, they attribute this arousal to the other people present. This model predicts that interaction distance is more critical than simple density in producing the feeling of being crowded. To test this, Worchel and Teddlie ran an experiment with student groups, varying density (high vs. low), interaction distance (close vs. far), and the presence of \"attribution inhibitors\" (pictures and wind chimes vs. bare walls). The team measured outcomes using questionnaires on crowding, group attraction, and other factors. The results strongly supported the theory. Far interaction conditions showed a significant density effect on crowding (F(1,32)=99.00, p < .001), but this effect vanished in close conditions (F(1,32)=1.96, ns), indicating that personal space violation was the dominant factor. The presence of pictures significantly reduced crowding, but only in the close-interaction setting (F(1,32)=23.04, p < .001). This suggests the pictures offered an alternative attribution for arousal when it was most intense. Participants also reported more attraction to group members in low-density and far-interaction conditions. For designers, the study implies that protecting personal space is more effective than simply increasing room size. Distracting or interesting decor can soften the stress of close quarters, but it is not a universal solution. The study's limitations, including a student sample and a specific lab setting, mean the findings are context-dependent, but they offer a foundational insight into the psychology of shared spaces.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "132"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:30Z",
+        "tokens_in": 2057,
+        "tokens_out": 742,
+        "cost_estimate_usd": 0.017301
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0091",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0091",
+      "source_link": "ka_article_view.html?id=PDF-0091",
+      "apa_citation": "(1976)."
+    }
+  ],
+  "failures": []
+}
