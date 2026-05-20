@@ -41,6 +41,20 @@ STUDENT_TARGETS = [
     "target_8_replication_priority",
 ]
 
+STUDENT_MOVE_TEXT = {
+    "target_1_better_stimuli": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+    "target_2_better_measures": "Audit whether the papers really measure the construct they claim to measure.",
+    "target_4_deconfounding": "Build an IV, DV, and confound table across three to five papers.",
+    "target_8_replication_priority": "Check whether the central finding has independent replication or review support.",
+}
+
+STUDENT_DELIVERABLES = {
+    "target_1_better_stimuli": "Stimulus comparison proposal",
+    "target_2_better_measures": "Measure-validity audit",
+    "target_4_deconfounding": "Confound map across papers",
+    "target_8_replication_priority": "Replication and confirmation map",
+}
+
 TARGET_DEFINITIONS: dict[str, dict[str, str]] = {
     "target_1_better_stimuli": {
         "label": "Better stimuli",
@@ -742,6 +756,84 @@ def build_target_vector(
     return vector
 
 
+def build_student_choice_projection(
+    topic: dict[str, Any],
+    student_rows: list[dict[str, Any]],
+    coverage: dict[str, Any],
+) -> dict[str, Any]:
+    ranked = sorted(student_rows, key=lambda row: (float(row.get("score") or 0.0), float((row.get("target_confidence") or {}).get("score") or 0.0)), reverse=True)
+    top = ranked[0] if ranked else {}
+    medium_or_better = [row for row in ranked if row.get("rating") in {"medium", "high"}]
+    coverage_rating = str(coverage.get("rating") or "unknown")
+    article_count = int(topic.get("n") or len(topic.get("paper_ids") or []) or 0)
+    if len(medium_or_better) >= 2 and article_count >= 3 and coverage_rating != "low":
+        fit_level = "good"
+    elif medium_or_better and article_count >= 2:
+        fit_level = "possible"
+    else:
+        fit_level = "hard"
+
+    best_moves = []
+    for row in ranked:
+        move = STUDENT_MOVE_TEXT.get(row.get("target_id"))
+        if move:
+            best_moves.append(
+                {
+                    "target_id": row.get("target_id"),
+                    "label": row.get("label"),
+                    "move": move,
+                    "rating": row.get("rating"),
+                    "confidence": (row.get("target_confidence") or {}).get("rating"),
+                }
+            )
+        if len(best_moves) == 3:
+            break
+
+    watch_out_for = []
+    if coverage_rating == "low":
+        watch_out_for.append("Atlas coverage is low, so first confirm that enough usable papers exist.")
+    for row in ranked:
+        for flag in row.get("missing_required_signals") or []:
+            text = flag.replace("_", " ")
+            if text not in watch_out_for:
+                watch_out_for.append(text)
+        if len(watch_out_for) >= 4:
+            break
+    if not watch_out_for:
+        watch_out_for.append("Do not treat the routing score as a final judgment; inspect the papers first.")
+
+    top_query = top.get("article_finder_query") or {}
+    top_structured = top_query.get("structured_query") or {}
+    top_label = top.get("label") or "the strongest student-facing target"
+    why = (
+        f"This is a {fit_level} student choice because the strongest feasible move is {top_label.lower()} "
+        f"and the topic has {article_count} paper{'s' if article_count != 1 else ''} in the current Atlas payload."
+    )
+    if fit_level == "hard":
+        why = (
+            f"This is a hard student choice: the current student-facing targets are weak or thinly covered, "
+            f"so a student should first verify that enough usable papers exist."
+        )
+
+    return {
+        "fit_level": fit_level,
+        "method_status": METHOD_STATUS,
+        "source_target_ids": [row.get("target_id") for row in ranked],
+        "why_choose_this": why,
+        "best_project_moves": best_moves,
+        "watch_out_for": watch_out_for[:4],
+        "first_article_finder_query": {
+            "target_id": top.get("target_id"),
+            "label": top.get("label"),
+            "natural_language_query": top_query.get("natural_language_query"),
+            "narrow_query": top_query.get("narrow_query") or top_query.get("boolean_query"),
+            "require_terms": top_structured.get("require_terms") or [],
+            "internal_search_url": top.get("internal_search_url") or top_query.get("internal_search_url"),
+        },
+        "recommended_deliverable": STUDENT_DELIVERABLES.get(top.get("target_id"), "Short topic feasibility memo"),
+    }
+
+
 def build_payload(payload_dir: Path = PAYLOAD_DIR) -> dict[str, Any]:
     topics_payload = load_json(payload_dir / "topics.json", {"topics": []})
     articles_payload = load_json(payload_dir / "articles.json", {"articles": []})
@@ -789,6 +881,15 @@ def build_payload(payload_dir: Path = PAYLOAD_DIR) -> dict[str, Any]:
         question_hits = _topic_question_hits(topic, questions_payload.get("questions") or [], gaps_payload.get("gaps") or [])
         vector = build_target_vector(topic, articles, details, topic_membership_rows, question_hits)
         ranked = sorted(vector.values(), key=lambda row: row["score"], reverse=True)
+        coverage_confidence = _coverage_confidence(
+            len(articles),
+            details_present_count,
+            len(topic_membership_rows),
+            citation_context,
+            doi_title_count,
+            sample_extraction_count,
+        )
+        student_projection = [vector[target_id] for target_id in STUDENT_TARGETS]
         output_topics.append(
             {
                 "topic_id": topic.get("id"),
@@ -801,14 +902,7 @@ def build_payload(payload_dir: Path = PAYLOAD_DIR) -> dict[str, Any]:
                 "decision_context_absent": DECISION_CONTEXT_ABSENT,
                 "panel_disclaimer": PUBLIC_PANEL_DISCLAIMER,
                 "public_warning": PUBLIC_WARNING,
-                "coverage_confidence": _coverage_confidence(
-                    len(articles),
-                    details_present_count,
-                    len(topic_membership_rows),
-                    citation_context,
-                    doi_title_count,
-                    sample_extraction_count,
-                ),
+                "coverage_confidence": coverage_confidence,
                 "topic_graph_links": topic_graph_links,
                 "citation_context": citation_context,
                 "target_vector": vector,
@@ -826,7 +920,8 @@ def build_payload(payload_dir: Path = PAYLOAD_DIR) -> dict[str, Any]:
                     }
                     for row in ranked[:4]
                 ],
-                "student_projection": [vector[target_id] for target_id in STUDENT_TARGETS],
+                "student_projection": student_projection,
+                "student_choice_projection": build_student_choice_projection(topic, student_projection, coverage_confidence),
                 "researcher_projection": ranked,
             }
         )

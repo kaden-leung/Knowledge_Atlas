@@ -35,6 +35,7 @@ STUDENT_TARGETS = {
     "target_8_replication_priority",
 }
 ALLOWED_RATINGS = {"high", "medium", "low", "na"}
+ALLOWED_STUDENT_FIT = {"good", "possible", "hard"}
 
 
 def _load(path: Path) -> Any:
@@ -187,6 +188,28 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
             found = {row.get("target_id") for row in student_projection if isinstance(row, dict)}
             if found != STUDENT_TARGETS:
                 errors.append(f"{label}: student_projection must contain targets 1, 2, 4, and 8")
+        student_choice = topic.get("student_choice_projection")
+        if not isinstance(student_choice, dict):
+            errors.append(f"{label}: student_choice_projection is required")
+        else:
+            if student_choice.get("fit_level") not in ALLOWED_STUDENT_FIT:
+                errors.append(f"{label}: student_choice_projection.fit_level must be one of {sorted(ALLOWED_STUDENT_FIT)}")
+            if student_choice.get("method_status") != REQUIRED_METHOD_STATUS:
+                errors.append(f"{label}: student_choice_projection.method_status must be {REQUIRED_METHOD_STATUS}")
+            if not str(student_choice.get("why_choose_this") or "").strip():
+                errors.append(f"{label}: student_choice_projection.why_choose_this is required")
+            if not isinstance(student_choice.get("best_project_moves"), list) or not student_choice.get("best_project_moves"):
+                errors.append(f"{label}: student_choice_projection.best_project_moves must be non-empty")
+            if not isinstance(student_choice.get("watch_out_for"), list) or not student_choice.get("watch_out_for"):
+                errors.append(f"{label}: student_choice_projection.watch_out_for must be non-empty")
+            query = student_choice.get("first_article_finder_query")
+            if not isinstance(query, dict) or not str(query.get("internal_search_url") or "").startswith("ka_search.html?q="):
+                errors.append(f"{label}: student_choice_projection.first_article_finder_query must point to KA search")
+            source_ids = set(student_choice.get("source_target_ids") or [])
+            if not source_ids.issubset(STUDENT_TARGETS) or not source_ids:
+                errors.append(f"{label}: student_choice_projection.source_target_ids must come from student targets")
+            if not str(student_choice.get("recommended_deliverable") or "").strip():
+                errors.append(f"{label}: student_choice_projection.recommended_deliverable is required")
         researcher_projection = topic.get("researcher_projection")
         if not isinstance(researcher_projection, list) or len(researcher_projection) != 10:
             errors.append(f"{label}: researcher_projection must contain all ten targets")

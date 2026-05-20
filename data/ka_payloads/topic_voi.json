@@ -1,7 +1,7 @@
 {
   "contract_id": "TOPIC_VOI_PROFILE_CONTRACT_2026-05-19",
   "method_status": "provisional_profile",
-  "computed_at": "2026-05-20T08:12:14.601695+00:00",
+  "computed_at": "2026-05-20T08:30:54.246137+00:00",
   "source_payloads": {
     "topics": "data/ka_payloads/topics.json",
     "articles": "data/ka_payloads/articles.json",
@@ -2435,6 +2435,59 @@
           "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Restoration+%2F+Recovery+%28Attention%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Luminous Environment \u00d7 Restoration / Recovery (Attention). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Attention Restoration Theory\" OR \"Prospect-Refuge Theory\" OR \"luminous affect restoration\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Restoration+%2F+Recovery+%28Attention%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -6353,6 +6406,59 @@
           "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Wellbeing+%28Circadian%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Luminous Environment \u00d7 Wellbeing (Circadian). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Circadian Photobiology\" OR \"Daylighting Design\" OR \"luminous affect wellbeing\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Wellbeing+%28Circadian%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_3_better_design",
@@ -10202,6 +10308,56 @@
           "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Aesthetic+Preference+%28Neuroaesthetics%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Spatial Form \u00d7 Aesthetic Preference (Neuroaesthetics). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Neuroaesthetics\" OR \"spatial affect preference\" OR \"ecological stimuli\" OR \"virtual reality\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Aesthetic+Preference+%28Neuroaesthetics%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -14487,6 +14643,59 @@
           "internal_search_url": "ka_search.html?q=Acoustic+Environment+%C3%97+Soundscape+Perception+%28Soundscape%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "hard",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_4_deconfounding",
+          "target_8_replication_priority",
+          "target_2_better_measures",
+          "target_1_better_stimuli"
+        ],
+        "why_choose_this": "This is a hard student choice: the current student-facing targets are weak or thinly covered, so a student should first verify that enough usable papers exist.",
+        "best_project_moves": [
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_2_better_measures",
+            "label": "Construct and measurement quality",
+            "move": "Audit whether the papers really measure the construct they claim to measure.",
+            "rating": "low",
+            "confidence": "low"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_4_deconfounding",
+          "label": "Deconfounding",
+          "natural_language_query": "Find studies that could confirm or lower the priority of deconfounding for Acoustic Environment \u00d7 Soundscape Perception (Soundscape). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Soundscape Theory\" OR \"Natural Ventilation Design\" OR \"acoustic affect soundscape\" OR \"confound\") AND (\"confound\" OR \"dissociation\" OR \"control condition\")",
+          "require_terms": [
+            "confound",
+            "dissociation",
+            "control condition"
+          ],
+          "internal_search_url": "ka_search.html?q=Acoustic+Environment+%C3%97+Soundscape+Perception+%28Soundscape%29+Deconfounding+confound+dissociation+control+condition"
+        },
+        "recommended_deliverable": "Confound map across papers"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -18971,6 +19180,56 @@
           "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Restoration+%2F+Recovery+%28Attention%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "hard",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_4_deconfounding",
+          "target_8_replication_priority",
+          "target_1_better_stimuli",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a hard student choice: the current student-facing targets are weak or thinly covered, so a student should first verify that enough usable papers exist.",
+        "best_project_moves": [
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_4_deconfounding",
+          "label": "Deconfounding",
+          "natural_language_query": "Find studies that could confirm or lower the priority of deconfounding for Nature & Biophilia \u00d7 Restoration / Recovery (Attention). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Attention Restoration Theory\" OR \"Biophilia Hypothesis\" OR \"natural affect restoration\" OR \"confound\") AND (\"confound\" OR \"dissociation\" OR \"control condition\")",
+          "require_terms": [
+            "confound",
+            "dissociation",
+            "control condition"
+          ],
+          "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Restoration+%2F+Recovery+%28Attention%29+Deconfounding+confound+dissociation+control+condition"
+        },
+        "recommended_deliverable": "Confound map across papers"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -23069,6 +23328,56 @@
           "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Wellbeing+%28Evidence-Based%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Nature & Biophilia \u00d7 Wellbeing (Evidence-Based). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Evidence-Based Design\" OR \"Biophilia Hypothesis\" OR \"natural affect wellbeing\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Wellbeing+%28Evidence-Based%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_3_better_design",
@@ -26950,6 +27259,56 @@
           "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Mechanism+%2F+Pathway+%28Biophilia%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Nature & Biophilia \u00d7 Mechanism / Pathway (Biophilia). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Biophilia Hypothesis\" OR \"Attention Restoration Theory\" OR \"natural mechanism\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Mechanism+%2F+Pathway+%28Biophilia%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -30845,6 +31204,59 @@
           "internal_search_url": "ka_search.html?q=Acoustic+Environment+%C3%97+Physiological+Response+%28Soundscape%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Acoustic Environment \u00d7 Physiological Response (Soundscape). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Soundscape Theory\" OR \"Attention Restoration Theory\" OR \"acoustic physio\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Acoustic+Environment+%C3%97+Physiological+Response+%28Soundscape%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -34742,6 +35154,56 @@
           "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Neural+Activity+%28Neuroarchitecture%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Spatial Form \u00d7 Neural Activity (Neuroarchitecture). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Neuroarchitecture\" OR \"Environmental Psychology\" OR \"spatial neural\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Neural+Activity+%28Neuroarchitecture%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -38630,6 +39092,59 @@
           "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Physiological+Response+%28Stress%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Spatial Form \u00d7 Physiological Response (Stress). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Stress Reduction Theory\" OR \"Attention Restoration Theory\" OR \"spatial physio\" OR \"ecological stimuli\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Physiological+Response+%28Stress%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -42760,6 +43275,59 @@
           "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Wellbeing+%28Biophilia%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "possible",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_1_better_stimuli",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a possible student choice because the strongest feasible move is replication priority and the topic has 5 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_8_replication_priority",
+          "label": "Replication priority",
+          "natural_language_query": "Find studies that could confirm or lower the priority of replication priority for Nature & Biophilia \u00d7 Wellbeing (Biophilia). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Biophilia Hypothesis\" OR \"Evidence-Based Design\" OR \"natural affect wellbeing\" OR \"replication\") AND (\"replication\" OR \"meta-analysis\" OR \"registered report\")",
+          "require_terms": [
+            "replication",
+            "meta-analysis",
+            "registered report"
+          ],
+          "internal_search_url": "ka_search.html?q=Nature+%26+Biophilia+%C3%97+Wellbeing+%28Biophilia%29+Replication+priority+replication+meta-analysis+registered+report"
+        },
+        "recommended_deliverable": "Replication and confirmation map"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -47049,6 +47617,59 @@
           "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Mechanism+%2F+Pathway+%28Circadian%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "possible",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_1_better_stimuli",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a possible student choice because the strongest feasible move is replication priority and the topic has 5 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_8_replication_priority",
+          "label": "Replication priority",
+          "natural_language_query": "Find studies that could confirm or lower the priority of replication priority for Luminous Environment \u00d7 Mechanism / Pathway (Circadian). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Circadian Lighting\" OR \"Non-Visual Effects of Light\" OR \"luminous mechanism\" OR \"replication\") AND (\"replication\" OR \"meta-analysis\" OR \"registered report\")",
+          "require_terms": [
+            "replication",
+            "meta-analysis",
+            "registered report"
+          ],
+          "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Mechanism+%2F+Pathway+%28Circadian%29+Replication+priority+replication+meta-analysis+registered+report"
+        },
+        "recommended_deliverable": "Replication and confirmation map"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -51063,6 +51684,56 @@
           "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Mechanism+%2F+Pathway+%28Place%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "good",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_1_better_stimuli",
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a good student choice because the strongest feasible move is better stimuli and the topic has 3 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_1_better_stimuli",
+          "label": "Better stimuli",
+          "natural_language_query": "Find studies that could confirm or lower the priority of better stimuli for Luminous Environment \u00d7 Mechanism / Pathway (Place). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Place Attachment Theory\" OR \"luminous mechanism\" OR \"ecological stimuli\" OR \"virtual reality\") AND (\"ecological stimuli\" OR \"virtual reality\" OR \"field experiment\")",
+          "require_terms": [
+            "ecological stimuli",
+            "virtual reality",
+            "field experiment"
+          ],
+          "internal_search_url": "ka_search.html?q=Luminous+Environment+%C3%97+Mechanism+%2F+Pathway+%28Place%29+Better+stimuli+ecological+stimuli+virtual+reality+field+experiment"
+        },
+        "recommended_deliverable": "Stimulus comparison proposal"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",
@@ -55061,6 +55732,59 @@
           "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Wellbeing+%28Neuroarchitecture%29+Replication+priority+replication+meta-analysis+registered+report"
         }
       ],
+      "student_choice_projection": {
+        "fit_level": "possible",
+        "method_status": "provisional_profile",
+        "source_target_ids": [
+          "target_8_replication_priority",
+          "target_4_deconfounding",
+          "target_1_better_stimuli",
+          "target_2_better_measures"
+        ],
+        "why_choose_this": "This is a possible student choice because the strongest feasible move is replication priority and the topic has 4 papers in the current Atlas payload.",
+        "best_project_moves": [
+          {
+            "target_id": "target_8_replication_priority",
+            "label": "Replication priority",
+            "move": "Check whether the central finding has independent replication or review support.",
+            "rating": "medium",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_4_deconfounding",
+            "label": "Deconfounding",
+            "move": "Build an IV, DV, and confound table across three to five papers.",
+            "rating": "low",
+            "confidence": "medium"
+          },
+          {
+            "target_id": "target_1_better_stimuli",
+            "label": "Better stimuli",
+            "move": "Compare a more realistic stimulus set against the stimuli used in the current papers.",
+            "rating": "low",
+            "confidence": "medium"
+          }
+        ],
+        "watch_out_for": [
+          "independent replication status not extracted",
+          "construct definition not extracted",
+          "operationalization match not extracted",
+          "reliability validity invariance not extracted"
+        ],
+        "first_article_finder_query": {
+          "target_id": "target_8_replication_priority",
+          "label": "Replication priority",
+          "natural_language_query": "Find studies that could confirm or lower the priority of replication priority for Spatial Form \u00d7 Wellbeing (Neuroarchitecture). Prefer papers that test the opportunity directly and are not already in the Atlas corpus.",
+          "narrow_query": "(\"Neuroarchitecture\" OR \"Embodied Cognition\" OR \"spatial affect wellbeing\" OR \"replication\") AND (\"replication\" OR \"meta-analysis\" OR \"registered report\")",
+          "require_terms": [
+            "replication",
+            "meta-analysis",
+            "registered report"
+          ],
+          "internal_search_url": "ka_search.html?q=Spatial+Form+%C3%97+Wellbeing+%28Neuroarchitecture%29+Replication+priority+replication+meta-analysis+registered+report"
+        },
+        "recommended_deliverable": "Replication and confirmation map"
+      },
       "researcher_projection": [
         {
           "target_id": "target_9_design_translation",

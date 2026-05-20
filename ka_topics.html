@@ -115,6 +115,17 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
 .voi-summary-card b{display:block;color:#1C3D3A;font-size:.86rem;line-height:1.25;margin-bottom:3px}
 .voi-score{font-size:.75rem;color:#6B6B6B}
 .voi-small{font-size:.72rem;color:#8A9A96;line-height:1.35;margin-top:4px}
+.student-choice{background:#F4FBF8;border:1px solid #C9E6DC;border-radius:8px;
+                padding:12px 14px;margin:14px 0}
+.student-choice h4{font-size:.76rem;font-weight:700;letter-spacing:.08em;
+             text-transform:uppercase;color:#2A7868;margin-bottom:8px}
+.student-choice .fit{display:inline-flex;align-items:center;border-radius:999px;
+             background:#E8F8F2;color:#1A7050;font-size:.68rem;font-weight:800;
+             letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;margin-bottom:8px}
+.student-choice p{font-size:.88rem;color:#40514D;line-height:1.45;margin:0 0 8px}
+.student-choice ul{margin:0 0 8px 18px;color:#40514D;font-size:.82rem;line-height:1.45}
+.student-choice a{display:inline-flex;align-items:center;padding:5px 9px;border:1px solid #B7D9CD;
+               border-radius:6px;color:#1C3D3A;text-decoration:none;font-size:.75rem;font-weight:700}
 .voi-panel{display:grid;gap:14px}
 .voi-method{font-size:.84rem;color:#40514D;background:#F9F7F2;border-left:3px solid #2A7868;
             border-radius:0 7px 7px 0;padding:10px 12px}
@@ -395,6 +406,25 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
       </div>`;
   }
 
+  function renderStudentChoice(t){
+    const profile = voiForTopic(t);
+    const choice = profile && profile.student_choice_projection;
+    if (!choice) return '';
+    const moves = choice.best_project_moves || [];
+    const watch = choice.watch_out_for || [];
+    const query = choice.first_article_finder_query || {};
+    return `
+      <div class="student-choice">
+        <h4>Student project fit</h4>
+        <div class="fit">${esc(choice.fit_level || 'possible')}</div>
+        <p>${esc(choice.why_choose_this || '')}</p>
+        ${moves.length ? `<ul>${moves.slice(0,3).map(row => `<li>${esc(row.move || row.label || '')}</li>`).join('')}</ul>` : ''}
+        ${watch.length ? `<div class="voi-small">Watch out for: ${esc(watch.slice(0,3).join('; '))}${watch.length>3?'...':''}</div>` : ''}
+        ${choice.recommended_deliverable ? `<div class="voi-small">Suggested deliverable: ${esc(choice.recommended_deliverable)}</div>` : ''}
+        ${query.internal_search_url ? `<div class="voi-actions"><a href="${esc(query.internal_search_url)}">Start with article search</a></div>` : ''}
+      </div>`;
+  }
+
   function renderVoiTab(t){
     const profile = voiForTopic(t);
     if (!profile) {
@@ -509,6 +539,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
           <div class="ov-pills">${theories.map(x => `<span class="pill pill-theory">${x}</span>`).join('')}</div></div>` : ''}
         ${constructs.length ? `<div class="ov-block"><h4>Constructs</h4>
           <div class="ov-pills">${constructs.map(x => `<span class="pill pill-construct">${x}</span>`).join('')}</div></div>` : ''}
+        ${renderStudentChoice(t)}
         ${renderVoiSummary(t)}
         <button class="ev-cta" id="goEvidence">See the evidence for this topic →</button>
       </div>

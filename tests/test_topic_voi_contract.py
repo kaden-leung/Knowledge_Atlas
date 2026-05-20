@@ -47,6 +47,12 @@ def test_builder_creates_ten_target_profile_from_current_payloads():
     assert isinstance(first_target["missing_required_signals"], list)
     assert "broad_query" in first_target["article_finder_query"]
     assert "query_test" in first_target["article_finder_query"]
+    choice = first["student_choice_projection"]
+    assert choice["fit_level"] in verify.ALLOWED_STUDENT_FIT
+    assert choice["best_project_moves"]
+    assert choice["watch_out_for"]
+    assert choice["first_article_finder_query"]["internal_search_url"].startswith("ka_search.html?q=")
+    assert set(choice["source_target_ids"]).issubset(verify.STUDENT_TARGETS)
 
 
 def test_verifier_rejects_missing_article_finder_query():
@@ -96,3 +102,18 @@ def test_verifier_rejects_missing_score_semantics():
     errors = verify.validate_payload(tmp, REPO_ROOT / "data" / "ka_payloads" / "topics.json")
 
     assert any("score_semantics" in error for error in errors)
+
+
+def test_verifier_rejects_missing_student_choice_projection():
+    payload = builder.build_payload(REPO_ROOT / "data" / "ka_payloads")
+    broken = copy.deepcopy(payload)
+    del broken["topics"][0]["student_choice_projection"]
+
+    tmp = REPO_ROOT / ".pytest_cache" / "broken_topic_voi_student_choice.json"
+    tmp.parent.mkdir(exist_ok=True)
+    import json
+
+    tmp.write_text(json.dumps(broken), encoding="utf-8")
+    errors = verify.validate_payload(tmp, REPO_ROOT / "data" / "ka_payloads" / "topics.json")
+
+    assert any("student_choice_projection is required" in error for error in errors)

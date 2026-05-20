@@ -39,8 +39,9 @@ Every generated topic VOI payload must contain:
    - `article_finder_query`: structured query object.
    - `internal_search_url`: KA search URL that lets the user check the existing corpus.
 6. `student_projection`: the four targets shown by default for COGS 160 feasibility work.
-7. `researcher_projection`: all ten targets, sorted by score.
-8. `coverage_confidence` with named components, `topic_graph_links`, `citation_context`, `corpus_snapshot`, and `computed_at`.
+7. `student_choice_projection`: a student-facing choice card derived only from `student_projection`.
+8. `researcher_projection`: all ten targets, sorted by score.
+9. `coverage_confidence` with named components, `topic_graph_links`, `citation_context`, `corpus_snapshot`, and `computed_at`.
 
 ## Article-Finder Coupling
 
@@ -115,6 +116,10 @@ SC-VOI-14: Construct/measurement targets expose construct-validity fields or mis
 SC-VOI-15: Mechanism targets do not treat PNU summaries alone as direct mechanism evidence.
 
 SC-VOI-16: Researcher projections are sorted, top targets match the projection, and degenerate all-high target distributions fail verification.
+
+SC-VOI-17: Every topic has a `student_choice_projection` with `fit_level`, `why_choose_this`, `best_project_moves`, `watch_out_for`, `first_article_finder_query`, and `recommended_deliverable`.
+
+SC-VOI-18: Student choice projections must be derived from the four student targets only. They must not expose a separate hidden ranking system.
 
 ## Last-Mile Verification
 
