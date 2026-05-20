@@ -15048,6 +15048,10 @@ The panel-hardening introduced six principles:
 5. Mechanism language is not mechanism evidence. PNU summaries alone do not count as direct evidence for mechanism links unless level of analysis, causal links, and observable mediators have been extracted.
 6. Population and cultural scope must be extracted, not guessed from silence. The system must expose population, country, language, recruitment, and measurement-invariance status.
 
+The 2026-05-20 student-choice extension adds a derived `student_choice_projection` to each topic profile. This is not a second VOI system and must not introduce a hidden ranking model. It is a translation layer from the four student-facing targets only: better stimuli, construct and measurement quality, deconfounding, and replication priority. Its purpose is practical pedagogy: a student choosing a topic needs a small number of intelligible project moves, a warning about what may make the topic hard, a first article-finder query, and a likely deliverable. The projection therefore contains `fit_level`, `why_choose_this`, `best_project_moves`, `watch_out_for`, `first_article_finder_query`, and `recommended_deliverable`. This makes the topic VOI profile useful for COGS 160-style choice without exposing students to the full research-internal warrant machinery.
+
+The contract rule is strict: the student card may simplify and translate, but it may not invent new evidence, collapse the whole topic into one authority score, or draw from targets outside the four student defaults. A "good" student topic means that there is at least one feasible epistemic move a student can actually attempt, not that the topic is scientifically settled or globally most important.
+
 The last-mile checks are:
 
 ```bash
