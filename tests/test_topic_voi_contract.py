@@ -38,6 +38,15 @@ def test_builder_creates_ten_target_profile_from_current_payloads():
     assert set(first["target_vector"]) == verify.REQUIRED_TARGETS
     assert {row["target_id"] for row in first["student_projection"]} == verify.STUDENT_TARGETS
     assert len(first["researcher_projection"]) == 10
+    first_target = first["researcher_projection"][0]
+    assert payload["score_semantics"] == verify.REQUIRED_SCORE_SEMANTICS
+    assert first["score_semantics"] == verify.REQUIRED_SCORE_SEMANTICS
+    assert first_target["score_semantics"] == verify.REQUIRED_SCORE_SEMANTICS
+    assert first_target["score_components"]
+    assert first_target["target_confidence"]["rating"] in verify.ALLOWED_RATINGS
+    assert isinstance(first_target["missing_required_signals"], list)
+    assert "broad_query" in first_target["article_finder_query"]
+    assert "query_test" in first_target["article_finder_query"]
 
 
 def test_verifier_rejects_missing_article_finder_query():
@@ -70,3 +79,20 @@ def test_verifier_rejects_composite_authority_score():
     errors = verify.validate_payload(tmp, REPO_ROOT / "data" / "ka_payloads" / "topics.json")
 
     assert any("must not expose a single composite" in error for error in errors)
+
+
+def test_verifier_rejects_missing_score_semantics():
+    payload = builder.build_payload(REPO_ROOT / "data" / "ka_payloads")
+    broken = copy.deepcopy(payload)
+    first_topic = broken["topics"][0]
+    first_target = first_topic["researcher_projection"][0]["target_id"]
+    del first_topic["target_vector"][first_target]["score_semantics"]
+
+    tmp = REPO_ROOT / ".pytest_cache" / "broken_topic_voi_score_semantics.json"
+    tmp.parent.mkdir(exist_ok=True)
+    import json
+
+    tmp.write_text(json.dumps(broken), encoding="utf-8")
+    errors = verify.validate_payload(tmp, REPO_ROOT / "data" / "ka_payloads" / "topics.json")
+
+    assert any("score_semantics" in error for error in errors)

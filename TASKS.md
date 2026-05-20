@@ -1,6 +1,25 @@
 # TASKS.md — Knowledge_Atlas
 
-*Last updated: 2026-04-15 (session — article restructure + theory pages + Track 4 in-class exercise)*
+*Last updated: 2026-05-19 (POE review + talk outline + corpus-extraction agenda)*
+
+---
+
+## Newly Added — 2026-05-19 (POE review and corpus-extraction agenda)
+
+These follow from DK's 2026-05-19 request for a POE review plus a list of cases where the standard POE measure is a surface proxy for a deeper construct, plus a talk outline framing the fifteen most important cases as occupant experiences. The literature review lives at `docs/POE_REVIEW_2026-05-19.md`; the talk outline at `docs/POE_TALK_OUTLINE_2026-05-19.md`; the corpus-extraction agenda at `docs/POE_CORPUS_EXTRACTION_AGENDA_2026-05-19.md`.
+
+| ID | Task | Owner | Context |
+|----|------|-------|---------|
+| POE-EXT-1 | **Seed adaptive thermal comfort literature into corpus** | AG + CW | 12–15 papers seeded by de Dear-Brager (1998, 2002); Cabanac (1971) alliesthesia; Parkinson, de Dear, & Brager (2020); ASHRAE 55 adaptive section. Constructs: adaptive thermal comfort, thermal pleasure/alliesthesia, radiant asymmetry, mean radiant temperature, personal control over thermal environment. Talk depends on this at experience 5 (wanting to open a window). Currently 1 evidence row in corpus. |
+| POE-EXT-2 | **Seed VOC/PM/IAQ literature into corpus** | AG + CW | 15–20 papers seeded by Allen et al. (2016) COGfx; Wargocki et al. (2000); Wargocki & Wyon (2007a/b); Bakó-Biró et al. (2012); Power et al. (2018); Tham et al. (2003). Constructs: ventilation rate, perceived air quality (olf/decipol), bio-effluent concentration, VOC concentration, PM 2.5, cognitive performance under IAQ stress. Talk depends on this at experience 7. Currently 0 evidence rows on VOC/PM, 3 on CO2/ventilation. |
+| POE-EXT-3 | **Seed IAT and implicit-measure literature into corpus** | CW + AG | 10–15 papers seeded by Greenwald et al. (1998); Schultz et al. (2004) Nature-IAT; Fazio et al. (1995) evaluative priming; Blanton et al. (2009) predictive validity critique. Constructs: implicit attitude, Built-Environment-IAT, evaluative priming. Talk three-channel prescription rests on this. Currently 0 evidence rows. |
+| POE-EXT-4 | **Seed Q-sort and preference-structure methodology into corpus** | CW | 8–12 papers seeded by Stephenson (1953); Watts & Stenner (2012); McKeown & Thomas (2013); Vischer (2007, 2008) functional comfort; Louviere et al. (2000) stated choice; Green & Srinivasan (1990) conjoint. Constructs: preference structure, Q-methodology, 20-sort task, choice-based conjoint. Currently 1 evidence row. |
+| POE-EXT-5 | **Seed experience-sampling and EMA methodology into corpus** | CW | 8–10 papers seeded by Csikszentmihalyi & Larson (1987); Hektner et al. (2007); Kahneman et al. (2004) day-reconstruction method; Stone & Shiffman (2002); Trull & Ebner-Priemer (2009). Constructs: experience sampling, ecological momentary assessment, day reconstruction. Talk's "snapshot vs trajectory" diagnosis depends on this. Currently 0 evidence rows. |
+| POE-EXT-6 | **Seed Daylight Glare Probability literature into corpus** | AG + CW | 6–8 papers seeded by Wienold & Christoffersen (2006); Wienold et al. (2019) cross-validation; Hopkinson IES glare-index history. Constructs: discomfort glare, with measurement nodes for DGP, DGI, UGR, vertical-illuminance threshold. Talk's experience 3. Currently 3 evidence rows on glare. |
+| POE-EXT-7 | **Seed multisensory IEQ-interaction literature into corpus** | AG | 8–12 papers seeded by Schweiker et al. (2020) multi-domain review; Yang & Mak (2017); Hong & Lin (2015); older Hellbrück thermal-acoustic interaction work. Constructs: multisensory IEQ interaction (acoustic×thermal, lighting×thermal, lighting×acoustic). Currently 4 multisensory evidence rows. |
+| POE-EXT-8 | **Seed adaptive-preference literature (Sen-Nussbaum) into corpus** | CW | 12–16 papers seeded by Sen (1985, 1999); Nussbaum (2000); Elster (1983) sour grapes; Khader (2011); Teschl & Comim (2005). Constructs: adaptive preference, counterfactual elicitation, temporal-comparison elicitation. Talk's slide 18 is rhetorical hinge. Currently 0 evidence rows. May require framework-stratum tag (welfare economics) the existing schema does not support — see open question in agenda memo. |
+| POE-TALK-DELIVER | **Deferred delivery of POE talk pending corpus extraction** | DK + CW | Talk should not be delivered to external audience until POE-EXT-1, 2, 6, 7 are extracted (the four items the talk's empirical claims depend on). POE-EXT-3, 4, 5, 8 cover the methods the talk recommends; can be extracted in parallel with talk delivery so long as the three-channel argument is framed as recommendation rather than track record. |
+| POE-AGENDA-DECISIONS | **Four open questions for DK on corpus-extraction agenda** | DK | See `docs/POE_CORPUS_EXTRACTION_AGENDA_2026-05-19.md` §"Open questions": (1) POE-EXT-* as top-level track or sub-track of UJ-A4? (2) Existing paper-acquisition pipeline or PDF-batch upload? (3) Talk-delivery timing relative to extraction completion? (4) Schema support for welfare-economics framework-stratum tag (POE-EXT-8)? |
 
 ---
 

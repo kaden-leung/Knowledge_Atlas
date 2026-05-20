@@ -15,6 +15,7 @@ DEFAULT_PAYLOAD = REPO_ROOT / "data" / "ka_payloads" / "topic_voi.json"
 TOPICS_PAYLOAD = REPO_ROOT / "data" / "ka_payloads" / "topics.json"
 REQUIRED_CONTRACT = "TOPIC_VOI_PROFILE_CONTRACT_2026-05-19"
 REQUIRED_METHOD_STATUS = "provisional_profile"
+REQUIRED_SCORE_SEMANTICS = "heuristic_routing_only_not_expected_value"
 REQUIRED_TARGETS = {
     "target_1_better_stimuli",
     "target_2_better_measures",
@@ -60,6 +61,14 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
         errors.append("payload: computed_at is required")
     if (payload.get("panel_status") or {}).get("real_human_panel_completed") is not False:
         errors.append("payload: real_human_panel_completed must be false until the real panel is run")
+    if "AI-simulated" not in str(payload.get("panel_disclaimer") or ""):
+        errors.append("payload: panel_disclaimer must state that current review is AI-simulated")
+    if payload.get("score_semantics") != REQUIRED_SCORE_SEMANTICS:
+        errors.append(f"payload: score_semantics must be {REQUIRED_SCORE_SEMANTICS}")
+    if payload.get("decision_context_absent") is not True:
+        errors.append("payload: decision_context_absent must be true for provisional routing profiles")
+    if not isinstance(payload.get("corpus_snapshot"), dict) or not payload.get("corpus_snapshot"):
+        errors.append("payload: corpus_snapshot is required")
 
     target_definitions = payload.get("target_definitions")
     if not isinstance(target_definitions, dict):
@@ -86,6 +95,16 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
         coverage = topic.get("coverage_confidence")
         if not isinstance(coverage, dict) or coverage.get("rating") not in ALLOWED_RATINGS or "basis" not in coverage:
             errors.append(f"{label}: coverage_confidence must have rating and basis")
+        elif not isinstance(coverage.get("components"), dict):
+            errors.append(f"{label}: coverage_confidence.components is required")
+        if topic.get("score_semantics") != REQUIRED_SCORE_SEMANTICS:
+            errors.append(f"{label}: score_semantics must be {REQUIRED_SCORE_SEMANTICS}")
+        if topic.get("decision_context_absent") is not True:
+            errors.append(f"{label}: decision_context_absent must be true")
+        if not isinstance(topic.get("topic_graph_links"), dict):
+            errors.append(f"{label}: topic_graph_links is required")
+        if not isinstance(topic.get("citation_context"), dict):
+            errors.append(f"{label}: citation_context is required")
 
         vector = topic.get("target_vector")
         if not isinstance(vector, dict):
@@ -105,6 +124,29 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
                     errors.append(f"{target_label}: score must be 0..1")
             except Exception:
                 errors.append(f"{target_label}: score must be numeric")
+            if row.get("score_semantics") != REQUIRED_SCORE_SEMANTICS:
+                errors.append(f"{target_label}: score_semantics must be {REQUIRED_SCORE_SEMANTICS}")
+            if row.get("decision_context_absent") is not True:
+                errors.append(f"{target_label}: decision_context_absent must be true")
+            if not isinstance(row.get("score_components"), list) or not row.get("score_components"):
+                errors.append(f"{target_label}: score_components must be non-empty")
+            if not row.get("score_formula_version"):
+                errors.append(f"{target_label}: score_formula_version is required")
+            if row.get("signal_strength") not in {"direct_extracted", "indirect_keyword", "topic_metadata", "missing"}:
+                errors.append(f"{target_label}: signal_strength is invalid")
+            for field in ("target_confidence", "target_coverage_confidence"):
+                value = row.get(field)
+                if not isinstance(value, dict) or value.get("rating") not in ALLOWED_RATINGS:
+                    errors.append(f"{target_label}: {field} must have an allowed rating")
+            for field in ("positive_signals", "negative_signals", "missing_required_signals", "missing_evidence_flags"):
+                if not isinstance(row.get(field), list):
+                    errors.append(f"{target_label}: {field} must be a list")
+            if target_id == "target_2_better_measures" and not row.get("missing_required_signals") and not row.get("positive_signals") and row.get("signal_strength") != "direct_extracted":
+                errors.append(f"{target_label}: construct/measurement target must expose construct-validity fields or direct evidence")
+            if target_id == "target_5_mechanism_weak_links" and row.get("signal_strength") == "direct_extracted":
+                errors.append(f"{target_label}: PNU summaries alone must not count as direct mechanism evidence")
+            if target_id == "target_10_weird_extension" and not row.get("missing_required_signals") and not row.get("positive_signals") and row.get("signal_strength") != "direct_extracted":
+                errors.append(f"{target_label}: population/culture target must expose extraction status or direct evidence")
             if not str(row.get("basis") or "").strip():
                 errors.append(f"{target_label}: basis is required")
             if not isinstance(row.get("evidence_signals"), dict) or not row.get("evidence_signals"):
@@ -116,17 +158,24 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
             for field in ("natural_language_query", "boolean_query", "structured_query", "internal_search_url"):
                 if field not in query or not query.get(field):
                     errors.append(f"{target_label}: article_finder_query.{field} is required")
+            for field in ("broad_query", "narrow_query", "known_work_terms", "query_test"):
+                if field not in query or query.get(field) in (None, ""):
+                    errors.append(f"{target_label}: article_finder_query.{field} is required")
             if not str(query.get("internal_search_url") or "").startswith("ka_search.html?q="):
                 errors.append(f"{target_label}: internal_search_url must point to KA search")
+            if row.get("internal_search_url") != query.get("internal_search_url"):
+                errors.append(f"{target_label}: internal_search_url must match query.internal_search_url")
             structured = query.get("structured_query")
             if not isinstance(structured, dict):
                 errors.append(f"{target_label}: structured_query must be an object")
             else:
-                for field in ("topic_id", "target_id", "include_terms", "require_terms", "exclude_known_papers", "freshness_after_year", "candidate_sources"):
+                for field in ("topic_id", "target_id", "include_terms", "require_terms", "exclude_known_papers", "external_exclusion_terms", "freshness_after_year", "candidate_sources"):
                     if field not in structured:
                         errors.append(f"{target_label}: structured_query.{field} is required")
                 if structured.get("target_id") != target_id:
                     errors.append(f"{target_label}: structured_query.target_id must match target")
+                if not structured.get("require_terms"):
+                    errors.append(f"{target_label}: structured_query.require_terms must be non-empty")
 
         student_projection = topic.get("student_projection")
         if not isinstance(student_projection, list):
@@ -138,8 +187,25 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
         researcher_projection = topic.get("researcher_projection")
         if not isinstance(researcher_projection, list) or len(researcher_projection) != 10:
             errors.append(f"{label}: researcher_projection must contain all ten targets")
+        else:
+            scores = [float(row.get("score") or 0.0) for row in researcher_projection if isinstance(row, dict)]
+            if scores != sorted(scores, reverse=True):
+                errors.append(f"{label}: researcher_projection must be sorted by descending score")
+            top_ids = [row.get("target_id") for row in (topic.get("top_targets") or [])]
+            ranked_ids = [row.get("target_id") for row in researcher_projection[: len(top_ids)]]
+            if top_ids != ranked_ids:
+                errors.append(f"{label}: top_targets must match the first researcher_projection entries")
         if "composite_score" in topic or "final_voi_score" in topic:
             errors.append(f"{label}: must not expose a single composite VOI authority score")
+
+    for target_id in REQUIRED_TARGETS:
+        ratings = [
+            ((topic.get("target_vector") or {}).get(target_id) or {}).get("rating")
+            for topic in topics
+        ]
+        high_ratio = ratings.count("high") / max(1, len(ratings))
+        if high_ratio > 0.9:
+            errors.append(f"payload:{target_id}: degenerate high rating distribution ({high_ratio:.2f})")
 
     return errors
 

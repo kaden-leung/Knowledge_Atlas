@@ -6,7 +6,16 @@
 
 ## Provenance
 
-DK asked for a real panel if one was needed. A real human panel is needed before the Atlas treats the VOI method as academically settled. That panel cannot be honestly claimed to have run inside this coding session. What can be done now is the correct interim step: write the real-panel prompt, use the published positions of the named experts to produce an implementation synthesis, and mark the method as provisional until actual responses are obtained.
+DK asked for a real panel if one was needed. A real human panel is needed before the Atlas treats the VOI method as academically settled. That panel cannot be honestly claimed to have run inside this coding session. What can be done now is the correct interim step: write the real-panel prompt, run an AI-simulated panel for implementation critique, use the published positions of the named experts to discipline the synthesis, and mark the method as provisional until actual responses are obtained.
+
+## Simulated Panel Corrections Incorporated
+
+The second implementation pass incorporated four simulated expert lanes:
+
+1. **Causal and epistemic structure**: the profile must measure epistemic leverage, not topical importance. Each target must identify the belief, mechanism, scope, or design claim that could change. Missing extraction is not evidential absence.
+2. **Decision theory and statistics**: the public system must not dignify heuristic decimals as formal expected value. The payload now marks `score_semantics` as `heuristic_routing_only_not_expected_value`, exposes `routing_score`, and records that the formal decision context is absent.
+3. **Information retrieval and bibliometrics**: each target now carries broad and narrow queries, known-work exclusions, query-test language, topic graph links, citation-context proxies, and corpus-snapshot fields.
+4. **Construct validity and value sensitivity**: measurement quantity is separated from measurement quality; PNU summaries alone do not count as direct mechanism evidence; population and culture claims expose extraction status; design translation records the stakeholder and value context.
 
 ## Convergent Implementation Positions
 
@@ -27,6 +36,8 @@ The provisional implementation follows five positions that are stable across the
 - Researcher VOI preserves the full ten-target profile.
 - The system must prefer "unknown because not extracted" over invented certainty.
 - The UI must make the reason for each target visible before a user acts on it.
+- The UI must display ordinal ratings first. Numeric routing scores are audit aids, not authority.
+- Article-finder queries are part of the claim: a target is useful only if the query can test whether the opportunity remains open.
 
 ## Implementation Decision
 
@@ -34,7 +45,7 @@ This pass implements a corpus-signal profile. It reads current KA payloads and w
 
 The builder is allowed to use Python for structured computation. Python is not authoring public science prose here; it is assigning auditable ratings from existing structured fields and generating article-finder query strings. The public-facing basis text is a terse audit explanation, not a science-writer claim.
 
-The result is intentionally not final formal VOI. It is the first contract-backed, UI-visible, query-coupled topic profile.
+The result is intentionally not final formal VOI. It is the first contract-backed, UI-visible, article-finder-coupled topic profile.
 
 ## Last-Mile Requirements
 
@@ -45,5 +56,6 @@ The implementation is not done unless:
 - tests cover schema failure cases;
 - the topic UI loads `topic_voi.json`;
 - the UI has a VOI tab and shows article-finder checks;
+- the payload exposes score semantics, formula version, formula components, target confidence, missing evidence, and signal strength;
+- the verifier rejects degenerate all-high target distributions, unsorted researcher projections, and target/query mismatches;
 - the method status remains `provisional_profile` until a real panel adjudicates it.
-

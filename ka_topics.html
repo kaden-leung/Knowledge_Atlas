@@ -114,6 +114,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
 .voi-summary-card{background:#fff;border:1px solid #E9E1D5;border-radius:7px;padding:9px 10px}
 .voi-summary-card b{display:block;color:#1C3D3A;font-size:.86rem;line-height:1.25;margin-bottom:3px}
 .voi-score{font-size:.75rem;color:#6B6B6B}
+.voi-small{font-size:.72rem;color:#8A9A96;line-height:1.35;margin-top:4px}
 .voi-panel{display:grid;gap:14px}
 .voi-method{font-size:.84rem;color:#40514D;background:#F9F7F2;border-left:3px solid #2A7868;
             border-radius:0 7px 7px 0;padding:10px 12px}
@@ -250,7 +251,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
     const theories = (theoriesPayload && theoriesPayload.theories) || [];
     const pnuRows = (pnuPayload && pnuPayload.papers) || [];
     const theoryByName = new Map(theories.map(row => [String(row.name || '').toLowerCase(), row]));
-    const topByVoi = topics.slice().sort((a,b) => (b.voi||0) - (a.voi||0)).slice(0,4);
+    const topByBundle = topics.slice().sort((a,b) => (b.n||0) - (a.n||0)).slice(0,4);
     const topByVolume = topics.slice().sort((a,b) => (b.n||0) - (a.n||0)).slice(0,4);
     const categoryCounts = new Map();
     const theoryCounts = new Map();
@@ -286,15 +287,15 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
       </div>
       <div class="topics-live-grid">
         <section class="topics-live-card">
-          <h2>Highest-value topic bundles</h2>
-          <p>The classic browser is most useful when it makes the high-value bundles plain before one starts filtering.</p>
+          <h2>Current topic bundles</h2>
+          <p>The classic browser is most useful when it makes the main evidence neighborhoods plain before one starts filtering.</p>
           <div class="topics-live-list">
-            ${topByVoi.map(topic => {
+            ${topByBundle.map(topic => {
               const firstPaper = (topic.paper_ids || []).map(pid => pnuRows.find(item => item.paper_id === pid)).find(item => item && item.pnu && item.pnu.short_summary);
               return `
                 <article class="topics-live-row">
                   <b>${esc(topic.name || topic.id)}</b>
-                  <div class="topics-live-meta">${esc(topic.cat || 'Topic')} · warrant seed ${Number(topic.voi || 0).toFixed(2)} · ${esc(topic.n || 0)} papers</div>
+                  <div class="topics-live-meta">${esc(topic.cat || 'Topic')} · ${esc(topic.n || 0)} papers · ${esc(topic.maturity || 'maturity pending')}</div>
                   ${(topic.shared_theories && topic.shared_theories.length) ? `<div class="topics-live-chip-row">${topic.shared_theories.slice(0,4).map(label => {
                     const theory = theoryByName.get(String(label || '').toLowerCase());
                     return theory
@@ -387,7 +388,8 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
           ${topTargets.map(row => `
             <div class="voi-summary-card">
               <b>${esc(row.label || row.target_id)}</b>
-              <span class="voi-score">${esc(row.rating)} · ${Number(row.score || 0).toFixed(2)}</span>
+              <span class="voi-score">${esc(row.rating)}</span>
+              <div class="voi-small">Confidence: ${esc((row.target_confidence || {}).rating || 'unknown')}</div>
             </div>`).join('')}
         </div>
       </div>`;
@@ -403,8 +405,9 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
     return `
       <div class="voi-panel">
         <div class="voi-method">
-          <b>Provisional method.</b> This is a ten-target VOI profile, not a single authority score.
-          Coverage confidence is ${esc(coverage.rating || 'unknown')} (${Number(coverage.score || 0).toFixed(2)}):
+          <b>Provisional method.</b> This is a ten-target routing profile, not a formal expected-value calculation or a single authority score.
+          ${esc(profile.panel_disclaimer || 'AI-simulated expert review only; not reviewed by the named human panel.')}
+          Coverage confidence is ${esc(coverage.rating || 'unknown')}:
           ${esc(coverage.basis || 'basis pending')}.
         </div>
         <div>
@@ -414,16 +417,20 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
               const query = row.article_finder_query || {};
               const link = row.internal_search_url || query.internal_search_url || '#';
               const structured = query.structured_query || {};
+              const confidence = row.target_confidence || {};
+              const missing = row.missing_required_signals || row.missing_evidence_flags || [];
               return `
                 <article class="voi-card">
                   <div class="voi-card-head">
                     <div class="voi-card-title">${esc(row.label || row.target_id)}</div>
-                    <span class="voi-badge ${esc(row.rating || 'na')}">${esc(row.rating || 'na')} ${Number(row.score || 0).toFixed(2)}</span>
+                    <span class="voi-badge ${esc(row.rating || 'na')}">${esc(row.rating || 'na')}</span>
                   </div>
                   <div class="voi-basis">${esc(row.basis || 'No basis supplied.')}</div>
+                  <div class="voi-small">Routing score ${Number(row.routing_score || row.score || 0).toFixed(2)} · confidence ${esc(confidence.rating || 'unknown')} · ${esc(row.score_semantics || 'heuristic routing')}</div>
+                  ${missing.length ? `<div class="voi-small">Missing signals: ${esc(missing.slice(0,3).join(', '))}${missing.length>3?'...':''}</div>` : ''}
                   <div class="voi-query">
                     <b>Article-finder check:</b> ${esc(query.natural_language_query || '')}
-                    ${query.boolean_query ? `<br><code>${esc(query.boolean_query)}</code>` : ''}
+                    ${query.narrow_query ? `<br><code>${esc(query.narrow_query)}</code>` : query.boolean_query ? `<br><code>${esc(query.boolean_query)}</code>` : ''}
                     ${structured.require_terms ? `<br>Requires: ${esc((structured.require_terms || []).join(', '))}` : ''}
                   </div>
                   <div class="voi-actions">
@@ -452,7 +459,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
     SB_LIST.innerHTML = list.map(t => `
       <div class="sb-item ${t.id===activeTopicId?'active':''}" data-id="${esc(t.id)}">
         <div class="sb-name">${esc(t.name)}<span class="sb-n">${t.n}</span></div>
-        <div class="sb-meta">${esc(shortCat(t.cat))} · warrant seed ${(t.voi||0).toFixed(2)} · ${esc(t.maturity||'—')}</div>
+        <div class="sb-meta">${esc(shortCat(t.cat))} · ${esc(t.n || 0)} papers · ${esc(t.maturity||'—')}</div>
       </div>`).join('');
     SB_LIST.querySelectorAll('.sb-item').forEach(el =>
       el.addEventListener('click', () => selectTopic(el.dataset.id)));
@@ -477,7 +484,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
 
     PANEL.innerHTML = `
       <div class="topic-head">
-        <div class="topic-cat">${esc(t.cat)} · warrant seed ${(t.voi||0).toFixed(2)}</div>
+        <div class="topic-cat">${esc(t.cat)} · ${esc(t.n || 0)} papers</div>
         <h2 class="topic-title">${esc(t.name)}</h2>
         <div class="topic-meta">
           <span><b>${t.n}</b> paper${t.n===1?'':'s'}</span>
