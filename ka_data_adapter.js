@@ -2,6 +2,7 @@
   const PAYLOAD_PATHS = {
     topics: 'data/ka_payloads/topics.json',
     topic_hierarchy: 'data/ka_payloads/topic_hierarchy.json',
+    topic_voi: 'data/ka_payloads/topic_voi.json',
     topic_ontology: 'data/ka_payloads/topic_ontology.json',
     topic_memberships: 'data/ka_payloads/topic_memberships.json',
     topic_crosswalk: 'data/ka_payloads/topic_crosswalk.json',

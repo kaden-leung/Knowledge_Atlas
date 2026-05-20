@@ -106,6 +106,35 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
 .gap-item .gap-kind{font-size:.66rem;font-weight:700;letter-spacing:.08em;
                     text-transform:uppercase;color:#E8872A;margin-bottom:3px}
 
+.voi-summary{background:#F9F7F2;border:1px solid #E0D8CC;border-radius:8px;
+             padding:12px 14px;margin:14px 0}
+.voi-summary h4,.voi-panel h4{font-size:.76rem;font-weight:700;letter-spacing:.08em;
+             text-transform:uppercase;color:#8A9A96;margin-bottom:8px}
+.voi-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
+.voi-summary-card{background:#fff;border:1px solid #E9E1D5;border-radius:7px;padding:9px 10px}
+.voi-summary-card b{display:block;color:#1C3D3A;font-size:.86rem;line-height:1.25;margin-bottom:3px}
+.voi-score{font-size:.75rem;color:#6B6B6B}
+.voi-panel{display:grid;gap:14px}
+.voi-method{font-size:.84rem;color:#40514D;background:#F9F7F2;border-left:3px solid #2A7868;
+            border-radius:0 7px 7px 0;padding:10px 12px}
+.voi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.voi-card{border:1px solid #E0D8CC;border-radius:8px;background:#fff;padding:11px 12px}
+.voi-card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:6px}
+.voi-card-title{font-weight:700;color:#1C3D3A;font-size:.92rem;line-height:1.25}
+.voi-badge{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+           border-radius:999px;padding:2px 7px;white-space:nowrap}
+.voi-badge.high{background:#E8F8F2;color:#1A7050}
+.voi-badge.medium{background:#FEF3E2;color:#9a5010}
+.voi-badge.low{background:#F3EFE6;color:#6B6B6B}
+.voi-badge.na{background:#EEE;color:#777}
+.voi-basis{font-size:.82rem;color:#40514D;line-height:1.45;margin-bottom:8px}
+.voi-query{font-size:.76rem;color:#6B6B6B;line-height:1.42;border-top:1px dashed #E0D8CC;padding-top:7px}
+.voi-query code{font-size:.72rem;white-space:normal;word-break:break-word}
+.voi-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.voi-actions a{display:inline-flex;align-items:center;padding:5px 9px;border:1px solid #D8D0C5;
+               border-radius:6px;color:#1C3D3A;text-decoration:none;font-size:.75rem;font-weight:700}
+.voi-actions a:hover{border-color:#2A7868;color:#2A7868;background:#F4FBF8}
+
 .art-row{padding:10px 0;border-bottom:1px dashed #E0D8CC;font-size:.88rem}
 .art-row:last-child{border-bottom:0}
 .art-title{font-family:Georgia,serif;font-weight:700;color:#1C3D3A;margin-bottom:2px}
@@ -202,6 +231,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
   const CAT_FILTER = document.getElementById('catFilter');
 
   let TOPICS = [];
+  let TOPIC_VOI_BY_ID = {};
   let activeCat = '';
   let activeTopicId = null;
 
@@ -264,7 +294,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
               return `
                 <article class="topics-live-row">
                   <b>${esc(topic.name || topic.id)}</b>
-                  <div class="topics-live-meta">${esc(topic.cat || 'Topic')} · VOI ${Number(topic.voi || 0).toFixed(2)} · ${esc(topic.n || 0)} papers</div>
+                  <div class="topics-live-meta">${esc(topic.cat || 'Topic')} · warrant seed ${Number(topic.voi || 0).toFixed(2)} · ${esc(topic.n || 0)} papers</div>
                   ${(topic.shared_theories && topic.shared_theories.length) ? `<div class="topics-live-chip-row">${topic.shared_theories.slice(0,4).map(label => {
                     const theory = theoryByName.get(String(label || '').toLowerCase());
                     return theory
@@ -341,6 +371,71 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
     return gs;
   }
 
+  function voiForTopic(t){
+    return TOPIC_VOI_BY_ID[t.id] || null;
+  }
+
+  function renderVoiSummary(t){
+    const profile = voiForTopic(t);
+    if (!profile) return '';
+    const topTargets = (profile.top_targets || []).slice(0,3);
+    if (!topTargets.length) return '';
+    return `
+      <div class="voi-summary">
+        <h4>Value of Information profile</h4>
+        <div class="voi-summary-grid">
+          ${topTargets.map(row => `
+            <div class="voi-summary-card">
+              <b>${esc(row.label || row.target_id)}</b>
+              <span class="voi-score">${esc(row.rating)} · ${Number(row.score || 0).toFixed(2)}</span>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderVoiTab(t){
+    const profile = voiForTopic(t);
+    if (!profile) {
+      return '<div class="empty">No topic-level VOI profile has been generated for this topic yet.</div>';
+    }
+    const rows = profile.researcher_projection || Object.values(profile.target_vector || {});
+    const coverage = profile.coverage_confidence || {};
+    return `
+      <div class="voi-panel">
+        <div class="voi-method">
+          <b>Provisional method.</b> This is a ten-target VOI profile, not a single authority score.
+          Coverage confidence is ${esc(coverage.rating || 'unknown')} (${Number(coverage.score || 0).toFixed(2)}):
+          ${esc(coverage.basis || 'basis pending')}.
+        </div>
+        <div>
+          <h4>Targets and article-finder checks</h4>
+          <div class="voi-grid">
+            ${rows.map(row => {
+              const query = row.article_finder_query || {};
+              const link = row.internal_search_url || query.internal_search_url || '#';
+              const structured = query.structured_query || {};
+              return `
+                <article class="voi-card">
+                  <div class="voi-card-head">
+                    <div class="voi-card-title">${esc(row.label || row.target_id)}</div>
+                    <span class="voi-badge ${esc(row.rating || 'na')}">${esc(row.rating || 'na')} ${Number(row.score || 0).toFixed(2)}</span>
+                  </div>
+                  <div class="voi-basis">${esc(row.basis || 'No basis supplied.')}</div>
+                  <div class="voi-query">
+                    <b>Article-finder check:</b> ${esc(query.natural_language_query || '')}
+                    ${query.boolean_query ? `<br><code>${esc(query.boolean_query)}</code>` : ''}
+                    ${structured.require_terms ? `<br>Requires: ${esc((structured.require_terms || []).join(', '))}` : ''}
+                  </div>
+                  <div class="voi-actions">
+                    <a href="${esc(link)}">Check KA corpus</a>
+                  </div>
+                </article>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>`;
+  }
+
   function renderSidebar(){
     const q = SEARCH.value.trim().toLowerCase();
     const list = TOPICS.filter(t => {
@@ -357,7 +452,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
     SB_LIST.innerHTML = list.map(t => `
       <div class="sb-item ${t.id===activeTopicId?'active':''}" data-id="${esc(t.id)}">
         <div class="sb-name">${esc(t.name)}<span class="sb-n">${t.n}</span></div>
-        <div class="sb-meta">${esc(shortCat(t.cat))} · VOI ${(t.voi||0).toFixed(2)} · ${esc(t.maturity||'—')}</div>
+        <div class="sb-meta">${esc(shortCat(t.cat))} · warrant seed ${(t.voi||0).toFixed(2)} · ${esc(t.maturity||'—')}</div>
       </div>`).join('');
     SB_LIST.querySelectorAll('.sb-item').forEach(el =>
       el.addEventListener('click', () => selectTopic(el.dataset.id)));
@@ -382,7 +477,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
 
     PANEL.innerHTML = `
       <div class="topic-head">
-        <div class="topic-cat">${esc(t.cat)} · VOI ${(t.voi||0).toFixed(2)}</div>
+        <div class="topic-cat">${esc(t.cat)} · warrant seed ${(t.voi||0).toFixed(2)}</div>
         <h2 class="topic-title">${esc(t.name)}</h2>
         <div class="topic-meta">
           <span><b>${t.n}</b> paper${t.n===1?'':'s'}</span>
@@ -395,6 +490,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
         <button class="tab active" data-tab="overview">Overview</button>
         <button class="tab" data-tab="evidence">Evidence</button>
         <button class="tab" data-tab="gaps">Gaps</button>
+        <button class="tab" data-tab="voi">VOI</button>
         <button class="tab" data-tab="articles">Articles</button>
       </div>
       <div class="tab-body active" data-body="overview">
@@ -406,6 +502,7 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
           <div class="ov-pills">${theories.map(x => `<span class="pill pill-theory">${x}</span>`).join('')}</div></div>` : ''}
         ${constructs.length ? `<div class="ov-block"><h4>Constructs</h4>
           <div class="ov-pills">${constructs.map(x => `<span class="pill pill-construct">${x}</span>`).join('')}</div></div>` : ''}
+        ${renderVoiSummary(t)}
         <button class="ev-cta" id="goEvidence">See the evidence for this topic →</button>
       </div>
       <div class="tab-body" data-body="evidence">
@@ -435,6 +532,9 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
       </div>
       <div class="tab-body" data-body="gaps">
         ${gs.map(g => `<div class="gap-item"><div class="gap-kind">${esc(g.kind)}</div><div>${esc(g.text)}</div></div>`).join('')}
+      </div>
+      <div class="tab-body" data-body="voi">
+        ${renderVoiTab(t)}
       </div>
       <div class="tab-body" data-body="articles">
         ${(t.paper_ids||[]).map(pid => {
@@ -504,9 +604,16 @@ main.ka-outer{max-width:1200px;margin:22px auto 70px;padding:0 22px}
     (window.KA_DATA_ADAPTER
       ? window.KA_DATA_ADAPTER.loadPayload('paper_pnus', { papers: [], summary: {} })
       : Promise.resolve({ papers: [], summary: {} })),
+    (window.KA_DATA_ADAPTER
+      ? window.KA_DATA_ADAPTER.loadPayload('topic_voi', { topics: [] })
+      : fetch('data/ka_payloads/topic_voi.json', {cache:'no-store'}).then(r => r.ok ? r.json() : { topics: [] }).catch(() => ({ topics: [] }))),
   ])
-    .then(([topicsData, articlesData, theoriesData, pnuData]) => {
+    .then(([topicsData, articlesData, theoriesData, pnuData, topicVoiData]) => {
       TOPICS = topicsData.topics || [];
+      TOPIC_VOI_BY_ID = {};
+      (topicVoiData.topics || []).forEach(row => {
+        if (row && row.topic_id) TOPIC_VOI_BY_ID[row.topic_id] = row;
+      });
       if (articlesData && Array.isArray(articlesData.articles)) {
         for (const a of articlesData.articles) {
           if (a && a.paper_id) ARTICLES_BY_ID[a.paper_id] = a;
