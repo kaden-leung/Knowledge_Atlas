@@ -59,10 +59,13 @@ def validate_payload(path: Path = DEFAULT_PAYLOAD, topics_path: Path = TOPICS_PA
         errors.append(f"payload: method_status must be {REQUIRED_METHOD_STATUS}")
     if not payload.get("computed_at"):
         errors.append("payload: computed_at is required")
-    if (payload.get("panel_status") or {}).get("real_human_panel_completed") is not False:
-        errors.append("payload: real_human_panel_completed must be false until the real panel is run")
-    if "AI-simulated" not in str(payload.get("panel_disclaimer") or ""):
-        errors.append("payload: panel_disclaimer must state that current review is AI-simulated")
+    panel_status = payload.get("panel_status") or {}
+    if panel_status.get("real_human_panel_completed") is not False:
+        errors.append("payload: real_human_panel_completed must remain false unless actual human respondents are logged")
+    if panel_status.get("source_grounded_simulated_panel_completed") is not True:
+        errors.append("payload: source_grounded_simulated_panel_completed must be true")
+    if "simulated" not in str(payload.get("panel_disclaimer") or "").lower():
+        errors.append("payload: panel_disclaimer must state that current review is simulated")
     if payload.get("score_semantics") != REQUIRED_SCORE_SEMANTICS:
         errors.append(f"payload: score_semantics must be {REQUIRED_SCORE_SEMANTICS}")
     if payload.get("decision_context_absent") is not True:

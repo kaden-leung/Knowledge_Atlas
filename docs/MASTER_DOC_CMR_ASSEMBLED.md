@@ -15037,7 +15037,7 @@ The Knowledge Atlas website also uses a second, weaker VOI object: the topic-lev
 
 The profile follows one central rule: VOI means epistemic leverage, not topical importance. A topic is useful to inspect when new literature, new extraction, or a feasible study could change the Atlas's beliefs, warrants, mechanisms, scope claims, theory discriminations, or design advice. It must therefore remain a vector, not a scalar. The ten targets are better stimuli, construct and measurement quality, causal or severe design, deconfounding, mechanism-link uncertainty, boundary conditions, theory discrimination, replication priority, design translation, and cross-cultural or population scope.
 
-The current implementation is explicitly provisional. It was hardened after an AI-simulated expert-panel review drawing on the relevant positions of Pearl, Mayo, Thagard, Gelman, Howard, Simon, Bergstrom, West, Leydesdorff, MacKay, Longino, Machery, and Buzsaki. This is not a real human panel response. The payload must say so, and the UI must not present the result as settled expert judgment.
+The current implementation is explicitly provisional. It was hardened after a source-grounded simulated expert-panel review drawing on the relevant positions of Pearl, Mayo, Thagard, Gelman, Howard, Simon, Bergstrom, West, Leydesdorff, MacKay, Longino, Machery, and Buzsaki. This is not a real human panel response, real correspondence, or endorsement by the named people. The payload must say so, and the UI must not present the result as settled expert judgment. The simulated panel record is `docs/VOI_SOURCE_GROUNDED_SIMULATED_PANEL_2026-05-20.md`.
 
 The panel-hardening introduced six principles:
 
@@ -15056,7 +15056,7 @@ python3 scripts/verify_topic_voi_contract.py --strict
 pytest tests/test_topic_voi_contract.py
 ```
 
-This topic-level profile is intended to drive the KA topic page, article-finder queues, and student project triage. It should not be used as the formal experimental-design VOI layer until a real panel and calibrated decision model are in place.
+This topic-level profile is intended to drive the KA topic page, article-finder queues, and student project triage. It should not be used as the formal experimental-design VOI layer until a calibrated decision model is in place.
 
 ### §121.4: The Research Queue and Priority Management
 

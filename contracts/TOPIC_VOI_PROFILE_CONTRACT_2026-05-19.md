@@ -2,13 +2,13 @@
 
 **Contract id**: `TOPIC_VOI_PROFILE_CONTRACT_2026-05-19`
 **Scope**: Per-topic Value of Information profiles on the Knowledge Atlas.
-**Status**: Active, provisional-method contract pending real human panel review.
+**Status**: Active, provisional-method contract governed by source-grounded simulated expert-panel review.
 
 ## Purpose
 
 The topic VOI layer exists to answer one practical question: what would be most worth learning next about this topic? It must not reduce that question to a single opaque number. A topic can be worth further attention because it needs better stimuli, construct-valid measurement, causal or severe design, deconfounding, mechanism-link tests, boundary-condition work, theory discrimination, replication, design translation, or population-scope evidence. Those are different reasons and must remain visible.
 
-The current payload is a provisional, AI-simulated expert-panel implementation. It is not a real human panel judgment. It is also not a formal expected-value calculation, because no decision alternatives, priors, likelihoods, utilities, or search costs have been specified.
+The current payload is a provisional, source-grounded simulated expert-panel implementation. It is not a real human panel judgment and must not be reported as review or endorsement by named people. It is also not a formal expected-value calculation, because no decision alternatives, priors, likelihoods, utilities, or search costs have been specified.
 
 ## Required Output
 
@@ -100,11 +100,11 @@ SC-VOI-7: The verifier fails if any topic from `topics.json` is missing.
 
 SC-VOI-8: The verifier fails if any `internal_search_url` does not point to KA search.
 
-SC-VOI-9: The payload states clearly that the current method is provisional pending the real panel.
+SC-VOI-9: The payload states clearly that the current method is provisional and source-grounded simulated panel review has been completed.
 
 SC-VOI-10: No single composite VOI authority score is exposed as the final answer.
 
-SC-VOI-11: The payload and UI state that the current panel is AI-simulated and not a named human panel.
+SC-VOI-11: The payload and UI state that the current panel is simulated and not a named-human response or endorsement.
 
 SC-VOI-12: Every target has `signal_strength`, score components, missing-evidence flags, and target confidence.
 

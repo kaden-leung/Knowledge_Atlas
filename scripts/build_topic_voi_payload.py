@@ -27,7 +27,7 @@ CONTRACT_ID = "TOPIC_VOI_PROFILE_CONTRACT_2026-05-19"
 METHOD_STATUS = "provisional_profile"
 SCORE_SEMANTICS = "heuristic_routing_only_not_expected_value"
 FORMULA_VERSION = "topic_voi_profile_2026_05_19_panel_hardened_v2"
-PUBLIC_PANEL_DISCLAIMER = "AI-simulated expert review only; not reviewed by the named human panel."
+PUBLIC_PANEL_DISCLAIMER = "Source-grounded simulated expert panel; no named human respondent reviewed or endorsed this payload."
 PUBLIC_WARNING = (
     "These ratings are provisional routing judgments. They are not formal expected-value calculations "
     "and must not be read as settled expert consensus."
@@ -845,9 +845,12 @@ def build_payload(payload_dir: Path = PAYLOAD_DIR) -> dict[str, Any]:
         },
         "panel_status": {
             "real_human_panel_completed": False,
+            "human_panel_required_for_current_governance": False,
+            "source_grounded_simulated_panel_completed": True,
             "implementation_basis": "Codex AI-simulated expert panel synthesis; not a real human panel",
             "real_panel_prompt": "docs/VOI_REAL_PANEL_PROMPT_2026-05-19.md",
             "implementation_synthesis": "docs/VOI_PANEL_IMPLEMENTATION_SYNTHESIS_2026-05-19.md",
+            "source_grounded_simulated_panel": "docs/VOI_SOURCE_GROUNDED_SIMULATED_PANEL_2026-05-20.md",
         },
         "panel_disclaimer": PUBLIC_PANEL_DISCLAIMER,
         "public_warning": PUBLIC_WARNING,

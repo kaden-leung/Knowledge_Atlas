@@ -1,12 +1,14 @@
 # VOI Panel Implementation Synthesis
 
 **Date**: 2026-05-19
-**Status**: Codex implementation synthesis. This is not a real human panel response.
+**Status**: Codex implementation synthesis from a source-grounded simulated expert panel. This is not a real human panel response.
 **Governing contract**: `contracts/TOPIC_VOI_PROFILE_CONTRACT_2026-05-19.md`
 
 ## Provenance
 
-DK asked for a real panel if one was needed. A real human panel is needed before the Atlas treats the VOI method as academically settled. That panel cannot be honestly claimed to have run inside this coding session. What can be done now is the correct interim step: write the real-panel prompt, run an AI-simulated panel for implementation critique, use the published positions of the named experts to discipline the synthesis, and mark the method as provisional until actual responses are obtained.
+DK clarified that KA panels are normally simulated expert panels, not live human respondents. The correct provenance standard is therefore not "pending real people"; it is "source-grounded simulated panel, clearly labeled." This synthesis uses named thinkers only as standpoint anchors and does not claim correspondence, review, or endorsement by those people. The current method remains provisional because it is a routing profile, not a calibrated formal VOI decision model.
+
+The source-grounded simulated panel record is `docs/VOI_SOURCE_GROUNDED_SIMULATED_PANEL_2026-05-20.md`.
 
 ## Simulated Panel Corrections Incorporated
 
@@ -58,4 +60,4 @@ The implementation is not done unless:
 - the UI has a VOI tab and shows article-finder checks;
 - the payload exposes score semantics, formula version, formula components, target confidence, missing evidence, and signal strength;
 - the verifier rejects degenerate all-high target distributions, unsorted researcher projections, and target/query mismatches;
-- the method status remains `provisional_profile` until a real panel adjudicates it.
+- the method status remains `provisional_profile` until a calibrated formal decision model exists.
