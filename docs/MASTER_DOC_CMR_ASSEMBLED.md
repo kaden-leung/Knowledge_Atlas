@@ -15031,6 +15031,37 @@ For comparison: Running a controlled lab study on daylight and creativity:
 
 Literature search is ~10,000× more efficient for this gap.
 
+### §121.3A: Topic-Level VOI Profiles for Atlas Navigation
+
+The Knowledge Atlas website also uses a second, weaker VOI object: the topic-level VOI profile. This is not the formal gap-priority calculation described above. It is a provisional routing profile for navigation, article finding, and student project selection. Its governing contract is `contracts/TOPIC_VOI_PROFILE_CONTRACT_2026-05-19.md`, and its current implementation writes `data/ka_payloads/topic_voi.json`.
+
+The profile follows one central rule: VOI means epistemic leverage, not topical importance. A topic is useful to inspect when new literature, new extraction, or a feasible study could change the Atlas's beliefs, warrants, mechanisms, scope claims, theory discriminations, or design advice. It must therefore remain a vector, not a scalar. The ten targets are better stimuli, construct and measurement quality, causal or severe design, deconfounding, mechanism-link uncertainty, boundary conditions, theory discrimination, replication priority, design translation, and cross-cultural or population scope.
+
+The current implementation is explicitly provisional. It was hardened after a source-grounded simulated expert-panel review drawing on the relevant positions of Pearl, Mayo, Thagard, Gelman, Howard, Simon, Bergstrom, West, Leydesdorff, MacKay, Longino, Machery, and Buzsaki. This is not a real human panel response, real correspondence, or endorsement by the named people. The payload must say so, and the UI must not present the result as settled expert judgment. The simulated panel record is `docs/VOI_SOURCE_GROUNDED_SIMULATED_PANEL_2026-05-20.md`.
+
+The panel-hardening introduced six principles:
+
+1. A routing score is not expected value. Formal VOI would require decision alternatives, priors, likelihoods, utilities, and costs. Until those exist, the score semantics are `heuristic_routing_only_not_expected_value`.
+2. Missing extraction is not evidence of absence. Targets must expose missing required signals and lower target confidence when required fields have not been extracted.
+3. Article-finder coupling is mandatory. Every target must include broad and narrow queries, known-work exclusions, and a query-test statement explaining what would keep the opportunity open or close it.
+4. Construct validity is distinct from measurement quantity. More instruments or sensors do not by themselves mean better evidence.
+5. Mechanism language is not mechanism evidence. PNU summaries alone do not count as direct evidence for mechanism links unless level of analysis, causal links, and observable mediators have been extracted.
+6. Population and cultural scope must be extracted, not guessed from silence. The system must expose population, country, language, recruitment, and measurement-invariance status.
+
+The 2026-05-20 student-choice extension adds a derived `student_choice_projection` to each topic profile. This is not a second VOI system and must not introduce a hidden ranking model. It is a translation layer from the four student-facing targets only: better stimuli, construct and measurement quality, deconfounding, and replication priority. Its purpose is practical pedagogy: a student choosing a topic needs a small number of intelligible project moves, a warning about what may make the topic hard, a first article-finder query, and a likely deliverable. The projection therefore contains `fit_level`, `why_choose_this`, `best_project_moves`, `watch_out_for`, `first_article_finder_query`, and `recommended_deliverable`. This makes the topic VOI profile useful for COGS 160-style choice without exposing students to the full research-internal warrant machinery.
+
+The contract rule is strict: the student card may simplify and translate, but it may not invent new evidence, collapse the whole topic into one authority score, or draw from targets outside the four student defaults. A "good" student topic means that there is at least one feasible epistemic move a student can actually attempt, not that the topic is scientifically settled or globally most important.
+
+The last-mile checks are:
+
+```bash
+python3 scripts/build_topic_voi_payload.py
+python3 scripts/verify_topic_voi_contract.py --strict
+pytest tests/test_topic_voi_contract.py
+```
+
+This topic-level profile is intended to drive the KA topic page, article-finder queues, and student project triage. It should not be used as the formal experimental-design VOI layer until a calibrated decision model is in place.
+
 ### §121.4: The Research Queue and Priority Management
 
 The extraction pipeline maintains a queue of papers to process. Papers flow through six states:

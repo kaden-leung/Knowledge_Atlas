@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0039",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:25Z",
+  "cards": [
+    {
+      "id": "dyk_870208bcde",
+      "paper_id": "PDF-0039",
+      "source_claim_ids": [
+        "57"
+      ],
+      "title": "The emotional character of a multi-colored image can be computationally modeled.",
+      "body": "Human emotional responses to the colors in complex images are surprisingly consistent. Research shows these responses can be modeled along three emotional axes: activity (e.g., dynamic vs. static), weight (e.g., heavy vs. light), and heat (e.g., warm vs. cool). This work extends a color-emotion metric from single colors to multi-colored images, turning a vague impression into a measurable perceptual field. This matters because it allows image databases and design tools to organize, search, and tune content based on predictable emotional impact, rather than just by object content.",
+      "expanded_summary": "The study validates a computational model for color emotion by showing that its predictions strongly correlate with human judgments. This suggests that the color composition of an image can be treated as an information-bearing variable for design, shaping perceived mood and similarity. The research was conducted in two stages: a pilot study with 52 observers, and a main study with a smaller group of 33. To prevent the smaller sample from being skewed by any single individual's judgments, participants in the main study were asked to judge each image sample only once. This careful methodology strengthens the finding that a shared, measurable color-emotion structure exists for complex images.",
+      "measurables": "The study used psychophysical experiments where observers rated 567 multi-colored images using category and interval scaling. Judgments were made along three emotion factors: activity, weight, and heat. The model's validity was tested by calculating the Pearson correlation between observers' average ratings and the predicted emotion values derived from the image's color structure.",
+      "short_science_summary": "This research investigates whether the emotional response to single colors can be extended to model responses to ordinary, multi-colored images. The study's core finding is that the color structure of such images can be effectively modeled using three emotion factors: activity, weight, and heat. Crucially, human judgments show a strong correlation with these modeled values, confirming that color emotion in complex scenes is a measurable perceptual field, not just a vague impression. This represents a significant step in developing computational tools based on emotional color response. The study employed a two-stage psychophysical design. A pilot study with 52 observers was followed by a main study with 33 valid observers. The methodology was adjusted for the smaller main group; to avoid any single observer influencing the data too heavily, participants judged each of the 567 image samples only once. Observers rated images using both category and interval scaling on the three emotion factors. The primary evidence is not based on p-values but on high Pearson correlation coefficients between the model's predictions and human judgments, particularly for the 'heat' and 'weight' dimensions. The paper demonstrates the model's utility for image retrieval and for organizing images in an 'emotion space'. The implications are significant for design practice and technology, suggesting that image databases and design tools can use color as an information-bearing variable to tune for specific affective outcomes. While the evidence is relational and not a single causal intervention, it strongly supports the model's validity within the context of this specific psychophysical study.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "57"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:02Z",
+        "tokens_in": 1747,
+        "tokens_out": 691,
+        "cost_estimate_usd": 0.015606
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0039",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0039",
+      "source_link": "ka_article_view.html?id=PDF-0039",
+      "apa_citation": "Color Emotions for Multi-Colored Images."
+    }
+  ],
+  "failures": []
+}

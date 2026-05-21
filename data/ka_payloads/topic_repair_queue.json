@@ -1,19 +1,6 @@
 {
   "repair_queue": [
     {
-      "paper_id": "PDF-1078",
-      "title": "Planning for place: Place attachment and the founding of rural community land trusts",
-      "year": null,
-      "claim_count": 3,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
       "paper_id": "PDF-0035",
       "title": "arXiv:0903.1346v2 [gr-qc] 27 Aug 2009 E\ufb00ects of Space-Time Curvature on Spin-1/2 Particle Zitterbewegung Dinesh Singh\u2020\u00a7",
       "year": 2009,
@@ -25,19 +12,6 @@
       "missing_iv": true,
       "missing_dv": true,
       "repair_reason": "contaminant: out-of-scope paper"
-    },
-    {
-      "paper_id": "PDF-0044",
-      "title": "Architecture and Evolutionary Psychology",
-      "year": 1982,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Narrative Review",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
     },
     {
       "paper_id": "PDF-0061",
@@ -56,149 +30,16 @@
       "repair_reason": "unresolvable_iv|unresolvable_dv"
     },
     {
-      "paper_id": "PDF-0159",
-      "title": "Place and the Promise of Conservation Psychology",
-      "year": 2003,
+      "paper_id": "PDF-0807",
+      "title": "PDF-0807",
+      "year": null,
       "claim_count": 1,
       "primary_front": "",
-      "primary_topic": "conservation psychology",
+      "primary_topic": "Organizational Ecology",
       "sensor_summary": "",
       "theories": [
-        "conservation psychology",
-        "place attachment"
-      ],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0619",
-      "title": "Introduction to Human-Building Interaction (HBI): Interfacing HCI with Architecture and Urban Design",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Can and will architecture change the theory and practice of HCI?",
-      "sensor_summary": "",
-      "theories": [
-        "Can and will architecture change the theory and practice of HCI?"
-      ],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0802",
-      "title": "The haptic perception of spatial orientations",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Embodied Cognition",
-      "sensor_summary": "",
-      "theories": [
-        "Embodied Cognition",
-        "Phenomenology (Merleau-Ponty)",
-        "Multisensory Design"
-      ],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0976",
-      "title": "2.1 Two opposing perspectives on synesthesia",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "fMRI",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0986",
-      "title": "Introduction to shape and shape grammars",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0988",
-      "title": "broken into convex and nonconvex sets which meet some criteria of minimality in",
-      "year": 2001,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "It is far from clear, however, that there will ever be any such general theory (O'Rourke, 1987).",
-      "sensor_summary": "",
-      "theories": [
-        "It is far from clear, however, that there will ever be any such general theory (O'Rourke, 1987)."
-      ],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1271",
-      "title": "MAKING SENSE OF PLACE ATTACHMENT: TOWARDS A HOLISTIC UNDERSTANDING OF PEOPLE-PLACE RELATIONSHIPS AND EXPERIENCES",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Human Behavior \\& Environment: Advances in Theory \\& Research.",
-      "sensor_summary": "",
-      "theories": [
-        "Human Behavior \\& Environment: Advances in Theory \\& Research.",
-        "A Sense of Place, A Sense of Well-being.",
-        "Journal of Environmental Psychology 20: 193-205."
-      ],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1306",
-      "title": "Mystery, complexity, legibility and coherence: A meta-analysis",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1311",
-      "title": "AN OVERVIEW OF DAYLIGHTING SYSTEMS",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1340",
-      "title": "Occlusion as depth cue",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Towards a general theory of stereopsis: Binocular matching, occluding contours and fusion.",
-      "sensor_summary": "",
-      "theories": [
-        "Towards a general theory of stereopsis: Binocular matching, occluding contours and fusion.",
-        "Acredolo (Eds.), Spatial orientation: Theory, research, and application (pp.",
-        "Zaccolini's theory of color perspective."
+        "Organizational Ecology",
+        "Workplace Strategy"
       ],
       "missing_iv": true,
       "missing_dv": true,
@@ -218,69 +59,17 @@
       "repair_reason": "unresolvable_iv|unresolvable_dv"
     },
     {
-      "paper_id": "PDF-1345",
-      "title": "Table: Summary of Findings on Physiological Biomarkers of Chronic Stress",
+      "paper_id": "PDF-1078",
+      "title": "Planning for place: Place attachment and the founding of rural community land trusts",
       "year": null,
-      "claim_count": 1,
+      "claim_count": 3,
       "primary_front": "",
       "primary_topic": "Empirical Research",
       "sensor_summary": "",
       "theories": [],
-      "missing_iv": true,
+      "missing_iv": false,
       "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1377",
-      "title": "How the brain separates sounds",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1398",
-      "title": "Neuroscience and architecture: Modulating behavior through sensorimotor responses to the built environment",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1399",
-      "title": "Neuroscience, Architecture, and Autism Spectrum Disorder (ASD)",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-1400",
-      "title": "Neuroscience and architecture modulating behavior through sensorimotor responses to the built environment",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "EEG",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_iv|unresolvable_dv"
+      "repair_reason": "unresolvable_dv"
     },
     {
       "paper_id": "PDF-0010",
@@ -372,23 +161,6 @@
       "repair_reason": "unresolvable_dv"
     },
     {
-      "paper_id": "PDF-0087",
-      "title": "Architecture and Embodiment",
-      "year": 1993,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "embodied cognition",
-      "sensor_summary": "eye tracking, fMRI",
-      "theories": [
-        "embodied cognition",
-        "mirror neurons",
-        "phenomenology"
-      ],
-      "missing_iv": false,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_dv"
-    },
-    {
       "paper_id": "PDF-0111",
       "title": "It is on this natural weakness of ours that the shadow painting and conjuror art and their fellows rely when they deceive us with their tricks",
       "year": 1998,
@@ -404,24 +176,8 @@
       "repair_reason": "unresolvable_dv"
     },
     {
-      "paper_id": "PDF-0116",
-      "title": "Vision Sciences Society Young Investigator Award 2013 Visual perception of materials and their properties",
-      "year": 2013,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "statistical generative models",
-      "sensor_summary": "",
-      "theories": [
-        "statistical generative models",
-        "material perception"
-      ],
-      "missing_iv": false,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0262",
-      "title": "A parametric method to model 3D displacements around faults with volumetric vector fields",
+      "paper_id": "PDF-0264",
+      "title": "Hybrid Visualization of the Medical Images Data Sets",
       "year": null,
       "claim_count": 1,
       "primary_front": "",
@@ -433,16 +189,14 @@
       "repair_reason": "unresolvable_dv"
     },
     {
-      "paper_id": "PDF-0268",
-      "title": "The St\u00e4ckel systems and algebraic curves",
+      "paper_id": "PDF-0267",
+      "title": "ROCs in rats? Response to Wixted and Squire",
       "year": null,
       "claim_count": 1,
       "primary_front": "",
-      "primary_topic": "Symplectic forms in the theory of solitons.",
+      "primary_topic": "Not Applicable",
       "sensor_summary": "",
-      "theories": [
-        "Symplectic forms in the theory of solitons."
-      ],
+      "theories": [],
       "missing_iv": false,
       "missing_dv": true,
       "repair_reason": "unresolvable_dv"
@@ -457,21 +211,6 @@
       "sensor_summary": "",
       "theories": [
         "Color Theory in Architecture"
-      ],
-      "missing_iv": false,
-      "missing_dv": true,
-      "repair_reason": "unresolvable_dv"
-    },
-    {
-      "paper_id": "PDF-0340",
-      "title": "Light, Dark, and all That's in Between: Revisiting the Role of Light in Architecture",
-      "year": null,
-      "claim_count": 1,
-      "primary_front": "",
-      "primary_topic": "phenomenology of light",
-      "sensor_summary": "",
-      "theories": [
-        "phenomenology of light"
       ],
       "missing_iv": false,
       "missing_dv": true,
@@ -533,6 +272,21 @@
       "repair_reason": "unresolvable_dv"
     },
     {
+      "paper_id": "PDF-0619",
+      "title": "Introduction to Human-Building Interaction (HBI): Interfacing HCI with Architecture and Urban Design",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Can and will architecture change the theory and practice of HCI?",
+      "sensor_summary": "",
+      "theories": [
+        "Can and will architecture change the theory and practice of HCI?"
+      ],
+      "missing_iv": false,
+      "missing_dv": true,
+      "repair_reason": "unresolvable_dv"
+    },
+    {
       "paper_id": "PDF-0660",
       "title": "Low-Level Image Cues in the Perception of Translucent Materials",
       "year": null,
@@ -578,53 +332,132 @@
       "repair_reason": "unresolvable_dv"
     },
     {
-      "paper_id": "PDF-1320",
-      "title": "Geo-EEG: Towards the Use of EEG in the Study of Urban Behaviour",
-      "year": null,
-      "claim_count": 5,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "EEG",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": false,
-      "repair_reason": "unresolvable_iv"
-    },
-    {
-      "paper_id": "PDF-1276",
-      "title": "Learning Design Thinking by \\\\ Designing Learning Experiences:",
-      "year": null,
-      "claim_count": 4,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": false,
-      "repair_reason": "unresolvable_iv"
-    },
-    {
-      "paper_id": "PDF-1391",
-      "title": "The Role of Cortisol in the Stress Response",
-      "year": null,
-      "claim_count": 4,
-      "primary_front": "",
-      "primary_topic": "Empirical Research",
-      "sensor_summary": "",
-      "theories": [],
-      "missing_iv": true,
-      "missing_dv": false,
-      "repair_reason": "unresolvable_iv"
-    },
-    {
-      "paper_id": "PDF-0392",
-      "title": "A Narrative Review of Theories of Wayfinding Within the Interior Environment",
+      "paper_id": "PDF-0986",
+      "title": "Introduction to shape and shape grammars",
       "year": null,
       "claim_count": 1,
       "primary_front": "",
       "primary_topic": "Empirical Research",
       "sensor_summary": "",
       "theories": [],
+      "missing_iv": false,
+      "missing_dv": true,
+      "repair_reason": "unresolvable_dv"
+    },
+    {
+      "paper_id": "PDF-1311",
+      "title": "AN OVERVIEW OF DAYLIGHTING SYSTEMS",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Empirical Research",
+      "sensor_summary": "",
+      "theories": [],
+      "missing_iv": false,
+      "missing_dv": true,
+      "repair_reason": "unresolvable_dv"
+    },
+    {
+      "paper_id": "PDF-1335",
+      "title": "ON THE DISTINCTION BETWEEN DENSITY AND CROWDING:",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Thermal Comfort Theory",
+      "sensor_summary": "",
+      "theories": [
+        "Thermal Comfort Theory",
+        "Embodied Cognition"
+      ],
+      "missing_iv": false,
+      "missing_dv": true,
+      "repair_reason": "unresolvable_dv"
+    },
+    {
+      "paper_id": "PDF-0814",
+      "title": "Architectural space with multiple sensory stimuli (visual, auditory, olfactory, tactile, kinesthetic) in a wooden micro\u2026",
+      "year": null,
+      "claim_count": 5,
+      "primary_front": "",
+      "primary_topic": "Multisensory Architecture",
+      "sensor_summary": "",
+      "theories": [
+        "Multisensory Architecture",
+        "Sensory Perception"
+      ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0002",
+      "title": "Reducing the stress of high-density living: An architectural intervention.",
+      "year": 1980,
+      "claim_count": 3,
+      "primary_front": "",
+      "primary_topic": "These conditions, in turn, are related to stress and stresslike symptoms.",
+      "sensor_summary": "",
+      "theories": [
+        "These conditions, in turn, are related to stress and stresslike symptoms."
+      ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0231",
+      "title": "Industry Advisor Forintek Canada Corp. 2665 East Mall Vancouver, BC, Canada, V6T 1W5 Robert A. Kozak Associate Professor",
+      "year": 2006,
+      "claim_count": 3,
+      "primary_front": "",
+      "primary_topic": "biophilia",
+      "sensor_summary": "",
+      "theories": [
+        "biophilia"
+      ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0151",
+      "title": "\u20ddPleiades Publishing, Ltd., 2011. Original Russian Text c Bending of a Piecewise Developable Surface M. I. Shtogrin a",
+      "year": 2011,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Theoretical",
+      "sensor_summary": "",
+      "theories": [],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0268",
+      "title": "The St\u00e4ckel systems and algebraic curves",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Symplectic forms in the theory of solitons.",
+      "sensor_summary": "",
+      "theories": [
+        "Symplectic forms in the theory of solitons."
+      ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0269",
+      "title": "Constructing receiver operating characteristics (ROCs) with experimental animals: Cautionary notes",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Dual-process theory and signal-detection theory of recognition memory.",
+      "sensor_summary": "",
+      "theories": [
+        "Dual-process theory and signal-detection theory of recognition memory."
+      ],
       "missing_iv": true,
       "missing_dv": false,
       "repair_reason": "unresolvable_iv"
@@ -645,6 +478,52 @@
       "repair_reason": "unresolvable_iv"
     },
     {
+      "paper_id": "PDF-0716",
+      "title": "2.2 Participants and Procedure",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Empirical Research",
+      "sensor_summary": "",
+      "theories": [],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0911",
+      "title": "Wayfinding design: logic, application and some thoughts on universality",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Wayfinding",
+      "sensor_summary": "",
+      "theories": [
+        "Wayfinding",
+        "Spatial Cognition",
+        "Environmental Psychology",
+        "Universal Design"
+      ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-0988",
+      "title": "broken into convex and nonconvex sets which meet some criteria of minimality in",
+      "year": 2001,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "It is far from clear, however, that there will ever be any such general theory (O'Rourke, 1987).",
+      "sensor_summary": "",
+      "theories": [
+        "It is far from clear, however, that there will ever be any such general theory (O'Rourke, 1987)."
+      ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
       "paper_id": "PDF-1339",
       "title": "THE BASIC EMOTIONAL IMPACT OF ENVIRONMENTS \\(",
       "year": null,
@@ -655,6 +534,19 @@
       "theories": [
         "We have termed the corresponding emotional responses pleasure, arousal, and dominance."
       ],
+      "missing_iv": true,
+      "missing_dv": false,
+      "repair_reason": "unresolvable_iv"
+    },
+    {
+      "paper_id": "PDF-1345",
+      "title": "Table: Summary of Findings on Physiological Biomarkers of Chronic Stress",
+      "year": null,
+      "claim_count": 1,
+      "primary_front": "",
+      "primary_topic": "Empirical Research",
+      "sensor_summary": "",
+      "theories": [],
       "missing_iv": true,
       "missing_dv": false,
       "repair_reason": "unresolvable_iv"

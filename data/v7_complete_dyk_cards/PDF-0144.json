@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0144",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:30Z",
+  "cards": [
+    {
+      "id": "dyk_a5bc46d76f",
+      "paper_id": "PDF-0144",
+      "source_claim_ids": [
+        "212"
+      ],
+      "title": "Women's negative moods may be more stable than men's in changing light",
+      "body": "Your gender might influence how your mood responds to changes in indoor lighting. In an experiment, researchers measured participants' moods before and after they spent time in a room with either cool or warm lighting. They found a main effect of gender, where women's self-reported negative moods changed less than men's did. This suggests that the emotional impact of a built environment is not uniform; demographic factors like gender can moderate how people feel in a space, a key consideration for architects and designers aiming to support wellbeing.",
+      "expanded_summary": "The experiment involved 80 younger (~23 years) and older (~65 years) participants who were placed in an office-like room. Researchers also found an interaction between lighting and age on negative mood. Younger adults' negative moods were lower in warm light, while older adults' negative moods were lower in cool light. These findings highlight that lighting isn't just a practical detail but an \"affective source\" that can convey emotional meaning differently across demographic groups. The result argues for testing design choices against human responses rather than assuming a one-size-fits-all approach to creating comfortable and productive indoor environments.",
+      "measurables": "Researchers measured mood using the Positive and Negative Affect Schedule (PANAS), a self-report questionnaire. Participants completed the PANAS before and after being exposed to one of two lighting conditions in a controlled, office-like room. The change in their mood scores (delta score) was then analyzed to determine the effects of lighting, gender, and age on their emotional state.",
+      "short_science_summary": "Researchers investigated the impact of indoor lighting, gender, and age on mood and cognitive performance in a between-subject experiment with 80 participants. The study hypothesized that lighting is an affective source that may be perceived differently across demographic groups. Participants, comprising younger adults (mean age ~23.6) and older adults (mean age ~65.3), were randomly assigned to one of two lighting conditions in a neutrally furnished, office-like room. Mood was assessed before and after the lighting exposure using the Positive and Negative Affect Schedule (PANAS). An analysis of variance (ANOVA) on the change in mood scores revealed several key effects. A main effect of gender showed that females' negative moods were more stable than males' (F(1,72) = 4.48, p < .05). Furthermore, a significant two-way interaction between lighting type and age emerged for negative mood (F(1,72) = 11.76, p < .001). Younger adults reported a better mood response (less negative affect) in warm light, whereas older adults responded more favorably to cool light. The strength of the paper's main effects is supported by F-values as high as F(1,72) = 52.08 for other results. The design implication is that lighting is not a neutral background detail but a controllable variable that can influence human experience. The results suggest that effective environmental design should consider how demographic factors moderate responses to physical settings. However, the study's scope is a key limitation. The findings are based on a sample of 80 participants and a specific set of stimuli and tasks. Therefore, the results support a local inference, and broader generalizations would require further replication.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "212"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:00Z",
+        "tokens_in": 1681,
+        "tokens_out": 698,
+        "cost_estimate_usd": 0.015513
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0144",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0144",
+      "source_link": "ka_article_view.html?id=PDF-0144",
+      "apa_citation": "EFFECTS OF INDOOR LIGHTING, GENDER, AND AGE ON MOOD AND COGNITIVE PERFORMANCE."
+    }
+  ],
+  "failures": []
+}

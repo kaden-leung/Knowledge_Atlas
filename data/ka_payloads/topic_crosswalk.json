@@ -1,12 +1,104 @@
 {
   "summary": {
-    "row_count": 102,
+    "row_count": 121,
     "outcome_count": 18,
     "iv_root_count": 9,
     "default_view": "defended",
     "source_kind": "topic_crosswalk"
   },
   "rows": [
+    {
+      "topic_id": "luminous__affect_wellbeing",
+      "topic_label": "Luminous Environment \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0011",
+        "PDF-0017",
+        "PDF-0023",
+        "PDF-0046",
+        "PDF-0048",
+        "PDF-0070",
+        "PDF-0115",
+        "PDF-0116",
+        "PDF-0159",
+        "PDF-0195",
+        "PDF-0221",
+        "PDF-0235",
+        "PDF-0292",
+        "PDF-0299",
+        "PDF-0304",
+        "PDF-0305",
+        "PDF-0323",
+        "PDF-0329",
+        "PDF-0340",
+        "PDF-0364",
+        "PDF-0389",
+        "PDF-0400",
+        "PDF-0422",
+        "PDF-0427",
+        "PDF-0475",
+        "PDF-0518",
+        "PDF-0531",
+        "PDF-0715",
+        "PDF-0751",
+        "PDF-0752",
+        "PDF-0755",
+        "PDF-0756",
+        "PDF-0759",
+        "PDF-0766",
+        "PDF-0780",
+        "PDF-0783",
+        "PDF-0784",
+        "PDF-0792",
+        "PDF-0793",
+        "PDF-0805",
+        "PDF-0812",
+        "PDF-0816",
+        "PDF-0866",
+        "PDF-0883",
+        "PDF-0887",
+        "PDF-0908",
+        "PDF-0915",
+        "PDF-0976",
+        "PDF-1054",
+        "PDF-1306",
+        "PDF-1314",
+        "PDF-1340",
+        "PDF-1398",
+        "PDF-1400"
+      ],
+      "paper_count": 54,
+      "defended_paper_count": 54,
+      "working_paper_count": 108,
+      "theories": [
+        "Biophilic Design",
+        "Environmental Psychology",
+        "Circadian Lighting",
+        "Circadian Photobiology",
+        "Non-visual Light Effects",
+        "Attention Restoration Theory"
+      ],
+      "common_sensors": [
+        "EEG",
+        "pupil",
+        "skin conductance",
+        "GSR",
+        "eye-tracking",
+        "fMRI"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Wellbeing (Circadian)",
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Luminous Environment \u00d7 Restoration / Recovery (Attention)",
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
     {
       "topic_id": "luminous__mechanism",
       "topic_label": "Luminous Environment \u2192 Mechanism / Pathway",
@@ -17,13 +109,20 @@
       "iv_node": "luminous",
       "iv_label": "Lighting Conditions",
       "paper_ids": [
+        "PDF-0007",
         "PDF-0024",
         "PDF-0025",
+        "PDF-0037",
         "PDF-0084",
         "PDF-0119",
         "PDF-0130",
+        "PDF-0139",
         "PDF-0183",
         "PDF-0235",
+        "PDF-0310",
+        "PDF-0314",
+        "PDF-0318",
+        "PDF-0321",
         "PDF-0323",
         "PDF-0339",
         "PDF-0383",
@@ -34,43 +133,489 @@
         "PDF-0524",
         "PDF-0529",
         "PDF-0537",
-        "PDF-0716",
+        "PDF-0730",
+        "PDF-0739",
         "PDF-0756",
         "PDF-0759",
         "PDF-0762",
         "PDF-0763",
+        "PDF-0765",
+        "PDF-0769",
         "PDF-0771",
-        "PDF-0796",
+        "PDF-0772",
+        "PDF-0788",
+        "PDF-0820",
+        "PDF-0842",
         "PDF-0850",
         "PDF-0851",
         "PDF-0896",
         "PDF-0902",
         "PDF-0904",
         "PDF-0915",
-        "PDF-1268"
+        "PDF-0922",
+        "PDF-1107",
+        "PDF-1391"
       ],
-      "paper_count": 31,
-      "defended_paper_count": 31,
-      "working_paper_count": 51,
+      "paper_count": 46,
+      "defended_paper_count": 46,
+      "working_paper_count": 75,
+      "theories": [
+        "Circadian Lighting",
+        "Non-Visual Effects of Light",
+        "Non-visual Light Effects",
+        "Place Attachment Theory",
+        "CCT Effects",
+        "Chronobiology"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI",
+        "heart rate",
+        "skin conductance",
+        "HRV",
+        "Heart rate"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__affect_wellbeing",
+      "topic_label": "Spatial Form \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0004",
+        "PDF-0017",
+        "PDF-0041",
+        "PDF-0070",
+        "PDF-0087",
+        "PDF-0093",
+        "PDF-0116",
+        "PDF-0159",
+        "PDF-0196",
+        "PDF-0288",
+        "PDF-0329",
+        "PDF-0340",
+        "PDF-0354",
+        "PDF-0372",
+        "PDF-0422",
+        "PDF-0745",
+        "PDF-0756",
+        "PDF-0780",
+        "PDF-0783",
+        "PDF-0784",
+        "PDF-0793",
+        "PDF-0819",
+        "PDF-0822",
+        "PDF-0840",
+        "PDF-0845",
+        "PDF-0853",
+        "PDF-0866",
+        "PDF-0878",
+        "PDF-0887",
+        "PDF-0893",
+        "PDF-0910",
+        "PDF-0976",
+        "PDF-1054",
+        "PDF-1291",
+        "PDF-1306",
+        "PDF-1314",
+        "PDF-1348",
+        "PDF-1398",
+        "PDF-1399",
+        "PDF-1400"
+      ],
+      "paper_count": 40,
+      "defended_paper_count": 40,
+      "working_paper_count": 88,
+      "theories": [
+        "Biophilic Design",
+        "Neuroarchitecture",
+        "Environmental Psychology",
+        "biophilia hypothesis",
+        "Public Health",
+        "Attention Restoration Theory"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI",
+        "HRV",
+        "Heart rate",
+        "skin conductance",
+        "eye tracking"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)",
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)",
+        "Luminous Environment \u00d7 Restoration / Recovery (Attention)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__affect_wellbeing",
+      "topic_label": "Thermal & Air Quality \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0004",
+        "PDF-0023",
+        "PDF-0046",
+        "PDF-0048",
+        "PDF-0107",
+        "PDF-0261",
+        "PDF-0288",
+        "PDF-0299",
+        "PDF-0305",
+        "PDF-0422",
+        "PDF-0531",
+        "PDF-0671",
+        "PDF-0745",
+        "PDF-0751",
+        "PDF-0752",
+        "PDF-0755",
+        "PDF-0756",
+        "PDF-0759",
+        "PDF-0766",
+        "PDF-0774",
+        "PDF-0780",
+        "PDF-0783",
+        "PDF-0786",
+        "PDF-0792",
+        "PDF-0793",
+        "PDF-0795",
+        "PDF-0810",
+        "PDF-0816",
+        "PDF-0822",
+        "PDF-0840",
+        "PDF-0845",
+        "PDF-0853",
+        "PDF-0866",
+        "PDF-0878",
+        "PDF-0883",
+        "PDF-0887",
+        "PDF-0893",
+        "PDF-1054",
+        "PDF-1340",
+        "PDF-1399"
+      ],
+      "paper_count": 40,
+      "defended_paper_count": 40,
+      "working_paper_count": 67,
+      "theories": [
+        "Biophilic Design",
+        "Circadian Lighting",
+        "Neuroarchitecture",
+        "Environmental Psychology",
+        "Stress Recovery Theory",
+        "Non-visual Light Effects"
+      ],
+      "common_sensors": [
+        "EEG",
+        "HRV",
+        "Heart rate",
+        "skin conductance",
+        "GSR",
+        "eye-tracking"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)",
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)",
+        "Luminous Environment \u00d7 Restoration / Recovery (Attention)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__cog_performance",
+      "topic_label": "Luminous Environment \u2192 Cognitive Performance",
+      "outcome_term_id": "cog.performance",
+      "outcome_label": "Cognitive Performance",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0011",
+        "PDF-0046",
+        "PDF-0058",
+        "PDF-0070",
+        "PDF-0108",
+        "PDF-0115",
+        "PDF-0116",
+        "PDF-0130",
+        "PDF-0183",
+        "PDF-0216",
+        "PDF-0292",
+        "PDF-0310",
+        "PDF-0335",
+        "PDF-0421",
+        "PDF-0422",
+        "PDF-0427",
+        "PDF-0529",
+        "PDF-0601",
+        "PDF-0730",
+        "PDF-0758",
+        "PDF-0759",
+        "PDF-0792",
+        "PDF-0805",
+        "PDF-0832",
+        "PDF-0866",
+        "PDF-0872",
+        "PDF-0883",
+        "PDF-0896",
+        "PDF-0902",
+        "PDF-0976",
+        "PDF-1010",
+        "PDF-1065",
+        "PDF-1320",
+        "PDF-1340",
+        "PDF-1366"
+      ],
+      "paper_count": 36,
+      "defended_paper_count": 36,
+      "working_paper_count": 83,
       "theories": [
         "Circadian Lighting",
         "Non-visual Light Effects",
-        "CCT Effects",
-        "Non-Visual Effects of Light",
         "Circadian Lighting Theory",
-        "Place Attachment Theory"
+        "Circadian Photobiology",
+        "Biophilic Design",
+        "Material Perception"
+      ],
+      "common_sensors": [
+        "EEG",
+        "heart rate",
+        "HRV",
+        "fMRI",
+        "Heart rate",
+        "ECG"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)",
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Luminous Environment \u00d7 Wellbeing (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__affect_wellbeing",
+      "topic_label": "Material & Surface \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0015",
+        "PDF-0041",
+        "PDF-0070",
+        "PDF-0093",
+        "PDF-0107",
+        "PDF-0116",
+        "PDF-0159",
+        "PDF-0199",
+        "PDF-0261",
+        "PDF-0288",
+        "PDF-0304",
+        "PDF-0354",
+        "PDF-0518",
+        "PDF-0531",
+        "PDF-0637",
+        "PDF-0671",
+        "PDF-0751",
+        "PDF-0755",
+        "PDF-0759",
+        "PDF-0766",
+        "PDF-0774",
+        "PDF-0786",
+        "PDF-0789",
+        "PDF-0795",
+        "PDF-0810",
+        "PDF-0822",
+        "PDF-0853",
+        "PDF-0854",
+        "PDF-0884",
+        "PDF-0908",
+        "PDF-1291",
+        "PDF-1306",
+        "PDF-1340",
+        "PDF-1398",
+        "PDF-1399",
+        "PDF-1400"
+      ],
+      "paper_count": 36,
+      "defended_paper_count": 36,
+      "working_paper_count": 65,
+      "theories": [
+        "Biophilic Design",
+        "Circadian Lighting",
+        "Biophilia Hypothesis",
+        "Material Perception",
+        "Physiological Relaxation",
+        "Non-Visual Effects of Light"
+      ],
+      "common_sensors": [
+        "HRV",
+        "Heart rate",
+        "heart rate",
+        "skin conductance",
+        "EEG"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Luminous Environment \u00d7 Wellbeing (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__cog_performance",
+      "topic_label": "Spatial Form \u2192 Cognitive Performance",
+      "outcome_term_id": "cog.performance",
+      "outcome_label": "Cognitive Performance",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0005",
+        "PDF-0041",
+        "PDF-0064",
+        "PDF-0070",
+        "PDF-0116",
+        "PDF-0176",
+        "PDF-0310",
+        "PDF-0331",
+        "PDF-0360",
+        "PDF-0395",
+        "PDF-0414",
+        "PDF-0422",
+        "PDF-0442",
+        "PDF-0452",
+        "PDF-0593",
+        "PDF-0596",
+        "PDF-0638",
+        "PDF-0662",
+        "PDF-0676",
+        "PDF-0730",
+        "PDF-0746",
+        "PDF-0749",
+        "PDF-0758",
+        "PDF-0835",
+        "PDF-0845",
+        "PDF-0849",
+        "PDF-0866",
+        "PDF-0886",
+        "PDF-0910",
+        "PDF-0976",
+        "PDF-0997",
+        "PDF-1010",
+        "PDF-1036",
+        "PDF-1291",
+        "PDF-1320"
+      ],
+      "paper_count": 35,
+      "defended_paper_count": 35,
+      "working_paper_count": 77,
+      "theories": [
+        "Attention Restoration Theory",
+        "Soundscape Theory",
+        "neuroarchitecture",
+        "Environmental Neuroscience",
+        "Personal Control",
+        "Workplace Design"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI",
+        "ECG",
+        "HRV",
+        "electrodermal",
+        "EKG"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__mechanism",
+      "topic_label": "Spatial Form \u2192 Mechanism / Pathway",
+      "outcome_term_id": "mechanism",
+      "outcome_label": "Mechanism / Pathway",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0103",
+        "PDF-0212",
+        "PDF-0310",
+        "PDF-0314",
+        "PDF-0318",
+        "PDF-0321",
+        "PDF-0328",
+        "PDF-0371",
+        "PDF-0392",
+        "PDF-0398",
+        "PDF-0434",
+        "PDF-0452",
+        "PDF-0500",
+        "PDF-0590",
+        "PDF-0592",
+        "PDF-0593",
+        "PDF-0638",
+        "PDF-0730",
+        "PDF-0735",
+        "PDF-0739",
+        "PDF-0746",
+        "PDF-0756",
+        "PDF-0765",
+        "PDF-0771",
+        "PDF-0788",
+        "PDF-0796",
+        "PDF-0836",
+        "PDF-0851",
+        "PDF-0861",
+        "PDF-0879",
+        "PDF-1025",
+        "PDF-1107",
+        "PDF-1268"
+      ],
+      "paper_count": 33,
+      "defended_paper_count": 33,
+      "working_paper_count": 63,
+      "theories": [
+        "Attention Restoration Theory",
+        "Non-Visual Effects of Light",
+        "Stress Reduction Theory",
+        "Soundscape Ecology",
+        "Stress Recovery Theory",
+        "Urban Park Design"
       ],
       "common_sensors": [
         "EEG",
         "heart rate",
         "fMRI",
-        "HRV",
         "skin conductance",
-        "eye movement"
+        "Heart Rate",
+        "pupil"
       ],
       "fronts": [
-        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)"
+        "Spatial Form \u00d7 Physiological Response (Stress)",
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)"
       ],
       "evidence_status": "defended"
     },
@@ -85,9 +630,12 @@
       "iv_label": "Acoustic Conditions",
       "paper_ids": [
         "PDF-0001",
+        "PDF-0005",
+        "PDF-0064",
         "PDF-0134",
         "PDF-0169",
         "PDF-0181",
+        "PDF-0183",
         "PDF-0205",
         "PDF-0228",
         "PDF-0331",
@@ -95,39 +643,398 @@
         "PDF-0394",
         "PDF-0404",
         "PDF-0411",
+        "PDF-0442",
         "PDF-0469",
-        "PDF-0568",
         "PDF-0572",
         "PDF-0575",
         "PDF-0576",
+        "PDF-0578",
         "PDF-0582",
-        "PDF-0702",
+        "PDF-0830",
         "PDF-0832",
-        "PDF-0835",
+        "PDF-0845",
         "PDF-0849",
-        "PDF-1036"
+        "PDF-0886",
+        "PDF-1036",
+        "PDF-1291",
+        "PDF-1366",
+        "PDF-1377"
+      ],
+      "paper_count": 30,
+      "defended_paper_count": 30,
+      "working_paper_count": 42,
+      "theories": [
+        "Soundscape Theory",
+        "This process may have important consequences for our health and well-being.",
+        "aural architecture",
+        "Noise Stress",
+        "Open-Plan Office Research",
+        "Multimodal Measurement"
+      ],
+      "common_sensors": [
+        "EEG",
+        "heart rate",
+        "electrodermal",
+        "pupil",
+        "fMRI",
+        "skin conductance"
+      ],
+      "fronts": [
+        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__mechanism",
+      "topic_label": "Thermal & Air Quality \u2192 Mechanism / Pathway",
+      "outcome_term_id": "mechanism",
+      "outcome_label": "Mechanism / Pathway",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0024",
+        "PDF-0037",
+        "PDF-0106",
+        "PDF-0310",
+        "PDF-0318",
+        "PDF-0398",
+        "PDF-0550",
+        "PDF-0756",
+        "PDF-0759",
+        "PDF-0763",
+        "PDF-0765",
+        "PDF-0769",
+        "PDF-0771",
+        "PDF-0772",
+        "PDF-0788",
+        "PDF-0796",
+        "PDF-0820",
+        "PDF-0831",
+        "PDF-0836",
+        "PDF-0844",
+        "PDF-0850",
+        "PDF-0879",
+        "PDF-0896",
+        "PDF-0902",
+        "PDF-0904",
+        "PDF-1107",
+        "PDF-1391"
+      ],
+      "paper_count": 28,
+      "defended_paper_count": 28,
+      "working_paper_count": 53,
+      "theories": [
+        "Circadian Lighting",
+        "Non-Visual Effects of Light",
+        "Non-visual Light Effects",
+        "Chronobiology",
+        "CCT Effects",
+        "Psychological Noise Reduction"
+      ],
+      "common_sensors": [
+        "fMRI",
+        "EEG",
+        "heart rate",
+        "HRV",
+        "Heart rate",
+        "skin conductance"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__mechanism",
+      "topic_label": "Material & Surface \u2192 Mechanism / Pathway",
+      "outcome_term_id": "mechanism",
+      "outcome_label": "Mechanism / Pathway",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0019",
+        "PDF-0139",
+        "PDF-0328",
+        "PDF-0392",
+        "PDF-0398",
+        "PDF-0500",
+        "PDF-0646",
+        "PDF-0667",
+        "PDF-0675",
+        "PDF-0730",
+        "PDF-0739",
+        "PDF-0759",
+        "PDF-0763",
+        "PDF-0796",
+        "PDF-0797",
+        "PDF-0820",
+        "PDF-0831",
+        "PDF-0836",
+        "PDF-0844",
+        "PDF-0851",
+        "PDF-0861",
+        "PDF-0896",
+        "PDF-0902",
+        "PDF-0904",
+        "PDF-1268"
+      ],
+      "paper_count": 26,
+      "defended_paper_count": 26,
+      "working_paper_count": 41,
+      "theories": [
+        "Biophilic Design",
+        "Non-visual Light Effects",
+        "Circadian Lighting",
+        "Place Attachment Theory",
+        "CCT Effects",
+        "Non-Visual Effects of Light"
+      ],
+      "common_sensors": [
+        "EEG",
+        "HRV",
+        "Heart rate",
+        "skin conductance",
+        "fMRI",
+        "eye movement"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__cog_performance",
+      "topic_label": "Thermal & Air Quality \u2192 Cognitive Performance",
+      "outcome_term_id": "cog.performance",
+      "outcome_label": "Cognitive Performance",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0046",
+        "PDF-0060",
+        "PDF-0064",
+        "PDF-0310",
+        "PDF-0422",
+        "PDF-0442",
+        "PDF-0695",
+        "PDF-0708",
+        "PDF-0749",
+        "PDF-0758",
+        "PDF-0759",
+        "PDF-0792",
+        "PDF-0832",
+        "PDF-0845",
+        "PDF-0849",
+        "PDF-0866",
+        "PDF-0872",
+        "PDF-0883",
+        "PDF-0886",
+        "PDF-0896",
+        "PDF-0902",
+        "PDF-1010",
+        "PDF-1065",
+        "PDF-1320",
+        "PDF-1340"
+      ],
+      "paper_count": 26,
+      "defended_paper_count": 26,
+      "working_paper_count": 59,
+      "theories": [
+        "Circadian Lighting",
+        "Non-visual Light Effects",
+        "Biophilic Design",
+        "Evidence-Based Design",
+        "Material Perception",
+        "Healthcare Architecture"
+      ],
+      "common_sensors": [
+        "EEG",
+        "heart rate",
+        "HRV",
+        "Heart rate",
+        "ECG",
+        "fMRI"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Luminous Environment \u00d7 Wellbeing (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__cog_attention",
+      "topic_label": "Spatial Form \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0004",
+        "PDF-0036",
+        "PDF-0041",
+        "PDF-0128",
+        "PDF-0176",
+        "PDF-0331",
+        "PDF-0337",
+        "PDF-0354",
+        "PDF-0360",
+        "PDF-0419",
+        "PDF-0500",
+        "PDF-0548",
+        "PDF-0638",
+        "PDF-0676",
+        "PDF-0746",
+        "PDF-0758",
+        "PDF-0889",
+        "PDF-0976",
+        "PDF-1271",
+        "PDF-1276",
+        "PDF-1314",
+        "PDF-1348",
+        "PDF-1398",
+        "PDF-1400",
+        "PDF-1435"
+      ],
+      "paper_count": 25,
+      "defended_paper_count": 25,
+      "working_paper_count": 59,
+      "theories": [
+        "Attention Restoration Theory",
+        "neuroarchitecture",
+        "Biophilia Hypothesis",
+        "Dynamic Lighting",
+        "Circadian Lighting",
+        "cognitive maps"
+      ],
+      "common_sensors": [
+        "EEG",
+        "eye-tracking",
+        "fMRI",
+        "EMG",
+        "HRV",
+        "Skin conductance"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__cog_attention",
+      "topic_label": "Material & Surface \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0041",
+        "PDF-0044",
+        "PDF-0139",
+        "PDF-0199",
+        "PDF-0262",
+        "PDF-0331",
+        "PDF-0354",
+        "PDF-0500",
+        "PDF-0647",
+        "PDF-0671",
+        "PDF-0676",
+        "PDF-0789",
+        "PDF-0802",
+        "PDF-0824",
+        "PDF-0889",
+        "PDF-0904",
+        "PDF-0908",
+        "PDF-0944",
+        "PDF-1190",
+        "PDF-1271",
+        "PDF-1398",
+        "PDF-1400",
+        "PDF-1435"
+      ],
+      "paper_count": 23,
+      "defended_paper_count": 23,
+      "working_paper_count": 40,
+      "theories": [
+        "Embodied Cognition",
+        "Biophilia Hypothesis",
+        "Attention Restoration Theory",
+        "soundscape ecology",
+        "STS",
+        "noise policy"
+      ],
+      "common_sensors": [
+        "EEG",
+        "EMG",
+        "HRV",
+        "heart rate",
+        "skin conductance"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__affect_wellbeing",
+      "topic_label": "Acoustic Environment \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0048",
+        "PDF-0126",
+        "PDF-0193",
+        "PDF-0245",
+        "PDF-0299",
+        "PDF-0305",
+        "PDF-0428",
+        "PDF-0574",
+        "PDF-0577",
+        "PDF-0654",
+        "PDF-0698",
+        "PDF-0745",
+        "PDF-0752",
+        "PDF-0774",
+        "PDF-0786",
+        "PDF-0816",
+        "PDF-0840",
+        "PDF-0845",
+        "PDF-0878",
+        "PDF-0893",
+        "PDF-1291",
+        "PDF-1377"
       ],
       "paper_count": 22,
       "defended_paper_count": 22,
       "working_paper_count": 35,
       "theories": [
         "Soundscape Theory",
-        "Attention Restoration Theory",
-        "This process may have important consequences for our health and well-being.",
-        "aural architecture",
-        "Neurodiversity",
-        "Neuro-inclusive Design"
+        "Evidence-Based Design",
+        "Changing-State Hypothesis",
+        "Public Health",
+        "Neuroarchitecture",
+        "Salutogenesis"
       ],
       "common_sensors": [
-        "EEG",
-        "heart rate",
-        "electrodermal",
-        "fMRI",
-        "pupil",
-        "HRV"
+        "skin conductance",
+        "heart rate"
       ],
       "fronts": [
-        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)",
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)"
       ],
       "evidence_status": "defended"
     },
@@ -142,11 +1049,13 @@
       "iv_label": "Acoustic Conditions",
       "paper_ids": [
         "PDF-0139",
+        "PDF-0183",
         "PDF-0193",
         "PDF-0209",
+        "PDF-0314",
+        "PDF-0371",
         "PDF-0373",
         "PDF-0384",
-        "PDF-0398",
         "PDF-0411",
         "PDF-0455",
         "PDF-0570",
@@ -158,233 +1067,82 @@
         "PDF-0701",
         "PDF-0772",
         "PDF-0831",
-        "PDF-0836",
-        "PDF-0842",
         "PDF-0844",
-        "PDF-0870",
         "PDF-0879"
-      ],
-      "paper_count": 22,
-      "defended_paper_count": 22,
-      "working_paper_count": 26,
-      "theories": [
-        "Soundscape Theory",
-        "Biophilic Design",
-        "Stress Recovery Theory",
-        "Irrelevant Sound Effect",
-        "Changing-State Hypothesis",
-        "Psychological Noise Reduction"
-      ],
-      "common_sensors": [
-        "EEG",
-        "fMRI",
-        "GSR",
-        "skin conductance"
-      ],
-      "fronts": [
-        "Acoustic Environment \u00d7 Mechanism / Pathway (Soundscape)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__cog_performance",
-      "topic_label": "Luminous Environment \u2192 Cognitive Performance",
-      "outcome_term_id": "cog.performance",
-      "outcome_label": "Cognitive Performance",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0046",
-        "PDF-0058",
-        "PDF-0108",
-        "PDF-0115",
-        "PDF-0130",
-        "PDF-0183",
-        "PDF-0421",
-        "PDF-0427",
-        "PDF-0529",
-        "PDF-0537",
-        "PDF-0601",
-        "PDF-0758",
-        "PDF-0792",
-        "PDF-0805",
-        "PDF-0866",
-        "PDF-0883",
-        "PDF-0896",
-        "PDF-0902",
-        "PDF-0910",
-        "PDF-0915",
-        "PDF-1010"
       ],
       "paper_count": 21,
       "defended_paper_count": 21,
-      "working_paper_count": 51,
+      "working_paper_count": 27,
       "theories": [
-        "Non-visual Light Effects",
-        "Circadian Lighting",
-        "Circadian Lighting Theory",
-        "Environmental Psychology",
-        "Personal Control",
-        "CCT Effects"
+        "Irrelevant Sound Effect",
+        "Changing-State Hypothesis",
+        "Soundscape Theory",
+        "Psychological Noise Reduction",
+        "Biophilic Design",
+        "Visual-Auditory Interaction"
       ],
       "common_sensors": [
         "EEG",
-        "HRV",
-        "heart rate",
-        "fMRI",
-        "skin conductance",
-        "eye movement"
-      ],
-      "fronts": [
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "spatial__mechanism",
-      "topic_label": "Spatial Form \u2192 Mechanism / Pathway",
-      "outcome_term_id": "mechanism",
-      "outcome_label": "Mechanism / Pathway",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
-      "paper_ids": [
-        "PDF-0002",
-        "PDF-0019",
-        "PDF-0103",
-        "PDF-0212",
-        "PDF-0314",
-        "PDF-0321",
-        "PDF-0371",
-        "PDF-0434",
-        "PDF-0500",
-        "PDF-0590",
-        "PDF-0592",
-        "PDF-0593",
-        "PDF-0638",
-        "PDF-0730",
-        "PDF-0735",
-        "PDF-0739",
-        "PDF-0746",
-        "PDF-0765",
-        "PDF-0788",
-        "PDF-1025"
-      ],
-      "paper_count": 20,
-      "defended_paper_count": 20,
-      "working_paper_count": 32,
-      "theories": [
-        "Attention Restoration Theory",
-        "Stress Reduction Theory",
-        "Place Attachment Theory",
-        "Lens Model (Brunswik)",
-        "Environmental Aesthetics",
-        "Conceptual Priming Theory"
-      ],
-      "common_sensors": [
-        "EEG",
-        "heart rate",
-        "skin conductance",
         "fMRI"
       ],
-      "fronts": [
-        "Spatial Form \u00d7 Physiological Response (Stress)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "acoustic__affect_wellbeing",
-      "topic_label": "Acoustic Environment \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "iv_node": "acoustic",
-      "iv_label": "Acoustic Conditions",
-      "paper_ids": [
-        "PDF-0126",
-        "PDF-0193",
-        "PDF-0245",
-        "PDF-0299",
-        "PDF-0305",
-        "PDF-0329",
-        "PDF-0428",
-        "PDF-0574",
-        "PDF-0577",
-        "PDF-0654",
-        "PDF-0698",
-        "PDF-0774",
-        "PDF-0786",
-        "PDF-0819",
-        "PDF-0908"
-      ],
-      "paper_count": 15,
-      "defended_paper_count": 15,
-      "working_paper_count": 18,
-      "theories": [
-        "Soundscape Theory",
-        "Changing-State Hypothesis",
-        "Salutogenesis",
-        "Evidence-Based Design",
-        "Sense of Place",
-        "Irrelevant Sound Effect"
-      ],
-      "common_sensors": [
-        "skin conductance",
-        "heart rate"
-      ],
       "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "spatial__cog_performance",
-      "topic_label": "Spatial Form \u2192 Cognitive Performance",
-      "outcome_term_id": "cog.performance",
-      "outcome_label": "Cognitive Performance",
+      "topic_id": "spatial__affect_negative_stress",
+      "topic_label": "Spatial Form \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
       "iv_root": "spatial",
       "iv_root_label": "Spatial Form",
       "iv_node": "spatial",
       "iv_label": "Spatial Form",
       "paper_ids": [
+        "PDF-0036",
+        "PDF-0059",
+        "PDF-0103",
         "PDF-0176",
-        "PDF-0360",
-        "PDF-0395",
-        "PDF-0414",
-        "PDF-0422",
-        "PDF-0593",
-        "PDF-0596",
-        "PDF-0638",
-        "PDF-0662",
-        "PDF-0730",
-        "PDF-0746",
+        "PDF-0355",
+        "PDF-0356",
+        "PDF-0399",
+        "PDF-0442",
+        "PDF-0486",
         "PDF-0749",
-        "PDF-0830",
+        "PDF-0783",
+        "PDF-0784",
+        "PDF-0835",
+        "PDF-0852",
+        "PDF-0868",
+        "PDF-0878",
+        "PDF-0879",
         "PDF-0886",
-        "PDF-0997"
+        "PDF-0888",
+        "PDF-0910",
+        "PDF-1396"
       ],
-      "paper_count": 15,
-      "defended_paper_count": 15,
-      "working_paper_count": 28,
+      "paper_count": 21,
+      "defended_paper_count": 21,
+      "working_paper_count": 50,
       "theories": [
-        "Soundscape Theory",
         "Attention Restoration Theory",
-        "Noise Stress",
-        "Open-Plan Office Research",
-        "Multimodal Measurement",
-        "Third Place Theory"
+        "Biophilic Design",
+        "Stress Recovery Theory",
+        "Neuroarchitecture",
+        "Stress Reduction Theory",
+        "Workplace Design"
       ],
       "common_sensors": [
         "EEG",
-        "electrodermal",
-        "ECG",
-        "HRV",
         "heart rate",
-        "skin conductance"
+        "HRV",
+        "skin conductance",
+        "fMRI",
+        "Heart rate"
       ],
-      "fronts": [],
+      "fronts": [
+        "Spatial Form \u00d7 Physiological Response (Stress)",
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
       "evidence_status": "defended"
     },
     {
@@ -401,218 +1159,205 @@
         "PDF-0181",
         "PDF-0390",
         "PDF-0404",
+        "PDF-0442",
+        "PDF-0486",
+        "PDF-0542",
+        "PDF-0568",
+        "PDF-0636",
+        "PDF-0653",
         "PDF-0699",
         "PDF-0702",
-        "PDF-0835",
+        "PDF-0830",
         "PDF-0839",
-        "PDF-0842",
         "PDF-0844",
-        "PDF-0845",
+        "PDF-0878",
         "PDF-0879",
+        "PDF-0886",
         "PDF-0907"
       ],
-      "paper_count": 13,
-      "defended_paper_count": 13,
-      "working_paper_count": 21,
+      "paper_count": 19,
+      "defended_paper_count": 19,
+      "working_paper_count": 25,
       "theories": [
         "Soundscape Theory",
-        "Attention Restoration Theory",
-        "Psychological Noise Reduction",
-        "Biophilic Design",
-        "Visual-Auditory Interaction",
-        "aural architecture"
-      ],
-      "common_sensors": [
-        "EEG",
-        "heart rate",
-        "fMRI",
-        "electrodermal",
-        "HRV",
-        "pupil"
-      ],
-      "fronts": [
-        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "spatial__affect_negative_stress",
-      "topic_label": "Spatial Form \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
-      "paper_ids": [
-        "PDF-0004",
-        "PDF-0036",
-        "PDF-0059",
-        "PDF-0103",
-        "PDF-0176",
-        "PDF-0355",
-        "PDF-0356",
-        "PDF-0749",
-        "PDF-0830",
-        "PDF-0868",
-        "PDF-0878",
-        "PDF-0886",
-        "PDF-0888"
-      ],
-      "paper_count": 13,
-      "defended_paper_count": 13,
-      "working_paper_count": 22,
-      "theories": [
-        "Stress Reduction Theory",
         "Attention Restoration Theory",
         "Neuroarchitecture",
-        "Noise Stress",
-        "Open-Plan Office Research",
-        "Multimodal Measurement"
+        "Psychological Noise Reduction",
+        "Biophilic Design",
+        "Visual-Auditory Interaction"
       ],
       "common_sensors": [
         "EEG",
         "heart rate",
-        "skin conductance",
-        "EKG",
-        "HRV"
-      ],
-      "fronts": [
-        "Spatial Form \u00d7 Physiological Response (Stress)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "acoustic__physio",
-      "topic_label": "Acoustic Environment \u2192 Physiological Response",
-      "outcome_term_id": "physio",
-      "outcome_label": "Physiological Response",
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "iv_node": "acoustic",
-      "iv_label": "Acoustic Conditions",
-      "paper_ids": [
-        "PDF-0169",
-        "PDF-0181",
-        "PDF-0277",
-        "PDF-0394",
-        "PDF-0404",
-        "PDF-0570",
-        "PDF-0699",
-        "PDF-0702",
-        "PDF-0839",
-        "PDF-0879",
-        "PDF-0909",
-        "PDF-1036"
-      ],
-      "paper_count": 12,
-      "defended_paper_count": 12,
-      "working_paper_count": 18,
-      "theories": [
-        "Soundscape Theory",
-        "Attention Restoration Theory",
-        "aural architecture",
-        "Music Therapy",
-        "Workplace Well-being",
-        "Soundscape Ecology"
-      ],
-      "common_sensors": [
-        "EEG",
-        "heart rate",
-        "electrodermal",
         "HRV",
-        "pupil",
-        "fMRI"
-      ],
-      "fronts": [
-        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__affect_wellbeing",
-      "topic_label": "Luminous Environment \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0107",
-        "PDF-0195",
-        "PDF-0221",
-        "PDF-0235",
-        "PDF-0292",
-        "PDF-0364",
-        "PDF-0389",
-        "PDF-0400",
-        "PDF-0427",
-        "PDF-0755",
-        "PDF-0759",
-        "PDF-0883"
-      ],
-      "paper_count": 12,
-      "defended_paper_count": 12,
-      "working_paper_count": 38,
-      "theories": [
-        "Circadian Lighting",
-        "lighting impression model",
-        "Circadian Lighting Theory",
-        "Non-visual Light Effects",
-        "Sleep-Cognition",
-        "Non-Visual Effects of Light"
-      ],
-      "common_sensors": [
+        "electrodermal",
+        "skin conductance",
         "pupil"
       ],
       "fronts": [
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)",
+        "Acoustic Environment \u00d7 Physiological Response (Soundscape)",
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__cog_performance",
+      "topic_label": "Material & Surface \u2192 Cognitive Performance",
+      "outcome_term_id": "cog.performance",
+      "outcome_label": "Cognitive Performance",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0041",
+        "PDF-0070",
+        "PDF-0116",
+        "PDF-0169",
+        "PDF-0331",
+        "PDF-0633",
+        "PDF-0643",
+        "PDF-0647",
+        "PDF-0676",
+        "PDF-0730",
+        "PDF-0759",
+        "PDF-0802",
+        "PDF-0835",
+        "PDF-0872",
+        "PDF-0896",
+        "PDF-0902",
+        "PDF-1291",
+        "PDF-1340"
+      ],
+      "paper_count": 19,
+      "defended_paper_count": 19,
+      "working_paper_count": 43,
+      "theories": [
+        "Circadian Lighting",
+        "Non-visual Light Effects",
+        "Biophilia Hypothesis",
+        "Attention Restoration Theory",
+        "aural architecture",
+        "Biophilic Design"
+      ],
+      "common_sensors": [
+        "heart rate",
+        "fMRI",
+        "HRV",
+        "Heart rate",
+        "skin conductance",
+        "electrodermal"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)",
         "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
       ],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "spatial__behav_navigation",
-      "topic_label": "Spatial Form \u2192 Spatial Navigation",
-      "outcome_term_id": "behav.navigation",
-      "outcome_label": "Spatial Navigation",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
+      "topic_id": "luminous__physio",
+      "topic_label": "Luminous Environment \u2192 Physiological Response",
+      "outcome_term_id": "physio",
+      "outcome_label": "Physiological Response",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
       "paper_ids": [
-        "PDF-0073",
-        "PDF-0122",
-        "PDF-0346",
-        "PDF-0621",
-        "PDF-0734",
-        "PDF-0740",
-        "PDF-0793",
-        "PDF-0818",
-        "PDF-0911",
-        "PDF-0997",
-        "PDF-1000"
+        "PDF-0007",
+        "PDF-0033",
+        "PDF-0108",
+        "PDF-0168",
+        "PDF-0277",
+        "PDF-0335",
+        "PDF-0399",
+        "PDF-0427",
+        "PDF-0537",
+        "PDF-0625",
+        "PDF-0714",
+        "PDF-0751",
+        "PDF-0850",
+        "PDF-0922",
+        "PDF-1118",
+        "PDF-1276",
+        "PDF-1320",
+        "PDF-1435"
       ],
-      "paper_count": 11,
-      "defended_paper_count": 11,
-      "working_paper_count": 14,
+      "paper_count": 18,
+      "defended_paper_count": 18,
+      "working_paper_count": 44,
       "theories": [
-        "Cognitive Map Theory",
-        "Universal Design",
-        "Spatial Cognition",
-        "Space Syntax",
-        "Environmental Psychology",
-        "Environmental Legibility"
+        "biophilia hypothesis",
+        "Circadian Lighting Theory",
+        "Attention Restoration Theory",
+        "Stress Reduction Theory",
+        "neuroarchitecture",
+        "embodied cognition"
       ],
       "common_sensors": [
+        "skin conductance",
+        "heart rate",
         "EEG",
-        "fMRI",
-        "eye tracking",
-        "eye-tracking"
+        "HRV",
+        "Heart rate",
+        "ECG"
       ],
       "fronts": [
-        "Spatial Form \u00d7 Spatial Navigation (Spatial)"
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__affect_negative_stress",
+      "topic_label": "Luminous Environment \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0033",
+        "PDF-0399",
+        "PDF-0481",
+        "PDF-0486",
+        "PDF-0535",
+        "PDF-0537",
+        "PDF-0542",
+        "PDF-0653",
+        "PDF-0768",
+        "PDF-0783",
+        "PDF-0784",
+        "PDF-0794",
+        "PDF-0805",
+        "PDF-0842",
+        "PDF-0850",
+        "PDF-0872",
+        "PDF-0902",
+        "PDF-1391"
+      ],
+      "paper_count": 18,
+      "defended_paper_count": 18,
+      "working_paper_count": 53,
+      "theories": [
+        "Biophilic Design",
+        "Circadian Lighting",
+        "Attention Restoration Theory",
+        "Stress Reduction Theory",
+        "Environmental Psychology",
+        "biophilia hypothesis"
+      ],
+      "common_sensors": [
+        "heart rate",
+        "EEG",
+        "fMRI",
+        "skin conductance",
+        "ECG",
+        "HRV"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
       ],
       "evidence_status": "defended"
     },
@@ -630,31 +1375,39 @@
         "PDF-0059",
         "PDF-0355",
         "PDF-0356",
+        "PDF-0399",
         "PDF-0414",
+        "PDF-0442",
         "PDF-0548",
         "PDF-0596",
-        "PDF-0830",
+        "PDF-0852",
+        "PDF-0853",
+        "PDF-0879",
+        "PDF-0909",
         "PDF-1025",
+        "PDF-1036",
+        "PDF-1276",
+        "PDF-1320",
         "PDF-1435"
       ],
-      "paper_count": 10,
-      "defended_paper_count": 10,
-      "working_paper_count": 20,
+      "paper_count": 18,
+      "defended_paper_count": 18,
+      "working_paper_count": 38,
       "theories": [
         "Stress Reduction Theory",
         "Attention Restoration Theory",
-        "Soundscape Theory",
-        "Noise Stress",
-        "Open-Plan Office Research",
-        "Multimodal Measurement"
+        "Biophilic Design",
+        "Material Perception",
+        "Physiological Relaxation",
+        "Soundscape Theory"
       ],
       "common_sensors": [
-        "heart rate",
         "EEG",
-        "skin conductance",
         "HRV",
+        "heart rate",
+        "skin conductance",
         "electrodermal",
-        "ECG"
+        "Heart rate"
       ],
       "fronts": [
         "Spatial Form \u00d7 Physiological Response (Stress)"
@@ -662,130 +1415,242 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "acoustic__affect_soundscape",
-      "topic_label": "Acoustic Environment \u2192 Soundscape Perception",
-      "outcome_term_id": "affect.soundscape",
-      "outcome_label": "Soundscape Perception",
+      "topic_id": "thermal__affect_negative_stress",
+      "topic_label": "Thermal & Air Quality \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0399",
+        "PDF-0442",
+        "PDF-0653",
+        "PDF-0695",
+        "PDF-0749",
+        "PDF-0768",
+        "PDF-0783",
+        "PDF-0839",
+        "PDF-0844",
+        "PDF-0850",
+        "PDF-0852",
+        "PDF-0872",
+        "PDF-0876",
+        "PDF-0878",
+        "PDF-0879",
+        "PDF-0886",
+        "PDF-0902",
+        "PDF-1391"
+      ],
+      "paper_count": 18,
+      "defended_paper_count": 18,
+      "working_paper_count": 42,
+      "theories": [
+        "Biophilic Design",
+        "Circadian Lighting",
+        "Stress Recovery Theory",
+        "Material Perception",
+        "Evidence-Based Design",
+        "Soundscape Theory"
+      ],
+      "common_sensors": [
+        "EEG",
+        "heart rate",
+        "ECG",
+        "fMRI",
+        "HRV",
+        "Heart rate"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)",
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__physio",
+      "topic_label": "Acoustic Environment \u2192 Physiological Response",
+      "outcome_term_id": "physio",
+      "outcome_label": "Physiological Response",
       "iv_root": "acoustic",
       "iv_root_label": "Acoustic Conditions",
       "iv_node": "acoustic",
       "iv_label": "Acoustic Conditions",
       "paper_ids": [
-        "PDF-0134",
-        "PDF-0217",
-        "PDF-0243",
-        "PDF-0522",
-        "PDF-0623",
-        "PDF-0694",
-        "PDF-0697",
-        "PDF-0837",
-        "PDF-0840"
+        "PDF-0169",
+        "PDF-0181",
+        "PDF-0394",
+        "PDF-0404",
+        "PDF-0442",
+        "PDF-0570",
+        "PDF-0636",
+        "PDF-0699",
+        "PDF-0702",
+        "PDF-0830",
+        "PDF-0839",
+        "PDF-0879",
+        "PDF-0909",
+        "PDF-1036",
+        "PDF-1190"
       ],
-      "paper_count": 9,
-      "defended_paper_count": 9,
-      "working_paper_count": 14,
+      "paper_count": 15,
+      "defended_paper_count": 15,
+      "working_paper_count": 19,
       "theories": [
         "Soundscape Theory",
-        "This process may have important consequences for our health and well-being.",
-        "Environmental Appraisal",
-        "Emotional Measurement",
-        "School Environment",
-        "Child Development"
+        "Noise Stress",
+        "Attention Restoration Theory",
+        "aural architecture",
+        "Open-Plan Office Research",
+        "Multimodal Measurement"
       ],
       "common_sensors": [
-        "fMRI",
+        "heart rate",
         "EEG",
-        "skin conductance"
+        "HRV",
+        "skin conductance",
+        "electrodermal",
+        "pupil"
       ],
       "fronts": [
-        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)"
+        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
       ],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "luminous__physio",
-      "topic_label": "Luminous Environment \u2192 Physiological Response",
-      "outcome_term_id": "physio",
-      "outcome_label": "Physiological Response",
+      "topic_id": "control__affect_wellbeing",
+      "topic_label": "Environmental Control \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0041",
+        "PDF-0046",
+        "PDF-0077",
+        "PDF-0093",
+        "PDF-0304",
+        "PDF-0344",
+        "PDF-0354",
+        "PDF-0534",
+        "PDF-0789",
+        "PDF-0795",
+        "PDF-0810",
+        "PDF-0812",
+        "PDF-0819",
+        "PDF-1314",
+        "PDF-1348"
+      ],
+      "paper_count": 15,
+      "defended_paper_count": 15,
+      "working_paper_count": 23,
+      "theories": [
+        "Environmental Psychology",
+        "Biophilic Design",
+        "Mehrabian-Russell Model",
+        "evolutionary psychology",
+        "pattern language",
+        "PAD Model (Pleasure-Arousal-Dominance)"
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__cog_attention",
+      "topic_label": "Luminous Environment \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0023",
+        "PDF-0128",
+        "PDF-0139",
+        "PDF-0542",
+        "PDF-0758",
+        "PDF-0889",
+        "PDF-0904",
+        "PDF-0908",
+        "PDF-0976",
+        "PDF-1276",
+        "PDF-1314",
+        "PDF-1391",
+        "PDF-1398",
+        "PDF-1400",
+        "PDF-1435"
+      ],
+      "paper_count": 15,
+      "defended_paper_count": 15,
+      "working_paper_count": 56,
+      "theories": [
+        "Dynamic Lighting",
+        "Circadian Lighting",
+        "soundscape ecology",
+        "Material Perception",
+        "Visual Attention",
+        "Biophilic Design"
+      ],
+      "common_sensors": [
+        "EEG",
+        "eye-tracking",
+        "heart rate",
+        "fMRI"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__neural",
+      "topic_label": "Luminous Environment \u2192 Neural Activity",
+      "outcome_term_id": "neural",
+      "outcome_label": "Neural Activity",
       "iv_root": "luminous",
       "iv_root_label": "Lighting Conditions",
       "iv_node": "luminous",
       "iv_label": "Lighting Conditions",
       "paper_ids": [
         "PDF-0108",
-        "PDF-0168",
-        "PDF-0335",
-        "PDF-0427",
-        "PDF-0537",
-        "PDF-0625",
-        "PDF-0714",
-        "PDF-0850",
-        "PDF-1118"
-      ],
-      "paper_count": 9,
-      "defended_paper_count": 9,
-      "working_paper_count": 29,
-      "theories": [
-        "Circadian Lighting Theory",
-        "Attention Restoration Theory",
-        "Stress Reduction Theory",
-        "Circadian Lighting",
-        "Chronobiology",
-        "Light and Health"
-      ],
-      "common_sensors": [
-        "HRV",
-        "heart rate",
-        "skin conductance",
-        "EEG",
-        "ECG",
-        "eeg"
-      ],
-      "fronts": [
-        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__affect_negative_stress",
-      "topic_label": "Luminous Environment \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0481",
+        "PDF-0130",
+        "PDF-0139",
+        "PDF-0310",
+        "PDF-0399",
+        "PDF-0421",
         "PDF-0535",
         "PDF-0542",
-        "PDF-0744",
-        "PDF-0768",
-        "PDF-0794",
-        "PDF-0805",
-        "PDF-0902",
-        "PDF-0910"
+        "PDF-0714",
+        "PDF-0832",
+        "PDF-0872",
+        "PDF-0896",
+        "PDF-1065",
+        "PDF-1320",
+        "PDF-1435"
       ],
-      "paper_count": 9,
-      "defended_paper_count": 9,
-      "working_paper_count": 28,
+      "paper_count": 15,
+      "defended_paper_count": 15,
+      "working_paper_count": 44,
       "theories": [
-        "Environmental Psychology",
-        "Circadian Lighting",
-        "Personal Control",
-        "Non-visual Light Effects",
-        "Melanopsin",
-        "Working Memory"
+        "neuroarchitecture",
+        "Biophilic Design",
+        "Material Perception",
+        "Evidence-Based Design",
+        "Healthcare Architecture",
+        "Neurodiversity"
       ],
       "common_sensors": [
         "EEG",
+        "heart rate",
+        "ECG",
         "fMRI",
-        "eye-tracking",
-        "heart rate"
+        "eeg",
+        "skin conductance"
       ],
-      "fronts": [
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)"
-      ],
+      "fronts": [],
       "evidence_status": "defended"
     },
     {
@@ -798,38 +1663,624 @@
       "iv_node": "spatial",
       "iv_label": "Spatial Form",
       "paper_ids": [
+        "PDF-0029",
+        "PDF-0310",
         "PDF-0355",
         "PDF-0356",
         "PDF-0360",
+        "PDF-0399",
         "PDF-0548",
         "PDF-0593",
         "PDF-0596",
+        "PDF-0853",
         "PDF-0886",
         "PDF-1025",
+        "PDF-1320",
+        "PDF-1396",
         "PDF-1435"
       ],
-      "paper_count": 9,
-      "defended_paper_count": 9,
-      "working_paper_count": 32,
+      "paper_count": 15,
+      "defended_paper_count": 15,
+      "working_paper_count": 45,
       "theories": [
         "Stress Reduction Theory",
+        "neuroarchitecture",
         "Attention Restoration Theory",
-        "Neuroarchitecture",
+        "Biophilic Design",
+        "Material Perception",
+        "Physiological Relaxation"
+      ],
+      "common_sensors": [
+        "EEG",
+        "HRV",
+        "heart rate",
+        "skin conductance",
+        "fMRI",
+        "eye tracking"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Physiological Response (Stress)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__physio",
+      "topic_label": "Thermal & Air Quality \u2192 Physiological Response",
+      "outcome_term_id": "physio",
+      "outcome_label": "Physiological Response",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0060",
+        "PDF-0277",
+        "PDF-0399",
+        "PDF-0442",
+        "PDF-0751",
+        "PDF-0824",
+        "PDF-0839",
+        "PDF-0850",
+        "PDF-0852",
+        "PDF-0853",
+        "PDF-0879",
+        "PDF-1190",
+        "PDF-1320"
+      ],
+      "paper_count": 14,
+      "defended_paper_count": 14,
+      "working_paper_count": 30,
+      "theories": [
+        "Biophilic Design",
+        "Material Perception",
+        "Physiological Relaxation",
+        "Soundscape Theory",
+        "Music Therapy",
+        "Workplace Well-being"
+      ],
+      "common_sensors": [
+        "HRV",
+        "Heart rate",
+        "EEG",
+        "skin conductance",
+        "heart rate",
+        "EMG"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__mechanism",
+      "topic_label": "Environmental Control \u2192 Mechanism / Pathway",
+      "outcome_term_id": "mechanism",
+      "outcome_label": "Mechanism / Pathway",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0003",
+        "PDF-0024",
+        "PDF-0037",
+        "PDF-0053",
+        "PDF-0328",
+        "PDF-0392",
+        "PDF-0549",
+        "PDF-0632",
+        "PDF-0735",
+        "PDF-0769",
+        "PDF-0842",
+        "PDF-0861",
+        "PDF-1268"
+      ],
+      "paper_count": 13,
+      "defended_paper_count": 13,
+      "working_paper_count": 14,
+      "theories": [
+        "Biophilia Hypothesis",
+        "place attachment",
+        "scannell gifford framework",
+        "socio physical environment",
+        "Misophonia",
+        "Interoception"
+      ],
+      "common_sensors": [
+        "GSR",
+        "fMRI"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__health",
+      "topic_label": "Luminous Environment \u2192 Health Outcomes",
+      "outcome_term_id": "health",
+      "outcome_label": "Health Outcomes",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0011",
+        "PDF-0023",
+        "PDF-0115",
+        "PDF-0183",
+        "PDF-0305",
+        "PDF-0416",
+        "PDF-0752",
+        "PDF-0765",
+        "PDF-0766",
+        "PDF-0768",
+        "PDF-0792",
+        "PDF-0816",
+        "PDF-0866"
+      ],
+      "paper_count": 13,
+      "defended_paper_count": 13,
+      "working_paper_count": 15,
+      "theories": [
+        "Circadian Lighting",
+        "Circadian Photobiology",
+        "Chronobiology",
+        "Non-Visual Effects of Light",
+        "Biophilic Design",
+        "Green Building"
+      ],
+      "common_sensors": [
+        "EEG"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Wellbeing (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__physio",
+      "topic_label": "Material & Surface \u2192 Physiological Response",
+      "outcome_term_id": "physio",
+      "outcome_label": "Physiological Response",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0007",
+        "PDF-0169",
+        "PDF-0633",
+        "PDF-0751",
+        "PDF-0797",
+        "PDF-0824",
+        "PDF-0852",
+        "PDF-0853",
+        "PDF-0854",
+        "PDF-0855",
+        "PDF-0909",
+        "PDF-1190",
+        "PDF-1435"
+      ],
+      "paper_count": 13,
+      "defended_paper_count": 13,
+      "working_paper_count": 24,
+      "theories": [
+        "Biophilic Design",
+        "Material Perception",
+        "Physiological Relaxation",
+        "aural architecture",
+        "Biophilia Hypothesis",
+        "Stress Reduction Theory"
+      ],
+      "common_sensors": [
+        "HRV",
+        "Heart rate",
+        "heart rate",
+        "skin conductance",
+        "electrodermal",
+        "EEG"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__affect_preference",
+      "topic_label": "Spatial Form \u2192 Aesthetic Preference",
+      "outcome_term_id": "affect.preference",
+      "outcome_label": "Aesthetic Preference",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0128",
+        "PDF-0198",
+        "PDF-0274",
+        "PDF-0280",
+        "PDF-0378",
+        "PDF-0395",
+        "PDF-0684",
+        "PDF-0865",
+        "PDF-1054",
+        "PDF-1306",
+        "PDF-1314",
+        "PDF-1348",
+        "PDF-1399"
+      ],
+      "paper_count": 13,
+      "defended_paper_count": 13,
+      "working_paper_count": 36,
+      "theories": [
+        "Neuroaesthetics",
+        "cognitive architecture",
+        "neuroarchitecture",
+        "lighting quality theory",
+        "Information Processing Theory of Environmental Preference",
+        "Evolutionary Aesthetics"
+      ],
+      "common_sensors": [
+        "eye-tracking",
+        "EEG",
+        "fMRI"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Aesthetic Preference (Neuroaesthetics)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__neural",
+      "topic_label": "Thermal & Air Quality \u2192 Neural Activity",
+      "outcome_term_id": "neural",
+      "outcome_label": "Neural Activity",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0060",
+        "PDF-0310",
+        "PDF-0399",
+        "PDF-0832",
+        "PDF-0839",
+        "PDF-0844",
+        "PDF-0853",
+        "PDF-0872",
+        "PDF-0886",
+        "PDF-0896",
+        "PDF-1065",
+        "PDF-1190",
+        "PDF-1320"
+      ],
+      "paper_count": 13,
+      "defended_paper_count": 13,
+      "working_paper_count": 24,
+      "theories": [
+        "Biophilic Design",
+        "Material Perception",
         "Evidence-Based Design",
-        "EEG-Architecture",
-        "nature exposure and window-view well-being literature"
+        "neuroarchitecture",
+        "Psychological Noise Reduction",
+        "Visual-Auditory Interaction"
       ],
       "common_sensors": [
         "EEG",
         "heart rate",
         "HRV",
-        "skin conductance",
+        "Heart rate",
         "ECG",
-        "EKG"
+        "EMG"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__affect_restoration",
+      "topic_label": "Spatial Form \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0036",
+        "PDF-0059",
+        "PDF-0086",
+        "PDF-0419",
+        "PDF-0676",
+        "PDF-0730",
+        "PDF-0749",
+        "PDF-0758",
+        "PDF-0780",
+        "PDF-0783",
+        "PDF-0852",
+        "PDF-1396"
+      ],
+      "paper_count": 12,
+      "defended_paper_count": 12,
+      "working_paper_count": 25,
+      "theories": [
+        "Attention Restoration Theory",
+        "Biophilic Design",
+        "Stress Recovery Theory",
+        "Biophilia Hypothesis",
+        "Third Place Theory",
+        "Urban Sociology"
+      ],
+      "common_sensors": [
+        "HRV",
+        "Heart rate",
+        "EEG"
       ],
       "fronts": [
-        "Spatial Form \u00d7 Physiological Response (Stress)"
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)",
+        "Luminous Environment \u00d7 Restoration / Recovery (Attention)"
       ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__health",
+      "topic_label": "Thermal & Air Quality \u2192 Health Outcomes",
+      "outcome_term_id": "health",
+      "outcome_label": "Health Outcomes",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0023",
+        "PDF-0305",
+        "PDF-0330",
+        "PDF-0745",
+        "PDF-0752",
+        "PDF-0765",
+        "PDF-0766",
+        "PDF-0768",
+        "PDF-0774",
+        "PDF-0792",
+        "PDF-0816",
+        "PDF-0866"
+      ],
+      "paper_count": 12,
+      "defended_paper_count": 12,
+      "working_paper_count": 14,
+      "theories": [
+        "Circadian Lighting",
+        "Chronobiology",
+        "Non-Visual Effects of Light",
+        "Biophilic Design",
+        "Soundscape Theory",
+        "Salutogenesis"
+      ],
+      "common_sensors": [
+        "EEG"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Wellbeing (Circadian)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__cog_attention",
+      "topic_label": "Acoustic Environment \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0139",
+        "PDF-0205",
+        "PDF-0331",
+        "PDF-0337",
+        "PDF-0419",
+        "PDF-0542",
+        "PDF-0568",
+        "PDF-0575",
+        "PDF-0944",
+        "PDF-1190",
+        "PDF-1212"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 20,
+      "theories": [
+        "soundscape ecology",
+        "STS",
+        "noise policy",
+        "environmental noise as cognitive and physiological stressor",
+        "arousal / EEG PSD interpretation of attention, stress, and workload",
+        "Stochastic Resonance Theory"
+      ],
+      "common_sensors": [
+        "EEG",
+        "heart rate",
+        "EMG",
+        "HRV",
+        "skin conductance",
+        "eye-tracking"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__affect_restoration",
+      "topic_label": "Acoustic Environment \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0006",
+        "PDF-0086",
+        "PDF-0134",
+        "PDF-0225",
+        "PDF-0394",
+        "PDF-0411",
+        "PDF-0419",
+        "PDF-0641",
+        "PDF-0699",
+        "PDF-0702",
+        "PDF-0832"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 14,
+      "theories": [
+        "This process may have important consequences for our health and well-being.",
+        "Neurodiversity",
+        "Neuro-inclusive Design",
+        "Environmental Sensitivity",
+        "Attention Restoration Theory",
+        "Stress Reduction Theory"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI",
+        "HRV",
+        "heart rate",
+        "skin conductance"
+      ],
+      "fronts": [
+        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__affect_preference",
+      "topic_label": "Luminous Environment \u2192 Aesthetic Preference",
+      "outcome_term_id": "affect.preference",
+      "outcome_label": "Aesthetic Preference",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0128",
+        "PDF-0189",
+        "PDF-0198",
+        "PDF-0378",
+        "PDF-0524",
+        "PDF-0531",
+        "PDF-0785",
+        "PDF-0908",
+        "PDF-1054",
+        "PDF-1306",
+        "PDF-1314"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 34,
+      "theories": [
+        "cognitive architecture",
+        "neuroarchitecture",
+        "Colour Psychology",
+        "lighting quality theory",
+        "Environmental Preference Theory",
+        "Kaplan Information Processing"
+      ],
+      "common_sensors": [
+        "EEG",
+        "eye-tracking"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__affect_restoration",
+      "topic_label": "Luminous Environment \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0006",
+        "PDF-0086",
+        "PDF-0535",
+        "PDF-0601",
+        "PDF-0714",
+        "PDF-0730",
+        "PDF-0758",
+        "PDF-0780",
+        "PDF-0783",
+        "PDF-0832",
+        "PDF-1065"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 24,
+      "theories": [
+        "Biophilic Design",
+        "Attention Restoration Theory",
+        "Stress Recovery Theory",
+        "Circadian Entrainment",
+        "Neurodiversity",
+        "Neuro-inclusive Design"
+      ],
+      "common_sensors": [
+        "EEG",
+        "ECG",
+        "eeg",
+        "skin conductance",
+        "Heart rate",
+        "heart rate"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)",
+        "Luminous Environment \u00d7 Restoration / Recovery (Attention)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__affect_negative_stress",
+      "topic_label": "Material & Surface \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0169",
+        "PDF-0637",
+        "PDF-0643",
+        "PDF-0768",
+        "PDF-0835",
+        "PDF-0844",
+        "PDF-0852",
+        "PDF-0854",
+        "PDF-0855",
+        "PDF-0872",
+        "PDF-0902"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 28,
+      "theories": [
+        "Biophilic Design",
+        "Material Perception",
+        "Circadian Lighting",
+        "Psychological Noise Reduction",
+        "Visual-Auditory Interaction",
+        "aural architecture"
+      ],
+      "common_sensors": [
+        "heart rate",
+        "EEG",
+        "fMRI",
+        "Heart rate",
+        "electrodermal",
+        "ECG"
+      ],
+      "fronts": [],
       "evidence_status": "defended"
     },
     {
@@ -846,22 +2297,24 @@
         "PDF-0054",
         "PDF-0062",
         "PDF-0200",
+        "PDF-0367",
         "PDF-0500",
         "PDF-0587",
         "PDF-0679",
         "PDF-0728",
-        "PDF-0742"
+        "PDF-0833",
+        "PDF-1268"
       ],
-      "paper_count": 9,
-      "defended_paper_count": 9,
-      "working_paper_count": 12,
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 20,
       "theories": [
         "Place Attachment Theory",
+        "place attachment",
+        "scannell gifford framework",
+        "socio physical environment",
         "Personal Space Theory",
-        "Proxemics",
-        "Place Attachment",
-        "Humanistic Geography",
-        "Bayesian optimal observer"
+        "Proxemics"
       ],
       "common_sensors": [
         "GSR",
@@ -871,45 +2324,687 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "acoustic__affect_restoration",
-      "topic_label": "Acoustic Environment \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
+      "topic_id": "spatial__behav_navigation",
+      "topic_label": "Spatial Form \u2192 Spatial Navigation",
+      "outcome_term_id": "behav.navigation",
+      "outcome_label": "Spatial Navigation",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0073",
+        "PDF-0122",
+        "PDF-0346",
+        "PDF-0367",
+        "PDF-0621",
+        "PDF-0734",
+        "PDF-0740",
+        "PDF-0793",
+        "PDF-0893",
+        "PDF-0997",
+        "PDF-1000"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 20,
+      "theories": [
+        "Cognitive Map Theory",
+        "space syntax",
+        "Space Syntax",
+        "Neuroarchitecture",
+        "Environmental Legibility",
+        "spatial cognition"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI",
+        "eye tracking",
+        "eye-tracking"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__cog_attention",
+      "topic_label": "Thermal & Air Quality \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0004",
+        "PDF-0023",
+        "PDF-0243",
+        "PDF-0419",
+        "PDF-0671",
+        "PDF-0758",
+        "PDF-0824",
+        "PDF-0904",
+        "PDF-0944",
+        "PDF-1190",
+        "PDF-1391"
+      ],
+      "paper_count": 11,
+      "defended_paper_count": 11,
+      "working_paper_count": 34,
+      "theories": [
+        "Dynamic Lighting",
+        "Circadian Lighting",
+        "Haptic Perception",
+        "Universal Design",
+        "Embodied Cognition",
+        "CCT Effects"
+      ],
+      "common_sensors": [
+        "EEG",
+        "EMG",
+        "HRV",
+        "heart rate",
+        "skin conductance"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__neural",
+      "topic_label": "Acoustic Environment \u2192 Neural Activity",
+      "outcome_term_id": "neural",
+      "outcome_label": "Neural Activity",
       "iv_root": "acoustic",
       "iv_root_label": "Acoustic Conditions",
       "iv_node": "acoustic",
       "iv_label": "Acoustic Conditions",
       "paper_ids": [
-        "PDF-0006",
-        "PDF-0225",
-        "PDF-0394",
-        "PDF-0411",
-        "PDF-0419",
-        "PDF-0641",
-        "PDF-0699",
-        "PDF-0832"
+        "PDF-0139",
+        "PDF-0542",
+        "PDF-0568",
+        "PDF-0570",
+        "PDF-0578",
+        "PDF-0832",
+        "PDF-0839",
+        "PDF-0844",
+        "PDF-0886",
+        "PDF-1190"
       ],
-      "paper_count": 8,
-      "defended_paper_count": 8,
+      "paper_count": 10,
+      "defended_paper_count": 10,
       "working_paper_count": 11,
       "theories": [
+        "Psychological Noise Reduction",
+        "Biophilic Design",
+        "Visual-Auditory Interaction",
         "Neurodiversity",
         "Neuro-inclusive Design",
-        "Environmental Sensitivity",
-        "soundscape evaluation",
-        "audio visual interaction",
-        "Soundscape Theory"
+        "Environmental Sensitivity"
       ],
       "common_sensors": [
         "EEG",
+        "heart rate",
+        "EMG",
         "HRV",
+        "skin conductance",
+        "EKG"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__affect_restoration",
+      "topic_label": "Thermal & Air Quality \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0006",
+        "PDF-0419",
+        "PDF-0695",
+        "PDF-0749",
+        "PDF-0758",
+        "PDF-0780",
+        "PDF-0783",
+        "PDF-0832",
+        "PDF-0852",
+        "PDF-1065"
+      ],
+      "paper_count": 10,
+      "defended_paper_count": 10,
+      "working_paper_count": 21,
+      "theories": [
+        "Biophilic Design",
+        "Attention Restoration Theory",
+        "Stress Recovery Theory",
+        "Neurodiversity",
+        "Neuro-inclusive Design",
+        "Environmental Sensitivity"
+      ],
+      "common_sensors": [
+        "EEG",
+        "Heart rate",
+        "HRV",
+        "heart rate"
+      ],
+      "fronts": [
+        "Luminous Environment \u00d7 Restoration / Recovery (Attention)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__health",
+      "topic_label": "Acoustic Environment \u2192 Health Outcomes",
+      "outcome_term_id": "health",
+      "outcome_label": "Health Outcomes",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0183",
+        "PDF-0305",
+        "PDF-0455",
+        "PDF-0527",
+        "PDF-0745",
+        "PDF-0752",
+        "PDF-0774",
+        "PDF-0816",
+        "PDF-0833"
+      ],
+      "paper_count": 9,
+      "defended_paper_count": 9,
+      "working_paper_count": 11,
+      "theories": [
+        "Soundscape Theory",
+        "Circadian Photobiology",
+        "Noise and Learning Theory",
+        "Salutogenesis",
+        "Green Building",
+        "Salutogenic Design"
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__cog_attention",
+      "topic_label": "Environmental Control \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0041",
+        "PDF-0176",
+        "PDF-0337",
+        "PDF-0354",
+        "PDF-0360",
+        "PDF-0676",
+        "PDF-0789",
+        "PDF-1314",
+        "PDF-1348"
+      ],
+      "paper_count": 9,
+      "defended_paper_count": 9,
+      "working_paper_count": 16,
+      "theories": [
+        "Biophilia Hypothesis",
+        "Attention Restoration Theory",
+        "cognitive maps",
+        "wayfinding",
+        "neuroarchitecture",
+        "grounded theory"
+      ],
+      "common_sensors": [
+        "EEG"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__cog_performance",
+      "topic_label": "Environmental Control \u2192 Cognitive Performance",
+      "outcome_term_id": "cog.performance",
+      "outcome_label": "Cognitive Performance",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0005",
+        "PDF-0041",
+        "PDF-0046",
+        "PDF-0071",
+        "PDF-0176",
+        "PDF-0360",
+        "PDF-0676",
+        "PDF-0749",
+        "PDF-0835"
+      ],
+      "paper_count": 9,
+      "defended_paper_count": 9,
+      "working_paper_count": 16,
+      "theories": [
+        "Attention Restoration Theory",
+        "Neuroarchitecture",
+        "Soundscape Theory",
+        "Environmental Neuroscience",
+        "Biophilia Hypothesis",
+        "Third Place Theory"
+      ],
+      "common_sensors": [
         "fMRI",
+        "EEG"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__neural",
+      "topic_label": "Material & Surface \u2192 Neural Activity",
+      "outcome_term_id": "neural",
+      "outcome_label": "Neural Activity",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0139",
+        "PDF-0633",
+        "PDF-0637",
+        "PDF-0844",
+        "PDF-0853",
+        "PDF-0872",
+        "PDF-0896",
+        "PDF-1190",
+        "PDF-1435"
+      ],
+      "paper_count": 9,
+      "defended_paper_count": 9,
+      "working_paper_count": 25,
+      "theories": [
+        "Biophilic Design",
+        "Material Perception",
+        "Biophilia Hypothesis",
+        "Psychological Noise Reduction",
+        "Visual-Auditory Interaction",
+        "Evidence-Based Design"
+      ],
+      "common_sensors": [
+        "EEG",
+        "heart rate",
+        "HRV",
+        "ECG",
+        "EMG",
+        "skin conductance"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__cog_cognitive_load",
+      "topic_label": "Spatial Form \u2192 Cognitive Load",
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0070",
+        "PDF-0414",
+        "PDF-0483",
+        "PDF-0592",
+        "PDF-0784",
+        "PDF-0835",
+        "PDF-0845",
+        "PDF-0878",
+        "PDF-0893"
+      ],
+      "paper_count": 9,
+      "defended_paper_count": 9,
+      "working_paper_count": 16,
+      "theories": [
+        "Neuroarchitecture",
+        "Soundscape Theory",
+        "Attention Restoration Theory",
+        "Environmental Neuroscience",
+        "extra-personal space",
+        "multisensory integration"
+      ],
+      "common_sensors": [
+        "electrodermal",
+        "fMRI",
+        "EEG",
+        "GSR",
+        "eye-tracking"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__cog_cognitive_load",
+      "topic_label": "Acoustic Environment \u2192 Cognitive Load",
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0134",
+        "PDF-0205",
+        "PDF-0390",
+        "PDF-0405",
+        "PDF-0428",
+        "PDF-0845",
+        "PDF-0878",
+        "PDF-0893"
+      ],
+      "paper_count": 8,
+      "defended_paper_count": 8,
+      "working_paper_count": 12,
+      "theories": [
+        "Neuroarchitecture",
+        "This process may have important consequences for our health and well-being.",
+        "Irrelevant Sound Effect",
+        "Working Memory Theory",
+        "Environmental Noise",
+        "Public Health"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI",
+        "Pupil"
+      ],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__affect_soundscape",
+      "topic_label": "Acoustic Environment \u2192 Soundscape Perception",
+      "outcome_term_id": "affect.soundscape",
+      "outcome_label": "Soundscape Perception",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0147",
+        "PDF-0217",
+        "PDF-0522",
+        "PDF-0694",
+        "PDF-0697",
+        "PDF-0837",
+        "PDF-0840"
+      ],
+      "paper_count": 7,
+      "defended_paper_count": 7,
+      "working_paper_count": 10,
+      "theories": [
+        "Soundscape Theory",
+        "soundscape ecology",
+        "Environmental Appraisal",
+        "Emotional Measurement",
+        "School Environment",
+        "Child Development"
+      ],
+      "common_sensors": [
+        "fMRI",
+        "skin conductance"
+      ],
+      "fronts": [
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__cog_cognitive_load",
+      "topic_label": "Luminous Environment \u2192 Cognitive Load",
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0070",
+        "PDF-0481",
+        "PDF-0529",
+        "PDF-0601",
+        "PDF-0784",
+        "PDF-0883",
+        "PDF-0915"
+      ],
+      "paper_count": 7,
+      "defended_paper_count": 7,
+      "working_paper_count": 14,
+      "theories": [
+        "Non-visual Light Effects",
+        "Circadian Entrainment",
+        "Circadian Lighting Theory",
+        "Circadian Lighting",
+        "Sleep-Cognition",
+        "CCT Effects"
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__affect_restoration",
+      "topic_label": "Material & Surface \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0643",
+        "PDF-0647",
+        "PDF-0676",
+        "PDF-0730",
+        "PDF-0797",
+        "PDF-0852",
+        "PDF-0855"
+      ],
+      "paper_count": 7,
+      "defended_paper_count": 7,
+      "working_paper_count": 10,
+      "theories": [
+        "Biophilic Design",
+        "Biophilia Hypothesis",
+        "Attention Restoration Theory",
+        "Material Perception",
+        "Physiological Relaxation",
+        "Shinrin-yoku"
+      ],
+      "common_sensors": [
+        "Heart rate",
+        "HRV",
         "heart rate",
         "skin conductance"
       ],
       "fronts": [
-        "Acoustic Environment \u00d7 Physiological Response (Soundscape)"
+        "Luminous Environment \u00d7 Mechanism / Pathway (Place)"
       ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__affect_negative_stress",
+      "topic_label": "Environmental Control \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0071",
+        "PDF-0176",
+        "PDF-0749",
+        "PDF-0835",
+        "PDF-0842",
+        "PDF-0868"
+      ],
+      "paper_count": 6,
+      "defended_paper_count": 6,
+      "working_paper_count": 7,
+      "theories": [
+        "Attention Restoration Theory",
+        "Neuroarchitecture",
+        "Soundscape Theory",
+        "Environmental Neuroscience",
+        "Third Place Theory",
+        "Urban Sociology"
+      ],
+      "common_sensors": [
+        "fMRI",
+        "GSR"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__affect_comfort",
+      "topic_label": "Luminous Environment \u2192 Comfort",
+      "outcome_term_id": "affect.comfort",
+      "outcome_label": "Comfort",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0216",
+        "PDF-0323",
+        "PDF-0416",
+        "PDF-0457",
+        "PDF-0626",
+        "PDF-0648"
+      ],
+      "paper_count": 6,
+      "defended_paper_count": 6,
+      "working_paper_count": 10,
+      "theories": [
+        "Daylighting Design Theory",
+        "multisensory integration",
+        "hue heat hypothesis",
+        "thermal comfort modeling",
+        "hospital is dangerous and stressful for patients, families, and staff."
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "luminous__behav_navigation",
+      "topic_label": "Luminous Environment \u2192 Spatial Navigation",
+      "outcome_term_id": "behav.navigation",
+      "outcome_label": "Spatial Navigation",
+      "iv_root": "luminous",
+      "iv_root_label": "Lighting Conditions",
+      "iv_node": "luminous",
+      "iv_label": "Lighting Conditions",
+      "paper_ids": [
+        "PDF-0073",
+        "PDF-0346",
+        "PDF-0734",
+        "PDF-0793",
+        "PDF-0818",
+        "PDF-1340"
+      ],
+      "paper_count": 6,
+      "defended_paper_count": 6,
+      "working_paper_count": 14,
+      "theories": [
+        "Universal Design",
+        "Wayfinding Design",
+        "Material Experience",
+        "spatial cognition",
+        "wayfinding",
+        "space syntax"
+      ],
+      "common_sensors": [
+        "EEG",
+        "fMRI"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__affect_preference",
+      "topic_label": "Material & Surface \u2192 Aesthetic Preference",
+      "outcome_term_id": "affect.preference",
+      "outcome_label": "Aesthetic Preference",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0199",
+        "PDF-0531",
+        "PDF-0802",
+        "PDF-0908",
+        "PDF-1306",
+        "PDF-1399"
+      ],
+      "paper_count": 6,
+      "defended_paper_count": 6,
+      "working_paper_count": 18,
+      "theories": [
+        "urban forestry",
+        "Embodied Cognition",
+        "Phenomenology (Merleau-Ponty)",
+        "Multisensory Design",
+        "Soundscape",
+        "Environmental Acoustics"
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__social",
+      "topic_label": "Material & Surface \u2192 Social / Behavioral",
+      "outcome_term_id": "social",
+      "outcome_label": "Social / Behavioral",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0367",
+        "PDF-0500",
+        "PDF-0674",
+        "PDF-0728",
+        "PDF-0833",
+        "PDF-1268"
+      ],
+      "paper_count": 6,
+      "defended_paper_count": 6,
+      "working_paper_count": 12,
+      "theories": [
+        "Place Attachment Theory",
+        "place attachment",
+        "scannell gifford framework",
+        "socio physical environment",
+        "space syntax",
+        "isovist analysis"
+      ],
+      "common_sensors": [],
+      "fronts": [],
       "evidence_status": "defended"
     },
     {
@@ -924,15 +3019,13 @@
       "paper_ids": [
         "PDF-0042",
         "PDF-0050",
-        "PDF-0318",
-        "PDF-0328",
         "PDF-0448",
         "PDF-0663",
         "PDF-0686",
         "PDF-0688"
       ],
-      "paper_count": 8,
-      "defended_paper_count": 8,
+      "paper_count": 6,
+      "defended_paper_count": 6,
       "working_paper_count": 32,
       "theories": [
         "Biophilia Hypothesis",
@@ -952,450 +3045,64 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "spatial__cog_attention",
-      "topic_label": "Spatial Form \u2192 Attention",
-      "outcome_term_id": "cog.attention",
-      "outcome_label": "Attention",
+      "topic_id": "spatial__affect_soundscape",
+      "topic_label": "Spatial Form \u2192 Soundscape Perception",
+      "outcome_term_id": "affect.soundscape",
+      "outcome_label": "Soundscape Perception",
       "iv_root": "spatial",
       "iv_root_label": "Spatial Form",
       "iv_node": "spatial",
       "iv_label": "Spatial Form",
       "paper_ids": [
-        "PDF-0036",
-        "PDF-0176",
-        "PDF-0360",
-        "PDF-0500",
-        "PDF-0548",
-        "PDF-0638",
-        "PDF-0746",
-        "PDF-1435"
-      ],
-      "paper_count": 8,
-      "defended_paper_count": 8,
-      "working_paper_count": 12,
-      "theories": [
-        "Attention Restoration Theory",
-        "cognitive maps",
-        "wayfinding",
-        "neuroarchitecture"
-      ],
-      "common_sensors": [
-        "EEG",
-        "EMG",
-        "HRV",
-        "Skin conductance",
-        "electrodermal",
-        "eye tracking"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "acoustic__cog_attention",
-      "topic_label": "Acoustic Environment \u2192 Attention",
-      "outcome_term_id": "cog.attention",
-      "outcome_label": "Attention",
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "iv_node": "acoustic",
-      "iv_label": "Acoustic Conditions",
-      "paper_ids": [
-        "PDF-0139",
-        "PDF-0205",
-        "PDF-0331",
-        "PDF-0419",
-        "PDF-0568",
-        "PDF-0575",
-        "PDF-0578"
-      ],
-      "paper_count": 7,
-      "defended_paper_count": 7,
-      "working_paper_count": 15,
-      "theories": [
-        "Attentional Narrowing Theory",
-        "soundscape ecology",
-        "STS",
-        "noise policy",
-        "environmental noise as cognitive and physiological stressor",
-        "arousal / EEG PSD interpretation of attention, stress, and workload"
-      ],
-      "common_sensors": [
-        "EEG"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "acoustic__neural",
-      "topic_label": "Acoustic Environment \u2192 Neural Activity",
-      "outcome_term_id": "neural",
-      "outcome_label": "Neural Activity",
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "iv_node": "acoustic",
-      "iv_label": "Acoustic Conditions",
-      "paper_ids": [
-        "PDF-0139",
-        "PDF-0568",
-        "PDF-0570",
-        "PDF-0578",
-        "PDF-0832",
-        "PDF-0839",
-        "PDF-0844"
-      ],
-      "paper_count": 7,
-      "defended_paper_count": 7,
-      "working_paper_count": 9,
-      "theories": [
-        "Psychological Noise Reduction",
-        "Biophilic Design",
-        "Visual-Auditory Interaction",
-        "Neurodiversity",
-        "Neuro-inclusive Design",
-        "Environmental Sensitivity"
-      ],
-      "common_sensors": [
-        "EEG"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "control__affect_wellbeing",
-      "topic_label": "Environmental Control \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0048",
-        "PDF-0077",
-        "PDF-0093",
-        "PDF-0344",
-        "PDF-0534",
-        "PDF-0887",
-        "PDF-0893"
-      ],
-      "paper_count": 7,
-      "defended_paper_count": 7,
-      "working_paper_count": 9,
-      "theories": [
-        "Environmental Psychology",
-        "Neuroarchitecture",
-        "biomimicry",
-        "PAD Model (Pleasure-Arousal-Dominance)",
-        "neuroarchitecture",
-        "spatial cognition"
-      ],
-      "common_sensors": [
-        "EEG",
-        "GSR",
-        "eye-tracking"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__neural",
-      "topic_label": "Luminous Environment \u2192 Neural Activity",
-      "outcome_term_id": "neural",
-      "outcome_label": "Neural Activity",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0108",
-        "PDF-0130",
-        "PDF-0421",
-        "PDF-0535",
-        "PDF-0542",
-        "PDF-0714",
-        "PDF-0896"
-      ],
-      "paper_count": 7,
-      "defended_paper_count": 7,
-      "working_paper_count": 19,
-      "theories": [
-        "Circadian Lighting Theory",
-        "Circadian Lighting",
-        "Non-visual Light Effects",
-        "Sleep Homeostasis",
-        "CCT Effects",
-        "Stress Reduction Theory"
-      ],
-      "common_sensors": [
-        "EEG",
-        "ECG",
-        "eeg",
-        "skin conductance",
-        "eye-tracking",
-        "heart rate"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "material__affect_wellbeing",
-      "topic_label": "Material & Surface \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
-      "paper_ids": [
-        "PDF-0015",
-        "PDF-0199",
-        "PDF-0231",
-        "PDF-0304",
-        "PDF-0637",
-        "PDF-0853",
-        "PDF-0884"
-      ],
-      "paper_count": 7,
-      "defended_paper_count": 7,
-      "working_paper_count": 8,
-      "theories": [
-        "Biophilia Hypothesis",
-        "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "biophilia",
-        "urban forestry"
-      ],
-      "common_sensors": [
-        "HRV",
-        "Heart rate"
-      ],
-      "fronts": [
-        "Material & Surface \u00d7 Physiological Response (Biophilic)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__mechanism",
-      "topic_label": "Thermal & Air Quality \u2192 Mechanism / Pathway",
-      "outcome_term_id": "mechanism",
-      "outcome_label": "Mechanism / Pathway",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0007",
-        "PDF-0037",
-        "PDF-0106",
-        "PDF-0310",
-        "PDF-0550",
-        "PDF-0922",
-        "PDF-1107"
-      ],
-      "paper_count": 7,
-      "defended_paper_count": 7,
-      "working_paper_count": 8,
-      "theories": [
-        "neuroarchitecture",
-        "Hue-Heat Hypothesis",
-        "Cross-modal Perception",
-        "Virtual Reality Methods",
-        "Thermal Comfort",
-        "chronobiology"
-      ],
-      "common_sensors": [
-        "skin conductance",
-        "heart rate",
-        "HRV",
-        "Heart rate",
-        "EEG",
-        "fMRI"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "material__mechanism",
-      "topic_label": "Material & Surface \u2192 Mechanism / Pathway",
-      "outcome_term_id": "mechanism",
-      "outcome_label": "Mechanism / Pathway",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
-      "paper_ids": [
-        "PDF-0646",
-        "PDF-0667",
-        "PDF-0675",
-        "PDF-0797",
-        "PDF-0814",
-        "PDF-0820"
+        "PDF-0147",
+        "PDF-0217",
+        "PDF-0395",
+        "PDF-0623",
+        "PDF-0837",
+        "PDF-0840"
       ],
       "paper_count": 6,
       "defended_paper_count": 6,
-      "working_paper_count": 6,
+      "working_paper_count": 7,
       "theories": [
-        "Biophilic Design",
-        "Psychophysiology",
-        "Natural Materials",
-        "Multisensory Architecture",
-        "Sensory Perception",
-        "Material Memory Theory"
+        "Soundscape Theory",
+        "soundscape ecology",
+        "Environmental Appraisal",
+        "Emotional Measurement",
+        "School Environment",
+        "Child Development"
       ],
       "common_sensors": [],
       "fronts": [
-        "Material & Surface \u00d7 Physiological Response (Biophilic)"
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)"
       ],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "material__physio",
-      "topic_label": "Material & Surface \u2192 Physiological Response",
-      "outcome_term_id": "physio",
-      "outcome_label": "Physiological Response",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
-      "paper_ids": [
-        "PDF-0399",
-        "PDF-0633",
-        "PDF-0797",
-        "PDF-0852",
-        "PDF-0853",
-        "PDF-0854"
-      ],
-      "paper_count": 6,
-      "defended_paper_count": 6,
-      "working_paper_count": 8,
-      "theories": [
-        "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "Biophilia Hypothesis",
-        "Stress Reduction Theory",
-        "Shinrin-yoku"
-      ],
-      "common_sensors": [
-        "HRV",
-        "Heart rate",
-        "EEG",
-        "EYE-TRACKING",
-        "heart rate"
-      ],
-      "fronts": [
-        "Material & Surface \u00d7 Physiological Response (Biophilic)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "natural__affect_wellbeing",
-      "topic_label": "Nature & Biophilia \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "natural",
-      "iv_root_label": "Natural and Biophilic Conditions",
-      "iv_node": "natural",
-      "iv_label": "Natural and Biophilic Conditions",
-      "paper_ids": [
-        "PDF-0017",
-        "PDF-0042",
-        "PDF-0635",
-        "PDF-0810",
-        "PDF-0816",
-        "PDF-0884"
-      ],
-      "paper_count": 6,
-      "defended_paper_count": 6,
-      "working_paper_count": 22,
-      "theories": [
-        "Salutogenic Design",
-        "Green Building",
-        "Biophilic Design",
-        "biophilia hypothesis",
-        "psychoevolutionary theory",
-        "Biophilia Hypothesis"
-      ],
-      "common_sensors": [
-        "EEG",
-        "skin conductance"
-      ],
-      "fronts": [
-        "Nature & Biophilia \u00d7 Wellbeing (Biophilic)",
-        "Nature & Biophilia \u00d7 Wellbeing (Biophilia)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__cog_performance",
-      "topic_label": "Thermal & Air Quality \u2192 Cognitive Performance",
-      "outcome_term_id": "cog.performance",
-      "outcome_label": "Cognitive Performance",
+      "topic_id": "thermal__affect_preference",
+      "topic_label": "Thermal & Air Quality \u2192 Aesthetic Preference",
+      "outcome_term_id": "affect.preference",
+      "outcome_label": "Aesthetic Preference",
       "iv_root": "thermal",
       "iv_root_label": "Thermal and Air Conditions",
       "iv_node": "thermal",
       "iv_label": "Thermal and Air Conditions",
       "paper_ids": [
-        "PDF-0007",
-        "PDF-0060",
-        "PDF-0064",
-        "PDF-0310",
-        "PDF-0695",
-        "PDF-0708"
+        "PDF-0079",
+        "PDF-0198",
+        "PDF-0243",
+        "PDF-0531",
+        "PDF-1054",
+        "PDF-1399"
       ],
       "paper_count": 6,
       "defended_paper_count": 6,
-      "working_paper_count": 12,
+      "working_paper_count": 11,
       "theories": [
-        "neuroarchitecture",
-        "Soundscape Theory",
-        "Speech Intelligibility Theory",
-        "cognitive load theory",
-        "Cognitive Mapping Theory",
-        "Environmental Cognition"
+        "Spatial Cognition",
+        "soundscape standardization"
       ],
-      "common_sensors": [
-        "HRV",
-        "Heart rate",
-        "skin conductance",
-        "EEG",
-        "fMRI"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "acoustic__cog_cognitive_load",
-      "topic_label": "Acoustic Environment \u2192 Cognitive Load",
-      "outcome_term_id": "cog.cognitive_load",
-      "outcome_label": "Cognitive Load",
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "iv_node": "acoustic",
-      "iv_label": "Acoustic Conditions",
-      "paper_ids": [
-        "PDF-0134",
-        "PDF-0390",
-        "PDF-0405",
-        "PDF-0428",
-        "PDF-0835"
-      ],
-      "paper_count": 5,
-      "defended_paper_count": 5,
-      "working_paper_count": 5,
-      "theories": [
-        "This process may have important consequences for our health and well-being.",
-        "Attention Restoration Theory",
-        "Soundscape Theory",
-        "Environmental Neuroscience",
-        "Irrelevant Sound Effect",
-        "Working Memory Theory"
-      ],
-      "common_sensors": [
-        "EEG",
-        "fMRI"
-      ],
+      "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
     },
@@ -1417,7 +3124,7 @@
       ],
       "paper_count": 5,
       "defended_paper_count": 5,
-      "working_paper_count": 9,
+      "working_paper_count": 13,
       "theories": [
         "Acoustic Comfort",
         "Building Acoustics",
@@ -1430,258 +3137,26 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "luminous__cog_attention",
-      "topic_label": "Luminous Environment \u2192 Attention",
-      "outcome_term_id": "cog.attention",
-      "outcome_label": "Attention",
+      "topic_id": "luminous__cog_memory",
+      "topic_label": "Luminous Environment \u2192 Memory",
+      "outcome_term_id": "cog.memory",
+      "outcome_label": "Memory",
       "iv_root": "luminous",
       "iv_root_label": "Lighting Conditions",
       "iv_node": "luminous",
       "iv_label": "Lighting Conditions",
       "paper_ids": [
-        "PDF-0023",
-        "PDF-0542",
-        "PDF-0758",
-        "PDF-0805",
-        "PDF-0910"
+        "PDF-0334",
+        "PDF-0475",
+        "PDF-0531",
+        "PDF-1398",
+        "PDF-1400"
       ],
       "paper_count": 5,
       "defended_paper_count": 5,
-      "working_paper_count": 29,
+      "working_paper_count": 16,
       "theories": [
-        "Personal Control",
-        "Environmental Psychology",
-        "Lighting Design",
-        "Workplace Design",
-        "Lighting Control",
-        "Dynamic Lighting"
-      ],
-      "common_sensors": [
-        "EEG",
-        "eye-tracking",
-        "heart rate"
-      ],
-      "fronts": [
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__affect_comfort",
-      "topic_label": "Luminous Environment \u2192 Comfort",
-      "outcome_term_id": "affect.comfort",
-      "outcome_label": "Comfort",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0216",
-        "PDF-0323",
-        "PDF-0416",
-        "PDF-0457",
-        "PDF-0626"
-      ],
-      "paper_count": 5,
-      "defended_paper_count": 5,
-      "working_paper_count": 8,
-      "theories": [
-        "Daylighting Design Theory",
-        "multisensory integration",
-        "hue heat hypothesis",
-        "thermal comfort modeling"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "material__affect_negative_stress",
-      "topic_label": "Material & Surface \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
-      "paper_ids": [
-        "PDF-0399",
-        "PDF-0637",
-        "PDF-0643",
-        "PDF-0852",
-        "PDF-0854"
-      ],
-      "paper_count": 5,
-      "defended_paper_count": 5,
-      "working_paper_count": 7,
-      "theories": [
-        "Biophilia Hypothesis",
-        "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "Shinrin-yoku",
-        "neuroarchitecture"
-      ],
-      "common_sensors": [
-        "HRV",
-        "Heart rate",
-        "EEG",
-        "EYE-TRACKING",
-        "heart rate"
-      ],
-      "fronts": [
-        "Material & Surface \u00d7 Physiological Response (Biophilic)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "social_spatial__affect_negative_stress",
-      "topic_label": "Social-Spatial \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
-      "iv_root": "social_spatial",
-      "iv_root_label": "Social-Spatial Conditions",
-      "iv_node": "social_spatial",
-      "iv_label": "Social-Spatial Conditions",
-      "paper_ids": [
-        "PDF-0004",
-        "PDF-0103",
-        "PDF-0283",
-        "PDF-0358",
-        "PDF-0634"
-      ],
-      "paper_count": 5,
-      "defended_paper_count": 5,
-      "working_paper_count": 7,
-      "theories": [
-        "Crowding Theory",
-        "Biophilia Hypothesis",
-        "Stokols Crowding Model"
-      ],
-      "common_sensors": [
-        "electrodermal",
-        "skin conductance",
-        "heart rate"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "spatial__affect_preference",
-      "topic_label": "Spatial Form \u2192 Aesthetic Preference",
-      "outcome_term_id": "affect.preference",
-      "outcome_label": "Aesthetic Preference",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
-      "paper_ids": [
-        "PDF-0041",
-        "PDF-0274",
-        "PDF-0280",
-        "PDF-0684",
-        "PDF-0865"
-      ],
-      "paper_count": 5,
-      "defended_paper_count": 5,
-      "working_paper_count": 11,
-      "theories": [
-        "Neuroaesthetics",
-        "evolutionary psychology",
-        "pattern language",
-        "Information Processing Theory of Environmental Preference",
-        "Evolutionary Aesthetics",
-        "Kaplan Preference Matrix"
-      ],
-      "common_sensors": [
-        "EEG",
-        "fMRI"
-      ],
-      "fronts": [
-        "Spatial Form \u00d7 Aesthetic Preference (Neuroaesthetics)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "spatial__affect_restoration",
-      "topic_label": "Spatial Form \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
-      "paper_ids": [
-        "PDF-0036",
-        "PDF-0059",
-        "PDF-0086",
-        "PDF-0730",
-        "PDF-0749"
-      ],
-      "paper_count": 5,
-      "defended_paper_count": 5,
-      "working_paper_count": 7,
-      "theories": [
-        "Third Place Theory",
-        "Urban Sociology",
-        "Place Attachment Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "control__mechanism",
-      "topic_label": "Environmental Control \u2192 Mechanism / Pathway",
-      "outcome_term_id": "mechanism",
-      "outcome_label": "Mechanism / Pathway",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0003",
-        "PDF-0053",
-        "PDF-0549",
-        "PDF-0632"
-      ],
-      "paper_count": 4,
-      "defended_paper_count": 4,
-      "working_paper_count": 4,
-      "theories": [
-        "Biophilia Hypothesis",
-        "Spatial Cognition",
-        "Place Cell Theory",
-        "stress reduction).",
-        "Fractal Fluency Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__affect_preference",
-      "topic_label": "Luminous Environment \u2192 Aesthetic Preference",
-      "outcome_term_id": "affect.preference",
-      "outcome_label": "Aesthetic Preference",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0189",
-        "PDF-0378",
-        "PDF-0524",
-        "PDF-0785"
-      ],
-      "paper_count": 4,
-      "defended_paper_count": 4,
-      "working_paper_count": 15,
-      "theories": [
-        "Colour Psychology",
-        "lighting quality theory",
-        "Environmental Preference Theory",
-        "Kaplan Information Processing"
+        "Artificial light, especially colored lights, can affect a human's stress level."
       ],
       "common_sensors": [
         "EEG"
@@ -1690,203 +3165,216 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "luminous__health",
-      "topic_label": "Luminous Environment \u2192 Health Outcomes",
+      "topic_id": "spatial__affect_comfort",
+      "topic_label": "Spatial Form \u2192 Comfort",
+      "outcome_term_id": "affect.comfort",
+      "outcome_label": "Comfort",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
+      "paper_ids": [
+        "PDF-0337",
+        "PDF-0419",
+        "PDF-0457",
+        "PDF-0648",
+        "PDF-0846"
+      ],
+      "paper_count": 5,
+      "defended_paper_count": 5,
+      "working_paper_count": 8,
+      "theories": [
+        "Acoustic Comfort",
+        "Building Acoustics",
+        "Dwelling Quality",
+        "grounded theory",
+        "multisensory integration",
+        "hue heat hypothesis"
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "spatial__health",
+      "topic_label": "Spatial Form \u2192 Health Outcomes",
       "outcome_term_id": "health",
       "outcome_label": "Health Outcomes",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
+      "iv_root": "spatial",
+      "iv_root_label": "Spatial Form",
+      "iv_node": "spatial",
+      "iv_label": "Spatial Form",
       "paper_ids": [
-        "PDF-0011",
-        "PDF-0416",
-        "PDF-0752",
-        "PDF-0766"
+        "PDF-0480",
+        "PDF-0745",
+        "PDF-0765",
+        "PDF-0833",
+        "PDF-0866"
       ],
-      "paper_count": 4,
-      "defended_paper_count": 4,
+      "paper_count": 5,
+      "defended_paper_count": 5,
       "working_paper_count": 6,
       "theories": [
         "Circadian Lighting",
-        "Circadian Photobiology",
-        "Attention Restoration Theory",
-        "Daylighting Design Theory",
         "Non-Visual Effects of Light",
-        "Chronobiology"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__affect_restoration",
-      "topic_label": "Luminous Environment \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0535",
-        "PDF-0601",
-        "PDF-0714",
-        "PDF-0758"
-      ],
-      "paper_count": 4,
-      "defended_paper_count": 4,
-      "working_paper_count": 8,
-      "theories": [
-        "Circadian Entrainment",
-        "Dynamic Lighting",
-        "Circadian Lighting",
-        "Stress Reduction Theory",
-        "Color Psychology"
-      ],
-      "common_sensors": [
-        "EEG",
-        "ECG",
-        "eeg",
-        "skin conductance"
-      ],
-      "fronts": [
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "material__affect_preference",
-      "topic_label": "Material & Surface \u2192 Aesthetic Preference",
-      "outcome_term_id": "affect.preference",
-      "outcome_label": "Aesthetic Preference",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
-      "paper_ids": [
-        "PDF-0198",
-        "PDF-0231",
-        "PDF-0531",
-        "PDF-0814"
-      ],
-      "paper_count": 4,
-      "defended_paper_count": 4,
-      "working_paper_count": 5,
-      "theories": [
-        "Multisensory Architecture",
-        "Sensory Perception",
-        "biophilia"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "material__neural",
-      "topic_label": "Material & Surface \u2192 Neural Activity",
-      "outcome_term_id": "neural",
-      "outcome_label": "Neural Activity",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
-      "paper_ids": [
-        "PDF-0399",
-        "PDF-0633",
-        "PDF-0637",
-        "PDF-0853"
-      ],
-      "paper_count": 4,
-      "defended_paper_count": 4,
-      "working_paper_count": 5,
-      "theories": [
-        "Biophilia Hypothesis",
-        "Stress Reduction Theory",
+        "Chronobiology",
         "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "neuroarchitecture"
+        "Daylighting",
+        "Non-visual Light Effects"
       ],
-      "common_sensors": [
-        "HRV",
-        "Heart rate",
-        "EEG",
-        "EYE-TRACKING"
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__cog_cognitive_load",
+      "topic_label": "Thermal & Air Quality \u2192 Cognitive Load",
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0795",
+        "PDF-0845",
+        "PDF-0878",
+        "PDF-0883",
+        "PDF-0893"
       ],
+      "paper_count": 5,
+      "defended_paper_count": 5,
+      "working_paper_count": 10,
+      "theories": [
+        "Neuroarchitecture",
+        "Circadian Lighting",
+        "Non-visual Light Effects",
+        "Sleep-Cognition",
+        "Biophilic Design",
+        "Environmental Psychology"
+      ],
+      "common_sensors": [],
       "fronts": [
-        "Material & Surface \u00d7 Physiological Response (Biophilic)"
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
       ],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "material__affect_restoration",
-      "topic_label": "Material & Surface \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
+      "topic_id": "material__health",
+      "topic_label": "Material & Surface \u2192 Health Outcomes",
+      "outcome_term_id": "health",
+      "outcome_label": "Health Outcomes",
       "iv_root": "material",
       "iv_root_label": "Material and Surface Conditions",
       "iv_node": "material",
       "iv_label": "Material and Surface Conditions",
       "paper_ids": [
-        "PDF-0643",
-        "PDF-0647",
-        "PDF-0797",
-        "PDF-0852"
+        "PDF-0766",
+        "PDF-0768",
+        "PDF-0774",
+        "PDF-0833"
+      ],
+      "paper_count": 4,
+      "defended_paper_count": 4,
+      "working_paper_count": 5,
+      "theories": [
+        "Soundscape Theory",
+        "Circadian Lighting",
+        "Chronobiology",
+        "Salutogenesis",
+        "Confined Space Psychology",
+        "Urban Design"
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__cog_memory",
+      "topic_label": "Material & Surface \u2192 Memory",
+      "outcome_term_id": "cog.memory",
+      "outcome_label": "Memory",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0531",
+        "PDF-0671",
+        "PDF-1398",
+        "PDF-1400"
       ],
       "paper_count": 4,
       "defended_paper_count": 4,
       "working_paper_count": 7,
-      "theories": [
-        "Biophilic Design",
-        "Material Perception",
-        "Physiological Relaxation",
-        "Shinrin-yoku",
-        "Psychophysiology",
-        "Natural Materials"
-      ],
+      "theories": [],
       "common_sensors": [
-        "HRV",
-        "Heart rate"
+        "EEG"
       ],
-      "fronts": [
-        "Material & Surface \u00d7 Physiological Response (Biophilic)"
-      ],
+      "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "natural__affect_negative_stress",
-      "topic_label": "Nature & Biophilia \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
+      "topic_id": "natural__physio",
+      "topic_label": "Nature & Biophilia \u2192 Physiological Response",
+      "outcome_term_id": "physio",
+      "outcome_label": "Physiological Response",
       "iv_root": "natural",
       "iv_root_label": "Natural and Biophilic Conditions",
       "iv_node": "natural",
       "iv_label": "Natural and Biophilic Conditions",
       "paper_ids": [
-        "PDF-0045",
+        "PDF-0033",
         "PDF-0682",
-        "PDF-0784",
-        "PDF-0876"
+        "PDF-0719",
+        "PDF-0881"
       ],
       "paper_count": 4,
       "defended_paper_count": 4,
-      "working_paper_count": 33,
+      "working_paper_count": 9,
       "theories": [
         "Attention Restoration Theory",
-        "Biophilia Hypothesis",
-        "Biophilic Design",
         "Stress Reduction Theory",
-        "Cognitive Science",
-        "Neuroarchitecture"
+        "Biophilia Hypothesis",
+        "Fractal Fluency",
+        "EEG Alpha",
+        "Biophilic Design"
       ],
       "common_sensors": [
-        "heart rate"
+        "heart rate",
+        "skin conductance",
+        "EEG"
       ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "natural__affect_wellbeing",
+      "topic_label": "Nature & Biophilia \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "natural",
+      "iv_root_label": "Natural and Biophilic Conditions",
+      "iv_node": "natural",
+      "iv_label": "Natural and Biophilic Conditions",
+      "paper_ids": [
+        "PDF-0042",
+        "PDF-0045",
+        "PDF-0635",
+        "PDF-0884"
+      ],
+      "paper_count": 4,
+      "defended_paper_count": 4,
+      "working_paper_count": 26,
+      "theories": [
+        "Biophilia Hypothesis",
+        "Attention Restoration Theory",
+        "Circadian Lighting Theory"
+      ],
+      "common_sensors": [],
       "fronts": [
-        "Nature & Biophilia \u00d7 Stress Response (Biophilic)",
-        "Nature & Biophilia \u00d7 Stress Response (Attention)",
-        "Nature & Biophilia \u00d7 Stress Response (Biophilia)"
+        "Nature & Biophilia \u00d7 Restoration / Recovery (Attention)",
+        "Nature & Biophilia \u00d7 Wellbeing (Biophilia)"
       ],
       "evidence_status": "defended"
     },
@@ -1907,7 +3395,7 @@
       ],
       "paper_count": 4,
       "defended_paper_count": 4,
-      "working_paper_count": 7,
+      "working_paper_count": 9,
       "theories": [
         "Crowding Theory",
         "Place Attachment"
@@ -1920,31 +3408,121 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "spatial__affect_wellbeing",
-      "topic_label": "Spatial Form \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
+      "topic_id": "social_spatial__affect_negative_stress",
+      "topic_label": "Social-Spatial \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
+      "iv_root": "social_spatial",
+      "iv_root_label": "Social-Spatial Conditions",
+      "iv_node": "social_spatial",
+      "iv_label": "Social-Spatial Conditions",
       "paper_ids": [
-        "PDF-0002",
-        "PDF-0196",
-        "PDF-0372",
-        "PDF-0807"
+        "PDF-0103",
+        "PDF-0283",
+        "PDF-0358",
+        "PDF-0634"
       ],
       "paper_count": 4,
       "defended_paper_count": 4,
-      "working_paper_count": 11,
+      "working_paper_count": 8,
       "theories": [
-        "These conditions, in turn, are related to stress and stresslike symptoms.",
         "Crowding Theory",
-        "Organizational Ecology",
-        "Workplace Strategy"
+        "Biophilia Hypothesis",
+        "Stokols Crowding Model"
+      ],
+      "common_sensors": [
+        "electrodermal",
+        "skin conductance",
+        "heart rate"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "social_spatial__affect_wellbeing",
+      "topic_label": "Social-Spatial \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "social_spatial",
+      "iv_root_label": "Social-Spatial Conditions",
+      "iv_node": "social_spatial",
+      "iv_label": "Social-Spatial Conditions",
+      "paper_ids": [
+        "PDF-0074",
+        "PDF-0075",
+        "PDF-0232",
+        "PDF-0316"
+      ],
+      "paper_count": 4,
+      "defended_paper_count": 4,
+      "working_paper_count": 9,
+      "theories": [
+        "Place Attachment",
+        "Crowding Theory",
+        "Evidence-Based Design"
       ],
       "common_sensors": [],
       "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__affect_comfort",
+      "topic_label": "Thermal & Air Quality \u2192 Comfort",
+      "outcome_term_id": "affect.comfort",
+      "outcome_label": "Comfort",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0419",
+        "PDF-0457",
+        "PDF-0644",
+        "PDF-0648"
+      ],
+      "paper_count": 4,
+      "defended_paper_count": 4,
+      "working_paper_count": 12,
+      "theories": [
+        "multisensory integration",
+        "hue heat hypothesis",
+        "thermal comfort modeling",
+        "hospital is dangerous and stressful for patients, families, and staff."
+      ],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "thermal__behav_navigation",
+      "topic_label": "Thermal & Air Quality \u2192 Spatial Navigation",
+      "outcome_term_id": "behav.navigation",
+      "outcome_label": "Spatial Navigation",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0793",
+        "PDF-0876",
+        "PDF-0893",
+        "PDF-1340"
+      ],
+      "paper_count": 4,
+      "defended_paper_count": 4,
+      "working_paper_count": 5,
+      "theories": [
+        "Neuroarchitecture",
+        "Embodied Cognition",
+        "Spatial Neuroscience",
+        "Fractal Fluency",
+        "Biophilic Design",
+        "Visual Processing"
+      ],
+      "common_sensors": [],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
       "evidence_status": "defended"
     },
     {
@@ -1990,7 +3568,7 @@
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 5,
+      "working_paper_count": 6,
       "theories": [
         "Personal Space Theory",
         "Proxemics",
@@ -2007,32 +3585,6 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "control__cog_performance",
-      "topic_label": "Environmental Control \u2192 Cognitive Performance",
-      "outcome_term_id": "cog.performance",
-      "outcome_label": "Cognitive Performance",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0005",
-        "PDF-0071",
-        "PDF-0676"
-      ],
-      "paper_count": 3,
-      "defended_paper_count": 3,
-      "working_paper_count": 4,
-      "theories": [
-        "Neuroarchitecture",
-        "Biophilia Hypothesis",
-        "Attention Restoration Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
       "topic_id": "control__neural",
       "topic_label": "Environmental Control \u2192 Neural Activity",
       "outcome_term_id": "neural",
@@ -2043,75 +3595,47 @@
       "iv_label": "Control",
       "paper_ids": [
         "PDF-0016",
-        "PDF-0029",
-        "PDF-0071"
+        "PDF-0071",
+        "PDF-0360"
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 4,
+      "working_paper_count": 6,
       "theories": [
         "Neuroarchitecture",
-        "Neuroaesthetics",
-        "neuroaesthetics"
+        "neuroarchitecture",
+        "Neuroaesthetics"
       ],
       "common_sensors": [
-        "fMRI",
         "EEG",
-        "GSR",
-        "eye tracking"
+        "fMRI"
       ],
       "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "luminous__cog_cognitive_load",
-      "topic_label": "Luminous Environment \u2192 Cognitive Load",
-      "outcome_term_id": "cog.cognitive_load",
-      "outcome_label": "Cognitive Load",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
+      "topic_id": "control__social",
+      "topic_label": "Environmental Control \u2192 Social / Behavioral",
+      "outcome_term_id": "social",
+      "outcome_label": "Social / Behavioral",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
       "paper_ids": [
-        "PDF-0481",
-        "PDF-0601",
-        "PDF-0883"
+        "PDF-0728",
+        "PDF-0742",
+        "PDF-1268"
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 3,
+      "working_paper_count": 5,
       "theories": [
-        "Circadian Entrainment",
-        "Circadian Lighting",
-        "Non-visual Light Effects",
-        "Sleep-Cognition"
-      ],
-      "common_sensors": [],
-      "fronts": [
-        "Luminous Environment \u00d7 Cognitive Performance (Circadian)"
-      ],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "luminous__cog_memory",
-      "topic_label": "Luminous Environment \u2192 Memory",
-      "outcome_term_id": "cog.memory",
-      "outcome_label": "Memory",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
-      "paper_ids": [
-        "PDF-0334",
-        "PDF-0475",
-        "PDF-0529"
-      ],
-      "paper_count": 3,
-      "defended_paper_count": 3,
-      "working_paper_count": 9,
-      "theories": [
-        "Circadian Lighting Theory",
-        "Artificial light, especially colored lights, can affect a human's stress level."
+        "Place Attachment Theory",
+        "place attachment",
+        "scannell gifford framework",
+        "socio physical environment",
+        "Territorial Behavior"
       ],
       "common_sensors": [],
       "fronts": [],
@@ -2128,17 +3652,16 @@
       "iv_label": "Lighting Conditions",
       "paper_ids": [
         "PDF-0062",
-        "PDF-0222",
-        "PDF-1268"
+        "PDF-0200",
+        "PDF-0222"
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 12,
+      "working_paper_count": 15,
       "theories": [
         "Place Attachment Theory",
-        "place attachment",
-        "scannell gifford framework",
-        "socio physical environment",
+        "Bayesian optimal observer",
+        "probabilistic perception",
         "Biophilia Hypothesis"
       ],
       "common_sensors": [],
@@ -2146,25 +3669,89 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "material__cog_performance",
-      "topic_label": "Material & Surface \u2192 Cognitive Performance",
-      "outcome_term_id": "cog.performance",
-      "outcome_label": "Cognitive Performance",
+      "topic_id": "material__cog_cognitive_load",
+      "topic_label": "Material & Surface \u2192 Cognitive Load",
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
       "iv_root": "material",
       "iv_root_label": "Material and Surface Conditions",
       "iv_node": "material",
       "iv_label": "Material and Surface Conditions",
       "paper_ids": [
-        "PDF-0633",
-        "PDF-0643",
-        "PDF-0647"
+        "PDF-0070",
+        "PDF-0795",
+        "PDF-0835"
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 10,
+      "working_paper_count": 9,
       "theories": [
-        "Biophilia Hypothesis",
-        "Stress Reduction Theory"
+        "Attention Restoration Theory",
+        "Soundscape Theory",
+        "Environmental Neuroscience",
+        "Biophilic Design",
+        "Environmental Psychology",
+        "Mehrabian-Russell Model"
+      ],
+      "common_sensors": [
+        "fMRI"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__affect_comfort",
+      "topic_label": "Material & Surface \u2192 Comfort",
+      "outcome_term_id": "affect.comfort",
+      "outcome_label": "Comfort",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0160",
+        "PDF-0546",
+        "PDF-0846"
+      ],
+      "paper_count": 3,
+      "defended_paper_count": 3,
+      "working_paper_count": 6,
+      "theories": [
+        "Acoustic Comfort",
+        "Building Acoustics",
+        "Dwelling Quality",
+        "Biophilia Hypothesis"
+      ],
+      "common_sensors": [
+        "heart rate"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "material__behav_navigation",
+      "topic_label": "Material & Surface \u2192 Spatial Navigation",
+      "outcome_term_id": "behav.navigation",
+      "outcome_label": "Spatial Navigation",
+      "iv_root": "material",
+      "iv_root_label": "Material and Surface Conditions",
+      "iv_node": "material",
+      "iv_label": "Material and Surface Conditions",
+      "paper_ids": [
+        "PDF-0367",
+        "PDF-0818",
+        "PDF-1340"
+      ],
+      "paper_count": 3,
+      "defended_paper_count": 3,
+      "working_paper_count": 5,
+      "theories": [
+        "Universal Design",
+        "Wayfinding Design",
+        "Material Experience",
+        "space syntax",
+        "isovist analysis",
+        "prospect-refuge theory"
       ],
       "common_sensors": [],
       "fronts": [],
@@ -2186,7 +3773,7 @@
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 14,
+      "working_paper_count": 16,
       "theories": [
         "Attention Restoration Theory",
         "Stress Reduction Theory",
@@ -2198,6 +3785,39 @@
       ],
       "fronts": [
         "Nature & Biophilia \u00d7 Mechanism / Pathway (Biophilia)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "natural__affect_negative_stress",
+      "topic_label": "Nature & Biophilia \u2192 Stress Response",
+      "outcome_term_id": "affect.negative.stress",
+      "outcome_label": "Stress Response",
+      "iv_root": "natural",
+      "iv_root_label": "Natural and Biophilic Conditions",
+      "iv_node": "natural",
+      "iv_label": "Natural and Biophilic Conditions",
+      "paper_ids": [
+        "PDF-0033",
+        "PDF-0045",
+        "PDF-0682"
+      ],
+      "paper_count": 3,
+      "defended_paper_count": 3,
+      "working_paper_count": 30,
+      "theories": [
+        "Attention Restoration Theory",
+        "Biophilia Hypothesis",
+        "Stress Reduction Theory",
+        "biophilia hypothesis",
+        "stress recovery theory"
+      ],
+      "common_sensors": [
+        "heart rate",
+        "skin conductance"
+      ],
+      "fronts": [
+        "Nature & Biophilia \u00d7 Restoration / Recovery (Attention)"
       ],
       "evidence_status": "defended"
     },
@@ -2217,7 +3837,7 @@
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 6,
+      "working_paper_count": 5,
       "theories": [
         "Crowding Theory",
         "Biophilia Hypothesis"
@@ -2231,165 +3851,155 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "social_spatial__affect_wellbeing",
-      "topic_label": "Social-Spatial \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "social_spatial",
-      "iv_root_label": "Social-Spatial Conditions",
-      "iv_node": "social_spatial",
-      "iv_label": "Social-Spatial Conditions",
-      "paper_ids": [
-        "PDF-0074",
-        "PDF-0232",
-        "PDF-0316"
-      ],
-      "paper_count": 3,
-      "defended_paper_count": 3,
-      "working_paper_count": 7,
-      "theories": [
-        "Crowding Theory",
-        "Place Attachment",
-        "Evidence-Based Design"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "spatial__cog_cognitive_load",
-      "topic_label": "Spatial Form \u2192 Cognitive Load",
-      "outcome_term_id": "cog.cognitive_load",
-      "outcome_label": "Cognitive Load",
+      "topic_id": "spatial__cog_memory",
+      "topic_label": "Spatial Form \u2192 Memory",
+      "outcome_term_id": "cog.memory",
+      "outcome_label": "Memory",
       "iv_root": "spatial",
       "iv_root_label": "Spatial Form",
       "iv_node": "spatial",
       "iv_label": "Spatial Form",
       "paper_ids": [
-        "PDF-0414",
-        "PDF-0483",
-        "PDF-0592"
+        "PDF-0678",
+        "PDF-1398",
+        "PDF-1400"
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 3,
-      "theories": [
-        "Soundscape Theory"
-      ],
+      "working_paper_count": 12,
+      "theories": [],
       "common_sensors": [
-        "electrodermal",
-        "EEG",
-        "GSR",
-        "eye-tracking"
+        "EEG"
       ],
       "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "spatial__health",
-      "topic_label": "Spatial Form \u2192 Health Outcomes",
-      "outcome_term_id": "health",
-      "outcome_label": "Health Outcomes",
-      "iv_root": "spatial",
-      "iv_root_label": "Spatial Form",
-      "iv_node": "spatial",
-      "iv_label": "Spatial Form",
-      "paper_ids": [
-        "PDF-0480",
-        "PDF-0745",
-        "PDF-0765"
-      ],
-      "paper_count": 3,
-      "defended_paper_count": 3,
-      "working_paper_count": 3,
-      "theories": [
-        "Circadian Lighting",
-        "Non-Visual Effects of Light",
-        "Chronobiology",
-        "New Urban Agenda",
-        "Public Health"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__physio",
-      "topic_label": "Thermal & Air Quality \u2192 Physiological Response",
-      "outcome_term_id": "physio",
-      "outcome_label": "Physiological Response",
+      "topic_id": "thermal__cog_memory",
+      "topic_label": "Thermal & Air Quality \u2192 Memory",
+      "outcome_term_id": "cog.memory",
+      "outcome_label": "Memory",
       "iv_root": "thermal",
       "iv_root_label": "Thermal and Air Conditions",
       "iv_node": "thermal",
       "iv_label": "Thermal and Air Conditions",
       "paper_ids": [
-        "PDF-0007",
-        "PDF-0060",
-        "PDF-0922"
+        "PDF-0243",
+        "PDF-0531",
+        "PDF-0671"
       ],
       "paper_count": 3,
       "defended_paper_count": 3,
-      "working_paper_count": 4,
+      "working_paper_count": 9,
       "theories": [
-        "Hue-Heat Hypothesis",
-        "Cross-modal Perception",
-        "Virtual Reality Methods",
-        "Thermal Comfort"
-      ],
-      "common_sensors": [
-        "skin conductance",
-        "HRV",
-        "Heart rate",
-        "heart rate"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "acoustic__health",
-      "topic_label": "Acoustic Environment \u2192 Health Outcomes",
-      "outcome_term_id": "health",
-      "outcome_label": "Health Outcomes",
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "iv_node": "acoustic",
-      "iv_label": "Acoustic Conditions",
-      "paper_ids": [
-        "PDF-0455",
-        "PDF-0527"
-      ],
-      "paper_count": 2,
-      "defended_paper_count": 2,
-      "working_paper_count": 3,
-      "theories": [
-        "Noise and Learning Theory"
+        "soundscape standardization"
       ],
       "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "control__cog_attention",
-      "topic_label": "Environmental Control \u2192 Attention",
-      "outcome_term_id": "cog.attention",
-      "outcome_label": "Attention",
+      "topic_id": "thermal__affect_soundscape",
+      "topic_label": "Thermal & Air Quality \u2192 Soundscape Perception",
+      "outcome_term_id": "affect.soundscape",
+      "outcome_label": "Soundscape Perception",
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "iv_node": "thermal",
+      "iv_label": "Thermal and Air Conditions",
+      "paper_ids": [
+        "PDF-0147",
+        "PDF-0217",
+        "PDF-0840"
+      ],
+      "paper_count": 3,
+      "defended_paper_count": 3,
+      "working_paper_count": 4,
+      "theories": [
+        "soundscape ecology",
+        "Soundscape Theory",
+        "School Environment",
+        "Child Development",
+        "Kano Model"
+      ],
+      "common_sensors": [],
+      "fronts": [
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__affect_preference",
+      "topic_label": "Environmental Control \u2192 Aesthetic Preference",
+      "outcome_term_id": "affect.preference",
+      "outcome_label": "Aesthetic Preference",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-1314",
+        "PDF-1348"
+      ],
+      "paper_count": 2,
+      "defended_paper_count": 2,
+      "working_paper_count": 5,
+      "theories": [],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__cog_cognitive_load",
+      "topic_label": "Environmental Control \u2192 Cognitive Load",
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0795",
+        "PDF-0835"
+      ],
+      "paper_count": 2,
+      "defended_paper_count": 2,
+      "working_paper_count": 4,
+      "theories": [
+        "Attention Restoration Theory",
+        "Soundscape Theory",
+        "Environmental Neuroscience",
+        "Biophilic Design",
+        "Environmental Psychology",
+        "Mehrabian-Russell Model"
+      ],
+      "common_sensors": [
+        "fMRI"
+      ],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__affect_restoration",
+      "topic_label": "Environmental Control \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
       "iv_root": "control",
       "iv_root_label": "Control",
       "iv_node": "control",
       "iv_label": "Control",
       "paper_ids": [
         "PDF-0676",
-        "PDF-0824"
+        "PDF-0749"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 2,
+      "working_paper_count": 3,
       "theories": [
         "Biophilia Hypothesis",
         "Attention Restoration Theory",
-        "Haptic Perception",
-        "Universal Design",
-        "Embodied Cognition"
+        "Third Place Theory",
+        "Urban Sociology"
       ],
       "common_sensors": [],
       "fronts": [],
@@ -2410,7 +4020,7 @@
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 2,
+      "working_paper_count": 4,
       "theories": [
         "Space Syntax Theory",
         "Isovist Theory"
@@ -2420,77 +4030,77 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "material__cog_attention",
-      "topic_label": "Material & Surface \u2192 Attention",
-      "outcome_term_id": "cog.attention",
-      "outcome_label": "Attention",
+      "topic_id": "material__cog_creativity",
+      "topic_label": "Material & Surface \u2192 Creativity / Divergent Thinking",
+      "outcome_term_id": "cog.creativity",
+      "outcome_label": "Creativity / Divergent Thinking",
       "iv_root": "material",
       "iv_root_label": "Material and Surface Conditions",
       "iv_node": "material",
       "iv_label": "Material and Surface Conditions",
       "paper_ids": [
-        "PDF-0647",
-        "PDF-0889"
+        "PDF-0288",
+        "PDF-0904"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 4,
+      "working_paper_count": 3,
       "theories": [
-        "Material Perception",
-        "Visual Attention",
-        "Biophilic Design",
-        "Environmental Preference"
+        "Dynamic Lighting",
+        "CCT Effects",
+        "School Design",
+        "Non-visual Light Effects",
+        "environmental psychology",
+        "sense of belonging"
       ],
       "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "material__affect_comfort",
-      "topic_label": "Material & Surface \u2192 Comfort",
-      "outcome_term_id": "affect.comfort",
-      "outcome_label": "Comfort",
+      "topic_id": "material__affect_soundscape",
+      "topic_label": "Material & Surface \u2192 Soundscape Perception",
+      "outcome_term_id": "affect.soundscape",
+      "outcome_label": "Soundscape Perception",
       "iv_root": "material",
       "iv_root_label": "Material and Surface Conditions",
       "iv_node": "material",
       "iv_label": "Material and Surface Conditions",
       "paper_ids": [
-        "PDF-0160",
-        "PDF-0546"
+        "PDF-0623",
+        "PDF-0837"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 3,
+      "working_paper_count": 4,
       "theories": [
-        "Biophilia Hypothesis"
+        "Soundscape Theory",
+        "Environmental Appraisal",
+        "Emotional Measurement"
       ],
-      "common_sensors": [
-        "heart rate"
+      "common_sensors": [],
+      "fronts": [
+        "Acoustic Environment \u00d7 Soundscape Perception (Soundscape)"
       ],
-      "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "material__social",
-      "topic_label": "Material & Surface \u2192 Social / Behavioral",
-      "outcome_term_id": "social",
-      "outcome_label": "Social / Behavioral",
-      "iv_root": "material",
-      "iv_root_label": "Material and Surface Conditions",
-      "iv_node": "material",
-      "iv_label": "Material and Surface Conditions",
+      "topic_id": "multisensory__affect_wellbeing",
+      "topic_label": "Multisensory / Compound \u2192 Wellbeing",
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "iv_root": "multisensory",
+      "iv_root_label": "Multisensory",
+      "iv_node": "multisensory",
+      "iv_label": "Multisensory",
       "paper_ids": [
-        "PDF-0070",
-        "PDF-0674"
+        "PDF-0671",
+        "PDF-1336"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 3,
-      "theories": [
-        "Place Attachment Theory",
-        "extra-personal space",
-        "multisensory integration"
-      ],
+      "working_paper_count": 5,
+      "theories": [],
       "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
@@ -2510,7 +4120,7 @@
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 8,
+      "working_paper_count": 15,
       "theories": [
         "Biophilia Hypothesis",
         "14 Patterns of Biophilic Design",
@@ -2528,32 +4138,53 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "natural__physio",
-      "topic_label": "Nature & Biophilia \u2192 Physiological Response",
-      "outcome_term_id": "physio",
-      "outcome_label": "Physiological Response",
+      "topic_id": "natural__affect_restoration",
+      "topic_label": "Nature & Biophilia \u2192 Restoration / Recovery",
+      "outcome_term_id": "affect.restoration",
+      "outcome_label": "Restoration / Recovery",
       "iv_root": "natural",
       "iv_root_label": "Natural and Biophilic Conditions",
       "iv_node": "natural",
       "iv_label": "Natural and Biophilic Conditions",
       "paper_ids": [
-        "PDF-0682",
-        "PDF-0881"
+        "PDF-0045",
+        "PDF-0688"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 7,
+      "working_paper_count": 22,
       "theories": [
         "Attention Restoration Theory",
         "Stress Reduction Theory",
-        "Biophilia Hypothesis",
-        "Fractal Fluency",
-        "EEG Alpha",
-        "Biophilic Design"
+        "Biophilia Hypothesis"
+      ],
+      "common_sensors": [],
+      "fronts": [
+        "Nature & Biophilia \u00d7 Restoration / Recovery (Attention)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "natural__social",
+      "topic_label": "Nature & Biophilia \u2192 Social / Behavioral",
+      "outcome_term_id": "social",
+      "outcome_label": "Social / Behavioral",
+      "iv_root": "natural",
+      "iv_root_label": "Natural and Biophilic Conditions",
+      "iv_node": "natural",
+      "iv_label": "Natural and Biophilic Conditions",
+      "paper_ids": [
+        "PDF-0170",
+        "PDF-0719"
+      ],
+      "paper_count": 2,
+      "defended_paper_count": 2,
+      "working_paper_count": 3,
+      "theories": [
+        "Place Attachment Theory"
       ],
       "common_sensors": [
-        "heart rate",
-        "EEG"
+        "skin conductance"
       ],
       "fronts": [],
       "evidence_status": "defended"
@@ -2573,7 +4204,7 @@
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 4,
+      "working_paper_count": 6,
       "theories": [
         "Stokols Crowding Model",
         "Crowding Theory"
@@ -2592,116 +4223,43 @@
       "iv_node": "social_spatial",
       "iv_label": "Social-Spatial Conditions",
       "paper_ids": [
-        "PDF-0075",
-        "PDF-0354"
+        "PDF-0062",
+        "PDF-0075"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
       "working_paper_count": 5,
       "theories": [
-        "Place Attachment",
-        "territoriality",
-        "ecological psychology"
+        "Place Attachment Theory",
+        "Place Attachment"
       ],
       "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
     },
     {
-      "topic_id": "thermal__affect_comfort",
-      "topic_label": "Thermal & Air Quality \u2192 Comfort",
-      "outcome_term_id": "affect.comfort",
-      "outcome_label": "Comfort",
+      "topic_id": "thermal__cog_creativity",
+      "topic_label": "Thermal & Air Quality \u2192 Creativity / Divergent Thinking",
+      "outcome_term_id": "cog.creativity",
+      "outcome_label": "Creativity / Divergent Thinking",
       "iv_root": "thermal",
       "iv_root_label": "Thermal and Air Conditions",
       "iv_node": "thermal",
       "iv_label": "Thermal and Air Conditions",
       "paper_ids": [
-        "PDF-0644",
-        "PDF-0648"
+        "PDF-0288",
+        "PDF-0904"
       ],
       "paper_count": 2,
       "defended_paper_count": 2,
-      "working_paper_count": 7,
+      "working_paper_count": 4,
       "theories": [
-        "hospital is dangerous and stressful for patients, families, and staff."
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__neural",
-      "topic_label": "Thermal & Air Quality \u2192 Neural Activity",
-      "outcome_term_id": "neural",
-      "outcome_label": "Neural Activity",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0060",
-        "PDF-0310"
-      ],
-      "paper_count": 2,
-      "defended_paper_count": 2,
-      "working_paper_count": 3,
-      "theories": [
-        "neuroarchitecture"
-      ],
-      "common_sensors": [
-        "EEG",
-        "fMRI"
-      ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__affect_negative_stress",
-      "topic_label": "Thermal & Air Quality \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0653",
-        "PDF-0695"
-      ],
-      "paper_count": 2,
-      "defended_paper_count": 2,
-      "working_paper_count": 3,
-      "theories": [
-        "Soundscape Theory",
-        "Speech Intelligibility Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__affect_wellbeing",
-      "topic_label": "Thermal & Air Quality \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0715",
-        "PDF-0822"
-      ],
-      "paper_count": 2,
-      "defended_paper_count": 2,
-      "working_paper_count": 2,
-      "theories": [
-        "Haptic Perception",
-        "Multisensory Integration",
-        "Cross-modal Congruency",
-        "Color Harmony Theory",
-        "Gestalt Theory"
+        "Dynamic Lighting",
+        "CCT Effects",
+        "School Design",
+        "Non-visual Light Effects",
+        "environmental psychology",
+        "sense of belonging"
       ],
       "common_sensors": [],
       "fronts": [],
@@ -2721,12 +4279,58 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 2,
+      "working_paper_count": 3,
       "theories": [],
-      "common_sensors": [
-        "EEG",
-        "fMRI"
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "acoustic__behav_navigation",
+      "topic_label": "Acoustic Environment \u2192 Spatial Navigation",
+      "outcome_term_id": "behav.navigation",
+      "outcome_label": "Spatial Navigation",
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "iv_node": "acoustic",
+      "iv_label": "Acoustic Conditions",
+      "paper_ids": [
+        "PDF-0893"
       ],
+      "paper_count": 1,
+      "defended_paper_count": 1,
+      "working_paper_count": 1,
+      "theories": [
+        "Neuroarchitecture",
+        "Neuroaesthetics",
+        "Evidence-Based Design",
+        "Vitruvian Triad"
+      ],
+      "common_sensors": [],
+      "fronts": [
+        "Spatial Form \u00d7 Wellbeing (Neuroarchitecture)"
+      ],
+      "evidence_status": "defended"
+    },
+    {
+      "topic_id": "control__affect_comfort",
+      "topic_label": "Environmental Control \u2192 Comfort",
+      "outcome_term_id": "affect.comfort",
+      "outcome_label": "Comfort",
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "iv_node": "control",
+      "iv_label": "Control",
+      "paper_ids": [
+        "PDF-0337"
+      ],
+      "paper_count": 1,
+      "defended_paper_count": 1,
+      "working_paper_count": 4,
+      "theories": [
+        "grounded theory"
+      ],
+      "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
     },
@@ -2744,101 +4348,9 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 1,
+      "working_paper_count": 3,
       "theories": [
         "Neuroaesthetics"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "control__physio",
-      "topic_label": "Environmental Control \u2192 Physiological Response",
-      "outcome_term_id": "physio",
-      "outcome_label": "Physiological Response",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0824"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 1,
-      "theories": [
-        "Haptic Perception",
-        "Universal Design",
-        "Embodied Cognition"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "control__affect_restoration",
-      "topic_label": "Environmental Control \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0676"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 2,
-      "theories": [
-        "Biophilia Hypothesis",
-        "Attention Restoration Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "control__social",
-      "topic_label": "Environmental Control \u2192 Social / Behavioral",
-      "outcome_term_id": "social",
-      "outcome_label": "Social / Behavioral",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0288"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 2,
-      "theories": [
-        "environmental psychology",
-        "sense of belonging"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "control__affect_negative_stress",
-      "topic_label": "Environmental Control \u2192 Stress Response",
-      "outcome_term_id": "affect.negative.stress",
-      "outcome_label": "Stress Response",
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "iv_node": "control",
-      "iv_label": "Control",
-      "paper_ids": [
-        "PDF-0071"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 1,
-      "theories": [
-        "Neuroarchitecture"
       ],
       "common_sensors": [],
       "fronts": [],
@@ -2858,7 +4370,7 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 6,
+      "working_paper_count": 8,
       "theories": [
         "Dynamic Lighting",
         "CCT Effects",
@@ -2870,25 +4382,21 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "luminous__behav_navigation",
-      "topic_label": "Luminous Environment \u2192 Spatial Navigation",
-      "outcome_term_id": "behav.navigation",
-      "outcome_label": "Spatial Navigation",
-      "iv_root": "luminous",
-      "iv_root_label": "Lighting Conditions",
-      "iv_node": "luminous",
-      "iv_label": "Lighting Conditions",
+      "topic_id": "multisensory__cog_attention",
+      "topic_label": "Multisensory / Compound \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "multisensory",
+      "iv_root_label": "Multisensory",
+      "iv_node": "multisensory",
+      "iv_label": "Multisensory",
       "paper_ids": [
-        "PDF-0367"
+        "PDF-0671"
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 7,
-      "theories": [
-        "space syntax",
-        "isovist analysis",
-        "prospect-refuge theory"
-      ],
+      "working_paper_count": 2,
+      "theories": [],
       "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
@@ -2954,26 +4462,6 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "multisensory__affect_wellbeing",
-      "topic_label": "Multisensory / Compound \u2192 Wellbeing",
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "iv_root": "multisensory",
-      "iv_root_label": "Multisensory",
-      "iv_node": "multisensory",
-      "iv_label": "Multisensory",
-      "paper_ids": [
-        "PDF-1336"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 4,
-      "theories": [],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
       "topic_id": "natural__affect_preference",
       "topic_label": "Nature & Biophilia \u2192 Aesthetic Preference",
       "outcome_term_id": "affect.preference",
@@ -2987,7 +4475,7 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 4,
+      "working_paper_count": 8,
       "theories": [
         "Fractal Aesthetics",
         "Biophilia Hypothesis"
@@ -3010,7 +4498,7 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 3,
+      "working_paper_count": 2,
       "theories": [],
       "common_sensors": [],
       "fronts": [],
@@ -3030,7 +4518,7 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 9,
+      "working_paper_count": 8,
       "theories": [
         "Fractal Fluency",
         "Attention Restoration Theory",
@@ -3040,49 +4528,6 @@
       "common_sensors": [
         "EEG"
       ],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "natural__affect_restoration",
-      "topic_label": "Nature & Biophilia \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
-      "iv_root": "natural",
-      "iv_root_label": "Natural and Biophilic Conditions",
-      "iv_node": "natural",
-      "iv_label": "Natural and Biophilic Conditions",
-      "paper_ids": [
-        "PDF-0688"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 21,
-      "theories": [
-        "Attention Restoration Theory",
-        "Stress Reduction Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "natural__social",
-      "topic_label": "Nature & Biophilia \u2192 Social / Behavioral",
-      "outcome_term_id": "social",
-      "outcome_label": "Social / Behavioral",
-      "iv_root": "natural",
-      "iv_root_label": "Natural and Biophilic Conditions",
-      "iv_node": "natural",
-      "iv_label": "Natural and Biophilic Conditions",
-      "paper_ids": [
-        "PDF-0170"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 2,
-      "theories": [],
-      "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
     },
@@ -3110,6 +4555,26 @@
       "evidence_status": "defended"
     },
     {
+      "topic_id": "social_spatial__cog_attention",
+      "topic_label": "Social-Spatial \u2192 Attention",
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "iv_root": "social_spatial",
+      "iv_root_label": "Social-Spatial Conditions",
+      "iv_node": "social_spatial",
+      "iv_label": "Social-Spatial Conditions",
+      "paper_ids": [
+        "PDF-0458"
+      ],
+      "paper_count": 1,
+      "defended_paper_count": 1,
+      "working_paper_count": 10,
+      "theories": [],
+      "common_sensors": [],
+      "fronts": [],
+      "evidence_status": "defended"
+    },
+    {
       "topic_id": "social_spatial__affect_restoration",
       "topic_label": "Social-Spatial \u2192 Restoration / Recovery",
       "outcome_term_id": "affect.restoration",
@@ -3123,7 +4588,7 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 1,
+      "working_paper_count": 2,
       "theories": [
         "Biophilia Hypothesis"
       ],
@@ -3134,21 +4599,24 @@
       "evidence_status": "defended"
     },
     {
-      "topic_id": "spatial__cog_memory",
-      "topic_label": "Spatial Form \u2192 Memory",
-      "outcome_term_id": "cog.memory",
-      "outcome_label": "Memory",
+      "topic_id": "spatial__cog_creativity",
+      "topic_label": "Spatial Form \u2192 Creativity / Divergent Thinking",
+      "outcome_term_id": "cog.creativity",
+      "outcome_label": "Creativity / Divergent Thinking",
       "iv_root": "spatial",
       "iv_root_label": "Spatial Form",
       "iv_node": "spatial",
       "iv_label": "Spatial Form",
       "paper_ids": [
-        "PDF-0678"
+        "PDF-0288"
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 5,
-      "theories": [],
+      "working_paper_count": 8,
+      "theories": [
+        "environmental psychology",
+        "sense of belonging"
+      ],
       "common_sensors": [],
       "fronts": [],
       "evidence_status": "defended"
@@ -3167,97 +4635,9 @@
       ],
       "paper_count": 1,
       "defended_paper_count": 1,
-      "working_paper_count": 4,
+      "working_paper_count": 6,
       "theories": [
         "Territoriality"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__affect_preference",
-      "topic_label": "Thermal & Air Quality \u2192 Aesthetic Preference",
-      "outcome_term_id": "affect.preference",
-      "outcome_label": "Aesthetic Preference",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0079"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 1,
-      "theories": [
-        "Spatial Cognition"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__health",
-      "topic_label": "Thermal & Air Quality \u2192 Health Outcomes",
-      "outcome_term_id": "health",
-      "outcome_label": "Health Outcomes",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0330"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 2,
-      "theories": [],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__affect_restoration",
-      "topic_label": "Thermal & Air Quality \u2192 Restoration / Recovery",
-      "outcome_term_id": "affect.restoration",
-      "outcome_label": "Restoration / Recovery",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-0695"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 4,
-      "theories": [
-        "Soundscape Theory",
-        "Speech Intelligibility Theory"
-      ],
-      "common_sensors": [],
-      "fronts": [],
-      "evidence_status": "defended"
-    },
-    {
-      "topic_id": "thermal__social",
-      "topic_label": "Thermal & Air Quality \u2192 Social / Behavioral",
-      "outcome_term_id": "social",
-      "outcome_label": "Social / Behavioral",
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "iv_node": "thermal",
-      "iv_label": "Thermal and Air Conditions",
-      "paper_ids": [
-        "PDF-1335"
-      ],
-      "paper_count": 1,
-      "defended_paper_count": 1,
-      "working_paper_count": 1,
-      "theories": [
-        "Thermal Comfort Theory",
-        "Embodied Cognition"
       ],
       "common_sensors": [],
       "fronts": [],
@@ -3266,9 +4646,26 @@
   ],
   "outcome_index": [
     {
+      "outcome_term_id": "affect.wellbeing",
+      "outcome_label": "Wellbeing",
+      "paper_count": 217,
+      "topic_ids": [
+        "acoustic__affect_wellbeing",
+        "control__affect_wellbeing",
+        "luminous__affect_wellbeing",
+        "material__affect_wellbeing",
+        "multisensory__affect_wellbeing",
+        "natural__affect_wellbeing",
+        "social_spatial__affect_wellbeing",
+        "spatial__affect_wellbeing",
+        "thermal__affect_wellbeing"
+      ],
+      "topic_count": 9
+    },
+    {
       "outcome_term_id": "mechanism",
       "outcome_label": "Mechanism / Pathway",
-      "paper_count": 101,
+      "paper_count": 176,
       "topic_ids": [
         "acoustic__mechanism",
         "control__mechanism",
@@ -3285,7 +4682,7 @@
     {
       "outcome_term_id": "cog.performance",
       "outcome_label": "Cognitive Performance",
-      "paper_count": 77,
+      "paper_count": 162,
       "topic_ids": [
         "acoustic__cog_performance",
         "control__cog_performance",
@@ -3299,26 +4696,9 @@
       "topic_count": 8
     },
     {
-      "outcome_term_id": "affect.wellbeing",
-      "outcome_label": "Wellbeing",
-      "paper_count": 57,
-      "topic_ids": [
-        "acoustic__affect_wellbeing",
-        "control__affect_wellbeing",
-        "luminous__affect_wellbeing",
-        "material__affect_wellbeing",
-        "multisensory__affect_wellbeing",
-        "natural__affect_wellbeing",
-        "social_spatial__affect_wellbeing",
-        "spatial__affect_wellbeing",
-        "thermal__affect_wellbeing"
-      ],
-      "topic_count": 9
-    },
-    {
       "outcome_term_id": "affect.negative.stress",
       "outcome_label": "Stress Response",
-      "paper_count": 52,
+      "paper_count": 100,
       "topic_ids": [
         "acoustic__affect_negative_stress",
         "control__affect_negative_stress",
@@ -3332,12 +4712,28 @@
       "topic_count": 8
     },
     {
+      "outcome_term_id": "cog.attention",
+      "outcome_label": "Attention",
+      "paper_count": 98,
+      "topic_ids": [
+        "acoustic__cog_attention",
+        "control__cog_attention",
+        "luminous__cog_attention",
+        "material__cog_attention",
+        "multisensory__cog_attention",
+        "natural__cog_attention",
+        "social_spatial__cog_attention",
+        "spatial__cog_attention",
+        "thermal__cog_attention"
+      ],
+      "topic_count": 9
+    },
+    {
       "outcome_term_id": "physio",
       "outcome_label": "Physiological Response",
-      "paper_count": 46,
+      "paper_count": 85,
       "topic_ids": [
         "acoustic__physio",
-        "control__physio",
         "luminous__physio",
         "material__physio",
         "natural__physio",
@@ -3345,12 +4741,12 @@
         "spatial__physio",
         "thermal__physio"
       ],
-      "topic_count": 8
+      "topic_count": 7
     },
     {
       "outcome_term_id": "neural",
       "outcome_label": "Neural Activity",
-      "paper_count": 33,
+      "paper_count": 66,
       "topic_ids": [
         "acoustic__neural",
         "control__neural",
@@ -3363,23 +4759,9 @@
       "topic_count": 7
     },
     {
-      "outcome_term_id": "cog.attention",
-      "outcome_label": "Attention",
-      "paper_count": 26,
-      "topic_ids": [
-        "acoustic__cog_attention",
-        "control__cog_attention",
-        "luminous__cog_attention",
-        "material__cog_attention",
-        "natural__cog_attention",
-        "spatial__cog_attention"
-      ],
-      "topic_count": 6
-    },
-    {
       "outcome_term_id": "affect.restoration",
       "outcome_label": "Restoration / Recovery",
-      "paper_count": 25,
+      "paper_count": 56,
       "topic_ids": [
         "acoustic__affect_restoration",
         "control__affect_restoration",
@@ -3393,9 +4775,50 @@
       "topic_count": 8
     },
     {
+      "outcome_term_id": "health",
+      "outcome_label": "Health Outcomes",
+      "paper_count": 43,
+      "topic_ids": [
+        "acoustic__health",
+        "luminous__health",
+        "material__health",
+        "spatial__health",
+        "thermal__health"
+      ],
+      "topic_count": 5
+    },
+    {
+      "outcome_term_id": "affect.preference",
+      "outcome_label": "Aesthetic Preference",
+      "paper_count": 39,
+      "topic_ids": [
+        "control__affect_preference",
+        "luminous__affect_preference",
+        "material__affect_preference",
+        "natural__affect_preference",
+        "spatial__affect_preference",
+        "thermal__affect_preference"
+      ],
+      "topic_count": 6
+    },
+    {
+      "outcome_term_id": "cog.cognitive_load",
+      "outcome_label": "Cognitive Load",
+      "paper_count": 34,
+      "topic_ids": [
+        "acoustic__cog_cognitive_load",
+        "control__cog_cognitive_load",
+        "luminous__cog_cognitive_load",
+        "material__cog_cognitive_load",
+        "spatial__cog_cognitive_load",
+        "thermal__cog_cognitive_load"
+      ],
+      "topic_count": 6
+    },
+    {
       "outcome_term_id": "social",
       "outcome_label": "Social / Behavioral",
-      "paper_count": 22,
+      "paper_count": 30,
       "topic_ids": [
         "acoustic__social",
         "control__social",
@@ -3403,103 +4826,79 @@
         "material__social",
         "natural__social",
         "social_spatial__social",
-        "spatial__social",
-        "thermal__social"
+        "spatial__social"
       ],
-      "topic_count": 8
-    },
-    {
-      "outcome_term_id": "affect.preference",
-      "outcome_label": "Aesthetic Preference",
-      "paper_count": 15,
-      "topic_ids": [
-        "luminous__affect_preference",
-        "material__affect_preference",
-        "natural__affect_preference",
-        "spatial__affect_preference",
-        "thermal__affect_preference"
-      ],
-      "topic_count": 5
-    },
-    {
-      "outcome_term_id": "affect.comfort",
-      "outcome_label": "Comfort",
-      "paper_count": 15,
-      "topic_ids": [
-        "acoustic__affect_comfort",
-        "luminous__affect_comfort",
-        "material__affect_comfort",
-        "multisensory__affect_comfort",
-        "thermal__affect_comfort"
-      ],
-      "topic_count": 5
+      "topic_count": 7
     },
     {
       "outcome_term_id": "behav.navigation",
       "outcome_label": "Spatial Navigation",
-      "paper_count": 15,
+      "paper_count": 28,
       "topic_ids": [
+        "acoustic__behav_navigation",
         "control__behav_navigation",
         "luminous__behav_navigation",
+        "material__behav_navigation",
         "natural__behav_navigation",
-        "spatial__behav_navigation"
+        "spatial__behav_navigation",
+        "thermal__behav_navigation"
       ],
-      "topic_count": 4
+      "topic_count": 7
     },
     {
-      "outcome_term_id": "cog.cognitive_load",
-      "outcome_label": "Cognitive Load",
-      "paper_count": 11,
+      "outcome_term_id": "affect.comfort",
+      "outcome_label": "Comfort",
+      "paper_count": 25,
       "topic_ids": [
-        "acoustic__cog_cognitive_load",
-        "luminous__cog_cognitive_load",
-        "spatial__cog_cognitive_load"
+        "acoustic__affect_comfort",
+        "control__affect_comfort",
+        "luminous__affect_comfort",
+        "material__affect_comfort",
+        "multisensory__affect_comfort",
+        "spatial__affect_comfort",
+        "thermal__affect_comfort"
       ],
-      "topic_count": 3
-    },
-    {
-      "outcome_term_id": "health",
-      "outcome_label": "Health Outcomes",
-      "paper_count": 10,
-      "topic_ids": [
-        "acoustic__health",
-        "luminous__health",
-        "spatial__health",
-        "thermal__health"
-      ],
-      "topic_count": 4
+      "topic_count": 7
     },
     {
       "outcome_term_id": "cog.memory",
       "outcome_label": "Memory",
-      "paper_count": 9,
+      "paper_count": 20,
       "topic_ids": [
         "acoustic__cog_memory",
         "luminous__cog_memory",
+        "material__cog_memory",
         "multisensory__cog_memory",
         "natural__cog_memory",
-        "spatial__cog_memory"
+        "spatial__cog_memory",
+        "thermal__cog_memory"
       ],
-      "topic_count": 5
+      "topic_count": 7
     },
     {
       "outcome_term_id": "affect.soundscape",
       "outcome_label": "Soundscape Perception",
-      "paper_count": 9,
+      "paper_count": 18,
       "topic_ids": [
-        "acoustic__affect_soundscape"
+        "acoustic__affect_soundscape",
+        "material__affect_soundscape",
+        "spatial__affect_soundscape",
+        "thermal__affect_soundscape"
       ],
-      "topic_count": 1
+      "topic_count": 4
     },
     {
       "outcome_term_id": "cog.creativity",
       "outcome_label": "Creativity / Divergent Thinking",
-      "paper_count": 2,
+      "paper_count": 7,
       "topic_ids": [
         "control__cog_creativity",
-        "luminous__cog_creativity"
+        "luminous__cog_creativity",
+        "material__cog_creativity",
+        "spatial__cog_creativity",
+        "thermal__cog_creativity"
       ],
-      "topic_count": 2
+      "topic_count": 5
     },
     {
       "outcome_term_id": "affect.satisfaction",
@@ -3514,32 +4913,9 @@
   ],
   "iv_root_index": [
     {
-      "iv_root": "acoustic",
-      "iv_root_label": "Acoustic Conditions",
-      "paper_count": 134,
-      "topic_ids": [
-        "acoustic__affect_comfort",
-        "acoustic__affect_negative_stress",
-        "acoustic__affect_restoration",
-        "acoustic__affect_satisfaction",
-        "acoustic__affect_soundscape",
-        "acoustic__affect_wellbeing",
-        "acoustic__cog_attention",
-        "acoustic__cog_cognitive_load",
-        "acoustic__cog_memory",
-        "acoustic__cog_performance",
-        "acoustic__health",
-        "acoustic__mechanism",
-        "acoustic__neural",
-        "acoustic__physio",
-        "acoustic__social"
-      ],
-      "topic_count": 15
-    },
-    {
       "iv_root": "luminous",
       "iv_root_label": "Lighting Conditions",
-      "paper_count": 122,
+      "paper_count": 265,
       "topic_ids": [
         "luminous__affect_comfort",
         "luminous__affect_negative_stress",
@@ -3563,16 +4939,19 @@
     {
       "iv_root": "spatial",
       "iv_root_label": "Spatial Form",
-      "paper_count": 117,
+      "paper_count": 264,
       "topic_ids": [
+        "spatial__affect_comfort",
         "spatial__affect_negative_stress",
         "spatial__affect_preference",
         "spatial__affect_restoration",
         "spatial__affect_satisfaction",
+        "spatial__affect_soundscape",
         "spatial__affect_wellbeing",
         "spatial__behav_navigation",
         "spatial__cog_attention",
         "spatial__cog_cognitive_load",
+        "spatial__cog_creativity",
         "spatial__cog_memory",
         "spatial__cog_performance",
         "spatial__health",
@@ -3581,31 +4960,106 @@
         "spatial__physio",
         "spatial__social"
       ],
-      "topic_count": 15
+      "topic_count": 18
+    },
+    {
+      "iv_root": "thermal",
+      "iv_root_label": "Thermal and Air Conditions",
+      "paper_count": 199,
+      "topic_ids": [
+        "thermal__affect_comfort",
+        "thermal__affect_negative_stress",
+        "thermal__affect_preference",
+        "thermal__affect_restoration",
+        "thermal__affect_soundscape",
+        "thermal__affect_wellbeing",
+        "thermal__behav_navigation",
+        "thermal__cog_attention",
+        "thermal__cog_cognitive_load",
+        "thermal__cog_creativity",
+        "thermal__cog_memory",
+        "thermal__cog_performance",
+        "thermal__health",
+        "thermal__mechanism",
+        "thermal__neural",
+        "thermal__physio"
+      ],
+      "topic_count": 16
     },
     {
       "iv_root": "material",
       "iv_root_label": "Material and Surface Conditions",
-      "paper_count": 45,
+      "paper_count": 177,
       "topic_ids": [
         "material__affect_comfort",
         "material__affect_negative_stress",
         "material__affect_preference",
         "material__affect_restoration",
+        "material__affect_soundscape",
         "material__affect_wellbeing",
+        "material__behav_navigation",
         "material__cog_attention",
+        "material__cog_cognitive_load",
+        "material__cog_creativity",
+        "material__cog_memory",
         "material__cog_performance",
+        "material__health",
         "material__mechanism",
         "material__neural",
         "material__physio",
         "material__social"
       ],
-      "topic_count": 11
+      "topic_count": 17
+    },
+    {
+      "iv_root": "acoustic",
+      "iv_root_label": "Acoustic Conditions",
+      "paper_count": 176,
+      "topic_ids": [
+        "acoustic__affect_comfort",
+        "acoustic__affect_negative_stress",
+        "acoustic__affect_restoration",
+        "acoustic__affect_satisfaction",
+        "acoustic__affect_soundscape",
+        "acoustic__affect_wellbeing",
+        "acoustic__behav_navigation",
+        "acoustic__cog_attention",
+        "acoustic__cog_cognitive_load",
+        "acoustic__cog_memory",
+        "acoustic__cog_performance",
+        "acoustic__health",
+        "acoustic__mechanism",
+        "acoustic__neural",
+        "acoustic__physio",
+        "acoustic__social"
+      ],
+      "topic_count": 16
+    },
+    {
+      "iv_root": "control",
+      "iv_root_label": "Control",
+      "paper_count": 68,
+      "topic_ids": [
+        "control__affect_comfort",
+        "control__affect_negative_stress",
+        "control__affect_preference",
+        "control__affect_restoration",
+        "control__affect_wellbeing",
+        "control__behav_navigation",
+        "control__cog_attention",
+        "control__cog_cognitive_load",
+        "control__cog_creativity",
+        "control__cog_performance",
+        "control__mechanism",
+        "control__neural",
+        "control__social"
+      ],
+      "topic_count": 13
     },
     {
       "iv_root": "natural",
       "iv_root_label": "Natural and Biophilic Conditions",
-      "paper_count": 31,
+      "paper_count": 30,
       "topic_ids": [
         "natural__affect_negative_stress",
         "natural__affect_preference",
@@ -3623,69 +5077,33 @@
       "topic_count": 12
     },
     {
-      "iv_root": "thermal",
-      "iv_root_label": "Thermal and Air Conditions",
-      "paper_count": 28,
-      "topic_ids": [
-        "thermal__affect_comfort",
-        "thermal__affect_negative_stress",
-        "thermal__affect_preference",
-        "thermal__affect_restoration",
-        "thermal__affect_wellbeing",
-        "thermal__cog_performance",
-        "thermal__health",
-        "thermal__mechanism",
-        "thermal__neural",
-        "thermal__physio",
-        "thermal__social"
-      ],
-      "topic_count": 11
-    },
-    {
-      "iv_root": "control",
-      "iv_root_label": "Control",
-      "paper_count": 26,
-      "topic_ids": [
-        "control__affect_negative_stress",
-        "control__affect_restoration",
-        "control__affect_wellbeing",
-        "control__behav_navigation",
-        "control__cog_attention",
-        "control__cog_creativity",
-        "control__cog_performance",
-        "control__mechanism",
-        "control__neural",
-        "control__physio",
-        "control__social"
-      ],
-      "topic_count": 11
-    },
-    {
       "iv_root": "social_spatial",
       "iv_root_label": "Social-Spatial Conditions",
-      "paper_count": 20,
+      "paper_count": 21,
       "topic_ids": [
         "social_spatial__affect_negative_stress",
         "social_spatial__affect_restoration",
         "social_spatial__affect_wellbeing",
+        "social_spatial__cog_attention",
         "social_spatial__cog_performance",
         "social_spatial__mechanism",
         "social_spatial__physio",
         "social_spatial__social"
       ],
-      "topic_count": 7
+      "topic_count": 8
     },
     {
       "iv_root": "multisensory",
       "iv_root_label": "Multisensory",
-      "paper_count": 4,
+      "paper_count": 6,
       "topic_ids": [
         "multisensory__affect_comfort",
         "multisensory__affect_wellbeing",
+        "multisensory__cog_attention",
         "multisensory__cog_memory",
         "multisensory__mechanism"
       ],
-      "topic_count": 4
+      "topic_count": 5
     }
   ],
   "source_files": {

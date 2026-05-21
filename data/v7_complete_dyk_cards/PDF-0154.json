@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0154",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:24:00Z",
+  "cards": [
+    {
+      "id": "dyk_c9d4fe8f40",
+      "paper_id": "PDF-0154",
+      "source_claim_ids": [
+        "216"
+      ],
+      "title": "In home decorating, green is strongly tied to specific emotional responses.",
+      "body": "Color choices for the home carry emotional weight, but some colors are more strongly linked to specific feelings than others. A case study of Turkish residents found a significant dependency between choosing the color green and particular emotional associations (P=0.043); other colors tested did not show this strong a link. The study also found that emotional responses change with a color's value and saturation. This matters because it provides a practical cue for designers: the same wall color can support different moods, and colors like green carry strong, predictable associations in a home setting where comfort and identity are paramount.",
+      "expanded_summary": "The findings come from a residence-oriented field study where fifty participants matched adjectives to colors from a popular Turkish paint catalog. This design connects abstract color psychology to the practical context of decorating a home. While green's emotional link was the most statistically robust, the paper also reports that the blue family carries strong associations. Furthermore, demographic factors shape color perception, with age and gender being significant predictors for the selection of achromatic black. The results build a case for seeing residential color choice not as a simple poll of favorites, but as a nuanced process where color communicates mood, identity, and comfort.",
+      "measurables": "Researchers presented fifty participants with color samples from a commercial paint catalog during a decorating session. Participants matched a list of emotional adjectives to the color samples. The dependency between color choice, emotional association, and demographic factors (age, gender, education) was then analyzed using chi-square (χ²) tests.",
+      "short_science_summary": "This case study explores the emotional meaning of color choices within residential settings, moving beyond simple aesthetic preference to examine how color communicates and fulfills human needs at home. The research demonstrates that for this sample, color selection is tied to specific emotional associations, with the color green showing a particularly strong, statistically significant link. The study involved fifty participants from various age groups in Turkey, who were engaged in a residence-oriented decorating session. They were asked to match a list of emotional adjectives to a set of color samples from a popular commercial paint catalog. Researchers then used chi-square (χ²) tests to analyze the dependency between color choices, emotional labels, and demographic variables like age, gender, and education. The paper’s key technical evidence is presented in a series of tables detailing the frequency of emotional responses per color, demographic dependencies, and preferences by room type. Results showed a strong dependency between the choice and use of green and its associated emotional meaning (P=0.043), a distinction not found for the other colors tested. The study also reports that emotional responses shift with changes in a color's value and saturation, indicating that subtle variations matter. Furthermore, demographic factors were found to shape certain choices; specifically, age and gender were determining factors in the selection of achromatic black. While not reaching the same level of statistical significance as green in the dependency test, the blue color family also carried strong associations. The paper’s authors suggest that these findings provide a practical cue for designers and residents, showing that color decisions should not stop at style. The sample is modest and context-bound to a single national setting and commercial catalog, so its findings should not be interpreted as universal laws of color psychology. However, by revealing a real pattern in a field setting, the study effectively argues that in the home, color is a tool for shaping mood, identity, and comfort.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "216"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:25Z",
+        "tokens_in": 1670,
+        "tokens_out": 783,
+        "cost_estimate_usd": 0.016755
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0154",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0154",
+      "source_link": "ka_article_view.html?id=PDF-0154",
+      "apa_citation": "Color-Emotion Associations and Color Preferences: A Case Study for Residences."
+    }
+  ],
+  "failures": []
+}

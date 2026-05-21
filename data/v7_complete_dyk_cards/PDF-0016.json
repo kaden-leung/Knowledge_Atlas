@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0016",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:30Z",
+  "cards": [
+    {
+      "id": "dyk_423ae1f314",
+      "paper_id": "PDF-0016",
+      "source_claim_ids": [
+        "27"
+      ],
+      "title": "Your Brain Perceives a Unique 'Hominess' in Architecture",
+      "body": "When we evaluate architectural interiors, our brains use three key dimensions. Alongside 'coherence' (how organized a space is) and 'fascination' (its richness and interest), researchers identified a novel dimension: 'hominess.' Unique to architecture, 'hominess' reflects a space's capacity to feel personal and comfortable. An fMRI study found that each dimension activates a distinct brain region, confirming they are separate psychological constructs. This provides a neurologically-grounded vocabulary for designers, showing that a sense of home is a fundamental, measurable component of our experience of interior space.",
+      "expanded_summary": "The discovery of 'hominess' is the study's most distinctive contribution. While coherence and fascination apply to our aesthetic judgments of natural scenes and artworks, 'hominess' appears to be a dimension tuned specifically for the built environment. It loaded highest on ratings of coziness, warmth, and personal space. The neuroimaging data, though based on a small sample (n=18), supports this distinction. 'Hominess' scores covaried with activity in the left cuneus, but only when participants made approach-avoidance decisions—a task related to judging a space for habitation. This suggests our brains possess a specialized mechanism for evaluating whether an interior affords dwelling and personal comfort.",
+      "measurables": "Over 1,400 participants rated 200 photographs of interiors on 16 aesthetic scales (e.g., beauty, comfort, interest). Principal Components Analysis (PCA) was used to extract the three dimensions. In a separate experiment, 18 participants viewed the same images while in an fMRI scanner, allowing researchers to correlate the dimension scores of each image with BOLD activation in specific brain regions.",
+      "short_science_summary": "Coburn et al. (2020) investigated the psychological and neural basis of aesthetic responses to architectural interiors. Across three experiments, they identified three fundamental dimensions that explain approximately 90% of the variance in people's judgments: coherence (the ease of comprehending a scene), fascination (a scene's informational richness and interest), and hominess (the degree to which a scene feels like a personal, comfortable space). The first two experiments (total N = 1,412) established this three-factor structure using Principal Components Analysis (PCA) on ratings of 200 interior images; the structure was robustly replicated in an independent sample. The study's most significant contribution is the identification of 'hominess' as a novel dimension specific to the built environment, as it does not typically emerge in studies of natural landscapes or artworks. In a third experiment, the researchers reanalyzed fMRI data from 18 participants who viewed the same images. They found that each psychological dimension covaried with activity in distinct brain regions. Fascination correlated with activity in the right lingual gyrus. Coherence correlated with the left inferior occipital gyrus, but only during beauty judgments. Critically, hominess correlated with the left cuneus, but only during approach-avoidance decisions, a task relevant to evaluating a space for habitation. These neural dissociations, which held after controlling for low-level image properties, provide strong evidence that these are genuinely separate psychological constructs. While the fMRI sample was small, the findings provide a neurologically-grounded framework for design, suggesting that architects must independently consider a space's legibility, interest, and its capacity to evoke a sense of dwelling.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "27"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:02Z",
+        "tokens_in": 2654,
+        "tokens_out": 690,
+        "cost_estimate_usd": 0.018312
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0016",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0016",
+      "source_link": "ka_article_view.html?id=PDF-0016",
+      "apa_citation": "Psychological and neural responses to architectural interiors."
+    }
+  ],
+  "failures": []
+}

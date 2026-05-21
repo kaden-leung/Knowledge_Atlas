@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0372",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:25:03Z",
+  "cards": [
+    {
+      "id": "dyk_b23f12bf24",
+      "paper_id": "PDF-0372",
+      "source_claim_ids": [
+        "463"
+      ],
+      "title": "People agree more about landscapes they find beautiful.",
+      "body": "People are more likely to agree on the beauty of a landscape if they find it highly appealing. A study of Swedish pastures found a strong negative correlation between preference scores and rating variance: the more a scene was liked, the less disagreement there was among viewers. Researchers suggest this consensus arises from a shared cultural 'prototype' of an ideal landscape. This implies that unconventional designs departing from such prototypes may generate not only lower ratings but also greater public controversy, a key consideration for planners and architects.",
+      "expanded_summary": "The effect was tested using Swedish pastures, a landscape type with a strong positive image in the nation’s culture and art. The researchers proposed that people hold a shared mental reference image—an idealized prototype—of this landscape. Scenes that closely matched this prototype were not only rated higher but also received more consistent scores. A statistical model confirmed this, showing that both higher preference ratings and a scene's resemblance to a typical pasture ('pasture likeness') independently predicted lower variance in judgments. Cluster analysis visually confirmed the finding, showing that participants’ ratings quickly fused into a single group for high-consensus scenes, but remained fragmented for disliked, low-consensus scenes.",
+      "measurables": "Researchers showed 119 participants 60 photographs of Swedish pastures. For each image, viewed for five seconds, participants rated their preference on a 5-point scale. They also judged whether they would call the scene a 'pasture.' Consensus was measured by calculating the statistical variance of the preference ratings for each photograph; lower variance indicated higher agreement among the participants.",
+      "short_science_summary": "Landscape preference research has long noted a paradox: studies find both high inter-rater agreement and significant individual variation. To investigate why some scenes elicit consensus while others produce disagreement, this study tested the theory that shared mental prototypes drive agreement. The study focused on Swedish pastures and meadows, a landscape type with strong positive connotations in Swedish culture, which researchers theorized would have a commonly held 'ideal' reference image. The study recruited 119 adults (ages 21–80) from southern Sweden. In auditorium sessions, participants viewed 60 randomized color slides of pastures and meadows, each for approximately five seconds. They rated each scene for preference on a 5-point scale and indicated whether they would classify it as a pasture ('pasture likeness'). Analysis revealed a strong negative correlation between mean preference and variance (r = −0.88, p < 0.001), indicating that the more a landscape was liked, the more people agreed on its rating. A multiple regression model explained 70% of the variance in preference judgments (F(2,57) = 88.68, p < 0.00001). Both higher mean preference (β = −0.67) and higher mean pasture likeness (β = −0.31) were significant predictors of lower variance (i.e., higher consensus). Hierarchical cluster analysis provided visual support, showing that for high-consensus scenes, participant responses quickly merged into one group, whereas high-variance scenes produced fragmented response patterns. These findings suggest that consensus is highest for landscapes that match a shared cultural prototype. This has practical implications for designers and planners: landscapes that align with established ideals are likely to achieve broad public acceptance, while unconventional designs may face greater polarization. The study's generalizability is limited by its focus on a single landscape type and cultural context, the use of static images, and a brief viewing duration.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "463"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:24:25Z",
+        "tokens_in": 2586,
+        "tokens_out": 740,
+        "cost_estimate_usd": 0.018858
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0372",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0372",
+      "source_link": "ka_article_view.html?id=PDF-0372",
+      "apa_citation": "Consensus in Landscape Preference Judgements."
+    }
+  ],
+  "failures": []
+}

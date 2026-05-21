@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0182",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:50Z",
+  "cards": [
+    {
+      "id": "dyk_2807531cca",
+      "paper_id": "PDF-0182",
+      "source_claim_ids": [
+        "259"
+      ],
+      "title": "Time in nature provides stronger restorative benefits than other environments.",
+      "body": "Spending time in nature can restore your mental resources more effectively than other kinds of breaks. A pair of studies compared people's experiences in nature—like a wilderness backpacking trip—with non-wilderness vacations, time in a city, or just staying home. Participants who spent time in nature showed stronger recovery in both their mood and their cognitive performance. This suggests that designers can actively use natural settings to create environments that improve how people feel and think, rather than treating the environment as a mere backdrop.",
+      "expanded_summary": "The research used a two-study approach to test theories of restorative experience. A quasi-experimental field study compared experienced backpackers on a 4- to 7-day wilderness trip against those on non-wilderness vacations or staying home. A second, true experiment compared exposure to natural versus urban environments. The studies used a combination of self-reported mood, cognitive performance tests, and physiological measures to assess restoration. While results for overall happiness were consistent with some prior research, findings from a specific emotional-state measure (ZIPERS) did not replicate earlier studies, questioning their reliability. The convergent evidence from both self-reports and performance tests offers robust support for the restorative power of nature.",
+      "measurables": "Restoration was assessed using a multi-method approach. Researchers collected self-reports on participants' emotional states before, immediately after, and 21 days after their experience. Cognitive performance was also measured at pre- and posttest intervals. The second study added physiological measures to provide a more comprehensive picture of the restorative effects.",
+      "short_science_summary": "This paper explored different theoretical models of restorative experience through two studies that tied nature exposure to measurable outcomes. The research aimed to determine if experiences in nature produce greater restorative effects than other settings. The first study was a quasi-experimental field study with a nonequivalent control group design. It compared 25 experienced backpackers on a 4- to 7-day wilderness trip to two other groups: 18 backpackers on a non-wilderness vacation and 25 who remained home. Affective states and cognitive performance were measured before and after the period, with a 21-day follow-up for affect. The second study was a true experiment with 34 participants, comparing restorative outcomes after exposure to a natural environment, an urban environment, or a passive relaxation condition. This study expanded the assessment to include physiological measures alongside self-reports and cognitive tests. Across both studies, convergent results from self-reports and performance measures provided evidence for the restorative capacity of nature. Natural settings produced stronger recovery of attention and greater self-reported mood improvements than the comparison conditions. Statistically significant effects were reported (e.g., F(2,65) = 5.60, p < .05), supporting a real but context-bound restoration pattern. Notably, while overall happiness findings were somewhat consistent with prior work by Ulrich (1979, 1981), the results from the ZIPERS emotional state measure did not replicate his findings, raising questions about their reliability. The primary limitation is scope; with a total of 102 participants and a specific set of stimuli, the results support a local inference and require replication before being broadly generalized. The implication for practitioners is to treat environmental characteristics as controllable variables that can be tested against human responses to create more restorative spaces.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "259"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:15Z",
+        "tokens_in": 1796,
+        "tokens_out": 710,
+        "cost_estimate_usd": 0.016038
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0182",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0182",
+      "source_link": "ka_article_view.html?id=PDF-0182",
+      "apa_citation": "PDF-0182."
+    }
+  ],
+  "failures": []
+}

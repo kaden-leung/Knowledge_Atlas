@@ -4593,6 +4593,13 @@ def main():
         "window.KA_WORKFLOW_PAYLOAD = " + json.dumps(workflow, indent=2) + ";\n",
         encoding='utf-8',
     )
+    try:
+        from build_topic_voi_payload import build_payload as build_topic_voi_payload
+
+        topic_voi = build_topic_voi_payload(OUT)
+        (OUT / 'topic_voi.json').write_text(json.dumps(topic_voi, indent=2), encoding='utf-8')
+    except Exception as exc:
+        print('WARNING: topic VOI payload generation failed:', exc)
     print('Wrote payloads to', OUT)
 
 if __name__ == '__main__':

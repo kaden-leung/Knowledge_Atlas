@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0088",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:22:52Z",
+  "cards": [
+    {
+      "id": "dyk_46a82cd0bd",
+      "paper_id": "PDF-0088",
+      "source_claim_ids": [
+        "131"
+      ],
+      "title": "Dread by design: places feel creepy when they suggest a threat you can't see",
+      "body": "Some places feel creepy because they create a sense of possible but unseen threat. This paper, a narrative review, argues that dread arises from a combination of environmental cues like poor visibility (low prospect), an abundance of hiding spots (high refuge), and general mystery. These features trigger an evolutionarily-tuned caution response, keeping our attention active and our bodies on alert. This matters because it shows that \"creepiness\" isn't just a mood; it’s a cognitive and physiological reaction to architectural signals of ambiguous danger, relevant for designers aiming to create spaces that feel safe and comfortable.",
+      "expanded_summary": "The review connects prospect-refuge theory, ideas about our hypersensitive tendency to detect agency, and social cognition to explain this feeling. It suggests that places with blind corners, hidden recesses, and poor legibility can trigger the same unease as a haunted house. The key insight is that our bodies respond to these environmental cues before our conscious mind fully processes the situation. For architects and designers, this means that emotional tone can be shaped by carefully managing sight lines, escape routes, and the balance between intriguing mystery and unsettling ambiguity. The goal is to design spaces that invite exploration without triggering a primal sense of dread.",
+      "measurables": "As a narrative synthesis, this paper did not collect new data. Instead, it built a conceptual map by analyzing prior findings from research on prospect-refuge theory, environmental preference, social cognition, and low-frequency sound. The key evidence consists of recurring patterns and logical connections drawn from previously published studies, rather than new quantitative measures or experimental results.",
+      "short_science_summary": "This review argues that creepy places work by making a threat feel possible without making it fully visible. It treats the feeling of dread not as a simple preference, but as a place-based signal that something in the environment deserves attention. The paper synthesizes prior research to build a conceptual map, proposing that creepiness arises from a mix of low prospect (poor visibility), high refuge (many hiding places), mystery, and ambiguous agency—the feeling that someone or something is present. The paper’s method is a narrative synthesis, connecting findings from prospect-refuge theory, environmental preference theory, social cognition, and research on low-frequency sound. It does not produce new experimental data but arranges prior findings to explain why certain settings are unsettling. The authors show how architectural features like blind corners, hidden recesses, and poor legibility can trigger a physical caution response rooted in our evolutionary history of predator avoidance. The environment offers cues, the mind reads them, and the body reacts before language catches up. The key design implication is that architects can shape a space's emotional tone by managing visibility, escape cues, and the balance between mystery and legibility. Comfort often lies in a balance between shelter and openness, while creepiness appears when the balance tips toward uncertain refuge or a blocked view. The main limitation is that the synthesis draws from studies with different methods, so its conclusions should not be taken as a universal law. The experience of a place as “creepy” may also vary across cultures and situations.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "131"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:30Z",
+        "tokens_in": 2588,
+        "tokens_out": 706,
+        "cost_estimate_usd": 0.018354
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0088",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0088",
+      "source_link": "ka_article_view.html?id=PDF-0088",
+      "apa_citation": "(2016)."
+    }
+  ],
+  "failures": []
+}

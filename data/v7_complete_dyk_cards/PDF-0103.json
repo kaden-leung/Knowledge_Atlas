@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0103",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:02Z",
+  "cards": [
+    {
+      "id": "dyk_f5c5183d43",
+      "paper_id": "PDF-0103",
+      "source_claim_ids": [
+        "136"
+      ],
+      "title": "A room’s design alters how crowded it feels, regardless of the number of people.",
+      "body": "The feeling of being crowded is a psychological experience influenced by architectural design, not just the number of people present. In a lab study, participants felt that dark green rooms became crowded with fewer figures than light green rooms, even though the spaces were identical in size. This effect was strongest in rooms with high visual complexity when participants imagined a nonsocial situation. This matters because it shows that design choices like color and visual load can increase a space's perceived capacity and comfort, shifting focus from pure density to perceived freedom.",
+      "expanded_summary": "The research highlights a specific interaction between a room’s color, its visual complexity, and the social context. While light-colored rooms generally felt more spacious, the effect of high visual complexity was more nuanced. It significantly reduced the perceived space in dark rooms, particularly when participants imagined themselves in a nonsocial setting. In this condition—dark, complex, and nonsocial—participants placed figures representing themselves much closer to the exits. This suggests that complex visual information in a dark space can feel oppressive or confining, reducing one's sense of freedom and control, even without social pressure from other people.",
+      "measurables": "Crowding perception was assessed in a laboratory experiment using model rooms. Eighty undergraduate participants placed miniature clothespin figures into the models until they felt the space was 'crowded.' The key measures were the total number of figures placed and where participants placed the figure representing themselves. Researchers systematically varied the model rooms' color (light vs. dark), visual complexity (high vs. low), and the imagined social orientation (social vs. nonsocial).",
+      "short_science_summary": "This study argues that crowding is a psychological experience mediated by the built environment, not simply a function of human density. The research demonstrates that architectural variables can significantly alter how much space people feel they have and when they begin to feel crowded. Using a 2×2×2 laboratory design with 80 undergraduates, the study varied model rooms by color (light vs. dark green), visual complexity (high vs. low), and imagined orientation (social vs. nonsocial). Participants placed miniature figures in the rooms to mark their crowding threshold. The results showed that design elements directly influenced perception. The strongest effect was room color, which accounted for significant variance in figure placement (F = 25.116, p < .011); participants consistently perceived dark rooms as smaller and placed fewer figures in them before they felt crowded. However, the variables also interacted. A three-way interaction between color, complexity, and orientation was observed (F = 2.72, p < .1), with a key contrast emerging: in the dark green, high-complexity room imagined under nonsocial conditions, self-placement was significantly lower (χ² = 6.084, p < .05). This suggests visual complexity becomes particularly impactful in dark spaces, reducing one's sense of freedom. The primary design implication is that perceived freedom can be as important as physical floor area. By using lighter colors and managing visual load, designers can reduce the feeling of crowding and enhance comfort, even at a constant occupancy. The study's main limitation is its laboratory setting, which cannot fully replicate the dynamics of real-world crowded spaces. The student sample also limits generalizability. Nonetheless, the paper provides strong evidence that crowding is a felt relationship between people and place.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "136"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:22:31Z",
+        "tokens_in": 2405,
+        "tokens_out": 735,
+        "cost_estimate_usd": 0.01824
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0103",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0103",
+      "source_link": "ka_article_view.html?id=PDF-0103",
+      "apa_citation": "Spatial and Social Aspects of Crowding Perception."
+    }
+  ],
+  "failures": []
+}

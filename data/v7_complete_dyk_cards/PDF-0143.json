@@ -1,0 +1,47 @@
+{
+  "schema_version": "ka_v7_complete_dyk_cards_per_paper_v1",
+  "paper_id": "PDF-0143",
+  "status": "dyk_complete",
+  "selection_reason": "default_one_card",
+  "generated_at": "2026-05-20T06:23:28Z",
+  "cards": [
+    {
+      "id": "dyk_ba64f3315b",
+      "paper_id": "PDF-0143",
+      "source_claim_ids": [
+        "206"
+      ],
+      "title": "Cultural background shapes how comfortable and calm a public square feels",
+      "body": "The same public square can feel very different to people from different cultures, even in similar weather. A study comparing Swedish and Japanese participants found that the Swedish group felt significantly calmer and more thermally comfortable. This challenges the idea that a single thermal-comfort target will work for everyone. Urban designers must consider that place experience is an intersection of physical exposure and social interpretation, meaning cultural context is as important as climate for creating pleasant public spaces.",
+      "expanded_summary": "This research highlights that psychological and socio-cultural factors can override purely physical climate measures. The study was conducted in public squares under comfortable thermal conditions (18-23°C PET), yet the cultural differences in experience were clear. Beyond feeling calmer, Swedish participants also rated the square as more beautiful and pleasant than their Japanese counterparts. These results suggest that people evaluate their environment through a 'cultural lens.' For international design practice, this means that a successful plaza in one country might not evoke the same positive feelings in another without considering local cultural interpretations and expectations for public space.",
+      "measurables": "Researchers gathered on-site evaluations from 106 Swedish and Japanese adults in public squares. While objective meteorological data was collected to ensure comparable thermal conditions, participants' subjective experiences were captured using self-report rating scales. These scales assessed emotional states like calmness, as well as perceptions of thermal comfort and the aesthetic quality of the square.",
+      "short_science_summary": "This quasi-experimental study by Knez and Thorsson (2006) investigated how culture influences the experience of a public square. The research compared 106 Swedish and Japanese participants' evaluations of squares under objectively similar thermal conditions, defined by a comfortable Physiological Equivalent Temperature (PET) range of 18-23°C. The core finding is that the subjective experience of the same physical environment is not universal. Despite comparable PET conditions, Swedish participants reported feeling significantly calmer (F(1,104)=5.07, P<.05) and more thermally comfortable (F(1,105)=7.77, P<.01) than their Japanese counterparts. The influence of culture extended to other perceptions as well. The Swedish group also rated the square as more beautiful (F(1,105)=8.03) and pleasant (F(1,105)=9.73). These results challenge the reliance on purely physiological or meteorological models for predicting human comfort. They demonstrate that people interpret their surroundings through a socio-cultural lens, meaning place experience arises from an interaction between physical exposure and psychological schemas. For urban design and planning, this serves as a crucial warning: designing for a specific thermal target does not guarantee a uniform emotional or perceptual outcome across different populations. To create spaces that feel pleasant and calm, designers must consider cultural context, social cues, and local attitudes as integral components of the design process, not just meteorological data. While strong, the study is bounded by its comparison of two cultures and its cross-sectional approach, which does not capture changes over longer exposure.",
+      "writing_agent": "llm_science_writer",
+      "authoring_mode": "llm_authored",
+      "writing_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+      "llm_authoring": {
+        "model": "gemini-2.5-pro",
+        "prompt_contract": "DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16",
+        "source_claim_ids": [
+          "206"
+        ],
+        "quality_gate": "passed",
+        "invocation_mode": "api",
+        "invocation_provider": "google",
+        "invocation_timestamp": "2026-05-20T06:23:00Z",
+        "tokens_in": 2492,
+        "tokens_out": 639,
+        "cost_estimate_usd": 0.017061
+      },
+      "science_summary_dependency": {
+        "status": "available",
+        "paper_id": "PDF-0143",
+        "source": "article_details.json"
+      },
+      "longer_summary_link": "ka_article_view.html?id=PDF-0143",
+      "source_link": "ka_article_view.html?id=PDF-0143",
+      "apa_citation": "Igor Knez, Sofia Thorsson (2006)."
+    }
+  ],
+  "failures": []
+}
