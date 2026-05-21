@@ -1,0 +1,1488 @@
+{
+  "schema_version": "poe_ext_substitution_seed_v1",
+  "generated_at": "2026-05-19",
+  "source": "docs/AG_POE_EXT_SEED_PACKAGE_2026-05-19.md",
+  "note": "Seed for data/substitution_graph.db. construct_validity / field_acceptance / citation_count are CW estimates; AG's substitution-graph extraction pass overwrites them with per-paper extracted values.",
+  "target_db": "data/substitution_graph.db",
+  "constructs": [
+    {
+      "construct_id": "adaptive_thermal_comfort",
+      "canonical_name": "Adaptive thermal comfort",
+      "aliases": [
+        "adaptive comfort",
+        "running-mean comfort"
+      ],
+      "family_theory_id": "adaptive_comfort_model",
+      "proliferation_warning": {
+        "jangle_with": [
+          "thermal_comfort_generic"
+        ]
+      }
+    },
+    {
+      "construct_id": "thermal_pleasure_alliesthesia",
+      "canonical_name": "Thermal pleasure / alliesthesia",
+      "aliases": [
+        "thermal alliesthesia",
+        "thermal delight"
+      ],
+      "family_theory_id": "alliesthesia",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "mean_radiant_temperature",
+      "canonical_name": "Mean radiant temperature",
+      "aliases": [
+        "MRT",
+        "radiant temperature"
+      ],
+      "family_theory_id": "thermal_physics",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "radiant_asymmetry",
+      "canonical_name": "Radiant asymmetry",
+      "aliases": [
+        "directional radiant asymmetry"
+      ],
+      "family_theory_id": "thermal_physics",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "personal_thermal_control",
+      "canonical_name": "Personal thermal control / adaptive opportunity",
+      "aliases": [
+        "adaptive opportunity",
+        "thermal autonomy"
+      ],
+      "family_theory_id": "perceived_control",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "ventilation_rate",
+      "canonical_name": "Ventilation rate",
+      "aliases": [
+        "outdoor air supply rate"
+      ],
+      "family_theory_id": "indoor_air_quality",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "perceived_air_quality",
+      "canonical_name": "Perceived air quality",
+      "aliases": [
+        "PAQ",
+        "air freshness"
+      ],
+      "family_theory_id": "indoor_air_quality",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "bioeffluent_concentration",
+      "canonical_name": "Bio-effluent concentration",
+      "aliases": [
+        "human bioeffluents"
+      ],
+      "family_theory_id": "indoor_air_quality",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "voc_concentration",
+      "canonical_name": "VOC concentration",
+      "aliases": [
+        "TVOC",
+        "volatile organic compounds"
+      ],
+      "family_theory_id": "indoor_air_quality",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "pm25_concentration",
+      "canonical_name": "PM2.5 concentration",
+      "aliases": [
+        "particulate matter",
+        "fine particulates"
+      ],
+      "family_theory_id": "indoor_air_quality",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "cognitive_performance_iaq",
+      "canonical_name": "Cognitive performance under IAQ load",
+      "aliases": [
+        "IAQ cognition"
+      ],
+      "family_theory_id": "cognitive_performance",
+      "proliferation_warning": {
+        "jangle_with": [
+          "cognitive_performance_generic"
+        ]
+      }
+    },
+    {
+      "construct_id": "implicit_attitude",
+      "canonical_name": "Implicit attitude",
+      "aliases": [
+        "automatic evaluation"
+      ],
+      "family_theory_id": "implicit_cognition",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "built_environment_iat",
+      "canonical_name": "Built-Environment-IAT (research opportunity)",
+      "aliases": [
+        "BE-IAT"
+      ],
+      "family_theory_id": "implicit_cognition",
+      "proliferation_warning": {
+        "note": "No extant instrument; seeded as a research opportunity, not an existing measure."
+      }
+    },
+    {
+      "construct_id": "evaluative_implicit_response",
+      "canonical_name": "Evaluative implicit response",
+      "aliases": [
+        "implicit evaluation"
+      ],
+      "family_theory_id": "implicit_cognition",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "preference_structure",
+      "canonical_name": "Preference structure",
+      "aliases": [
+        "preference profile"
+      ],
+      "family_theory_id": "preference_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "q_methodology_subjectivity",
+      "canonical_name": "Q-methodology subjectivity",
+      "aliases": [
+        "operant subjectivity"
+      ],
+      "family_theory_id": "preference_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "forced_choice_card_sort",
+      "canonical_name": "20-sort / forced-choice card sort",
+      "aliases": [
+        "card sort",
+        "20-sort"
+      ],
+      "family_theory_id": "preference_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "marginal_attribute_utility",
+      "canonical_name": "Marginal attribute utility",
+      "aliases": [
+        "part-worth utility"
+      ],
+      "family_theory_id": "preference_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "occupant_experience_time",
+      "canonical_name": "Occupant experience over time",
+      "aliases": [
+        "experience trajectory"
+      ],
+      "family_theory_id": "temporal_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "ecological_momentary_state",
+      "canonical_name": "Ecological momentary state",
+      "aliases": [
+        "momentary experience"
+      ],
+      "family_theory_id": "temporal_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "reconstructed_daily_experience",
+      "canonical_name": "Reconstructed daily experience",
+      "aliases": [
+        "day reconstruction"
+      ],
+      "family_theory_id": "temporal_methodology",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "discomfort_glare",
+      "canonical_name": "Discomfort glare",
+      "aliases": [
+        "daylight glare"
+      ],
+      "family_theory_id": "luminous_comfort",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "artificial_lighting_glare",
+      "canonical_name": "Glare from artificial lighting",
+      "aliases": [
+        "electric-light glare"
+      ],
+      "family_theory_id": "luminous_comfort",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "glare_source_contrast",
+      "canonical_name": "Glare-source contrast",
+      "aliases": [
+        "luminance contrast"
+      ],
+      "family_theory_id": "luminous_physics",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "multisensory_ieq_interaction",
+      "canonical_name": "Multisensory IEQ interaction",
+      "aliases": [
+        "cross-domain IEQ"
+      ],
+      "family_theory_id": "multisensory_perception",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "acoustic_thermal_interaction",
+      "canonical_name": "Acoustic x thermal interaction",
+      "aliases": [
+        "noise-temperature interaction"
+      ],
+      "family_theory_id": "multisensory_perception",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "lighting_thermal_interaction",
+      "canonical_name": "Lighting x thermal interaction",
+      "aliases": [
+        "daylight-thermal interaction"
+      ],
+      "family_theory_id": "multisensory_perception",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "cross_modal_overall_comfort",
+      "canonical_name": "Cross-modal overall comfort",
+      "aliases": [
+        "holistic comfort"
+      ],
+      "family_theory_id": "multisensory_perception",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "adaptive_preference",
+      "canonical_name": "Adaptive preference",
+      "aliases": [
+        "preference adaptation",
+        "sour-grapes preference"
+      ],
+      "family_theory_id": "welfare_economics_capabilities",
+      "proliferation_warning": {
+        "note": "Framework stratum welfare_economics_capabilities is new to the corpus."
+      }
+    },
+    {
+      "construct_id": "counterfactual_elicitation",
+      "canonical_name": "Counterfactual elicitation",
+      "aliases": [
+        "counterfactual rating"
+      ],
+      "family_theory_id": "welfare_economics_capabilities",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "temporal_comparison_elicitation",
+      "canonical_name": "Temporal-comparison elicitation",
+      "aliases": [
+        "rate-twice design"
+      ],
+      "family_theory_id": "welfare_economics_capabilities",
+      "proliferation_warning": {}
+    },
+    {
+      "construct_id": "hedonic_adaptation",
+      "canonical_name": "Hedonic adaptation",
+      "aliases": [
+        "adaptation-level effect",
+        "baseline return"
+      ],
+      "family_theory_id": "welfare_economics_capabilities",
+      "proliferation_warning": {}
+    }
+  ],
+  "measures": [
+    {
+      "measure_id": "m_pmv_ppd",
+      "short_code": "thermal.pmv_ppd",
+      "canonical_name": "Predicted Mean Vote / PPD",
+      "measurement_family": "thermal_static",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Static model; mispredicts naturally-ventilated comfort range.",
+      "canonical_references": [
+        "Fanger 1970"
+      ]
+    },
+    {
+      "measure_id": "m_adaptive_regression",
+      "short_code": "thermal.adaptive_regression",
+      "canonical_name": "Adaptive comfort regression",
+      "measurement_family": "thermal_adaptive",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Needs longitudinal field survey to fit.",
+      "canonical_references": [
+        "de Dear & Brager 1998",
+        "de Dear & Brager 2002"
+      ]
+    },
+    {
+      "measure_id": "m_thermal_sensation_vote",
+      "short_code": "thermal.tsv",
+      "canonical_name": "Thermal sensation vote (ASHRAE 7-point)",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 2,
+      "hardware_required": [],
+      "principal_pitfall": "Single bipolar axis; misses hedonic tone.",
+      "canonical_references": [
+        "ASHRAE 55"
+      ]
+    },
+    {
+      "measure_id": "m_thermal_pleasure_rating",
+      "short_code": "thermal.pleasure",
+      "canonical_name": "Thermal-pleasure / alliesthesia rating",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 3,
+      "hardware_required": [],
+      "principal_pitfall": "Requires a thermoregulatory-state manipulation to elicit.",
+      "canonical_references": [
+        "Cabanac 1971",
+        "Parkinson & de Dear 2015"
+      ]
+    },
+    {
+      "measure_id": "m_air_temperature",
+      "short_code": "thermal.air_temp",
+      "canonical_name": "Air temperature (thermostat)",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Ignores radiant load.",
+      "canonical_references": [
+        "ASHRAE 55"
+      ]
+    },
+    {
+      "measure_id": "m_globe_mrt",
+      "short_code": "thermal.globe_mrt",
+      "canonical_name": "Mean radiant temperature via globe thermometer",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Globe response time; needs steady state.",
+      "canonical_references": [
+        "Halawa et al. 2014"
+      ]
+    },
+    {
+      "measure_id": "m_radiant_asymmetry",
+      "short_code": "thermal.radiant_asym",
+      "canonical_name": "Directional radiant-asymmetry measurement",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Rarely measured; ASHRAE 55 limits routinely violated.",
+      "canonical_references": [
+        "Halawa et al. 2014"
+      ]
+    },
+    {
+      "measure_id": "m_adaptive_opportunity_inventory",
+      "short_code": "thermal.adaptive_opp",
+      "canonical_name": "Adaptive-opportunity inventory",
+      "measurement_family": "structured_audit",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 5,
+      "hardware_required": [],
+      "principal_pitfall": "Records affordances, not whether occupants use them.",
+      "canonical_references": [
+        "Brager et al. 2004",
+        "Toftum 2010"
+      ]
+    },
+    {
+      "measure_id": "m_co2_ppm",
+      "short_code": "iaq.co2_ppm",
+      "canonical_name": "CO2 concentration (ppm)",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Weak proxy for fresh-air adequacy; conflates pollutant and marker roles.",
+      "canonical_references": [
+        "Satish et al. 2012"
+      ]
+    },
+    {
+      "measure_id": "m_oa_supply_rate",
+      "short_code": "iaq.oa_lps",
+      "canonical_name": "Outdoor air supply rate (L/s per person)",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Needs tracer-gas or direct airflow measurement.",
+      "canonical_references": [
+        "Wargocki et al. 2000",
+        "Sundell et al. 2011"
+      ]
+    },
+    {
+      "measure_id": "m_freshness_likert",
+      "short_code": "iaq.freshness",
+      "canonical_name": "Air-freshness Likert item",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 1,
+      "hardware_required": [],
+      "principal_pitfall": "One-dimensional; misses odour quality.",
+      "canonical_references": [
+        "CBE Occupant Survey"
+      ]
+    },
+    {
+      "measure_id": "m_olf_decipol",
+      "short_code": "iaq.olf_decipol",
+      "canonical_name": "olf/decipol perceived-air-quality panel",
+      "measurement_family": "sensory_panel",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Requires a trained or naive panel protocol.",
+      "canonical_references": [
+        "Fanger 1988"
+      ]
+    },
+    {
+      "measure_id": "m_tvoc",
+      "short_code": "iaq.tvoc",
+      "canonical_name": "Total VOC via PID or GC-MS",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Instrument cost; speciation needs GC-MS.",
+      "canonical_references": [
+        "Allen et al. 2016"
+      ]
+    },
+    {
+      "measure_id": "m_pm25_optical",
+      "short_code": "iaq.pm25",
+      "canonical_name": "Optical PM2.5 monitor",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Low-cost sensors need calibration.",
+      "canonical_references": [
+        "Power et al. 2016"
+      ]
+    },
+    {
+      "measure_id": "m_self_report_productivity",
+      "short_code": "iaq.self_prod",
+      "canonical_name": "Self-reported productivity",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 1,
+      "hardware_required": [],
+      "principal_pitfall": "Weakly correlated with measured performance.",
+      "canonical_references": [
+        "Tham et al. 2003"
+      ]
+    },
+    {
+      "measure_id": "m_cogfx_battery",
+      "short_code": "iaq.cogfx",
+      "canonical_name": "COGfx Strategic Management Simulation battery",
+      "measurement_family": "cognitive_task",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 90,
+      "hardware_required": [
+        "headset",
+        "keyboard_or_controller"
+      ],
+      "principal_pitfall": "Long; needs a calibrated baseline.",
+      "canonical_references": [
+        "Allen et al. 2016",
+        "Satish et al. 2012"
+      ]
+    },
+    {
+      "measure_id": "m_explicit_likert_attitude",
+      "short_code": "attitude.explicit",
+      "canonical_name": "Explicit Likert attitude / satisfaction rating",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 2,
+      "hardware_required": [],
+      "principal_pitfall": "Reportable layer only; diverges from implicit attitude.",
+      "canonical_references": [
+        "CBE Occupant Survey"
+      ]
+    },
+    {
+      "measure_id": "m_iat_dscore",
+      "short_code": "iat.dscore",
+      "canonical_name": "IAT D-score (improved scoring algorithm)",
+      "measurement_family": "implicit_task",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any",
+        "note": "timing precision below CRT baseline in HMD"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 10,
+      "hardware_required": [
+        "headset",
+        "keyboard_or_controller"
+      ],
+      "principal_pitfall": "Contested predictive validity; see Blanton et al. 2009.",
+      "canonical_references": [
+        "Greenwald et al. 1998",
+        "Greenwald et al. 2003"
+      ]
+    },
+    {
+      "measure_id": "m_evaluative_priming",
+      "short_code": "iat.priming",
+      "canonical_name": "Evaluative priming",
+      "measurement_family": "implicit_task",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 12,
+      "hardware_required": [],
+      "principal_pitfall": "Reliability lower than IAT.",
+      "canonical_references": [
+        "Fazio et al. 1995"
+      ]
+    },
+    {
+      "measure_id": "m_amp",
+      "short_code": "iat.amp",
+      "canonical_name": "Affect Misattribution Procedure",
+      "measurement_family": "implicit_task",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 10,
+      "hardware_required": [],
+      "principal_pitfall": "Susceptible to intentional control.",
+      "canonical_references": [
+        "Payne et al. 2005"
+      ]
+    },
+    {
+      "measure_id": "m_single_likert",
+      "short_code": "pref.single_likert",
+      "canonical_name": "Single Likert position",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 1,
+      "hardware_required": [],
+      "principal_pitfall": "Flattens preference structure to one number.",
+      "canonical_references": [
+        "CBE Occupant Survey"
+      ]
+    },
+    {
+      "measure_id": "m_qsort",
+      "short_code": "pref.qsort",
+      "canonical_name": "Q-sort with by-person factor analysis",
+      "measurement_family": "sort_task",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 30,
+      "hardware_required": [],
+      "principal_pitfall": "Sample of subjectivity, not of population.",
+      "canonical_references": [
+        "Stephenson 1953",
+        "Watts & Stenner 2012"
+      ]
+    },
+    {
+      "measure_id": "m_20sort",
+      "short_code": "pref.20sort",
+      "canonical_name": "20-card forced-distribution sort",
+      "measurement_family": "sort_task",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 15,
+      "hardware_required": [],
+      "principal_pitfall": "Forced distribution can distort at the tails.",
+      "canonical_references": [
+        "Brown 1980"
+      ]
+    },
+    {
+      "measure_id": "m_conjoint",
+      "short_code": "pref.conjoint",
+      "canonical_name": "Choice-based conjoint / discrete-choice",
+      "measurement_family": "choice_experiment",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 20,
+      "hardware_required": [],
+      "principal_pitfall": "Hypothetical-bias; needs careful attribute design.",
+      "canonical_references": [
+        "Green & Srinivasan 1990",
+        "Louviere et al. 2000"
+      ]
+    },
+    {
+      "measure_id": "m_single_survey_snapshot",
+      "short_code": "time.snapshot",
+      "canonical_name": "Single post-occupancy survey snapshot",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 10,
+      "hardware_required": [],
+      "principal_pitfall": "Averages over time-of-day and task-phase variance.",
+      "canonical_references": [
+        "CBE Occupant Survey"
+      ]
+    },
+    {
+      "measure_id": "m_esm",
+      "short_code": "time.esm",
+      "canonical_name": "Experience-sampling time series",
+      "measurement_family": "ema_protocol",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any",
+        "note": "smartphone-deployable"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Prompt burden; compliance decay.",
+      "canonical_references": [
+        "Csikszentmihalyi & Larson 1987",
+        "Hektner et al. 2007"
+      ]
+    },
+    {
+      "measure_id": "m_ema",
+      "short_code": "time.ema",
+      "canonical_name": "Ecological momentary assessment record",
+      "measurement_family": "ema_protocol",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any",
+        "note": "smartphone-deployable"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Reactivity to repeated prompting.",
+      "canonical_references": [
+        "Shiffman et al. 2008"
+      ]
+    },
+    {
+      "measure_id": "m_drm",
+      "short_code": "time.drm",
+      "canonical_name": "Day Reconstruction Method episode reconstruction",
+      "measurement_family": "retrospective_protocol",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 45,
+      "hardware_required": [],
+      "principal_pitfall": "Retrospective; less immediate than ESM.",
+      "canonical_references": [
+        "Kahneman et al. 2004"
+      ]
+    },
+    {
+      "measure_id": "m_horizontal_illuminance",
+      "short_code": "glare.horiz_lux",
+      "canonical_name": "Horizontal desk illuminance",
+      "measurement_family": "instrument",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Says nothing about glare or daylight autonomy direction.",
+      "canonical_references": [
+        "Boyce 2014"
+      ]
+    },
+    {
+      "measure_id": "m_daylight_autonomy",
+      "short_code": "glare.daylight_autonomy",
+      "canonical_name": "Daylight autonomy",
+      "measurement_family": "simulation_metric",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Silent on glare; a high-DA room can be a high-glare room.",
+      "canonical_references": [
+        "Boyce 2014"
+      ]
+    },
+    {
+      "measure_id": "m_dgp",
+      "short_code": "glare.dgp",
+      "canonical_name": "Daylight Glare Probability (DGP)",
+      "measurement_family": "image_metric",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Needs a calibrated fish-eye luminance image + vertical eye illuminance.",
+      "canonical_references": [
+        "Wienold & Christoffersen 2006",
+        "Wienold et al. 2019"
+      ]
+    },
+    {
+      "measure_id": "m_dgi",
+      "short_code": "glare.dgi",
+      "canonical_name": "Daylight Glare Index (DGI)",
+      "measurement_family": "image_metric",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Older metric; weaker correlation with reports than DGP.",
+      "canonical_references": [
+        "Hopkinson 1972"
+      ]
+    },
+    {
+      "measure_id": "m_ugr",
+      "short_code": "glare.ugr",
+      "canonical_name": "Unified Glare Rating (UGR)",
+      "measurement_family": "computed_metric",
+      "vr_tractable": false,
+      "vr_tractability_conditions": {},
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "For artificial lighting; less suited to large daylight sources.",
+      "canonical_references": [
+        "CIE 117-1995"
+      ]
+    },
+    {
+      "measure_id": "m_single_axis_rating",
+      "short_code": "multi.single_axis",
+      "canonical_name": "Single-axis IEQ rating in isolation",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 2,
+      "hardware_required": [],
+      "principal_pitfall": "Systematically mis-estimates crossover effects.",
+      "canonical_references": [
+        "Schweiker et al. 2020"
+      ]
+    },
+    {
+      "measure_id": "m_multi_axis_design",
+      "short_code": "multi.joint_design",
+      "canonical_name": "Joint multi-axis manipulation with interaction terms",
+      "measurement_family": "study_design",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any",
+        "note": "the deep measure is a design, not an instrument"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Factorial cost; sample-size demand grows with interaction terms.",
+      "canonical_references": [
+        "Schweiker et al. 2020",
+        "Torresin et al. 2018"
+      ]
+    },
+    {
+      "measure_id": "m_stated_satisfaction",
+      "short_code": "adapt.stated_sat",
+      "canonical_name": "Stated satisfaction with current conditions",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 2,
+      "hardware_required": [],
+      "principal_pitfall": "Can reflect a normalised reference frame, not the building.",
+      "canonical_references": [
+        "CBE Occupant Survey"
+      ]
+    },
+    {
+      "measure_id": "m_counterfactual_prompt",
+      "short_code": "adapt.counterfactual",
+      "canonical_name": "Structured counterfactual elicitation",
+      "measurement_family": "self_report",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": 5,
+      "hardware_required": [],
+      "principal_pitfall": "Depends on a well-described counterfactual condition.",
+      "canonical_references": [
+        "Sen 1985",
+        "Nussbaum 2001"
+      ]
+    },
+    {
+      "measure_id": "m_rate_twice",
+      "short_code": "adapt.rate_twice",
+      "canonical_name": "Rate-twice temporal-comparison design",
+      "measurement_family": "longitudinal_protocol",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Needs a pre-exposure and a post-sustained-exposure point.",
+      "canonical_references": [
+        "Khader 2011"
+      ]
+    },
+    {
+      "measure_id": "m_longitudinal_baseline",
+      "short_code": "adapt.longitudinal",
+      "canonical_name": "Longitudinal satisfaction vs baseline-return hypothesis",
+      "measurement_family": "longitudinal_protocol",
+      "vr_tractable": true,
+      "vr_tractability_conditions": {
+        "requires_headset": "any"
+      },
+      "psychometric_profile": {},
+      "construct_validity_per_paper": {},
+      "administration_time_min": null,
+      "hardware_required": [],
+      "principal_pitfall": "Long horizon; attrition.",
+      "canonical_references": [
+        "Clark et al. 2008",
+        "Frederick & Loewenstein 1999"
+      ]
+    }
+  ],
+  "construct_measure_links": [
+    {
+      "construct_id": "adaptive_thermal_comfort",
+      "measure_id": "m_pmv_ppd",
+      "construct_validity": 0.55,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 3500,
+      "severity_average": null,
+      "notes": "Shallow baseline; weak in naturally ventilated buildings."
+    },
+    {
+      "construct_id": "adaptive_thermal_comfort",
+      "measure_id": "m_adaptive_regression",
+      "construct_validity": 0.85,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": 3500,
+      "severity_average": null,
+      "notes": "Deep warranted measure; ASHRAE 55 adaptive section."
+    },
+    {
+      "construct_id": "thermal_pleasure_alliesthesia",
+      "measure_id": "m_thermal_sensation_vote",
+      "construct_validity": 0.5,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow; one dimension."
+    },
+    {
+      "construct_id": "thermal_pleasure_alliesthesia",
+      "measure_id": "m_thermal_pleasure_rating",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": 3500,
+      "severity_average": null,
+      "notes": "Deep; alliesthesia."
+    },
+    {
+      "construct_id": "mean_radiant_temperature",
+      "measure_id": "m_air_temperature",
+      "construct_validity": 0.45,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Proxy only."
+    },
+    {
+      "construct_id": "mean_radiant_temperature",
+      "measure_id": "m_globe_mrt",
+      "construct_validity": 0.9,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Direct measure."
+    },
+    {
+      "construct_id": "radiant_asymmetry",
+      "measure_id": "m_radiant_asymmetry",
+      "construct_validity": 0.85,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; almost never done."
+    },
+    {
+      "construct_id": "personal_thermal_control",
+      "measure_id": "m_adaptive_opportunity_inventory",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; the actual driver per de Dear & Brager."
+    },
+    {
+      "construct_id": "ventilation_rate",
+      "measure_id": "m_co2_ppm",
+      "construct_validity": 0.5,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow proxy; commonly mistaken for sufficient."
+    },
+    {
+      "construct_id": "ventilation_rate",
+      "measure_id": "m_oa_supply_rate",
+      "construct_validity": 0.9,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 1100,
+      "severity_average": null,
+      "notes": "Deep; the variable Wargocki manipulated."
+    },
+    {
+      "construct_id": "perceived_air_quality",
+      "measure_id": "m_freshness_likert",
+      "construct_validity": 0.5,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow."
+    },
+    {
+      "construct_id": "perceived_air_quality",
+      "measure_id": "m_olf_decipol",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 1200,
+      "severity_average": null,
+      "notes": "Deep; Fanger units."
+    },
+    {
+      "construct_id": "bioeffluent_concentration",
+      "measure_id": "m_olf_decipol",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "olf source strength."
+    },
+    {
+      "construct_id": "voc_concentration",
+      "measure_id": "m_tvoc",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 1100,
+      "severity_average": null,
+      "notes": "Deep; COGfx scaled with VOC reduction."
+    },
+    {
+      "construct_id": "pm25_concentration",
+      "measure_id": "m_pm25_optical",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep."
+    },
+    {
+      "construct_id": "cognitive_performance_iaq",
+      "measure_id": "m_self_report_productivity",
+      "construct_validity": 0.4,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow."
+    },
+    {
+      "construct_id": "cognitive_performance_iaq",
+      "measure_id": "m_cogfx_battery",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 1100,
+      "severity_average": null,
+      "notes": "Deep; objective decision-making endpoint."
+    },
+    {
+      "construct_id": "implicit_attitude",
+      "measure_id": "m_explicit_likert_attitude",
+      "construct_validity": 0.45,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow; explicit layer."
+    },
+    {
+      "construct_id": "implicit_attitude",
+      "measure_id": "m_iat_dscore",
+      "construct_validity": 0.7,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 40000,
+      "severity_average": null,
+      "notes": "Deep; contested validity, pair with explicit."
+    },
+    {
+      "construct_id": "built_environment_iat",
+      "measure_id": "m_iat_dscore",
+      "construct_validity": 0.6,
+      "field_acceptance": 0,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Proposed application; no extant validation in built-environment context."
+    },
+    {
+      "construct_id": "evaluative_implicit_response",
+      "measure_id": "m_evaluative_priming",
+      "construct_validity": 0.65,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Alternative implicit paradigm."
+    },
+    {
+      "construct_id": "evaluative_implicit_response",
+      "measure_id": "m_amp",
+      "construct_validity": 0.65,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Alternative implicit paradigm."
+    },
+    {
+      "construct_id": "preference_structure",
+      "measure_id": "m_single_likert",
+      "construct_validity": 0.4,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow."
+    },
+    {
+      "construct_id": "preference_structure",
+      "measure_id": "m_qsort",
+      "construct_validity": 0.8,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; structure not position."
+    },
+    {
+      "construct_id": "q_methodology_subjectivity",
+      "measure_id": "m_qsort",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Canonical Q-method measure."
+    },
+    {
+      "construct_id": "forced_choice_card_sort",
+      "measure_id": "m_20sort",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Constrained variant."
+    },
+    {
+      "construct_id": "marginal_attribute_utility",
+      "measure_id": "m_conjoint",
+      "construct_validity": 0.8,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; part-worth utilities."
+    },
+    {
+      "construct_id": "occupant_experience_time",
+      "measure_id": "m_single_survey_snapshot",
+      "construct_validity": 0.45,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow; snapshot."
+    },
+    {
+      "construct_id": "occupant_experience_time",
+      "measure_id": "m_esm",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 4000,
+      "severity_average": null,
+      "notes": "Deep; trajectory."
+    },
+    {
+      "construct_id": "ecological_momentary_state",
+      "measure_id": "m_ema",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; momentary."
+    },
+    {
+      "construct_id": "reconstructed_daily_experience",
+      "measure_id": "m_drm",
+      "construct_validity": 0.75,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 3500,
+      "severity_average": null,
+      "notes": "Deep; cheaper ESM complement."
+    },
+    {
+      "construct_id": "discomfort_glare",
+      "measure_id": "m_horizontal_illuminance",
+      "construct_validity": 0.35,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow proxy."
+    },
+    {
+      "construct_id": "discomfort_glare",
+      "measure_id": "m_daylight_autonomy",
+      "construct_validity": 0.4,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Complementary but orthogonal; not a glare measure."
+    },
+    {
+      "construct_id": "discomfort_glare",
+      "measure_id": "m_dgp",
+      "construct_validity": 0.85,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": 900,
+      "severity_average": null,
+      "notes": "Deep; correlates strongly with occupant reports."
+    },
+    {
+      "construct_id": "discomfort_glare",
+      "measure_id": "m_dgi",
+      "construct_validity": 0.6,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Legacy metric."
+    },
+    {
+      "construct_id": "artificial_lighting_glare",
+      "measure_id": "m_ugr",
+      "construct_validity": 0.75,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "CIE standard for electric lighting."
+    },
+    {
+      "construct_id": "glare_source_contrast",
+      "measure_id": "m_dgp",
+      "construct_validity": 0.7,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "DGP incorporates contrast distribution."
+    },
+    {
+      "construct_id": "multisensory_ieq_interaction",
+      "measure_id": "m_single_axis_rating",
+      "construct_validity": 0.4,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow; single-axis evaluation."
+    },
+    {
+      "construct_id": "multisensory_ieq_interaction",
+      "measure_id": "m_multi_axis_design",
+      "construct_validity": 0.8,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; crossover-effect estimation."
+    },
+    {
+      "construct_id": "acoustic_thermal_interaction",
+      "measure_id": "m_multi_axis_design",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Joint construct; single-axis instruments mis-estimate."
+    },
+    {
+      "construct_id": "lighting_thermal_interaction",
+      "measure_id": "m_multi_axis_design",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Joint construct; e.g. Chinazzo daylight-thermal."
+    },
+    {
+      "construct_id": "cross_modal_overall_comfort",
+      "measure_id": "m_multi_axis_design",
+      "construct_validity": 0.75,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Holistic vote with interaction terms modelled."
+    },
+    {
+      "construct_id": "adaptive_preference",
+      "measure_id": "m_stated_satisfaction",
+      "construct_validity": 0.4,
+      "field_acceptance": 3,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Shallow; the structural blind spot of the satisfaction survey."
+    },
+    {
+      "construct_id": "adaptive_preference",
+      "measure_id": "m_counterfactual_prompt",
+      "construct_validity": 0.75,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; surfaces non-adapted preference."
+    },
+    {
+      "construct_id": "counterfactual_elicitation",
+      "measure_id": "m_counterfactual_prompt",
+      "construct_validity": 0.8,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Canonical method for the construct."
+    },
+    {
+      "construct_id": "temporal_comparison_elicitation",
+      "measure_id": "m_rate_twice",
+      "construct_validity": 0.75,
+      "field_acceptance": 1,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; exposes normalisation."
+    },
+    {
+      "construct_id": "hedonic_adaptation",
+      "measure_id": "m_longitudinal_baseline",
+      "construct_validity": 0.7,
+      "field_acceptance": 2,
+      "canonical_paper_id": null,
+      "citation_count": null,
+      "severity_average": null,
+      "notes": "Deep; baseline-return tracking."
+    }
+  ]
+}
