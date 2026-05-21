@@ -1,0 +1,262 @@
+/* ===================================================================
+   ka_fall_journey.css — shared stylesheet for the COGS 160 Fall
+   Week-1 journey surfaces.
+
+   Used by: ka_fall_week1.html, ka_fall_dyk_browser.html,
+   ka_fall_topic.html, ka_evaluate_paper_for_vr.html,
+   ka_choose_measure_for_vr.html, ka_vr_measurability.html,
+   ka_methodological_pitfalls.html, ka_validities_showcase.html,
+   ka_vr_exemplars.html, ka_fall_week1_deliverable.html.
+
+   Palette: navy / teal / cream, WCAG-2.1-AA amber (#B45F14) per
+   the Knowledge_Atlas CLAUDE.md contrast guidance.
+   =================================================================== */
+
+:root {
+  --navy:        #1C3D3A;
+  --navy-2:      #163230;
+  --teal:        #2A7868;
+  --teal-bg:     #E6F5F0;
+  --teal-line:   #B5D1C5;
+  --amber:       #B45F14;   /* AA-contrast amber for text and accents */
+  --amber-dk:    #8E4A10;
+  --amber-bg:    #FCEEDC;
+  --cream:       #F7F4EF;
+  --paper:       #FFFFFF;
+  --border:      #E0D8CC;
+  --ink:         #2D2010;
+  --ink-mid:     #4A5757;
+  --ink-soft:    #6E7C7C;
+  --note-bg:     #FAF7F1;
+  --contested:   #A02828;
+  --contested-bg:#FBE6E6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Page hero ─────────────────────────────────────────── */
+.surface-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  border-bottom: 3px solid var(--amber);
+  padding: 40px 40px 34px;
+}
+.surface-hero .eyebrow {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #7AACA0; margin-bottom: 10px;
+}
+.surface-hero h1 {
+  font-family: Georgia, serif; font-weight: 400;
+  font-size: 1.9rem; color: #F5F0E8; line-height: 1.25; margin: 0 0 12px;
+}
+.surface-hero p {
+  font-size: 1rem; color: #A8C8BF; line-height: 1.65;
+  max-width: 720px; margin: 0;
+}
+
+/* ── Phase strip ───────────────────────────────────────── */
+.phase-strip {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  background: var(--paper); border-bottom: 1px solid var(--border);
+  padding: 12px 40px;
+}
+.phase-pill {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;
+  padding: 4px 11px; border-radius: 4px;
+  background: #EDE8E0; color: var(--ink-soft);
+}
+.phase-pill.current { background: var(--amber); color: #fff; }
+.phase-pill.done    { background: var(--teal-bg); color: var(--teal); }
+
+/* ── Layout ────────────────────────────────────────────── */
+.wrap { max-width: 1000px; margin: 0 auto; padding: 32px 40px 80px; }
+
+.section { margin-bottom: 30px; }
+.section > h2 {
+  font-family: Georgia, serif; font-weight: 400;
+  font-size: 1.35rem; color: var(--navy);
+  margin: 0 0 6px; padding-bottom: 6px;
+  border-bottom: 2px solid var(--amber);
+}
+.section > h3 {
+  font-family: Georgia, serif; font-weight: 400;
+  font-size: 1.08rem; color: var(--teal);
+  margin: 24px 0 10px;
+}
+.section p { font-size: 0.95rem; }
+.lead { font-size: 1rem; color: var(--ink-mid); max-width: 760px; }
+
+/* ── Cards ─────────────────────────────────────────────── */
+.card {
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 7px; padding: 16px 18px; margin: 12px 0;
+}
+.card.accent { border-left: 4px solid var(--teal); }
+.card.amber  { background: var(--amber-bg); border-color: #E3C9A3; }
+.card-title {
+  font-family: Georgia, serif; font-size: 1.05rem;
+  color: var(--navy); margin: 0 0 6px;
+}
+.card-grid {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* ── CTAs ──────────────────────────────────────────────── */
+.cta-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+.cta {
+  display: inline-block; text-decoration: none;
+  background: var(--amber); color: #fff;
+  font-size: 0.88rem; font-weight: 600;
+  padding: 9px 16px; border-radius: 6px;
+  border: 1px solid var(--amber);
+  transition: background 0.15s, transform 0.1s;
+}
+.cta:hover { background: var(--amber-dk); }
+.cta.secondary {
+  background: var(--paper); color: var(--navy);
+  border: 1px solid var(--border);
+}
+.cta.secondary:hover { background: var(--cream); }
+.cta.teal { background: var(--teal); border-color: var(--teal); }
+.cta.teal:hover { background: #1f5a4e; }
+.cta-hint { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* ── Pills and badges ──────────────────────────────────── */
+.pill {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.04em; padding: 3px 9px; border-radius: 999px;
+  background: var(--teal); color: #fff; margin: 1px 3px 1px 0;
+}
+.pill.amber   { background: var(--amber); }
+.pill.muted   { background: #AFB8B4; }
+.pill.contested { background: var(--contested-bg); color: var(--contested); }
+.badge {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px;
+  background: var(--teal-bg); color: var(--navy);
+  margin-left: 4px;
+}
+.badge.amber { background: var(--amber-bg); color: var(--amber-dk); }
+.badge.contested { background: var(--contested-bg); color: var(--contested); }
+
+/* ── Tables ────────────────────────────────────────────── */
+table.data {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.84rem; margin: 12px 0; background: var(--paper);
+}
+table.data th, table.data td {
+  border: 1px solid var(--border); padding: 7px 10px;
+  text-align: left; vertical-align: top;
+}
+table.data th { background: #F4F0E8; color: var(--navy); font-weight: 700; }
+table.data tr:nth-child(even) td { background: #FCFBF8; }
+
+/* ── Filter bar ────────────────────────────────────────── */
+.filter-bar {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+  padding: 12px 14px; background: var(--paper);
+  border: 1px solid var(--border); border-radius: 7px; margin: 12px 0;
+}
+.filter-bar .filter-label {
+  font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-right: 4px;
+}
+.filter-chip {
+  font-size: 0.78rem; padding: 4px 11px; border-radius: 999px;
+  background: #EDE8E0; color: var(--ink-mid);
+  border: 1px solid var(--border); cursor: pointer;
+}
+.filter-chip.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filter-chip.active.amber { background: var(--amber); border-color: var(--amber); }
+
+/* ── VOI panel (Surface 5 embedded component) ──────────── */
+.voi-panel {
+  background: #FFFDF7; border: 1px solid var(--amber);
+  border-radius: 7px; padding: 14px 16px; margin: 14px 0;
+}
+.voi-panel .voi-head {
+  font-weight: 700; color: var(--amber-dk); font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+.voi-panel ul { margin: 6px 0 6px 20px; padding: 0; }
+.voi-panel li { font-size: 0.86rem; color: var(--ink-mid); margin-bottom: 3px; }
+.voi-panel .voi-formula {
+  font-size: 0.78rem; color: var(--ink-soft); margin-top: 6px;
+}
+
+/* ── Form fields ───────────────────────────────────────── */
+.field-label { font-size: 0.82rem; font-weight: 700; color: var(--navy); display: block; margin-bottom: 4px; }
+.field-input, .field-textarea {
+  width: 100%; font-family: inherit; font-size: 0.9rem;
+  border: 1px solid var(--border); border-radius: 5px;
+  padding: 8px 10px; background: var(--paper); color: var(--ink);
+}
+.field-textarea { resize: vertical; min-height: 90px; }
+.field-note { font-size: 0.78rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* ── Checklist ─────────────────────────────────────────── */
+ul.checklist { list-style: none; margin: 8px 0; padding: 0; }
+ul.checklist li {
+  font-size: 0.9rem; margin-bottom: 6px; padding-left: 26px;
+  position: relative;
+}
+ul.checklist li::before {
+  content: "\2610"; position: absolute; left: 0; top: -1px;
+  font-size: 1.05rem; color: var(--teal);
+}
+
+/* ── Lists ─────────────────────────────────────────────── */
+ul.tight { margin: 8px 0; padding-left: 22px; }
+ul.tight li { font-size: 0.9rem; margin-bottom: 4px; }
+
+/* ── Bottom annotations ────────────────────────────────── */
+.annotations {
+  margin-top: 56px; background: var(--note-bg);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 22px 26px;
+}
+.annotations h2 {
+  font-family: Georgia, serif; font-weight: 400;
+  font-size: 1.2rem; color: var(--navy); margin: 0 0 4px;
+}
+.annotations .annot-sub {
+  font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 14px;
+}
+.annotations h3 {
+  font-family: Georgia, serif; font-weight: 400;
+  font-size: 1rem; color: var(--navy); margin: 18px 0 6px;
+}
+.annotations p, .annotations li {
+  font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65;
+}
+.annotations code {
+  font-family: Consolas, Monaco, monospace; font-size: 0.82rem;
+  background: #EDE8E0; padding: 1px 5px; border-radius: 3px;
+}
+
+/* ── Links ─────────────────────────────────────────────── */
+a.link { color: var(--teal); text-decoration: none; font-weight: 600; }
+a.link:hover { text-decoration: underline; }
+
+/* ── Footer ────────────────────────────────────────────── */
+.surface-foot {
+  background: var(--navy); color: #A8C8BF;
+  padding: 20px 40px; font-size: 0.84rem;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+}
+.surface-foot a { color: #7AACA0; text-decoration: none; font-weight: 600; }
+.surface-foot a:hover { color: var(--amber); }
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .surface-hero, .phase-strip, .wrap, .surface-foot { padding-left: 20px; padding-right: 20px; }
+  .card-grid { grid-template-columns: 1fr; }
+}

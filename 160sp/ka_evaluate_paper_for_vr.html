@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluate a Paper for VR · COGS 160 Fall</title>
+<link rel="stylesheet" href="ka_fall_journey.css">
+<script src="../ka_canonical_navbar.js" defer></script>
+<script src="../ka_user_type.js" defer></script>
+</head>
+<body data-ka-regime="160sp" data-ka-crumbs='[["COGS 160 Fall","ka_fall_week1.html"],["Week 1","ka_fall_week1.html"],["Evaluate a paper",""]]'>
+<div id="ka-navbar-slot"></div>
+<div id="ka-breadcrumb-slot"></div>
+
+<div class="surface-hero">
+  <div class="eyebrow">COGS 160 Fall · Week 1 · Admit-mode</div>
+  <h1>Evaluate a paper for your VR experiment</h1>
+  <p>Already have a paper in mind — from a class, a reading, a recommendation? Paste its DOI and the system tells you whether its outcome measures are VR-tractable, and if not, what substitute measures could probe the same construct in a 7-to-10-week build.</p>
+</div>
+
+<div class="phase-strip">
+  <span class="phase-pill current">Wk 1 · Find a topic</span>
+  <span class="phase-pill">Wk 2 · Theory + hypothesis</span>
+  <span class="phase-pill">Wk 3 · VR stimulus spec</span>
+  <span class="phase-pill">Wk 4 · Scene assembly</span>
+  <span class="phase-pill">Wk 5 · Design + protocol</span>
+  <span class="phase-pill">Wk 6 · Pre-registration</span>
+  <span class="phase-pill">Wk 7 · Implementation</span>
+  <span class="phase-pill">Wk 8 · Implementation</span>
+  <span class="phase-pill">Wk 9 · Pilot</span>
+  <span class="phase-pill">Wk 10 · Run + write</span>
+  <span class="phase-pill">Wk 11 · Submit</span>
+</div>
+
+<div class="wrap">
+
+  <div class="section">
+    <h2>Two paths through the evaluator</h2>
+    <p class="lead">Paste a DOI or paper title below. The system first checks whether we already hold the paper in the research corpus, then takes one of two paths.</p>
+    <div class="card-grid">
+      <div class="card accent">
+        <div class="card-title">Path A — the paper is in the corpus</div>
+        <p style="font-size:0.88rem; color:var(--ink-mid);">We already have the paper's fingerprint, theory tags, and IV/DV extraction. The admit-mode evaluation runs against those existing records and returns immediately.</p>
+      </div>
+      <div class="card accent">
+        <div class="card-title">Path B — the paper is not in the corpus</div>
+        <p style="font-size:0.88rem; color:var(--ink-mid);">You upload the PDF. A four-step V7-Lite ingest pipeline classifies the paper, checks topic fit, extracts the IV and DV, and maps the DV against the VR-measurability taxonomy before evaluating.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Paste a paper to evaluate</h2>
+    <div class="card">
+      <label class="field-label" for="paper-doi">DOI or paper title</label>
+      <input class="field-input" id="paper-doi" type="text" placeholder="e.g. 10.1126/science.1100301 or a paper title">
+      <div class="field-note">DOIs resolve directly to the structured record. A free-text title runs a corpus search. If the paper is not in the corpus, you will be asked to upload the PDF.</div>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="cta" href="#evaluate">Evaluate</a>
+        <span class="cta-hint">Checks the corpus first; uploads run the V7-Lite ingest</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="evaluate">
+    <h2>Worked example — Path A: a paper already in the corpus</h2>
+    <p class="lead">The paper is found in the corpus, so the admit-mode evaluation runs immediately against existing records.</p>
+
+    <div class="card">
+      <label class="field-label">DOI or paper title</label>
+      <div class="field-input" style="color:var(--ink-soft);">10.1126/science.1100301 · Ulrich (1984) — View through a window may influence recovery from surgery</div>
+      <div class="field-note" style="color:var(--teal); font-weight:600;">In corpus (PDF-0011) — running admit-mode evaluation</div>
+    </div>
+
+    <div class="card accent">
+      <div class="card-title">Evaluation — Ulrich (1984), <em>View through a window may influence recovery from surgery</em></div>
+      <table class="data">
+        <tr>
+          <th style="width:24%;">Original design</th>
+          <td>Field observational; 46 patients; gallbladder-surgery recovery; window-view vs brick-wall view.</td>
+        </tr>
+        <tr>
+          <th>Outcome measures</th>
+          <td>Length of stay (days); analgesic doses; nurse-rated mood notes.</td>
+        </tr>
+        <tr>
+          <th>VR-tractable as-is?</th>
+          <td><span class="pill muted">No</span> Field setting, clinical population, and multi-day exposure are all outside the scope of a 7-to-10-week VR study.</td>
+        </tr>
+        <tr>
+          <th>Substitution paths</th>
+          <td>
+            The substitution agent identifies the paper's construct as <em>stress-restorative effect of nature views</em>. Three VR-tractable analogue designs are available in the corpus:
+            <ul class="tight" style="margin-top:6px;">
+              <li><strong>Lab analogue 1:</strong> Berman, Jonides &amp; Kaplan (2008) — backward digit span before/after a VR nature walk vs a VR urban walk. <span class="pill amber">VR-tractable</span></li>
+              <li><strong>Lab analogue 2:</strong> Hartig et al. (1991) — Necker cube plus self-reported mood after VR nature exposure. <span class="pill amber">VR-tractable</span></li>
+              <li><strong>Lab analogue 3:</strong> van den Berg &amp; ter Heijne (2005) — combined backward digit span and mood ratings, larger N. <span class="pill amber">VR-tractable</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>7-to-10-week feasibility</th>
+          <td>With substitution to the Berman et al. or van den Berg et al. design, yes. Sample size is achievable with class-internal pilot subjects, and the VR scenes are already templated.</td>
+        </tr>
+        <tr>
+          <th>VOI on this topic</th>
+          <td><span class="pill amber">High</span> Two failed replications in non-WEIRD samples; a fresh lab-VR run with a UCSD undergraduate sample contributes meaningfully.</td>
+        </tr>
+      </table>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="cta teal" href="ka_fall_topic.html">Open the related topic page</a>
+        <a class="cta secondary" href="#evaluate">Try another paper</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Worked example — Path B: a paper not yet in the corpus</h2>
+    <p class="lead">The paper is not in the corpus, so the student uploads the PDF and the V7-Lite ingest pipeline runs before the evaluation.</p>
+
+    <div class="card">
+      <label class="field-label">DOI or paper title</label>
+      <div class="field-input" style="color:var(--ink-soft);">10.1037/xge0001234 · Lee, Park &amp; Schultz (2025) — Biophilic VR exposure and stress recovery in college students</div>
+      <div class="field-note" style="color:var(--amber-dk); font-weight:600;">Not in corpus — please upload the PDF to continue</div>
+      <div class="cta-row" style="margin-top:10px;">
+        <a class="cta secondary" href="#evaluate">Upload PDF</a>
+      </div>
+    </div>
+
+    <div class="card accent">
+      <div class="card-title">V7-Lite ingest results — Lee, Park &amp; Schultz (2025)</div>
+      <p style="font-size:0.82rem; color:var(--ink-soft); margin:0 0 6px;">Ingest took ~3 min. The full V7 pipeline (visual cropping, science-writer summary, full PNU extraction) is queued and will land in ~2 h.</p>
+      <table class="data">
+        <tr>
+          <th style="width:24%;">Paper-type classification</th>
+          <td>Empirical · between-subjects experiment · single lab.</td>
+        </tr>
+        <tr>
+          <th>Topic-fit</th>
+          <td>Closest corpus topic: <strong>Nature views and cognitive recovery</strong> (cosine similarity 0.82; threshold 0.55). <span class="pill amber">In topic-set</span></td>
+        </tr>
+        <tr>
+          <th>Related articles (5 nearest)</th>
+          <td>
+            <ul class="tight" style="margin:0 0 0 16px;">
+              <li><a class="link" href="ka_article_view.html?id=PDF-0007">Berman, Jonides &amp; Kaplan (2008)</a> · cosine 0.79</li>
+              <li><a class="link" href="ka_article_view.html?id=PDF-0034">Hartig et al. (1991)</a> · cosine 0.74</li>
+              <li><a class="link" href="ka_article_view.html?id=PDF-0211">van den Berg &amp; ter Heijne (2005)</a> · cosine 0.71</li>
+              <li><a class="link" href="ka_article_view.html?id=PDF-0011">Ulrich (1984)</a> · cosine 0.68</li>
+              <li><a class="link" href="ka_article_view.html?id=PDF-0089">Bratman et al. (2015)</a> · cosine 0.66</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>VOI on this topic (conditional)</th>
+          <td><span class="pill amber">Medium</span> The uploaded paper would replicate Berman et al. (2008) with biophilic-VR stimuli and a Korean undergraduate sample. It targets WEIRD-extension (Target 10) and better-stimuli (Target 1) jointly, but is partially redundant with three existing corpus runs.</td>
+        </tr>
+        <tr>
+          <th>Independent variable</th>
+          <td>Biophilic VR scene (real-vegetation photogrammetry) vs urban-VR scene · exposure duration 12 min. <span class="pill muted">No known confound flagged</span></td>
+        </tr>
+        <tr>
+          <th>Dependent variable</th>
+          <td>Salivary cortisol (pre vs post) plus backward digit span (pre vs post) plus the Perceived Restorativeness Scale.</td>
+        </tr>
+        <tr>
+          <th>DV &rarr; VR-suitability mapping</th>
+          <td>
+            <ul class="tight" style="margin:0 0 0 16px;">
+              <li>Salivary cortisol &rarr; <span class="pill muted">X5 biomarker</span> substitution: EDA + HRV from Family 4 (confirmed in lab).</li>
+              <li>Backward digit span &rarr; <span class="pill amber">F2 task-embedded</span> admissible as-is.</li>
+              <li>Perceived Restorativeness Scale &rarr; <span class="pill amber">F3 self-report</span> admissible as-is.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Recommendation</th>
+          <td><strong style="color:var(--teal);">Admit with substitution</strong> — replace salivary cortisol with EDA + HRV (lab-confirmed); keep backward digit span and PRS unchanged. The substituted design is fully VR-tractable in 7-10 weeks; the topic is medium-VOI as a partial replication with extension.</td>
+        </tr>
+      </table>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="cta teal" href="ka_fall_topic.html">Open the related topic page</a>
+        <a class="cta secondary" href="ka_fall_topic.html">Add this paper + topic to my short-list</a>
+        <a class="cta secondary" href="#evaluate">Try another paper</a>
+      </div>
+    </div>
+
+    <div class="card amber">
+      <div class="card-title" style="color:var(--amber-dk);">When V7-Lite rejects an upload</div>
+      <p style="font-size:0.9rem; color:var(--ink-mid);">A student uploads a paper on default-mode network connectivity during meditation. The classifier identifies it as empirical-fMRI; the embedding similarity to the nearest corpus topic ("attention restoration") is 0.41, below the 0.55 threshold. The system rejects the paper as out-of-scope, with this rationale:</p>
+      <p style="font-size:0.9rem; color:var(--ink-mid);"><em>"This paper is on neural correlates of meditation, a topic outside the current Atlas corpus on architectural cognition. The three closest corpus topics — attention restoration, mindfulness in built environments, and stress recovery — share some construct vocabulary but not the same intervention domain. Consider either picking from these closest corpus topics, or proposing your paper as a new-topic seed (instructor approval required)."</em></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Is this a worthwhile topic to study?</h2>
+    <p class="lead">The Value-of-Information panel appears alongside every evaluation. It answers, in plain terms, whether a new study on this topic would move the field.</p>
+    <div class="voi-panel">
+      <div class="voi-head">VOI · Nature views and cognitive recovery</div>
+      <p style="font-size:0.88rem; color:var(--ink-mid); margin:0;"><span class="pill amber">High</span> The marginal value of a new study in this area is high because:</p>
+      <ul>
+        <li>Two failed replications in non-WEIRD samples; a fresh sample contributes.</li>
+        <li>VR-mediated nature exposure has only three published runs; dose-response is unsettled.</li>
+        <li>No published study has tested the same effect with the new SR-MoCA cognitive battery; this is a methodological opening.</li>
+      </ul>
+      <div class="voi-formula">VOI = marginal expected reduction in uncertainty per study, ranked across topics.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>What happens next</h2>
+    <div class="card amber">
+      <p style="margin:0 0 4px;">If the evaluation admits your paper — directly or via substitution — carry it forward into your topic decision and your measure choice.</p>
+      <div class="cta-row" style="margin-top:10px;">
+        <a class="cta" href="ka_fall_topic.html">Go to the topic page</a>
+        <a class="cta teal" href="ka_choose_measure_for_vr.html">Choose a measure for your VR experiment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Bottom annotations ──────────────────────────────── -->
+  <div class="annotations">
+    <h2>Annotations — design commentary</h2>
+    <div class="annot-sub">For the instructor's review of the Fall journey. Not student-facing copy; sits at the bottom so the page above reads as a student would experience it.</div>
+
+    <h3>What this surface is</h3>
+    <p>Surface 4 of the nine-surface Week-1 journey: the admit-mode entry point for students who arrive already holding a paper — from a course, an outside reading, a recommendation — and want to know whether they can build their VR experiment around it. The system answers four questions. Are the paper's outcome measures VR-tractable as-is? If not, what substitute measures could probe the same construct? Do other papers in the corpus already test something similar in VR? Does the topic survive the 7-to-10-week project constraint? Surfaces 2 and 3 are the entry points for students who do not yet have a paper. The wireframe source is <code>ka_week1_wireframe_2026-05-17.html</code> §Surface 4.</p>
+
+    <h3>Admit-mode versus choice-mode</h3>
+    <p>The substitution skill is invoked twice in the COGS 160 Fall pipeline. First in <em>admit-mode</em> — this surface, Week 1 — answering whether a VR-tractable substitute exists for the paper's outcome measure, yes or no. Then again in <em>choice-mode</em> — Surface 4b, <code>ka_choose_measure_for_vr.html</code>, Week 3 — answering, given several admissible measures, which one the student should pick and what the trade-offs are. The two modes share the same knowledge base but expose different affordances. The distinction follows DK's 2026-05-18 comment that pruning and choice are distinct stages; the full argument is in <code>docs/USER_JOURNEY_COMMENTS_RESPONSE_2026-05-18.md</code> §5.</p>
+
+    <h3>The two-path architecture</h3>
+    <p>The two-path branching is the single most important addition from DK's 2026-05-18 review. The previous draft assumed every paper a student wants to evaluate already exists in the corpus — an unsafe assumption given that students bring papers from outside readings and the broader literature their professors recommend. <em>Path A</em> handles the in-corpus case: the system already has the paper's fingerprint, Toulmin warrants, theory tags, and IV/DV extraction, so the evaluation runs immediately against those records. The Ulrich (1984) example shows Path A. <em>Path B</em> handles the not-in-corpus case: the student uploads the PDF and a four-step ingest-decision pipeline runs — paper-type classification, an embedding-based topic-fit check against a calibrated cosine threshold, IV/DV extraction, and a VR-suitability mapping of the DV against the measurability taxonomy. Below-threshold uploads are rejected as out-of-scope with an explanatory rationale; plausible uploads with no topic match are offered as new-topic seeds for instructor review. The Lee, Park &amp; Schultz (2025) example shows a Path B admit-with-substitution; the meditation/default-mode-network card shows a Path B rejection.</p>
+
+    <h3>The V7-Lite pipeline</h3>
+    <p>V7-Lite is new infrastructure. It runs the minimum subset of stages needed for the admit-mode evaluation — fingerprint extraction, IV/DV identification, methods extraction, and VR-suitability mapping — while the full V7 pipeline (visual cropping, science-writer summary, full PNU extraction, Toulmin warrant decomposition) is queued asynchronously. The student's evaluation returns within minutes; the full ingest lands hours later and incrementally upgrades the article-viewer page for the uploaded paper. The rejection path must be explanatory rather than terse: a student who gets a rejection should understand why their paper falls outside the corpus and what they could do instead.</p>
+
+    <h3>Dependencies and what is mocked</h3>
+    <p>The substitution agent itself does not yet exist. Building it requires (a) the instrument registry to carry construct-operationalisation information uniformly across the corpus, (b) a ranking heuristic over candidate substitutes, and (c) an explanation generator that produces the prose evaluation. This is a substantial Codex prompt and should be the most urgent of the new builds. VR-tractability tags per measure require the VR-measurability content (Surface 6) in machine-readable form; the quick-reference table in <code>160sp/ka_vr_measurability_content_2026-05-18.md</code> includes short codes for that purpose, and a JSON sidecar should be derived from it. The 7-to-10-week feasibility check requires a small codified rule set (clinical population &rarr; no, multi-day exposure &rarr; no, fMRI &rarr; no, lab analogue with class-internal sample &rarr; yes). The V7-Lite ingest pipeline is owned by Codex and awaits a follow-up sprint prompt. The 0.55 cosine threshold shown is illustrative and needs per-topic calibration. Both worked examples on this page — Ulrich (1984) and Lee, Park &amp; Schultz (2025) — are hand-built; the DOI field, the upload action, and all evaluation tables are static until the backend lands.</p>
+
+    <h3>Open decisions</h3>
+    <p>Whether the surface should accept a free-text title or only a DOI — CW recommends both, with DOI taking priority and free text becoming a search. What the surface does when a paper falls outside the Atlas corpus — CW recommends refusing the evaluation for Week 1 to avoid over-promising, while still suggesting related corpus papers. Whether the Path B VOI computation should report conditional VOI (what would this paper add given the existing corpus?) or topic-level VOI (how saturated is this topic?) — both are needed, and the VOI panel should clarify which it produces in each context.</p>
+
+    <h3>Last updated</h3>
+    <p>2026-05-19. Built from the 2026-05-17 wireframe §Surface 4. Companion surfaces: <code>ka_fall_week1.html</code>, <code>ka_fall_dyk_browser.html</code>, <code>ka_fall_topic.html</code>, <code>ka_choose_measure_for_vr.html</code>, <code>ka_vr_measurability.html</code>, <code>ka_methodological_pitfalls.html</code>, <code>ka_validities_showcase.html</code>, <code>ka_vr_exemplars.html</code>, <code>ka_fall_week1_deliverable.html</code>.</p>
+  </div>
+
+</div>
+
+<div class="surface-foot">
+  <a href="ka_fall_week1.html">COGS 160 Fall · Week 1</a>
+  <a href="ka_journey_map.html">Journey map</a>
+</div>
+
+</body>
+</html>

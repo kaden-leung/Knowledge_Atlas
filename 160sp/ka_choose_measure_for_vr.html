@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose a Measure for VR · COGS 160 Fall</title>
+<link rel="stylesheet" href="ka_fall_journey.css">
+<script src="../ka_canonical_navbar.js" defer></script>
+<script src="../ka_user_type.js" defer></script>
+</head>
+<body data-ka-regime="160sp" data-ka-crumbs='[["COGS 160 Fall","ka_fall_week1.html"],["Week 3","ka_fall_week1.html"],["Choose a measure",""]]'>
+<div id="ka-navbar-slot"></div>
+<div id="ka-breadcrumb-slot"></div>
+
+<div class="surface-hero">
+  <div class="eyebrow">COGS 160 Fall · Week 3 hand-off · Choice-mode</div>
+  <h1>Choose a measure for your VR experiment</h1>
+  <p>Your topic is admissible in VR and several measures index the construct. By Week 3 you must commit to a measurement protocol. This surface lays the candidate measures side by side so the trade-offs — hardware, time, sensitivity, demand characteristics — are visible before you choose.</p>
+</div>
+
+<div class="phase-strip">
+  <span class="phase-pill done">Wk 1 · Find a topic</span>
+  <span class="phase-pill done">Wk 2 · Theory + hypothesis</span>
+  <span class="phase-pill current">Wk 3 · VR stimulus spec</span>
+  <span class="phase-pill">Wk 4 · Scene assembly</span>
+  <span class="phase-pill">Wk 5 · Design + protocol</span>
+  <span class="phase-pill">Wk 6 · Pre-registration</span>
+  <span class="phase-pill">Wk 7 · Implementation</span>
+  <span class="phase-pill">Wk 8 · Implementation</span>
+  <span class="phase-pill">Wk 9 · Pilot</span>
+  <span class="phase-pill">Wk 10 · Run + write</span>
+  <span class="phase-pill">Wk 11 · Submit</span>
+</div>
+
+<div class="wrap">
+
+  <div class="section">
+    <h2>From admissible to chosen</h2>
+    <p class="lead">Your topic survived admit-mode in Week 1 because at least one VR-tractable measure exists. The typical situation by Week 3 is that <em>multiple</em> admissible measures are on the table, each with a profile of psychometric strengths and weaknesses that only surface when the candidates are laid out side by side. This surface is that comparison. Every measure shown is admissible — the choice between them turns on the trade-offs.</p>
+  </div>
+
+  <div class="section">
+    <h2>Worked example — choose a measure: attention-restoration topic</h2>
+    <p class="lead">The student has chosen the attention-restoration topic. Four measures index the construct and are VR-feasible in a 7-to-10-week class envelope. The choice involves hardware, time, sensitivity, and exposure to demand characteristics.</p>
+
+    <div class="card accent">
+      <table class="data">
+        <tr>
+          <th style="width:16%;">Measure</th>
+          <th style="width:18%;">Indexes what</th>
+          <th style="width:15%;">Hardware required</th>
+          <th style="width:12%;">Time per participant</th>
+          <th style="width:19%;">Strengths</th>
+          <th style="width:20%;">Weaknesses to flag</th>
+        </tr>
+        <tr>
+          <td><strong>Pupillometry</strong><br><span style="font-size:0.78rem; color:var(--ink-soft);">marker of mental effort and arousal</span></td>
+          <td>Cognitive effort during a probe task before and after restoration exposure.</td>
+          <td>VR headset with integrated eye-tracking (Quest Pro, Vive Pro Eye, Varjo); <span class="pill amber">Quest 2 cannot</span></td>
+          <td>~25 min</td>
+          <td>Physiological, hard to fake. Reliable in repeated measures. Robust literature.</td>
+          <td>Confounded by ambient luminance; baseline drift across long sessions; cannot run on Quest 2 (lab hardware gating).</td>
+        </tr>
+        <tr>
+          <td><strong>SART</strong><br><span style="font-size:0.78rem; color:var(--ink-soft);">Sustained Attention to Response Task (Robertson et al. 1997)</span></td>
+          <td>Sustained-attention performance (lapses, omission errors) before vs after restoration exposure.</td>
+          <td>Any VR headset; no peripheral required.</td>
+          <td>~12 min per administration</td>
+          <td>Well-validated. Sensitive to attentional state. Hardware-agnostic — Quest 2 fine. Trivial to deploy.</td>
+          <td>Floor/ceiling effects depending on dosage and stimulus rate. Participants find it boring; motivational confound across sessions.</td>
+        </tr>
+        <tr>
+          <td><strong>PRS</strong><br><span style="font-size:0.78rem; color:var(--ink-soft);">Perceived Restorativeness Scale (Hartig, Kaiser &amp; Bowler 1997)</span></td>
+          <td>Self-reported perception that the environment was restorative.</td>
+          <td>Any VR headset; questionnaire admin within or outside VR.</td>
+          <td>~5 min</td>
+          <td>Trivial to administer. Established psychometric profile. Maps directly onto Attention Restoration Theory's four-factor structure.</td>
+          <td>Subjective; vulnerable to demand characteristics. Measures the participant's reportable experience, not the construct itself. Should not be used alone; pair with a behavioural measure.</td>
+        </tr>
+        <tr>
+          <td><strong>ANT</strong><br><span style="font-size:0.78rem; color:var(--ink-soft);">Attention Network Task (Fan et al. 2002)</span></td>
+          <td>Three independent attention networks (alerting, orienting, executive) before vs after restoration exposure.</td>
+          <td>Any VR headset; precise timing required.</td>
+          <td>~30 min</td>
+          <td>Decomposes attention into three independently measurable networks; restorative effects on the executive network are predicted, on alerting are not. The decomposition is itself the finding.</td>
+          <td>Long; subjects fatigue. VR-administered ANT has only a handful of validation studies; reaction-time precision in a head-mounted display is below CRT baseline.</td>
+        </tr>
+      </table>
+
+      <div class="card amber" style="margin-top:14px;">
+        <div class="card-title" style="color:var(--amber-dk);">Substitution skill recommendation</div>
+        <p style="font-size:0.9rem; color:var(--ink-mid); margin:0 0 6px;">For a 7-to-10-week class project, the skill ranks the <strong>SART + PRS pair</strong> first — combined behavioural and self-report converge on the construct, the pair is hardware-agnostic, and together they take ~17 min. <strong>Pupillometry</strong> is preferred if the lab has Quest Pro or equivalent (gold-standard physiological signal). <strong>ANT</strong> is most informative scientifically but expensive in subject time and harder to deploy reliably. <strong>PRS alone</strong> is discouraged — too vulnerable to demand characteristics for a credible class deliverable.</p>
+        <p style="font-size:0.82rem; color:var(--ink-soft); margin:0;">The ranking rationale is shown in plain language; each ranking element points back to the relevant entry on the <a class="link" href="ka_methodological_pitfalls.html">methodological-pitfalls page</a>.</p>
+      </div>
+
+      <div class="cta-row" style="margin-top:14px;">
+        <a class="cta" href="ka_methodological_pitfalls.html">Commit to SART + PRS</a>
+        <a class="cta secondary" href="#more-measures">See more candidate measures</a>
+        <a class="cta secondary" href="#more-measures">Export the measure-comparison table</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Bottom annotations ──────────────────────────────── -->
+  <div class="annotations">
+    <h2>Annotations — design commentary</h2>
+    <div class="annot-sub">For the instructor's review of the Fall journey. Not student-facing copy; sits at the bottom so the page above reads as a student would experience it.</div>
+
+    <h3>What this surface is</h3>
+    <p>Surface 4b of the nine-surface Week-1 journey: the choice-mode counterpart to Surface 4. A student has settled on a topic in Weeks 1-2; the topic survived admit-mode (Surface 4, <code>ka_evaluate_paper_for_vr.html</code>) because at least one VR-tractable measure exists. By Week 3 the student must commit to a stimulus and a measurement protocol, and the typical situation is that multiple admissible measures are on the table. This surface is the side-by-side comparison. It is reached from Surface 4 after admit-mode succeeds, or from the topic page at the Week-3 transition. The wireframe source is <code>ka_week1_wireframe_2026-05-17.html</code> §Surface 4b.</p>
+
+    <h3>Why it is a Week-3 surface</h3>
+    <p>CW treats Surface 4b as the Week-3 hand-off rather than a Week-1 surface proper. It is wireframed alongside Week 1 only because Weeks 2 and 3 are not yet wireframed, but it conceptually belongs to the Week-3 measure-selection step of the COGS 160 Fall arc. The phase strip on this page therefore marks Weeks 1 and 2 done and Week 3 current.</p>
+
+    <h3>Admit-mode versus choice-mode</h3>
+    <p>Where Surface 4 answers <em>can I run a study in VR on this topic?</em>, Surface 4b answers <em>given that I can, which measure will I commit to?</em>. The two questions are sometimes conflated in student thinking. Separating them sharpens the methodological reasoning: admit-mode is a corpus-wide question (does any path exist?); choice-mode is a within-project question (which path do I want?). The substitution skill is invoked here in <em>ranking</em> mode rather than <em>binary</em> mode — every visible measure is admissible, and the choice between them turns on the trade-offs. The full argument is in <code>docs/USER_JOURNEY_COMMENTS_RESPONSE_2026-05-18.md</code> §5.</p>
+
+    <h3>Why a ranking, not a single answer</h3>
+    <p>The recommendation is a ranking, not a single "best" measure. The choice-mode skill exposes its reasoning and never abstracts the trade-offs behind one answer, because the trade-offs are pedagogically the most valuable part of the surface. Each measure's profile is composed from two sources: the corpus-internal record (how the measure has been used in our papers, with what reliability) and the corpus-external psychometric record (Cronbach &alpha;, test-retest, known cultural specificity).</p>
+
+    <h3>Dependencies and what is mocked</h3>
+    <p>The choice-mode skill requires the planned construct-to-measure-to-VR-feasibility knowledge base (UJ-2 in TASKS.md); the attention-restoration example above is hand-built for the wireframe, and the real surface depends on panel input on confidence display and refusal criteria. The hardware-gating annotation (Quest 2 vs Quest Pro vs Vive Pro) requires a small machine-readable hardware profile per measure — CW proposes a single JSON file <code>data/vr_hardware_profile.json</code> that the skill reads. The cross-links to the methodological-pitfalls page require that page to exist with per-pitfall anchors; Surface 7 is itself blocked on panel review of the green/yellow/red tagging (UJ-6 in TASKS.md). The comparison table, the recommendation card, and the three CTAs are all static until those dependencies land.</p>
+
+    <h3>Open decisions</h3>
+    <p>Whether the surface should offer a "Commit" action that wires the selected measure into the student's project record, or remain advisory — CW recommends advisory-with-export for the first build, with the commit-action waiting for the student-project-record schema. When the student picks a measure the skill ranks lower, whether the system should push back or accept silently — CW recommends a soft pushback ("you chose ANT over SART+PRS; ANT is longer and harder to deploy — confirm you have lab time?") with a confirm-anyway option, since patronising the student is the worse failure.</p>
+
+    <h3>Last updated</h3>
+    <p>2026-05-19. Built from the 2026-05-17 wireframe §Surface 4b. Companion surfaces: <code>ka_fall_week1.html</code>, <code>ka_fall_dyk_browser.html</code>, <code>ka_fall_topic.html</code>, <code>ka_evaluate_paper_for_vr.html</code>, <code>ka_vr_measurability.html</code>, <code>ka_methodological_pitfalls.html</code>, <code>ka_validities_showcase.html</code>, <code>ka_vr_exemplars.html</code>, <code>ka_fall_week1_deliverable.html</code>.</p>
+  </div>
+
+</div>
+
+<div class="surface-foot">
+  <a href="ka_fall_week1.html">COGS 160 Fall · Week 1</a>
+  <a href="ka_journey_map.html">Journey map</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article View — Knowledge Atlas (Stub)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1C3D3A; --amber: #B45F14; --cream: #F7F4EF; --green: #2A7868;
+      --text: #2D2010; --muted: #6A5E50; --border: #DDD6CD;
+    }
+    body { font-family: Arial, sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
+    .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #163230 100%); padding: 56px 40px 48px; border-bottom: 3px solid var(--amber); }
+    .page-hero .eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #7AACA0; margin-bottom: 12px; }
+    .page-hero h1 { font-family: Georgia, serif; font-size: 2rem; font-weight: 400; color: #F5F0E8; line-height: 1.25; margin-bottom: 14px; }
+    .page-hero p { font-size: 1rem; color: #A8C8BF; line-height: 1.7; max-width: 720px; }
+    .container { max-width: 860px; margin: 0 auto; padding: 36px 32px 80px; }
+    .tbd-box { background: #FCEEDC; border: 1px dashed #B45F14; border-radius: 6px; padding: 18px 22px; margin-bottom: 28px; }
+    .tbd-box h2 { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 400; color: #B45F14; margin-bottom: 8px; }
+    .tbd-box p { font-size: 0.9rem; color: var(--text); line-height: 1.65; margin-bottom: 8px; }
+    .tbd-box ul { margin: 8px 0 8px 22px; color: var(--text); font-size: 0.9rem; line-height: 1.7; }
+    .meta { font-size: 0.84rem; color: var(--muted); margin-top: 14px; }
+    .back-link { display: inline-block; margin-top: 24px; color: var(--green); text-decoration: none; font-weight: 600; }
+    .back-link:hover { text-decoration: underline; }
+    code { font-family: Consolas, Monaco, monospace; font-size: 0.84rem; background: #EDE8E0; padding: 1px 5px; border-radius: 3px; }
+  </style>
+  <script src="../ka_canonical_navbar.js" defer></script>
+  <script src="../ka_user_type.js" defer></script>
+</head>
+<body data-ka-regime="160sp" data-ka-crumbs='[["Home","ka_student_setup.html"],["Article View","" ]]'>
+<div id="ka-navbar-slot"></div>
+<div id="ka-breadcrumb-slot"></div>
+
+<div class="page-hero">
+  <div class="eyebrow">Article View — Stub</div>
+  <h1>Per-Paper View — Coming Soon</h1>
+  <p>This page will show a single paper from the corpus: title, authors, abstract, extracted constructs and instruments, the warrant profile, and the substitution suggestions for a VR realisation.</p>
+</div>
+
+<div class="container">
+
+  <div class="tbd-box">
+    <h2>Status: Planned — Track 4 Final Report deliverable</h2>
+    <p>The per-paper view is being designed by Track 4 students as part of their final-report assignment. The Week-1 wireframe (see <a href="ka_week1_wireframe_2026-05-17.html">designer preview</a>) anchors paper rows to URLs of the form <code>ka_article_view.html?id=PDF-XXXX</code>, so when this page ships it will be drop-in compatible with the wireframe's hot-link contract.</p>
+    <p>What the finished page is expected to surface:</p>
+    <ul>
+      <li>Paper metadata: title, authors, year, venue, DOI, abstract.</li>
+      <li>Extracted constructs (IV and DV) with confidence display.</li>
+      <li>Instruments used in the original study.</li>
+      <li>Warrant profile from the V2 credence schema: severity, mechanism warrant, entrenchment, meta-analytic support, confounding profile.</li>
+      <li>Substitution suggestions if the construct is VR-tractable: candidate measures, ranked with rationale.</li>
+      <li>Cross-links to related papers in the topic cluster and to the cited/citing papers.</li>
+    </ul>
+    <p class="meta">Owner: Track 4 / CW + Codex coordination. See <code>TASKS.md</code> UJ-12 for the dependency on the short-list persistence schema and the hot-link URL contract, and UJ-A6 for the AG-V2-schema bridge document that this page will read from.</p>
+  </div>
+
+  <p style="color:var(--muted); font-size:0.9rem;">If you reached this page from the Week-1 wireframe, the link is intentional — the wireframe is the design preview, and this stub is the placeholder for the live page when it ships.</p>
+
+  <a class="back-link" href="ka_journey_map.html">← Back to the journey map</a>
+</div>
+</body>
+</html>

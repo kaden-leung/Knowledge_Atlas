@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COGS 160 Journey Map — Knowledge Atlas</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #1C3D3A;
+      --amber:  #B45F14;
+      --cream:  #F7F4EF;
+      --green:  #2A7868;
+      --text:   #2D2010;
+      --muted:  #6A5E50;
+      --border: #DDD6CD;
+      --light:  #EDE8E0;
+      --status-live: #2A7868;
+      --status-live-bg: #E3F4EC;
+      --status-progress: #B45F14;
+      --status-progress-bg: #FCEEDC;
+      --status-planned: #6A5E50;
+      --status-planned-bg: #F0EAE0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 500;
+      background: var(--navy); display: flex; align-items: center;
+      gap: 24px; padding: 0 28px; min-height: 52px;
+      border-bottom: 2px solid var(--amber);
+    }
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #163230 100%);
+      padding: 56px 40px 48px;
+      border-bottom: 3px solid var(--amber);
+    }
+    .page-hero .eyebrow {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #7AACA0; margin-bottom: 12px;
+    }
+    .page-hero h1 {
+      font-family: Georgia, serif; font-size: 2rem; font-weight: 400;
+      color: #F5F0E8; line-height: 1.25; margin-bottom: 14px;
+    }
+    .page-hero p {
+      font-size: 1rem; color: #A8C8BF; line-height: 1.7;
+      max-width: 760px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 32px 80px;
+    }
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 28px;
+      font-size: 0.84rem;
+    }
+    .status-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .status-live { background: var(--status-live-bg); color: var(--status-live); }
+    .status-progress { background: var(--status-progress-bg); color: var(--status-progress); }
+    .status-planned { background: var(--status-planned-bg); color: var(--status-planned); }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-top: 36px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--amber);
+    }
+    h2:first-of-type { margin-top: 0; }
+    .section-intro {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 780px;
+    }
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .journey-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .journey-card.progress { border-left-color: var(--status-progress); }
+    .journey-card.planned { border-left-color: var(--status-planned); background: #FAF7F2; }
+    .journey-card h3 {
+      font-size: 0.96rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .journey-card h3 a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted transparent;
+    }
+    .journey-card h3 a:hover {
+      border-bottom-color: var(--amber);
+    }
+    .journey-card .note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .journey-card .meta {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 10px 14px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+    .timeline .wk {
+      font-family: Georgia, serif;
+      font-size: 0.92rem;
+      color: var(--amber);
+      font-weight: 700;
+      padding-top: 4px;
+      text-align: right;
+    }
+    .timeline .row {
+      padding: 8px 12px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .timeline .row a {
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .timeline .row a:hover { text-decoration: underline; }
+    .top-banner {
+      background: #FCEEDC;
+      border: 1px dashed #B45F14;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #6A5E50;
+    }
+    .top-banner strong { color: #B45F14; }
+  </style>
+  <script src="../ka_canonical_navbar.js" defer></script>
+  <script src="../ka_user_type.js" defer></script>
+</head>
+<body data-ka-regime="160sp" data-ka-crumbs='[["Home","ka_student_setup.html"],["Journey Map",""]]'>
+<div id="ka-navbar-slot"></div>
+<div id="ka-breadcrumb-slot"></div>
+
+<div class="page-hero">
+  <div class="eyebrow">COGS 160 — Spring</div>
+  <h1>The Student Journey, In One Map</h1>
+  <p>This is the whole COGS 160 student journey, laid out so you can see where you are, what's already live, what's being built right now, and what is on the runway for later in the quarter. Pages marked "planned" are part of the design but not yet ready to use.</p>
+</div>
+
+<div class="container">
+
+  <div class="top-banner">
+    <strong>How to read this page.</strong> Each section below is a part of the journey. Cards with a green stripe are live and ready. Cards with an amber stripe are in active development and may be partial. Cards in cream with a grey stripe are planned but not yet started — they'll be wired in as the quarter develops. If you find a broken link, please tell the instructor — that's a bug, not a planned gap.
+  </div>
+
+  <div class="legend">
+    <span><span class="status-pill status-live">Live</span> Ready to use</span>
+    <span><span class="status-pill status-progress">In progress</span> Active development, partial content</span>
+    <span><span class="status-pill status-planned">Planned</span> Coming later in the quarter</span>
+  </div>
+
+  <h2>Getting started</h2>
+  <p class="section-intro">The pages every student hits in the first day or two.</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <h3><a href="ka_student_setup.html">Student Setup</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Default landing page for COGS 160 students. Pick your track, see the orientation overview, get your bearings.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_schedule.html">Syllabus & Schedule</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Week-by-week breakdown for the full quarter. Weeks 1–2 are fully scheduled; Weeks 3–10 show the phase structure with detail added as we go.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_student_profile.html">160 Student Profile</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Your account view inside the COGS 160 regime. Track-membership, assignment status, profile editing.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_dashboard.html">Dashboard</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Cohort-wide progress view. Layout is in place; deadline data is partly demo until the course tracker is wired to live assignment data.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_technical_setup.html">Technical Setup</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Account, repo, and tooling setup for students who need to push code or contribute back to the project.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_github_access.html">GitHub Access</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Per-student repo permissions and contribution flow. The page is up; the auto-provisioning step is still manual.</div>
+    </div>
+  </div>
+
+  <h2>Weekly agendas</h2>
+  <p class="section-intro">The instructor's plan for each class meeting. Weeks 1 and 2 are detailed; Weeks 3–8 carry the planned structure with deliverables filling in as the quarter develops.</p>
+  <div class="timeline">
+    <div class="wk">Week 1</div>
+    <div class="row"><a href="week1_agenda.html">Week 1 Agenda</a> <span class="status-pill status-live">Live</span> — Orientation, the Knowledge Atlas, track choice.</div>
+    <div class="wk">Week 2</div>
+    <div class="row"><a href="week2_agenda.html">Week 2 Agenda</a> <span class="status-pill status-live">Live</span>, with <a href="week2_exercises.html">exercises</a>, <a href="week2_quickstart.html">quickstart</a>, and <a href="week2_walkthrough.html">walkthrough</a>.</div>
+    <div class="wk">Week 3</div>
+    <div class="row"><a href="week3_agenda.html">Week 3 Agenda</a> <span class="status-pill status-live">Live</span> — Tracks split, assignment A1 begins.</div>
+    <div class="wk">Week 4</div>
+    <div class="row"><a href="week4_agenda.html">Week 4 Agenda</a> <span class="status-pill status-progress">In progress</span> — Phase structure posted; specific deliverables filling in.</div>
+    <div class="wk">Week 5</div>
+    <div class="row"><a href="week5_agenda.html">Week 5 Agenda</a> <span class="status-pill status-progress">In progress</span></div>
+    <div class="wk">Week 6</div>
+    <div class="row"><a href="week6_agenda.html">Week 6 Agenda</a> <span class="status-pill status-progress">In progress</span></div>
+    <div class="wk">Week 7</div>
+    <div class="row"><a href="week7_agenda.html">Week 7 Agenda</a> <span class="status-pill status-progress">In progress</span></div>
+    <div class="wk">Week 8</div>
+    <div class="row"><a href="week8_agenda.html">Week 8 Agenda</a> <span class="status-pill status-progress">In progress</span></div>
+  </div>
+
+  <h2>Assignments</h2>
+  <p class="section-intro">The cross-track assignments every student completes regardless of which track they join.</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <h3><a href="ka_article_finder_assignment.html">A0 — Article Finder</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">First-week assignment introducing the search vocabulary problem. Workbook plus pipeline-report submission.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_gui_assignment.html">A1 — GUI Critique</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Persona-and-scenario critique of the Knowledge Atlas interface, drawing on user-type and journey concepts.</div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_tag_assignment.html">Tagging Exercise</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Hands-on tagging of corpus articles. Used by Track 1 and as a shared cross-track exercise.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_vr_assignment.html">VR Paper Memo</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">VR-design memo with explicit VOI calculation. The VOI scoring rubric is marked "VOI: TBD — requires approval" pending the panel's recommendation.</div>
+    </div>
+  </div>
+
+  <h2>Tracks</h2>
+  <p class="section-intro">The four track-specific learning paths. Pick one in Week 1; you'll spend most of the quarter inside the track you chose.</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <h3><a href="t1_intro.html">Track 1 — Concept Tagging</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Tag articles in the corpus with construct, instrument, theory, and quality metadata. Intro plus three tasks plus <a href="t1_submissions.html">submissions</a>.</div>
+      <div class="meta">Pages: t1_intro · t1_task1 · t1_task2 · t1_task3 · t1_submissions · <a href="ka_track1_hub.html">hub</a> · <a href="ka_track1_setup.html">setup</a> · <a href="ka_track1_tagging.html">tagging tool</a></div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="t2_intro.html">Track 2 — Article Pipeline</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Run the article-acquisition pipeline end-to-end: find papers, propose them, see them through ingest. Intro plus three tasks plus <a href="t2_submissions.html">submissions</a>.</div>
+      <div class="meta">Pages: t2_intro · t2_task1 · t2_task2 · t2_task3 · t2_submissions · <a href="ka_track2_hub.html">hub</a> · <a href="ka_track2_setup.html">setup</a> · <a href="ka_track2_intake.html">intake</a> · <a href="ka_track2_pipeline.html">pipeline</a> · <a href="ka_track2_resources.html">resources</a></div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="t3_intro.html">Track 3 — VR Experiment</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Design and (if hardware permits) run a VR-based experiment on an architectural or environmental construct. Intro plus three tasks plus <a href="t3_submissions.html">submissions</a>.</div>
+      <div class="meta">Pages: t3_intro · t3_task1 · t3_task2 · t3_task3 · t3_submissions · <a href="ka_track3_hub.html">hub</a> · <a href="ka_track3_team_hub.html">team hub</a> · <a href="ka_track3_setup.html">setup</a> · <a href="ka_track3_vr.html">VR detail</a> · <a href="ka_track3_resources.html">resources</a></div>
+    </div>
+    <div class="journey-card">
+      <h3><a href="t4_intro.html">Track 4 — UX Design</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">Design or redesign pages of the Knowledge Atlas using a heuristic-audit, persona-panel, and usability-pilot toolkit. Intro plus three tasks plus <a href="t4_submissions.html">submissions</a>.</div>
+      <div class="meta">Pages: t4_intro · t4_task1 · t4_task2 · t4_task3 · t4_submissions · <a href="ka_track4_hub.html">hub</a> · <a href="ka_track4_setup.html">setup</a> · <a href="ka_track4_ux.html">UX detail</a> · <a href="ka_track4_persona_panel.html">persona panel</a></div>
+    </div>
+  </div>
+
+  <h2>Track 4 — full assignment ladder</h2>
+  <p class="section-intro">Track 4 is the most page-rich track because the assignments scaffold a complete UX-design pipeline. The ladder below is the order students work through.</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <h3><a href="ka_t4_a_heuristic_audit.html">A. Heuristic Audit</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_b_scenarios.html">B. Scenarios</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_b2_variant_evaluation.html">B2. Variant Evaluation</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_c_usability_pilot.html">C. Usability Pilot</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_d_severity_backlog.html">D. Severity Backlog</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_e_reproducibility.html">E. Reproducibility</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_f_redesign.html">F. Redesign</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_t4_g_final_report.html">G. Final Report</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+  </div>
+
+  <h2>Methodological surfaces</h2>
+  <p class="section-intro">Source-of-truth pages on the deeper methodological constructs the course leans on. Useful for any track; required at specific points in the assignment flow.</p>
+  <div class="journey-grid">
+    <div class="journey-card progress">
+      <h3>VR Measurability (Surface 6) <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Content drafted at <code>160sp/ka_vr_measurability_content_2026-05-18.md</code>. HTML rendering pending (Sprint UJ-1b). Will live at <code>ka_vr_measurability.html</code>.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3>Cook &amp; Campbell Four Validities (Surface 7b) <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Content drafted at <code>160sp/ka_validities_showcase_content_2026-05-18.md</code>. HTML rendering pending. Companion self-check page <a href="ka_validities_self_check.html">ka_validities_self_check.html</a> is a stub.</div>
+    </div>
+    <div class="journey-card planned">
+      <h3>Methodological Pitfalls (Surface 7) <span class="status-pill status-planned">Planned</span></h3>
+      <div class="note">~5,000-word content drafting blocked on VOI panel review (Sprint UJ-6, UJ-H). Will cover Cook-Campbell threats, replication-crisis pitfalls, construct validity, sample bias, VR-specific pitfalls.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_paper_quality_walkthrough.html">Paper Quality Walkthrough</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Interactive 22-node decision tree for the paper-quality fingerprint. Walkthrough page is live; the decision-tree wiring depends on the instructor completing the M1 calibration pass.</div>
+    </div>
+  </div>
+
+  <h2>Reference pages</h2>
+  <p class="section-intro">Pages students may reach via context-specific links rather than top-level navigation.</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <h3><a href="ka_google_search_guide.html">Google Search Guide</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_collect_articles.html">Collect Articles</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ex0_mechanism_pathway_tracer.html">Mechanism Pathway Tracer (Ex0)</a> <span class="status-pill status-live">Live</span></h3>
+    </div>
+    <div class="journey-card">
+      <h3><a href="ka_sitemap.html">Sitemap (full)</a> <span class="status-pill status-live">Live</span></h3>
+      <div class="note">The complete file inventory. This page is the human-readable summary; the sitemap is the engineering version.</div>
+    </div>
+  </div>
+
+  <h2>Fall Week-1 Journey</h2>
+  <p class="section-intro">The nine-surface goal-driven journey COGS 160 Fall students follow in Week 1 — find a topic, evaluate it for VR, commit a deliverable. These pages are built from the May-17 wireframe; they are page-complete and content-complete but not yet wired to the live corpus, so they are marked In progress.</p>
+  <div class="journey-grid">
+    <div class="journey-card progress">
+      <h3><a href="ka_fall_week1.html">Surface 1 — Week-1 Landing</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">The hub. Three working modes plus supporting reading and the Week-1 exit criteria.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_fall_dyk_browser.html">Surface 2 — Did-You-Know Browser</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Surprising findings as cards, filterable by topic family and VR-tractability.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_fall_topic.html">Surface 3 — Per-Topic Page</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Meta-review, ranked anchor papers, a persistent short-list, and the commit action.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_evaluate_paper_for_vr.html">Surface 4 — Evaluate a Paper (admit-mode)</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Two paths: paper in corpus (immediate evaluation) or uploaded (V7-Lite ingest).</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_choose_measure_for_vr.html">Surface 4b — Choose a Measure (choice-mode)</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Week-3 hand-off. Side-by-side measure comparison with a ranked recommendation.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_vr_measurability.html">Surface 6 — VR Measurability</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">What VR can and cannot measure. Source-of-truth explainer; Surface 5 (VOI panel) is embedded inside Surfaces 2, 3, and 4.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_methodological_pitfalls.html">Surface 7 — Methodological Pitfalls</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Threats to anticipate and standards a short project can meet.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_validities_showcase.html">Surface 7b — Cook &amp; Campbell's Four Validities</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">The canonical validity taxonomy with a contested-finding worked example.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_vr_exemplars.html">Surface 8 — Exemplary VR Experiments</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Eight role-model studies, each with the feature worth imitating.</div>
+    </div>
+    <div class="journey-card progress">
+      <h3><a href="ka_fall_week1_deliverable.html">Surface 9 — Week-1 Deliverable</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Deliverable capture: topic, rationale, bibliography, and the pre-submission self-check.</div>
+    </div>
+  </div>
+
+  <h2>Designer reference</h2>
+  <p class="section-intro">The original wireframe the nine surfaces above were built from. Kept for reference.</p>
+  <div class="journey-grid">
+    <div class="journey-card progress">
+      <h3><a href="ka_week1_wireframe_2026-05-17.html">Week-1 Wireframe (May 17 revision)</a> <span class="status-pill status-progress">In progress</span></h3>
+      <div class="note">Single-document paper-fidelity wireframe with the full annotations, dependencies, and design decisions for all nine surfaces.</div>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:48px; color:var(--muted); font-size:0.84rem;">Last updated 2026-05-19. If something here is wrong, tell the instructor — it's a bug, not a planned gap.</p>
+
+</div>
+</body>
+</html>
