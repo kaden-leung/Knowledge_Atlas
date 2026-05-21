@@ -259,4 +259,10 @@ a.link:hover { text-decoration: underline; }
 @media (max-width: 720px) {
   .surface-hero, .phase-strip, .wrap, .surface-foot { padding-left: 20px; padding-right: 20px; }
   .card-grid { grid-template-columns: 1fr; }
+  table.data {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
