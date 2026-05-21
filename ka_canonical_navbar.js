@@ -315,6 +315,9 @@
       .ka-breadcrumb .sep { color:#B0A898; }
 
       @media (max-width:720px) {
+        .ka-nav { gap:8px; padding-left:8px; padding-right:8px; }
+        .ka-nav .ka-center { margin-left:4px; }
+        .ka-nav .ka-right { gap:6px; }
         .ka-nav .ka-regime-tag { display:none; }
         .ka-nav a.ka-link { padding:6px 8px; }
         .ka-nav .ka-btn { padding:5px 10px; font-size:.76rem; }
