@@ -61,6 +61,13 @@
   .measure-table th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#6A7D77;background:#F8F6F1}
   .measure-table td:first-child{font-weight:700;color:#173D36}
   .pnu-body{background:#F7FBF9;border-left:3px solid #2A7868;padding:12px 14px;border-radius:0 8px 8px 0}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .gallery-card{background:#F8F6F1;border:1px solid #E0D8CC;border-radius:9px;overflow:hidden}
+  .gallery-card img{display:block;width:100%;height:150px;object-fit:cover;background:#EFE8DB}
+  .gallery-copy{padding:12px 13px}
+  .gallery-copy p{font-size:.9rem;color:#40514D}
+  .result-surface{display:grid;grid-template-columns:minmax(180px,280px) minmax(0,1fr);gap:14px;align-items:start}
+  .result-surface img{display:block;width:100%;max-height:220px;object-fit:contain;background:#EFE8DB;border-radius:8px;border:1px solid #E0D8CC}
   .empty-state{background:#fff;border:1.5px solid #F5D09F;border-radius:16px;padding:24px 28px}
   .empty-state h2{font-family:Georgia,serif;color:#9A5010;margin-bottom:8px}
   .empty-state p{color:#6B6B6B}
@@ -79,6 +86,7 @@
     .page-shell{padding:14px 14px 30px}
     .article-title{font-size:1.44rem}
     .summary-blocks{grid-template-columns:1fr}
+    .result-surface{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -617,6 +625,34 @@ function updateTocActive() {
               <summary>Open the longer PNU reading</summary>
               <div class="more-body">${paragraphize(pnu.long_summary)}</div>
             </details>` : ''}
+        </section>
+
+        <section class="section" id="visual-support-gallery">
+          <div class="subhead">Evidence surfaces</div>
+          <h2>Visual support gallery</h2>
+          ${renderVisualGallery(visualGallery)}
+          ${technicalSurface ? `
+            <div style="margin-top:14px">
+              <h3>Technical result surface</h3>
+              ${renderTechnicalSurface(technicalSurface)}
+            </div>` : ''}
+        </section>
+
+        <section class="section" id="study-record">
+          <div class="subhead">Payload provenance</div>
+          <h2>Study record</h2>
+          <div class="summary-blocks">
+            <div class="soft-box">
+              <h3>Article metadata</h3>
+              <p><b>Primary topic:</b> ${esc(article.primary_topic || 'pending')}</p>
+              <p><b>Completion status:</b> ${esc(completionStatus || 'payload record')}</p>
+              <p><b>Source:</b> ${sourcePdfPath ? esc(sourcePdfPath) : 'source path pending'}</p>
+            </div>
+            <div class="soft-box">
+              <h3>Panel basis</h3>
+              ${renderPnuPanelBasis(pnu.panel_basis || detail.panel_basis || [])}
+            </div>
+          </div>
         </section>
       </div>
   `;
