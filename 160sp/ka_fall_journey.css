@@ -266,3 +266,173 @@ a.link:hover { text-decoration: underline; }
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ===================================================================
+   Journey step navigation — injected by ka_fall_journey_nav.js.
+   A persistent left rail listing all ten Week-1 surfaces, plus a
+   previous / continue control at the foot of the content column.
+   =================================================================== */
+
+/* ── Two-column shell ──────────────────────────────────── */
+.journey-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: start;
+}
+.journey-shell .wrap {
+  max-width: none;
+  margin: 0;
+}
+
+/* ── Left rail ─────────────────────────────────────────── */
+.journey-nav {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+  margin: 32px 0 0 40px;
+  padding: 16px 14px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  max-height: calc(100vh - 104px);
+  overflow-y: auto;
+}
+.journey-nav-head {
+  font-family: Georgia, serif;
+  font-size: 1.02rem;
+  color: var(--navy);
+}
+.journey-nav-progress {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+.journey-nav-group {
+  font-family: Georgia, serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 14px 0 4px;
+}
+.journey-nav-group:first-of-type { margin-top: 6px; }
+.journey-nav-item {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 7px 9px;
+  border-left: 3px solid transparent;
+  border-radius: 6px;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--ink-mid);
+  text-decoration: none;
+}
+.journey-nav-item:hover { background: var(--cream); color: var(--navy); }
+.journey-nav-num {
+  flex: 0 0 19px;
+  text-align: center;
+  line-height: 19px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: #BFB8AA;
+  border-radius: 999px;
+}
+.journey-nav-item.done .journey-nav-num { background: var(--teal); }
+.journey-nav-item.current {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  color: var(--navy);
+  font-weight: 700;
+}
+.journey-nav-item.current .journey-nav-num { background: var(--amber); }
+.journey-nav-map {
+  display: block;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+}
+.journey-nav-map:hover { text-decoration: underline; }
+
+/* ── Previous / continue control ───────────────────────── */
+.journey-prevnext {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+.journey-pn {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+}
+.journey-pn-prev { background: var(--paper); color: var(--ink-mid); }
+.journey-pn-prev:hover { background: var(--cream); }
+.journey-pn-next {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #fff;
+  text-align: right;
+}
+.journey-pn-next:hover { background: var(--amber-dk); }
+.journey-pn-done { background: var(--teal); border-color: var(--teal); }
+.journey-pn-done:hover { background: #1F5A4E; }
+.journey-pn-dir {
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.journey-pn-prev .journey-pn-dir { color: var(--amber); }
+.journey-pn-label { font-family: Georgia, serif; font-size: 1.02rem; }
+.journey-pn-empty { flex: 1 1 220px; visibility: hidden; }
+
+/* ── Responsive: collapse the rail to a horizontal strip ── */
+@media (max-width: 860px) {
+  .journey-shell { display: block; }
+  .journey-nav {
+    position: static;
+    margin: 0;
+    max-height: none;
+    border-radius: 0;
+    border-width: 1px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .journey-nav-head,
+  .journey-nav-progress,
+  .journey-nav-group,
+  .journey-nav-map { display: none; }
+  .journey-nav-item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 4px;
+    padding: 6px 9px;
+  }
+  .journey-nav-item.current {
+    border-left-color: transparent;
+    border-bottom-color: var(--amber);
+  }
+  .journey-pn-next { text-align: left; }
+}
