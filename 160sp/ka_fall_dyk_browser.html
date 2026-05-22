@@ -3,169 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Did You Know? — Topic browser · COGS 160 Fall</title>
-<link rel="stylesheet" href="ka_fall_journey.css?v=20260521b">
+<title>Explore research topics &middot; COGS 160 Fall</title>
+<link rel="stylesheet" href="ka_fall_journey.css?v=20260521c">
 <script src="../ka_canonical_navbar.js" defer></script>
 <script src="../ka_user_type.js" defer></script>
-<script src="ka_fall_journey_nav.js?v=20260521b" defer></script>
+<script src="ka_fall_journey_nav.js?v=20260521c" defer></script>
 </head>
-<body data-ka-regime="160sp" data-ka-crumbs='[["COGS 160 Fall","ka_fall_week1.html"],["Week 1","ka_fall_week1.html"],["Did-You-Know browser",""]]'>
+<body data-ka-regime="160sp" data-ka-crumbs='[["COGS 160 Fall","ka_fall_week1.html"],["Week 1","ka_fall_week1.html"],["Explore topics",""]]'>
 <div id="ka-navbar-slot"></div>
 <div id="ka-breadcrumb-slot"></div>
 
 <div class="surface-hero">
-  <div class="eyebrow">COGS 160 Fall · Week 1 · Find a topic</div>
-  <h1>Did You Know? — Surprising findings across the corpus</h1>
-  <p>Each card surfaces one finding from a recent paper. Filter by topic family and by whether the finding can be tested in VR, then click a card to open the topic page where you can decide whether to anchor your experiment there.</p>
+  <div class="eyebrow">COGS 160 Fall &middot; Week 1 &middot; Find a topic</div>
+  <h1>Explore research topics</h1>
+  <p>You do not need a topic yet &mdash; this is where you find one. Each card below is a research area in the psychology of built space. Skim them, open &ldquo;More like this&rdquo; to see the kind of findings inside an area, and when one pulls at you, explore it in depth.</p>
 </div>
 
 <div class="phase-strip">
-  <span class="phase-pill current">Wk 1 · Find a topic</span>
-  <span class="phase-pill">Wk 2 · Theory + hypothesis</span>
-  <span class="phase-pill">Wk 3 · VR stimulus spec</span>
-  <span class="phase-pill">Wk 4 · Scene assembly</span>
-  <span class="phase-pill">Wk 5 · Design + protocol</span>
-  <span class="phase-pill">Wk 6 · Pre-registration</span>
-  <span class="phase-pill">Wk 7 · Implementation</span>
-  <span class="phase-pill">Wk 8 · Implementation</span>
-  <span class="phase-pill">Wk 9 · Pilot</span>
-  <span class="phase-pill">Wk 10 · Run + write</span>
-  <span class="phase-pill">Wk 11 · Submit</span>
+  <span class="phase-pill current">Wk 1 &middot; Find a topic</span>
+  <span class="phase-pill">Wk 2 &middot; Theory + hypothesis</span>
+  <span class="phase-pill">Wk 3 &middot; VR stimulus spec</span>
+  <span class="phase-pill">Wk 4 &middot; Scene assembly</span>
+  <span class="phase-pill">Wk 5 &middot; Design + protocol</span>
+  <span class="phase-pill">Wk 6 &middot; Pre-registration</span>
+  <span class="phase-pill">Wk 7 &middot; Implementation</span>
+  <span class="phase-pill">Wk 8 &middot; Implementation</span>
+  <span class="phase-pill">Wk 9 &middot; Pilot</span>
+  <span class="phase-pill">Wk 10 &middot; Run + write</span>
+  <span class="phase-pill">Wk 11 &middot; Submit</span>
 </div>
 
 <div class="wrap">
 
   <div class="section">
-    <h2>Browse surprising findings</h2>
-    <p class="lead">Cards that cannot be tested in a short VR project are shown greyed and explicitly flagged — read them for context, but they are not candidate topics.</p>
+    <h2>Twenty areas, one starting point</h2>
+    <p class="lead">Most students arrive without a topic, and that is fine &mdash; the point of this week is to read around until something genuinely interests you. Each card is one research area. The badge tells you whether it can be tested in a short VR study. Use the filter to narrow by family.</p>
 
-    <div class="filter-bar">
-      <span class="filter-label">Topic family:</span>
-      <span class="filter-chip active">All</span>
-      <span class="filter-chip">Daylight × attention</span>
-      <span class="filter-chip">Soundscape × stress</span>
-      <span class="filter-chip">Biophilia × restoration</span>
-      <span class="filter-chip">Spatial form × navigation</span>
-      <span class="filter-chip">Ceiling × processing style</span>
-    </div>
-
-    <div class="filter-bar">
-      <span class="filter-label">VR-tractability:</span>
-      <span class="filter-chip active amber">VR-tractable only</span>
-      <span class="filter-chip">All findings</span>
+    <div class="filter-bar" id="topic-filter">
+      <span class="filter-label">Family:</span>
+      <button class="filter-chip active" type="button" data-fam="all">All 20</button>
+      <button class="filter-chip" type="button" data-fam="nature">Nature &amp; restoration</button>
+      <button class="filter-chip" type="button" data-fam="light">Light &amp; daylight</button>
+      <button class="filter-chip" type="button" data-fam="sound">Sound &amp; acoustics</button>
+      <button class="filter-chip" type="button" data-fam="space">Space &amp; form</button>
+      <button class="filter-chip" type="button" data-fam="wayfinding">Wayfinding</button>
+      <button class="filter-chip" type="button" data-fam="social">Social space</button>
+      <button class="filter-chip" type="button" data-fam="comfort">Comfort</button>
     </div>
   </div>
 
   <div class="section">
-    <h2>Findings</h2>
-
-    <div class="card accent">
-      <p><strong>Did you know?</strong> Office workers in spaces with views of vegetation show 12% faster recovery from cognitive load tasks than those in views-of-built-environment offices (Kaplan &amp; Kaplan, 1989; replicated three times in lab, twice in field).</p>
-      <div style="margin:8px 0;">
-        <span class="pill">Biophilia × restoration</span>
-        <span class="pill amber">VR-tractable</span>
-        <span class="badge">VOI: high</span>
-      </div>
-      <div class="cta-row">
-        <a class="cta" href="ka_fall_topic.html">Explore this topic</a>
-        <a class="cta secondary" href="ka_fall_topic.html#short-list">Add to short-list</a>
-        <a class="cta secondary" href="ka_evaluate_paper_for_vr.html">Find related papers</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <p><strong>Did you know?</strong> The blue-light component of daylight measurably advances circadian rhythm within a single morning's exposure — by ~30 minutes per 10,000 lux-hours (Brainard et al., 2001; meta-analysed in 2018).</p>
-      <div style="margin:8px 0;">
-        <span class="pill">Daylight × circadian</span>
-        <span class="pill muted">Not VR-tractable</span>
-        <span class="badge">VOI: medium</span>
-      </div>
-      <p class="cta-hint">VR cannot reproduce the relevant lux levels; this finding is foundational for context but not a candidate topic.</p>
-      <div class="cta-row">
-        <a class="cta secondary" href="ka_fall_topic.html#short-list">Add to short-list (for reference)</a>
-        <a class="cta secondary" href="ka_vr_measurability.html">Why is this not VR-tractable?</a>
-      </div>
-    </div>
-
-    <div class="card accent">
-      <p><strong>Did you know?</strong> Speech intelligibility of 60% or higher in an open-plan office produces measurable working-memory impairment regardless of overall loudness (Jones &amp; Macken, 1993; Hongisto, 2005).</p>
-      <div style="margin:8px 0;">
-        <span class="pill">Soundscape × cognition</span>
-        <span class="pill amber">VR-tractable</span>
-        <span class="badge">VOI: high</span>
-      </div>
-      <div class="cta-row">
-        <a class="cta" href="ka_fall_topic.html">Explore this topic</a>
-        <a class="cta secondary" href="ka_fall_topic.html#short-list">Add to short-list</a>
-        <a class="cta secondary" href="ka_evaluate_paper_for_vr.html">Find related papers</a>
-      </div>
-    </div>
-
-    <div class="card accent">
-      <p><strong>Did you know?</strong> Ceiling height of ≥3.0m biases participants toward associative, divergent thinking; ceiling height of ≤2.4m biases toward focal, analytic thinking (Meyers-Levy &amp; Zhu, 2007). Two replication attempts have produced mixed results.</p>
-      <div style="margin:8px 0;">
-        <span class="pill">Ceiling × processing style</span>
-        <span class="pill amber">VR-tractable</span>
-        <span class="badge">VOI: high</span>
-        <span class="badge contested">Contested</span>
-      </div>
-      <div class="cta-row">
-        <a class="cta" href="ka_fall_topic.html">Explore this topic</a>
-        <a class="cta secondary" href="ka_fall_topic.html#short-list">Add to short-list</a>
-        <a class="cta secondary" href="ka_evaluate_paper_for_vr.html">Find related papers</a>
-        <a class="cta secondary" href="ka_validities_showcase.html">Why is this contested?</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Value of new research in this area</h2>
-    <p class="lead">When you open a topic, a VOI panel like this one tells you whether a fresh study would be worthwhile. A COGS 160 Fall student should not choose a Low-VOI topic without an explicit reason.</p>
-    <div class="voi-panel">
-      <div class="voi-head">VOI · Nature views and cognitive recovery</div>
-      <p style="font-size:0.88rem; color:var(--ink-mid); margin:4px 0;"><span class="pill amber">High</span> Marginal value of a new study in this area is high because:</p>
-      <ul>
-        <li>Two failed replications in non-WEIRD samples; a fresh sample contributes.</li>
-        <li>VR-mediated nature exposure has only three published runs; dose-response is unsettled.</li>
-        <li>No published study has tested the same effect with the new SR-MoCA cognitive battery; this is a methodological opening.</li>
-      </ul>
-      <div class="voi-formula">VOI = marginal expected reduction in uncertainty per study, ranked across topics.</div>
-    </div>
+    <div class="topic-grid" id="topic-grid"><!-- cards rendered by script below --></div>
   </div>
 
   <!-- ── Bottom annotations ──────────────────────────────── -->
   <div class="annotations">
-    <h2>Annotations — design commentary</h2>
+    <h2>Annotations &mdash; design commentary</h2>
     <div class="annot-sub">For the instructor's review of the Fall journey. Not student-facing copy; sits at the bottom so the page above reads as a student would experience it.</div>
 
     <h3>What this surface is</h3>
-    <p>Surface 2 of the nine-surface Week-1 journey: the Did-You-Know topic browser, reached from Surface 1 via "Browse Did-You-Know cards." Each card surfaces one finding; the new Week-1 affordances are the VR-tractability badge and the topic-family filter. The wireframe source is <code>ka_week1_wireframe_2026-05-17.html</code> §Surface 2.</p>
+    <p>Surface 2 of the Week-1 journey, rebuilt 2026-05-21 from a &ldquo;Did-You-Know&rdquo; surprising-findings browser into a topic browser. The earlier version showed four finding cards and a VOI panel; per DK it was replaced because Fall students do not yet know the field well enough to recognise a topic from a single finding. The surface now shows twenty research-area cards in the home-page card idiom, each with a plain-language hook.</p>
 
-    <h3>The two filters</h3>
-    <p>The topic-family filter and the VR-tractability filter at the top let the student narrow without abandoning the browse mode. Cards that are not VR-tractable are shown greyed and explicitly flagged rather than hidden — CW recommends shown-greyed for pedagogical reasons, so the student sees what is in the broader literature even if they cannot test it themselves. The "Contested" badge marks findings with a mixed replication record; for Week 1 a contested finding is often a good target but requires careful framing.</p>
-
-    <h3>The card CTAs</h3>
-    <p>Each card carries three or four outbound CTAs (DK 2026-05-18 revision). "Explore this topic" opens Surface 3, the per-topic page where the student builds a bibliography. "Add to short-list" persists the topic to the student's logged-in short-list without leaving the browser, so candidates can be collected and decided later rather than committed at first glance. "Find related papers" jumps to Surface 4 (evaluate-a-paper) pre-populated with this card's anchor citation. Contested cards carry a fourth CTA, "Why is this contested?", opening the contested-finding rationale on the validities showcase.</p>
+    <h3>The &ldquo;More like this&rdquo; affordance</h3>
+    <p>Each card carries a &ldquo;More like this&rdquo; control. Selecting it expands the page in place: a full-width panel of five key-finding cards opens directly beneath the row of the card that was clicked, so the student does not lose their place. Selecting it again collapses the panel; opening a different card's findings closes any panel already open. Six of the twenty topics have their five finding cards written (Nature views, Daylight, Background speech, Ceiling height, Curved vs. angular, Crowding); the remaining fourteen show a short placeholder until their findings are authored.</p>
 
     <h3>What is mocked</h3>
-    <p>The four cards use illustrative findings; production should show 8–12 cards with a load-more affordance. The VR-tractability flag per card is editorial until the substitution-agent infrastructure (Surface 4 dependency) exists — an instructor or CW tags each card by hand. The VOI badge depends on the VOI operationalisation work (Surface 5 dependency). The card design borrows from the existing DYK work in <code>data/ka_payloads/did_you_know.json</code> and the writing contract at <code>docs/DID_YOU_KNOW_SCIENCE_WRITING_CONTRACT_2026-05-16.md</code>.</p>
-
-    <h3>Dependencies</h3>
-    <p>The topic-family filter requires a canonical topic-family taxonomy; the existing crosswalk has the topics, but whether the five families shown here are the right grouping is itself a design decision. The VR-tractability flag depends on the substitution-agent infrastructure. The VOI badge depends on the VOI operationalisation document (<code>docs/VOI_OPERATIONALISATION_THINKING_2026-05-17.md</code>, forthcoming). Nothing on this page is wired to the live corpus yet.</p>
+    <p>All twenty topics are real environmental-psychology research areas and the hooks and findings are written from the actual literature, but the page is not yet wired to the live corpus &mdash; topic membership, finding counts, and VR-tractability flags are editorial. &ldquo;Explore this topic&rdquo; routes every card to the single worked per-topic page (<code>ka_fall_topic.html</code>); production parameterises that page per topic. The family filter is live and client-side.</p>
 
     <h3>Open decisions</h3>
-    <p>How many cards to show at once — the mock shows four; production should probably show 8–12 with a load-more affordance, with card height tuned tall enough to read the finding without expanding and short enough to scan eight at once. Whether non-VR-tractable cards should be hidden by default or shown greyed — CW recommends shown-greyed; that decision is reflected here.</p>
+    <p>Whether twenty is the right number on one page or whether the grid should paginate past, say, twelve. Whether the fourteen not-yet-deep topics should be visually marked as lighter-weight, or left identical so the asymmetry is invisible to students. Whether VR-partial topics (daylight, indoor plants, thermal comfort) should be filtered out of Week-1 candidacy or kept with the partial flag, as here.</p>
 
     <h3>Last updated</h3>
-    <p>2026-05-19. Built from the 2026-05-17 wireframe. Companion surfaces: <code>ka_fall_week1.html</code>, <code>ka_fall_topic.html</code>, <code>ka_evaluate_paper_for_vr.html</code>, <code>ka_vr_measurability.html</code>, <code>ka_validities_showcase.html</code>.</p>
+    <p>2026-05-21. Companion surfaces: <code>ka_fall_week1.html</code>, <code>ka_fall_topic.html</code>, <code>ka_evaluate_paper_for_vr.html</code>, <code>ka_vr_measurability.html</code>.</p>
   </div>
 
 </div>
 
 <div class="surface-foot">
-  <a href="ka_fall_week1.html">COGS 160 Fall · Week 1</a>
+  <a href="ka_fall_week1.html">COGS 160 Fall &middot; Week 1</a>
   <a href="ka_journey_map.html">Journey map</a>
 </div>
+
+<script>
+/* Surface 2 — topic browser. Twenty research-area cards; six carry five
+   key-finding cards each, revealed in place by "More like this". */
+(function () {
+  'use strict';
+
+  var TOPICS = [
+    { id: 1, fam: 'nature', famL: 'Nature &amp; restoration', vr: 'full',
+      title: 'Nature views and cognitive recovery',
+      hook: 'After focused work drains your attention, a few minutes looking at greenery can measurably restore it. Hospital patients with a window onto trees have even been found to recover faster than those facing a brick wall.',
+      findings: [
+        'A walk in a park beat a walk along a busy street: in a classic study the nature walk improved scores on a demanding memory task, the city walk did not (Berman, Jonides &amp; Kaplan, 2008).',
+        'The dose can be tiny. A 40-second micro-break looking at a flowering green roof restored sustained attention better than the same break spent looking at a bare concrete roof (Lee et al., 2015).',
+        'It shows up in real outcomes: surgical patients whose window faced trees rather than a brick wall left hospital sooner and asked for fewer painkillers (Ulrich, 1984).',
+        'Simulated nature works too &mdash; photographs, video, and VR forests all produce some recovery &mdash; but the effect is usually weaker than being in real nature.',
+        'Not all greenery is equal. The benefit depends on a scene holding gentle, effortless interest; bland low-interest nature can produce little effect, and researchers still debate the right dose.'
+      ] },
+    { id: 2, fam: 'nature', famL: 'Nature &amp; restoration', vr: 'partial',
+      title: 'Indoor plants and stress reduction',
+      hook: 'Adding real plants to a room lowers self-reported stress and can nudge down blood pressure and heart rate. The effect is small but turns up repeatedly across offices, classrooms, and hospital rooms.',
+      findings: [] },
+    { id: 3, fam: 'nature', famL: 'Nature &amp; restoration', vr: 'full',
+      title: 'Natural materials and a calm room',
+      hook: 'Rooms finished in visible wood grain and other natural materials are rated as warmer and calmer, and some studies record a gentler stress response, than the same rooms in synthetic finishes.',
+      findings: [] },
+    { id: 4, fam: 'nature', famL: 'Nature &amp; restoration', vr: 'full',
+      title: 'Virtual nature as a restorative substitute',
+      hook: 'When real nature is out of reach, even a video or a VR forest delivers some of the same lift in mood and attention &mdash; usually a weaker dose than the real thing, and a research question in its own right.',
+      findings: [] },
+    { id: 5, fam: 'light', famL: 'Light &amp; daylight', vr: 'partial',
+      title: 'Daylight, mood, and alertness',
+      hook: 'People who work near windows report better mood, energy, and sleep than those deep inside a building. Whether daylight also lifts measured performance is genuinely debated.',
+      findings: [
+        'Office workers near windows reported better mood and vitality, and in one study slept on average 46 minutes longer per night, than workers with no daylight access (Boubekri et al., 2014).',
+        'Large school datasets have linked daylit classrooms to faster progress in maths and reading &mdash; but those buildings also differ in view and ventilation, so causation is debated (Heschong Mahone studies).',
+        'Bright morning light raises alertness and shifts the body clock earlier &mdash; but the light levels needed are far above any screen or headset, so that part cannot be reproduced in VR.',
+        'How bright and warm a room <em>looks</em> affects comfort and mood even when measured light is held constant &mdash; and that perceptual part is well suited to a VR study.',
+        'People strongly prefer daylight, yet the measured boost to task performance is smaller and noisier than the preference &mdash; a gap worth probing.'
+      ] },
+    { id: 6, fam: 'light', famL: 'Light &amp; daylight', vr: 'full',
+      title: 'Window views and attention restoration',
+      hook: 'It is not only the light from a window &mdash; the content of the view matters. A view onto nature restores attention more than a view of another wall, even at the same brightness.',
+      findings: [] },
+    { id: 7, fam: 'light', famL: 'Light &amp; daylight', vr: 'full',
+      title: 'Warm versus cool lighting',
+      hook: 'The colour temperature of light changes how a room feels: warm light reads as relaxing and sociable, cool light as alert and businesslike. These shifts show up in comfort ratings and sometimes in behaviour.',
+      findings: [] },
+    { id: 8, fam: 'sound', famL: 'Sound &amp; acoustics', vr: 'full',
+      title: 'Background speech and concentration',
+      hook: 'Overheard conversation you cannot tune out damages working memory &mdash; and it is the intelligibility of the speech, not its loudness, that does the harm.',
+      findings: [
+        'Speech you cannot ignore disrupts short-term memory for ordered material &mdash; the &ldquo;irrelevant speech effect&rdquo; &mdash; even when it is quiet (Colle &amp; Welsh, 1976; Salam&eacute; &amp; Baddeley, 1982).',
+        'Loudness is not the culprit: scrambled or muffled speech barely hurts, while clear, intelligible speech hurts a lot. Acousticians now predict open-plan distraction from speech intelligibility, not decibels (Hongisto, 2005).',
+        'Meaning matters &mdash; speech in a language you understand is more disruptive than speech in one you do not.',
+        'Surveys of open-plan offices repeatedly put overheard conversation at the top of the distraction list.',
+        'People differ: those high in noise sensitivity, or with lower working-memory capacity, are knocked back harder by the same background speech.'
+      ] },
+    { id: 9, fam: 'sound', famL: 'Sound &amp; acoustics', vr: 'full',
+      title: 'Natural soundscapes and stress recovery',
+      hook: 'Birdsong and flowing water speed recovery from stress, while traffic noise slows it &mdash; even when the two soundtracks are matched for loudness.',
+      findings: [] },
+    { id: 10, fam: 'sound', famL: 'Sound &amp; acoustics', vr: 'full',
+      title: 'Open-plan noise and task performance',
+      hook: 'Open-plan offices consistently rank overheard speech as the number-one complaint, and controlled studies link it to slower, more error-prone work.',
+      findings: [] },
+    { id: 11, fam: 'space', famL: 'Space &amp; form', vr: 'full', contested: true,
+      title: 'Ceiling height and style of thinking',
+      hook: 'A widely cited study found that high ceilings nudge people toward free, abstract, big-picture thinking and low ceilings toward narrow, detail-focused thinking. Replications have been mixed &mdash; which is exactly what makes it interesting.',
+      findings: [
+        'The headline study reported that a 3-metre ceiling nudged people toward free, relational, big-picture thinking, and a 2.4-metre ceiling toward narrow, detail-focused thinking (Meyers-Levy &amp; Zhu, 2007).',
+        'The proposed mechanism is concept priming &mdash; a high ceiling activates the idea of &ldquo;freedom,&rdquo; a low one the idea of &ldquo;confinement&rdquo; &mdash; rather than simple physical comfort.',
+        'Replication has been mixed: some labs reproduce the effect, others find it weak or absent. That makes it a genuinely open question, not a settled fact.',
+        'Ceiling height is trivial to manipulate in VR, so VR has become a natural test bed &mdash; and the early VR results are themselves mixed.',
+        'Related work links tall spaces to feelings of awe and, in some studies, to better performance on creative, divergent tasks.'
+      ] },
+    { id: 12, fam: 'space', famL: 'Space &amp; form', vr: 'full',
+      title: 'Openness versus enclosure',
+      hook: 'Open, expansive rooms and tight, enclosed ones pull thinking and mood in different directions. Openness is often linked to exploration and creativity, enclosure to focus and a sense of security.',
+      findings: [] },
+    { id: 13, fam: 'space', famL: 'Space &amp; form', vr: 'full',
+      title: 'Curved versus angular interiors',
+      hook: 'People reliably find curved, contoured rooms more beautiful and approachable than sharp-angled ones &mdash; and brain imaging hints that the angular versions quietly trip a threat response.',
+      findings: [
+        'Across many studies, people reliably rate curved, contoured rooms and objects as more beautiful and pleasant than sharp-angled ones (Bar &amp; Neta, 2006; Vartanian et al., 2013).',
+        'Brain imaging offers a clue: sharp angles produce more activity in the amygdala, a region tied to threat detection &mdash; a possible reason angular shapes feel less safe.',
+        'Curved spaces draw people in: they elicit more approach behaviour and higher beauty ratings, while angular spaces can feel more energising or arousing.',
+        'The preference appears early in children and across cultures, suggesting part of it is built in rather than learned.',
+        'It is one of the more robust effects in architectural aesthetics &mdash; but context still matters: a space that &ldquo;should&rdquo; look severe can override the curve preference.'
+      ] },
+    { id: 14, fam: 'space', famL: 'Space &amp; form', vr: 'full',
+      title: 'Awe in large architectural spaces',
+      hook: 'Vast spaces &mdash; cathedrals, atria, canyons &mdash; can trigger awe, an emotion that briefly makes people feel smaller, more patient, and more connected to others.',
+      findings: [] },
+    { id: 15, fam: 'space', famL: 'Space &amp; form', vr: 'full',
+      title: 'Clutter and visual density',
+      hook: 'Visually busy, cluttered rooms raise self-reported stress and can pull attention off-task. A tidy field of view appears to free up mental resources.',
+      findings: [] },
+    { id: 16, fam: 'wayfinding', famL: 'Wayfinding', vr: 'full',
+      title: 'Spatial legibility and wayfinding',
+      hook: 'Some buildings are simply easier to read. Clear sightlines and a simple layout let people build an accurate mental map and stop feeling lost.',
+      findings: [] },
+    { id: 17, fam: 'wayfinding', famL: 'Wayfinding', vr: 'full',
+      title: 'Landmarks and mental maps',
+      hook: 'Distinctive landmarks are the scaffolding people use to learn a new building. Where they sit, and how memorable they are, predicts how fast a newcomer stops getting lost.',
+      findings: [] },
+    { id: 18, fam: 'social', famL: 'Social space', vr: 'full',
+      title: 'Crowding, density, and stress',
+      hook: 'A room does not have to be objectively packed to feel crowded. The feeling of crowding &mdash; and the stress that comes with it &mdash; depends as much on layout and control as on people per square metre.',
+      findings: [
+        'Crowding &mdash; the <em>feeling</em> of too many people &mdash; is not the same as density, the simple count of people per square metre; the same density can feel very different.',
+        'Higher density is linked to raised physiological stress markers, such as blood pressure and stress hormones, and to social withdrawal (Evans and colleagues).',
+        'Architecture moderates it: higher ceilings, partitions, and clear sightlines all reduce the felt crowding of the very same number of people.',
+        'Crowding interferes more with complex tasks than with simple ones &mdash; it eats the mental resources hard problems need.',
+        'Personal-space norms differ widely by culture and personality, so &ldquo;how crowded is too crowded&rdquo; resists a single universal answer.'
+      ] },
+    { id: 19, fam: 'social', famL: 'Social space', vr: 'full',
+      title: 'Personal space indoors',
+      hook: 'People keep a surprisingly precise bubble of personal space, and having it crossed indoors raises arousal and the urge to withdraw. The size of the bubble varies by culture and context.',
+      findings: [] },
+    { id: 20, fam: 'comfort', famL: 'Comfort', vr: 'partial',
+      title: 'Thermal comfort and mental work',
+      hook: 'Rooms that run slightly too warm or too cold do not just feel unpleasant &mdash; they measurably slow certain kinds of mental work, with a comfort sweet spot for performance.',
+      findings: [] }
+  ];
+
+  function vrBadge(vr) {
+    return vr === 'full'
+      ? '<span class="pill amber">VR-ready</span>'
+      : '<span class="pill muted">VR-partial</span>';
+  }
+
+  function cardHTML(t) {
+    var badges = vrBadge(t.vr) + (t.contested ? ' <span class="badge contested">Contested</span>' : '');
+    var moreLabel = t.findings.length
+      ? 'More like this'
+      : 'More like this';
+    return '' +
+      '<article class="topic-card" data-fam="' + t.fam + '" data-id="' + t.id + '">' +
+        '<div class="topic-card-top"><span class="pill">' + t.famL + '</span>' + badges + '</div>' +
+        '<h3>' + t.title + '</h3>' +
+        '<p class="topic-card-hook">' + t.hook + '</p>' +
+        '<div class="topic-card-foot">' +
+          '<button class="more-btn" type="button" aria-expanded="false">' + moreLabel + '</button>' +
+          '<a class="cta" href="ka_fall_topic.html">Explore this topic &rarr;</a>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function expandHTML(t) {
+    var inner;
+    if (t.findings.length) {
+      inner = '<div class="finding-grid">';
+      t.findings.forEach(function (f, i) {
+        inner += '<div class="finding-card"><span class="finding-num">' + (i + 1) + '</span>' +
+                 '<p>' + f + '</p></div>';
+      });
+      inner += '</div>' +
+        '<a class="cta secondary" href="ka_fall_topic.html">See the full review and key papers &rarr;</a>';
+    } else {
+      inner = '<p class="finding-soon">The five key findings for this topic are still being written. ' +
+        'For now, open the topic to see its review and key papers.</p>' +
+        '<a class="cta secondary" href="ka_fall_topic.html">Explore this topic &rarr;</a>';
+    }
+    return '<div class="topic-expand">' +
+      '<div class="topic-expand-head">Key findings &mdash; ' + t.title + '</div>' +
+      inner + '</div>';
+  }
+
+  var grid = document.getElementById('topic-grid');
+  if (!grid) return;
+  grid.innerHTML = TOPICS.map(cardHTML).join('');
+
+  function byId(id) {
+    for (var i = 0; i < TOPICS.length; i++) { if (TOPICS[i].id === id) return TOPICS[i]; }
+    return null;
+  }
+
+  function closeAll() {
+    var panels = grid.querySelectorAll('.topic-expand');
+    for (var i = 0; i < panels.length; i++) { panels[i].parentNode.removeChild(panels[i]); }
+    var cards = grid.querySelectorAll('.topic-card.expanded');
+    for (var j = 0; j < cards.length; j++) { cards[j].classList.remove('expanded'); }
+    var btns = grid.querySelectorAll('.more-btn[aria-expanded="true"]');
+    for (var k = 0; k < btns.length; k++) {
+      btns[k].setAttribute('aria-expanded', 'false');
+      btns[k].textContent = 'More like this';
+    }
+  }
+
+  /* Insert the expansion panel after the last card sharing the clicked
+     card's row, so it opens as a full-width strip right below that row. */
+  function rowEnd(card) {
+    var last = card;
+    var n = card.nextElementSibling;
+    while (n && n.classList.contains('topic-card')) {
+      if (n.offsetParent !== null) {
+        if (n.offsetTop !== card.offsetTop) break;
+        last = n;
+      }
+      n = n.nextElementSibling;
+    }
+    return last;
+  }
+
+  grid.addEventListener('click', function (e) {
+    var btn = e.target.closest('.more-btn');
+    if (!btn) return;
+    var card = btn.closest('.topic-card');
+    var wasOpen = card.classList.contains('expanded');
+    closeAll();
+    if (wasOpen) return;
+    var t = byId(parseInt(card.getAttribute('data-id'), 10));
+    if (!t) return;
+    card.classList.add('expanded');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.textContent = 'Hide findings';
+    var holder = document.createElement('div');
+    holder.innerHTML = expandHTML(t);
+    var panel = holder.firstChild;
+    rowEnd(card).insertAdjacentElement('afterend', panel);
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  /* Client-side family filter. */
+  var filter = document.getElementById('topic-filter');
+  if (filter) {
+    filter.addEventListener('click', function (e) {
+      var chip = e.target.closest('.filter-chip');
+      if (!chip) return;
+      closeAll();
+      var fam = chip.getAttribute('data-fam');
+      var chips = filter.querySelectorAll('.filter-chip');
+      for (var i = 0; i < chips.length; i++) { chips[i].classList.remove('active'); }
+      chip.classList.add('active');
+      var cards = grid.querySelectorAll('.topic-card');
+      for (var j = 0; j < cards.length; j++) {
+        var show = (fam === 'all') || (cards[j].getAttribute('data-fam') === fam);
+        cards[j].style.display = show ? '' : 'none';
+      }
+    });
+  }
+})();
+</script>
 
 </body>
 </html>

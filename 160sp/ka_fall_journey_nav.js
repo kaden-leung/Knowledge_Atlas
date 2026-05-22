@@ -25,7 +25,7 @@
    * ───────────────────────────────────────────────────────────── */
   var JOURNEY = [
     { id: 'ka_fall_week1',              label: 'Week-1 landing',            group: 'Start' },
-    { id: 'ka_fall_dyk_browser',        label: 'Browse Did-You-Know cards', group: 'Find your topic' },
+    { id: 'ka_fall_dyk_browser',        label: 'Browse all topics',         group: 'Find your topic' },
     { id: 'ka_fall_topic',              label: 'Explore a topic',           group: 'Find your topic' },
     { id: 'ka_evaluate_paper_for_vr',   label: 'Evaluate a paper for VR',   group: 'Test it for VR' },
     { id: 'ka_choose_measure_for_vr',   label: 'Choose a measure',          group: 'Test it for VR' },

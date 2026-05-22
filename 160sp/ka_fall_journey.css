@@ -436,3 +436,164 @@ a.link:hover { text-decoration: underline; }
   }
   .journey-pn-next { text-align: left; }
 }
+
+/* ===================================================================
+   Surface 2 — topic browser: twenty topic cards with in-place expansion
+   into five key-finding cards.
+   =================================================================== */
+.filter-bar .filter-chip { font: inherit; font-size: 0.78rem; }
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 16px;
+}
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--teal);
+  border-radius: 9px;
+  padding: 16px 18px;
+}
+.topic-card.expanded {
+  border-left-color: var(--amber);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.09);
+}
+.topic-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.topic-card h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.12rem;
+  color: var(--navy);
+  margin: 0 0 7px;
+  line-height: 1.3;
+}
+.topic-card-hook {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  margin: 0 0 14px;
+  flex: 1 1 auto;
+}
+.topic-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.more-btn {
+  font: inherit;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: var(--teal-bg);
+  border: 1px solid var(--teal-line);
+  border-radius: 6px;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+.more-btn:hover { background: #DCEEE8; }
+.more-btn[aria-expanded="true"] {
+  background: var(--amber-bg);
+  color: var(--amber-dk);
+  border-color: #E3C9A3;
+}
+.topic-card-foot .cta { font-size: 0.83rem; padding: 8px 13px; }
+
+/* Full-width expansion panel — spans the whole grid row. */
+.topic-expand {
+  grid-column: 1 / -1;
+  background: #FFFDF7;
+  border: 1px solid var(--amber);
+  border-radius: 9px;
+  padding: 18px 20px;
+  margin: 2px 0 6px;
+}
+.topic-expand-head {
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--amber-dk);
+  margin-bottom: 12px;
+}
+.finding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(244px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.finding-card {
+  display: flex;
+  gap: 10px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 13px;
+}
+.finding-num {
+  flex: 0 0 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--amber);
+  border-radius: 999px;
+}
+.finding-card p { font-size: 0.86rem; color: var(--ink-mid); margin: 0; }
+.finding-soon {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  background: var(--paper);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+/* ===================================================================
+   Surface 3 — per-topic page: tiered meta-review and key-paper cards.
+   =================================================================== */
+.metareview details.mr-tier { margin-top: 6px; }
+details.mr-tier > summary {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--teal);
+  list-style: none;
+  padding: 3px 0;
+}
+details.mr-tier > summary::-webkit-details-marker { display: none; }
+details.mr-tier > summary::before { content: "\25B8\00A0\00A0"; font-size: 0.8rem; }
+details.mr-tier[open] > summary::before { content: "\25BE\00A0\00A0"; }
+details.mr-tier > summary:hover { text-decoration: underline; }
+.mr-tier .mr-body { margin-top: 6px; }
+.mr-tier .mr-body p { font-size: 0.95rem; margin-bottom: 10px; }
+
+.paper-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+.paper-card h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  margin: 0 0 5px;
+}
+.paper-card h3 a { color: var(--teal); text-decoration: none; }
+.paper-card h3 a:hover { text-decoration: underline; }
+.paper-card p { font-size: 0.89rem; color: var(--ink-mid); margin: 0 0 9px; }
+.paper-card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.paper-card .cta-row { margin: 10px 0 0; }
