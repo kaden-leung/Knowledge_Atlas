@@ -1,12 +1,14 @@
 # TASKS.md — Knowledge_Atlas
 
-*Last updated: 2026-05-19 (POE review + talk outline + corpus-extraction agenda)*
+*Last updated: 2026-05-22 (POE-EXT substitution-graph seed loaded into substitution_graph.db)*
 
 ---
 
 ## Newly Added — 2026-05-19 (POE review and corpus-extraction agenda)
 
 These follow from DK's 2026-05-19 request for a POE review plus a list of cases where the standard POE measure is a surface proxy for a deeper construct, plus a talk outline framing the fifteen most important cases as occupant experiences. The literature review lives at `docs/POE_REVIEW_2026-05-19.md`; the talk outline at `docs/POE_TALK_OUTLINE_2026-05-19.md`; the corpus-extraction agenda at `docs/POE_CORPUS_EXTRACTION_AGENDA_2026-05-19.md`.
+
+**Status — 2026-05-22.** The POE-EXT seed package (`docs/AG_POE_EXT_SEED_PACKAGE_2026-05-19.md`) and its machine sidecar (`data/poe_ext_substitution_seed.json`) are complete: 32 constructs, 39 measures, and 47 construct-measure links covering all eight POE-EXT items. That seed has now been loaded into the substitution graph (`data/substitution_graph.db`) by `scripts/load_poe_ext_substitution_seed.py` — an idempotent loader kept in the repo because the database is an operator-local, git-ignored artifact that is periodically rebuilt. All eight items' constructs (5 thermal, 6 IAQ, 3 IAT, 4 Q-sort, 3 ESM, 3 glare, 4 multisensory, 4 adaptive-preference) are therefore present in the graph as a CW-estimated baseline, with their measures and links. What remains for each POE-EXT item is the **corpus-extraction pass**: AG ingests the ~88 seed papers as evidence rows and replaces the CW-estimated validity numbers with per-paper extracted values, lifting each construct to the agenda's measurement-node bar and populating ae.db V2 severity / entrenchment / mechanism-warrant fields. That pass runs through the Article_Eater / V7 pipeline and is gated on the four POE-AGENDA-DECISIONS below, surfaced to DK on 2026-05-22 and still open.
 
 | ID | Task | Owner | Context |
 |----|------|-------|---------|
