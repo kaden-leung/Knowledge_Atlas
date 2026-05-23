@@ -110,6 +110,7 @@ def extract_dv_descriptions_for_paper(paper_id: str, details_path: Path = DEFAUL
     article = details.get(paper_id) or {}
     operationalization = article.get("operationalization") or {}
     rows = operationalization.get("measurement_inventory") or []
+    graph = load_graph()
     descriptions: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
     for row in rows:
@@ -135,9 +136,33 @@ def extract_dv_descriptions_for_paper(paper_id: str, details_path: Path = DEFAUL
                 "measurement_id": str(row.get("measurement_id") or ""),
             }
         )
+    has_primary_measurements = bool(descriptions)
+
+    for name in article.get("instruments") or []:
+        name = str(name or "").strip()
+        measure = resolve_measure(name, graph)
+        if not name or not measure or not measure.get("vr_tractable"):
+            continue
+        key = (_norm(name), _norm(name))
+        if key in seen:
+            continue
+        seen.add(key)
+        descriptions.append(
+            {
+                "name": name,
+                "type": "article_instrument",
+                "claimed_construct": name,
+                "source": "article_details.instruments",
+                "measurement_id": "",
+            }
+        )
+
     for row in operationalization.get("instrument_inventory") or []:
         name = str(row.get("name") or "").strip()
         if not name:
+            continue
+        measure = resolve_measure(name, graph)
+        if has_primary_measurements and not (measure and measure.get("vr_tractable")):
             continue
         key = (_norm(name), _norm(name))
         if key in seen:
@@ -562,6 +587,27 @@ def admit_mode(payload: dict[str, Any], graph: dict[str, Any] | None = None) -> 
         claimed = str(dv.get("claimed_construct") or dv_name)
         construct_id, confidence, construct = resolve_construct(claimed, graph)
         measure = resolve_measure(dv_name, graph)
+        if measure and measure.get("vr_tractable") and (not construct_id or confidence < 0.4):
+            row = {
+                    "dv_input": dv_name,
+                    "claimed_construct": claimed,
+                    "resolved_construct_id": None,
+                    "measure_short_code": measure.get("short_code"),
+                    "vr_tractable_as_is": True,
+                    "substitution_candidates": [],
+                    "excluded_measures": [],
+                    "admit_verdict": "admit_as_is",
+                    "refusal_reason": "",
+                    "confidence": round(max(confidence, 0.7), 3),
+                    "construct_resolution_status": "measure_known_construct_unresolved",
+                    "proliferation_warning": {},
+                    "explanation": "",
+                    "explanation_generation": _llm_prose_required("admit_mode_per_dv_explanation"),
+                }
+            if payload.get("generate_prose", True):
+                _write_admit_explanation(row)
+            results.append(row)
+            continue
         if not construct_id or confidence < 0.4:
             row = {
                     "dv_input": dv_name,

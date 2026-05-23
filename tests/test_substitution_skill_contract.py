@@ -120,6 +120,22 @@ def test_admit_mode_accepts_core_task_measures_as_vr_tractable():
     assert result["paper_level_verdict"] == "admit"
 
 
+def test_admit_mode_accepts_known_vr_measure_when_construct_unresolved():
+    result = skill.admit_mode(
+        {
+            "generate_prose": False,
+            "dv_descriptions": [
+                {"name": "EDA", "type": "sensor", "claimed_construct": "EDA"}
+            ],
+        }
+    )
+
+    row = result["per_dv_results"][0]
+    assert row["admit_verdict"] == "admit_as_is"
+    assert row["measure_short_code"] == "f4.eda"
+    assert row["construct_resolution_status"] == "measure_known_construct_unresolved"
+
+
 def test_admit_mode_loads_in_corpus_dvs_from_paper_id():
     result = skill.admit_mode({"paper_id": "PDF-0007", "generate_prose": False})
 
