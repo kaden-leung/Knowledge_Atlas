@@ -20,6 +20,18 @@ def test_substitution_graph_schema_can_seed_sqlite(tmp_path):
         db.close()
 
 
+def test_default_graph_uses_sqlite_when_available():
+    graph = skill.load_graph()
+
+    construct_ids = {row["construct_id"] for row in graph["constructs"]}
+    measure_codes = {row["short_code"] for row in graph["measures"]}
+
+    assert graph["schema_version"] == "ka_substitution_graph_sqlite_v1"
+    assert "adaptive_thermal_comfort" in construct_ids
+    assert "voc_concentration" in construct_ids
+    assert "f2.iat" in measure_codes
+
+
 def test_admit_mode_accepts_iat_as_vr_tractable():
     result = skill.admit_mode(
         {
@@ -126,6 +138,39 @@ def test_choice_mode_attention_restoration_ranks_sart_prs_first():
     assert result["recommendation_prose"] == ""
     assert result["recommendation_generation"]["status"] == "requires_subscription_cli_llm"
     assert result["recommendation_generation"]["api_access_allowed"] is False
+
+
+def test_choice_mode_surfaces_excluded_poe_measures_when_no_vr_candidate():
+    result = skill.choice_mode(
+        {
+            "generate_prose": False,
+            "topic_id": "adaptive thermal comfort",
+            "project_constraints": {"lab_hardware": ["quest2"]},
+        }
+    )
+
+    assert result["resolved_construct_id"] == "adaptive_thermal_comfort"
+    assert result["candidate_measures"] == []
+    assert result["empty_state_reason"] == "no_vr_tractable_measure_for_construct"
+    assert result["excluded_measures"][0]["measure_short_code"] == "thermal.adaptive_regression"
+    assert result["excluded_measures"][0]["vr_tractable"] is False
+
+
+def test_admit_mode_rejects_with_excluded_poe_measure_evidence():
+    result = skill.admit_mode(
+        {
+            "generate_prose": False,
+            "dv_descriptions": [
+                {"name": "Adaptive comfort regression", "type": "field_model", "claimed_construct": "adaptive thermal comfort"}
+            ],
+        }
+    )
+
+    row = result["per_dv_results"][0]
+    assert row["resolved_construct_id"] == "adaptive_thermal_comfort"
+    assert row["admit_verdict"] == "reject"
+    assert row["refusal_reason"] == "no_vr_tractable_measure_for_construct"
+    assert row["excluded_measures"][0]["measure_short_code"] == "thermal.adaptive_regression"
 
 
 def test_jangle_warning_surfaces_for_cognitive_restoration():

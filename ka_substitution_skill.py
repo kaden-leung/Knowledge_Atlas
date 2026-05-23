@@ -53,6 +53,8 @@ def load_graph(path: Path = DEFAULT_GRAPH_PATH) -> dict[str, Any]:
     db_override = os.environ.get("KA_SUBSTITUTION_GRAPH_DB", "").strip()
     if path == DEFAULT_GRAPH_PATH and db_override:
         return load_graph_from_db(Path(db_override))
+    if path == DEFAULT_GRAPH_PATH and DEFAULT_DB_PATH.exists():
+        return load_graph_from_db(DEFAULT_DB_PATH)
     return json.loads(path.read_text())
 
 
@@ -98,7 +100,7 @@ def init_substitution_graph_db(db_path: Path = DEFAULT_DB_PATH, graph_path: Path
     The tables match `docs/SUBSTITUTION_SKILL_SPEC_2026-05-18.md`. Existing rows
     are replaced from the seed graph so local development remains reproducible.
     """
-    graph = load_graph(graph_path)
+    graph = json.loads(graph_path.read_text())
     db_path.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(str(db_path))
     try:
@@ -232,14 +234,18 @@ def resolve_measure(text: str, graph: dict[str, Any]) -> dict[str, Any] | None:
         return None
     for row in graph.get("measures", []):
         names = [row.get("short_code", ""), row.get("canonical_name", "")]
-        if any(_norm(name) == needle or needle in _norm(name) for name in names):
+        if any(_norm(name) == needle for name in names):
+            return row
+    if "iat" in needle or "implicit association" in needle:
+        return next((row for row in graph.get("measures", []) if row["short_code"] == "f2.iat"), None)
+    for row in graph.get("measures", []):
+        names = [row.get("short_code", ""), row.get("canonical_name", "")]
+        if any(needle in _norm(name) for name in names):
             return row
     if "cortisol" in needle or "biomarker" in needle or "salivary" in needle or "biochemical" in needle:
         return next((row for row in graph.get("measures", []) if row["short_code"] == "x5.biomarker"), None)
     if "fmri" in needle or "bold" in needle:
         return next((row for row in graph.get("measures", []) if row["short_code"] == "x1.fmri"), None)
-    if "iat" in needle or "implicit association" in needle:
-        return next((row for row in graph.get("measures", []) if row["short_code"] == "f2.iat"), None)
     if "psychomotor vigilance" in needle or needle == "pvt":
         return next((row for row in graph.get("measures", []) if row["short_code"] == "f2.pvt"), None)
     if "n back" in needle or "nback" in needle:
@@ -278,6 +284,7 @@ def _candidate_payload(link: dict[str, Any], measure: dict[str, Any], project_co
         "measure_short_code": measure["short_code"],
         "measure_id": measure["measure_id"],
         "canonical_name": measure["canonical_name"],
+        "vr_tractable": bool(measure.get("vr_tractable")),
         "construct_validity": round(validity, 3),
         "field_acceptance": field_acceptance,
         "severity_average": round(severity, 3),
@@ -384,11 +391,15 @@ def admit_mode(payload: dict[str, Any], graph: dict[str, Any] | None = None) -> 
             results.append(row)
             continue
         candidates = []
+        excluded_measures = []
         for link in _links_for_construct(graph, construct_id):
             linked_measure = measures[link["measure_id"]]
             if linked_measure.get("vr_tractable") and linked_measure.get("measure_id") != (measure or {}).get("measure_id"):
                 candidates.append(_candidate_payload(link, linked_measure))
+            elif not linked_measure.get("vr_tractable"):
+                excluded_measures.append(_candidate_payload(link, linked_measure))
         candidates.sort(key=lambda item: (-item["construct_validity"], -item["field_acceptance"], -item["severity_average"]))
+        excluded_measures.sort(key=lambda item: (-item["construct_validity"], -item["field_acceptance"], -item["severity_average"]))
         as_is = bool(measure and measure.get("vr_tractable"))
         verdict = "admit_as_is" if as_is else ("admit_with_substitution" if candidates else "reject")
         warning = construct.get("proliferation_warning") if construct else {}
@@ -399,7 +410,9 @@ def admit_mode(payload: dict[str, Any], graph: dict[str, Any] | None = None) -> 
                 "measure_short_code": measure.get("short_code") if measure else "",
                 "vr_tractable_as_is": as_is,
                 "substitution_candidates": candidates,
+                "excluded_measures": excluded_measures,
                 "admit_verdict": verdict,
+                "refusal_reason": "no_vr_tractable_measure_for_construct" if verdict == "reject" else "",
                 "confidence": round(max(confidence, candidates[0]["construct_validity"] if candidates else 0), 3),
                 "proliferation_warning": warning if warning and (warning.get("jangle_with") or warning.get("jingle_with")) else {},
                 "explanation": "",
@@ -434,18 +447,27 @@ def choice_mode(payload: dict[str, Any], graph: dict[str, Any] | None = None) ->
         construct_id = topic_id
     _, measures, _ = _index_graph(graph)
     candidates = []
+    excluded_measures = []
     for link in _links_for_construct(graph, construct_id):
         measure = measures[link["measure_id"]]
         if measure.get("vr_tractable"):
             candidates.append(_candidate_payload(link, measure, payload.get("project_constraints") or {}))
+        else:
+            excluded_measures.append(_candidate_payload(link, measure, payload.get("project_constraints") or {}))
     candidates.sort(key=lambda item: (-item["feasibility_score"], -item["construct_validity"], -item["field_acceptance"]))
+    excluded_measures.sort(key=lambda item: (-item["construct_validity"], -item["field_acceptance"], -item["severity_average"]))
     for index, item in enumerate(candidates, start=1):
+        item["rank"] = index
+        item["construct_indexed"] = construct_id
+    for index, item in enumerate(excluded_measures, start=1):
         item["rank"] = index
         item["construct_indexed"] = construct_id
     result_payload = {
         "resolved_construct_id": construct_id,
         "construct_resolution_confidence": round(confidence, 3),
         "candidate_measures": candidates,
+        "excluded_measures": excluded_measures,
+        "empty_state_reason": "no_vr_tractable_measure_for_construct" if not candidates and excluded_measures else "",
         "recommendation_prose": "",
         "recommendation_generation": _llm_prose_required("choice_mode_recommendation_prose"),
     }
