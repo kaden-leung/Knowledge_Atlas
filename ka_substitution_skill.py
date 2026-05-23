@@ -24,6 +24,7 @@ from ka_subscription_llm import call_subscription_llm
 REPO_ROOT = Path(__file__).resolve().parent
 DEFAULT_GRAPH_PATH = REPO_ROOT / "data" / "substitution_seed_graph.json"
 DEFAULT_DB_PATH = REPO_ROOT / "data" / "substitution_graph.db"
+DEFAULT_ARTICLE_DETAILS_PATH = REPO_ROOT / "data" / "ka_payloads" / "article_details.json"
 AE_SUBSTITUTION_DB_PATH = Path("/Users/davidusa/REPOS/Article_Eater_PostQuinean_v1_recovery/substitution_graph.db")
 SUBSCRIPTION_LLM_PROSE_CONTRACT = "SUBSTITUTION_SKILL_SUBSCRIPTION_CLI_PROSE_CONTRACT_2026-05-18"
 SUBSCRIPTION_LLM_COMMANDS = ["claude -p", "codex exec"]
@@ -92,6 +93,65 @@ def load_graph_from_db(db_path: Path) -> dict[str, Any]:
         }
     finally:
         db.close()
+
+
+def load_article_details(path: Path = DEFAULT_ARTICLE_DETAILS_PATH) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text())
+    details = payload.get("details", payload)
+    return details if isinstance(details, dict) else {}
+
+
+def extract_dv_descriptions_for_paper(paper_id: str, details_path: Path = DEFAULT_ARTICLE_DETAILS_PATH) -> list[dict[str, str]]:
+    """Build admit-mode DV descriptions from an in-corpus article detail record."""
+    details = load_article_details(details_path)
+    article = details.get(paper_id) or {}
+    operationalization = article.get("operationalization") or {}
+    rows = operationalization.get("measurement_inventory") or []
+    descriptions: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for row in rows:
+        name = str(row.get("measure_name") or row.get("instrument_name") or "").strip()
+        claimed = str(
+            row.get("target_construct")
+            or row.get("linked_dependent_variable")
+            or row.get("outcome")
+            or name
+        ).strip()
+        if not name:
+            continue
+        key = (_norm(name), _norm(claimed))
+        if key in seen:
+            continue
+        seen.add(key)
+        descriptions.append(
+            {
+                "name": name,
+                "type": str(row.get("instrument_type") or row.get("source_modality") or ""),
+                "claimed_construct": claimed,
+                "source": "article_details.operationalization.measurement_inventory",
+                "measurement_id": str(row.get("measurement_id") or ""),
+            }
+        )
+    for row in operationalization.get("instrument_inventory") or []:
+        name = str(row.get("name") or "").strip()
+        if not name:
+            continue
+        key = (_norm(name), _norm(name))
+        if key in seen:
+            continue
+        seen.add(key)
+        descriptions.append(
+            {
+                "name": name,
+                "type": str(row.get("type") or ""),
+                "claimed_construct": name,
+                "source": "article_details.operationalization.instrument_inventory",
+                "measurement_id": "",
+            }
+        )
+    return descriptions
 
 
 def init_substitution_graph_db(db_path: Path = DEFAULT_DB_PATH, graph_path: Path = DEFAULT_GRAPH_PATH) -> None:
@@ -366,8 +426,22 @@ Facts:
 def admit_mode(payload: dict[str, Any], graph: dict[str, Any] | None = None) -> dict[str, Any]:
     graph = graph or load_graph()
     _, measures, _ = _index_graph(graph)
+    paper_id = str(payload.get("paper_id") or "").strip()
+    dv_descriptions = list(payload.get("dv_descriptions") or [])
+    paper_lookup = {
+        "paper_id": paper_id,
+        "status": "not_requested" if not paper_id else "not_used_explicit_dv_descriptions",
+        "dv_description_count": len(dv_descriptions),
+    }
+    if paper_id and not dv_descriptions:
+        dv_descriptions = extract_dv_descriptions_for_paper(paper_id)
+        paper_lookup = {
+            "paper_id": paper_id,
+            "status": "loaded_from_article_details" if dv_descriptions else "paper_not_found_or_no_measurements",
+            "dv_description_count": len(dv_descriptions),
+        }
     results = []
-    for dv in payload.get("dv_descriptions") or []:
+    for dv in dv_descriptions:
         dv_name = str(dv.get("name") or "")
         claimed = str(dv.get("claimed_construct") or dv_name)
         construct_id, confidence, construct = resolve_construct(claimed, graph)
@@ -435,6 +509,7 @@ def admit_mode(payload: dict[str, Any], graph: dict[str, Any] | None = None) -> 
         "per_dv_results": results,
         "paper_level_verdict": paper_verdict,
         "paper_level_confidence": round(sum(confidence_values) / len(confidence_values), 3) if confidence_values else 0.0,
+        "paper_lookup": paper_lookup,
         "prose_contract": _llm_prose_required("admit_mode_explanations"),
     }
 

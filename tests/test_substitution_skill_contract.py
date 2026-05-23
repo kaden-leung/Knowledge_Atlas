@@ -86,6 +86,23 @@ def test_admit_mode_accepts_core_task_measures_as_vr_tractable():
     assert result["paper_level_verdict"] == "admit"
 
 
+def test_admit_mode_loads_in_corpus_dvs_from_paper_id():
+    result = skill.admit_mode({"paper_id": "PDF-0007", "generate_prose": False})
+
+    assert result["paper_lookup"]["status"] == "loaded_from_article_details"
+    assert result["paper_lookup"]["dv_description_count"] >= 1
+    short_codes = {row["measure_short_code"] for row in result["per_dv_results"]}
+    assert "f2.pvt" in short_codes
+
+
+def test_admit_mode_reports_missing_paper_id_without_inventing_dvs():
+    result = skill.admit_mode({"paper_id": "PDF-DOES-NOT-EXIST", "generate_prose": False})
+
+    assert result["paper_lookup"]["status"] == "paper_not_found_or_no_measurements"
+    assert result["per_dv_results"] == []
+    assert result["paper_level_verdict"] == "reject_dv_missing"
+
+
 def test_admit_mode_accepts_state_ratings_but_substitutes_biomarkers():
     result = skill.admit_mode(
         {
