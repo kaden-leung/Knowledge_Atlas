@@ -1008,7 +1008,7 @@ except ImportError as e:
 # ── SUBSTITUTION SKILL + V7-LITE CONTRACT MODULES
 try:
     import ka_substitution_skill
-    ka_substitution_skill.init_substitution_graph_db()
+    ka_substitution_skill.ensure_substitution_graph_db()
     app.include_router(ka_substitution_skill.router)
     print("[KA-AUTH] Substitution skill loaded ✓ (/api/substitution_skill/*)")
 except ImportError as e:

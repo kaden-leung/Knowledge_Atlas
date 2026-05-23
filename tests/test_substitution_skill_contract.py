@@ -20,6 +20,40 @@ def test_substitution_graph_schema_can_seed_sqlite(tmp_path):
         db.close()
 
 
+def test_substitution_graph_ensure_preserves_expanded_seed(tmp_path):
+    db_path = tmp_path / "substitution_graph.db"
+    skill.ensure_substitution_graph_db(db_path=db_path)
+
+    import sqlite3
+
+    db = sqlite3.connect(str(db_path))
+    try:
+        first_counts = {
+            table: db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            for table in ("constructs", "measures", "construct_measure_links")
+        }
+        assert first_counts["constructs"] >= 35
+        assert first_counts["measures"] >= 54
+        assert first_counts["construct_measure_links"] >= 63
+        assert db.execute(
+            "SELECT COUNT(*) FROM constructs WHERE construct_id = 'adaptive_thermal_comfort'"
+        ).fetchone()[0] == 1
+    finally:
+        db.close()
+
+    skill.ensure_substitution_graph_db(db_path=db_path)
+    db = sqlite3.connect(str(db_path))
+    try:
+        second_counts = {
+            table: db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            for table in ("constructs", "measures", "construct_measure_links")
+        }
+    finally:
+        db.close()
+
+    assert second_counts == first_counts
+
+
 def test_default_graph_uses_sqlite_when_available():
     graph = skill.load_graph()
 

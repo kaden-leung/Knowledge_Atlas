@@ -23,6 +23,7 @@ from ka_subscription_llm import call_subscription_llm
 
 REPO_ROOT = Path(__file__).resolve().parent
 DEFAULT_GRAPH_PATH = REPO_ROOT / "data" / "substitution_seed_graph.json"
+DEFAULT_POE_EXT_SEED_PATH = REPO_ROOT / "data" / "poe_ext_substitution_seed.json"
 DEFAULT_DB_PATH = REPO_ROOT / "data" / "substitution_graph.db"
 DEFAULT_ARTICLE_DETAILS_PATH = REPO_ROOT / "data" / "ka_payloads" / "article_details.json"
 AE_SUBSTITUTION_DB_PATH = Path("/Users/davidusa/REPOS/Article_Eater_PostQuinean_v1_recovery/substitution_graph.db")
@@ -154,6 +155,152 @@ def extract_dv_descriptions_for_paper(paper_id: str, details_path: Path = DEFAUL
     return descriptions
 
 
+def _create_substitution_graph_tables(db: sqlite3.Connection) -> None:
+    db.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS constructs (
+            construct_id TEXT PRIMARY KEY,
+            canonical_name TEXT NOT NULL,
+            aliases JSON,
+            family_theory_id TEXT,
+            proliferation_warning JSON
+        );
+        CREATE TABLE IF NOT EXISTS measures (
+            measure_id TEXT PRIMARY KEY,
+            short_code TEXT NOT NULL,
+            canonical_name TEXT NOT NULL,
+            measurement_family TEXT NOT NULL,
+            vr_tractable BOOLEAN NOT NULL,
+            vr_tractability_conditions JSON,
+            psychometric_profile JSON,
+            construct_validity_per_paper JSON,
+            administration_time_min INTEGER,
+            hardware_required JSON,
+            principal_pitfall TEXT,
+            canonical_references JSON
+        );
+        CREATE TABLE IF NOT EXISTS construct_measure_links (
+            link_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            construct_id TEXT NOT NULL REFERENCES constructs(construct_id),
+            measure_id TEXT NOT NULL REFERENCES measures(measure_id),
+            construct_validity FLOAT NOT NULL,
+            field_acceptance INTEGER NOT NULL,
+            canonical_paper_id TEXT,
+            citation_count INTEGER,
+            severity_average FLOAT,
+            notes TEXT
+        );
+        """
+    )
+
+
+def upsert_substitution_seed(seed_path: Path, db_path: Path = DEFAULT_DB_PATH) -> dict[str, int]:
+    graph = json.loads(seed_path.read_text())
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    db = sqlite3.connect(str(db_path))
+    try:
+        _create_substitution_graph_tables(db)
+        before = {
+            table: db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            for table in ("constructs", "measures", "construct_measure_links")
+        }
+        for row in graph.get("constructs", []):
+            db.execute(
+                """
+                INSERT OR IGNORE INTO constructs (
+                    construct_id, canonical_name, aliases, family_theory_id,
+                    proliferation_warning
+                ) VALUES (?,?,?,?,?)
+                """,
+                (
+                    row["construct_id"],
+                    row["canonical_name"],
+                    json.dumps(row.get("aliases") or []),
+                    row.get("family_theory_id") or "",
+                    json.dumps(row.get("proliferation_warning") or {}),
+                ),
+            )
+        for row in graph.get("measures", []):
+            db.execute(
+                """
+                INSERT OR IGNORE INTO measures (
+                    measure_id, short_code, canonical_name, measurement_family,
+                    vr_tractable, vr_tractability_conditions, psychometric_profile,
+                    construct_validity_per_paper, administration_time_min,
+                    hardware_required, principal_pitfall, canonical_references
+                ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                """,
+                (
+                    row["measure_id"],
+                    row["short_code"],
+                    row["canonical_name"],
+                    row["measurement_family"],
+                    int(bool(row["vr_tractable"])),
+                    json.dumps(row.get("vr_tractability_conditions") or {}),
+                    json.dumps(row.get("psychometric_profile") or {}),
+                    json.dumps(row.get("construct_validity_per_paper") or {}),
+                    row.get("administration_time_min"),
+                    json.dumps(row.get("hardware_required") or []),
+                    row.get("principal_pitfall") or "",
+                    json.dumps(row.get("canonical_references") or []),
+                ),
+            )
+        for row in graph.get("construct_measure_links", []):
+            db.execute(
+                """
+                DELETE FROM construct_measure_links
+                WHERE construct_id = ? AND measure_id = ?
+                """,
+                (row["construct_id"], row["measure_id"]),
+            )
+            db.execute(
+                """
+                INSERT INTO construct_measure_links (
+                    construct_id, measure_id, construct_validity, field_acceptance,
+                    canonical_paper_id, citation_count, severity_average, notes
+                ) VALUES (?,?,?,?,?,?,?,?)
+                """,
+                (
+                    row["construct_id"],
+                    row["measure_id"],
+                    float(row.get("construct_validity") or 0),
+                    int(row.get("field_acceptance") or 0),
+                    row.get("canonical_paper_id") or "",
+                    int(row.get("citation_count") or 0),
+                    float(row.get("severity_average") or 0),
+                    row.get("notes") or "",
+                ),
+            )
+        db.commit()
+        after = {
+            table: db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            for table in ("constructs", "measures", "construct_measure_links")
+        }
+        return {f"{table}_delta": after[table] - before[table] for table in before}
+    finally:
+        db.close()
+
+
+def ensure_substitution_graph_db(db_path: Path = DEFAULT_DB_PATH) -> dict[str, Any]:
+    """Ensure seed coverage without wiping accepted extraction rows."""
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    actions: list[str] = []
+    if not db_path.exists():
+        actions.append("created_db")
+    for seed_path in (DEFAULT_GRAPH_PATH, DEFAULT_POE_EXT_SEED_PATH):
+        if seed_path.exists():
+            upsert_substitution_seed(seed_path, db_path=db_path)
+            actions.append(f"upserted:{seed_path.name}")
+    graph = load_graph_from_db(db_path)
+    return {
+        "status": "ok",
+        "actions": actions,
+        "construct_count": len(graph.get("constructs", [])),
+        "measure_count": len(graph.get("measures", [])),
+        "link_count": len(graph.get("construct_measure_links", [])),
+    }
+
+
 def init_substitution_graph_db(db_path: Path = DEFAULT_DB_PATH, graph_path: Path = DEFAULT_GRAPH_PATH) -> None:
     """Create and seed the SQLite substitution graph.
 
@@ -164,40 +311,9 @@ def init_substitution_graph_db(db_path: Path = DEFAULT_DB_PATH, graph_path: Path
     db_path.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(str(db_path))
     try:
+        _create_substitution_graph_tables(db)
         db.executescript(
             """
-            CREATE TABLE IF NOT EXISTS constructs (
-                construct_id TEXT PRIMARY KEY,
-                canonical_name TEXT NOT NULL,
-                aliases JSON,
-                family_theory_id TEXT,
-                proliferation_warning JSON
-            );
-            CREATE TABLE IF NOT EXISTS measures (
-                measure_id TEXT PRIMARY KEY,
-                short_code TEXT NOT NULL,
-                canonical_name TEXT NOT NULL,
-                measurement_family TEXT NOT NULL,
-                vr_tractable BOOLEAN NOT NULL,
-                vr_tractability_conditions JSON,
-                psychometric_profile JSON,
-                construct_validity_per_paper JSON,
-                administration_time_min INTEGER,
-                hardware_required JSON,
-                principal_pitfall TEXT,
-                canonical_references JSON
-            );
-            CREATE TABLE IF NOT EXISTS construct_measure_links (
-                link_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                construct_id TEXT NOT NULL REFERENCES constructs(construct_id),
-                measure_id TEXT NOT NULL REFERENCES measures(measure_id),
-                construct_validity FLOAT NOT NULL,
-                field_acceptance INTEGER NOT NULL,
-                canonical_paper_id TEXT,
-                citation_count INTEGER,
-                severity_average FLOAT,
-                notes TEXT
-            );
             DELETE FROM construct_measure_links;
             DELETE FROM measures;
             DELETE FROM constructs;
