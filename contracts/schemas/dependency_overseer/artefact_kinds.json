@@ -1,0 +1,28 @@
+{
+  "version": "v1",
+  "source_authority": "docs/DEPENDENCY_OVERSEER_IMPLEMENTATION_SPEC_2026-05-23.md §4.4",
+  "notes": "Artefact kinds registered for Phase 1 of the dependency overseer. The kinds_registry script loads this file and writes artefact_kinds rows. Phase 2 and Phase 3 add kinds via dated migration JSON files in this same directory.",
+  "kinds": [
+    {
+      "kind_name": "pnu_row",
+      "owner_pipeline": "pnu_builder",
+      "support_rule_module": "overseer.support_rules.pnu_row",
+      "schema_version": "pnu_row.v1",
+      "phase_active": 1
+    },
+    {
+      "kind_name": "article_epistemic_record",
+      "owner_pipeline": "article_epistemic_builder",
+      "support_rule_module": "overseer.support_rules.article_epistemic_record",
+      "schema_version": "article_epistemic_layer.v1",
+      "phase_active": 1
+    },
+    {
+      "kind_name": "article_detail_json",
+      "owner_pipeline": "article_detail_payload_builder",
+      "support_rule_module": "overseer.support_rules.article_detail_json",
+      "schema_version": "article_detail.v1",
+      "phase_active": 1
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": "v1",
+  "source_authority": "docs/DEPENDENCY_OVERSEER_IMPLEMENTATION_SPEC_2026-05-23.md §4.2",
+  "notes": "Component types active in Phase 1 of the article-epistemic-layer builder. Each entry declares allowed component_status values, default render and field policies, and per-field normalization hints consumed by normalization rule v1.",
+  "component_types": {
+    "primary_claim": {
+      "allowed_statuses": ["present", "not_extracted", "source_missing", "stale", "blocked"],
+      "default_render_policy": "renderable",
+      "default_field_policy": "extracted_only",
+      "normalization_hints": {
+        "canonical_claim_text": {"whitespace_collapsible": true, "case_insensitive": false},
+        "claim_scope": {"case_insensitive": true},
+        "claim_type": {"case_insensitive": true},
+        "claim_polarity": {"case_insensitive": true}
+      }
+    },
+    "claim_rows": {
+      "allowed_statuses": ["present", "not_extracted", "stale"],
+      "default_render_policy": "renderable",
+      "default_field_policy": "extracted_only",
+      "normalization_hints": {
+        "rows": {"order_insensitive": false},
+        "rows[].canonical_claim_text": {"whitespace_collapsible": true}
+      }
+    },
+    "evidence_strength": {
+      "allowed_statuses": ["present", "not_applicable", "withheld_low_confidence", "stale"],
+      "default_render_policy": "renderable",
+      "default_field_policy": "deterministic_only",
+      "normalization_hints": {
+        "confidence_basis": {"case_insensitive": true}
+      }
+    },
+    "defeaters": {
+      "allowed_statuses": ["present", "not_extracted", "stale", "blocked"],
+      "default_render_policy": "show_with_warning",
+      "default_field_policy": "extracted_only",
+      "normalization_hints": {
+        "rows": {"order_insensitive": true},
+        "rows[].target_kind": {"case_insensitive": true}
+      }
+    },
+    "belief_network_context": {
+      "allowed_statuses": ["present", "not_applicable", "stale", "source_missing"],
+      "default_render_policy": "renderable",
+      "default_field_policy": "deterministic_only",
+      "normalization_hints": {
+        "pnu_links": {"order_insensitive": true}
+      }
+    },
+    "answer_shape_status": {
+      "allowed_statuses": ["present", "stale"],
+      "default_render_policy": "renderable",
+      "default_field_policy": "deterministic_only",
+      "normalization_hints": {
+        "shape": {"case_insensitive": true},
+        "rule_trace_json": {"cosmetic_only": false}
+      }
+    },
+    "provenance_summary": {
+      "allowed_statuses": ["present"],
+      "default_render_policy": "renderable",
+      "default_field_policy": "deterministic_only",
+      "normalization_hints": {
+        "generated_at": {"cosmetic_only": true},
+        "build_run_id": {"cosmetic_only": true}
+      }
+    }
+  }
+}

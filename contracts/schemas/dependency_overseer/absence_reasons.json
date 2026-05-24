@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "source_authority": "docs/DEPENDENCY_OVERSEER_IMPLEMENTATION_SPEC_2026-05-23.md §4.3",
+  "notes": "Controlled vocabulary for absence_reason. Per P10, every empty content field must have a non-empty absence_reason drawn from this list.",
+  "absence_reasons": [
+    "no_source_content",
+    "not_yet_extracted",
+    "attack_count_without_mapped_rows",
+    "no_defeater_extracted",
+    "no_defeater_exists",
+    "no_pnu_support_available",
+    "rule_did_not_fire",
+    "phase_2_deferred",
+    "phase_3_deferred",
+    "withheld_low_confidence"
+  ]
+}
