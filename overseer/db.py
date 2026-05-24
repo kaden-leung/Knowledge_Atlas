@@ -40,6 +40,11 @@ def connect(db_path: str | Path | None = None) -> sqlite3.Connection:
     if isinstance(path, sqlite3.Connection):
         return path
     conn = sqlite3.connect(path)
+    # Autocommit mode: pysqlite implicit-transaction behavior conflicts with
+    # explicit BEGIN IMMEDIATE used by transactional sections. With
+    # isolation_level=None, every statement auto-commits unless wrapped in
+    # an explicit BEGIN/COMMIT (see transaction() context manager).
+    conn.isolation_level = None
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode = WAL")
     conn.execute("PRAGMA foreign_keys = ON")
