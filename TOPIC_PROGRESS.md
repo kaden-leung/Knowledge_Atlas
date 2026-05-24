@@ -4,6 +4,49 @@ Per the root-level CLAUDE.md "Live Conversation Topic Tracking" protocol.
 
 ---
 
+## TOP-OVERSEER-PAUSE: Dependency Overseer Phase 3 Pause + Observability/Simulation Pivot
+
+**Status:** IN PROGRESS — 2026-05-24 (Phase 3 paused; observability + AF simulation + runbook work begins)
+**Owner:** CW (Claude Code, Opus 4.7 1M)
+**Linked tasks:** TASKS.md "Newly Added — 2026-05-24 (Dependency Overseer — post-panel pause)"
+
+### Key decisions
+
+- Ten-expert ruthless panel review returned 0 unconditional go, 4 proceed-with-changes, 6 pause-and-fix. DK accepted the synthesis recommendation.
+- Phase 3 (LLM enrichment governance) is paused, not killed. The 544-line spec is preserved for resumption.
+- Phase 1+2 stay in service; the next 90 days are operational tuning, observability, and traffic simulation.
+- Resumption of Phase 3 requires all 11 panel gates closed (see TASKS.md OVERSEER-* tasks).
+- Live AF DB inspection revealed the reconciler's current criterion (`status='processed_partial'`, 3 papers) is a 250× underestimate of the real accepted-by-Atlas population (`atlas_intake_decision='accept_candidate'`, 754 papers). Switching the criterion is the first operational change.
+
+### Files and Artifacts
+
+| File | Location | Type | Change |
+|------|----------|------|--------|
+| `DEPENDENCY_OVERSEER_RUTHLESS_PANEL_REVIEW_2026-05-24.md` | `docs/` | Panel review | NEW — 344 lines; ten-expert critique, go/no-go tally, enterprise recommendation |
+| `DEPENDENCY_OVERSEER_POST_PANEL_PAUSE_PLAN_2026-05-24.md` | `docs/` | Pause plan | NEW; phase 3 pause; observability layer plan; AF simulation strategy (5 modes); operations runbook outline; tasks for DK to create real AF activity (Tasks A–F); resumption conditions |
+| `TASKS.md` | repo root | Task ledger | MODIFIED — new section "2026-05-24 (post-panel pause)" with 16 new tasks |
+
+### Commits
+
+| Commit | Subject | Files | Insertions |
+|--------|---------|-------|------------|
+| fabf268 | docs(overseer): ten-expert ruthless panel review | 1 | 344 |
+| (next) | docs(overseer): post-panel pause plan + TASKS update | 3 | ~700 |
+
+### Still open within this topic
+
+The 16 OVERSEER-* tasks added 2026-05-24. The most immediate are:
+
+- OVERSEER-AF-CRITERION-SWITCH (CW; small)
+- OVERSEER-OBSERVABILITY-LAYER (CW; medium)
+- OVERSEER-AF-SNAPSHOT-SIMULATOR (CW; small)
+- OVERSEER-OPERATIONS-RUNBOOK (CW; small)
+- OVERSEER-AF-REAL-ACTIVITY-A / -F (DK + CW; coordination needed)
+
+The 11 panel gates (TASKS.md OVERSEER-SCOPE-AUDIT, -FORMAL-MODEL, -SUPERVISION-PROTOCOL, -MODEL-CARDS, -WATERMARK-WINDOWING, -SAGA-COMPENSATION, -SIGKILL-TEST, -VERSION-ID-RENAME) are the gates for Phase 3 resumption.
+
+---
+
 ## TOP-OVERSEER-2: Dependency Overseer (Phase 2 — Article Finder bridge)
 
 **Status**: COMPLETED — 2026-05-23 (Phase 2 ship)

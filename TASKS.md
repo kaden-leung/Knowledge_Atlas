@@ -1,6 +1,35 @@
 # TASKS.md — Knowledge_Atlas
 
-*Last updated: 2026-05-23 (dependency overseer Phase 2 shipped — Article Finder bridge)*
+*Last updated: 2026-05-24 (dependency overseer Phase 3 paused per panel review; observability + AF simulation work begins)*
+
+---
+
+## Newly Added — 2026-05-24 (Dependency Overseer — post-panel pause)
+
+Ten-expert ruthless panel review (`docs/DEPENDENCY_OVERSEER_RUTHLESS_PANEL_REVIEW_2026-05-24.md`) returned 0 unconditional go, 4 proceed-with-changes, 6 pause-and-fix. DK accepted the enterprise recommendation: ship Phase 1+2, pause Phase 3, build observability + runbook + AF simulator, operate for 90 days, then revisit Phase 3 against the panel's 11 gates. Full plan: `docs/DEPENDENCY_OVERSEER_POST_PANEL_PAUSE_PLAN_2026-05-24.md`.
+
+| ID | Task | Owner | Context |
+|----|------|-------|---------|
+| OVERSEER-AF-CRITERION-SWITCH | **Switch reconciler from `processed_partial` to `atlas_intake_decision='accept_candidate'`** | CW | Live AF DB inspection 2026-05-24: `processed_partial`=3 papers; `atlas_intake_decision='accept_candidate'`=754 papers. The richer signal exposes ~250× more reconcilable state. ~50 lines + test fixture updates. Subsumes OVERSEER-AF-STATUS-CRITERION. |
+| OVERSEER-OBSERVABILITY-LAYER | **Land `verifier_run_history` + `reconciler_event_log` tables + recording + daily report** | CW | Pause plan §3. New migration; modifications to `verify_strict()` and `tick()` to record events; new `scripts/dependency_overseer_observability_report.py`. This is Majors's gate for resuming Phase 3. |
+| OVERSEER-AF-SNAPSHOT-SIMULATOR | **Land `dependency_overseer_af_snapshot.py` (snapshot + replay modes)** | CW | Pause plan §4.3. Copy live AF DB to a versioned snapshot file; replay reconciler against the snapshot. Reproducible test conditions. |
+| OVERSEER-AF-STORY-SIMULATOR | **Land `dependency_overseer_af_story_simulator.py` (scripted story mode)** | CW | Pause plan §4.4. Synthetic AF state changes over a sped-up clock; asserts known expected reconciler outcomes. Optional until snapshot replay reveals whether it's needed. |
+| OVERSEER-OPERATIONS-RUNBOOK | **Write `docs/DEPENDENCY_OVERSEER_OPERATIONS_2026-05-24.md`** | CW | Pause plan §5. One-page operational manual: how to run the tick, read the report, triage completion_queue, back up the lifecycle DB, on-call rotation, escalation path. This is Fournier's gate. |
+| OVERSEER-AF-REAL-ACTIVITY-A | **(DK) Flip 5–10 papers to `atlas_intake_decision='accept_candidate'` in AF.papers** | DK + CW | Pause plan §4.6 Task A. Lowest-cost forcing function. Once OVERSEER-AF-CRITERION-SWITCH lands, the next reconciler tick will sync these. CW can write the SQL if DK approves the specific paper_ids. |
+| OVERSEER-AF-REAL-ACTIVITY-F | **(DK) Drift a title in AF.papers on an already-synced paper** | DK + CW | Pause plan §4.6 Task F. Proves the drift-detection path on real data. Negative-test of the unresolved-event flow. |
+| OVERSEER-SCOPE-AUDIT | **Per-table "earning its keep" memo** | CW + DK | Larson's gate (panel review §11). For each of the 22 active tables, name the specific user-visible problem that would be visible if the table didn't exist. Tables that can't justify themselves get a delete commit. |
+| OVERSEER-FORMAL-MODEL | **TLA+ or Alloy model of lease+fencing+claim state machine** | CW | Wayne's gate (panel review §5). 100–300 lines target. Model-check against the 28 P# invariants. |
+| OVERSEER-SUPERVISION-PROTOCOL | **Per-worker supervisor + restart strategy table** | CW | Armstrong's gate (panel review §12). For each named worker (rebuild_queue worker, watchdog, reconciler tick, grounding verifier, content_equivalence worker), document supervisor + restart_strategy + escalation_path. Honest "supervisor=cron; restart=none" is acceptable if documented. |
+| OVERSEER-MODEL-CARDS | **Model cards for any LLM in `model_allowlist.json` (when Phase 3 resumes)** | CW + DK | Mitchell's gate (panel review §8). FAT* 2019 §3 fields per allowed model. Blocks Phase 3 resumption. |
+| OVERSEER-WATERMARK-WINDOWING | **Watermark column on artefact_registry + windowing for cascade** | CW | Akidau's gate (panel review §9). Event-time semantics for invalidation propagation. |
+| OVERSEER-SAGA-COMPENSATION | **Compensation logic per `cross_db_sync_events.event_kind`** | CW | McCaffrey's gate (panel review §6). For each event_kind (accept_candidate, registry_snapshot, tombstone_paper, reconcile_paper), name the inverse transaction. |
+| OVERSEER-SIGKILL-TEST | **Test that proves zero partial state on abrupt process exit** | CW | Kleppmann's gate (panel review §3). End-to-end test that injects SIGKILL between two writes in a multi-table transaction and confirms artefact_registry is unchanged. |
+| OVERSEER-VERSION-ID-RENAME | **`active` → `is_current_version`; add `version_id` column** | CW | Helland's gate (panel review §4). Migration; updates every artefact_registry read site. Clarifies the version-vs-visibility distinction. |
+| OVERSEER-PHASE-3-RESUME-DECISION | **(DK) Decide after 90 days: resume Phase 3, redesign, or kill** | DK + CW | Pause plan §1. Decision predicated on: 11 panel gates closed, 30+ days of verifier_run_history data, scope-audit conclusion, whether AE's existing anti-cheat contract has absorbed the LLM-governance need. |
+
+---
+
+## Newly Added — 2026-05-23 (Dependency Overseer Phase 2 — Article Finder bridge)
 
 ---
 
