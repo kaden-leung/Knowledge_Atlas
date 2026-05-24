@@ -1,6 +1,6 @@
 # TASKS.md — Knowledge_Atlas
 
-*Last updated: 2026-05-23 (article-detail epistemic layer Stage 1 implemented)*
+*Last updated: 2026-05-23 (dependency overseer Phase 2 shipped — Article Finder bridge)*
 
 ---
 
@@ -16,6 +16,21 @@ CW took the handoff (`docs/HANDOFF_EPISTEMIC_LAYER_IMPLEMENTATION_2026-05-23.md`
 | AEPL-PHASE-4 | **Release gate integration** | CW + Codex | All twelve last-mile release conditions in spec §13 enforced before any production promotion can flip `release_eligible=1`. Production artefact hash must match release artefact hash. |
 | AEPL-PHASE-5 | **Stage 2 LLM enrichment (deferred)** | CW + AG + DK | Field-policy enforcement (only `llm_enrichable` fields), subscription-CLI-only invocation (no provider SDK imports — verifier already enforces this on Stage 1 source), source-packet manifests with hashes, grounding verifier, review gates. Coordinates with `OVERSEER-PHASE-3` (LLM enrichment governance) — same governance surface. |
 | AEPL-PNU-REPAIR-BACKLOG | **Investigate why 758/760 papers have `pnu.requires_repair=True`** | DK + AG | The Stage 1 builder surfaced that nearly every paper carries `pnu.requires_repair=True` with `verifier_status=fail`. That predates this work — it's an upstream PNU pipeline state, not a Stage 1 finding — but Stage 1 promotion will block release for all 758 if left as-is. Either repair the PNU pipeline upstream or adjust the release gate's freshness contract for the launch period. |
+
+---
+
+## Newly Added — 2026-05-23 (Dependency Overseer Phase 2 — Article Finder bridge)
+
+Phase 2 shipped: AF read-only connector, async reconciler resolving synthesis OR3, candidate-PDF state machine, abstract-source provenance enforcement, P25 progress-marker soft-stuck routing, and two new verifier checks. 220 overseer tests passing; live verifier passes 17/17 checks. See `docs/SPRINT_OVERSEER_PHASE_2_COMPLETION_2026-05-23.md`.
+
+Commits: 6d4959e (spec), 85adaf0 (kinds + connector + state + provenance), 8b5ab3a (reconciler), 513b4f7 (P25 + verifier extensions).
+
+| ID | Task | Owner | Context |
+|----|------|-------|---------|
+| OVERSEER-AF-STATUS-CRITERION | **Replace `processed_partial` proxy with richer AF "accepted" signal** | CW + Codex | Phase 2 MVP uses `AF.papers.status='processed_partial'` as the "accepted by Atlas" filter (3 rows match in the live AF DB). Production should use `atlas_intake_decision='accept'` or a multi-field criterion. Update `overseer.article_finder_reconciler.tick(accepted_filter=...)`. |
+| OVERSEER-AF-DAEMON | **Daemon-mode wrapper around reconciler_tick** | CW + Codex | Phase 2 ships the one-shot script. Production needs cron/launchd or daemon. Deferred to Phase 4. |
+| OVERSEER-AF-PDF-HASH | **Normalise AF↔KA PDF hash conventions** | CW + Codex | AF uses `pdf_sha256`; KA uses `raw_hash`/`semantic_hash`. Normalise before comparing. Phase 2 spec §11 OIQ #5. |
+| OVERSEER-PHASE-2-BUILDER-INTEGRATION | **Consolidate state-machine `extracted` artefact with Phase 1 builder output** | CW | State machine transition to `extracted` registers an `article_epistemic_record` with `field_path='extracted'`; Phase 1 builder uses no-field_path. Two artefacts per paper is redundant — pick one convention. |
 
 ---
 

@@ -4,6 +4,68 @@ Per the root-level CLAUDE.md "Live Conversation Topic Tracking" protocol.
 
 ---
 
+## TOP-OVERSEER-2: Dependency Overseer (Phase 2 — Article Finder bridge)
+
+**Status**: COMPLETED — 2026-05-23 (Phase 2 ship)
+**Owner**: CW (Claude Code, Opus 4.7 1M)
+**Linked tasks**: TASKS.md "Newly Added — 2026-05-23 (Dependency Overseer Phase 2)"
+
+### Key decisions
+
+- Resolved synthesis OR3 with an asynchronous reconciler (60s tick) rather than synchronous two-phase commit. SQLite has no native distributed-transaction support; the verifier check `_check_cross_db_sync` flags unresolved events older than 300s, providing the safety net.
+- AF connector is strictly read-only (`mode=ro` URI). AF code is unchanged by Phase 2; the overseer never writes to AF.
+- AF status filter for "accepted by Atlas": MVP uses `processed_partial` (3 rows match in the live AF DB at 16,257 papers total). Configurable per tick. Production-grade criterion is tracked as OVERSEER-AF-STATUS-CRITERION.
+- Each post-`metadata_only` state in the candidate-PDF state machine maps to a distinct artefact kind (`abstract`, `pdf_artifact`, `ocr_artifact`, `article_epistemic_record`). State evidence lives in the dependency graph (derived_from edges), not as a transient field.
+- Soft-stuck severity is `medium`, not `blocking`. Progress-marker stagnation alerts reviewers; the worker is not killed because slow progress may still be real progress. Idempotent enqueue prevents row proliferation.
+- Abstract-source provenance is structural in Phase 2 (derived_from edge check); content-layer source-label inspection is deferred to Phase 3 when content payloads land.
+
+### Files and Artifacts
+
+| File | Location | Type | Change |
+|------|----------|------|--------|
+| `DEPENDENCY_OVERSEER_PHASE_2_SPEC_2026-05-23.md` | `docs/` | Phase 2 spec | NEW — 213 lines; scope, AF surface, OR3 resolution, state machine, verifier additions, P25, test plan, 11 acceptance criteria, 6 open implementation questions |
+| `SPRINT_OVERSEER_PHASE_2_COMPLETION_2026-05-23.md` | `docs/` | Ship report | NEW — all 11 acceptance criteria covered |
+| `artefact_kinds.json` | `contracts/schemas/dependency_overseer/` | Config | MODIFIED v1→v2 — added article_finder_candidate, abstract, pdf_artifact, ocr_artifact |
+| `article_finder_connector.py` | `overseer/` | Python module | NEW — resolve_af_db_path, connect_readonly (URI mode=ro), iter_papers, paper_signature (SHA-256 over normalised doi+canonical+title), schema_version |
+| `candidate_pdf_state.py` | `overseer/` | Python module | NEW — STATES, ALLOWED_TRANSITIONS, STATE_TO_RELATED_KIND, ensure_candidate, transition (idempotent + adds derived_from edge), InvalidTransitionError |
+| `abstract_provenance.py` | `overseer/` | Python module | NEW — is_allowed_source, canonical_source, require_allowed_source, list_allowed_sources; UnknownAbstractSourceError |
+| `article_finder_reconciler.py` | `overseer/` | Python module | NEW — tick(); pending → matched/unresolved logic; ReconcilerReport; idempotent |
+| `watchdog.py` | `overseer/` | Python module | MODIFIED — added soft_stuck_tick() (P25), SOFT_STUCK_INTERVAL_MULTIPLIER constant, SoftStuckFlag dataclass |
+| `verifier_data.py` | `overseer/` | Python module | MODIFIED — added _check_cross_db_sync, _check_abstract_source_provenance; total checks 15 → 17 |
+| `dependency_overseer_reconciler_tick.py` | `scripts/` | Wrapper | NEW — cron-able one-shot tick; JSON report to stdout |
+| `test_overseer_article_finder_connector.py` | `tests/` | Test | NEW — 10 tests |
+| `test_overseer_candidate_pdf_state.py` | `tests/` | Test | NEW — 11 tests |
+| `test_overseer_abstract_provenance.py` | `tests/` | Test | NEW — 10 tests |
+| `test_overseer_article_finder_reconciler.py` | `tests/` | Test | NEW — 10 tests |
+| `test_overseer_progress_marker_heartbeats.py` | `tests/` | Test | NEW — 8 tests |
+| `test_overseer_phase2_verifier_checks.py` | `tests/` | Test | NEW — 7 tests |
+| `test_overseer_phase2_round_trip.py` | `tests/` | Test | NEW — 1 end-to-end round-trip test |
+| `pipeline_lifecycle_full.db` | `160sp/` | DB | MODIFIED — 4 new kind rows seeded; live reconciler smoke test added 3 article_finder_candidate artefacts + 3 cross_db_sync_events pending rows |
+
+### Commits
+
+| Commit | Subject | Files | Insertions |
+|--------|---------|-------|------------|
+| 6d4959e | docs(overseer): land Phase 2 implementation spec (Article Finder bridge) | 1 | 213 |
+| 85adaf0 | feat(overseer): Phase 2 — register 4 kinds, AF connector, state machine, abstract provenance | 9 | 786 |
+| 8b5ab3a | feat(overseer): Phase 2 — Article Finder ↔ KA reconciler (async tick) | 3 | 440 |
+| 513b4f7 | feat(overseer): Phase 2 — P25 soft-stuck + cross-DB sync + abstract provenance verifier checks | 4 | 394 |
+
+### Test results
+
+- 220/220 overseer tests passing (Phase 1: 163 + Phase 2: 57).
+- Live `160sp/pipeline_lifecycle_full.db` passes strict verifier with 17/17 checks.
+- Phase 2 round-trip proof: AF accepted paper → reconciler → state machine (5 transitions) → builder → reconciler upgrades to matched → verifier pass.
+
+### Still open within this topic (carried to TASKS.md)
+
+- OVERSEER-AF-STATUS-CRITERION — Replace `processed_partial` proxy with richer AF "accepted" signal.
+- OVERSEER-AF-DAEMON — Daemon-mode wrapper around reconciler_tick.
+- OVERSEER-AF-PDF-HASH — Normalise AF↔KA PDF hash conventions.
+- OVERSEER-PHASE-2-BUILDER-INTEGRATION — Consolidate state-machine `extracted` artefact with Phase 1 builder output.
+
+---
+
 ## TOP-OVERSEER: Dependency Overseer (Phase 1)
 
 **Status**: COMPLETED — 2026-05-23 (Phase 1 ship)
