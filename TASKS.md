@@ -1,6 +1,21 @@
 # TASKS.md — Knowledge_Atlas
 
-*Last updated: 2026-05-22 (POE-EXT substitution-graph seed loaded into substitution_graph.db)*
+*Last updated: 2026-05-23 (dependency overseer Phase 1 shipped)*
+
+---
+
+## Newly Added — 2026-05-23 (Dependency Overseer Phase 1)
+
+DK accepted the synthesis and impl spec (commits 1b27dfc) and authorized ballistic execution of Phase 1. The full Phase 1 of the dependency overseer landed in six commits (6fb2918, a74b43b, 8a6a6d3, ac8b799, 3540cbe, 8d95fd8) on master. 163 overseer tests passing; live `160sp/pipeline_lifecycle_full.db` passes the strict verifier. See `docs/SPRINT_OVERSEER_PHASE_1_COMPLETION_2026-05-23.md` for the full ship report and `TOPIC_PROGRESS.md` TOP-OVERSEER for the artifact inventory.
+
+| ID | Task | Owner | Context |
+|----|------|-------|---------|
+| OVERSEER-PHASE-2 | **Article Finder peer-DB sync** | CW + Codex | Scaffold-only `cross_db_sync_events` table is live. Phase 2 activates: register `article_finder_candidate`, `abstract`, `pdf_artifact`, `ocr_artifact` artefact kinds; implement reconciler; wire candidate PDF state machine (`metadata_only → abstract_only → candidate_pdf_unverified → pdf_verified → ocr_ready → extracted`); abstract-source provenance per companion contract §10. Implementation spec covers schema; Phase 2 implementation spec needed before code lands. |
+| OVERSEER-PHASE-3 | **LLM enrichment governance** | CW + AG + DK | Scaffold-only `llm_invocations`, `prompt_templates`, `source_packets`, `content_equivalence_checks` tables are live. Phase 3 activates: field-policy enforcement at artefact_registry insert path; grounding verifier with field-pinned grounding; subscription-CLI-only enforcement (P22); LLM-adjudicated content_equivalence_checks for semantic-vs-cosmetic borderline cases (synthesis OR9 — false positives are the most dangerous failure mode). |
+| OVERSEER-PHASE-4 | **Extend overseer to topics, DYK cards, search index, reports** | CW + Codex | Register each as artefact_kinds; backpressure on rebuild_queue (Reviewer B); consider Postgres migration when concurrent writers become operationally necessary (OR2). |
+| OVERSEER-RENDER-VERIFIER | **Implement verifier_render with headless browser** | CW + Codex | Phase 1 acceptance #7 (strict rendered verifier passes) is deferred — impl spec §14 OIQ #2 has not selected the headless library yet (Playwright vs Selenium vs HTTP-only HTML parsing). `last_mile_checks.py` provides the recording API today; the probes themselves land once the library choice is made. Note: not blocking the data-side round-trip (acceptance #8/#9, which passed). |
+| OVERSEER-PNU-BUILDER | **PNU builder writes per-PNU content_hashes history** | CW + Codex | Phase 1 negative round-trip test exposed that `artefact_registry.update_with_hashes()` only updates the registry row; content_hashes history is currently written only by the article-epistemic builder. A separate PNU builder (analogous module) should write content_hashes rows on PNU updates so per-PNU cosmetic-vs-semantic change history is durable for future audits. Not blocking Phase 1 ship but a clean dependency follow-up. |
+| OVERSEER-IMPL-SPEC-PATH-NOTE | **Update impl spec §2 with actual repo file paths** | CW | Repo conventions differ from impl spec §2: `schemas/` → `contracts/schemas/dependency_overseer/`; `migrations/` → `scripts/migrations/`; `src/overseer/` → `overseer/`. Small revision pass to align the spec with what shipped so future readers don't get confused. |
 
 ---
 
@@ -192,6 +207,7 @@ These follow from DK's inline comments on `USER_JOURNEYS_THINKING_2026-05-17.md`
 | KA-T24 | **Tag critique sessions to authenticated students via ka_auth_server.py** | 2026-03-29 | When a logged-in student submits a critique, attach `student_id` (from JWT) to the session record. This enables per-student grading of heuristic evaluation work and aggregate class-level analytics. |
 | KA-T25 | **Add screenshot capture capability to usability critic panel** | 2026-03-29 | Let students capture a screenshot of the current viewport (or a selected element) and attach it to a heuristic rating. Use `html2canvas` or a DOM-to-SVG approach. Screenshot stored as base64 in the session record and displayed as thumbnail in the Summary tab. |
 | KA-T26 | **Add pin-point draggable critique mode to usability critic** | 2026-03-29 | Allow students to click any element on the page and "pin" a critique to it (like a comment bubble). The pin stores the element CSS selector + bounding box. Panel shows pins as an overlay layer, toggleable. This supports the "element-level critique" use case that the current panel-level flow does not. |
+| KA-T27 | **Redo and flesh out the POE talk presentation (pptx)** | 2026-05-24 | Rebuild and expand the PowerPoint for the Post-Occupancy Evaluation talk. Spine: the revised talk abstract (history compressed to ~2 slides; the rest an enumeration of worked-example cases) and `POE_REVIEW_2026-05-19.md` Part IV. One slide per worked example, each following the pattern "keep the room fixed, change the measure, watch the verdict flip". Locate any existing draft pptx first; consult the Academic Presentation Service SKILL.md and the pptx skill before building. |
 
 ---
 
