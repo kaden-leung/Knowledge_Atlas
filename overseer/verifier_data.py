@@ -474,6 +474,83 @@ def _check_answer_shape_rule_trace(conn: sqlite3.Connection) -> CheckResult:
     )
 
 
+def _check_cross_db_sync(
+    conn: sqlite3.Connection,
+    *,
+    unresolved_threshold_seconds: int = 300,
+) -> CheckResult:
+    """Phase 2 (P14, OR3): any cross_db_sync_events row with status='unresolved'
+    older than unresolved_threshold_seconds is a verifier failure. Stale
+    unresolved rows mean the reconciler is not keeping up with drift.
+    """
+    failures: list[dict] = []
+    rows = conn.execute(
+        """
+        SELECT event_id, event_kind, lifecycle_payload_hash,
+               (julianday('now') - julianday(created_at)) * 86400.0 AS age
+        FROM cross_db_sync_events
+        WHERE status = 'unresolved'
+        """,
+    ).fetchall()
+    for r in rows:
+        if r["age"] is not None and r["age"] > unresolved_threshold_seconds:
+            failures.append({
+                "event_id": r["event_id"],
+                "event_kind": r["event_kind"],
+                "ka_paper": r["lifecycle_payload_hash"],
+                "age_seconds": int(r["age"]),
+                "threshold_seconds": unresolved_threshold_seconds,
+                "message": "cross_db_sync_events row stuck unresolved past threshold",
+            })
+    return CheckResult(
+        name="cross_db_sync",
+        passed=not failures,
+        failures=failures,
+        description="No unresolved cross_db_sync_events rows older than threshold.",
+    )
+
+
+def _check_abstract_source_provenance(conn: sqlite3.Connection) -> CheckResult:
+    """Phase 2: every active 'abstract' artefact is reachable via a
+    dependency_edges row from an article_finder_candidate parent.
+
+    Note: source-label content lives in the abstract artefact's payload (not
+    yet stored as a separate column in artefact_registry). Per P26 the
+    state-machine API enforces source-label validity at write time via
+    abstract_provenance.require_allowed_source(). This verifier check
+    confirms the structural relation: every abstract is a derived_from an
+    article_finder_candidate. Future work (Phase 3 LLM-aided
+    canonicalization) may add deeper content inspection.
+    """
+    failures: list[dict] = []
+    rows = conn.execute(
+        """
+        SELECT a.artefact_id, a.entity_id
+        FROM artefact_registry a
+        LEFT JOIN dependency_edges e
+            ON e.child_artefact_id = a.artefact_id
+           AND e.edge_kind = 'derived_from'
+           AND e.tombstoned_at IS NULL
+        LEFT JOIN artefact_registry p
+            ON p.artefact_id = e.parent_artefact_id
+           AND p.kind = 'article_finder_candidate'
+        WHERE a.kind = 'abstract' AND a.active = 1
+          AND p.artefact_id IS NULL
+        """,
+    ).fetchall()
+    for r in rows:
+        failures.append({
+            "artefact_id": r["artefact_id"], "entity_id": r["entity_id"],
+            "message": "abstract artefact lacks derived_from edge to an article_finder_candidate",
+        })
+    return CheckResult(
+        name="abstract_source_provenance",
+        passed=not failures,
+        failures=failures,
+        description="Every active abstract artefact is derived_from an article_finder_candidate.",
+    )
+
+
 def _check_scaffold_tables_empty(conn: sqlite3.Connection) -> CheckResult:
     """The remaining scaffold tables (llm_invocations, prompt_templates,
     source_packets, content_equivalence_checks) have no rows until Phase 3
@@ -514,6 +591,8 @@ CHECKS: list[Callable[[sqlite3.Connection], CheckResult]] = [
     _check_claim_canonicalization,
     _check_belief_network_freshness,
     _check_answer_shape_rule_trace,
+    _check_cross_db_sync,
+    _check_abstract_source_provenance,
     _check_scaffold_tables_empty,
 ]
 
