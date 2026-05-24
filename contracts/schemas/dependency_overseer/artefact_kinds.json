@@ -1,7 +1,7 @@
 {
-  "version": "v1",
-  "source_authority": "docs/DEPENDENCY_OVERSEER_IMPLEMENTATION_SPEC_2026-05-23.md §4.4",
-  "notes": "Artefact kinds registered for Phase 1 of the dependency overseer. The kinds_registry script loads this file and writes artefact_kinds rows. Phase 2 and Phase 3 add kinds via dated migration JSON files in this same directory.",
+  "version": "v2",
+  "source_authority": "docs/DEPENDENCY_OVERSEER_IMPLEMENTATION_SPEC_2026-05-23.md §4.4 + docs/DEPENDENCY_OVERSEER_PHASE_2_SPEC_2026-05-23.md §4",
+  "notes": "Artefact kinds registered. Phase 1 = 3 kinds; Phase 2 added 4 (article_finder_candidate, abstract, pdf_artifact, ocr_artifact). The seed script reads this file and writes artefact_kinds rows (INSERT OR IGNORE on kind_name). Phase 3 will add more.",
   "kinds": [
     {
       "kind_name": "pnu_row",
@@ -23,6 +23,34 @@
       "support_rule_module": "overseer.support_rules.article_detail_json",
       "schema_version": "article_detail.v1",
       "phase_active": 1
+    },
+    {
+      "kind_name": "article_finder_candidate",
+      "owner_pipeline": "article_finder_reconciler",
+      "support_rule_module": "overseer.support_rules.article_finder_candidate",
+      "schema_version": "article_finder_candidate.v1",
+      "phase_active": 2
+    },
+    {
+      "kind_name": "abstract",
+      "owner_pipeline": "article_finder_reconciler",
+      "support_rule_module": "overseer.support_rules.abstract",
+      "schema_version": "abstract.v1",
+      "phase_active": 2
+    },
+    {
+      "kind_name": "pdf_artifact",
+      "owner_pipeline": "article_finder_reconciler",
+      "support_rule_module": "overseer.support_rules.pdf_artifact",
+      "schema_version": "pdf_artifact.v1",
+      "phase_active": 2
+    },
+    {
+      "kind_name": "ocr_artifact",
+      "owner_pipeline": "article_finder_reconciler",
+      "support_rule_module": "overseer.support_rules.ocr_artifact",
+      "schema_version": "ocr_artifact.v1",
+      "phase_active": 2
     }
   ]
 }

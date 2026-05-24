@@ -475,12 +475,13 @@ def _check_answer_shape_rule_trace(conn: sqlite3.Connection) -> CheckResult:
 
 
 def _check_scaffold_tables_empty(conn: sqlite3.Connection) -> CheckResult:
-    """The five scaffold tables (cross_db_sync_events, llm_invocations,
-    prompt_templates, source_packets, content_equivalence_checks) have no
-    rows in Phase 1 (P28)."""
+    """The remaining scaffold tables (llm_invocations, prompt_templates,
+    source_packets, content_equivalence_checks) have no rows until Phase 3
+    activates them. cross_db_sync_events was moved out of scaffold at
+    Phase 2 ship per the Phase 2 spec."""
     failures: list[dict] = []
     scaffold = [
-        "cross_db_sync_events", "llm_invocations", "prompt_templates",
+        "llm_invocations", "prompt_templates",
         "source_packets", "content_equivalence_checks",
     ]
     for t in scaffold:
@@ -488,13 +489,13 @@ def _check_scaffold_tables_empty(conn: sqlite3.Connection) -> CheckResult:
         if n > 0:
             failures.append({
                 "table": t, "rows": n,
-                "message": "scaffold-only table has rows in Phase 1",
+                "message": "scaffold-only table has rows before its activating phase",
             })
     return CheckResult(
         name="scaffold_tables_empty",
         passed=not failures,
         failures=failures,
-        description="Phase 1 scaffold tables remain empty until their activating phase.",
+        description="Phase 3 scaffold tables remain empty until Phase 3 ship.",
     )
 
 

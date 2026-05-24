@@ -206,12 +206,13 @@ def test_scaffold_tables_empty_passes_when_no_scaffold_rows(overseer_db):
 
 
 def test_scaffold_tables_empty_fails_when_scaffold_populated(overseer_db):
-    # Insert into a scaffold table — Phase 1 verifier should flag this.
+    # Insert into a still-scaffold table (Phase 3-deferred) — verifier should
+    # flag this. cross_db_sync_events is no longer scaffold after Phase 2 ship.
     overseer_db.execute(
         """
-        INSERT INTO cross_db_sync_events (
-            event_id, event_kind, status, created_at
-        ) VALUES ('ev:test', 'accept_candidate', 'pending', '2026-05-23T00:00:00Z')
+        INSERT INTO source_packets (
+            source_packet_id, members_json, source_packet_hash, created_at
+        ) VALUES ('sp:test', '[]', 'sha256:empty', '2026-05-23T00:00:00Z')
         """,
     )
     report = verify_strict(overseer_db)
