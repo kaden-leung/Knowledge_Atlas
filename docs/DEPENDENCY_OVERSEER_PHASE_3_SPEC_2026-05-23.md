@@ -36,13 +36,34 @@ Out of scope for Phase 3:
 - Workflow UI for human review (Phase 3 ships the DB-level review queue; UI is a separate track).
 - Topics, DYK cards, search-index, reports (Phase 4).
 
-## 2. Pre-existing LLM Contract Alignment
+## 2. Pre-existing LLM Contract Alignment + Caller Architecture
 
 The Article Eater repo already carries a substantial LLM anti-cheat contract: `SUBSCRIPTION_LLM_ORCHESTRATION_AND_ANTI_CHEAT_CONTRACT_2026-05-21.md`. Phase 3 of the overseer aligns with that contract rather than reinventing. Specifically:
 
 - Allowed worker surfaces (from synthesis P22 and the existing contract): `antigravity_subscription`, `codex_cli_subscription`, `claude_cli_subscription`, `google_ai_api`. The overseer's `llm_invocations.worker_surface` CHECK constraint already enforces this enum.
 - The existing contract has 12 last-mile success conditions (SC-SLO-1 through SC-SLO-12). Phase 3 maps every overseer verifier check that involves LLM artefacts to one or more SC-SLO conditions, so the two contracts compose cleanly.
 - Job-packet / result-artefact orchestration is owned by the Article Eater side; the overseer side records provenance and enforces field-policy. The reconciler between the two systems (analogous to the AF reconciler in Phase 2) is a Phase 4 task.
+
+### 2.1 LLM Caller Architecture (binding)
+
+**Article Eater is the LLM orchestrator. The overseer never calls an LLM directly.** This is the single most important architectural decision in Phase 3, and the spec makes it explicit.
+
+Flow for a Stage 2 LLM enrichment:
+
+1. The overseer publishes a job packet to Article Eater's job inbox (or AE pulls from a queue) naming: the target artefact_id, the component_type to enrich, the source_packet_id (manifest of allowed grounding sources), the prompt_template_id, and the expected output schema.
+2. Article Eater dispatches the job to a subscription-CLI worker (Antigravity / Codex CLI / Claude CLI per the AE orchestration contract).
+3. The worker produces a result JSON artefact at AE's designated `output_path` per SUBSCRIPTION_LLM_ORCHESTRATION SC-SLO-2.
+4. Article Eater's controller validates the result (schema, hashes, provenance) per SC-SLO-3 through SC-SLO-6.
+5. AE submits the validated result to the overseer via `overseer/llm_submission.py::accept_submission(conn, result_json)`.
+6. The overseer runs:
+   - field-policy enforcement at the artefact_registry insert path (§6);
+   - grounding verifier (§8);
+   - records an `llm_invocations` row;
+   - leaves `review_decision='pending'` unless the component_type is on the auto-approve list (§7).
+
+The overseer does NOT itself spawn worker processes, call provider SDKs, or write to AE's filesystem. The `worker_surface` value on every `llm_invocations` row reflects what AE recorded; the overseer enforces the value is in the allowed enum but trusts AE for the actual surface used.
+
+This decision keeps responsibilities clean: AE owns orchestration; the overseer owns provenance, verification, and release-gate enforcement.
 
 ## 3. Source Packet Contract
 
@@ -134,7 +155,13 @@ Phase 3 makes the existing `completion_queue` carry human-review items in a new 
 4. On `human_approved`, the artefact's freshness flips to `fresh` (in a Phase 3 transaction that also updates the lifecycle DB record).
 5. On `rejected`, the LLM artefact is tombstoned but the `llm_invocations` row is retained for audit.
 
-Auto-approve list lives in `contracts/schemas/dependency_overseer/llm_auto_approve.json`. Phase 3 ships this file empty (every Stage 2 LLM artefact requires human approval). The auto-approve list can be extended in Phase 4 once a reviewer cohort has validated the grounding verifier.
+Auto-approve list lives in `contracts/schemas/dependency_overseer/llm_auto_approve.json`. **Phase 3 v1 ships this file empty (every Stage 2 LLM artefact requires human approval).** A Phase 3 v1.1 follow-up adds a component-type pilot to the auto-approve list: candidate is `provenance_summary` (mechanical, low-novelty content where the LLM mostly stitches existing artefact fields together). The v1.1 promotion requires:
+
+- ≥ 50 human-approved invocations of the candidate component_type with `grounding_verdict='pass'` and zero `human_rejected`.
+- A reviewer attestation in `docs/SPRINT_OVERSEER_PHASE_3_V1_1_AUTO_APPROVE_DECISION_<DATE>.md` naming the reviewer cohort and the candidate's empirical safety profile.
+- A reversible config: removing a kind from the auto-approve list reverts every subsequently-written artefact to `review_decision='pending'` immediately.
+
+The Phase 3 v1.1 promotion is tracked as OVERSEER-LLM-AUTO-APPROVE-v1.1 in TASKS.md.
 
 ## 8. Grounding Verifier (Field-Pinned)
 
@@ -157,8 +184,51 @@ If the verdict is `field_pinned_failure`, the LLM artefact is tombstoned and a `
 **Conservative defaults that mitigate OR9**:
 
 - Semantic similarity alone (cosine over embeddings, etc.) is NOT permitted. Grounding requires structural field-pinning.
-- Re-prompt-on-failure is not in Phase 3. A failed grounding tombstones the artefact and queues human review.
 - Default threshold = 0.9 (90% of units field-pinned). Tunable per component_type via `component_types.json` extension.
+
+**Bounded re-prompt on grounding failure** (added per Phase 3 review):
+
+A failed grounding does NOT immediately tombstone the artefact. Instead:
+
+1. The overseer raises a `regrounding_requested` event referencing the original `invocation_id`.
+2. Article Eater picks up the regrounding request and dispatches a single retry with:
+   - the same prompt_template_id and source_packet_id,
+   - a fresh `invocation_id`,
+   - a marker indicating "retry of <prior_invocation_id>".
+3. The retry's output MUST produce a different `output_hash` than the prior failed run (verified by the overseer at submission). An identical `output_hash` is treated as evidence the LLM cannot ground this packet and proceeds to the no-retry path below.
+4. If the retry also fails grounding (`grounding_verdict` != `pass`), THEN tombstone the artefact and raise a `completion_queue` row with severity `high`.
+
+Retry cap: **1**. No second retry. This caps risk (one flaky run does not force a human into the loop; a persistent failure still routes to review) and stays consistent with the conservative-default theme of Phase 3.
+
+The retry path is implemented in `overseer/grounding_verifier.py::request_regrounding(conn, invocation_id) -> bool`. The companion submission path checks `prior_invocation_id` and rejects a third attempt for the same artefact in a short window.
+
+### 8.1 Dry-run protocol for the first 20 submissions (added per Phase 3 review)
+
+The grounding thresholds (0.9 pass, 0.5 token overlap, sentence-level granularity) are guesses tuned to the conservative side; the real values depend on the prose style of the active prompt template (`backing_prose_v1`). To avoid shipping with mis-tuned thresholds, Phase 3 ships with a **dry-run mode for the first 20 Article-Eater-submitted artefacts** of each new component_type.
+
+In dry-run mode:
+
+1. AE submits the artefact normally.
+2. The grounding verifier runs as configured AND produces an extended report including:
+   - per-unit field-pinning decisions (which sentence linked to which source path, with token-overlap percentage),
+   - the overall pass/fail verdict at the configured threshold,
+   - what the verdict would be at thresholds 0.85, 0.90, 0.95 (sensitivity sweep).
+3. The verdict is recorded as `dry_run_pass` or `dry_run_fail` in `llm_invocations.grounding_verdict`. The artefact is NOT promoted to fresh; freshness stays at `unknown` and a completion_queue row routes the artefact to a human for review of both the LLM output and the grounding decision.
+4. After 20 dry-run submissions, the spec author writes a tuning report (`docs/SPRINT_OVERSEER_PHASE_3_GROUNDING_TUNING_<DATE>.md`) recommending threshold adjustments. The grounding verifier flips to live mode via a config-file change.
+
+Dry-run mode is per-component-type and per-template (e.g., flipping `backing_prose_v1` to live mode does not auto-flip a future `defeater_explanation_v1`). The toggle lives in `contracts/schemas/dependency_overseer/grounding_mode.json`:
+
+```json
+{
+  "version": "v1",
+  "modes": {
+    "backing_prose_v1": "dry_run"
+  },
+  "dry_run_sample_size": 20
+}
+```
+
+When the sample-size threshold is hit and the mode is still `dry_run`, the verifier raises a `completion_queue` row reminding the operator to write the tuning report and flip the mode.
 
 ## 9. Content Equivalence Checks (Semantic-vs-Cosmetic)
 
@@ -175,8 +245,36 @@ Flow:
 
 **OR9 mitigation specifics**:
 
-- `verify_strict()` adds a check: `_check_content_equivalence_review_status` flags any active `content_equivalence_checks` row with `equivalence_verdict='semantic_equivalent'` whose paired `llm_invocations.review_decision != 'human_approved'`. Phase 3 default: every `semantic_equivalent` verdict requires human approval before the cascade is suppressed.
+- `verify_strict()` adds a check: `_check_content_equivalence_review_status` flags any active `content_equivalence_checks` row with `equivalence_verdict='semantic_equivalent'` whose paired `llm_invocations.review_decision != 'human_approved'` AND is not covered by a batched-approval row (see below).
 - A second check: `_check_semantic_equivalent_rate` flags artefact kinds whose `semantic_equivalent` rate per build window exceeds a threshold (default 30%). Indicates either tokenizer-change-induced false positives or LLM over-permissiveness.
+
+**Batched approval** (added per Phase 3 review):
+
+A reviewer can approve a *class* of equivalence checks with one decision rather than per-row. This is the right mode when an upstream change (tokenizer upgrade, normalizer-rule bump, sweeping reformat) produces a large batch of raw-only changes that the LLM uniformly classifies `semantic_equivalent`.
+
+New table:
+
+```sql
+CREATE TABLE content_equivalence_batch_approvals (
+    batch_id              TEXT PRIMARY KEY,
+    description           TEXT NOT NULL,             -- human-readable rationale
+    match_criteria_json   TEXT NOT NULL,             -- e.g., {"artefact_kind":"pnu_row","prior_raw_hash_prefix":"sha256:abc"}
+    reviewer_id           TEXT NOT NULL,
+    decision              TEXT NOT NULL CHECK(decision IN ('approved','revoked')),
+    created_at            TEXT NOT NULL,
+    revoked_at            TEXT
+);
+```
+
+A `content_equivalence_checks` row is covered by a batch approval iff it matches the batch's `match_criteria_json` (evaluated by `overseer/content_equivalence.py::batch_covers(row, criteria)`). The verifier check accepts batched-approved rows as if they had `review_decision='human_approved'`.
+
+Constraints:
+
+- Match criteria must reference at least one of `{artefact_kind, normalization_rule_version_change, prior_semantic_hash, new_semantic_hash, build_run_id_range}`. Free-form "approve everything" criteria are rejected at write time.
+- A batch can be revoked; revocation flips `decision='revoked'` and reverts every row previously covered by the batch back to per-row review (verifier rechecks at next run).
+- The batched-approval CLI requires reviewer_id and refuses to land an approval without a description string.
+
+This addresses the operational concern raised in review: a tokenizer change touching 500 papers becomes one batch-approval decision, not 500 per-row decisions, while preserving auditability (every covered row's coverage is computable from the batch criteria at any time).
 
 ## 10. LLM-Aided Vocabulary Canonicalization
 
@@ -211,13 +309,17 @@ overseer/
     source_packets.py            # capture, get, hash-pin enforcement
     prompt_templates.py          # register, lookup, hash check
     llm_invocations.py           # record, set_grounding_verdict, set_review_decision
+    llm_submission.py            # accept_submission(conn, result_json) — AE→overseer entry point (§2.1)
     field_policy.py              # enforce_at_write, lookup
-    grounding_verifier.py        # verify_grounding (field-pinned)
+    grounding_verifier.py        # verify_grounding (field-pinned) + request_regrounding
+    grounding_mode.py            # dry_run vs live mode resolver (§8.1)
     content_equivalence.py       # enqueue, set_verdict
+    content_equivalence_batch.py # batched approval (§9 batched approval)
     vocab_canonicalizer.py       # LLM-aided mapping (function only; daemon Phase 4)
 contracts/schemas/dependency_overseer/
     llm_auto_approve.json        # initially empty; auto-approve list
     model_allowlist.json         # allowed model_name values
+    grounding_mode.json          # per-template dry_run vs live toggle (§8.1)
 contracts/prompts/dependency_overseer/
     backing_prose_v1.md          # Phase 3 pilot prompt template content
 scripts/
@@ -225,6 +327,11 @@ scripts/
         # one-shot wrapper that runs grounding verification on pending invocations
     dependency_overseer_llm_review_cli.py
         # CLI: list pending reviews, approve/reject (records reviewer_id)
+    dependency_overseer_batch_approve_cli.py
+        # CLI: batched approval for content_equivalence_checks
+migrations/  (extends scripts/migrations/)
+    2026_XX_XX_content_equivalence_batch_approvals.sql
+        # new table per §9 batched approval
 tests/
     test_overseer_source_packets.py
     test_overseer_prompt_templates.py
@@ -270,8 +377,12 @@ overseer/invalidator.py
 | `test_overseer_vocab_canonicalizer.py` | function proposes mappings; mappings land as candidate-with-canonical_value-set; only human approval flips to synonym |
 | `test_overseer_phase3_verifier_checks.py` | each of the 5 new checks: passes on clean state; fails on documented failure condition |
 | `test_overseer_phase3_round_trip.py` | end-to-end: enqueue a Stage 2 backing_prose invocation → record → grounding pass → pending review → human approval → freshness flips to fresh → verifier all-pass |
+| `test_overseer_llm_submission.py` | AE→overseer accept_submission entry; rejects mismatched hashes; idempotent on (invocation_id) |
+| `test_overseer_regrounding_retry.py` | first grounding failure raises regrounding_requested; retry with identical output_hash treated as no-retry; second grounding failure tombstones + completion_queue row |
+| `test_overseer_content_equivalence_batch.py` | batch approval covers matching rows; cannot match free-form criteria; revocation reverts coverage; verifier honors active batch as approval |
+| `test_overseer_grounding_dry_run.py` | dry_run mode records sensitivity sweep, does not promote to fresh, raises tuning-report reminder at sample size |
 
-Target: 45–60 new tests; all 220 Phase 1+2 tests must continue to pass.
+Target: 55–70 new tests; all 220 Phase 1+2 tests must continue to pass.
 
 ## 14. Acceptance Criteria
 
@@ -279,43 +390,59 @@ Target: 45–60 new tests; all 220 Phase 1+2 tests must continue to pass.
 2. `prompt_templates` carries the Phase 3 pilot template `backing_prose_v1` with active=1; hash recomputes from `contracts/prompts/dependency_overseer/backing_prose_v1.md`.
 3. `source_packets.capture()` validates every member exists and is active; raises on tombstoned members.
 4. `update_with_hashes(source_mode='llm_generated')` to a non-llm-enrichable field raises `FieldPolicyViolation`.
-5. Grounding verifier: passes when ≥90% of units field-pinned; fails (tombstone + completion_queue row) below threshold; semantic-only similarity is NOT accepted.
+5. Grounding verifier: passes when ≥90% of units field-pinned; semantic-only similarity is NOT accepted. **First-failure path**: raise `regrounding_requested`; AE retries with a fresh `invocation_id` and (verified) different `output_hash`. **Second-failure path**: tombstone + completion_queue row.
 6. Human review queue: Stage 2 LLM artefact remains at `review_decision='pending'` until a reviewer sets approved/rejected.
 7. Production freshness: an LLM artefact does not flip to `freshness_status='fresh'` until `review_decision='human_approved'` (or `machine_approved` for an auto-approved component_type).
-8. Content equivalence check: a raw-only change cannot be marked semantic_equivalent without `llm_invocations.review_decision='human_approved'`.
+8. Content equivalence check: a raw-only change cannot be marked semantic_equivalent without `llm_invocations.review_decision='human_approved'` OR coverage by an active `content_equivalence_batch_approvals` row with matching criteria.
 9. Vocab canonicalization: candidates are not auto-promoted to synonym; LLM-proposed mapping lands as candidate-with-canonical_value-set requiring human approval.
 10. All 5 new verifier checks pass on a clean DB; each fails on its documented failure condition; live lifecycle DB strict verifier exits 0.
 11. Phase 3 round-trip end-to-end test passes.
 12. All Phase 1 + Phase 2 tests continue to pass (no regressions).
 13. Phase 3 ship report covers each criterion above.
+14. **Caller architecture (§2.1)**: `overseer.llm_submission.accept_submission` is the sole entry point for AE→overseer Stage 2 content; no overseer module spawns LLM workers or imports provider SDKs.
+15. **Dry-run mode (§8.1)**: `backing_prose_v1` ships at `dry_run`; the first 20 submissions produce sensitivity sweeps; a tuning-report reminder fires at the sample-size threshold.
+16. **Bounded retry (§8)**: a first grounding failure raises `regrounding_requested` rather than tombstoning; a second failure (or an identical-output_hash retry) tombstones.
+17. **Batched equivalence approval (§9)**: an active batch row covers matching `content_equivalence_checks` rows; revocation reverts coverage; verifier honors active batches as approval.
 
 ## 15. Open Implementation Questions for Phase 3
 
-1. **Grounding granularity (unit definition)**: sentence-level vs claim-level vs paragraph-level. Recommend sentence-level for `backing_prose_v1`; configurable per component_type.
-2. **Token-overlap threshold for field-pinning**: default 0.5 (50% of unit's tokens). Tunable per component_type.
-3. **Model allowlist contents**: who maintains `model_allowlist.json` and how. Recommend cross-AI coordination doc.
-4. **Auto-approve list initial size**: Phase 3 ships empty. Adding a component_type to auto-approve requires a separate PR with verifier-pass evidence.
-5. **Re-prompt-on-failure policy**: Phase 3 ships none. Phase 4 may add bounded re-prompt with fresh invocation_id and capped retry count.
-6. **LLM cost monitoring**: not in Phase 3 scope; tracked in OVERSEER-LLM-COST follow-up.
-7. **Reviewer authentication**: Phase 3 CLI records reviewer_id from a CLI arg. Real authentication via an upstream system is Phase 4.
-8. **Backfill of historical LLM-generated content**: not in Phase 3. Going-forward only.
+Resolved by the Phase 3 review (folded into the spec above):
+
+- ~~LLM caller architecture~~ — **§2.1**: AE is the LLM orchestrator; the overseer never calls an LLM directly.
+- ~~Re-prompt-on-failure policy~~ — **§8**: bounded 1-retry with fresh invocation_id and required-different output_hash; second failure tombstones + queues review.
+- ~~Grounding-threshold tuning~~ — **§8.1**: dry-run mode on the first 20 submissions per component_type; sensitivity sweep recorded; tuning report required before flipping to live.
+- ~~Content-equivalence operational cost~~ — **§9 batched approval**: a reviewer can approve a typed class of equivalence checks with one decision; batch covers via match criteria; revocable; audit-preserving.
+- ~~Auto-approve list initial size~~ — **§7**: Phase 3 v1 ships empty; Phase 3 v1.1 adds `provenance_summary` after ≥50 human-approved invocations + reviewer attestation.
+
+Still open in Phase 3:
+
+1. **Grounding granularity (unit definition)**: sentence-level vs claim-level vs paragraph-level. Recommend sentence-level for `backing_prose_v1`; configurable per component_type. To be confirmed by the dry-run tuning report (§8.1).
+2. **Token-overlap threshold for field-pinning**: default 0.5 (50% of unit's tokens). Tunable per component_type. To be confirmed by the dry-run tuning report (§8.1).
+3. **Model allowlist contents**: who maintains `model_allowlist.json` and how. Recommend cross-AI coordination doc and a quarterly refresh schedule.
+4. **LLM cost monitoring**: not in Phase 3 scope; tracked in OVERSEER-LLM-COST follow-up.
+5. **Reviewer authentication**: Phase 3 CLI records reviewer_id from a CLI arg. Real authentication via an upstream system is Phase 4.
+6. **Backfill of historical LLM-generated content**: not in Phase 3. Going-forward only.
+7. **Batched approval match-criteria vocabulary**: the §9 list (artefact_kind, normalization_rule_version_change, prior_semantic_hash, new_semantic_hash, build_run_id_range) is conservative; extending it requires a separate PR with verifier-pass evidence.
 
 ## 16. Sequence of Work
 
-Recommended order, mirroring Phase 1 and Phase 2 ballistic patterns:
+Recommended order, mirroring Phase 1 and Phase 2 ballistic patterns and incorporating the Phase 3 review additions:
 
-1. Land this spec.
-2. Land Phase 3 contract files (`llm_auto_approve.json`, `model_allowlist.json`, `backing_prose_v1.md`).
-3. Implement `source_packets`, `prompt_templates`, `llm_invocations`, `field_policy` modules + tests.
-4. Add `source_mode` parameter to `update_with_hashes` and wire field-policy enforcement.
-5. Implement grounding verifier + tests.
-6. Implement content_equivalence module + tests; update invalidator to enqueue checks.
-7. Implement vocab_canonicalizer + tests.
-8. Add 5 new verifier checks; remove 4 tables from scaffold list.
-9. Implement Phase 3 round-trip test.
-10. Run full test suite; run live verifier.
-11. Phase 3 ship report; update TASKS.md and TOPIC_PROGRESS.md.
+1. Land this spec (this commit).
+2. Land Phase 3 contract files (`llm_auto_approve.json` (empty), `model_allowlist.json`, `grounding_mode.json` (all templates `dry_run`), `backing_prose_v1.md`).
+3. Land migration `2026_XX_XX_content_equivalence_batch_approvals.sql` (new table per §9).
+4. Implement `source_packets`, `prompt_templates`, `llm_invocations` modules + tests.
+5. Implement `field_policy` + add `source_mode` parameter to `update_with_hashes` + wire field-policy enforcement.
+6. Implement `llm_submission.accept_submission()` (the AE→overseer entry point per §2.1) + tests.
+7. Implement grounding verifier + `request_regrounding` (bounded 1-retry per §8) + tests.
+8. Implement `grounding_mode` resolver + dry-run sensitivity sweep + tuning-report reminder + tests.
+9. Implement content_equivalence module + batched approval + tests; update invalidator to route raw-only changes via content_equivalence_checks.
+10. Implement vocab_canonicalizer + tests.
+11. Add 5 new verifier checks; remove 4 LLM-governance tables from scaffold list.
+12. Implement Phase 3 round-trip test (dry-run mode for backing_prose_v1).
+13. Run full test suite; run live verifier; smoke test against the real lifecycle DB.
+14. Phase 3 ship report; update TASKS.md and TOPIC_PROGRESS.md. Add `OVERSEER-LLM-AUTO-APPROVE-v1.1` task referencing §7's v1.1 promotion path.
 
-Estimated commits: 7–10 (larger than Phase 2 because of the grounding verifier and content_equivalence layers).
+Estimated commits: 8–11 (larger than Phase 2 because of the grounding verifier, retry plumbing, dry-run mode, and content_equivalence layers).
 
 **Phase 3 is the most-dangerous failure-mode phase per synthesis OR9.** Every default favors safety over throughput: conservative grounding thresholds, human-review-by-default, no auto-promotion of vocab synonyms, tombstone-and-queue on grounding failure. The Phase 4 retrospective should review whether any of these defaults can be relaxed once a corpus of approved invocations is built up.
