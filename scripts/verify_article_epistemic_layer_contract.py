@@ -57,6 +57,14 @@ VOCAB_FIELD_POLICY = {"extracted_only", "deterministic_only", "llm_enrichable",
                       "human_only"}
 VOCAB_RENDER_POLICY = {"render", "render_with_warning", "hide", "block"}
 
+# Defeater row contract (spec §8; Pollock). Mirror of
+# build_article_epistemic_layer.py DEFEATER_TARGET_KINDS / DEFEATER_DEFEAT_KINDS
+# and overseer/article_epistemic_builder.py:_classify_defeaters — keep in sync.
+VOCAB_DEFEATER_TARGET_KIND = {"claim", "warrant", "method", "measurement",
+                              "interpretation", "generalizability",
+                              "mechanism", "application"}
+VOCAB_DEFEATER_DEFEAT_KIND = {"rebutting", "undercutting"}
+
 REQUIRED_COMPONENT_TYPES = {
     "primary_claim", "claim_rows", "evidence_strength", "defeaters",
     "belief_network_context", "answer_shape_status", "provenance_summary",
@@ -146,8 +154,11 @@ def resolve_db_path(explicit: str | None) -> Path:
         if not p.is_absolute():
             p = REPO_ROOT / p
         return p
+    # Skip 0-byte files: a committed empty decoy otherwise wins auto-detection
+    # over the real DB and makes the documented command crash with a "no such
+    # table" deep in a query (panel finding). Mirrors overseer/db.py.
     for candidate in DEFAULT_DB_CANDIDATES:
-        if candidate.exists():
+        if candidate.exists() and candidate.stat().st_size > 0:
             return candidate
     return DEFAULT_DB_CANDIDATES[-1]
 
@@ -373,20 +384,20 @@ def check_content_hashes(record: dict, components: list[dict]) -> list[Failure]:
 
 
 def check_payload_hash(record: dict, components: list[dict]) -> list[Failure]:
-    public = {
+    # Content-only hash (must match build_article_epistemic_layer.py
+    # content_for_hash exactly): identity + component content, NO mutable
+    # lifecycle/status fields. This is what lets the published payload be
+    # recomputed from its own bytes and lets promotion/review/freshness change
+    # without rewriting content hashes. Supersedes the old status-inclusive
+    # definition (spec §6/§7 amended).
+    content = {
         "schema_version": record["schema_version"],
         "record_id": record["record_id"],
         "paper_id": record["paper_id"],
-        "extraction_status": record["extraction_status"],
-        "enrichment_status": record["enrichment_status"],
-        "freshness_status": record["freshness_status"],
-        "review_status": record["review_status"],
-        "render_status": record["render_status"],
-        "release_eligible": record["release_eligible"],
         "primary_claim_id": record["primary_claim_id"],
         "components": {c["component_type"]: c["content_json"] for c in components},
     }
-    recomputed = "sha256:" + sha256_canonical(public)
+    recomputed = "sha256:" + sha256_canonical(content)
     if recomputed != record["payload_hash"]:
         return [Failure(
             paper_id=record["paper_id"], record_id=record["record_id"],
@@ -449,6 +460,35 @@ def check_count_reconciliation(record: dict, components: list[dict]
             ),
         },
     )]
+
+
+def check_defeater_row_contract(record: dict, components: list[dict]) -> list[Failure]:
+    """Spec §8 (Pollock): any extracted defeater row MUST carry a target_kind
+    (which inference it attacks) and a defeat_kind (rebutting vs undercutting).
+    Stage 1 extracts no rows, so this is forward-looking enforcement: the moment
+    a row appears it must be a defeat relation, not an untyped blob."""
+    defeaters = next((c for c in components if c["component_type"] == "defeaters"), None)
+    if defeaters is None:
+        return []
+    rows = defeaters["content_json"].get("rows", []) or []
+    out: list[Failure] = []
+    for i, row in enumerate(rows):
+        tk = (row or {}).get("target_kind")
+        dk = (row or {}).get("defeat_kind")
+        if tk not in VOCAB_DEFEATER_TARGET_KIND:
+            out.append(Failure(
+                paper_id=record["paper_id"], record_id=record["record_id"],
+                check="defeaters.row_target_kind",
+                message=f"defeater row {i} target_kind={tk!r} not in vocab",
+            ))
+        if dk not in VOCAB_DEFEATER_DEFEAT_KIND:
+            out.append(Failure(
+                paper_id=record["paper_id"], record_id=record["record_id"],
+                check="defeaters.row_defeat_kind",
+                message=f"defeater row {i} defeat_kind={dk!r} not in "
+                        "{rebutting, undercutting}",
+            ))
+    return out
 
 
 def check_no_llm_in_stage1(record: dict, components: list[dict]) -> list[Failure]:
@@ -625,6 +665,7 @@ def verify_all(conn: sqlite3.Connection, payload: dict | None
         fails.extend(check_payload_hash(record, components))
         fails.extend(check_evidence_strength_claim_bound(record, components))
         fails.extend(check_count_reconciliation(record, components))
+        fails.extend(check_defeater_row_contract(record, components))
         fails.extend(check_no_llm_in_stage1(record, components))
         fails.extend(check_release_eligibility_gating(record, components))
         fails.extend(check_completion_queue_present_for_repairable(conn, record))
@@ -752,12 +793,28 @@ def main(argv: list[str] | None = None) -> int:
 
     conn = sqlite3.connect(db_path)
     conn.execute("PRAGMA foreign_keys = ON;")
+    # Fail fast with a clear message if the DB is present but un-initialized,
+    # instead of crashing with "no such table" inside a check (panel finding).
+    if conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' "
+        "AND name='article_epistemic_records'"
+    ).fetchone() is None:
+        conn.close()
+        print(f"ERROR: lifecycle DB at {db_path} has no 'article_epistemic_records' "
+              f"table — present but un-initialized.\n"
+              f"  Run: python3 scripts/article_epistemic_layer_init.py --db {db_path}\n"
+              f"  or:  pass --db 160sp/pipeline_lifecycle_full.db to target the real DB.",
+              file=sys.stderr)
+        return 2
     try:
         global_failures, per_record_failures, record_ids = verify_all(conn, payload)
         records = load_active_records(conn)
         build_run_id = resolve_build_run_id(conn, records)
 
         if not args.no_write:
+            # record_id -> build_run_id, for the machine_verified UPDATE.
+            build_run_by_record = {r["record_id"]: r["build_run_id"]
+                                    for r in records.values()}
             with conn:
                 # Global event row, even if empty (to mark a verifier run).
                 write_verification_event(
@@ -772,6 +829,23 @@ def main(argv: list[str] | None = None) -> int:
                         conn, record_id=rec_id, build_run_id=build_run_id,
                         status="fail" if fails else "pass",
                         failures=fails,
+                    )
+                    # Spec §4/§11 (Mayo): a record that passes the full §11
+                    # battery (its own checks AND no run-scoped global failures)
+                    # is machine_verified. This is the only writer of that state;
+                    # without it the value is unreachable. review_status is NOT
+                    # in the content hash, so this does not invalidate
+                    # payload_hash. A dirty record is left 'unreviewed'; a record
+                    # previously machine_verified that now fails is demoted.
+                    new_status = ("machine_verified"
+                                  if not fails and not global_failures
+                                  else "unreviewed")
+                    conn.execute(
+                        "UPDATE article_epistemic_records "
+                        "SET review_status = ?, "
+                        "    updated_at = strftime('%Y-%m-%dT%H:%M:%SZ','now') "
+                        "WHERE record_id = ? AND build_run_id = ? AND active = 1",
+                        (new_status, rec_id, build_run_by_record.get(rec_id)),
                     )
                 # Repair actions to queue.
                 all_failures = global_failures + [

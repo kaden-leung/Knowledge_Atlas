@@ -75,6 +75,27 @@ FIELD_POLICY_BY_COMPONENT = {
     "provenance_summary": "deterministic_only",
 }
 
+# Defeater target/defeat-kind vocabularies (spec §8; Pollock's rebutting vs.
+# undercutting distinction). Stage 1 extracts no defeater rows, but the row
+# contract is fixed NOW so that any future row carries a target and a defeat
+# kind, and so the two builders in this repo cannot disagree about what a
+# defeater is. Mirrored in verify_article_epistemic_layer_contract.py and in
+# overseer/article_epistemic_builder.py:_classify_defeaters — keep in sync.
+DEFEATER_TARGET_KINDS = (
+    "claim", "warrant", "method", "measurement",
+    "interpretation", "generalizability", "mechanism", "application",
+)
+DEFEATER_DEFEAT_KINDS = ("rebutting", "undercutting")
+
+# The shape every defeater row must satisfy once extraction lands. Embedded in
+# the defeaters component content so downstream code and the renderer can read
+# the contract from the artefact itself.
+DEFEATER_ROW_CONTRACT = {
+    "required_fields": ["target_kind", "defeat_kind", "content"],
+    "target_kinds": list(DEFEATER_TARGET_KINDS),
+    "defeat_kinds": list(DEFEATER_DEFEAT_KINDS),
+}
+
 
 # ---------------------------------------------------------------------------
 # Canonical JSON + hashing
@@ -518,6 +539,11 @@ def build_evidence_strength_component(
             "claim_id": None,
             "source_credence": None,
             "confidence_basis": "no_primary_claim",
+            # This component describes the SHAPE of the argument graph around the
+            # claim (support/attack counts, atlas credence). It is NOT a measure
+            # of how severely the claim has been tested (Mayo). The name is kept
+            # for schema stability; the semantics are stated explicitly here.
+            "measure_semantics": "argument_support_not_severity",
             "support_count": None,
             "attack_count": None,
             "atlas_credence_mean": ev_profile.get("atlas_credence_mean"),
@@ -534,7 +560,7 @@ def build_evidence_strength_component(
             render_policy="render_with_warning",
             provenance={"basis": "deterministic_from_argumentation_and_evidence_profile"},
             absence_reason="depends_on_primary_claim",
-            display_label="Evidence Strength",
+            display_label="Argument Support",
         )
 
     primary_text = primary.get("finding") or ""
@@ -543,6 +569,9 @@ def build_evidence_strength_component(
         "claim_id": claim_id,
         "source_credence": primary.get("credence"),
         "confidence_basis": "extracted_per_claim_credence",
+        # See note in the not_applicable branch: argument-graph support, not
+        # severity. credence/support/attack counts are upstream bookkeeping.
+        "measure_semantics": "argument_support_not_severity",
         "support_count": primary.get("support_count"),
         "attack_count": primary.get("attack_count"),
         "dominant_stance": arg.get("dominant_stance"),
@@ -562,7 +591,7 @@ def build_evidence_strength_component(
         review_status="unreviewed",
         render_policy="render",
         provenance={"basis": "primary_claim_credence_plus_argumentation_counts"},
-        display_label="Evidence Strength",
+        display_label="Argument Support",
     )
 
 
@@ -588,9 +617,13 @@ def build_defeaters_component(
     if attack_count == 0 and contradiction_count == 0 and not contradicting_papers:
         content = {
             "rows": mapped_rows,
+            "row_contract": DEFEATER_ROW_CONTRACT,
             "attack_count_argumentation": attack_count,
             "contradiction_count_argumentation": contradiction_count,
             "no_defeater_basis": "no_defeater_extracted",
+            # Stage 1 never extracts defeater prose, so it can assert
+            # "we did not extract any" but NOT "none exist" (Pollock).
+            "defeater_existence": "no_defeater_extracted",
         }
         component = _component_base(
             record_id, paper_id, "defeaters",
@@ -611,10 +644,12 @@ def build_defeaters_component(
     if attack_count > 0 and not mapped_rows:
         content = {
             "rows": mapped_rows,
+            "row_contract": DEFEATER_ROW_CONTRACT,
             "attack_count_argumentation": attack_count,
             "contradiction_count_argumentation": contradiction_count,
             "contradicting_paper_count": len(contradicting_papers),
             "no_defeater_basis": None,
+            "defeater_existence": "defeaters_likely_present_unextracted",
         }
         component = _component_base(
             record_id, paper_id, "defeaters",
@@ -644,10 +679,12 @@ def build_defeaters_component(
     # Contradicting papers exist but no per-claim defeater rows are extracted.
     content = {
         "rows": mapped_rows,
+        "row_contract": DEFEATER_ROW_CONTRACT,
         "attack_count_argumentation": attack_count,
         "contradiction_count_argumentation": contradiction_count,
         "contradicting_paper_count": len(contradicting_papers),
         "no_defeater_basis": None,
+        "defeater_existence": "defeaters_likely_present_unextracted",
     }
     component = _component_base(
         record_id, paper_id, "defeaters",
@@ -978,22 +1015,39 @@ def build_record_for_paper(
     # Record-level statuses
     statuses = derive_record_statuses(components)
 
-    # input_fingerprint covers all support-set hashes (spec §6).
-    input_fingerprint = "sha256:" + sha256_hex(
-        canonical_dumps(sorted(ss["support_set_hash"] for ss in support_sets.values()))
-    )
+    # input_fingerprint covers all support-set hashes PLUS the generating
+    # activity's identity (builder_version, schema_version). Without the
+    # version terms, bumping the builder with identical inputs yields an
+    # identical fingerprint — a silent regression (Gil, panel finding;
+    # supersedes the inputs-only spec §6 text, which is amended).
+    input_fingerprint = "sha256:" + sha256_hex(canonical_dumps({
+        "support_set_hashes": sorted(ss["support_set_hash"] for ss in support_sets.values()),
+        "builder_version": BUILDER_VERSION,
+        "schema_version": SCHEMA_VERSION,
+    }))
 
     primary_claim_id = primary_component["content_json"].get("claim_id") if chosen else None
 
-    public_payload_for_hash = {
+    # payload_hash covers IMMUTABLE CONTENT ONLY: identity + component content.
+    # Mutable lifecycle/status state (extraction/enrichment/freshness/review/
+    # render status, release_eligible) is deliberately EXCLUDED so that:
+    #   (1) the published payload is recomputable from its own bytes — no
+    #       bool-vs-int (false vs 0) divergence (Wright/Brooker finding);
+    #   (2) Stage-4 promotion (flipping release_eligible) and verifier review
+    #       (flipping review_status to machine_verified) and PNU repair
+    #       (stale -> fresh) change lifecycle state WITHOUT rewriting content
+    #       hashes or invalidating downstream caches (Wright's evolution trap).
+    # Lifecycle state still travels in the public payload's envelope; it is
+    # simply not part of the content identity. This supersedes spec §6/§7,
+    # which are amended accordingly.
+    content_for_hash = {
         "schema_version": SCHEMA_VERSION,
         "record_id": record_id,
         "paper_id": paper_id,
-        **statuses,
         "primary_claim_id": primary_claim_id,
         "components": {c["component_type"]: c["content_json"] for c in components},
     }
-    payload_hash = "sha256:" + sha256_canonical(public_payload_for_hash)
+    payload_hash = "sha256:" + sha256_canonical(content_for_hash)
 
     blocking_failures = [r for r in repair_items if r["severity"] == "blocking"]
 
@@ -1225,13 +1279,29 @@ def build_public_payload(records: list[dict], build_run_id: str, started_at: str
             },
             "blocking_failures": json.loads(rec["blocking_failures_json"]),
         }
+    # Built != releasable. Surface the gap so "shipped" can never be misread as
+    # "usable" (Brooker/Mayo panel finding). releasable counts records that are
+    # actually promotable; renderable/stale/blocked break down the rest.
+    recs = [pr["record"] for pr in records]
+    built = len(recs)
+    releasable = sum(1 for r in recs if r["release_eligible"] == 1)
+    renderable = sum(1 for r in recs if r["render_status"] == "renderable")
+    stale = sum(1 for r in recs if r["freshness_status"] == "stale")
+    blocked = sum(1 for r in recs if json.loads(r["blocking_failures_json"]))
     return {
         "summary": {
             "schema_version": SCHEMA_VERSION,
             "builder_version": BUILDER_VERSION,
             "build_run_id": build_run_id,
             "generated_at": started_at,
-            "record_count": len(layers),
+            "record_count": built,
+            "coverage": {
+                "built": built,
+                "releasable": releasable,
+                "renderable": renderable,
+                "stale": stale,
+                "blocked": blocked,
+            },
         },
         "details": layers,
     }
@@ -1263,10 +1333,35 @@ def resolve_db_path(explicit: str | None) -> Path:
         if not path.is_absolute():
             path = REPO_ROOT / path
         return path
+    # Skip empty (0-byte) files. A committed 0-byte decoy at
+    # data/ka_payloads/pipeline_lifecycle_full.db otherwise wins auto-detection
+    # over the real DB and silently routes writes/reads to an un-initialized
+    # database (the cause of the crashing-runbook finding in the panel review).
+    # Mirrors overseer/db.py resolve_db_path, which already does this.
     for candidate in DEFAULT_DB_CANDIDATES:
-        if candidate.exists():
+        if candidate.exists() and candidate.stat().st_size > 0:
             return candidate
     return DEFAULT_DB_CANDIDATES[-1]
+
+
+# Lifecycle tables the builder/verifier require. Used to fail fast with a clear
+# message instead of an unhandled "no such table" deep in a query.
+REQUIRED_LIFECYCLE_TABLE = "article_epistemic_records"
+
+
+def assert_schema_present(conn: sqlite3.Connection, db_path: Path) -> None:
+    row = conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name = ?",
+        (REQUIRED_LIFECYCLE_TABLE,),
+    ).fetchone()
+    if row is None:
+        raise SystemExit(
+            f"ERROR: lifecycle DB at {db_path} has no '{REQUIRED_LIFECYCLE_TABLE}' "
+            f"table.\n  The DB is present but un-initialized. Run "
+            f"`python3 scripts/article_epistemic_layer_init.py --db {db_path}` "
+            f"first,\n  or pass --db 160sp/pipeline_lifecycle_full.db to target "
+            f"the real lifecycle database."
+        )
 
 
 def load_article_details(input_path: Path) -> tuple[dict[str, dict], str]:
@@ -1317,7 +1412,12 @@ def main(argv: list[str] | None = None) -> int:
     conn: sqlite3.Connection | None = None
     if not args.dry_run:
         conn = sqlite3.connect(db_path)
+        # Autocommit mode so the explicit BEGIN IMMEDIATE below controls the
+        # transaction boundary (acquires the write lock up front, serializing
+        # concurrent builders across the deactivate-then-insert active swap).
+        conn.isolation_level = None
         conn.execute("PRAGMA foreign_keys = ON;")
+        assert_schema_present(conn, db_path)
     build_run_id = make_build_run_id(started_at, conn)
 
     # In-memory build first; only touch DB after every paper successfully builds.
@@ -1350,28 +1450,34 @@ def main(argv: list[str] | None = None) -> int:
             print("Sample record:", json.dumps(sample_paper["record"], indent=2)[:600])
         return 0
 
-    # DB writes (conn was opened above).
+    # DB writes (conn was opened above). One serialized transaction: BEGIN
+    # IMMEDIATE takes the write lock before the first active-swap, so a
+    # concurrent builder blocks rather than racing the deactivate/insert.
     assert conn is not None  # mypy/reader: dry-run path returned earlier.
     try:
-        with conn:
-            write_build_run_row(conn, build_run_id, started_at)
-            for pr in paper_records:
-                persist_record(conn, pr, build_run_id)
-            finalize_build_run_row(
-                conn,
-                build_run_id,
-                finished_at=utc_now(),
-                input_snapshot_hash=snapshot_hash,
-                record_count=success_count,
-                success_count=success_count,
-                failure_count=failure_count,
-                repair_count=repair_count,
-                status="completed",
-                report={
-                    "input_path": str(input_path),
-                    "paper_ids_count": len(paper_ids),
-                },
-            )
+        conn.execute("BEGIN IMMEDIATE")
+        write_build_run_row(conn, build_run_id, started_at)
+        for pr in paper_records:
+            persist_record(conn, pr, build_run_id)
+        finalize_build_run_row(
+            conn,
+            build_run_id,
+            finished_at=utc_now(),
+            input_snapshot_hash=snapshot_hash,
+            record_count=success_count,
+            success_count=success_count,
+            failure_count=failure_count,
+            repair_count=repair_count,
+            status="completed",
+            report={
+                "input_path": str(input_path),
+                "paper_ids_count": len(paper_ids),
+            },
+        )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
     finally:
         conn.close()
 
@@ -1382,6 +1488,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Wrote {output_path}")
     print(f"Lifecycle DB updated: {db_path}")
     print(f"build_run_id = {build_run_id}")
+    cov = payload["summary"]["coverage"]
+    print(f"Coverage: built={cov['built']} releasable={cov['releasable']} "
+          f"renderable={cov['renderable']} stale={cov['stale']} "
+          f"blocked={cov['blocked']}  "
+          f"(built != releasable: {cov['built'] - cov['releasable']} not yet promotable)")
     return 0 if failure_count == 0 else 1
 
 

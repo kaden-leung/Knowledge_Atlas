@@ -218,6 +218,24 @@ Canonical JSON rules:
 covers source-member identity plus source hashes. `input_fingerprint` covers all
 support set hashes for a record.
 
+> **Amendment 2026-05-24 (panel review `docs/AEPL_PANEL_RUTHLESS_REVIEW_OUTPUT_2026-05-24.md` §4.2, §4.3).**
+> Two corrections supersede the paragraph above:
+>
+> 1. **`payload_hash` covers immutable CONTENT only** — `schema_version`,
+>    `record_id`, `paper_id`, `primary_claim_id`, and each component's
+>    `content_json`. It deliberately EXCLUDES all mutable lifecycle/status
+>    fields (`extraction_status`, `enrichment_status`, `freshness_status`,
+>    `review_status`, `render_status`, `release_eligible`). Those travel in the
+>    public payload's envelope but are not part of the content identity. This
+>    makes the published payload recomputable from its own bytes (no
+>    `false`-vs-`0` divergence) and lets promotion, machine-verification, and
+>    PNU repair change lifecycle state without rewriting content hashes or
+>    invalidating downstream caches.
+> 2. **`input_fingerprint` additionally covers `builder_version` and
+>    `schema_version`**, not support-set hashes alone. Bumping the builder with
+>    identical inputs must change the fingerprint, otherwise a rule change is a
+>    silent regression.
+
 ## 7. Public Payload Shape
 
 Each article detail payload may include:
@@ -260,6 +278,12 @@ Each article detail payload may include:
   }
 }
 ```
+
+> **Amendment 2026-05-24.** The status fields in the envelope above
+> (`extraction_status` … `release_eligible`) are NOT covered by `payload_hash`
+> (see §6 amendment). They are mutable lifecycle state; `payload_hash` is the
+> identity of the immutable content only. A downstream consumer can verify the
+> payload it holds by recomputing the content hash from the bytes it received.
 
 Each component object must include:
 

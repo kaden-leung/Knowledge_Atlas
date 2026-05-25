@@ -159,6 +159,21 @@ def record_with_stale_pnu(paper_id: str = "TEST-STALE-PNU") -> dict:
     return rec
 
 
+def production_typical_record(paper_id: str = "TEST-PROD-TYPICAL") -> dict:
+    """The shape 758 of 760 production records actually have: full extraction
+    (claims, argumentation, evidence) but a PNU row flagged requires_repair, so
+    the record is stale / show_with_warning with a blocking queue item.
+
+    This — not complete_record — is the modal production record. The suite
+    previously asserted only the fresh-PNU happy path, which occurs in 0/760
+    records (panel finding); this fixture closes that coverage gap."""
+    rec = complete_record(paper_id)
+    rec["pnu"]["requires_repair"] = True
+    rec["pnu"]["verifier_status"] = "fail"
+    rec["pnu"]["verifier_error_count"] = 2
+    return rec
+
+
 def abstract_only_record(paper_id: str = "TEST-ABSTRACT-ONLY") -> dict:
     rec = complete_record(paper_id)
     # No full extraction yet — just metadata + a stub claim from the abstract.
@@ -217,6 +232,7 @@ def all_fixtures() -> dict[str, dict]:
         partial_record_missing_primary_claim(),
         record_with_attack_count_no_defeaters(),
         record_with_stale_pnu(),
+        production_typical_record(),
         abstract_only_record(),
         candidate_pdf_unverified_record(),
         record_with_long_claim_text(),
