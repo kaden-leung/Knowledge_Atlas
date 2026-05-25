@@ -22,13 +22,11 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCHEMA_PATH = (
-    REPO_ROOT
-    / "contracts"
-    / "schemas"
-    / "dependency_overseer"
-    / "dependency_overseer.sql"
+SCHEMA_DIR = (
+    REPO_ROOT / "contracts" / "schemas" / "dependency_overseer"
 )
+SCHEMA_PATH = SCHEMA_DIR / "dependency_overseer.sql"
+OBSERVABILITY_SCHEMA_PATH = SCHEMA_DIR / "observability_layer.sql"
 
 DEFAULT_DB_CANDIDATES = (
     REPO_ROOT / "data" / "pipeline_lifecycle_full.db",
@@ -62,6 +60,11 @@ EXPECTED_SCAFFOLD_TABLES = {
     "prompt_templates",
     "source_packets",
     "content_equivalence_checks",
+}
+
+EXPECTED_OBSERVABILITY_TABLES = {
+    "verifier_run_history",
+    "reconciler_event_log",
 }
 
 
@@ -124,12 +127,32 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     schema_sql = SCHEMA_PATH.read_text(encoding="utf-8")
+    if OBSERVABILITY_SCHEMA_PATH.exists():
+        schema_sql += "\n\n-- observability_layer.sql appended\n\n"
+        schema_sql += OBSERVABILITY_SCHEMA_PATH.read_text(encoding="utf-8")
     result = apply_schema(db_path, schema_sql, args.dry_run)
+
+    # Verify observability tables landed too.
+    if not args.dry_run:
+        conn = sqlite3.connect(db_path)
+        try:
+            rows = conn.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"
+            ).fetchall()
+        finally:
+            conn.close()
+        present = {n for (n,) in rows}
+        result["observability_tables_missing"] = sorted(
+            EXPECTED_OBSERVABILITY_TABLES - present
+        )
+
     print(json.dumps(result, indent=2, sort_keys=True))
 
     if args.dry_run:
         return 0
-    if result.get("active_tables_missing") or result.get("scaffold_tables_missing"):
+    if (result.get("active_tables_missing")
+        or result.get("scaffold_tables_missing")
+        or result.get("observability_tables_missing")):
         return 1
     return 0
 

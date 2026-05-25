@@ -597,18 +597,69 @@ CHECKS: list[Callable[[sqlite3.Connection], CheckResult]] = [
 ]
 
 
-def verify_strict(conn: sqlite3.Connection) -> VerificationReport:
-    """Run every check; return a structured report."""
+def verify_strict(
+    conn: sqlite3.Connection,
+    *,
+    record_to_history: bool = True,
+    triggered_by: str = "manual",
+    db_path: str | None = None,
+) -> VerificationReport:
+    """Run every check; return a structured report.
+
+    record_to_history (default True): persist the run to verifier_run_history.
+    Pass False from tests that don't want history rows.
+    triggered_by: a short label for the run source ('manual', 'cron:<name>',
+    'test', etc.). Recorded in verifier_run_history.triggered_by.
+    db_path: optional, used only for the history row. If None, recorded as
+    '(unknown)'.
+    """
     from datetime import datetime, timezone
+    import json as _json
+    import uuid as _uuid
+
     started = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     results = [c(conn) for c in CHECKS]
     finished = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    return VerificationReport(
+    report = VerificationReport(
         overall_passed=all(r.passed for r in results),
         checks=results,
         started_at=started,
         finished_at=finished,
     )
+
+    if record_to_history:
+        try:
+            conn.execute(
+                """
+                INSERT INTO verifier_run_history (
+                    run_id, started_at, finished_at, overall_passed,
+                    db_path, checks_json, triggered_by
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    f"vrh:{_uuid.uuid4().hex}",
+                    started, finished,
+                    1 if report.overall_passed else 0,
+                    db_path or "(unknown)",
+                    _json.dumps(report_to_dict(report)["checks"],
+                                separators=(",", ":")),
+                    triggered_by,
+                ),
+            )
+            # Commit if the connection is in implicit-transaction mode; no-op
+            # in autocommit. Either way, the row lands.
+            try:
+                conn.commit()
+            except sqlite3.OperationalError:
+                # Some connections (e.g., autocommit with no open transaction)
+                # raise here; safe to ignore.
+                pass
+        except sqlite3.OperationalError:
+            # Table missing (older DB without the observability migration);
+            # skip silently to keep verify_strict back-compatible.
+            pass
+
+    return report
 
 
 def report_to_dict(report: VerificationReport) -> dict[str, Any]:

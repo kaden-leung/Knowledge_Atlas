@@ -13,6 +13,9 @@ if str(ROOT) not in sys.path:
 _OVERSEER_SCHEMA_PATH = (
     ROOT / "contracts" / "schemas" / "dependency_overseer" / "dependency_overseer.sql"
 )
+_OVERSEER_OBSERVABILITY_SCHEMA_PATH = (
+    ROOT / "contracts" / "schemas" / "dependency_overseer" / "observability_layer.sql"
+)
 _AEPL_SCHEMA_PATH = (
     ROOT / "contracts" / "schemas" / "article_epistemic_layer.sql"
 )
@@ -53,6 +56,9 @@ def overseer_db(tmp_path):
     """
     db_path = tmp_path / "overseer_test.db"
     schema_sql = _OVERSEER_SCHEMA_PATH.read_text(encoding="utf-8")
+    if _OVERSEER_OBSERVABILITY_SCHEMA_PATH.exists():
+        schema_sql += "\n\n"
+        schema_sql += _OVERSEER_OBSERVABILITY_SCHEMA_PATH.read_text(encoding="utf-8")
     conn = sqlite3.connect(db_path)
     conn.isolation_level = None
     conn.row_factory = sqlite3.Row

@@ -24,6 +24,8 @@ from __future__ import annotations
 import sqlite3
 from dataclasses import dataclass
 
+import uuid
+
 from overseer.article_finder_connector import (
     ArticleFinderPaper,
     connect_readonly,
@@ -83,6 +85,29 @@ def tick(
     flagged_unresolved = 0
     skipped_already_matched = 0
     af_papers_seen = 0
+    tick_run_id = f"tick:{uuid.uuid4().hex}"
+
+    def _log_event(action: str, af_paper: ArticleFinderPaper,
+                   ka_paper_id: str, sync_event_id: str | None = None,
+                   reason: str | None = None) -> None:
+        try:
+            conn.execute(
+                """
+                INSERT INTO reconciler_event_log (
+                    event_id, tick_run_id, occurred_at, af_paper_id,
+                    af_signature, af_status, ka_paper_id, action,
+                    sync_event_id, reason
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    f"rev:{uuid.uuid4().hex}", tick_run_id, utc_now_iso(),
+                    af_paper.af_paper_id, af_paper.signature, af_paper.af_status,
+                    ka_paper_id, action, sync_event_id, reason,
+                ),
+            )
+        except sqlite3.OperationalError:
+            # observability table missing on older DBs; skip silently.
+            pass
 
     try:
         for af_paper in iter_papers(
@@ -104,6 +129,7 @@ def tick(
             ).fetchone()
 
             if existing is None:
+                new_sync_event_id = event_id()
                 with transaction(conn):
                     register(
                         conn, kind="article_finder_candidate",
@@ -119,9 +145,11 @@ def tick(
                             resolved_at
                         ) VALUES (?, 'accept_candidate', ?, ?, 'pending', ?, NULL)
                         """,
-                        (event_id(), payload_hash, af_paper.signature,
+                        (new_sync_event_id, payload_hash, af_paper.signature,
                          utc_now_iso()),
                     )
+                _log_event("inserted_pending", af_paper, ka_paper_id,
+                           sync_event_id=new_sync_event_id)
                 inserted_pending += 1
                 continue
 
@@ -146,10 +174,15 @@ def tick(
                         paper_id=ka_paper_id,
                         next_action="manual_reconcile_af_vs_ka_signature",
                     )
+                _log_event("flagged_unresolved", af_paper, ka_paper_id,
+                           sync_event_id=existing["event_id"],
+                           reason="af_signature_drift")
                 flagged_unresolved += 1
                 continue
 
             if existing["status"] == "matched":
+                _log_event("skipped_already_matched", af_paper, ka_paper_id,
+                           sync_event_id=existing["event_id"])
                 skipped_already_matched += 1
                 continue
 
@@ -168,7 +201,13 @@ def tick(
                         """,
                         (utc_now_iso(), existing["event_id"]),
                     )
+                    _log_event("upgraded_to_matched", af_paper, ka_paper_id,
+                               sync_event_id=existing["event_id"])
                     upgraded_to_matched += 1
+                else:
+                    _log_event("noop", af_paper, ka_paper_id,
+                               sync_event_id=existing["event_id"],
+                               reason="pending_no_ka_record_yet")
                 continue
     finally:
         if close_af:

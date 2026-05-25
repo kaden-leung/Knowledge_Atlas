@@ -38,7 +38,11 @@ def main(argv: list[str] | None = None) -> int:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     try:
-        report = verify_strict(conn)
+        report = verify_strict(
+            conn,
+            db_path=str(db_path),
+            triggered_by="manual:verify_dependency_overseer_contract",
+        )
     finally:
         conn.close()
 
