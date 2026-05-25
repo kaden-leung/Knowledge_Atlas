@@ -63,15 +63,24 @@ def tick(
     *,
     af_conn: sqlite3.Connection | None = None,
     accepted_filter: str | None = "processed_partial",
+    accepted_intake_decision: str | None = None,
     limit: int | None = None,
 ) -> ReconcilerReport:
     """Run one reconciler tick.
 
-    accepted_filter: AF.papers.status value that identifies the "accepted by
-    Atlas" subset. Live AF DB inspection 2026-05-23 shows status distribution:
-    'candidate' (16196), 'pending_scorer' (40), 'rejected' (18),
-    'processed_partial' (3). The 'processed_partial' status is the closest
-    proxy for accepted; callers may pass None to scan everything.
+    Two filter parameters (AND-combined). Pass None to disable either.
+
+    accepted_filter: AF.papers.status value (legacy Phase 2 default
+    'processed_partial' — 3 rows on live AF). Useful for backward-compat
+    tests and for systems where the status field is the only signal.
+
+    accepted_intake_decision: AF.papers.atlas_intake_decision value (new
+    in 2026-05-24). Production-recommended value: 'accept_candidate' (754
+    rows on live AF). This is the criterion the OVERSEER-AF-CRITERION-SWITCH
+    task migrated to per the post-panel pause plan §4.1.
+
+    Pass `accepted_filter=None, accepted_intake_decision='accept_candidate'`
+    to use the new criterion alone.
 
     limit: cap on AF rows processed per tick (None = no cap).
     """
@@ -111,7 +120,10 @@ def tick(
 
     try:
         for af_paper in iter_papers(
-            af_conn, af_status_filter=accepted_filter, limit=limit,
+            af_conn,
+            af_status_filter=accepted_filter,
+            atlas_intake_decision_filter=accepted_intake_decision,
+            limit=limit,
         ):
             af_papers_seen += 1
             ka_paper_id = _ka_paper_id_for(af_paper)

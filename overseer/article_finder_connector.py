@@ -67,6 +67,8 @@ class ArticleFinderPaper:
     canonical_paper_id: str | None  # AF's canonical_paper_id if present
     af_status: str | None   # AF's status field, if present
     signature: str          # SHA-256 of canonical (doi, canonical_paper_id, title)
+    atlas_intake_decision: str | None = None  # Stage 4 decision; new in 2026-05-24
+    ae_corpus_match_status: str | None = None  # Stage 10 result; new in 2026-05-24
 
 
 def paper_signature(
@@ -101,28 +103,39 @@ def iter_papers(
     conn: sqlite3.Connection,
     *,
     af_status_filter: str | None = "accepted",
+    atlas_intake_decision_filter: str | None = None,
     limit: int | None = None,
 ) -> Iterator[ArticleFinderPaper]:
     """Iterate AF.papers rows. Yields ArticleFinderPaper records.
 
-    af_status_filter:
-      * 'accepted' — yield only AF rows whose status indicates accepted (the
-        candidate has been triaged in and is ready for KA). Phase 2 default.
-      * None — yield every paper row.
+    Filter parameters (AND-combined):
+      * af_status_filter — match on AF.papers.status (legacy; default 'accepted'
+        which was the Phase 2 semantic). Pass None to disable.
+      * atlas_intake_decision_filter — match on AF.papers.atlas_intake_decision.
+        Recommended production value: 'accept_candidate' (754 rows on live AF
+        as of 2026-05-24). Pass None to disable. New in 2026-05-24.
 
     The function is defensive about AF schema variation: if AF.papers lacks
-    the named columns, those values are None and signature still computes.
+    a named column, the corresponding value is None and signature still
+    computes from whatever fields are available.
     """
     cols = _columns_of(conn, "papers")
     select_cols = ["rowid"]
-    for c in ("doi", "title", "canonical_paper_id", "status"):
+    for c in ("doi", "title", "canonical_paper_id", "status",
+              "atlas_intake_decision", "ae_corpus_match_status"):
         if c in cols:
             select_cols.append(c)
     sql = f"SELECT {', '.join(select_cols)} FROM papers"
+    where_parts: list[str] = []
     params: list = []
     if af_status_filter is not None and "status" in cols:
-        sql += " WHERE LOWER(status) = ?"
+        where_parts.append("LOWER(status) = ?")
         params.append(af_status_filter.lower())
+    if atlas_intake_decision_filter is not None and "atlas_intake_decision" in cols:
+        where_parts.append("LOWER(atlas_intake_decision) = ?")
+        params.append(atlas_intake_decision_filter.lower())
+    if where_parts:
+        sql += " WHERE " + " AND ".join(where_parts)
     if limit is not None:
         sql += f" LIMIT {int(limit)}"
     rows = conn.execute(sql, params).fetchall()
@@ -140,6 +153,8 @@ def iter_papers(
             canonical_paper_id=canon,
             af_status=status,
             signature=sig,
+            atlas_intake_decision=d.get("atlas_intake_decision"),
+            ae_corpus_match_status=d.get("ae_corpus_match_status"),
         )
 
 

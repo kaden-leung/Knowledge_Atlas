@@ -36,14 +36,23 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--db", help="Override KA lifecycle DB path")
     parser.add_argument("--af-db", help="Override AF DB path")
     parser.add_argument(
-        "--accepted-filter", default="processed_partial",
-        help="AF.papers.status value to treat as accepted (or 'none' for all)",
+        "--accepted-filter", default="none",
+        help="AF.papers.status value to treat as accepted (default 'none' "
+             "disables status filtering — the new criterion uses "
+             "--accepted-intake-decision instead per pause plan §4.1)",
+    )
+    parser.add_argument(
+        "--accepted-intake-decision", default="accept_candidate",
+        help="AF.papers.atlas_intake_decision value to treat as accepted "
+             "(default 'accept_candidate' — 754 rows on live AF; replaces "
+             "the legacy 'processed_partial' status proxy)",
     )
     parser.add_argument("--limit", type=int, default=None,
                         help="Cap rows scanned per tick")
     args = parser.parse_args(argv)
 
     accepted = None if args.accepted_filter.lower() == "none" else args.accepted_filter
+    intake = None if args.accepted_intake_decision.lower() == "none" else args.accepted_intake_decision
 
     try:
         af_conn = connect_readonly(args.af_db)
@@ -55,7 +64,9 @@ def main(argv: list[str] | None = None) -> int:
     try:
         report = tick(
             ka_conn, af_conn=af_conn,
-            accepted_filter=accepted, limit=args.limit,
+            accepted_filter=accepted,
+            accepted_intake_decision=intake,
+            limit=args.limit,
         )
     finally:
         ka_conn.close()
