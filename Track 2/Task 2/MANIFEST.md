@@ -36,46 +36,25 @@
 
 ---
 
-## Canonical outputs vs. rubric aliases
+## Output file naming
 
-Two parallel naming conventions are emitted in this submission:
+The contract documents define output filenames (`gap_report.json`, `query_pairs.json`); the rubric requires different names (`gap_results.json`, `query_results.json`). Both sets are included as separate files. The content is identical; only the name (and in one case the top-level JSON key) differs.
 
-### Canonical outputs (contract-defined)
-
-These follow the names specified in the contract documents:
-
-| File | Defined by | Key |
+| Contract file | Rubric file | Difference |
 |---|---|---|
-| `Phase 2/gap_report.json` | `GAP_EXTRACTOR_CONTRACT.md` v3.3 § Outputs | `gaps` |
-| `Phase 3/query_pairs.json` | `QUERY_GENERATOR_CONTRACT.md` v1.4 § Outputs | `query_pairs` |
+| `Phase 2/gap_report.json` | `Phase 2/gap_results.json` | name only; same content and `gaps` key |
+| `Phase 3/query_pairs.json` | `Phase 3/query_results.json` | name + top-level key renamed `query_pairs` → `queries` for autograder compatibility |
 
-### Rubric aliases (autograder-discoverable)
+The autograder also looks for these files at the submission root (`os.path.join(submission_dir, "<file>")`), so four copies are placed there as well:
 
-These are duplicate files with the names specified in the grading rubric:
-
-| File | Defined by | Key |
+| Root copy | SHA-256 (truncated) | Matches Phase file? |
 |---|---|---|
-| `Phase 2/gap_results.json` | Rubric "Files you must change or create" | `gaps` |
-| `Phase 3/query_results.json` | Rubric "Files you must change or create" | `queries` (renamed from `query_pairs` for autograder compatibility) |
+| `gap_extractor.py` | `4e55a0fe...8b75` | ✓ |
+| `gap_results.json` | `805d2073...744a` | ✓ |
+| `query_generator.py` | `cf2e81e0...e37f` | ✓ |
+| `query_results.json` | `5f53a0b3...0ed0` | ✓ |
 
-### Submission-root copies (autograder root-discoverable)
-
-Four byte-identical copies placed at the submission root because the autograder looks for `os.path.join(submission_dir, "<file>")`:
-
-| Root copy | Source | SHA-256 (truncated) | Byte-identical? |
-|---|---|---|---|
-| `gap_extractor.py` | `Article_Eater/gap_extractor.py` | `4e55a0fe...8b75` | ✓ |
-| `gap_results.json` | `Phase 2/gap_results.json` | `805d2073...744a` | ✓ |
-| `query_generator.py` | `Phase 3/query_generator.py` | `cf2e81e0...e37f` | ✓ |
-| `query_results.json` | `Phase 3/query_results.json` | `5f53a0b3...0ed0` | ✓ |
-
-Reviewers can `diff` root copies against Phase files and confirm zero divergence.
-
-### Implementation notes
-
-- Duplicate files are real copies, not symlinks (symlinks break on Windows, ZIP exports, and GitHub web download).
-- `Phase 2/gap_report.json` and `Phase 2/gap_results.json` are byte-identical (same content, same key — the rubric accepts either `gaps` key or a list).
-- `Phase 3/query_pairs.json` and `Phase 3/query_results.json` have key-normalized content equality (same `query_pairs.json` content with the top-level key renamed `query_pairs` → `queries` for autograder compatibility).
+Root copies are real files, not symlinks (symlinks break on Windows, ZIP exports, and GitHub web download). `diff` against Phase files confirms zero divergence.
 
 ---
 

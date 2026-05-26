@@ -185,13 +185,15 @@ belief = Belief(
     content   = step_description_or_param_label,
     level     = _level_from_warrant(warrant),
     credence  = Credence(
-                  value       = step_confidence if step_confidence is not None else 0.35,
-                  uncertainty = (1.0 - step_confidence) if step_confidence is not None else 0.65,
+                  value       = step_confidence if step_confidence is not None else 0.40,
+                  uncertainty = (1.0 - step_confidence) if step_confidence is not None else 0.60,
                 ),
     paper_ids = _placeholder_paper_list(len(justification.data)),
     domain    = primary_t1_framework or "",
 )
 ```
+
+> **Null-confidence rationale.** `null` confidence (49 gaps in the full corpus) does not mean the panel assessed the claim as near-certainly false — it means the panel declined to assign a numeric estimate, which is itself an epistemic signal: the mechanism is not yet characterized well enough to warrant a credence. The provisional value **0.40** is a conservative prior, not an inferred measurement. Rationale for 0.40: the lowest explicitly assigned confidence in the corpus is 0.35; treating `null` as 0.40 places these gaps marginally below the structured-but-uncertain range (0.45–0.55) while clearly above the definitional floor. A value of 0.0 or 0.1 would falsely imply near-certain-falsehood. Each null-confidence gap carries `confidence_imputed: true` in the output so downstream consumers know to treat the value as a provisional prior rather than a measured estimate.
 
 **`_level_from_warrant`:**
 
@@ -767,6 +769,8 @@ SC3 step 6 fixture — `competing_accounts: []` but rebuttal contains "reduces r
 | 8 | L4 | 3 | DIRECTION | 0.443 | dense |
 | 9 | CSMP1 | 2 | DIRECTION | 0.443 | dense |
 | 10 | NVR1 | 2 | DIRECTION | 0.443 | dense |
+
+> **Why all 10 are DIRECTION.** DIRECTION accounts for only 51 of 554 gaps (9.2% of the corpus). Their concentration at the top is a structural consequence of the weighting formula, not a classification artifact. DIRECTION receives `priority_weight=1.0` vs 0.5 for MECHANISM and 0.7 for VALIDATION. Because the weight multiplies the combined VOI before the `min(..., 1.0)` cap, any DIRECTION gap with moderate structural and epistemic scores will outscore MECHANISM gaps that require higher uncertainty or centrality to compensate. Put differently: the top of the ranked list is the intended output of the priority policy — unresolved contradictions (DIRECTION) are evaluated as the highest-value epistemic targets. If the desired output were a mix of types, the priority weights would need to be adjusted, not the classifier.
 
 **Known open issues from this run (Phase 3 inputs):**
 1. **SC-4 partial** — SC3-5, CREA1-1, L1-3 rank lower than expected because they are VALIDATION/MECHANISM type. VOI formula is working as specified; Phase 1 ranking intuitions assumed DIRECTION priority. Not a bug.
