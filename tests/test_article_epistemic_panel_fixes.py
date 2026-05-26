@@ -179,21 +179,25 @@ def test_evidence_strength_declares_argument_support_not_severity():
 
 
 # --------------------------------------------------------------------------- 6
-def test_production_typical_record_full_stale_path(aepl_db_path):
-    """The 758/760 shape: complete extraction + requires_repair PNU."""
+def test_production_typical_record_renders_with_pending_pnu(aepl_db_path):
+    """The 758/760 shape (complete extraction + requires_repair PNU) now RENDERS:
+    core is fresh, the belief-network section is pending, and the PNU repair is a
+    non-blocking warning. This is the graceful-degradation principle in action."""
     out = _build("TEST-PROD", production_typical_record("TEST-PROD"))
     rec = out["record"]
-    assert rec["freshness_status"] == "stale"
-    assert rec["render_status"] == "show_with_warning"
+    assert rec["freshness_status"] == "fresh"       # core is fresh
+    assert rec["render_status"] == "renderable"     # the page renders now
     assert rec["extraction_status"] == "complete"
-    assert rec["review_status"] == "unreviewed"  # not verified at build time
+    assert rec["review_status"] == "unreviewed"     # not verified at build time
     bn = next(c for c in out["components"]
               if c["component_type"] == "belief_network_context")
-    assert bn["status"] == "stale"
-    blocking = [r for r in out["repair_items"] if r["severity"] == "blocking"]
-    assert any(r["reason"] == "pnu_requires_repair" for r in blocking)
-    # End to end: persists and verifies clean (stale is a valid state, not a
-    # verifier failure) and earns machine_verified.
+    assert bn["status"] == "stale"                  # the section itself is pending
+    # PNU is enrichment → no blocking repair item:
+    assert not any(r["severity"] == "blocking" for r in out["repair_items"])
+    bn_repairs = [r for r in out["repair_items"]
+                  if r["component_type"] == "belief_network_context"]
+    assert bn_repairs and bn_repairs[0]["severity"] == "warning"
+    # End to end: persists and verifies clean and earns machine_verified.
     _persist(aepl_db_path, "TEST-PROD", production_typical_record("TEST-PROD"))
     rc = verifier.main(["--db", str(aepl_db_path),
                         "--payload", "/tmp/_aepl_nonexistent.json", "--quiet"])

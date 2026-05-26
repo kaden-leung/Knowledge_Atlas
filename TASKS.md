@@ -33,6 +33,19 @@ Ten-expert ruthless panel review (`docs/DEPENDENCY_OVERSEER_RUTHLESS_PANEL_REVIE
 
 ---
 
+## Newly Added — 2026-05-26 (AEPL graceful degradation — show what we have now)
+
+DK directive: do not gate the epistemic layer on PNU completion (or any single not-yet-ready input). Robustness = "give the best we have now, label the rest, do better soon." Implemented per-component availability tiers and decoupled record freshness/renderability from PNU. `docs/AEPL_GRACEFUL_DEGRADATION_2026-05-25.md`. **Corpus impact (verified on 160sp): renderable 2→760, fresh 0→760, blocking queue items 758→0 (now warning); verifier still 760/760 clean.** The layer is now displayable for the entire corpus today.
+
+| ID | Task | Owner | Context |
+|----|------|-------|---------|
+| AEPL-GD-TIERS | **~~Availability tiers + decouple record from PNU~~** | CW | **COMPLETED 2026-05-26.** CORE (6 PNU-independent components) drive record freshness/render; belief_network_context is ENRICHMENT → `pending_upstream` when PNU stale/missing, non-blocking. PNU repair item severity blocking→warning. Public payload carries per-component `availability` + record-level `availability_summary` (available_now / pending_upstream / planned_enrichment). Spec §10/§13 amended (PNU reclassified required→enrichment). |
+| AEPL-GD-FACETS | **~~Claim facets + limitations from data available today~~** | CW | **COMPLETED 2026-05-26.** `claim_type` + `epistemic_status` derived from the upstream `signal` (100% coverage; replaces hardcoded "unknown"). Limitations / study design / key statistics surfaced into the argument-support component from `science_summary` (100% coverage). Both PNU-independent, no schema migration. |
+| AEPL-GD-SEVERITY | **~~Completion-queue severity updates on re-detection~~** | CW | **COMPLETED 2026-05-26.** Upsert now updates `severity` + `next_action` in both directions (panel/Mayo finding): escalation (warning→blocking) and de-escalation (the 758 stale `blocking` PNU rows correctly became `warning` on rebuild). |
+| AEPL-GD-NEXT | **Next displayable components (proposed, not yet built)** | CW + DK | Study-record strip (sample_n 66%, instruments 39%, article_type/key_stats 100%); related-papers links (68%, needs structure inspection). NOT buildable until upstream fills them: corroboration from supporting/contradicting papers (0%), argument edges (0%). Then Phase 3 HTML rendering of all the above. |
+
+---
+
 ## Newly Added — 2026-05-24 (AEPL ruthless panel review + plan A/B/C fixes)
 
 Ten-expert ruthless panel review of Stage 1 (`docs/AEPL_PANEL_RUTHLESS_REVIEW_OUTPUT_2026-05-24.md`) returned **0 GO / 8 HOLD / 2 NO-GO** with six file-cited blocking items. DK accepted the synthesis recommendation (plan A/B/C). CW implemented the fixes; full corpus rebuilt on `160sp/pipeline_lifecycle_full.db` and re-verified clean. The panel was run *before* the artefact was trusted — verified ground truth (e.g. the documented verifier command crashed on a 0-byte decoy DB; the published payload was not self-verifiable; 0/760 records were `fresh`; `machine_verified` was unreachable).

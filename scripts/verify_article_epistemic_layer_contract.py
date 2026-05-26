@@ -723,7 +723,9 @@ def write_repair_actions_to_queue(conn: sqlite3.Connection,
             "  WHERE status IN ('open', 'in_progress') "
             "  DO UPDATE SET "
             "    last_seen_at = strftime('%Y-%m-%dT%H:%M:%SZ', 'now'), "
-            "    attempt_count = article_epistemic_completion_queue.attempt_count + 1",
+            "    attempt_count = article_epistemic_completion_queue.attempt_count + 1, "
+            "    severity = excluded.severity, "
+            "    next_action = excluded.next_action",
             (f.paper_id, ra["component_type"], ra["reason"], ra["severity"],
              ra["next_action"]),
         )

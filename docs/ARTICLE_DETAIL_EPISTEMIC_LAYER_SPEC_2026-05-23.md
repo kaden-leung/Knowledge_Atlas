@@ -412,6 +412,15 @@ Every computed value depends on a support set.
 When any support-set member changes, the affected component becomes stale. The
 record becomes stale if a required component is stale.
 
+> **Amendment 2026-05-25 (graceful degradation — `docs/AEPL_GRACEFUL_DEGRADATION_2026-05-25.md`).**
+> Components are split into CORE (PNU-independent, available today) and
+> ENRICHMENT (depends on upstream work not yet done). **PNU is reclassified from
+> a required dependency to an ENRICHMENT dependency.** Record freshness and
+> renderability are computed from CORE components only. A stale/missing PNU marks
+> `belief_network_context` as `pending_upstream` (a non-blocking warning) and the
+> record stays `fresh`/`renderable`. Principle: show the best we have now, label
+> the rest, never gate the whole layer on one not-yet-ready input.
+
 Required dependency classes:
 
 - article detail JSON;
@@ -511,9 +520,13 @@ Promotion is blocked while any blocking repair item remains unresolved.
 
 A release may promote the epistemic layer only if all conditions hold:
 
+> **Amendment 2026-05-25.** "Required component" below means CORE components only
+> (see §10 amendment). A pending ENRICHMENT section (e.g. belief-network context
+> awaiting PNU repair) does not block release of the core epistemic reading.
+
 - strict data verifier passes;
 - strict rendered verifier passes;
-- no required component is stale;
+- no required (CORE) component is stale;
 - no blocking completion-queue item is open;
 - every public payload hash matches the lifecycle database record;
 - production serves the same artifact hash as the release artifact;

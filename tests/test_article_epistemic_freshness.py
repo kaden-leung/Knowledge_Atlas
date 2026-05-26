@@ -26,30 +26,39 @@ def test_fresh_pnu_yields_fresh_record():
     assert bn["status"] == "present"
 
 
-def test_stale_pnu_dependency_marks_record_stale():
+def test_stale_pnu_is_enrichment_not_record_stale():
+    """Graceful degradation (2026-05-25): a stale PNU leaves the belief-network
+    section pending but does NOT make the record stale — record freshness is
+    computed from CORE (PNU-independent) components only."""
     rec = record_with_stale_pnu("P1")
     out = _build("P1", rec)
     bn = next(c for c in out["components"] if c["component_type"] == "belief_network_context")
-    assert bn["freshness_status"] == "stale"
+    assert bn["freshness_status"] == "stale"   # the section itself is stale
     assert bn["status"] == "stale"
-    assert out["record"]["freshness_status"] == "stale"
+    assert out["record"]["freshness_status"] == "fresh"   # but the record is not
 
 
-def test_stale_pnu_emits_blocking_completion_queue_entry():
+def test_stale_pnu_emits_warning_not_blocking_queue_entry():
+    """PNU repair is enrichment, so its completion-queue item is a non-blocking
+    warning — it must not appear in the record's blocking_failures."""
     rec = record_with_stale_pnu("P1")
     out = _build("P1", rec)
     bn_repairs = [r for r in out["repair_items"]
                   if r["component_type"] == "belief_network_context"]
     assert len(bn_repairs) == 1
-    assert bn_repairs[0]["severity"] == "blocking"
+    assert bn_repairs[0]["severity"] == "warning"
     assert bn_repairs[0]["reason"] == "pnu_requires_repair"
+    import json as _json
+    blocking = _json.loads(out["record"]["blocking_failures_json"])
+    assert not any(b.get("reason") == "pnu_requires_repair" for b in blocking)
 
 
-def test_render_status_show_with_warning_when_stale():
+def test_render_renderable_when_only_enrichment_pending():
+    """With core fresh and only PNU pending, the page renders now; the
+    belief-network section is shown as pending, not the page suppressed."""
     rec = record_with_stale_pnu("P1")
     out = _build("P1", rec)
-    # stale → show_with_warning (spec §4 render_status values).
-    assert out["record"]["render_status"] in {"show_with_warning", "hidden"}
+    assert out["record"]["render_status"] == "renderable"
 
 
 def test_missing_pnu_marks_belief_network_source_missing():

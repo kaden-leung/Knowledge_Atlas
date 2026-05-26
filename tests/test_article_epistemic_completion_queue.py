@@ -13,6 +13,7 @@ from tests._article_epistemic_fixtures import (
     complete_record,
     partial_record_missing_primary_claim,
     record_with_attack_count_no_defeaters,
+    record_with_stale_pnu,
 )
 
 
@@ -107,6 +108,30 @@ def test_queue_dedupes_via_upsert_on_rebuild(aepl_db_path):
     primary_rows = [r for r in rows if r[1] == "primary_claim_not_extracted"]
     assert len(primary_rows) == 1
     assert primary_rows[0][2] == 3
+
+
+def test_queue_severity_updates_on_redetection(aepl_db_path):
+    """Re-detection updates severity in BOTH directions (Mayo / panel finding).
+    Seed a stale 'blocking' row, then a build that re-detects the same key as a
+    'warning' (PNU is now enrichment) must de-escalate it, not leave it blocking."""
+    conn = sqlite3.connect(aepl_db_path)
+    conn.execute(
+        "INSERT INTO article_epistemic_completion_queue("
+        "  paper_id, component_type, reason, severity, next_action, status"
+        ") VALUES ('TEST-SEV','belief_network_context','pnu_requires_repair',"
+        "          'blocking','stale old action','open')")
+    conn.commit()
+    conn.close()
+    _build_and_persist(aepl_db_path, "TEST-SEV", record_with_stale_pnu("TEST-SEV"))
+    conn = sqlite3.connect(aepl_db_path)
+    try:
+        sev = conn.execute(
+            "SELECT severity FROM article_epistemic_completion_queue "
+            "WHERE paper_id='TEST-SEV' AND component_type='belief_network_context' "
+            "AND reason='pnu_requires_repair' AND status='open'").fetchone()[0]
+    finally:
+        conn.close()
+    assert sev == "warning"
 
 
 def test_no_repair_items_for_clean_record():

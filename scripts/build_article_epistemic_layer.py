@@ -96,6 +96,45 @@ DEFEATER_ROW_CONTRACT = {
     "defeat_kinds": list(DEFEATER_DEFEAT_KINDS),
 }
 
+# Graceful-degradation availability tiers (2026-05-25 design decision: show the
+# best we have now, label the rest, don't gate the whole layer on any one input).
+#   CORE components are derivable from extracted/deterministic fields available
+#   today; they alone determine record freshness and renderability.
+#   ENRICHMENT components depend on upstream work not yet done (PNU repair); when
+#   unavailable they render as a typed "pending" section and DO NOT block the
+#   record or the page.
+#   PLANNED sections are Stage-2 LLM enrichment, advertised as "coming" so the
+#   page shows its full intended shape honestly.
+CORE_COMPONENT_TYPES = frozenset({
+    "primary_claim", "claim_rows", "evidence_strength", "defeaters",
+    "answer_shape_status", "provenance_summary",
+})
+ENRICHMENT_COMPONENT_TYPES = frozenset({"belief_network_context"})
+PLANNED_STAGE2_SECTIONS = (
+    "warrant_explanation", "rebuttal_synthesis",
+    "competing_account_summary", "plain_language_interpretation",
+)
+
+# Map the upstream `signal` label to a claim type + epistemic character. This is
+# deterministic and PNU-independent; it replaces the hardcoded "unknown" facets
+# with real values for the 100% of papers that carry a signal.
+SIGNAL_TO_FACETS = {
+    "direct measured result": ("empirical_measurement", "directly_measured"),
+    "table or figure reported result": ("reported_result", "directly_measured"),
+    "direct participant report": ("participant_report", "self_reported"),
+    "indicator to construct inference": ("construct_inference", "inferred"),
+    "synthesis across claims": ("synthesis", "synthesized"),
+    "discussion level interpretation": ("interpretation", "interpreted"),
+}
+
+
+def derive_claim_facets(signal: str | None) -> tuple[str, str]:
+    """Return (claim_type, epistemic_status) from the upstream signal label."""
+    if not signal:
+        return "unknown", "unknown"
+    claim_type, epistemic = SIGNAL_TO_FACETS.get(signal.strip().lower(), (signal, "unknown"))
+    return claim_type, epistemic
+
 
 # ---------------------------------------------------------------------------
 # Canonical JSON + hashing
@@ -474,15 +513,16 @@ def build_claim_rows_component(
         if not isinstance(c, dict):
             continue
         finding = c.get("finding") or ""
+        claim_type, epistemic_status = derive_claim_facets(c.get("signal"))
         rows.append({
             "claim_id": make_claim_id(paper_id, finding),
             "source_text": finding,
             "canonical_text": normalize_claim_text(finding),
             "claim_scope": "unknown",
-            "claim_type": c.get("signal") or "unknown",
+            "claim_type": claim_type,
             "claim_polarity": "unknown",
             "assertion_status": "asserted" if _is_nonempty_str(finding) else "unknown",
-            "epistemic_status": "unknown",
+            "epistemic_status": epistemic_status,
             "signal": c.get("signal"),
             "warrant": c.get("warrant"),
             "qualifier": c.get("qualifier"),
@@ -565,6 +605,7 @@ def build_evidence_strength_component(
 
     primary_text = primary.get("finding") or ""
     claim_id = make_claim_id(paper_id, primary_text)
+    sci = rec.get("science_summary") or {}
     content = {
         "claim_id": claim_id,
         "source_credence": primary.get("credence"),
@@ -572,6 +613,11 @@ def build_evidence_strength_component(
         # See note in the not_applicable branch: argument-graph support, not
         # severity. credence/support/attack counts are upstream bookkeeping.
         "measure_semantics": "argument_support_not_severity",
+        # Study-level caveat surfaced from the extracted summary (100% coverage,
+        # PNU-independent). Lets the page show "what limits this" now.
+        "limitations_text": sci.get("limitations"),
+        "study_design": sci.get("methods_and_design"),
+        "key_statistics": sci.get("key_statistics"),
         "support_count": primary.get("support_count"),
         "attack_count": primary.get("attack_count"),
         "dominant_stance": arg.get("dominant_stance"),
@@ -740,8 +786,12 @@ def build_belief_network_context_component(
             "paper_id": paper_id,
             "component_type": "belief_network_context",
             "reason": absence_reason,
-            "severity": "blocking",
-            "next_action": "Refresh PNU registry row and rebuild epistemic layer.",
+            # Enrichment, not a gate (2026-05-25 graceful-degradation decision):
+            # PNU staleness leaves this ONE section pending; it does not block
+            # the record, the page, or release of the core epistemic reading.
+            "severity": "warning",
+            "next_action": "Refresh PNU registry row and rebuild; belief-network "
+                           "section renders as 'pending' until then (non-blocking).",
         }
     elif status_raw not in PNU_FRESH_STATUSES:
         component_status = "withheld_low_confidence"
@@ -872,9 +922,17 @@ def build_provenance_summary_component(
 # ---------------------------------------------------------------------------
 
 def derive_record_statuses(components: list[dict]) -> dict:
-    """Map component-level state up to record-level statuses (spec §4)."""
+    """Map component-level state up to record-level statuses (spec §4).
+
+    Graceful degradation (2026-05-25): record freshness and renderability are
+    computed from CORE components only. Enrichment components (belief_network_
+    context / PNU) may be pending/stale without making the record stale, hidden,
+    or unreleasable — they render as a typed "pending" section instead. This is
+    the "show the best we have now, label the rest" principle.
+    """
     statuses = {c["component_type"]: c["status"] for c in components}
-    freshness = {c["component_type"]: c["freshness_status"] for c in components}
+    core_freshness = [c["freshness_status"] for c in components
+                      if c["component_type"] in CORE_COMPONENT_TYPES]
 
     has_primary = statuses.get("primary_claim") == "present"
     has_claim_rows = statuses.get("claim_rows") == "present"
@@ -891,15 +949,17 @@ def derive_record_statuses(components: list[dict]) -> dict:
     else:
         extraction_status = "absent"
 
-    if "stale" in freshness.values():
+    # Freshness reflects CORE only — PNU staleness no longer poisons the record.
+    if "stale" in core_freshness:
         freshness_status = "stale"
-    elif "unknown" in freshness.values():
+    elif "unknown" in core_freshness:
         freshness_status = "unknown"
     else:
         freshness_status = "fresh"
 
-    # Render status: hide records with no primary claim AND no claim rows;
-    # show-with-warning when stale or when primary_claim is missing.
+    # Render status from core: hide only when there is no claim to show at all;
+    # show-with-warning when core is stale or the primary claim is missing;
+    # otherwise renderable even if enrichment sections are pending.
     if not has_primary and not has_claim_rows:
         render_status = "hidden"
     elif freshness_status == "stale" or not has_primary:
@@ -1221,7 +1281,12 @@ def persist_record(
               WHERE status IN ('open', 'in_progress')
               DO UPDATE SET
                 last_seen_at = strftime('%Y-%m-%dT%H:%M:%SZ', 'now'),
-                attempt_count = article_epistemic_completion_queue.attempt_count + 1
+                attempt_count = article_epistemic_completion_queue.attempt_count + 1,
+                -- Re-detection updates severity in BOTH directions: a warning
+                -- that becomes blocking escalates (Mayo), and a blocking item
+                -- that is reclassified (e.g. PNU -> enrichment warning) de-escalates.
+                severity = excluded.severity,
+                next_action = excluded.next_action
             """,
             (r["paper_id"], r["component_type"], r["reason"], r["severity"], r["next_action"]),
         )
@@ -1268,6 +1333,7 @@ def build_public_payload(records: list[dict], build_run_id: str, started_at: str
                     "freshness_status": c["freshness_status"],
                     "render_policy": c["render_policy"],
                     "display_label": c["display_label"],
+                    "availability": derive_component_availability(c),
                     "content_json": c["content_json"],
                     "absence_reason": c["absence_reason"],
                     "support_set_id": c["support_set_id"],
@@ -1277,6 +1343,7 @@ def build_public_payload(records: list[dict], build_run_id: str, started_at: str
                 }
                 for c in components
             },
+            "availability_summary": derive_availability_summary(components),
             "blocking_failures": json.loads(rec["blocking_failures_json"]),
         }
     # Built != releasable. Surface the gap so "shipped" can never be misread as
@@ -1304,6 +1371,39 @@ def build_public_payload(records: list[dict], build_run_id: str, started_at: str
             },
         },
         "details": layers,
+    }
+
+
+def derive_component_availability(component: dict) -> str:
+    """Tier a component for the renderer: 'available' (show it now) or
+    'pending_upstream' (enrichment whose source is not ready — show a typed
+    'pending' note, not a blank)."""
+    ctype = component["component_type"]
+    if ctype in ENRICHMENT_COMPONENT_TYPES and component["status"] in {
+        "stale", "source_missing", "withheld_low_confidence", "blocked", "queued"
+    }:
+        return "pending_upstream"
+    return "available"
+
+
+def derive_availability_summary(components: list[dict]) -> dict:
+    """Record-level 'what we show now vs. what's coming' contract (graceful
+    degradation). Lets a reader/consumer see, per article, exactly which
+    sections are live, which are pending upstream work, and which are planned."""
+    available, pending = [], []
+    for c in components:
+        tier = derive_component_availability(c)
+        if tier == "available":
+            available.append(c["component_type"])
+        else:
+            pending.append({
+                "component_type": c["component_type"],
+                "reason": c.get("absence_reason") or c["status"],
+            })
+    return {
+        "available_now": sorted(available),
+        "pending_upstream": pending,
+        "planned_enrichment": list(PLANNED_STAGE2_SECTIONS),
     }
 
 
