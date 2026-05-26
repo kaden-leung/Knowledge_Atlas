@@ -85,7 +85,23 @@ The strongest property is auditability — the system is reviewable, not merely 
 Generated at PR-open time via `git diff --name-only upstream/master`:
 
 ```
-[placeholder — filled in at PR open]
+Track 2/Task 2/MANIFEST.md
+Track 2/Task 2/PR_BODY.md
+Track 2/Task 2/Phase 1/PIPELINE_DIAGRAM.md
+Track 2/Task 2/Phase 2/GAP_EXTRACTOR_CONTRACT.md
+Track 2/Task 2/Phase 2/gap_report.json
+Track 2/Task 2/Phase 2/gap_results.json
+Track 2/Task 2/Phase 3/QUERY_GENERATOR_CONTRACT.md
+Track 2/Task 2/Phase 3/query_generator.py
+Track 2/Task 2/Phase 3/query_pairs.json
+Track 2/Task 2/Phase 3/query_results.json
+Track 2/Task 2/Phase 4/QUERY_REVIEW.md
+Track 2/Task 2/Phase 4/SPOT_CHECK.md
+Track 2/Task 2/Phase 4/VERIFICATION.md
+Track 2/Task 2/gap_extractor.py
+Track 2/Task 2/gap_results.json
+Track 2/Task 2/query_generator.py
+Track 2/Task 2/query_results.json
 ```
 
 ---
