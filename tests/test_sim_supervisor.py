@@ -81,3 +81,21 @@ def test_status_report_marks_stale_components(tmp_path: Path) -> None:
     status = status_report.build_status(db_path=db_path, stale_multiplier=1)
     assert status["component_count"] == 1
     assert status["stale_components"]
+    assert status["components"][0]["effective_state"] == "resume_required"
+    assert status["attention_actions"][0]["action"] == "restart_or_resume_component"
+
+
+def test_status_report_emits_attention_for_open_decision_prompt(tmp_path: Path) -> None:
+    db_path = tmp_path / "sim_supervisor.db"
+    sdb.raise_decision_prompt(
+        decision_id="dec:test-open",
+        scenario_name="accept_then_drift",
+        decision_class="signature_drift_resolution",
+        trigger_summary="Unresolved signature drift detected",
+        available_actions=["accept_new_signature", "roll_back_af"],
+        db_path=db_path,
+    )
+    status = status_report.build_status(db_path=db_path)
+    assert status["decision_prompt_count"] == 1
+    assert status["attention_actions"]
+    assert status["attention_actions"][0]["action"] == "answer_decision_prompt"
