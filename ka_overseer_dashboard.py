@@ -3,11 +3,13 @@
 Source authority:
     docs/AF_PIPELINE_BOXOLOGY_AND_MONITORING_REQUIREMENTS_2026-05-24.md §4 §6
 
-Two pages, picked from the sidebar:
+Three pages, picked from the sidebar:
   * Page 1 — AF→KA Pipeline Flow: boxology funnel with live counts,
     reconciler bridge widget, source attribution, stuck-paper detector.
   * Page 2 — Overseer Health & Activity: verifier health, reconciler
     activity, drift events, completion-queue triage.
+  * Page 3 — Simulator Lab: run named AF traffic scenarios against simulator
+    databases and inspect the resulting supervisor prompts.
 
 Tech: native Streamlit only (no plotly, no streamlit-autorefresh). Manual
 refresh button. Plain vertical funnel for the boxology per DK's call.
@@ -37,6 +39,12 @@ from overseer.article_finder_connector import (  # noqa: E402
     resolve_af_db_path,
 )
 from overseer.db import resolve_db_path as resolve_ka_db_path  # noqa: E402
+from sim import scenarios as sim_scenarios  # noqa: E402
+from sim import simulator_runner  # noqa: E402
+from sim import sim_af_db as sim_af  # noqa: E402
+from sim import sim_ka_db as sim_ka  # noqa: E402
+from sim_supervisor import status_report as sim_status_report  # noqa: E402
+from sim_supervisor import supervisor_db as sim_supervisor_db  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -75,6 +83,14 @@ def _fetch_groupby(conn: sqlite3.Connection, sql: str, params=()) -> list[tuple]
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+
+def _sim_decision_class_counts(decision_prompts: list[dict]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for row in decision_prompts:
+        key = str(row.get("decision_class") or "unknown")
+        counts[key] = counts.get(key, 0) + 1
+    return counts
 
 
 # ---------------------------------------------------------------------------
@@ -381,6 +397,96 @@ def page_overseer_health():
               delta_color="inverse")
 
 
+def page_simulator_lab():
+    st.title("Simulator Lab")
+    st.caption("Run named AF traffic scenarios against simulator-only AF and KA databases.")
+
+    scenario_library = sim_scenarios.scenario_library()
+    default_sim_af = str(sim_af.DEFAULT_SIM_AF_DB_PATH)
+    default_sim_ka = str(sim_ka.DEFAULT_SIM_KA_DB_PATH)
+    default_supervisor_db = str(sim_supervisor_db.DEFAULT_DB_PATH)
+
+    selected_name = st.selectbox("Scenario", options=sorted(scenario_library), index=sorted(scenario_library).index("accept_then_drift"))
+    fresh_run = st.checkbox("Fresh run (delete prior simulator DBs)", value=True)
+    sim_af_path = st.text_input("Simulator AF DB", value=default_sim_af)
+    sim_ka_path = st.text_input("Simulator KA DB", value=default_sim_ka)
+    supervisor_db_path = st.text_input("Simulator supervisor DB", value=default_supervisor_db)
+
+    scenario = scenario_library[selected_name]
+    st.write(scenario.description)
+    st.caption(f"Scenario events: {len(scenario.events):,}")
+
+    if st.button("Run simulator", key="run_simulator"):
+        summary = simulator_runner.run_scenario(
+            scenario=scenario,
+            sim_af_db_path=sim_af_path,
+            sim_ka_db_path=sim_ka_path,
+            supervisor_db_path=supervisor_db_path,
+            reset_databases=fresh_run,
+        )
+        st.session_state["simulator_last_summary"] = summary.__dict__
+
+    summary_dict = st.session_state.get("simulator_last_summary")
+    if summary_dict:
+        st.header("Last run summary")
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Events", f"{summary_dict['event_count']:,}")
+        c2.metric("Reconciler ticks", f"{summary_dict['reconciler_ticks']:,}")
+        c3.metric("Pending inserted", f"{summary_dict['inserted_pending']:,}")
+        c4.metric("Drift flagged", f"{summary_dict['flagged_unresolved']:,}", delta=f"{summary_dict['flagged_unresolved']}" if summary_dict['flagged_unresolved'] else "0", delta_color="inverse")
+
+    status = sim_status_report.build_status(db_path=supervisor_db_path)
+    st.header("Supervisor state")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Components", f"{status['component_count']:,}")
+    c2.metric("Decision prompts", f"{status['decision_prompt_count']:,}", delta=f"{status['decision_prompt_count']}" if status['decision_prompt_count'] else "0", delta_color="inverse")
+    c3.metric("Stale components", f"{len(status['stale_components']):,}", delta=f"{len(status['stale_components'])}" if status['stale_components'] else "0", delta_color="inverse")
+
+    decision_counts = _sim_decision_class_counts(status.get("decision_prompts", []))
+    if decision_counts:
+        st.subheader("Decision prompts by class")
+        st.bar_chart(decision_counts)
+    else:
+        st.write("- No open simulator decision prompts.")
+
+    if status.get("decision_prompts"):
+        with st.expander(f"Decision prompts ({len(status['decision_prompts'])})", expanded=True):
+            for row in status["decision_prompts"][:25]:
+                st.write(
+                    f"- **{row['decision_class']}** — `{row['decision_id']}` "
+                    f"scenario=`{row['scenario_name']}` state=`{row['state']}` "
+                    f"summary={row['trigger_summary']}"
+                )
+
+    sim_ka_db_file = Path(sim_ka_path).expanduser()
+    if sim_ka_db_file.exists():
+        ka_conn = sqlite3.connect(sim_ka_db_file)
+        ka_conn.row_factory = sqlite3.Row
+        try:
+            unresolved = _fetch_one(
+                ka_conn,
+                "SELECT COUNT(*) FROM cross_db_sync_events WHERE status = 'unresolved'",
+            )
+            pending = _fetch_one(
+                ka_conn,
+                "SELECT COUNT(*) FROM cross_db_sync_events WHERE status = 'pending'",
+            )
+            matched = _fetch_one(
+                ka_conn,
+                "SELECT COUNT(*) FROM cross_db_sync_events WHERE status = 'matched'",
+            )
+        finally:
+            ka_conn.close()
+        st.subheader("Sim reconciler outcomes")
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Pending", f"{(pending or 0):,}")
+        c2.metric("Matched", f"{(matched or 0):,}")
+        c3.metric("Unresolved", f"{(unresolved or 0):,}", delta=f"{unresolved}" if unresolved else "0", delta_color="inverse")
+    else:
+        st.subheader("Sim reconciler outcomes")
+        st.write("- No simulator KA DB yet. Run a simulator scenario first.")
+
+
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
@@ -392,7 +498,7 @@ def main():
     )
     page = st.sidebar.radio(
         "Page",
-        options=("AF→KA Pipeline Flow", "Overseer Health & Activity"),
+        options=("AF→KA Pipeline Flow", "Overseer Health & Activity", "Simulator Lab"),
         index=0,
     )
     st.sidebar.caption(
@@ -400,8 +506,10 @@ def main():
     )
     if page == "AF→KA Pipeline Flow":
         page_pipeline_flow()
-    else:
+    elif page == "Overseer Health & Activity":
         page_overseer_health()
+    else:
+        page_simulator_lab()
 
 
 if __name__ == "__main__":

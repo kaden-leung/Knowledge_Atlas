@@ -112,6 +112,47 @@ def drift_storm(*, count: int = 12, duration_seconds: int = 5 * 60) -> SimScenar
     )
 
 
+def accept_then_drift(*, count: int = 12, accept_duration_seconds: int = 5 * 60, drift_lag_seconds: int = 10 * 60) -> SimScenario:
+    """Accept a set of papers, then drift their titles later.
+
+    This is the first scenario deliberately intended to produce unresolved
+    signature drift and operator decision prompts in the simulator UI.
+    """
+    spacing = max(1, accept_duration_seconds // max(1, count))
+    events = []
+    for idx in range(count):
+        paper_id = f"SIM-DRIFT-{idx + 1:04d}"
+        accepted_at = idx * spacing
+        events.append(
+            _event(
+                "flip_intake",
+                paper_id,
+                accepted_at,
+                {
+                    "atlas_intake_decision": "accept_candidate",
+                    "title": f"Stable accepted title {idx + 1}",
+                },
+            )
+        )
+        events.append(
+            _event(
+                "drift_title",
+                paper_id,
+                accepted_at + drift_lag_seconds,
+                {"title": f"Publisher-corrected title {idx + 1}"},
+            )
+        )
+    return SimScenario(
+        name="accept_then_drift",
+        description=(
+            "A set of papers is first accepted into the AF→KA bridge and then, "
+            "after a delay, their titles drift. This produces unresolved "
+            "signature-drift events and operator decision prompts."
+        ),
+        events=tuple(sorted(events, key=lambda ev: (ev.at_offset_seconds, ev.paper_id))),
+    )
+
+
 def cascade_spike(*, dependent_count: int = 150) -> SimScenario:
     return SimScenario(
         name="cascade_spike",
@@ -164,9 +205,9 @@ def scenario_library() -> dict[str, SimScenario]:
     scenarios = [
         steady_inflow(),
         accept_wave(),
+        accept_then_drift(),
         drift_storm(),
         cascade_spike(),
         pipeline_jam(),
     ]
     return {scenario.name: scenario for scenario in scenarios}
-

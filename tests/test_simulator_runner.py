@@ -89,3 +89,17 @@ def test_run_scenario_with_reset_databases_clears_prior_decision_prompts(tmp_pat
     )
     prompts = sdb.decision_prompt_rows(db_path=summary.supervisor_db_path)
     assert prompts == []
+
+
+def test_accept_then_drift_raises_multiple_signature_drift_prompts(tmp_path: Path) -> None:
+    summary = simulator_runner.run_scenario(
+        scenario=scenarios.accept_then_drift(count=3, accept_duration_seconds=3, drift_lag_seconds=5),
+        sim_af_db_path=tmp_path / "sim_af.db",
+        sim_ka_db_path=tmp_path / "sim_ka.db",
+        supervisor_db_path=tmp_path / "sim_supervisor.db",
+        reset_databases=True,
+    )
+    assert summary.flagged_unresolved == 3
+    prompts = sdb.decision_prompt_rows(db_path=summary.supervisor_db_path)
+    drift_prompts = [row for row in prompts if row["decision_class"] == "signature_drift_resolution"]
+    assert len(drift_prompts) == 3
