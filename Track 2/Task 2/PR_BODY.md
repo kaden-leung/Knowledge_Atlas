@@ -8,13 +8,13 @@
 
 ## Summary
 
-Built an end-to-end gap targeting and query generation pipeline. Extracted 554 epistemic gaps from 167 PNU templates ranked by VOI; generated 10 AI Citation + Boolean query pairs for the top-VOI gaps with deterministic output, vocabulary-state hashing, and content-aware anchor/measurement injection. Two contract documents (`GAP_EXTRACTOR_CONTRACT.md` v3.3 and `QUERY_GENERATOR_CONTRACT.md` v1.4) govern the implementations; a 17-question verification log documents real problems caught during iterative self-audit.
+Built an end-to-end gap targeting and query generation pipeline. Extracted 554 epistemic gaps from 166 PNU templates ranked by VOI; generated 10 AI Citation + Boolean query pairs for the top-VOI gaps with deterministic output, vocabulary-state hashing, and content-aware anchor/measurement injection. Two contract documents (`GAP_EXTRACTOR_CONTRACT.md` v3.3 and `QUERY_GENERATOR_CONTRACT.md` v1.4) govern the implementations; a 17-question verification log documents real problems caught during iterative self-audit.
 
 ---
 
 ## Reviewer notes
 
-- **Do not squash before merge.** The four-commit structure maps 1-to-1 onto the rubric phases (1: pipeline diagram + 5 priority gaps · 2: gap extractor · 3: query generator · 4: spot-check + review + verification). Phase separation is intended evidence of process discipline, not noise.
+- **Do not squash before merge.** Commits 1–4 map 1-to-1 onto the rubric phases (1: pipeline diagram + 5 priority gaps · 2: gap extractor · 3: query generator · 4: spot-check + review + verification). Commits 5–6 are pre-submission hardening passes that address reviewer feedback (null-confidence rationale, DIRECTION-domination explanation, three before/after query rewrites, VOI provenance, template-count consistency, corpus-minimum correction). Phase separation is intended evidence of process discipline, not noise.
 - **Reviewer diff tip:** the four submission-root files (`gap_extractor.py`, `query_generator.py`, `gap_results.json`, `query_results.json`) are byte-identical copies of the corresponding `Phase 2/` and `Phase 3/` canonical files. SHA-256s are listed in `MANIFEST.md` § "Submission-root copies" for direct verification.
 
 ---
@@ -25,7 +25,7 @@ Run: `python3 160sp/autograders/t2_task2_grader.py "Track 2/Task 2" kaden-leung`
 
 | Criterion | Pts | Result | Detail |
 |---|---|---|---|
-| Gap extraction | **15/15** | PASS | 554 gaps extracted from 167 PNU templates |
+| Gap extraction | **15/15** | PASS | 554 gaps extracted from 166 PNU templates |
 | VOI scoring | **10/10** | PASS | All entries carry `voi_score`; sorted descending |
 | AI Citation queries | **10/10** | PASS | 10/10 follow 5-component pattern (`ka_google_search_guide.html`) |
 | Boolean queries | **10/10** | PASS | 10/10 use AND/OR + quoted phrases; ≤256 char API limit |

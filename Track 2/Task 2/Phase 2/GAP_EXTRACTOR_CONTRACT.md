@@ -33,6 +33,13 @@ Unresolved contradictions (DIRECTION) propagate through downstream inference —
 
 This policy is **not absolute** — a foundational MECHANISM gap with high cascade risk can still outscore a peripheral DIRECTION gap, because the weighted combination in `calculate_voi()` includes structural factors. The priority weight is one input, not the sole determinant.
 
+### VOI computation provenance
+The Step 5 formula is computed **inline** by the extractor, not by calling `VOICalculator.calculate_voi()` directly as the authoritative path. The reason: `VOICalculator` requires a populated `WebOfBelief` instance to compute graph centrality; this is unavailable in Phase 2 (templates are not yet ingested into the graph), so `VOICalculator` falls back to a default centrality of 0.5 — which would erase the structural ranking signal entirely.
+
+To verify alignment, the extractor **also** calls `VOICalculator.calculate_voi(gap_type, belief, web=None)` per gap and records the result in `voi_components.voi_calc_crosscheck` (see `gap_extractor.py:307–339`). The inline value is authoritative; the cross-check value uses `VOICalculator`'s default centrality and is provided for comparison only.
+
+Weights (`α`, `priority_weight`, `LEVEL_IMPORTANCE`) are imported from `VOICalculator` constants and not altered. Only `centrality_proxy` is computed locally — and the result of that substitution is exposed in every output entry for audit.
+
 ### Heuristic vs epistemic-quality boundary
 `specificity_score` is heuristic and sensitive to authoring style; it measures **lexical specificity, not epistemic quality**. A concise precise rebuttal ("threshold nonlinearity unresolved") may score lower than a verbose vague one. The extractor surfaces the metric for downstream filtering; it should never be treated as ground truth for gap importance.
 
@@ -174,6 +181,8 @@ For each `(param_name, param_obj)` where `param_obj.confidence < threshold`:
 
 **Invariant:** `primary_gap_type ∈ gap_tags`.
 
+**Scoring vs. tagging boundary:** `primary_gap_type` drives `priority_weight` and `α` in Step 5 — it is the only label that affects VOI. `gap_tags` is descriptive: it enables downstream filtering (e.g., "show all gaps tagged DIRECTION even if VALIDATION is primary") without changing the score.
+
 ### Step 4 — Build proxy `Belief` object
 
 ```python
@@ -185,15 +194,15 @@ belief = Belief(
     content   = step_description_or_param_label,
     level     = _level_from_warrant(warrant),
     credence  = Credence(
-                  value       = step_confidence if step_confidence is not None else 0.40,
-                  uncertainty = (1.0 - step_confidence) if step_confidence is not None else 0.60,
+                  value       = step_confidence if step_confidence is not None else 0.35,
+                  uncertainty = (1.0 - step_confidence) if step_confidence is not None else 0.65,
                 ),
     paper_ids = _placeholder_paper_list(len(justification.data)),
     domain    = primary_t1_framework or "",
 )
 ```
 
-> **Null-confidence rationale.** `null` confidence (49 gaps in the full corpus) does not mean the panel assessed the claim as near-certainly false — it means the panel declined to assign a numeric estimate, which is itself an epistemic signal: the mechanism is not yet characterized well enough to warrant a credence. The provisional value **0.40** is a conservative prior, not an inferred measurement. Rationale for 0.40: the lowest explicitly assigned confidence in the corpus is 0.35; treating `null` as 0.40 places these gaps marginally below the structured-but-uncertain range (0.45–0.55) while clearly above the definitional floor. A value of 0.0 or 0.1 would falsely imply near-certain-falsehood. Each null-confidence gap carries `confidence_imputed: true` in the output so downstream consumers know to treat the value as a provisional prior rather than a measured estimate.
+> **Null-confidence rationale.** `null` confidence (49 of 554 gaps in the full corpus) does not mean the panel assessed the claim as near-certainly false — it means the panel declined to assign a numeric estimate, which is itself an epistemic signal: the mechanism is not yet characterized well enough to warrant a credence. The provisional value **0.35** is a conservative prior, not an inferred measurement. Rationale for 0.35: the lowest explicitly assigned confidence observed in `gap_report.json` is **0.30**; treating `null` as 0.35 places these gaps just above the corpus floor and below the structured-but-uncertain range (0.45–0.55). A value of 0.0 or 0.1 would falsely imply near-certain-falsehood. Null-confidence gaps are identifiable in the output by `confidence: null` paired with `voi_components.uncertainty: 0.65`. (A dedicated `confidence_imputed: true` flag is planned for schema v3.4 to make this status surface-level explicit.)
 
 **`_level_from_warrant`:**
 
@@ -360,9 +369,9 @@ Float rounding to 6 decimals prevents 1-ULP artifacts. Determinism is guaranteed
     "extractor_version": "3.1",
     "input_hash": "sha256:abc123...",
     "input_hash_method": "content_sha256_per_file_aggregated",
-    "templates_attempted": 167,
-    "templates_loaded": 165,
-    "templates_skipped": 2,
+    "templates_attempted": 166,
+    "templates_loaded": 166,
+    "templates_skipped": 0,
     "validation_failures": [
       {"file": "broken.json", "rule": "json_parse_failure", "detail": "..."},
       {"template_id": "X", "rule": "phantom_cascade_reference", "detail": "interaction_with_NONEXISTENT_001"},

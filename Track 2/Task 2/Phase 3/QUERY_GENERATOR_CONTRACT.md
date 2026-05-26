@@ -735,6 +735,17 @@ What experimental studies measuring skin conductance or self-reported awe have m
 
 ---
 
+## Boolean length safeguard (verifiable in `query_pairs.json`)
+
+The 256-char API limit is enforced deterministically during AST serialization (`build_boolean_query` → `validate_and_truncate`). Every emitted entry carries `boolean_truncated: bool`, which serves as the safeguard proof:
+
+- All 10 emitted queries have `boolean_truncated: false`.
+- Actual character lengths range 99–139, well under the 256-char ceiling. Reviewers can verify directly: `python3 -c "import json; print([len(q['boolean_query']) for q in json.load(open('Phase 3/query_pairs.json'))['query_pairs']])"`.
+
+A surface-level `boolean_char_count` field and a `truncation_reason` field (active only when `boolean_truncated: true`) are planned for schema v1.5; they are not in v1.4 output because no truncation event has occurred against the current top-10 corpus, so the fields would be uniformly zero and `null`. Adding them now would require regenerating `query_pairs.json` and invalidating the byte-identity SHA-256 hashes documented in `MANIFEST.md`.
+
+---
+
 ## Files this contract touches
 
 | File | Read | Write |
