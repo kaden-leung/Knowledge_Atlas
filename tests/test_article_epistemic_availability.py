@@ -44,13 +44,19 @@ def test_claim_facets_unknown_signal_is_not_invented():
 
 
 # ---- limitations surfaced into argument support (100% coverage) -------------
-def test_limitations_surfaced_in_argument_support():
+def test_study_record_surfaced_in_argument_support():
     rec = complete_record("P1")
     rec["science_summary"]["limitations"] = "Small convenience sample."
+    rec["article_meta"]["sample_n"] = 42
+    rec["instruments"] = ["EDA", "Heart Rate"]
     out = _build("P1", rec)
     ev = next(c for c in out["components"]
               if c["component_type"] == "evidence_strength")
-    assert ev["content_json"]["limitations_text"] == "Small convenience sample."
+    sr = ev["content_json"]["study_record"]
+    assert sr["limitations_text"] == "Small convenience sample."
+    assert sr["sample_n"] == 42
+    assert sr["instruments"] == ["EDA", "Heart Rate"]
+    assert sr["instrument_count"] == 2
 
 
 # ---- availability tiers ------------------------------------------------------
@@ -72,6 +78,50 @@ def test_fresh_pnu_record_has_no_pending_components():
     summary = builder.derive_availability_summary(out["components"])
     assert summary["pending_upstream"] == []
     assert "belief_network_context" in summary["available_now"]
+
+
+# ---- Toulmin view projection ------------------------------------------------
+def test_toulmin_view_has_six_slots_with_honest_tiers():
+    out = _build("P1", complete_record("P1"))
+    t = out["projections"]["toulmin"]
+    assert set(t["slots"]) == {"claim", "grounds", "warrant", "qualifier",
+                               "rebuttal", "backing"}
+    # claim/grounds/warrant/qualifier/rebuttal available now:
+    assert t["slots"]["claim"]["availability"] == "available"
+    assert t["slots"]["warrant"]["availability"] == "available"
+    assert t["slots"]["warrant"]["kind"] == "label_only"   # honest: not explained
+    # backing is Stage-2 planned, not faked:
+    assert t["slots"]["backing"]["availability"] == "planned_enrichment"
+    # rebuttal reflects the honest empty state, never "none exist":
+    assert t["slots"]["rebuttal"]["state"] == "no_defeater_extracted"
+
+
+def test_toulmin_is_shaped_flag_tracks_answer_shape():
+    out = _build("P1", complete_record("P1"))
+    t = out["projections"]["toulmin"]
+    asc = next(c for c in out["components"]
+               if c["component_type"] == "answer_shape_status")["content_json"]
+    assert t["is_toulmin_shaped"] == (asc["answer_shape"] == "toulmin")
+
+
+# ---- related-work projection -------------------------------------------------
+def test_related_work_projection_present_and_absent():
+    rec = complete_record("P1")
+    rec["related_papers"] = [
+        {"paper_id": "PDF-0017", "title": "Biophilic Architecture",
+         "score": 2, "reason": "shared instrument"},
+    ]
+    out = _build("P1", rec)
+    rw = out["projections"]["related_work"]
+    assert rw["availability"] == "available"
+    assert rw["count"] == 1
+    assert rw["items"][0]["paper_id"] == "PDF-0017"
+    assert rw["relation"] == "related_not_stance_bearing"  # honest: no stance
+
+    rec2 = complete_record("P2")
+    rec2["related_papers"] = []
+    rw2 = _build("P2", rec2)["projections"]["related_work"]
+    assert rw2["availability"] == "absent" and rw2["count"] == 0
 
 
 def test_component_availability_tiering():

@@ -46,6 +46,22 @@
   .summary-blocks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
   .soft-box{background:#F8F6F1;border:1px solid #E0D8CC;border-radius:9px;padding:12px 13px}
   .soft-box p{font-size:.9rem}
+  /* Epistemic reading layer (Phase 3) */
+  .epi-avail{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+  .epi-badge{font-size:.74rem;font-weight:700;border-radius:999px;padding:2px 10px;border:1px solid transparent;white-space:nowrap}
+  .epi-badge.available{background:#D4EDDA;color:#1B5E20;border-color:#A6D8AE}
+  .epi-badge.pending{background:#FFF3CD;color:#7A5300;border-color:#E8C97A}
+  .epi-badge.planned{background:#E0F2F1;color:#0B4A45;border-color:#A9D6D1}
+  .toulmin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+  .toulmin-slot{background:#F8F6F1;border:1px solid #E0D8CC;border-radius:9px;padding:10px 12px}
+  .toulmin-slot .slot-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8A9A96;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .toulmin-slot .slot-body{font-size:.9rem;color:#2B2B2B;margin-top:4px}
+  .toulmin-slot.is-pending{background:#FFFBEF;border-color:#E8C97A}
+  .toulmin-slot.is-planned{background:#F2FAFA;border-color:#A9D6D1}
+  .epi-prov{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .epi-prov .chip{font-size:.7rem;background:#EFEAE0;border:1px solid #DDD3C4;border-radius:6px;padding:1px 7px;color:#4A463E}
+  .epi-facet{font-size:.72rem;background:#E8F1EF;border:1px solid #C5DAD5;color:#173D36;border-radius:6px;padding:1px 7px;margin-left:6px}
+  @media (max-width:640px){ .toulmin-grid{grid-template-columns:1fr} }
   details.more{margin-top:12px;border-top:1px solid #E0D8CC;padding-top:10px}
   details.more summary{cursor:pointer;color:#2A7868;font-weight:700}
   details.more .more-body{margin-top:10px}
@@ -214,6 +230,132 @@ function renderClaimRows(rows) {
       <div class="counts">${esc(String(row.support_count || 0))} supports · ${esc(String(row.attack_count || 0))} attacks · ${esc(row.qualifier || 'status pending')}</div>
     </div>
   `).join('')}</div>`;
+}
+
+// ---- Epistemic reading layer (Phase 3) -------------------------------------
+function epiBadge(text, tier) {
+  return `<span class="epi-badge ${tier}">${esc(text)}</span>`;
+}
+
+function renderToulminSlot(label, slot) {
+  slot = slot || {};
+  const tier = slot.availability || 'available';
+  const cls = tier === 'pending_upstream' ? 'is-pending' : (tier === 'planned_enrichment' ? 'is-planned' : '');
+  const badge = tier === 'available' ? ''
+    : (tier === 'pending_upstream' ? epiBadge('pending', 'pending') : epiBadge('planned', 'planned'));
+  let body = '—';
+  if (label === 'Claim') body = esc(slot.text || '—');
+  else if (label === 'Grounds') body = `${esc(String(slot.support_count || 0))} supports · ${esc(String(slot.attack_count || 0))} attacks${slot.atlas_credence_mean != null ? ' · atlas credence ' + esc(Number(slot.atlas_credence_mean).toFixed(2)) : ''}`;
+  else if (label === 'Warrant') body = slot.label ? `${esc(slot.label)} <span class="section-note">(label only — not an explained warrant)</span>` : '—';
+  else if (label === 'Qualifier') body = esc(slot.value || '—');
+  else if (label === 'Rebuttal') body = slot.state === 'no_defeater_extracted'
+    ? 'No defeater extracted (not a claim that none exist).' : esc(String(slot.state || '—'));
+  else if (label === 'Backing') body = esc(slot.note || 'Planned (Stage 2).');
+  return `<div class="toulmin-slot ${cls}"><div class="slot-label">${esc(label)} ${badge}</div><div class="slot-body">${body}</div></div>`;
+}
+
+function renderEpiProvenance(c) {
+  if (!c) return '';
+  return `<div class="epi-prov">
+    <span class="chip">source: ${esc(c.source_mode || '—')}</span>
+    <span class="chip">freshness: ${esc(c.freshness_status || '—')}</span>
+    <span class="chip">review: ${esc(c.review_status || '—')}</span>
+    ${c.support_set_hash ? `<span class="chip">support ${esc(String(c.support_set_hash).slice(0, 8))}…</span>` : ''}
+  </div>`;
+}
+
+function renderEpistemicLayer(layer) {
+  if (!layer) return '';   // graceful: no epistemic record → no section, page still renders
+  const comps = layer.components || {};
+  const av = layer.availability_summary || {};
+  const t = layer.toulmin || {};
+  const slots = t.slots || {};
+  const pc = (comps.primary_claim || {}).content_json || {};
+  const ev = (comps.evidence_strength || {}).content_json || {};
+  const sr = ev.study_record || {};
+  const rows = ((comps.claim_rows || {}).content_json || {}).rows || [];
+  const df = (comps.defeaters || {}).content_json || {};
+  const bn = comps.belief_network_context || {};
+  const rw = layer.related_work || {};
+
+  const availStrip = `<div class="epi-avail">
+    ${(av.available_now || []).map(x => epiBadge(x.replace(/_/g, ' '), 'available')).join('')}
+    ${(av.pending_upstream || []).map(p => epiBadge((p.component_type || '').replace(/_/g, ' ') + ' — pending', 'pending')).join('')}
+    ${(av.planned_enrichment || []).map(x => epiBadge(x.replace(/_/g, ' ') + ' — planned', 'planned')).join('')}
+  </div>`;
+
+  const claimRows = rows.length ? `<div class="list">${rows.map(r => `
+    <div class="list-row">
+      <div class="body">${esc(r.source_text || '')}</div>
+      <div class="counts">${esc(String(r.support_count || 0))} supports · ${esc(String(r.attack_count || 0))} attacks
+        <span class="epi-facet">${esc(r.claim_type || 'unknown')}</span>
+        <span class="epi-facet">${esc(r.epistemic_status || 'unknown')}</span></div>
+    </div>`).join('')}</div>` : '<p class="section-note">No claim rows extracted.</p>';
+
+  const study = `<div class="epi-prov">
+    ${sr.sample_n != null ? `<span class="chip">sample n = ${esc(String(sr.sample_n))}</span>` : ''}
+    ${sr.article_type ? `<span class="chip">${esc(sr.article_type)}</span>` : ''}
+    ${sr.instrument_count ? `<span class="chip">${esc(String(sr.instrument_count))} instrument${sr.instrument_count === 1 ? '' : 's'}</span>` : ''}
+  </div>`;
+
+  const related = (rw.availability === 'available' && (rw.items || []).length)
+    ? `<div class="list">${rw.items.slice(0, 6).map(it => `
+        <div class="list-row"><h3><a href="ka_article_view.html?id=${encodeURIComponent(it.paper_id)}">${esc(it.title || it.paper_id)}</a></h3>
+        <div class="meta">${esc(it.reason || 'related')}${it.score != null ? ' · score ' + esc(String(it.score)) : ''}</div></div>`).join('')}</div>`
+    : '<p class="section-note">No related-paper links exported for this article yet.</p>';
+
+  return `
+    <section class="section reading" id="epistemic-reading">
+      <div class="subhead">Epistemic reading</div>
+      <h2>Why the Atlas treats this paper's claim as it does</h2>
+      <p class="section-note">The best the Atlas can show deterministically today. Pending and planned parts are labelled, not hidden.</p>
+      ${availStrip}
+
+      <div class="soft-box" style="margin-bottom:12px">
+        <h3>Primary claim ${pc.claim_id ? '' : epiBadge('pending', 'pending')}</h3>
+        <p>${esc(pc.source_text || pc.canonical_text || 'No primary claim extracted yet.')}</p>
+        ${renderEpiProvenance(comps.primary_claim)}
+      </div>
+
+      <h3>Toulmin reading <span class="section-note">(answer shape: ${esc(t.answer_shape || '—')})</span></h3>
+      <div class="toulmin-grid">
+        ${renderToulminSlot('Claim', slots.claim)}
+        ${renderToulminSlot('Grounds', slots.grounds)}
+        ${renderToulminSlot('Warrant', slots.warrant)}
+        ${renderToulminSlot('Qualifier', slots.qualifier)}
+        ${renderToulminSlot('Rebuttal', slots.rebuttal)}
+        ${renderToulminSlot('Backing', slots.backing)}
+      </div>
+
+      <div class="summary-blocks" style="margin-top:14px">
+        <div class="soft-box">
+          <h3>Argument support <span class="section-note">(graph support, not severity)</span></h3>
+          ${study}
+          ${sr.limitations_text ? `<p class="section-note" style="margin-top:8px"><b>Limitations:</b> ${esc(compact(sr.limitations_text, 300))}</p>` : ''}
+          ${renderEpiProvenance(comps.evidence_strength)}
+        </div>
+        <div class="soft-box">
+          <h3>Defeaters</h3>
+          <p class="section-note">${df.defeater_existence === 'no_defeater_extracted'
+            ? 'No defeater has been extracted for this paper. This is not a claim that none exist.'
+            : esc(String(df.defeater_existence || df.no_defeater_basis || '—'))}</p>
+          ${renderEpiProvenance(comps.defeaters)}
+        </div>
+      </div>
+
+      <h3 style="margin-top:14px">Claims</h3>
+      ${claimRows}
+
+      <div class="soft-box" style="margin-top:12px">
+        <h3>Belief-network context ${bn.availability === 'pending_upstream' ? epiBadge('pending PNU repair', 'pending') : ''}</h3>
+        <p class="section-note">${bn.availability === 'pending_upstream'
+          ? 'This paper\'s belief-network grounding is awaiting PNU repair upstream; the reading above does not depend on it.'
+          : 'Belief-network context available.'}</p>
+      </div>
+
+      <h3 style="margin-top:14px">Related work</h3>
+      ${related}
+    </section>`;
 }
 
 function renderMeasureRows(items, key) {
@@ -490,6 +632,16 @@ function updateTocActive() {
     }
   }
 
+  // Epistemic layer is an optional sibling payload; the page renders without it.
+  let epistemicLayer = null;
+  try {
+    const epiRes = await fetch('data/ka_payloads/article_epistemic_layer.json', { cache: 'no-store' });
+    if (epiRes.ok) {
+      const epiPayload = await epiRes.json();
+      epistemicLayer = ((epiPayload && epiPayload.details) || {})[paperId] || null;
+    }
+  } catch (e) { /* epistemic layer optional — page renders without it */ }
+
   const science = detail.science_summary || {};
   const pnu = detail.pnu || {};
   const operationalization = detail.operationalization || {};
@@ -584,6 +736,8 @@ function updateTocActive() {
               </div>
             </details>` : ''}
         </section>
+
+        ${renderEpistemicLayer(epistemicLayer)}
 
         <section class="section" id="measures">
           <h2>Instruments and sensors</h2>

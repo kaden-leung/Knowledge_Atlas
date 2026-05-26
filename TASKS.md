@@ -4,6 +4,20 @@
 
 ---
 
+## Newly Added — 2026-05-26 (AEPL Toulmin view + study-record + related-work + Phase 3 page rendering)
+
+Built the displayable components on top of graceful degradation, then wired the article page to render them. **Phase 3 is now real: a reader sees the epistemic layer.** Render verifier written (`scripts/verify_article_epistemic_render_contract.py`) and passing (static + node syntax + node render + payload contract + scoped headless-browser DOM smoke). Screenshot: `docs/AEPL_phase3_epistemic_section_PDF-0001.png`.
+
+| ID | Task | Owner | Context |
+|----|------|-------|---------|
+| AEPL-GD-TOULMIN | **~~Toulmin-view projection (6 slots, honest gaps)~~** | CW | **COMPLETED 2026-05-26.** Payload-level projection assembled from existing components (no new component_type, no migration): claim / grounds / warrant (label-only, honest) / qualifier / rebuttal (honest empty) / backing (planned, Stage 2). `is_toulmin_shaped` mirrors answer_shape (321/760). |
+| AEPL-GD-STUDY | **~~Study-record + claim facets~~** | CW | **COMPLETED 2026-05-26.** `study_record` (sample_n 66%, instruments 39%, design/key-stats/limitations 100%) folded into argument-support component with its support set extended (article_meta + instruments + science_summary) so provenance stays honest. Claim facets (`claim_type`+`epistemic_status`) derived from `signal`. |
+| AEPL-GD-RELATED | **~~Related-work projection~~** | CW | **COMPLETED 2026-05-26.** `related_work` projection from `related_papers` (517/760, 68%), flagged `related_not_stance_bearing` (no support/attack stance) with a provenance note. Source-derived (not payload-hash covered). |
+| AEPL-PHASE-3 | **~~Render the epistemic layer on `ka_article_view.html` + render verifier~~** | CW | **COMPLETED 2026-05-26.** Added `renderEpistemicLayer` (availability strip, primary claim, Toulmin grid, argument support + study, defeater state, belief-network pending badge, related work, no-hover provenance chips) + guarded fetch of the sibling payload. Render verifier passes 5/5; headless chromium confirms the section renders mobile-safe (the page's pre-existing navbar/measure-table overflow and missing-image 404s are NOT introduced here). |
+| AEPL-PHASE-3-FOLLOWUP | **Minor Phase 3 follow-ups** | CW + DK | (1) Payload `review_status` is build-time (`unreviewed`); DB is authoritative post-verify (`machine_verified`) — re-export payload after verify, or have the renderer read review status from DB, so the provenance chip shows `machine_verified`. (2) Pre-existing page issues (mobile overflow on legacy `measure-table`/navbar; missing `article_images/*` 404s) are separate from the epistemic layer. (3) Perf: page now fetches the 9.4 MB epistemic payload bulk; consider a per-article slice for production. |
+
+---
+
 ## Newly Added — 2026-05-24 (Dependency Overseer — post-panel pause)
 
 Ten-expert ruthless panel review (`docs/DEPENDENCY_OVERSEER_RUTHLESS_PANEL_REVIEW_2026-05-24.md`) returned 0 unconditional go, 4 proceed-with-changes, 6 pause-and-fix. DK accepted the enterprise recommendation: ship Phase 1+2, pause Phase 3, build observability + runbook + AF simulator, operate for 90 days, then revisit Phase 3 against the panel's 11 gates. Full plan: `docs/DEPENDENCY_OVERSEER_POST_PANEL_PAUSE_PLAN_2026-05-24.md`.

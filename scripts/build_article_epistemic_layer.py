@@ -272,10 +272,16 @@ def support_set_for_claim_rows(paper_id: str, rec: dict) -> list[dict]:
 
 
 def support_set_for_evidence_strength(paper_id: str, rec: dict) -> list[dict]:
+    # Includes the study-record sources (article_meta, instruments,
+    # science_summary) so the surfaced sample size / design / instruments /
+    # limitations are covered by this component's freshness, not orphaned.
     return [
         _member(paper_id, "top_claims", rec.get("top_claims", [])),
         _member(paper_id, "argumentation", rec.get("argumentation", {})),
         _member(paper_id, "evidence_profile", rec.get("evidence_profile", {})),
+        _member(paper_id, "article_meta", rec.get("article_meta", {})),
+        _member(paper_id, "instruments", rec.get("instruments", [])),
+        _member(paper_id, "science_summary", rec.get("science_summary", {})),
     ]
 
 
@@ -574,6 +580,20 @@ def build_evidence_strength_component(
     """
     ev_profile = rec.get("evidence_profile") or {}
     arg = rec.get("argumentation") or {}
+    article_meta = rec.get("article_meta") or {}
+    sci = rec.get("science_summary") or {}
+    instruments = [i for i in (rec.get("instruments") or []) if isinstance(i, str)]
+    # Study record: PNU-independent context surfaced from data we already have
+    # (article_meta 100%, science_summary 100%, instruments 39%, sample_n 66%).
+    study_record = {
+        "sample_n": article_meta.get("sample_n") or article_meta.get("sample_size"),
+        "article_type": article_meta.get("article_type"),
+        "study_design": sci.get("methods_and_design"),
+        "key_statistics": sci.get("key_statistics"),
+        "limitations_text": sci.get("limitations"),
+        "instruments": instruments,
+        "instrument_count": len(instruments),
+    }
     if primary is None:
         content = {
             "claim_id": None,
@@ -588,6 +608,7 @@ def build_evidence_strength_component(
             "attack_count": None,
             "atlas_credence_mean": ev_profile.get("atlas_credence_mean"),
             "atlas_credence_percentile": ev_profile.get("atlas_credence_percentile"),
+            "study_record": study_record,
         }
         return _component_base(
             record_id, paper_id, "evidence_strength",
@@ -605,7 +626,6 @@ def build_evidence_strength_component(
 
     primary_text = primary.get("finding") or ""
     claim_id = make_claim_id(paper_id, primary_text)
-    sci = rec.get("science_summary") or {}
     content = {
         "claim_id": claim_id,
         "source_credence": primary.get("credence"),
@@ -613,11 +633,9 @@ def build_evidence_strength_component(
         # See note in the not_applicable branch: argument-graph support, not
         # severity. credence/support/attack counts are upstream bookkeeping.
         "measure_semantics": "argument_support_not_severity",
-        # Study-level caveat surfaced from the extracted summary (100% coverage,
-        # PNU-independent). Lets the page show "what limits this" now.
-        "limitations_text": sci.get("limitations"),
-        "study_design": sci.get("methods_and_design"),
-        "key_statistics": sci.get("key_statistics"),
+        # Study record: sample size, design, key stats, limitations, instruments
+        # surfaced from data available today (PNU-independent).
+        "study_record": study_record,
         "support_count": primary.get("support_count"),
         "attack_count": primary.get("attack_count"),
         "dominant_stance": arg.get("dominant_stance"),
@@ -1126,11 +1144,19 @@ def build_record_for_paper(
         ),
     }
 
+    # Derived display projections (no new component_type, no DB write):
+    # Toulmin view assembled from components; related-work from source links.
+    projections = {
+        "toulmin": build_toulmin_view(components),
+        "related_work": build_related_work(article_rec),
+    }
+
     return {
         "record": record,
         "components": components,
         "support_sets": support_sets,
         "repair_items": repair_items,
+        "projections": projections,
     }
 
 
@@ -1344,6 +1370,8 @@ def build_public_payload(records: list[dict], build_run_id: str, started_at: str
                 for c in components
             },
             "availability_summary": derive_availability_summary(components),
+            "toulmin": pr["projections"]["toulmin"],
+            "related_work": pr["projections"]["related_work"],
             "blocking_failures": json.loads(rec["blocking_failures_json"]),
         }
     # Built != releasable. Surface the gap so "shipped" can never be misread as
@@ -1404,6 +1432,79 @@ def derive_availability_summary(components: list[dict]) -> dict:
         "available_now": sorted(available),
         "pending_upstream": pending,
         "planned_enrichment": list(PLANNED_STAGE2_SECTIONS),
+    }
+
+
+def build_toulmin_view(components: list[dict]) -> dict:
+    """Assemble a Toulmin projection from existing components — no new data, no
+    new component_type. Honest about what each slot is:
+      claim/grounds/warrant/qualifier/rebuttal are filled from extracted data;
+      warrant is a LABEL (not an explained warrant); backing is Stage-2 planned.
+    `is_toulmin_shaped` mirrors the answer_shape routing decision but the box is
+    shown for every record so the reader sees the structure and its gaps."""
+    by = {c["component_type"]: c for c in components}
+    pc = by.get("primary_claim", {}).get("content_json", {}) or {}
+    ev = by.get("evidence_strength", {}).get("content_json", {}) or {}
+    df = by.get("defeaters", {}).get("content_json", {}) or {}
+    asc = by.get("answer_shape_status", {}).get("content_json", {}) or {}
+    has_claim = bool(pc.get("claim_id"))
+    return {
+        "is_toulmin_shaped": asc.get("answer_shape") == "toulmin",
+        "answer_shape": asc.get("answer_shape"),
+        "slots": {
+            "claim": {
+                "availability": "available" if has_claim else "pending_upstream",
+                "claim_id": pc.get("claim_id"),
+                "text": pc.get("canonical_text") or pc.get("source_text"),
+            },
+            "grounds": {
+                "availability": "available",
+                "support_count": ev.get("support_count"),
+                "attack_count": ev.get("attack_count"),
+                "atlas_credence_mean": ev.get("atlas_credence_mean"),
+                "study_record": ev.get("study_record"),
+            },
+            "warrant": {
+                "availability": "available" if pc.get("warrant") else "pending_upstream",
+                "label": pc.get("warrant"),
+                "kind": "label_only",  # not an explained warrant — honest
+            },
+            "qualifier": {
+                "availability": "available" if pc.get("qualifier") else "pending_upstream",
+                "value": pc.get("qualifier"),
+            },
+            "rebuttal": {
+                "availability": "available",
+                "state": df.get("defeater_existence") or df.get("no_defeater_basis"),
+                "rows": df.get("rows", []),
+            },
+            "backing": {
+                "availability": "planned_enrichment",
+                "note": "Support for the warrant is not extracted in Stage 1 "
+                        "(Stage-2 LLM, gated by span attribution + human review).",
+            },
+        },
+    }
+
+
+def build_related_work(rec: dict) -> dict:
+    """Project related-paper links (PNU-independent) for display. These are
+    source-derived (article_details.related_papers) and weaker than support/
+    contradict (no stance) — flagged as such. Not covered by payload_hash."""
+    related = [r for r in (rec.get("related_papers") or []) if isinstance(r, dict)]
+    items = [{
+        "paper_id": r.get("paper_id"),
+        "title": r.get("title"),
+        "score": r.get("score"),
+        "reason": r.get("reason"),
+    } for r in related]
+    return {
+        "availability": "available" if items else "absent",
+        "relation": "related_not_stance_bearing",
+        "count": len(items),
+        "items": items,
+        "provenance_note": "source-derived projection (details.related_papers); "
+                           "not a stance-bearing support/attack link",
     }
 
 
