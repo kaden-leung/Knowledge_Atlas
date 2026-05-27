@@ -3,62 +3,15 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from sim_supervisor import operational_truth as ot
 from sim_supervisor import supervisor_db as sdb
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 REPORT_DIR = REPO_ROOT / "data" / "sim" / "supervisor_reports"
-ACTIVE_COMPONENT_STATES = {"starting", "running"}
-WAITING_COMPONENT_STATES = {"idle", "waiting_for_operator", "decision_pending"}
-TERMINAL_COMPONENT_STATES = {"completed", "standing_down", "disabled"}
-DEGRADED_COMPONENT_STATES = {"failed", "stuck", "degraded"}
-
-
-def _parse_iso(ts: str | None) -> datetime | None:
-    if not ts:
-        return None
-    return datetime.fromisoformat(ts.replace("Z", "+00:00"))
-
-
-def _seconds_since(ts: str | None) -> float | None:
-    dt = _parse_iso(ts)
-    if dt is None:
-        return None
-    return (datetime.now(timezone.utc) - dt).total_seconds()
-
-
-def _freshness_state(*, age: float | None, interval: int) -> str:
-    if age is None or interval <= 0:
-        return "unknown"
-    if age <= interval:
-        return "fresh"
-    if age <= interval * 5:
-        return "late"
-    return "stale"
-
-
-def _component_effective_state(raw_state: str, freshness_state: str) -> str:
-    if raw_state in ACTIVE_COMPONENT_STATES and freshness_state == "stale":
-        return "resume_required"
-    if raw_state in DEGRADED_COMPONENT_STATES:
-        return "degraded"
-    return raw_state
-
-
-def _component_state_class(effective_state: str) -> str:
-    if effective_state in ACTIVE_COMPONENT_STATES:
-        return "active"
-    if effective_state in WAITING_COMPONENT_STATES:
-        return "waiting"
-    if effective_state in TERMINAL_COMPONENT_STATES:
-        return "terminal"
-    if effective_state in {"resume_required", "degraded"}:
-        return "attention"
-    return "unknown"
 
 
 def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5) -> dict[str, Any]:
@@ -72,16 +25,12 @@ def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5
     for row in components:
         state = str(row.get("state") or "unknown")
         by_state[state] = by_state.get(state, 0) + 1
-        age = _seconds_since(row.get("last_heartbeat_observed_at"))
+        component_view = ot.evaluate_component_row(row, stale_multiplier=stale_multiplier)
+        age = component_view["heartbeat_age_seconds"]
         interval = int(row.get("expected_heartbeat_interval_seconds") or 0)
-        freshness_state = _freshness_state(age=age, interval=interval)
-        effective_state = _component_effective_state(state, freshness_state)
+        freshness_state = str(component_view["freshness_state"])
+        effective_state = str(component_view["effective_state"])
         effective_by_state[effective_state] = effective_by_state.get(effective_state, 0) + 1
-        component_view = dict(row)
-        component_view["heartbeat_age_seconds"] = age
-        component_view["freshness_state"] = freshness_state
-        component_view["effective_state"] = effective_state
-        component_view["state_class"] = _component_state_class(effective_state)
         component_views.append(component_view)
         if age is not None and interval > 0 and age > interval * stale_multiplier:
             stale_components.append(
@@ -93,16 +42,9 @@ def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5
                     "expected_interval_seconds": interval,
                 }
             )
-        if effective_state == "resume_required":
-            attention_actions.append(
-                {
-                    "scope": "component",
-                    "component_id": row["component_id"],
-                    "severity": "high",
-                    "action": "restart_or_resume_component",
-                    "reason": "active component heartbeat is stale",
-                }
-            )
+        action = component_view.get("attention_action")
+        if action:
+            attention_actions.append(action)
     decision_by_state: dict[str, int] = {}
     for row in decisions:
         state = str(row.get("state") or "unknown")
@@ -113,6 +55,8 @@ def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5
                     "scope": "decision_prompt",
                     "decision_id": row["decision_id"],
                     "severity": "high" if state == "raised" else "medium",
+                    "policy_family": "decision_lifecycle_policy",
+                    "attention_class": "resume_now" if state == "raised" else "neglected_too_long",
                     "action": "answer_decision_prompt",
                     "reason": f"decision prompt is {state}",
                 }
@@ -173,6 +117,7 @@ def render_markdown(status: dict[str, Any]) -> str:
             f"- `{row['component_id']}` kind=`{row['component_kind']}` "
             f"state=`{row['state']}` effective_state=`{row.get('effective_state')}` "
             f"freshness_state=`{row.get('freshness_state')}` "
+            f"clock_skew_state=`{row.get('clock_skew_state')}` "
             f"last_heartbeat_observed_at=`{row.get('last_heartbeat_observed_at')}`"
         )
     lines.extend(["", "## Decision Prompts"])

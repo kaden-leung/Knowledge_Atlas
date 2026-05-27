@@ -5,6 +5,7 @@ import sqlite3
 
 from sim_supervisor import status_report
 from sim_supervisor import supervisor_db as sdb
+from sim_supervisor import operational_truth as ot
 
 
 def test_supervisor_registers_components_and_heartbeats(tmp_path: Path) -> None:
@@ -99,3 +100,52 @@ def test_status_report_emits_attention_for_open_decision_prompt(tmp_path: Path) 
     assert status["decision_prompt_count"] == 1
     assert status["attention_actions"]
     assert status["attention_actions"][0]["action"] == "answer_decision_prompt"
+
+
+def test_operational_truth_flags_clock_skew() -> None:
+    row = {
+        "component_id": "scenario_engine",
+        "component_kind": "engine",
+        "state": "running",
+        "expected_heartbeat_interval_seconds": 30,
+        "last_heartbeat_at": "2026-05-25T00:00:00Z",
+        "last_heartbeat_observed_at": "2026-05-25T01:00:00Z",
+    }
+    evaluated = ot.evaluate_component_row(row)
+    assert evaluated["clock_skew_state"] == "suspected"
+    assert evaluated["attention_action"] is not None
+    assert evaluated["attention_action"]["policy_family"] == "heartbeat_integrity_policy"
+
+
+def test_status_report_carries_policy_family_on_component_attention(tmp_path: Path) -> None:
+    db_path = tmp_path / "sim_supervisor.db"
+    sdb.register_component(
+        component_id="reconciler_tick_runner",
+        component_kind="runner",
+        state="running",
+        expected_heartbeat_interval_seconds=10,
+        db_path=db_path,
+    )
+    sdb.record_heartbeat(
+        component_id="reconciler_tick_runner",
+        state="running",
+        heartbeat_at="2026-05-25T00:00:00Z",
+        progress_at="2026-05-25T00:00:00Z",
+        db_path=db_path,
+    )
+    conn = sqlite3.connect(db_path)
+    try:
+        conn.execute(
+            """
+            UPDATE components
+               SET last_heartbeat_at='2026-05-25T00:09:00Z',
+                   last_heartbeat_observed_at='2026-05-25T00:10:00Z'
+             WHERE component_id='reconciler_tick_runner'
+            """
+        )
+        conn.commit()
+    finally:
+        conn.close()
+    status = status_report.build_status(db_path=db_path, stale_multiplier=1)
+    assert status["attention_actions"]
+    assert status["attention_actions"][0]["policy_family"] == "worker_availability_policy"
