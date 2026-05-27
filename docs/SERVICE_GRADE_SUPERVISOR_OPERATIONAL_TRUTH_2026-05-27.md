@@ -13,6 +13,7 @@ That means:
 - explicit transitions
 - observed heartbeats
 - explicit batch or run identity
+- explicit progress truth
 - explicit attention policies
 
 ## Core Distinctions
@@ -40,8 +41,19 @@ Not every stale-looking condition is the same.
 
 - `freshness_state` asks whether the supervisor has observed a recent heartbeat.
 - `clock_skew_state` asks whether the component-authored timestamp materially disagrees with the observed timestamp.
+- future or impossible timestamps are treated as integrity failures, not as healthy freshness.
 
 These are different failure classes and should produce different actions.
+
+### 4. Heartbeat truth vs. progress truth
+
+A component may continue to heartbeat while making no progress.
+
+So the supervisor should distinguish:
+- heartbeat freshness
+- progress freshness
+
+Visible activity is not the same thing as productive work.
 
 ## Policy Families
 
@@ -63,9 +75,29 @@ The supervisor should emit actions by policy family, not merely by ad hoc alarm 
   - `repair_or_restart_component`
 
 ### `decision_lifecycle_policy`
-- use when a decision prompt is raised or acknowledged but not answered
+- use when a decision prompt is raised, or when an acknowledged prompt has remained unanswered beyond its grace window
 - example action:
   - `answer_decision_prompt`
+
+### `decision_integrity_policy`
+- use when decision lifecycle timestamps are missing, malformed, or impossible
+- example action:
+  - `inspect_invalid_decision_timestamp`
+
+### `dependency_wait_policy`
+- use when the component is still present but is blocked on an external dependency or operator response
+- example action:
+  - `inspect_blocking_dependency`
+
+### `progress_truth_policy`
+- use when the component is still heartbeating but progress evidence is stale, missing, or malformed
+- example action:
+  - `inspect_stalled_progress`
+
+### `state_contract_policy`
+- use when a component reports a state outside the agreed vocabulary
+- example action:
+  - `inspect_unknown_component_state`
 
 ## Attention Classes
 
@@ -77,6 +109,21 @@ The control plane should classify not only *what* action is needed but *what kin
 - `neglected_too_long`
 
 These should be portable across pipelines.
+
+## State Vocabulary Contract
+
+The reusable layer should not hard-code one pipeline’s state names as a universal truth.
+
+So the core exposes:
+- a default state profile
+- a configurable raw-state mapping
+- configurable freshness and grace thresholds at the report surface
+
+Any adopting pipeline should either:
+- use the default contract, or
+- provide its own explicit mapping into the families `active`, `waiting`, `terminal`, and `degraded`
+
+That is how portability is made real rather than merely claimed.
 
 ## Why This Matters
 
@@ -90,14 +137,15 @@ That is precisely how one ends up babysitting intelligent systems instead of sup
 
 ## Present Implementation
 
-The current simulator supervisor now embodies this layer in code:
+The current simulator supervisor now embodies the first serious version of this layer in code:
 - [operational_truth.py](/Users/davidusa/REPOS/Knowledge_Atlas/sim_supervisor/operational_truth.py)
 - [status_report.py](/Users/davidusa/REPOS/Knowledge_Atlas/sim_supervisor/status_report.py)
 
-This is not yet the whole dependency overseer. But it is the correct reusable core:
+This is not yet the whole dependency overseer. But it is now a defensible reusable core for:
 - state vocabulary
 - truth-evaluation logic
 - policy-family actions
+- progress-aware supervision
 - machine-readable and human-readable surfaces
 
 ## Reuse Standard
@@ -109,7 +157,9 @@ Any future pipeline supervisor should, at minimum, expose:
 3. effective state
 4. freshness state
 5. clock-skew state
-6. attention class
-7. policy-family action
+6. progress freshness state
+7. current run or batch identity
+8. attention class
+9. policy-family action
 
 If it does not, then it is still relying too much on intuition and too little on control-plane truth.

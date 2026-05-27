@@ -12,9 +12,18 @@ from sim_supervisor import supervisor_db as sdb
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 REPORT_DIR = REPO_ROOT / "data" / "sim" / "supervisor_reports"
+SEVERITY_ORDER = {"critical": 0, "high": 1, "medium": 2, "low": 3}
 
 
-def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5) -> dict[str, Any]:
+def build_status(
+    *,
+    db_path: str | Path | None = None,
+    stale_multiplier: int = 5,
+    state_profile: dict[str, set[str]] | None = None,
+    late_after_intervals: int = 1,
+    decision_raised_grace_seconds: int = 300,
+    decision_acknowledged_grace_seconds: int = 900,
+) -> dict[str, Any]:
     components = sdb.component_rows(db_path=db_path)
     decisions = sdb.decision_prompt_rows(db_path=db_path)
     by_state: dict[str, int] = {}
@@ -25,42 +34,47 @@ def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5
     for row in components:
         state = str(row.get("state") or "unknown")
         by_state[state] = by_state.get(state, 0) + 1
-        component_view = ot.evaluate_component_row(row, stale_multiplier=stale_multiplier)
+        component_view = ot.evaluate_component_row(
+            row,
+            state_profile=state_profile,
+            late_after_intervals=late_after_intervals,
+            stale_after_intervals=stale_multiplier,
+        )
         age = component_view["heartbeat_age_seconds"]
-        interval = int(row.get("expected_heartbeat_interval_seconds") or 0)
-        freshness_state = str(component_view["freshness_state"])
+        freshness_state = str(component_view["heartbeat_freshness_state"])
         effective_state = str(component_view["effective_state"])
         effective_by_state[effective_state] = effective_by_state.get(effective_state, 0) + 1
         component_views.append(component_view)
-        if age is not None and interval > 0 and age > interval * stale_multiplier:
+        if freshness_state == "stale" and component_view.get("state_class") != "terminal":
             stale_components.append(
                 {
                     "component_id": row["component_id"],
                     "state": state,
                     "effective_state": effective_state,
                     "heartbeat_age_seconds": age,
-                    "expected_interval_seconds": interval,
+                    "expected_interval_seconds": int(row.get("expected_heartbeat_interval_seconds") or 0),
                 }
             )
-        action = component_view.get("attention_action")
-        if action:
-            attention_actions.append(action)
+        attention_actions.extend(component_view.get("attention_actions", []))
     decision_by_state: dict[str, int] = {}
+    decision_views: list[dict[str, Any]] = []
     for row in decisions:
         state = str(row.get("state") or "unknown")
         decision_by_state[state] = decision_by_state.get(state, 0) + 1
-        if state in {"raised", "acknowledged"}:
-            attention_actions.append(
-                {
-                    "scope": "decision_prompt",
-                    "decision_id": row["decision_id"],
-                    "severity": "high" if state == "raised" else "medium",
-                    "policy_family": "decision_lifecycle_policy",
-                    "attention_class": "resume_now" if state == "raised" else "neglected_too_long",
-                    "action": "answer_decision_prompt",
-                    "reason": f"decision prompt is {state}",
-                }
-            )
+        evaluated = ot.evaluate_decision_prompt_row(
+            row,
+            raised_grace_seconds=decision_raised_grace_seconds,
+            acknowledged_grace_seconds=decision_acknowledged_grace_seconds,
+        )
+        decision_views.append(evaluated)
+        attention_actions.extend(evaluated.get("attention_actions", []))
+    attention_actions.sort(
+        key=lambda row: (
+            SEVERITY_ORDER.get(str(row.get("severity") or "low"), 99),
+            str(row.get("scope") or ""),
+            str(row.get("component_id") or row.get("decision_id") or ""),
+        )
+    )
     return {
         "generated_at": sdb.utc_now_iso(),
         "component_count": len(components),
@@ -71,7 +85,7 @@ def build_status(*, db_path: str | Path | None = None, stale_multiplier: int = 5
         "decision_prompt_state_counts": decision_by_state,
         "attention_actions": attention_actions,
         "components": component_views,
-        "decision_prompts": decisions,
+        "decision_prompts": decision_views,
     }
 
 
@@ -116,7 +130,9 @@ def render_markdown(status: dict[str, Any]) -> str:
         lines.append(
             f"- `{row['component_id']}` kind=`{row['component_kind']}` "
             f"state=`{row['state']}` effective_state=`{row.get('effective_state')}` "
-            f"freshness_state=`{row.get('freshness_state')}` "
+            f"run_id=`{row.get('current_run_id')}` "
+            f"heartbeat_freshness_state=`{row.get('heartbeat_freshness_state')}` "
+            f"progress_freshness_state=`{row.get('progress_freshness_state')}` "
             f"clock_skew_state=`{row.get('clock_skew_state')}` "
             f"last_heartbeat_observed_at=`{row.get('last_heartbeat_observed_at')}`"
         )
@@ -128,14 +144,31 @@ def render_markdown(status: dict[str, Any]) -> str:
         for row in prompts:
             lines.append(
                 f"- `{row['decision_id']}` scenario=`{row['scenario_name']}` "
-                f"class=`{row['decision_class']}` state=`{row['state']}`"
+                f"class=`{row['decision_class']}` state=`{row['state']}` "
+                f"raised_age_seconds=`{row.get('raised_age_seconds')}` "
+                f"acknowledged_age_seconds=`{row.get('acknowledged_age_seconds')}`"
             )
     return "\n".join(lines) + "\n"
 
 
-def write_reports(*, db_path: str | Path | None = None) -> dict[str, str]:
+def write_reports(
+    *,
+    db_path: str | Path | None = None,
+    stale_multiplier: int = 5,
+    state_profile: dict[str, set[str]] | None = None,
+    late_after_intervals: int = 1,
+    decision_raised_grace_seconds: int = 300,
+    decision_acknowledged_grace_seconds: int = 900,
+) -> dict[str, str]:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    status = build_status(db_path=db_path)
+    status = build_status(
+        db_path=db_path,
+        stale_multiplier=stale_multiplier,
+        state_profile=state_profile,
+        late_after_intervals=late_after_intervals,
+        decision_raised_grace_seconds=decision_raised_grace_seconds,
+        decision_acknowledged_grace_seconds=decision_acknowledged_grace_seconds,
+    )
     json_path = REPORT_DIR / "latest.json"
     md_path = REPORT_DIR / "latest.md"
     act_now_json_path = REPORT_DIR / "ACT_NOW.json"
