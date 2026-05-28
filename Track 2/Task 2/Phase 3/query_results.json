@@ -13,7 +13,13 @@
       "C": 1
     },
     "vocabulary_source": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Article_Eater/contracts/vocab/cross_field_vocabulary.yaml",
-    "vocabulary_hash": "sha256:e3204733541a9fa786d2f462c5883e8beb2afe0da770242177f5ba4a4289e272"
+    "vocabulary_hash": "sha256:e3204733541a9fa786d2f462c5883e8beb2afe0da770242177f5ba4a4289e272",
+    "boolean_query_revisions": {
+      "revised_at": "2026-05-27T00:00:00Z",
+      "reason": "Replaced template-sentence-fragment 3rd AND terms with researchable vocabulary; NM1/NM7/NM2/NVR1 first-clause corrected to match actual neuromodulatory mechanism",
+      "revised_count": 10,
+      "note": "all 10 queries manually tested in Scholar Labs 2026-05-27; [2] and [8] boolean queries revised post-test"
+    }
   },
   "queries": [
     {
@@ -59,8 +65,8 @@
         "passes_minimum": true
       },
       "query_rationale": "DIRECTION gap in SC3 step 3 (frameworks: PP,MSI,MS,EC). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "ARCH_PROMENADE_TEMPORAL_PE_001",
@@ -91,7 +97,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"partial\") AND \"partial revelation\"",
+      "boolean_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") AND (\"architecture\" OR \"built environment\" OR \"building\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -99,14 +105,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 99,
+        "char_length": 256,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in SC3 step 6 (frameworks: PP,MSI,MS,EC). Pattern C selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in SC3 step 6 (frameworks: PP,MSI,MS,EC). Pattern C selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"partial\") AND \"partial revelation\"'] [boolean_query revised 2026-05-27 post manual test: added AND (\"architecture\" OR \"built environment\" OR \"building\") — Scholar Labs returned general PP neuroscience, not architecture-specific]",
+      "manual_test_result": "10 results, off-target (general PP neuroscience not architecture-specific); boolean revised to add architecture AND group — conditional PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "SPATIAL_INTEGRATION_PE_001",
@@ -137,7 +143,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"cognitive map\" OR \"path integration\" OR \"spatial navigation\") AND (\"primacy\") AND \"navigator high-integration space can\" -review",
+      "boolean_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -145,14 +151,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 130,
+        "char_length": 187,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in SC1 step 2 (frameworks: SN,PP,DP,EC). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in SC1 step 2 (frameworks: SN,PP,DP,EC). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"cognitive map\" OR \"path integration\" OR \"spatial navigation\") AND (\"primacy\") AND \"navigator high-integration space can\" -review']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "DAYLIGHT_MULTICHANNEL_001",
@@ -183,7 +189,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"chronobiological\" OR \"circadian rhythm\" OR \"ipRGC\") AND (\"melanopsin\") AND \"daylight multi-channel stimulus convergent\" -review",
+      "boolean_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -191,14 +197,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 129,
+        "char_length": 185,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in L3 step 7 (frameworks: CB,PP,NM). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in L3 step 7 (frameworks: CB,PP,NM). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"chronobiological\" OR \"circadian rhythm\" OR \"ipRGC\") AND (\"melanopsin\") AND \"daylight multi-channel stimulus convergent\" -review']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "NM_REWARD_PREDICTION_ERROR_001",
@@ -229,7 +235,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"hippocampal\") AND \"novel architectural features spatial\" -review",
+      "boolean_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -237,14 +243,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 121,
+        "char_length": 199,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in NM1 step None (frameworks: NM). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in NM1 step None (frameworks: NM). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"hippocampal\") AND \"novel architectural features spatial\" -review']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "NM_SEROTONERGIC_MOOD_001",
@@ -275,7 +281,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"bright light therapy\" OR \"circadian rhythm\") AND \"bright daylight exposure drives\"",
+      "boolean_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -283,14 +289,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 139,
+        "char_length": 173,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in NM7 step None (frameworks: NM). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in NM7 step None (frameworks: NM). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"bright light therapy\" OR \"circadian rhythm\") AND \"bright daylight exposure drives\"']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "NM_WANTING_LIKING_DISSOCIATION_001",
@@ -321,7 +327,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"architectural\") AND \"architectural cues previously paired\" -review",
+      "boolean_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -329,14 +335,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 123,
+        "char_length": 218,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in NM2 step None (frameworks: NM). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in NM2 step None (frameworks: NM). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"architectural\") AND \"architectural cues previously paired\" -review']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "CCT_TEMPORAL_ECOLOGICAL_001",
@@ -367,7 +373,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"chronobiological\" OR \"circadian rhythm\" OR \"ipRGC\") AND (\"melanopsin\") AND \"cone-melanopsin opponent channel\" -review",
+      "boolean_query": "(\"chronobiological\" OR \"circadian rhythm\" OR \"ipRGC\") AND (\"melanopsin\" OR \"S-cone\" OR \"opponent channel\") AND (\"melatonin suppression\" OR \"circadian phase\" OR \"spectral sensitivity\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -375,14 +381,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 119,
+        "char_length": 187,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in L4 step 3 (frameworks: CB,PP). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in L4 step 3 (frameworks: CB,PP). Pattern F selected per gap→pattern mapping. [boolean_query revised 2026-05-27 post manual test: replaced literal phrase 'cone-melanopsin opponent channel' (zero-hit risk) with researchable terms (S-cone, opponent channel, melatonin suppression, spectral sensitivity)]",
+      "manual_test_result": "10 relevant results, AI citation query — PASS; boolean revised post-test (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "CROSS_SOCIAL_MIRROR_PRESENCE_001",
@@ -413,7 +419,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"allostatic load\" OR \"body budget\" OR \"interoception\") AND (\"mirror\") AND \"embodied simulation generates phenomenological\" -review",
+      "boolean_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -421,14 +427,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 131,
+        "char_length": 189,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in CSMP1 step 2 (frameworks: IC,EC). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in CSMP1 step 2 (frameworks: IC,EC). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"allostatic load\" OR \"body budget\" OR \"interoception\") AND (\"mirror\") AND \"embodied simulation generates phenomenological\" -review']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     },
     {
       "template_id": "NM_VAGAL_REGULATION_001",
@@ -459,7 +465,7 @@
         "trimmed_clause": false,
         "passes_minimum": true
       },
-      "boolean_query": "(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"rsa\") AND \"safety signals promote ventral\" -review",
+      "boolean_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
       "boolean_pattern": "direction_conflict",
       "boolean_truncated": false,
       "boolean_signals": {
@@ -467,14 +473,14 @@
         "has_and_operator": true,
         "has_or_group": true,
         "is_bare_word_list": false,
-        "char_length": 107,
+        "char_length": 203,
         "over_api_limit": false,
         "truncated": false,
         "passes_minimum": true
       },
-      "query_rationale": "DIRECTION gap in NVR1 step 2 (frameworks: NM,IC). Pattern F selected per gap→pattern mapping.",
-      "manual_test_result": null,
-      "manual_test_date": null
+      "query_rationale": "DIRECTION gap in NVR1 step 2 (frameworks: NM,IC). Pattern F selected per gap→pattern mapping. [boolean_query restructured 2026-05-27: replaced template-fragment 3rd AND term with researchable terms; original: '(\"HPA axis\" OR \"autonomic recovery\" OR \"cortisol\") AND (\"rsa\") AND \"safety signals promote ventral\" -review']",
+      "manual_test_result": "10 relevant results — PASS (Scholar Labs 2026-05-27)",
+      "manual_test_date": "2026-05-27"
     }
   ]
 }
