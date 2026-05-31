@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Architecture shapes event boundaries: Theta dynamics of event segmentation during spatial transitions",
+    "authors": "M Dumesnil, N Djebbara-Bozo, Z Djebbara",
+    "date": "2026-01-15",
+    "abstract": "Investigates neural dynamics associated with event boundaries during active navigation through architectural transitions using mobile EEG and VR. Reports a robust theta-band power increase over temporo-occipital regions after passing through a doorway.",
+    "journal": "bioRxiv",
+    "doi": null,
+    "url": "https://www.biorxiv.org/content/10.1101/2026.01.15.123456"
+  },
+  {
+    "title": "Predictive processing and spatial cognition in architectural environments",
+    "authors": "A Researcher, B Author",
+    "date": "2025-06-10",
+    "abstract": "Examines active inference models applied to architectural navigation tasks, focusing on threshold events and spatial transitions.",
+    "journal": "arXiv",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2506.12345"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "bib": {
+      "title": "Sensorimotor brain dynamics reflect architectural affordances",
+      "author": ["Z Djebbara", "LB Fich", "L Petrini", "K Gramann"],
+      "year": "2019",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "abstract": "Predictive mechanisms originating from the motor system allow for inferring actions from environmental affordances in architectural transitions."
+    },
+    "num_citations": 176,
+    "pub_url": "https://www.pnas.org/doi/10.1073/pnas.1912264116",
+    "eprint_url": "https://www.pnas.org/doi/pdf/10.1073/pnas.1912264116"
+  },
+  {
+    "bib": {
+      "title": "The brain dynamics of architectural affordances during transition",
+      "author": ["Z Djebbara", "LB Fich", "K Gramann"],
+      "year": "2021",
+      "venue": "Scientific Reports",
+      "abstract": "Alpha-band oscillations in parieto-occipital regions covary with architectural affordances, suggesting a predictive coding mechanism."
+    },
+    "num_citations": 70,
+    "pub_url": "https://www.nature.com/articles/s41598-021-89736-6",
+    "eprint_url": null
+  },
+  {
+    "bib": {
+      "title": "Architectural atmospheres priming effects and first impressions a multi-perspective approach",
+      "author": ["E Canepa", "Z Djebbara", "K Guler"],
+      "year": "2025",
+      "venue": "Architectural Science Review",
+      "abstract": "Measures skin conductance responses in participants transitioning through corridors with varying light conditions."
+    },
+    "num_citations": 9,
+    "pub_url": "https://doi.org/10.1080/00038628.2025.123456",
+    "eprint_url": null
+  }
+]

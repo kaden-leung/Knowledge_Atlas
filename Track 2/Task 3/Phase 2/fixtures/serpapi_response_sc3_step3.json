@@ -1,0 +1,114 @@
+{
+  "search_metadata": {
+    "id": "fixture_sc3_step3",
+    "status": "Success",
+    "created_at": "2026-05-27 00:00:00 UTC",
+    "processed_at": "2026-05-27 00:00:01 UTC",
+    "total_time_taken": 1.23
+  },
+  "search_parameters": {
+    "engine": "google_scholar",
+    "q": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"buildings\") AND \"threshold event\" -review",
+    "num": "10"
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "Sensorimotor brain dynamics reflect architectural affordances",
+      "result_id": "xfVkCwHFGlMJ",
+      "link": "https://www.pnas.org/doi/10.1073/pnas.1912264116",
+      "snippet": "Predictive mechanisms originating from the motor system allow for inferring actions from environmental affordances, central to the threshold event mechanism.",
+      "publication_info": {
+        "summary": "Z Djebbara, LB Fich, L Petrini, K Gramann - Proceedings of the National Academy of Sciences, 2019 - pnas.org",
+        "authors": [
+          {"name": "Z Djebbara"},
+          {"name": "LB Fich"},
+          {"name": "L Petrini"},
+          {"name": "K Gramann"}
+        ]
+      },
+      "cited_by": {"total": 176, "link": "https://scholar.google.com/scholar?cites=1"},
+      "resources": [
+        {
+          "title": "Full PDF",
+          "file_format": "PDF",
+          "link": "https://www.pnas.org/doi/pdf/10.1073/pnas.1912264116"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "title": "The brain dynamics of architectural affordances during transition",
+      "result_id": "abc123def456",
+      "link": "https://www.nature.com/articles/s41598-021-89736-6",
+      "snippet": "Alpha-band oscillations covary with architectural affordances, suggesting psychophysiological responses to spatial transitions.",
+      "publication_info": {
+        "summary": "Z Djebbara, LB Fich, K Gramann - Scientific Reports, 2021 - nature.com",
+        "authors": [
+          {"name": "Z Djebbara"},
+          {"name": "LB Fich"},
+          {"name": "K Gramann"}
+        ]
+      },
+      "cited_by": {"total": 70, "link": "https://scholar.google.com/scholar?cites=2"},
+      "resources": []
+    },
+    {
+      "position": 3,
+      "title": "Architecture shapes event boundaries: Theta dynamics of event segmentation during spatial transitions",
+      "result_id": "biorxiv2026_001",
+      "link": "https://www.biorxiv.org/content/10.1101/2026.01.15.123456",
+      "snippet": "Reports a robust theta-band power increase over temporo-occipital regions approximately 300-450 ms after passing through a doorway.",
+      "publication_info": {
+        "summary": "M Dumesnil, N Djebbara-Bozo, Z Djebbara - bioRxiv, 2026 - biorxiv.org",
+        "authors": [
+          {"name": "M Dumesnil"},
+          {"name": "N Djebbara-Bozo"},
+          {"name": "Z Djebbara"}
+        ]
+      },
+      "cited_by": {"total": 0, "link": ""},
+      "resources": [
+        {
+          "title": "PDF from biorxiv.org",
+          "file_format": "PDF",
+          "link": "https://www.biorxiv.org/content/10.1101/2026.01.15.123456.full.pdf"
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "title": "Less is more: expectation sharpens representations in the primary visual cortex",
+      "result_id": "kok2012neuron",
+      "link": "https://doi.org/10.1016/j.neuron.2012.09.005",
+      "snippet": "Perceptual expectation reduces neural response amplitude in V1 while improving stimulus representation, supporting predictive coding.",
+      "publication_info": {
+        "summary": "P Kok, JFM Jehee, FP De Lange - Neuron, 2012 - cell.com",
+        "authors": [
+          {"name": "P Kok"},
+          {"name": "JFM Jehee"},
+          {"name": "FP De Lange"}
+        ]
+      },
+      "cited_by": {"total": 1046, "link": "https://scholar.google.com/scholar?cites=4"},
+      "resources": []
+    },
+    {
+      "position": 5,
+      "title": "Unpacking the wow experience: Exploring profound emotional responses to evocative works of architecture",
+      "result_id": "dsouza2026",
+      "link": "https://doi.org/10.1016/j.foar.2026.01.001",
+      "snippet": "Spatial transitions from low dark spaces to high brightly lit spaces elicit stronger emotional responses than other configurations.",
+      "publication_info": {
+        "summary": "N D'souza, A Mostafavi, S Moshaver - Frontiers of Architectural Research, 2026 - Elsevier",
+        "authors": [
+          {"name": "N D'souza"},
+          {"name": "A Mostafavi"},
+          {"name": "S Moshaver"}
+        ]
+      },
+      "cited_by": {"total": 0, "link": ""},
+      "resources": []
+    }
+  ]
+}

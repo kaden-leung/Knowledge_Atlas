@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cogs160.local/track2/task3/phase2/search_results.schema.json",
+  "title": "Search Runner Output — search_results.json",
+  "description": "Machine-readable schema for the Phase 2 search runner output. Authoritative against SEARCH_RUNNER_CONTRACT.md §4.",
+  "type": "object",
+  "required": ["metadata", "results", "null_results", "skipped_queries"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "run_id",
+        "generated_at",
+        "input_query_count",
+        "queries_processed",
+        "queries_skipped",
+        "sources_enabled",
+        "per_source_stats",
+        "credits_used",
+        "credits_max",
+        "candidates_total_raw",
+        "candidates_after_dedupe",
+        "null_result_queries",
+        "mock_mode",
+        "serpapi_engine"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": "1.1.0" },
+        "run_id":     { "type": "string", "pattern": "^RUN-\\d{8}-\\d{6}$" },
+        "generated_at": { "$ref": "#/$defs/utcTimestamp" },
+        "input_query_count": { "type": "integer", "minimum": 0 },
+        "queries_processed": { "type": "integer", "minimum": 0 },
+        "queries_skipped": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "sources_enabled": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "per_source_stats": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/perSourceStats" }
+        },
+        "credits_used":   { "type": "integer", "minimum": 0 },
+        "credits_max":    { "type": "integer", "minimum": 0 },
+        "candidates_total_raw":  { "type": "integer", "minimum": 0 },
+        "candidates_after_dedupe": { "type": "integer", "minimum": 0 },
+        "null_result_queries":   { "type": "integer", "minimum": 0 },
+        "mock_mode":      { "type": "boolean" },
+        "serpapi_engine": { "const": "google_scholar" }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/candidate" }
+    },
+    "null_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nullResult" }
+    },
+    "skipped_queries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/skippedQuery" }
+    }
+  },
+  "$defs": {
+    "utcTimestamp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+      "description": "RFC 3339 UTC timestamp, second-precision, Z-terminated."
+    },
+    "perSourceStats": {
+      "type": "object",
+      "required": ["queries_run", "results_raw", "retries", "errors"],
+      "additionalProperties": false,
+      "properties": {
+        "queries_run":  { "type": "integer", "minimum": 0 },
+        "results_raw":  { "type": "integer", "minimum": 0 },
+        "retries":      { "type": "integer", "minimum": 0 },
+        "errors":       { "type": "integer", "minimum": 0 }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "candidate_id",
+        "discovery_run_id",
+        "discovered_via",
+        "merged_from_sources",
+        "merged_from_queries",
+        "discovered_query",
+        "discovered_query_display_id",
+        "source_voi_score",
+        "discovered_at",
+        "result_position",
+        "title_raw",
+        "title_normalized",
+        "doi",
+        "url",
+        "snippet",
+        "authors_raw",
+        "first_author_surname",
+        "publication_year",
+        "venue",
+        "cited_by_count",
+        "resource_pdf_url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id":     { "type": "string", "pattern": "^CAND-RUN-\\d{8}-\\d{6}-\\d{6}$" },
+        "discovery_run_id": { "type": "string", "pattern": "^RUN-\\d{8}-\\d{6}$" },
+        "discovered_via": {
+          "type": "string",
+          "enum": ["serpapi_scholar", "scholarly_search", "paperscraper_search"]
+        },
+        "merged_from_sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["serpapi_scholar", "scholarly_search", "paperscraper_search"]
+          }
+        },
+        "merged_from_queries": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        },
+        "discovered_query":           { "type": "string", "minLength": 1 },
+        "discovered_query_display_id":{ "type": "string", "minLength": 1 },
+        "source_voi_score":           { "type": ["number", "null"] },
+        "discovered_at":              { "$ref": "#/$defs/utcTimestamp" },
+        "result_position":            { "type": "integer", "minimum": 1 },
+        "title_raw":                  { "type": "string" },
+        "title_normalized":           { "type": "string" },
+        "doi": {
+          "type": ["string", "null"],
+          "pattern": "^10\\.\\d{4,9}/.+$"
+        },
+        "url":                  { "type": ["string", "null"] },
+        "snippet":              { "type": ["string", "null"] },
+        "authors_raw":          { "type": ["string", "null"] },
+        "first_author_surname": { "type": ["string", "null"] },
+        "publication_year":     { "type": ["integer", "null"] },
+        "venue":                { "type": ["string", "null"] },
+        "cited_by_count":       { "type": ["integer", "null"], "minimum": 0 },
+        "resource_pdf_url":     { "type": ["string", "null"] }
+      }
+    },
+    "nullResult": {
+      "type": "object",
+      "required": [
+        "discovered_query_display_id",
+        "discovered_query",
+        "source_voi_score",
+        "reason",
+        "queried_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "discovered_query_display_id": { "type": "string", "minLength": 1 },
+        "discovered_query":            { "type": "string", "minLength": 1 },
+        "source_voi_score":            { "type": ["number", "null"] },
+        "reason":   { "const": "zero_results_across_all_sources" },
+        "queried_at": { "$ref": "#/$defs/utcTimestamp" }
+      }
+    },
+    "skippedQuery": {
+      "type": "object",
+      "required": [
+        "discovered_query_display_id",
+        "discovered_query",
+        "skip_reason",
+        "skipped_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "discovered_query_display_id": { "type": "string", "minLength": 1 },
+        "discovered_query":            { "type": "string", "minLength": 1 },
+        "skip_reason": {
+          "type": "string",
+          "enum": ["query_too_long", "credit_cap_reached"]
+        },
+        "skipped_at": { "$ref": "#/$defs/utcTimestamp" }
+      }
+    }
+  }
+}

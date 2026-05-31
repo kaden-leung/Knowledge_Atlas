@@ -1,0 +1,24 @@
+# Runtime artifacts — never commit
+.env
+task3_pipeline_lifecycle.db
+task3_pipeline_lifecycle.db-journal
+task3_pipeline_lifecycle.db-wal
+task3_pipeline_lifecycle.db-shm
+acquired_pdfs/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Runtime JSON outputs (regenerated each run)
+search_results.json
+null_results.json
+run_log.json
+db_load_report.json
+reference_harvest_results.json
+triage_results.json
+acquisition_results.json
+prisma_counts.json
+
+# Phase 5: policy gate (must be manually created, never pre-committed)
+Phase 5/policy_clearance.json

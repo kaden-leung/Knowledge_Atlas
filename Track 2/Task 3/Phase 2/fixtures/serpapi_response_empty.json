@@ -1,0 +1,15 @@
+{
+  "search_metadata": {
+    "id": "fixture_empty",
+    "status": "Success",
+    "created_at": "2026-05-27 00:00:00 UTC",
+    "processed_at": "2026-05-27 00:00:01 UTC",
+    "total_time_taken": 0.5
+  },
+  "search_parameters": {
+    "engine": "google_scholar",
+    "q": "\"zzz_nonexistent_phrase_xyz\" AND \"zzz_another_nonexistent_abc\"",
+    "num": "10"
+  },
+  "organic_results": []
+}
