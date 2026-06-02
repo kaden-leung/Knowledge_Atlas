@@ -33,7 +33,7 @@ Three triage stages reduce the candidate buffer:
 
 Output: `v_acquisition_queue` — rows with `triage_decision = 'ACCEPT'` awaiting PDF acquisition.
 
-All stages operate in **degraded mode** in this run: keyword fallback classifier only (no centroid-based HierarchicalClassifier), paperscraper rate-limited by arxiv (0 live results), Phase 5 PDF acquisition dry-run only.
+All stages operate in **degraded mode** in this run: keyword fallback classifier only (no centroid-based HierarchicalClassifier), paperscraper rate-limited by arxiv (0 live results). Phase 5 acquisition ran live on 2026-06-02: 3 rows processed, 9 lifecycle transitions logged, 0 PDFs acquired (both DOI-bearing rows returned HTTP 403 — paywalled; scidownl correctly policy-gated).
 
 ---
 

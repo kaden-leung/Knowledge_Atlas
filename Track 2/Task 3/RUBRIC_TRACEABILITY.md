@@ -20,5 +20,5 @@ This matrix maps major Track 2 requirements to concrete evidence in the reposito
 | Reproducibility / setup verification | Environment check script | [setup_verify.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/setup_verify.py>) |
 | End-to-end validation command | Artifact and DB evidence checks | [verify_track2_workflow.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/verify_track2_workflow.py>) |
 | One-command evidence wrapper | Regenerates local handoff/dashboard evidence, then verifies chain | [run_pipeline.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/run_pipeline.py>) |
-| Acquisition stage | Implemented, demonstrated in dry-run only | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
+| Acquisition stage | Implemented; ran live 2026-06-02 (9 transitions, 0 PDFs — paywalled DOIs) | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
 | Downstream handoff validation | 9 exported artifacts, 9 validated, 1 skipped for missing abstract | [Phase 7 handoff_manifest.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json>) |

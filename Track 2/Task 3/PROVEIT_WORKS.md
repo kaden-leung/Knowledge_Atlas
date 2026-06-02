@@ -255,6 +255,6 @@ Validation checks passed before export: DOI normalised, abstract non-null, triag
 All stages above executed in **Research/Degraded mode**:
 - Semantic classifier: keyword fallback (no HierarchicalClassifier centroids)
 - paperscraper: 0 live results in the run that produced this paper (fixed post-run)
-- Phase 5: dry-run only; no live PDF acquired
+- Phase 5: ran live on 2026-06-02; 9 acquisition transitions logged; 0 PDFs acquired (both DOI-bearing rows paywalled; scidownl gate correctly blocked)
 
 Results should not be interpreted as production-mode performance. See `EVALUATION_REPORT.md §8` for the full technical assessment.

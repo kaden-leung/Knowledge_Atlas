@@ -20,7 +20,7 @@ This submission is strongest when presented as a gap-driven retrieval and evalua
 | DB buffer | `article_references` currently contains 1,193 rows | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
 | Lifecycle logging | DB currently contains 2,748 lifecycle transitions, including 1,226 `abstract_triage` and 294 `abstract_collector` transitions | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
 | Triage outcome | 10 rows are `ACCEPT` and 10 rows appear in `v_acquisition_queue` | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>), [PROVEIT_WORKS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PROVEIT_WORKS.md>) |
-| Acquisition evidence | Acquisition logic exists and Phase 5 dry-run evidence exists, but there are 0 live acquisition transitions in the DB | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>), [STAGE3_EVIDENCE_AUDIT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md>) |
+| Acquisition evidence | Phase 5 ran live 2026-06-02: 3 rows processed, 9 acquisition transitions in DB, 0 PDFs acquired (both DOI rows paywalled; scidownl gated) | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>), [STAGE3_EVIDENCE_AUDIT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md>) |
 | Downstream handoff | 9 downstream-ready artifacts were exported and validated; 1 ACCEPT row was skipped for missing abstract | [Phase 7 handoff_manifest.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json>), [Phase 7 inbox_validation_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 7/handoff_outbox/inbox_validation_report.json>) |
 | Benchmark authority | The 30-paper evaluation report is the authoritative benchmark source | [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) |
 | Benchmark alias | `BENCHMARK_EVALUATION.md` points to the authoritative report without duplicating metrics | [BENCHMARK_EVALUATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/BENCHMARK_EVALUATION.md>) |
@@ -37,7 +37,7 @@ This submission is strongest when presented as a gap-driven retrieval and evalua
 
 ## 4. What is still limited
 
-- Acquisition is implemented but only dry-run demonstrated in the current evidence state.
+- Phase 5 acquisition stage ran live (2026-06-02): 9 transitions logged. No PDFs acquired — both DOI-bearing rows are paywalled and scidownl is policy-gated.
 - The AE handoff layer now exists as a local validation path, not as an external integrated consumer.
 - `run_pipeline.py` exists as a thin evidence wrapper; live search still requires an explicit `--confirm-live` gate.
 - Task 2 still depends on the sibling `Article_Eater` checkout, so portability is improved but not fully self-contained.
@@ -49,11 +49,11 @@ This submission is strongest when presented as a gap-driven retrieval and evalua
 - The submission has verified `ACCEPT` rows and verified acquisition-ready rows in `v_acquisition_queue`.
 - The submission has verified downstream handoff artifacts for 9 of the 10 current `ACCEPT` rows.
 - Evaluation showed that retrieval coverage, not triage accuracy, is the dominant source of missed relevant literature.
-- Acquisition logic is implemented and dry-run evidenced, but not yet live-demonstrated in the verified DB state.
+- Phase 5 acquisition stage is live-demonstrated (9 DB transitions). No PDF was successfully downloaded because the candidate DOIs are paywalled.
 
 ## 6. Claims that should not be made
 
-- Do not claim live PDF acquisition was demonstrated in the current verified state.
+- Do not claim PDFs were successfully acquired — the acquisition stage ran live but downloaded nothing (paywalled DOIs + scidownl gated).
 - Do not claim external production integration beyond the local handoff validation layer.
 - Do not describe `EVALUATION_REPORT.md` and `TRACK2_EVALUATION_REPORT.md` as co-equal benchmark authorities.
 - Do not imply Task 3 is a generic literature search pipeline; its intended value depends on Task 2 supplying the search intent.

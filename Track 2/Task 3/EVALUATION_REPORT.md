@@ -5,6 +5,8 @@
 **Status:** Post-fix, post-re-run, post-expanded-benchmark
 **Execution mode:** Degraded (keyword fallback classifier; no HierarchicalClassifier centroids)
 
+> **Metric authority note:** [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) is the authoritative metric source for this submission. This document provides supporting context and historical comparison (before-vs-after fix). Where any number here conflicts with BENCHMARK_EVALUATION.md, the latter takes precedence.
+
 ---
 
 ## 1. North-Star Metric
