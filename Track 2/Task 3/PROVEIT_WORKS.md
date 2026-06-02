@@ -135,19 +135,22 @@ Note: Before the keyword classifier bug fix (2026-06-01), this paper scored clf=
 
 ---
 
-### Step 8 — Acquisition Readiness
+### Step 8 — PDF Acquisition Attempt
 
 | Field | Value |
 |---|---|
 | triage_stage | `triage_complete` |
 | triage_decision | **`ACCEPT`** |
-| acquired_paper_id | `NULL` (Phase 5 not executed live in demonstrated snapshot) |
+| Run ID | `RUN-P5-20260602-192128` |
 | v_acquisition_queue | **YES — row appears in `v_acquisition_queue`** |
-| Queue position | Sorted by `voi_score DESC NULLS LAST, created_at ASC`; among the 10 ACCEPT rows |
-| pdf_acquisition_attempts | 0 |
-| Resource PDF URL (from SerpAPI) | `https://link.springer.com/content/pdf/10.1007/978-981-96-4749-1_4.pdf` |
+| pdf_acquisition_attempts | **3** (Unpaywall + OpenAlex + scidownl gate) |
+| Unpaywall result | `acquisition_unpaywall:fail_http_403` — DOI found, PDF URL paywalled |
+| OpenAlex result | `acquisition_openalex:fail_http_403` — same DOI, no OA version found |
+| scidownl gate | `acquisition_scidownl:blocked_policy_gate` — correctly blocked (no clearance) |
+| Final result | `acquisition_failed_all_sources` |
+| acquired_paper_id | `NULL` — PDF not acquired |
 
-A dry-run of Phase 5 predicted Unpaywall would succeed for this DOI. Phase 5 acquisition logic is implemented but not executed live in the current verified snapshot. See `STAGE3_EVIDENCE_AUDIT.md`.
+Three live API calls were made and logged. All transitions are in `lifecycle_transitions` with timestamps `2026-06-02T19:21:28Z`–`2026-06-02T19:21:29Z`. The paper is not open access; Unpaywall (HTTP 403) and OpenAlex (HTTP 403) both confirmed the DOI is paywalled. scidownl is policy-gated and did not fire. See `STAGE3_EVIDENCE_AUDIT.md`.
 
 ---
 
@@ -217,10 +220,13 @@ Validation checks passed before export: DOI normalised, abstract non-null, triag
                                triage_decision = ACCEPT
                        artifact: v_acquisition_queue row created
 
-2026-06-02T          STAGE 3: acquisition readiness confirmed (dry-run)
-                               pdf_acquisition_attempts = 0
-                               acquired_paper_id = NULL (not executed live)
-                       artifact: STAGE3_EVIDENCE_AUDIT.md dry-run record
+2026-06-02T19:21:28Z  STAGE 3: live acquisition attempt (RUN-P5-20260602-192128)
+                               acquisition_unpaywall:fail_http_403
+                               acquisition_openalex:fail_http_403
+                               acquisition_scidownl:blocked_policy_gate
+                               acquisition_failed_all_sources
+                               pdf_acquisition_attempts = 3
+                       artifact: lifecycle_transitions (9 rows across 3 processed papers)
 
 2026-06-02T          AE HANDOFF: ae_handoff.py exported artifact
                        artifact: handoff_outbox/REF-2026-05-31-000064.json
