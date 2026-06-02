@@ -5,6 +5,8 @@
 **Reviewer:** Kaden Leung (pipeline author — acknowledged conflict of interest; external review recommended)
 **Purpose:** Address expert panel findings RT1, R1, R2, AR2.
 
+> **Metric authority note:** This document was written against the pre-v1.2.0 ACCEPT set (6 papers, before the keyword classifier expansion). After the classifier was fixed, there are 10 ACCEPT papers. Precision figures in this document (3/6 = 50% conservative, 3.5/6 = 58% liberal) reflect that earlier evaluation. Current authoritative metrics against the 10-paper ACCEPT set are in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md): **5/10 = 50% conservative, 7/10 = 70% liberal**. The threshold analysis in §2 and the structural findings throughout remain valid.
+
 ---
 
 ## 1. Success Definition (P1 fix)

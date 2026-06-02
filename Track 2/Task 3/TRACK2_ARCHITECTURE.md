@@ -1,4 +1,6 @@
-# Track 2 Architecture
+# Track 2 Architecture — Expanded Reference
+
+> **Navigation note:** [GRADER_GUIDE.md](GRADER_GUIDE.md) contains the inline pipeline diagram and is the recommended starting point. This file is the expanded reference — it adds a per-stage evidence map (§3) linking each stage to its specific artifact files. Read this if you want to jump directly to a specific stage's evidence without reading the full guide.
 
 This file shows the pipeline flow and where evidence lives.
 

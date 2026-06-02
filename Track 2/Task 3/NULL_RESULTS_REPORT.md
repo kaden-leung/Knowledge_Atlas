@@ -103,7 +103,7 @@ Papers that entered Stage 2A (survived the Stage 1 metadata screen) but for whic
 | Target (per grading criterion) | ≥ 70% |
 | Gap to target | 2 abstracts (need 40/56 = 71.4%) |
 
-Note: The overall 22.5% rate is low because 233 of the 289 Stage 2A rows come from the PDF reference harvester and have no DOI and noisy/partial titles — academic APIs cannot reliably retrieve abstracts for these. The 67.9% DOI-only rate is the meaningful quality metric.
+Note: The overall 22.5% rate is low because 233 of the 289 Stage 2A rows come from the PDF reference harvester and have no DOI and noisy/partial titles — academic APIs cannot reliably retrieve abstracts for these. The 67.9% DOI-only rate is from this intermediate run snapshot. After retry runs and additional API calls, the final measured rate is **73.2%** (reported in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md), which is the authoritative metric source). The 67.9% here reflects the state at the point this report was generated; it does not contradict the final figure.
 
 ---
 

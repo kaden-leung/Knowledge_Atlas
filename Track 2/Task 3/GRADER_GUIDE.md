@@ -16,6 +16,15 @@ The central finding supported by the evaluation:
 
 ---
 
+**If you have 5 minutes:**
+1. Read this file — architecture, navigation, one-command verification
+2. Read [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — all key metrics, error taxonomy, per-paper precision assessment
+3. Read [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced through all 10 lifecycle stages
+
+Those three documents capture the architecture, evaluation, validation, and limitations of the project. Everything else is supporting detail.
+
+---
+
 ## 2. Pipeline architecture
 
 ```text
