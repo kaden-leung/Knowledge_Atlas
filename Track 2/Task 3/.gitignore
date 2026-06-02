@@ -10,9 +10,13 @@ task3_pipeline_lifecycle.db-shm
 # Build / cache artifacts
 acquired_pdfs/
 __pycache__/
+.pytest_cache/
 *.pyc
 *.pyo
 *.pyd
+
+# Internal agent working memory — not a submission deliverable
+memory/
 
 # Runtime JSON outputs that are NOT evidence (regenerated, not referenced by docs)
 null_results.json

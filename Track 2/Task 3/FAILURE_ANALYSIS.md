@@ -13,12 +13,12 @@ That finding matters because it changed the interpretation of the whole system. 
 
 | Failure | Evidence | Impact | Action taken |
 |---|---|---|---|
-| Retrieval coverage was much lower than expected | [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) | Most canonical CNFA papers never reached triage | Reframed the project around retrieval as the dominant bottleneck |
-| Two Task 2 queries returned zero API results | [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>) | 2 of 10 targeted gaps had no retrieval coverage | Marked query reformulation as required future work |
-| `paperscraper` produced 0 live results | [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>), [PIPELINE_ANALYSIS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PIPELINE_ANALYSIS.md>) | One retrieval source contributed nothing in the demonstrated run | Fixed `.json` to `.jsonl` bug and documented demonstrated state honestly |
-| `architecture` failed to match `architectural` | [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>), [PIPELINE_ANALYSIS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PIPELINE_ANALYSIS.md>) | Clearly relevant CNFA papers were false negatives at Stage 1 | Expanded Stage 1 keyword list |
-| One returned abstract was clearly wrong | [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) | A stored abstract could be scientifically invalid even when the title match was correct | Added plausibility checks and flagged the corrupted case |
-| Acquisition stage ran live but acquired 0 PDFs | [STAGE3_EVIDENCE_AUDIT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md>) | Phase 5 ran on 2026-06-02 (9 transitions); both DOI-bearing rows are paywalled; scidownl correctly blocked | Stage ran and is evidenced; no PDF was successfully downloaded |
+| Retrieval coverage was much lower than expected | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) | Most canonical CNFA papers never reached triage | Reframed the project around retrieval as the dominant bottleneck |
+| Two Task 2 queries returned zero API results | [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) | 2 of 10 targeted gaps had no retrieval coverage | Marked query reformulation as required future work |
+| `paperscraper` produced 0 live results | [MANIFEST.md](MANIFEST.md), [PIPELINE_ANALYSIS.md](PIPELINE_ANALYSIS.md) | One retrieval source contributed nothing in the demonstrated run | Fixed `.json` to `.jsonl` bug and documented demonstrated state honestly |
+| `architecture` failed to match `architectural` | [MANIFEST.md](MANIFEST.md), [PIPELINE_ANALYSIS.md](PIPELINE_ANALYSIS.md) | Clearly relevant CNFA papers were false negatives at Stage 1 | Expanded Stage 1 keyword list |
+| One returned abstract was clearly wrong | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) | A stored abstract could be scientifically invalid even when the title match was correct | Added plausibility checks and flagged the corrupted case |
+| Acquisition stage ran live but acquired 0 PDFs | [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md) | Phase 5 ran on 2026-06-02 (9 transitions); both DOI-bearing rows are paywalled; scidownl correctly blocked | Stage ran and is evidenced; no PDF was successfully downloaded |
 
 ## 3. Failure categories
 
@@ -84,8 +84,8 @@ Why this matters:
 
 Use this file alongside:
 
-- [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) for benchmark evidence
-- [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>) for query-level failures
-- [STAGE3_EVIDENCE_AUDIT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md>) for the acquisition boundary
+- [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) for benchmark evidence
+- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) for query-level failures
+- [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md) for the acquisition boundary
 
 This file is not meant to replace those artifacts. Its job is to connect them into one measurement -> discovery -> action story.

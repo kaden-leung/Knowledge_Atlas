@@ -33,19 +33,19 @@ The strongest existing project claim is not merely that the pipeline runs. It is
 
 ### Fully implemented and evidenced
 
-- Task 2 gap extraction outputs and query generation outputs exist under [Track 2/Task 2/MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 2/MANIFEST.md>).
-- Task 2 query generation is contract-heavy and verification-heavy, with 17 documented verification questions in [VERIFICATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 2/Phase 4/VERIFICATION.md>).
+- Task 2 gap extraction outputs and query generation outputs exist under [Track 2/Task 2/MANIFEST.md](<../Task 2/MANIFEST.md>).
+- Task 2 query generation is contract-heavy and verification-heavy, with 17 documented verification questions in [VERIFICATION.md](<../Task 2/Phase 4/VERIFICATION.md>).
 - Task 2 Phase 3 deliverables are mirrored into `Knowledge_Atlas/Track 2/Task 2/Phase 3/`, which partially solves discoverability.
-- Task 3 search, DB loading, reference harvesting, triage, acquisition logic, and reporting code all exist and are documented in [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>).
-- Task 3 setup verification already has a one-command script in [setup_verify.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/setup_verify.py>).
-- End-to-end trace evidence exists in [PROVEIT_WORKS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PROVEIT_WORKS.md>).
-- Benchmark/evaluation artifacts exist in [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>), [EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/EVALUATION_REPORT.md>), [HUMAN_VALIDATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/HUMAN_VALIDATION.md>), [PIPELINE_ANALYSIS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PIPELINE_ANALYSIS.md>), and [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>).
-- [PROVEIT_WORKS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PROVEIT_WORKS.md>) is especially valuable because it gives one lifecycle trace from gap source to ACCEPT.
+- Task 3 search, DB loading, reference harvesting, triage, acquisition logic, and reporting code all exist and are documented in [MANIFEST.md](MANIFEST.md).
+- Task 3 setup verification already has a one-command script in [setup_verify.py](setup_verify.py).
+- End-to-end trace evidence exists in [PROVEIT_WORKS.md](PROVEIT_WORKS.md).
+- Benchmark/evaluation artifacts exist in [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md), [EVALUATION_REPORT.md](EVALUATION_REPORT.md), [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md), [PIPELINE_ANALYSIS.md](PIPELINE_ANALYSIS.md), and [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md).
+- [PROVEIT_WORKS.md](PROVEIT_WORKS.md) is especially valuable because it gives one lifecycle trace from gap source to ACCEPT.
 
 ### Implemented but only partially demonstrated
 
 - `paperscraper` is wired but the demonstrated live run produced zero results before the `.jsonl` fix; the repo documents both the bug and the fix, but the demonstrated system state is still mixed.
-- PDF acquisition logic exists and dry-run evidence exists in [acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>), but live acquisition evidence is explicitly absent in [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>) and [PROVEIT_WORKS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PROVEIT_WORKS.md>).
+- PDF acquisition logic exists and dry-run evidence exists in [acquisition_report.json](<Phase 5/acquisition_report.json>), but live acquisition evidence is explicitly absent in [MANIFEST.md](MANIFEST.md) and [PROVEIT_WORKS.md](PROVEIT_WORKS.md).
 - The intended semantic classifier exists in the larger codebase, but the demonstrated Task 3 run uses keyword fallback because no centroid file is present.
 
 ## 3. What appears missing
@@ -55,31 +55,31 @@ The following do not appear to exist in the inspected repository state:
 
 The following now exist and close earlier visibility and reproducibility gaps:
 
-- [AUDIT_SUMMARY.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/AUDIT_SUMMARY.md>)
-- [GRADER_GUIDE.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/GRADER_GUIDE.md>)
-- [TRACK2_ARCHITECTURE.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_ARCHITECTURE.md>)
-- [RUBRIC_TRACEABILITY.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/RUBRIC_TRACEABILITY.md>)
-- [verify_track2_workflow.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/verify_track2_workflow.py>)
-- [STAGE3_EVIDENCE_AUDIT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md>)
-- [FAILURE_ANALYSIS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/FAILURE_ANALYSIS.md>)
-- [Phase 7/ae_handoff.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 7/ae_handoff.py>)
-- [Phase 7/ae_inbox_stub.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 7/ae_inbox_stub.py>)
-- [run_pipeline.py](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/run_pipeline.py>)
-- [BENCHMARK_EVALUATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/BENCHMARK_EVALUATION.md>)
-- [LESSONS_LEARNED.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/LESSONS_LEARNED.md>)
-- [HOW_TO_RUN.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 2/HOW_TO_RUN.md>)
-- [run_gap_extraction.sh](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 2/run_gap_extraction.sh>)
+- [AUDIT_SUMMARY.md](AUDIT_SUMMARY.md)
+- [GRADER_GUIDE.md](GRADER_GUIDE.md)
+- [TRACK2_ARCHITECTURE.md](TRACK2_ARCHITECTURE.md)
+- [RUBRIC_TRACEABILITY.md](RUBRIC_TRACEABILITY.md)
+- [verify_track2_workflow.py](verify_track2_workflow.py)
+- [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md)
+- [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md)
+- [Phase 7/ae_handoff.py](<Phase 7/ae_handoff.py>)
+- [Phase 7/ae_inbox_stub.py](<Phase 7/ae_inbox_stub.py>)
+- [run_pipeline.py](run_pipeline.py)
+- [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md)
+- [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
+- [HOW_TO_RUN.md](<../Task 2/HOW_TO_RUN.md>)
+- [run_gap_extraction.sh](<../Task 2/run_gap_extraction.sh>)
 
 ## 4. What appears duplicated
 
 There is meaningful duplication in the evaluation/documentation layer:
 
-- [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>) is already a grader-oriented high-level summary.
-- [EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/EVALUATION_REPORT.md>) uses a 15-paper benchmark and frames a final technical assessment.
-- [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) uses a 30-paper benchmark and provides the stronger evidence for the retrieval-bottleneck claim.
-- [HUMAN_VALIDATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/HUMAN_VALIDATION.md>) overlaps with precision/false-positive discussion.
-- [PIPELINE_ANALYSIS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PIPELINE_ANALYSIS.md>) overlaps with bug-fix interpretation and classifier limitations.
-- [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>) overlaps with failure analysis.
+- [MANIFEST.md](MANIFEST.md) is already a grader-oriented high-level summary.
+- [EVALUATION_REPORT.md](EVALUATION_REPORT.md) uses a 15-paper benchmark and frames a final technical assessment.
+- [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) uses a 30-paper benchmark and provides the stronger evidence for the retrieval-bottleneck claim.
+- [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) overlaps with precision/false-positive discussion.
+- [PIPELINE_ANALYSIS.md](PIPELINE_ANALYSIS.md) overlaps with bug-fix interpretation and classifier limitations.
+- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) overlaps with failure analysis.
 
 This duplication is not useless, but it does create a discoverability problem and a metric-authority problem.
 
@@ -87,11 +87,11 @@ The cleanest fix is to designate one benchmark authority and let the other evalu
 
 ## 5. What appears undocumented or under-documented
 
-- There is no obvious `START HERE` entry point for a grader beyond discovering [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>) manually.
+- There is no obvious `START HERE` entry point for a grader beyond discovering [MANIFEST.md](MANIFEST.md) manually.
 - There is no short architecture document connecting Task 2 -> Task 3 -> evaluation.
 - Task 2 reproducibility is weaker than its manifest suggests. The manifest describes submission-root copies and reproduction commands, but the actual `Track 2/Task 2` directory currently does not contain the claimed root copies `gap_extractor.py`, `query_generator.py`, `gap_results.json`, and `query_results.json`.
 - Task 2 also lacks a clean wrapper for the PYTHONPATH-sensitive extraction path.
-- Stage 3 evidence is now documented in [STAGE3_EVIDENCE_AUDIT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md>), which makes the dry-run-only boundary explicit.
+- Stage 3 evidence is now documented in [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md), which makes the dry-run-only boundary explicit.
 - There is no dedicated rubric traceability matrix that maps requirement to evidence in one table.
 - There is no dedicated demonstrated-vs-implemented matrix that makes overclaiming hard to miss.
 - There is no canonical one-command validation entry point for the Task 3 evidence story.
@@ -106,9 +106,9 @@ This claim is supported strongly enough to use, but only if one benchmark docume
 
 Evidence supporting it:
 
-- [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) states that 96% of misses in the 30-paper analysis are retrieval failures.
-- [EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/EVALUATION_REPORT.md>) independently argues that the main limitation is retrieval scope rather than classifier quality.
-- [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>) documents query-level retrieval failures directly.
+- [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) states that 96% of misses in the 30-paper analysis are retrieval failures.
+- [EVALUATION_REPORT.md](EVALUATION_REPORT.md) independently argues that the main limitation is retrieval scope rather than classifier quality.
+- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) documents query-level retrieval failures directly.
 
 Risk:
 
@@ -146,7 +146,7 @@ Reason:
 
 Reason:
 - The repo lacks a true obvious entry point.
-- [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>) is strong, but it is not labeled as the universal starting point and does not orient Task 2 + Task 3 + evaluation together.
+- [MANIFEST.md](MANIFEST.md) is strong, but it is not labeled as the universal starting point and does not orient Task 2 + Task 3 + evaluation together.
 
 ### 3. `TRACK2_ARCHITECTURE.md`
 
@@ -273,7 +273,7 @@ Reason:
 **Classification:** `COMPLETED`
 
 Reason:
-- The content already exists across [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>), [PIPELINE_ANALYSIS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PIPELINE_ANALYSIS.md>), and [HUMAN_VALIDATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/HUMAN_VALIDATION.md>).
+- The content already exists across [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md), [PIPELINE_ANALYSIS.md](PIPELINE_ANALYSIS.md), and [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md).
 - A dedicated failure analysis is justified only if it consolidates rather than duplicates.
 
 ### 12. `LESSONS_LEARNED.md`

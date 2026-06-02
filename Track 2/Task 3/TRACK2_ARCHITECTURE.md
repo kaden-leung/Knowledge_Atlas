@@ -54,16 +54,16 @@ Without Task 2, Task 3 would be a generic search-and-triage pipeline. With Task 
 
 | Stage | Main evidence |
 |---|---|
-| Gap extraction | [Track 2/Task 2/Phase 2/gap_results.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 2/Phase 2/gap_results.json>) |
-| Query generation | [Track 2/Task 2/Phase 3/query_results.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 2/Phase 3/query_results.json>) |
-| Retrieval | [Track 2/Task 3/Phase 2/search_results.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 2/search_results.json>) |
-| DB buffer | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
-| Stage 1 + Stage 2A + Stage 2B | [MANIFEST.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/MANIFEST.md>) |
-| End-to-end lifecycle trace | [PROVEIT_WORKS.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/PROVEIT_WORKS.md>) |
-| Downstream handoff validation | [Phase 7 handoff_manifest.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json>) |
-| Human precision review | [HUMAN_VALIDATION.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/HUMAN_VALIDATION.md>) |
-| Null results and missing abstracts | [NULL_RESULTS_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/NULL_RESULTS_REPORT.md>) |
-| Benchmark evaluation | [TRACK2_EVALUATION_REPORT.md](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/TRACK2_EVALUATION_REPORT.md>) |
+| Gap extraction | [Track 2/Task 2/Phase 2/gap_results.json](<../Task 2/Phase 2/gap_results.json>) |
+| Query generation | [Track 2/Task 2/Phase 3/query_results.json](<../Task 2/Phase 3/query_results.json>) |
+| Retrieval | [Track 2/Task 3/Phase 2/search_results.json](<Phase 2/search_results.json>) |
+| DB buffer | [task3_pipeline_lifecycle.db](task3_pipeline_lifecycle.db) |
+| Stage 1 + Stage 2A + Stage 2B | [MANIFEST.md](MANIFEST.md) |
+| End-to-end lifecycle trace | [PROVEIT_WORKS.md](PROVEIT_WORKS.md) |
+| Downstream handoff validation | [Phase 7 handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) |
+| Human precision review | [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) |
+| Null results and missing abstracts | [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) |
+| Benchmark evaluation | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) |
 
 ## 4. Demonstrated vs implemented
 

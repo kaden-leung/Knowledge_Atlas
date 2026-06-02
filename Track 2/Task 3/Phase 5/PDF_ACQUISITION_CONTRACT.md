@@ -177,7 +177,7 @@ Examples:
 
 ## 10. Known Limitations
 
-1. **No abstract-extracted DOIs for PDF-extract rows.** The 6 ACCEPT rows in the current queue are all from the PDF reference harvester with `discovered_via='review_pdf_extract'`. Most lack DOIs (or have corrupt short DOIs already cleaned by the truncated-DOI fix). Unpaywall and OpenAlex both require a DOI; without one, both fail immediately and the row goes straight to the scidownl gate check (which also fails, since the gate is off by default). Expect `failed_all_sources=6` on first live run.
+1. **No abstract-extracted DOIs for many PDF-extract rows.** Several ACCEPT rows come from the PDF reference harvester with `discovered_via='review_pdf_extract'` and lack DOIs (or have corrupt short DOIs already cleaned by the truncated-DOI fix). Unpaywall and OpenAlex both require a DOI; without one, both fail immediately and the row goes straight to the scidownl gate check (which also fails, since the gate is off by default). (This contract was written against the pre-fix 6-row queue; the queue now holds 10 ACCEPT rows. The bounded live run of 2026-06-02 processed 3 rows: 0 PDFs acquired — 2 DOI rows paywalled, 1 row no-DOI — see STAGE3_EVIDENCE_AUDIT.md.)
 2. **scidownl availability.** Sci-Hub mirrors change URLs frequently. `scihub_download()` tries to auto-select a working mirror; this may fail silently. Always check the `lifecycle_transitions` record for the specific error.
 3. **Unpaywall rate limit.** 10 req/sec; already enforced by `UnpaywallClient._rate_limit()`. Safe for a 6-row queue.
 

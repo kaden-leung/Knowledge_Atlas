@@ -4,6 +4,8 @@
 **Date:** 2026-06-01
 **Context:** Post expert-panel revision. Addresses precision, recall, VOI compression, and component failures.
 
+> **Metric authority note:** Precision/ACCEPT figures in this document reflect the **pre-fix** classifier state (6 ACCEPT papers, 3/6 = 50%). After the Stage 1 keyword fix there are 10 ACCEPT papers; the authoritative current figures (5/10 conservative, 7/10 liberal) are in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md). The bug analysis and structural findings here remain valid.
+
 ---
 
 ## 1. Bugs Fixed (this session)

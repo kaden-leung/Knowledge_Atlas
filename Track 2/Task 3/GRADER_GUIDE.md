@@ -88,7 +88,7 @@ To regenerate all evidence artifacts:
 python3 run_pipeline.py --mode all-evidence
 ```
 
-Task 2 reproducibility (requires local Article_Eater checkout — see [HOW_TO_RUN.md](Track 2/Task 2/HOW_TO_RUN.md)):
+Task 2 reproducibility (requires local Article_Eater checkout — see [HOW_TO_RUN.md](<../Task 2/HOW_TO_RUN.md>)):
 
 ```bash
 cd "Track 2/Task 2"
@@ -102,19 +102,19 @@ bash run_gap_extraction.sh --output /tmp/gap_report.json --top-n 10
 Three documents cover the full submission:
 
 1. This file — architecture, navigation, one-command verification
-2. [TRACK2_EVALUATION_REPORT.md](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) — benchmark, recall, precision, error taxonomy, ablation, retrieval-bottleneck finding
-3. [PROVEIT_WORKS.md](Track 2/Task 3/PROVEIT_WORKS.md) — one paper traced end-to-end through all 10 lifecycle stages including AE handoff
+2. [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) — benchmark, recall, precision, error taxonomy, ablation, retrieval-bottleneck finding
+3. [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced end-to-end through all 10 lifecycle stages including AE handoff
 
 Supporting references:
 
-- [BENCHMARK_EVALUATION.md](Track 2/Task 3/BENCHMARK_EVALUATION.md) — authoritative metric table (cite this for all numbers; full methodology in TRACK2_EVALUATION_REPORT.md)
-- [FAILURE_ANALYSIS.md](Track 2/Task 3/FAILURE_ANALYSIS.md) — failure modes connected into one measurement → discovery → action story
-- [LESSONS_LEARNED.md](Track 2/Task 3/LESSONS_LEARNED.md) — what evaluation changed about the project
-- [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) — manual precision review and threshold sensitivity
-- [NULL_RESULTS_REPORT.md](Track 2/Task 3/NULL_RESULTS_REPORT.md) — 2 null queries and 225 MISSING_ABSTRACT rows, documented
-- [MANIFEST.md](Track 2/Task 3/MANIFEST.md) — single-page audit trail for Task 3
-- [Track 2/Task 2/MANIFEST.md](Track 2/Task 2/MANIFEST.md) — Task 2 deliverables and autograder result
-- [Phase 7/handoff_outbox/handoff_manifest.json](Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json) — downstream-ready export evidence
+- [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — authoritative metric table (cite this for all numbers; full methodology in TRACK2_EVALUATION_REPORT.md)
+- [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) — failure modes connected into one measurement → discovery → action story
+- [LESSONS_LEARNED.md](LESSONS_LEARNED.md) — what evaluation changed about the project
+- [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) — manual precision review and threshold sensitivity
+- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 225 MISSING_ABSTRACT rows, documented
+- [MANIFEST.md](MANIFEST.md) — single-page audit trail for Task 3
+- [Track 2/Task 2/MANIFEST.md](<../Task 2/MANIFEST.md>) — Task 2 deliverables and autograder result
+- [Phase 7/handoff_outbox/handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) — downstream-ready export evidence
 
 ---
 
@@ -122,17 +122,17 @@ Supporting references:
 
 | Component | Implemented | Demonstrated | Evidence |
 |---|---|---|---|
-| Task 2 gap extraction | Yes | Yes | [gap_results.json](Track 2/Task 2/Phase 2/gap_results.json) |
-| Task 2 query generation | Yes | Yes | [query_results.json](Track 2/Task 2/Phase 3/query_results.json) |
-| Retrieval pipeline | Yes | Yes | [search_results.json](Track 2/Task 3/Phase 2/search_results.json) |
+| Task 2 gap extraction | Yes | Yes | [gap_results.json](<../Task 2/Phase 2/gap_results.json>) |
+| Task 2 query generation | Yes | Yes | [query_results.json](<../Task 2/Phase 3/query_results.json>) |
+| Retrieval pipeline | Yes | Yes | [search_results.json](<Phase 2/search_results.json>) |
 | DB buffer + lifecycle logging | Yes | Yes | task3_pipeline_lifecycle.db |
-| Stage 1 triage | Yes | Yes | [MANIFEST.md](Track 2/Task 3/MANIFEST.md) |
-| Stage 2A abstract collection | Yes | Yes | [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) |
-| Stage 2B triage | Yes | Yes | [PROVEIT_WORKS.md](Track 2/Task 3/PROVEIT_WORKS.md) |
-| PDF acquisition logic | Yes | Ran live — 9 transitions, 0 PDFs (paywalled) | [STAGE3_EVIDENCE_AUDIT.md](Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md) |
-| AE handoff layer | Yes | Yes, local validation | [handoff_manifest.json](Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json) |
-| One-command wrapper | Yes | Yes | [run_pipeline.py](Track 2/Task 3/run_pipeline.py) |
-| Chain verifier | Yes | Yes — 9/9 | [verify_track2_workflow.py](Track 2/Task 3/verify_track2_workflow.py) |
+| Stage 1 triage | Yes | Yes | [MANIFEST.md](MANIFEST.md) |
+| Stage 2A abstract collection | Yes | Yes | [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) |
+| Stage 2B triage | Yes | Yes | [PROVEIT_WORKS.md](PROVEIT_WORKS.md) |
+| PDF acquisition logic | Yes | Ran live — 9 transitions, 0 PDFs (paywalled) | [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md) |
+| AE handoff layer | Yes | Yes, local validation | [handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) |
+| One-command wrapper | Yes | Yes | [run_pipeline.py](run_pipeline.py) |
+| Chain verifier | Yes | Yes — 9/9 | [verify_track2_workflow.py](verify_track2_workflow.py) |
 
 ---
 
@@ -144,15 +144,15 @@ This submission additionally provides:
 
 | Addition | Evidence document |
 |---|---|
-| 30-paper gold-standard benchmark corpus | [CNFA_GOLD_STANDARD.md](Track 2/Task 3/CNFA_GOLD_STANDARD.md) |
-| Retrieval recall measured against benchmark | [TRACK2_EVALUATION_REPORT.md §4](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
-| ACCEPT precision — manual relevance assessment | [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) |
-| Error taxonomy — failure mode decomposition | [FAILURE_ANALYSIS.md](Track 2/Task 3/FAILURE_ANALYSIS.md) |
-| Query ablation study (K=1,3,5,8,9) | [TRACK2_EVALUATION_REPORT.md §6.1](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
-| VOI–ACCEPT correlation (negative finding) | [TRACK2_EVALUATION_REPORT.md §6.2](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
-| Baseline query comparison | [TRACK2_EVALUATION_REPORT.md §6.3](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
-| End-to-end chain verifier (9/9 checks) | [verify_track2_workflow.py](Track 2/Task 3/verify_track2_workflow.py) |
-| Downstream handoff + AE validation layer | [Phase 7/ae_handoff.py](Track 2/Task 3/Phase 7/ae_handoff.py), [ae_inbox_stub.py](Track 2/Task 3/Phase 7/ae_inbox_stub.py) |
+| 30-paper gold-standard benchmark corpus | [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md) |
+| Retrieval recall measured against benchmark | [TRACK2_EVALUATION_REPORT.md §4](TRACK2_EVALUATION_REPORT.md) |
+| ACCEPT precision — manual relevance assessment | [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) |
+| Error taxonomy — failure mode decomposition | [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) |
+| Query ablation study (K=1,3,5,8,9) | [TRACK2_EVALUATION_REPORT.md §6.1](TRACK2_EVALUATION_REPORT.md) |
+| VOI–ACCEPT correlation (negative finding) | [TRACK2_EVALUATION_REPORT.md §6.2](TRACK2_EVALUATION_REPORT.md) |
+| Baseline query comparison | [TRACK2_EVALUATION_REPORT.md §6.3](TRACK2_EVALUATION_REPORT.md) |
+| End-to-end chain verifier (9/9 checks) | [verify_track2_workflow.py](verify_track2_workflow.py) |
+| Downstream handoff + AE validation layer | [Phase 7/ae_handoff.py](<Phase 7/ae_handoff.py>), [ae_inbox_stub.py](<Phase 7/ae_inbox_stub.py>) |
 
 ---
 

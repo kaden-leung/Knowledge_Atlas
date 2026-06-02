@@ -65,7 +65,7 @@ See [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) for full assessment.
 
 **Threshold note:** The `voi_medium` threshold was lowered from 0.50 → 0.40 after observing 0 ACCEPTs. The full sensitivity table and principled explanation are in HUMAN_VALIDATION.md §2. The cliff is structural (all papers in the corpus have voi ≤ 0.478 by construction), not a tunable range.
 
-**ACCEPT precision (manual review):**
+**ACCEPT precision (manual review)** — *this table is the pre-fix 6-paper ACCEPT set; the authoritative current figures against the 10-paper set (5/10 conservative, 7/10 liberal) are in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md):*
 
 | Paper | Relevant to CNFA? |
 |---|---|
@@ -76,7 +76,7 @@ See [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) for full assessment.
 | Hapticity in Hybrid Space from an Enactive Perspective | ✅ True positive |
 | Seeing minds directly: Direct perception theory in social cognition | ⚠️ Borderline (theoretical background, not CNFA study) |
 
-**Precision: 3/6 clear true positives (50%). Recommend instructor review of all 6 before any Phase 5 PDF acquisition.**
+**Precision (pre-fix 6-paper set): 3/6 clear true positives (50%).** Authoritative current precision against the 10-paper ACCEPT set is 5/10 conservative, 7/10 liberal — see [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md).
 
 **Known false negatives (inspected REJECTs):**
 - "Unpacking the wow experience: Profound emotional responses to evocative works of architecture" — clearly CNFA-relevant; rejected because clf=0.45 < threshold of 0.50
@@ -169,7 +169,7 @@ See also: `PIPELINE_ANALYSIS.md` for full known-item recall test, VOI compressio
 | `classifier_below_threshold` | 669 — classifier mode: `keyword_fallback` (no centroids file present) |
 | `lifecycle_transitions` rows added | 1193 (all `created_by='abstract_triage'`) |
 
-**4B live run (RUN-4B-LIVE-V3-20260531):** 211 candidates → 44 `abstract_collected`, 167 `abstract_missing`. DOI hit rate **74.3%** (contract target ≥ 70% ✅). Source breakdown: S2=17, PubMed=14, OpenAlex=9, CrossRef=4.
+**4B live run (RUN-4B-LIVE-V3-20260531):** 211 candidates → 44 `abstract_collected`, 167 `abstract_missing`. DOI hit rate **74.3%** for this specific run (contract target ≥ 70% ✅). Source breakdown: S2=17, PubMed=14, OpenAlex=9, CrossRef=4. (The authoritative submission-wide DOI hit rate is **73.2%** — see [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md); the small difference reflects different run snapshots.)
 
 **4D live run (RUN-4D-20260531):** 44 `abstract_collected` rows triaged → **0 ACCEPT, 8 EDGE_CASE, 36 REJECT**. `v_acquisition_queue` = 0 rows. See calibration note below.
 

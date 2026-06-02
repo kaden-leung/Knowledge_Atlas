@@ -10,7 +10,7 @@
 
 **If a metric appears elsewhere in any other document, this document takes precedence.**
 
-Full methodology, per-query tables, ablation details, and discussion are in [TRACK2_EVALUATION_REPORT.md](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md). All other documents that cite a metric should reference this file, not each other.
+Full methodology, per-query tables, ablation details, and discussion are in [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md). All other documents that cite a metric should reference this file, not each other.
 
 ---
 
@@ -18,7 +18,7 @@ Full methodology, per-query tables, ablation details, and discussion are in [TRA
 
 | Metric | Result | Basis |
 |---|---|---|
-| Benchmark corpus | 30 canonical CNFA papers | [CNFA_GOLD_STANDARD.md](Track 2/Task 3/CNFA_GOLD_STANDARD.md) |
+| Benchmark corpus | 30 canonical CNFA papers | [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md) |
 | Retrieval recall (15-paper set) | **5/15 = 33%** | Papers entering `article_references` |
 | End-to-end recall (15-paper set) | **2/15 = 13%** | Papers reaching `triage_decision = ACCEPT` |
 | Retrieval recall (30-paper set) | **2/30 = 7%** | Full benchmark (books excluded from retrieval) |
@@ -40,7 +40,7 @@ Evidence: 96% of benchmark failures (papers that did not reach ACCEPT) were neve
 
 ### Next concrete improvement
 
-Because the bottleneck is retrieval coverage, the single highest-leverage next step is **expanding the query set to cover the CNFA subfields the 10 Task 2 queries miss** — environmental-psychology foundations (ART/Kaplan, SRT/Ulrich), biophilic design, neuroaesthetics, and wayfinding. The current queries target specific PP/SN/NM/CB/CSMP/NVR theoretical gaps; the gold standard shows ~72% of misses are DOI-bearing papers simply outside that query scope. Adding 5–8 subfield queries is estimated to move 30-paper retrieval recall from 7% toward 15–25% with no classifier change. The second step — semantic (embedding-based) retrieval — is what would push recall past keyword reach toward the 50% target. Classifier work (centroids) improves *precision*, not recall, so it is correctly sequenced after retrieval. Full priority order: [TRACK2_EVALUATION_REPORT.md §11](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md).
+Because the bottleneck is retrieval coverage, the single highest-leverage next step is **expanding the query set to cover the CNFA subfields the 10 Task 2 queries miss** — environmental-psychology foundations (ART/Kaplan, SRT/Ulrich), biophilic design, neuroaesthetics, and wayfinding. The current queries target specific PP/SN/NM/CB/CSMP/NVR theoretical gaps; the gold standard shows ~72% of misses are DOI-bearing papers simply outside that query scope. Adding 5–8 subfield queries is estimated to move 30-paper retrieval recall from 7% toward 15–25% with no classifier change. The second step — semantic (embedding-based) retrieval — is what would push recall past keyword reach toward the 50% target. Classifier work (centroids) improves *precision*, not recall, so it is correctly sequenced after retrieval. Full priority order: [TRACK2_EVALUATION_REPORT.md §11](TRACK2_EVALUATION_REPORT.md).
 
 ---
 
@@ -94,10 +94,10 @@ False positive pattern: all 3 are papers that use architectural vocabulary in pe
 
 ## Scope Limitations
 
-- **Why these 30 papers:** the corpus was selected to span all four CNFA research traditions (architectural neuroscience, environmental-psychology foundations, mechanistic/theoretical neuroscience, and built-environment + wellbeing) and all 10 COGS-160 Atlas frameworks, deliberately including books and grey literature as known retrieval-failure controls. Full selection criteria and per-paper relevance tags: [CNFA_GOLD_STANDARD.md](Track 2/Task 3/CNFA_GOLD_STANDARD.md).
+- **Why these 30 papers:** the corpus was selected to span all four CNFA research traditions (architectural neuroscience, environmental-psychology foundations, mechanistic/theoretical neuroscience, and built-environment + wellbeing) and all 10 COGS-160 Atlas frameworks, deliberately including books and grey literature as known retrieval-failure controls. Full selection criteria and per-paper relevance tags: [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md).
 - Benchmark corpus was curated by the pipeline author (selection bias risk; external curation recommended before any publication-quality claim).
 - 30-paper set is small; confidence intervals are wide.
 - VOI correlation finding is based on 9 active queries (2 returned zero results).
 - Classifier operates in keyword-fallback mode, not the intended semantic mode.
 
-Full discussion: [TRACK2_EVALUATION_REPORT.md §8](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md)
+Full discussion: [TRACK2_EVALUATION_REPORT.md §8](TRACK2_EVALUATION_REPORT.md)
