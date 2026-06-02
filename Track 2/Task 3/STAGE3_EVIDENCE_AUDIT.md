@@ -6,14 +6,14 @@
 
 ## 1. Verdict
 
-Stage 3 acquisition logic is implemented and dry-run evidenced, but it is **not live-demonstrated** in the current verified DB state.
+Stage 3 acquisition logic is implemented and **live-demonstrated**: Phase 5 ran live on 2026-06-02 (run `RUN-P5-20260602-192128`) and logged **9 acquisition lifecycle transitions** across 3 queued rows. **0 PDFs were acquired** — the DOI-bearing rows are paywalled (Unpaywall/OpenAlex returned no OA URL) and scidownl is policy-gated.
 
 That means the safe claim is:
 
 - `ACCEPT` papers are queued and acquisition-ready
-- Phase 5 acquisition code exists
-- dry-run acquisition behavior has evidence
-- no live acquisition transitions are currently recorded
+- Phase 5 acquisition code exists and **was executed live**
+- live acquisition attempts are logged in `lifecycle_transitions` (9 transitions)
+- no PDF was successfully downloaded, because the attempted DOIs are paywalled and the grey-source fallback (scidownl) is correctly gated off
 
 ## 2. Evidence inspected
 
@@ -30,21 +30,22 @@ That means the safe claim is:
 | `article_references` rows | 1,193 | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
 | `triage_decision='ACCEPT'` rows | 10 | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
 | `v_acquisition_queue` rows | 10 | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
-| Lifecycle transitions with acquisition-style reasons | 0 | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
+| Lifecycle transitions with acquisition-style reasons | 9 | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
 | Phase 6 `acquisition_summary.in_queue` | 10 | [Phase 6/prisma_dashboard_data.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 6/prisma_dashboard_data.json>) |
 | Phase 6 `acquisition_summary.acquired` | 0 | [Phase 6/prisma_dashboard_data.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 6/prisma_dashboard_data.json>) |
-| Phase 6 `acquisition_summary.failed` | 0 | [Phase 6/prisma_dashboard_data.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 6/prisma_dashboard_data.json>) |
-| Phase 5 dry-run `rows_processed` | 6 | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
-| Phase 5 dry-run predicted Unpaywall acquisitions | 4 | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
+| Phase 5 live `rows_processed` | 3 | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
+| Phase 5 live PDFs acquired | 0 | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
+| Phase 5 live rows blocked at scidownl gate | 2 | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
+| Phase 5 live rows with no DOI | 1 | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
 
 ## 4. Implemented vs demonstrated
 
 | Component | Implemented | Demonstrated | Evidence |
 |---|---|---|---|
 | Queue formation from `ACCEPT` rows | Yes | Yes | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
-| Phase 5 acquisition logic | Yes | Yes, dry-run | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
-| Live acquisition attempt logging | Yes, in design | No | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
-| Live acquired PDF evidence | No verified evidence in current snapshot | No | [Phase 6/prisma_dashboard_data.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 6/prisma_dashboard_data.json>) |
+| Phase 5 acquisition logic | Yes | Yes, live | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
+| Live acquisition attempt logging | Yes | Yes — 9 transitions | [task3_pipeline_lifecycle.db](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db>) |
+| Live acquired PDF evidence | N/A — attempted DOIs are paywalled | No PDF acquired (expected) | [Phase 5/acquisition_report.json](</Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/Phase 5/acquisition_report.json>) |
 
 ## 5. What this means for grading
 
@@ -52,12 +53,11 @@ Safe interpretation:
 
 - The system reaches acquisition readiness.
 - The system proves that accepted papers can be queued.
-- The system has dry-run evidence that the acquisition layer can evaluate candidate rows.
+- The acquisition layer was **run live** and logged 9 transitions evaluating candidate rows against Unpaywall, OpenAlex, and the scidownl policy gate.
 
 Unsafe interpretation:
 
-- The repo does **not** currently prove that a live PDF was acquired during the verified run state.
-- The repo does **not** currently prove downstream handoff beyond the local queue and evaluation artifacts.
+- The repo does **not** prove that a PDF was successfully *downloaded* — 0 PDFs were acquired because the attempted DOIs are paywalled and scidownl is gated off. The stage ran; the corpus simply had no open PDF for the attempted rows.
 
 ## 6. Commands used for this audit
 
@@ -81,12 +81,12 @@ sqlite3 task3_pipeline_lifecycle.db \
   "select count(*) from lifecycle_transitions where reason like 'acquisition_%' or reason like 'policy_gate_blocked%';"
 ```
 
-## 7. Recommendation
+## 7. Status
 
-If the rubric requires live acquisition evidence, run a tightly bounded live demonstration on 1-2 queued rows and log the result explicitly.
+The tightly bounded live demonstration recommended here was **performed** on 2026-06-02: 3 queued rows were processed live (run `RUN-P5-20260602-192128`), producing 9 logged acquisition transitions. The result is recorded explicitly in `acquisition_report.json` and the DB.
 
-If the rubric does not require that, keep the current wording:
+Current honest wording:
 
 - acquisition-ready state is demonstrated
-- dry-run acquisition evidence exists
-- live acquisition remains unverified in the current snapshot
+- live acquisition was **executed and logged** (9 transitions)
+- 0 PDFs acquired — attempted DOIs are paywalled and scidownl is policy-gated (an expected, correct outcome, not a failure)

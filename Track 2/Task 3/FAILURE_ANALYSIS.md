@@ -65,9 +65,8 @@ Why this matters:
 
 Some components exist in code but were not fully demonstrated in the current evidence state.
 
-- acquisition is dry-run evidenced but not live-demonstrated
-- the intended semantic classifier is not the demonstrated mode
-- downstream AE handoff is not implemented in this snapshot
+- acquisition ran live (9 transitions) but acquired 0 PDFs because the attempted DOIs are paywalled and scidownl is policy-gated
+- the intended semantic classifier is not the demonstrated mode (keyword fallback is used)
 
 Why this matters:
 

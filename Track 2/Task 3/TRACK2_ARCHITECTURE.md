@@ -75,7 +75,7 @@ Without Task 2, Task 3 would be a generic search-and-triage pipeline. With Task 
 | Stage 1 triage | Yes | Yes |
 | Stage 2A abstract collection | Yes | Yes |
 | Stage 2B triage | Yes | Yes |
-| PDF acquisition | Yes | Dry-run only |
+| PDF acquisition | Yes | Ran live (9 transitions, 0 PDFs — paywalled) |
 | AE handoff | Yes | Yes, local validation |
 
 The central evaluated finding is:

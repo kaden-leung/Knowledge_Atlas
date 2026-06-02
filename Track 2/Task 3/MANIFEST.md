@@ -24,7 +24,7 @@ This document is the single-page audit trail for the grader. For deep specs, see
 | Reference harvester (PDF) | Yes | Yes (20 PDFs, 1,103 rows) | None |
 | HierarchicalClassifier | Yes | **No (no centroids file)** | Keyword fallback used instead |
 | Abstract collection (S2/CrossRef/PubMed/OpenAlex) | Yes | Yes (44/211, 20.8% hit rate) | Rate-limiting slowed S2 to ~50 min |
-| PDF acquisition (Unpaywall/OpenAlex) | Yes | **Dry-run only** | Gate open; not executed live |
+| PDF acquisition (Unpaywall/OpenAlex) | Yes | **Ran live** | 9 transitions, 0 PDFs (attempted DOIs paywalled; scidownl gated) |
 | scidownl | Yes (gated) | **Not attempted** | Policy gate requires instructor sign-off |
 
 **Implication:** Pipeline performance figures reflect the demonstrated architecture, not the designed architecture. Results with HierarchicalClassifier and functioning paperscraper would differ; direction and magnitude are unknown without execution.

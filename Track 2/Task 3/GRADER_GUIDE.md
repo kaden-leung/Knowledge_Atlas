@@ -80,6 +80,8 @@ Expected output: `CHAIN: 9/9 checks passed` (verified from a clean checkout — 
 
 **Authoritative database:** the committed `Track 2/Task 3/task3_pipeline_lifecycle.db` is the single source of truth for verification. (A separate `Knowledge_Atlas/data/ka_payloads/pipeline_lifecycle_full.db` exists as a course-path placeholder but is an earlier, stale materialization — it is not used here. See [MANIFEST.md](MANIFEST.md) → "Authoritative database for Task 3 verification".)
 
+**The committed database is a reproducibility artifact used by verification; it is not meant to be regenerated during grading.** No live run, API key, or SerpAPI credit is needed to verify — `verify_track2_workflow.py` reads the committed evidence and passes 9/9 as-is. The `run_pipeline.py` regeneration command below is optional and only for re-deriving evidence from a fresh pipeline run.
+
 To regenerate all evidence artifacts:
 
 ```bash
@@ -127,7 +129,7 @@ Supporting references:
 | Stage 1 triage | Yes | Yes | [MANIFEST.md](Track 2/Task 3/MANIFEST.md) |
 | Stage 2A abstract collection | Yes | Yes | [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) |
 | Stage 2B triage | Yes | Yes | [PROVEIT_WORKS.md](Track 2/Task 3/PROVEIT_WORKS.md) |
-| PDF acquisition logic | Yes | Dry-run only | [STAGE3_EVIDENCE_AUDIT.md](Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md) |
+| PDF acquisition logic | Yes | Ran live — 9 transitions, 0 PDFs (paywalled) | [STAGE3_EVIDENCE_AUDIT.md](Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md) |
 | AE handoff layer | Yes | Yes, local validation | [handoff_manifest.json](Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json) |
 | One-command wrapper | Yes | Yes | [run_pipeline.py](Track 2/Task 3/run_pipeline.py) |
 | Chain verifier | Yes | Yes — 9/9 | [verify_track2_workflow.py](Track 2/Task 3/verify_track2_workflow.py) |
@@ -156,10 +158,14 @@ This submission additionally provides:
 
 ## 7. Known limits
 
-- Task 3 PDF acquisition is dry-run evidenced, not live-demonstrated in the current verified snapshot.
+- Task 3 PDF acquisition ran live (9 lifecycle transitions) but acquired 0 PDFs — the candidate DOIs are paywalled and scidownl is policy-gated. The stage is demonstrated; no open PDF was available for the rows attempted.
 - The local handoff layer exports 9 valid artifacts; 1 ACCEPT row is withheld because it lacks a usable abstract.
 - The demonstrated classifier is keyword fallback, not the intended semantic classifier.
 - Task 2 reproducibility depends on a local Article_Eater checkout (not bundled).
 - The AE handoff is local stub validation, not production AE ingestion.
 
 The strongest evaluation claim is about retrieval coverage: the pipeline correctly identifies and stages papers for its targeted gaps; it does not cover the broader CNFA literature because it was not given queries that cover it.
+
+## 8. Scope boundary — what happens after AE handoff
+
+This submission ends at AE inbox validation (`ae_inbox_stub.py`): an ACCEPT row becomes a schema-validated handoff artifact that the local stub accepts or rejects. The natural next stage — the real Article Eater ingesting the artifact, deduplicating against its live inventory, and indexing the paper into the knowledge base — is **out of scope for this submission**. The handoff layer is deliberately a local validation boundary, not production AE integration; it proves the artifact is well-formed and consumable, without claiming the downstream AE pipeline was exercised.

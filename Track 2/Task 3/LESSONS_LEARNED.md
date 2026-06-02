@@ -17,7 +17,7 @@ That changed the project from a simple pipeline demonstration into a measured re
 | Higher-VOI queries would be more productive | ACCEPT rate did not track cleanly with VOI inside the narrow score range | VOI ranking needs either wider score separation or an additional retrieval-quality signal |
 | Query syntax validated in the UI would transfer cleanly to API search | Two queries returned zero API results | Query validation has to happen through the same retrieval interface used by the pipeline |
 | Abstract collection failures would mostly be API bugs | Many failures were legitimate `MISSING_ABSTRACT` terminal states | Missing evidence should be logged explicitly rather than forced into REJECT |
-| Acquisition readiness and acquisition execution were the same story | The DB proves readiness, while live acquisition remains unverified | Implemented, dry-run, and live-demonstrated states need separate labels |
+| Acquisition readiness and acquisition execution were the same story | The DB proves readiness; a bounded live run then logged 9 transitions but acquired 0 PDFs (paywalled DOIs) | "Stage ran" and "PDF acquired" are different claims and need separate labels |
 
 ## 3. What improved after measurement
 
@@ -25,14 +25,14 @@ That changed the project from a simple pipeline demonstration into a measured re
 - The Stage 1 classifier keyword list was expanded after human validation found lexical false negatives.
 - Corrupted abstract handling was added after a metadata audit found a wrong-paper abstract.
 - Query reformulation became explicit future work after null-result analysis.
-- The grader path now separates verified evidence from planned or dry-run-only functionality.
+- The grader path now separates verified evidence ("stage ran, logged") from outcome claims ("PDF acquired") that the corpus did not support.
 
 ## 4. What remains limited
 
 - The current demonstrated classifier is keyword fallback, not the intended semantic classifier.
 - The benchmark corpus is useful but still small and author-curated.
 - The handoff layer is local validation, not external production integration.
-- PDF acquisition is dry-run evidenced, not live-demonstrated in the current verified DB state.
+- PDF acquisition ran live (9 logged transitions) but acquired 0 PDFs — the attempted DOIs are paywalled and the grey-source fallback is policy-gated.
 
 ## 5. What surprised me most
 
