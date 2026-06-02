@@ -8,9 +8,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-REPO = ROOT.parents[1]
-TASK2_QUERY = REPO / "Track 2" / "Task 2" / "Phase 3" / "query_results.json"
-KA_QUERY = REPO / "Knowledge_Atlas" / "Track 2" / "Task 2" / "Phase 3" / "query_results.json"
+# Task 2 query output lives one level up, in the sibling Task 2 directory.
+# This sibling path resolves correctly from both the author working tree and a
+# fresh Knowledge_Atlas checkout (where Task 2 and Task 3 sit side by side).
+TASK2_QUERY = ROOT.parent / "Task 2" / "Phase 3" / "query_results.json"
 SEARCH_RESULTS = ROOT / "Phase 2" / "search_results.json"
 DB_PATH = ROOT / "task3_pipeline_lifecycle.db"
 ACQUISITION_REPORT = ROOT / "Phase 5" / "acquisition_report.json"
@@ -21,17 +22,17 @@ BENCHMARK = ROOT / "TRACK2_EVALUATION_REPORT.md"
 
 
 def load_json(path: Path) -> dict:
+    if not path.exists():
+        raise RuntimeError(f"required evidence file missing: {path}")
     return json.loads(path.read_text())
 
 
 def check_task2_queries() -> str:
-    t2 = load_json(TASK2_QUERY)
-    ka = load_json(KA_QUERY)
-    t2_count = len(t2.get("queries", []))
-    ka_count = len(ka.get("queries", []))
-    if t2_count != 10 or ka_count != 10:
-        raise RuntimeError(f"expected 10 queries in both mirrors, got {t2_count} and {ka_count}")
-    return f"Task 2 mirror ok ({t2_count} queries in both locations)"
+    data = load_json(TASK2_QUERY)
+    count = len(data.get("queries", []))
+    if count != 10:
+        raise RuntimeError(f"expected 10 Task 2 queries, got {count}")
+    return f"Task 2 queries present ({count} queries)"
 
 
 def check_search_results() -> str:

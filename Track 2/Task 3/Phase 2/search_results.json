@@ -1,0 +1,2405 @@
+{
+  "metadata": {
+    "schema_version": "1.1.0",
+    "run_id": "RUN-20260531-000436",
+    "generated_at": "2026-05-31T00:17:36Z",
+    "input_query_count": 10,
+    "queries_processed": 10,
+    "queries_skipped": {},
+    "sources_enabled": [
+      "serpapi_scholar",
+      "scholarly_search",
+      "paperscraper_search"
+    ],
+    "per_source_stats": {
+      "serpapi_scholar": {
+        "queries_run": 10,
+        "results_raw": 80,
+        "retries": 0,
+        "errors": 2
+      },
+      "scholarly_search": {
+        "queries_run": 10,
+        "results_raw": 80,
+        "retries": 0,
+        "errors": 0
+      },
+      "paperscraper_search": {
+        "queries_run": 10,
+        "results_raw": 0,
+        "retries": 0,
+        "errors": 10
+      }
+    },
+    "credits_used": 10,
+    "credits_max": 50,
+    "candidates_total_raw": 160,
+    "candidates_after_dedupe": 84,
+    "null_result_queries": 2,
+    "mock_mode": false,
+    "serpapi_engine": "google_scholar"
+  },
+  "results": [
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000001",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 5,
+      "title_raw": "Comparison of correlation filter-based visual tracker for human guide tracking in smart wheelchair",
+      "title_normalized": "comparison of correlation filter based visual tracker for human guide tracking in smart wheelchair",
+      "doi": "10.1117/12.3110753.short",
+      "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/14163/1416309/Comparison-of-correlation-filter-based-visual-tracker-for-human-guide/10.1117/12.3110753.short",
+      "snippet": "\u2026 , and partial occlusion while maintaining high efficiency. \u2026 The optimization seeks to minimize prediction error while \u2026 fixed pixel threshold, while normalized precision scales this threshold \u2026",
+      "authors_raw": "F Utaminingrum, AS Kabisat",
+      "first_author_surname": "Utaminingrum",
+      "publication_year": 2026,
+      "venue": "\u2026 and Machine Vision \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000002",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 9,
+      "title_raw": "Multiclass objects detection algorithm using DarkNet-53 and DenseNet for intelligent vehicles",
+      "title_normalized": "multiclass objects detection algorithm using darknet 53 and densenet for intelligent vehicles",
+      "doi": "10.1186/s13634-023-01045-8",
+      "url": "https://link.springer.com/article/10.1186/s13634-023-01045-8",
+      "snippet": "\u2026 The loss function of coordinate prediction error in YOLOv3 is \u2026 objects with long distance, small size and partial occlusion. \u2026 We set the IoU threshold 70% for car and 50% for pedestrian \u2026",
+      "authors_raw": "L Yang, G Chen, W Ci",
+      "first_author_surname": "Yang",
+      "publication_year": 2023,
+      "venue": "EURASIP Journal on Advances in Signal \u2026",
+      "cited_by_count": 33,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1186/s13634-023-01045-8.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000003",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 1,
+      "title_raw": "Content-based retrieval of video sequences under partial occlusion",
+      "title_normalized": "content based retrieval of video sequences under partial occlusion",
+      "doi": null,
+      "url": "https://ieeexplore.ieee.org/abstract/document/817112/",
+      "snippet": "\u2026 If the prediction error remains above the threshold even after using the affine model, the window is considered as part of a newly exposed region. As a consequence of the windowing \u2026",
+      "authors_raw": "S Shirani, A Jerbi, F Kossentini",
+      "first_author_surname": "Shirani",
+      "publication_year": 1999,
+      "venue": "\u2026 Conference on Image \u2026",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000004",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 2,
+      "title_raw": "Robust optical axis control of monocular active gazing based on pan-tilt mirrors for high dynamic targets",
+      "title_normalized": "robust optical axis control of monocular active gazing based on pan tilt mirrors for high dynamic targets",
+      "doi": null,
+      "url": "https://opg.optica.org/abstract.cfm?uri=oe-29-24-40214",
+      "snippet": "\u2026 from no occlusion to partial occlusion according to the conditional threshold. Owing to the \u2026 under partial occlusion were 1.46% and 2.71%, respectively. The maximum prediction error \u2026",
+      "authors_raw": "R Cao, J Fu, H Yang, L Wang, M Ishikawa",
+      "first_author_surname": "Cao",
+      "publication_year": 2021,
+      "venue": "Optics Express",
+      "cited_by_count": 9,
+      "resource_pdf_url": "https://opg.optica.org/viewmedia.cfm?uri=oe-29-24-40214&seq=0"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000005",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 3,
+      "title_raw": "Keypoints into the future: Self-supervised correspondence in model-based reinforcement learning",
+      "title_normalized": "keypoints into the future self supervised correspondence in model based reinforcement learning",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2009.05085",
+      "snippet": "\u2026 While our work focuses on addressing partial occlusion, \u2026 which additionally satisfy a threshold on minimum separation \u2026 We train our dynamics model to minimize the prediction error in \u2026",
+      "authors_raw": "L Manuelli, Y Li, P Florence, R Tedrake",
+      "first_author_surname": "Manuelli",
+      "publication_year": 2009,
+      "venue": "arXiv preprint arXiv:2009.05085",
+      "cited_by_count": 130,
+      "resource_pdf_url": "https://arxiv.org/pdf/2009.05085"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000006",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 4,
+      "title_raw": "Explaining away results in accurate and tolerant template matching",
+      "title_normalized": "explaining away results in accurate and tolerant template matching",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0031320320301400",
+      "snippet": "Recognising and locating image patches or sets of image features is an important task underlying much work in computer vision. Traditionally this has been accomplished using \u2026",
+      "authors_raw": "MW Spratling",
+      "first_author_surname": "Spratling",
+      "publication_year": 2020,
+      "venue": "pattern recognition",
+      "cited_by_count": 31,
+      "resource_pdf_url": "https://arxiv.org/pdf/1911.04169"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000007",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 6,
+      "title_raw": "Robust ambiguous target handling for visual object tracking",
+      "title_normalized": "robust ambiguous target handling for visual object tracking",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1434841109002593",
+      "snippet": "\u2026 ambiguous targets (partial occlusion, split region or mixed state of the partial occlusion and the \u2026 If the target is merged state (partial occlusion), we will identify and track each object in the \u2026",
+      "authors_raw": "K Choeychuen, P Kumhom, K Chamnongthai",
+      "first_author_surname": "Choeychuen",
+      "publication_year": 2010,
+      "venue": "AEU-International Journal of \u2026",
+      "cited_by_count": 8,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000008",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 7,
+      "title_raw": "The Architecture of Explanatory Satisfaction and the Affective Veto Against Stochastic Reality",
+      "title_normalized": "the architecture of explanatory satisfaction and the affective veto against stochastic reality",
+      "doi": null,
+      "url": "https://philpapers.org/rec/STITAO-10",
+      "snippet": "\u2026 A teleological explanation (\u201dThis is part of a plan\u201d) artificially resolves the prediction error, resulting in a restoration of dopamine levels. Thus, \u201dmoral\u201d realism acts as a neurochemical \u2026",
+      "authors_raw": "P Stilwell",
+      "first_author_surname": "Stilwell",
+      "publication_year": 2025,
+      "venue": null,
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://philarchive.org/archive/STITAO-10"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000009",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 8,
+      "title_raw": "Video object tracking using adaptive Kalman filter",
+      "title_normalized": "video object tracking using adaptive kalman filter",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1047320306000113",
+      "snippet": "In this paper, a new video moving object tracking method is proposed. In initialization, a moving object selected by the user is segmented and the dominant color is extracted from the \u2026",
+      "authors_raw": "SK Weng, CM Kuo, SK Tu",
+      "first_author_surname": "Weng",
+      "publication_year": 2006,
+      "venue": "Journal of Visual Communication and Image \u2026",
+      "cited_by_count": 491,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000010",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC3-step6"
+      ],
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "discovered_query_display_id": "SC3-step6",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:09:01Z",
+      "result_position": 10,
+      "title_raw": "SPATIAL-TEMPORAL VIDEO ANALYSIS FOR IMPROVED PEDESTRIAN DETECTION: APPLICATION TO DENSITY ESTIMATION AND TRACKING IN \u2026",
+      "title_normalized": "spatial temporal video analysis for improved pedestrian detection application to density estimation and tracking in",
+      "doi": null,
+      "url": "https://imatge.upc.edu/web/sites/default/files/pub/cCasas04.pdf",
+      "snippet": "\u2026 human face, and \u03c3 is a threshold. This analysis considers the \u2026 Given a label Ri, we compute its prediction error as follows: \u2026 allows increased robustness in partial occlusion situations. In \u2026",
+      "authors_raw": "JR Casas, A Puig, P Puig",
+      "first_author_surname": "Casas",
+      "publication_year": null,
+      "venue": "imatge.upc.edu",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://imatge.upc.edu/web/sites/default/files/pub/cCasas04.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000011",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 1,
+      "title_raw": "Linking the cognitive load induced by route instruction types and building configuration during indoor route guidance, a usability study in VR",
+      "title_normalized": "linking the cognitive load induced by route instruction types and building configuration during indoor route guidance a usability study in vr",
+      "doi": "10.1080/13658816.2022.2032080",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/13658816.2022.2032080",
+      "snippet": "\u2026 theory of space syntax. In other words, this study analyses the cognitive load induced by and \u2026 Therefore, the first step in this research is to apply space syntax, and more specifically the \u2026",
+      "authors_raw": "L De Cock, N Van de Weghe, K Ooms",
+      "first_author_surname": "Cock",
+      "publication_year": 2022,
+      "venue": "International Journal \u2026",
+      "cited_by_count": 25,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Laure-De-Cock-2/publication/359018992_Linking_the_cognitive_load_induced_by_route_instruction_types_and_building_configuration_during_indoor_route_guidance_a_usability_study_in_VR/links/6225e5233c53d31ba4aea36b/Linking-the-cognitive-load-induced-by-route-instruction-types-and-building-configuration-during-indoor-route-guidance-a-usability-study-in-VR.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000012",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 5,
+      "title_raw": "Wayfinding in libraries: Can problems be predicted?",
+      "title_normalized": "wayfinding in libraries can problems be predicted",
+      "doi": "10.1080/15420353.2011.622456",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/15420353.2011.622456",
+      "snippet": "\u2026 We employed certain space syntax methods in this study to assess the factors of buildings that influence wayfinding behaviors. Thus we have organized this section into paragraphs \u2026",
+      "authors_raw": "R Li, A Klippel",
+      "first_author_surname": "Li",
+      "publication_year": 2012,
+      "venue": "Journal of Map & Geography Libraries",
+      "cited_by_count": 103,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Alexander-Klippel/publication/238048111_Wayfinding_in_Libraries_Can_Problems_Be_Predicted/links/59d7a2afaca272e6095f8387/Wayfinding-in-Libraries-Can-Problems-Be-Predicted.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000013",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 8,
+      "title_raw": "The impact of spatial layout on orientation and wayfinding in public housing estates using Isovist polygons and shape matching algorithms",
+      "title_normalized": "the impact of spatial layout on orientation and wayfinding in public housing estates using isovist polygons and shape matching algorithms",
+      "doi": "10.1007/978-3-031-37189-9_43",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-37189-9_43",
+      "snippet": "\u2026 wayfinding ability. Isovist polygons with homogeneous shapes increase the cognitive load \u2026 redrawn as axial-line maps, referring to space syntax theory to identify decision points at the \u2026",
+      "authors_raw": "J Dong, J van Ameijde",
+      "first_author_surname": "Dong",
+      "publication_year": 2023,
+      "venue": "\u2026 on computer-aided architectural design futures",
+      "cited_by_count": 4,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000014",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:43Z",
+      "result_position": 5,
+      "title_raw": "Google indoor maps or Google indoor no maps? Usability study of an adapted mobile indoor wayfinding aid",
+      "title_normalized": "google indoor maps or google indoor no maps usability study of an adapted mobile indoor wayfinding aid",
+      "doi": "10.1007/978-3-030-50726-8_54",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-50726-8_54",
+      "snippet": "The cognitive load imposed by the system was determined by measuring the eye  a  wayfinding experiment. This imposed cognitive load was then compared to the space syntax values",
+      "authors_raw": "L De Cock, K Ooms, N Van de Weghe",
+      "first_author_surname": "Cock",
+      "publication_year": 2020,
+      "venue": "\u2026 Conference on Human \u2026",
+      "cited_by_count": 2,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000015",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 2,
+      "title_raw": "Augmented Reality Indoor Wayfinding in Hospital Environments An Empirical Study on Navigation Efficiency, User Experience, and Cognitive Load",
+      "title_normalized": "augmented reality indoor wayfinding in hospital environments an empirical study on navigation efficiency user experience and cognitive load",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2601.00001",
+      "snippet": "\u2026 While we did not conduct quantitative space syntax analysis, we qualitatively compared the \u2026 highly visible zones, aligning with what space syntax literature would describe as \"integrated\u2026",
+      "authors_raw": "K Liu, ML Aebersold, M Lindquist, H Gao",
+      "first_author_surname": "Liu",
+      "publication_year": 2025,
+      "venue": "arXiv preprint arXiv:2601.00001",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://arxiv.org/pdf/2601.00001"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000016",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 3,
+      "title_raw": "Integration of Landmarks Extracted from Human Route Descriptions Using NLP into Indoor Navigation Network Model",
+      "title_normalized": "integration of landmarks extracted from human route descriptions using nlp into indoor navigation network model",
+      "doi": null,
+      "url": "https://iccgis2024.cartography-gis.com/papers/9ICCGIS-Proceedings_Paper%20(105).pdf",
+      "snippet": "\u2026 , complicates navigation. Users need to rely on their mental maps during navigation, but the irregular layout of indoor environments increases cognitive load and may lead to navigation \u2026",
+      "authors_raw": "A Sen",
+      "first_author_surname": "Sen",
+      "publication_year": null,
+      "venue": "iccgis2024.cartography-gis.com",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://iccgis2024.cartography-gis.com/papers/9ICCGIS-Proceedings_Paper%20(105).pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000017",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 4,
+      "title_raw": "Spatial biases in navigation and wayfinding",
+      "title_normalized": "spatial biases in navigation and wayfinding",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=v8hhDwAAQBAJ&oi=fnd&pg=PA324&dq=(%22space+syntax%22+OR+%22spatial+integration%22+OR+%22angular+depth%22)+AND+(%22working+memory%22+OR+%22cognitive+load%22+OR+%22route+schema%22)+AND+(%22wayfinding%22+OR+%22built+environment%22+OR+%22navigation%22)+-review&ots=W4wrT-6wR0&sig=avu9F41TPyL6bWn_pGvTuLqodLE",
+      "snippet": "\u2026 working memory and long-term memory plays a crucial role in explaining spatial biases in route choice. A summary of the navigation \u2026 Both space syntax and isovist analysis have always \u2026",
+      "authors_raw": "JM WienerandTobias",
+      "first_author_surname": "WienerandTobias",
+      "publication_year": 2018,
+      "venue": "Spatial Biases in Perception and \u2026",
+      "cited_by_count": 3,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000018",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 6,
+      "title_raw": "Landmark-Based Indoor Navigation Model through Human Route Descriptions",
+      "title_normalized": "landmark based indoor navigation model through human route descriptions",
+      "doi": null,
+      "url": "https://ica-abs.copernicus.org/articles/7/148/2024/ica-abs-7-148-2024.pdf",
+      "snippet": "\u2026 navigation network (MPRSSE) to create a route guidance that reduces the human cognitive load in the act of wayfinding in indoor navigation. The experimental data consists of \u2026",
+      "authors_raw": "A Sen",
+      "first_author_surname": "Sen",
+      "publication_year": 2024,
+      "venue": "Abstracts of the ICA",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://ica-abs.copernicus.org/articles/7/148/2024/ica-abs-7-148-2024.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000019",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 7,
+      "title_raw": "Spatial legibility for Visually Impaired",
+      "title_normalized": "spatial legibility for visually impaired",
+      "doi": null,
+      "url": "https://iiidnatcon.in/wp-content/uploads/2025/02/Khushbu-Goyal.pdf",
+      "snippet": "\u2026 fail in helping visually challenged mobility and decrease independence by merely increasing cognitive load. Space syntax analysis for spatial legibility for Jawahar Kala Kendra (JKK), \u2026",
+      "authors_raw": "K Goyal",
+      "first_author_surname": "Goyal",
+      "publication_year": null,
+      "venue": "iiidnatcon.in",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://iiidnatcon.in/wp-content/uploads/2025/02/Khushbu-Goyal.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000020",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 9,
+      "title_raw": "Language-Guided Spatial Memory Models for Autonomous Vehicles in Metropolitan Areas",
+      "title_normalized": "language guided spatial memory models for autonomous vehicles in metropolitan areas",
+      "doi": null,
+      "url": "https://www.researchgate.net/profile/Micheal-James/publication/394523759_Language-Guided_Spatial_Memory_Models_for_Autonomous_Vehicles_in_Metropolitan_Areas/links/68a25e2e2c7d3e0029b13425/Language-Guided-Spatial-Memory-Models-for-Autonomous-Vehicles-in-Metropolitan-Areas.pdf",
+      "snippet": "\u2026 We propose a hierarchical memory architecture where episodic, semantic, and working memory modules interact dynamically with multi-modal perception and spatial reasoning units. \u2026",
+      "authors_raw": "K Anderson",
+      "first_author_surname": "Anderson",
+      "publication_year": 2025,
+      "venue": null,
+      "cited_by_count": null,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Micheal-James/publication/394523759_Language-Guided_Spatial_Memory_Models_for_Autonomous_Vehicles_in_Metropolitan_Areas/links/68a25e2e2c7d3e0029b13425/Language-Guided-Spatial-Memory-Models-for-Autonomous-Vehicles-in-Metropolitan-Areas.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000021",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:40Z",
+      "result_position": 10,
+      "title_raw": "Assessing cognitive load in navigation tasks through EEG: Spatio-temporal multi-scale analysis",
+      "title_normalized": "assessing cognitive load in navigation tasks through eeg spatio temporal multi scale analysis",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1746809426006026",
+      "snippet": "\u2026 at different cognitive load states during navigation tasks, and a navigation dataset was \u2026 to delineate differences in cognitive load between subjects performing three navigation tasks. \u2026",
+      "authors_raw": "Y Liu, Z Zhang, L Wang, L Fu, R Chen, X Liu",
+      "first_author_surname": "Liu",
+      "publication_year": 2026,
+      "venue": "\u2026 Signal Processing and \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000022",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SC1-step2"
+      ],
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "discovered_query_display_id": "SC1-step2",
+      "source_voi_score": 0.478,
+      "discovered_at": "2026-05-31T00:10:43Z",
+      "result_position": 6,
+      "title_raw": "Adaptive mobile indoor route guidance, the next big step",
+      "title_normalized": "adaptive mobile indoor route guidance the next big step",
+      "doi": null,
+      "url": "https://repositum.tuwien.at/handle/20.500.12708/18814",
+      "snippet": "supportive navigation  the space syntax theory, which route instruction types should be used  at which decision points and how this affects the performance, cognitive map, cognitive load",
+      "authors_raw": "L De Cock, N Van de Weghe, K Ooms",
+      "first_author_surname": "Cock",
+      "publication_year": 2021,
+      "venue": "# \u2026",
+      "cited_by_count": 2,
+      "resource_pdf_url": "https://repositum.tuwien.at/bitstream/20.500.12708/18814/5/De%20Cock-2021-Adaptive%20Mobile%20Indoor%20Route%20Guidance%2C%20The%20Next%20Big%20Step-vor.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000023",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 2,
+      "title_raw": "Additive contributions of melanopsin and both cone types provide broadband sensitivity to mouse pupil control",
+      "title_normalized": "additive contributions of melanopsin and both cone types provide broadband sensitivity to mouse pupil control",
+      "doi": "10.1186/s12915-018-0552-1",
+      "url": "https://link.springer.com/article/10.1186/s12915-018-0552-1",
+      "snippet": "\u2026 for the mouse circadian system [27] extend also to other ipRGC-dependent \u2026 cone spectral sensitivity [24, 34] to comprehensively define the influence of cones on a major target of ipRGC \u2026",
+      "authors_raw": "EA Hayter, TM Brown",
+      "first_author_surname": "Hayter",
+      "publication_year": 2018,
+      "venue": "BMC biology",
+      "cited_by_count": 38,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1186/s12915-018-0552-1.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000024",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 4,
+      "title_raw": "Change of circadian effect with colour temperature and eye spectral transmittance at different ages",
+      "title_normalized": "change of circadian effect with colour temperature and eye spectral transmittance at different ages",
+      "doi": "10.1177/1477153520923379",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1477153520923379",
+      "snippet": "\u2026 responses is not only produced by ipRGC cells but also by the \u2026 cells has distinct spectral sensitivity, as shown in Figure 1. \u2026 light with the CCT of 2700 K shows a higher circadian effect \u2026",
+      "authors_raw": "HJ Tian, T Chen, Y Hu, T Guan",
+      "first_author_surname": "Tian",
+      "publication_year": 2021,
+      "venue": "Lighting Research & \u2026",
+      "cited_by_count": 12,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000025",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 9,
+      "title_raw": "Building Circadian Effective Spectra: An Open Source C Language Toolkit",
+      "title_normalized": "building circadian effective spectra an open source c language toolkit",
+      "doi": "10.1080/15502724.2024.2423721",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/15502724.2024.2423721",
+      "snippet": "\u2026 of the photopic illuminance in exciting ipRGC cells and thus \u2026 and intensity in exciting the ipRGC. The consensus (Brown et \u2026 At 5 pm, as we enter the evening, the CCT drops to first 5000 \u2026",
+      "authors_raw": "MA Ansari, JD White",
+      "first_author_surname": "Ansari",
+      "publication_year": 2026,
+      "venue": "LEUKOS",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000026",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 10,
+      "title_raw": "What can the eye see with melanopsin?",
+      "title_normalized": "what can the eye see with melanopsin",
+      "doi": "10.1073/pnas.2411151121",
+      "url": "https://www.pnas.org/doi/abs/10.1073/pnas.2411151121",
+      "snippet": "\u2026 spectral sensitivity of the L+M luminance mechanism with no effect on the spectral sensitivity of S-cones, rods, and melanopsin\u2026 density) affects the spectral sensitivity of all photoreceptor \u2026",
+      "authors_raw": "TW Nugent, AJ Zele",
+      "first_author_surname": "Nugent",
+      "publication_year": 2024,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "cited_by_count": 18,
+      "resource_pdf_url": "https://www.pnas.org/doi/pdf/10.1073/pnas.2411151121"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000027",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 1,
+      "title_raw": "Changes in the colour of light cue circadian activity",
+      "title_normalized": "changes in the colour of light cue circadian activity",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003347212000553",
+      "snippet": "\u2026 melanopsin as the main photopigment governing circadian activity in vertebrates. Circadian \u2026 changes might play in circadian activity patterns via cone opponent neural pathways has \u2026",
+      "authors_raw": "MJ Pauers, JA Kuchenbecker, M Neitz, J Neitz",
+      "first_author_surname": "Pauers",
+      "publication_year": 2012,
+      "venue": "Animal behaviour",
+      "cited_by_count": 71,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3358782/pdf/nihms360243.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000028",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 3,
+      "title_raw": "Comparison of Spectral Power Distribution of Various Light Sources in Correlation to Human Circadian System",
+      "title_normalized": "comparison of spectral power distribution of various light sources in correlation to human circadian system",
+      "doi": null,
+      "url": "https://envilamp.eu/ws/media-library/845eeff38d1a4c5f0bda72f7a30f2269/comparison-of-spd-in-correlation-to-human-cs_mparma.pdf",
+      "snippet": "\u2026 cells (ipRGCs) have the spectral sensitivity of melanopsin, an opsin \u2026 between CCT and parameters which characterized circadian \u2026 prediction of circadian response only from CCT value. \u2026",
+      "authors_raw": "M Parma, P Baxant, J \u0160koda",
+      "first_author_surname": "Parma",
+      "publication_year": null,
+      "venue": "envilamp.eu",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://envilamp.eu/ws/media-library/845eeff38d1a4c5f0bda72f7a30f2269/comparison-of-spd-in-correlation-to-human-cs_mparma.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000029",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 5,
+      "title_raw": "Correlated color temperature is not a suitable proxy for the biological potency of light",
+      "title_normalized": "correlated color temperature is not a suitable proxy for the biological potency of light",
+      "doi": null,
+      "url": "https://www.nature.com/articles/s41598-022-21755-7",
+      "snippet": "\u2026 \u201c\u03b1\u201d in \u201c\u03b1-opic\u201d whereby melanopsin, the photopigment in the ipRGC \u2026 is most relevant to melanopsin 28 , and melanopsin is the \u2026 Circadian stimulus (CS) as a function of nominal CCT at a \u2026",
+      "authors_raw": "T Esposito, K Houser",
+      "first_author_surname": "Esposito",
+      "publication_year": 2022,
+      "venue": "Scientific Reports",
+      "cited_by_count": 45,
+      "resource_pdf_url": "https://www.nature.com/articles/s41598-022-21755-7.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000030",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 6,
+      "title_raw": "Comparative analysis of circadian lighting models: melanopic illuminance vs. circadian stimulus",
+      "title_normalized": "comparative analysis of circadian lighting models melanopic illuminance vs circadian stimulus",
+      "doi": null,
+      "url": "https://opg.optica.org/abstract.cfm?uri=oe-32-17-29494",
+      "snippet": "\u2026 ipRGC-mediated circadian effects such as melatonin suppression. Therefore, alternative metrics that reflect the spectral sensitivity of circadian \u2026 the CCT ranges where circadian effects \u2026",
+      "authors_raw": "Y Huang, J Li, Q Dai",
+      "first_author_surname": "Huang",
+      "publication_year": 2024,
+      "venue": "Optics Express",
+      "cited_by_count": 9,
+      "resource_pdf_url": "https://opg.optica.org/viewmedia.cfm?uri=oe-32-17-29494&seq=0"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000031",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 7,
+      "title_raw": "Melanopsin-based brightness discrimination in mice and humans",
+      "title_normalized": "melanopsin based brightness discrimination in mice and humans",
+      "doi": null,
+      "url": "https://www.cell.com/current-biology/fulltext/S0960-9822(12)00459-9",
+      "snippet": "\u2026 to determine whether melanopsin influences the spectral sensitivity of brightness \u2026 melanopsin has been proposed to explain a positive relationship between correlated color temperature \u2026",
+      "authors_raw": "TM Brown, S Tsujimura, AE Allen, J Wynne, R Bedford",
+      "first_author_surname": "Brown",
+      "publication_year": 2012,
+      "venue": "Current biology",
+      "cited_by_count": 334,
+      "resource_pdf_url": "https://www.cell.com/current-biology/pdf/S0960-9822(12)00459-9.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000032",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "L3-step7"
+      ],
+      "discovered_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review",
+      "discovered_query_display_id": "L3-step7",
+      "source_voi_score": 0.458,
+      "discovered_at": "2026-05-31T00:13:19Z",
+      "result_position": 8,
+      "title_raw": "Melanopsin driven enhancement of cone-mediated visual processing",
+      "title_normalized": "melanopsin driven enhancement of cone mediated visual processing",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0042698919301014",
+      "snippet": "\u2026 how a small population of melanopsin-expressing, intrinsically \u2026 , we show that interaction between melanopsin- and cone-\u2026 visual pathways, melanopsin activation enhances contrast \u2026",
+      "authors_raw": "AJ Zele, P Adhikari, D Cao, B Feigl",
+      "first_author_surname": "Zele",
+      "publication_year": 2019,
+      "venue": "Vision Research",
+      "cited_by_count": 46,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000033",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 5,
+      "title_raw": "Acetylcholine-dependent phasic dopamine activity signals exploratory locomotion and choices",
+      "title_normalized": "acetylcholine dependent phasic dopamine activity signals exploratory locomotion and choices",
+      "doi": "10.1101/242438.abstract",
+      "url": "https://www.biorxiv.org/content/10.1101/242438.abstract",
+      "snippet": "\u2026 To investigate this paradox, we recorded the activity of VTA dopamine neurons during a \u2026 When confronted with uncertain rewards or a novel environment, mice exhibited exploration\u2026",
+      "authors_raw": "J Naud\u00e9, S Didienne, S Takillah, C Pr\u00e9vost-Soli\u00e9",
+      "first_author_surname": "Naud\u00e9",
+      "publication_year": 2018,
+      "venue": "bioRxiv",
+      "cited_by_count": 4,
+      "resource_pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2018/01/04/242438.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000034",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 1,
+      "title_raw": "Circuit architecture of VTA dopamine neurons revealed by systematic input-output mapping",
+      "title_normalized": "circuit architecture of vta dopamine neurons revealed by systematic input output mapping",
+      "doi": null,
+      "url": "https://www.cell.com/cell/fulltext/S0092-8674(15)00852-1",
+      "snippet": "\u2026 the VTA, we first extended these studies by comparing direct inputs to both VTA-DA and VTA-\u2026 examined the cell types in the input regions that synapse onto these two VTA populations. \u2026",
+      "authors_raw": "KT Beier, EE Steinberg, KE DeLoach, S Xie",
+      "first_author_surname": "Beier",
+      "publication_year": 2015,
+      "venue": "Cell",
+      "cited_by_count": 1237,
+      "resource_pdf_url": "https://www.cell.com/cell/pdfExtended/S0092-8674(15)00852-1"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000035",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 2,
+      "title_raw": "Hyperactivity in novel environment with increased dopamine and impaired novelty preference in apoptosis signal-regulating kinase 1 (ASK1)-deficient mice",
+      "title_normalized": "hyperactivity in novel environment with increased dopamine and impaired novelty preference in apoptosis signal regulating kinase 1 ask1 deficient mice",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0168010209020719",
+      "snippet": "\u2026 novel environment. ASK1 (\u2212/\u2212) mice also exhibited impairment of novelty preference 24h after training and superior performance on the rotarod test. Brain tissue contents of dopamine \u2026",
+      "authors_raw": "K Kumakura, H Nomura, T Toyoda, K Hashikawa",
+      "first_author_surname": "Kumakura",
+      "publication_year": 2010,
+      "venue": "Neuroscience \u2026",
+      "cited_by_count": 27,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Takuya-Noguchi-2/publication/40684435_Hyperactivity_in_novel_environment_with_increased_dopamine_and_impaired_novelty_preference_in_apoptosis_signal-regulating_kinase_1_ASK1-deficient_mice/links/5c186a354585157ac1ca18d9/Hyperactivity-in-novel-environment-with-increased-dopamine-and-impaired-novelty-preference-in-apoptosis-signal-regulating-kinase-1-ASK1-deficient-mice.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000036",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 3,
+      "title_raw": "Probing the Mechanisms of Reinforcement Learning: Reinforcement Learning, Ventral Striatal Astrocytes, and the Dynamic Coordination of Information Seeking with \u2026",
+      "title_normalized": "probing the mechanisms of reinforcement learning reinforcement learning ventral striatal astrocytes and the dynamic coordination of information seeking with",
+      "doi": null,
+      "url": "https://search.proquest.com/openview/60cb0a82275d2a386fc4051af4969a03/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "snippet": "\u2026 Although each MSN may receive a noisy and variable RPE signals (for example, from dopamine neurons in the VTA), astrocytic averaging of these signals across model neurons can \u2026",
+      "authors_raw": "F Sogukpinar",
+      "first_author_surname": "Sogukpinar",
+      "publication_year": 2025,
+      "venue": null,
+      "cited_by_count": null,
+      "resource_pdf_url": "https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=2396&context=eng_etds"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000037",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 4,
+      "title_raw": "From prediction to action: dissociable roles of ventral tegmental area and substantia nigra dopamine neurons in instrumental reinforcement",
+      "title_normalized": "from prediction to action dissociable roles of ventral tegmental area and substantia nigra dopamine neurons in instrumental reinforcement",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/43/21/3895?utm_source=TrendMD&utm_medium=cpc&utm_campaign=JNeurosci_TrendMD_0",
+      "snippet": "\u2026 This architecture is reminiscent of actor\u2013critic reinforcement learning models with \u2026 for activation of VTA and SNc dopamine neurons, we find that only VTA dopamine neurons imbue \u2026",
+      "authors_raw": "KM Fraser, HJ Pribut, PH Janak, R Keiflin",
+      "first_author_surname": "Fraser",
+      "publication_year": 2023,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": 40,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/43/21/3895.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000038",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 6,
+      "title_raw": "VTA dopamine neuron activity produces spatially organized value representations",
+      "title_normalized": "vta dopamine neuron activity produces spatially organized value representations",
+      "doi": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12637434/",
+      "snippet": "\u2026 of VTA DA stimulation 85 ), as well as a version where the VTA DA stimulation was the reward prediction error (given that DA is thought to signal a reward prediction error 1,4 ). All the \u2026",
+      "authors_raw": "A Pan-Vazquez, CA Zimmerman, B McMannon",
+      "first_author_surname": "Pan-Vazquez",
+      "publication_year": 2025,
+      "venue": "\u2026",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000039",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 7,
+      "title_raw": "Nucleus accumbens subnuclei regulate motivated behavior via direct inhibition and disinhibition of VTA dopamine subpopulations",
+      "title_normalized": "nucleus accumbens subnuclei regulate motivated behavior via direct inhibition and disinhibition of vta dopamine subpopulations",
+      "doi": null,
+      "url": "https://www.cell.com/neuron/fulltext/S0896-6273(17)31169-8",
+      "snippet": "\u2026 and the influence of DAergic input to the NAc on motivated behaviors, much less is known about the architecture and function of inhibitory feedback projections from the NAc to the VTA. \u2026",
+      "authors_raw": "H Yang, JW de Jong, YE Tak, J Peck, HS Bateup",
+      "first_author_surname": "Yang",
+      "publication_year": 2018,
+      "venue": "Neuron",
+      "cited_by_count": 506,
+      "resource_pdf_url": "https://www.cell.com/neuron/pdfExtended/S0896-6273(17)31169-8"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000040",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 8,
+      "title_raw": "Taste novelty and dopamine",
+      "title_normalized": "taste novelty and dopamine",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/B9780081019313000082",
+      "snippet": "\u2026 Intriguingly, dopamine (DA) transmission regulates many aspects of these events. Several methodological approaches show that salient stimuli affect DA transmission in different \u2026",
+      "authors_raw": "Z Bimpisidis, L Fattore, MA De Luca",
+      "first_author_surname": "Bimpisidis",
+      "publication_year": 2018,
+      "venue": "Food Neophobia",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000041",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 9,
+      "title_raw": "Circuit specificity in the inhibitory architecture of the VTA regulates cocaine-induced behavior",
+      "title_normalized": "circuit specificity in the inhibitory architecture of the vta regulates cocaine induced behavior",
+      "doi": null,
+      "url": "https://www.nature.com/articles/nn.4482",
+      "snippet": "\u2026 MSNs potentially project to VTA dopamine neurons 18 , we \u2026 , project to VTA and synapse onto dopamine neurons. We \u2026 NAc\u2192VTA projections inhibit both VTA GABA and dopamine \u2026",
+      "authors_raw": "NJ Edwards, HA Tejeda, M Pignatelli, S Zhang",
+      "first_author_surname": "Edwards",
+      "publication_year": 2017,
+      "venue": "Nature \u2026",
+      "cited_by_count": 163,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Antonello-Bonci/publication/312650144_Circuit_specificity_in_the_inhibitory_architecture_of_the_VTA_regulates_cocaine-induced_behavior/links/58d5564992851c44d44f26ef/Circuit-specificity-in-the-inhibitory-architecture-of-the-VTA-regulates-cocaine-induced-behavior.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000042",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:01Z",
+      "result_position": 10,
+      "title_raw": "Novelty seeking and harm avoidance in Parkinson's disease: effects of asymmetric dopamine deficiency",
+      "title_normalized": "novelty seeking and harm avoidance in parkinsons disease effects of asymmetric dopamine deficiency",
+      "doi": null,
+      "url": "https://jnnp.bmj.com/content/75/7/972.short",
+      "snippet": "\u2026 of dopaminergic neurons in the substantia nigra 11 even at later \u2026 be related to asymmetric loss of dopamine, as reflected by \u2026 Spontaneous exploratory behaviour in a novel environment \u2026",
+      "authors_raw": "R Tomer, J Aharon-Peretz",
+      "first_author_surname": "Tomer",
+      "publication_year": 2004,
+      "venue": "Journal of Neurology, Neurosurgery & \u2026",
+      "cited_by_count": 157,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1739121/pdf/v075p00972.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000043",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM1"
+      ],
+      "discovered_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review",
+      "discovered_query_display_id": "NM1",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:15:04Z",
+      "result_position": 10,
+      "title_raw": "Functional architecture of dopamine neurons driving fear extinction learning",
+      "title_normalized": "functional architecture of dopamine neurons driving fear extinction learning",
+      "doi": null,
+      "url": "https://www.cell.com/neuron/fulltext/S0896-6273(23)00636-0",
+      "snippet": "of dopamine (DA) neurons in the ventral tegmental area (VTA the major output structure  of VTA DA neurons 11 and,  DA neurons and thereby reveal their functional architecture.",
+      "authors_raw": "XI Salinas-Hern\u00e1ndez, D Zafiri, T Sigurdsson",
+      "first_author_surname": "Salinas-Hern\u00e1ndez",
+      "publication_year": 2023,
+      "venue": "Neuron",
+      "cited_by_count": 45,
+      "resource_pdf_url": "https://www.cell.com/neuron/fulltext/S0896-6273(23)00636-0"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000044",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 3,
+      "title_raw": "Effects of tryptophan-rich breakfast and light exposure during the daytime on melatonin secretion at night",
+      "title_normalized": "effects of tryptophan rich breakfast and light exposure during the daytime on melatonin secretion at night",
+      "doi": "10.1186/1880-6805-33-33",
+      "url": "https://link.springer.com/article/10.1186/1880-6805-33-33",
+      "snippet": "\u2026 -rich breakfast and bright light exposure during the daytime \u2026 groups, suggest that bright light exposure in the daytime is an \u2026 the morning on serotonin synthesis, which improves mood and \u2026",
+      "authors_raw": "H Fukushige, Y Fukuda, M Tanaka, K Inami",
+      "first_author_surname": "Fukushige",
+      "publication_year": 2014,
+      "venue": "Journal of physiological \u2026",
+      "cited_by_count": 85,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1186/1880-6805-33-33.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000045",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 6,
+      "title_raw": "Neurochemical, Physiological, and Behavioral Effects of Bright Light Therapy on a Cortically Blind Patient",
+      "title_normalized": "neurochemical physiological and behavioral effects of bright light therapy on a cortically blind patient",
+      "doi": "10.3109/00207459609000620",
+      "url": "https://www.tandfonline.com/doi/abs/10.3109/00207459609000620",
+      "snippet": "\u2026 bright light therapy on mood, fatigue, appetite, orientation, blood pressure, temperature, and 5-HT \u2026 it was hypothesized that light therapy would positively affect mood, orientation, energy \u2026",
+      "authors_raw": "JS Parker, RK Flory, DE Everhart",
+      "first_author_surname": "Parker",
+      "publication_year": 1996,
+      "venue": "International journal of \u2026",
+      "cited_by_count": 7,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000046",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 7,
+      "title_raw": "Impact of a single, short morning bright light exposure on tryptophan pathways and visuo-and sensorimotor performance: a crossover study",
+      "title_normalized": "impact of a single short morning bright light exposure on tryptophan pathways and visuo and sensorimotor performance a crossover study",
+      "doi": "10.1186/s40101-018-0173-y",
+      "url": "https://link.springer.com/article/10.1186/s40101-018-0173-y",
+      "snippet": "\u2026 bright light (more than 1000 lx at eye level) were shown to be of value for health and work efficiency strategies, inducing positive effects on mood \u2026 phase via morning bright light (BL), in \u2026",
+      "authors_raw": "W Schobersberger, C Blank, F Hanser",
+      "first_author_surname": "Schobersberger",
+      "publication_year": 2018,
+      "venue": "Journal of Physiological \u2026",
+      "cited_by_count": 10,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1186/s40101-018-0173-y.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000047",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 9,
+      "title_raw": "A tryptophan-rich breakfast and exposure to light with low color temperature at night improve sleep and salivary melatonin level in Japanese students",
+      "title_normalized": "a tryptophan rich breakfast and exposure to light with low color temperature at night improve sleep and salivary melatonin level in japanese students",
+      "doi": "10.1186/1740-3391-11-4",
+      "url": "https://link.springer.com/article/10.1186/1740-3391-11-4",
+      "snippet": "\u2026 of affective disorders including depression, although [6] there \u2026 rhythms and is suppressed by bright light at night [13, 14]. \u2026 The first is that serotonin synthesis from tryptophan taken at \u2026",
+      "authors_raw": "K Wada, S Yata, O Akimitsu, M Krejci, T Noji",
+      "first_author_surname": "Wada",
+      "publication_year": 2013,
+      "venue": "Journal of Circadian \u2026",
+      "cited_by_count": 61,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1186/1740-3391-11-4.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000048",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 1,
+      "title_raw": "Effect of light therapy on biopterin, neopterin and tryptophan in patients with seasonal affective disorder",
+      "title_normalized": "effect of light therapy on biopterin neopterin and tryptophan in patients with seasonal affective disorder",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0165178103001677",
+      "snippet": "\u2026 BH4 is the essential cofactor for the enzyme tryptophan hydroxylase. This enzyme \u2026 depression was assessed with the Beck Depression Inventory (BDI), a self-rating scale for depression. \u2026",
+      "authors_raw": "R Hoekstra, D Fekkes, BJM van de Wetering",
+      "first_author_surname": "Hoekstra",
+      "publication_year": 2003,
+      "venue": "Psychiatry \u2026",
+      "cited_by_count": 50,
+      "resource_pdf_url": "https://www.academia.edu/download/76695265/31774.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000049",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 2,
+      "title_raw": "Bright ambient light conditions reduce the effect of tryptophan depletion in healthy females",
+      "title_normalized": "bright ambient light conditions reduce the effect of tryptophan depletion in healthy females",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0165178113000802",
+      "snippet": "\u2026 (5-HT, serotonin). On a neurobiological level the production of serotonin is suggested to be directly related to bright light \u2026 of TD, namely a worsening of mood paralleled by a decrease of \u2026",
+      "authors_raw": "M Defrancesco, H Niederst\u00e4tter, W Parson",
+      "first_author_surname": "Defrancesco",
+      "publication_year": 2013,
+      "venue": "Psychiatry \u2026",
+      "cited_by_count": 12,
+      "resource_pdf_url": "https://www.academia.edu/download/66876405/j.psychres.2013.02.00820210504-29331-kjgmej.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000050",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 4,
+      "title_raw": "Antidepressant effects of light therapy combined with sleep deprivation are influenced by a functional polymorphism within the promoter of the serotonin transporter \u2026",
+      "title_normalized": "antidepressant effects of light therapy combined with sleep deprivation are influenced by a functional polymorphism within the promoter of the serotonin transporter",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0006322302018942",
+      "snippet": "\u2026 Changes in perceived mood were rated on a visual analog \u2026 of light therapy may involve an enhancement in 5-HT transmission. It \u2026 If effects of light therapy include enhancement of 5-HT \u2026",
+      "authors_raw": "F Benedetti, C Colombo, A Serretti, C Lorenzi",
+      "first_author_surname": "Benedetti",
+      "publication_year": 2003,
+      "venue": "Biological \u2026",
+      "cited_by_count": 126,
+      "resource_pdf_url": "https://www.academia.edu/download/48508489/Antidepressant_effects_of_light_therapy_20160902-22472-5xsicy.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000051",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 5,
+      "title_raw": "Involvement of the serotonergic system in the pathophysiology of SAD and light therapy",
+      "title_normalized": "involvement of the serotonergic system in the pathophysiology of sad and light therapy",
+      "doi": null,
+      "url": "https://www.cambridge.org/core/journals/european-psychiatry/article/involvement-of-the-serotonergic-system-in-the-pathophysiology-of-sad-and-light-therapy/81A1B503D2DCB651A3644F321B4BBFC9",
+      "snippet": "\u2026 SAD patients during depression and bright light therapy. Our data \u2026 depression which are normalized after bright light therapy. \u2026 and behavioral responses to 5-HT challenges. The atypical \u2026",
+      "authors_raw": "A Neumeister, N Praschak-Rieder",
+      "first_author_surname": "Neumeister",
+      "publication_year": 1996,
+      "venue": "European \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000052",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 8,
+      "title_raw": "Neuroendocrinological reaction to the tryptophan-depletion-test in patients with seasonal affective disorder who responded to light therapy",
+      "title_normalized": "neuroendocrinological reaction to the tryptophan depletion test in patients with seasonal affective disorder who responded to light therapy",
+      "doi": null,
+      "url": "https://www.cambridge.org/core/journals/european-psychiatry/article/neuroendocrinological-reaction-to-the-tryptophandepletiontest-in-patients-with-seasonal-affective-disorder-who-responded-to-light-therapy/BA9F240FACFE793F3EC3721D9F7CC3E1",
+      "snippet": "\u2026 , while it does not block 5-HT 1A receptors. Its antagonism of pre\u2026 stimulation of 5-HT cell firing and 5-HT release through \u2026 of moderate depression; at least 25 of severe depression. In the \u2026",
+      "authors_raw": "B Hesselmann, A Neumeister",
+      "first_author_surname": "Hesselmann",
+      "publication_year": 1996,
+      "venue": "European \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000053",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM7"
+      ],
+      "discovered_query": "(\"serotonin synthesis\" OR \"5-HT\" OR \"tryptophan hydroxylase\") AND (\"bright light\" OR \"daylight exposure\" OR \"light therapy\") AND (\"mood\" OR \"affect\" OR \"depression\") -review",
+      "discovered_query_display_id": "NM7",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:16:59Z",
+      "result_position": 10,
+      "title_raw": "The role of retino-raphe projection in light therapy for non-seasonal depression",
+      "title_normalized": "the role of retino raphe projection in light therapy for non seasonal depression",
+      "doi": null,
+      "url": "https://hub.hku.hk/handle/10722/219905",
+      "snippet": "\u2026 light therapy especially the blue light therapy. The retino-raphe projection plays a critical role in the light therapy for those rats with non-seasonal depression. \u2026 inhibition of 5-HT neuronal \u2026",
+      "authors_raw": "X Li",
+      "first_author_surname": "Li",
+      "publication_year": 2014,
+      "venue": "HKU Theses Online (HKUTO)",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000054",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 3,
+      "title_raw": "The lateral hypothalamus and orexinergic transmission in the paraventricular thalamus promote the attribution of incentive salience to reward-associated cues",
+      "title_normalized": "the lateral hypothalamus and orexinergic transmission in the paraventricular thalamus promote the attribution of incentive salience to reward associated cues",
+      "doi": "10.1007/s00213-020-05651-4",
+      "url": "https://link.springer.com/article/10.1007/s00213-020-05651-4",
+      "snippet": "\u2026 the attribution of incentive salience to Pavlovian reward cues. However, a causal role for the LHA and the neurotransmitters involved have not been demonstrated in this regard. \u2026",
+      "authors_raw": "JL Haight, P Campus, CE Maria-Rios, AM Johnson",
+      "first_author_surname": "Haight",
+      "publication_year": 2020,
+      "venue": "\u2026",
+      "cited_by_count": 37,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7960144/pdf/nihms-1624274.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000055",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 1,
+      "title_raw": "Buprenorphine prevents stress-induced blunting of nucleus accumbens dopamine response and approach behavior to food reward in mice",
+      "title_normalized": "buprenorphine prevents stress induced blunting of nucleus accumbens dopamine response and approach behavior to food reward in mice",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S235228951930013X",
+      "snippet": "\u2026 to the mesolimbic dopamine (DA) system are thought to underlie dysfunctional reward \u2026 and neurochemical correlates underlying conditioned approach behavior for palatable food in the \u2026",
+      "authors_raw": "SA Robinson, TE Hill-Smith, I Lucki",
+      "first_author_surname": "Robinson",
+      "publication_year": 2019,
+      "venue": "Neurobiology of stress",
+      "cited_by_count": 11,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000056",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 2,
+      "title_raw": "Intra-accumbens amphetamine increases the conditioned incentive salience of sucrose reward: enhancement of reward \u201cwanting\u201d without enhanced \u201cliking\u201d or \u2026",
+      "title_normalized": "intra accumbens amphetamine increases the conditioned incentive salience of sucrose reward enhancement of reward wanting without enhanced liking or",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/20/21/8122.short",
+      "snippet": "\u2026 reward itself and not merely conditioned approach behavior to the Pavlovian CS+. Finally, it was deemed useful to have a within-subject comparison of CS+ versus CS\u2212 effects in this \u2026",
+      "authors_raw": "CL Wyvell, KC Berridge",
+      "first_author_surname": "Wyvell",
+      "publication_year": 2000,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": 960,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/20/21/8122.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000057",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 4,
+      "title_raw": "Neurons of the ventral tegmental area encode individual differences in motivational \u201cwanting\u201d for reward cues",
+      "title_normalized": "neurons of the ventral tegmental area encode individual differences in motivational wanting for reward cues",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/40/46/8951.abstract",
+      "snippet": "\u2026 We quantified the attribution of incentive salience through cue approach behavior and cue \u2026 We found dopamine neurons of the VTA encode strength of incentive salience of reward \u2026",
+      "authors_raw": "LM Ferguson, AM Ahrens, LG Longyear",
+      "first_author_surname": "Ferguson",
+      "publication_year": 2020,
+      "venue": "Journal of \u2026",
+      "cited_by_count": 37,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/40/46/8951.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000058",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 5,
+      "title_raw": "The effect of corticosterone on the acquisition of Pavlovian conditioned approach behavior in rats is dependent on sex and vendor",
+      "title_normalized": "the effect of corticosterone on the acquisition of pavlovian conditioned approach behavior in rats is dependent on sex and vendor",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0018506X2400134X",
+      "snippet": "\u2026 incentive salience, it attains the ability to elicit maladaptive behaviors characteristic of psychopathology. We can capture the propensity to attribute incentive salience to a reward \u2026 \u2026",
+      "authors_raw": "A Turfe, SR Westbrook, SA Lopez, SE Chang",
+      "first_author_surname": "Turfe",
+      "publication_year": 2024,
+      "venue": "Hormones and \u2026",
+      "cited_by_count": 6,
+      "resource_pdf_url": "https://www.sciencedirect.com/science/article/am/pii/S0018506X2400134X"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000059",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 6,
+      "title_raw": "Incentive salience attribution,\u201csensation-seeking\u201d and \u201cnovelty-seeking\u201d are independent traits in a large sample of male and female heterogeneous stock rats",
+      "title_normalized": "incentive salience attributionsensation seeking and novelty seeking are independent traits in a large sample of male and female heterogeneous stock rats",
+      "doi": null,
+      "url": "https://www.nature.com/articles/s41598-019-39519-1",
+      "snippet": "\u2026 propensity to attribute incentive salience to reward cues can \u2026 approach behavior (to obtain an index of incentive salience \u2026 propensity to attribute incentive salience to reward cues and \u2026",
+      "authors_raw": "AR Hughson, AP Horvath, K Holl, AA Palmer",
+      "first_author_surname": "Hughson",
+      "publication_year": 2019,
+      "venue": "Scientific Reports",
+      "cited_by_count": 72,
+      "resource_pdf_url": "https://www.nature.com/articles/s41598-019-39519-1.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000060",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 7,
+      "title_raw": "The attribution of incentive salience to a stimulus that signals an intravenous injection of cocaine",
+      "title_normalized": "the attribution of incentive salience to a stimulus that signals an intravenous injection of cocaine",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0166432806000969",
+      "snippet": "\u2026 response is required for the animal to receive the reward in this situation; the animal is not \u2026 cue can acquire incentive salience leading to Pavlovian conditioned approach behavior. \u2026",
+      "authors_raw": "JM Uslaner, MJ Acerbo, SA Jones",
+      "first_author_surname": "Uslaner",
+      "publication_year": 2006,
+      "venue": "Behavioural brain \u2026",
+      "cited_by_count": 171,
+      "resource_pdf_url": "https://www.academia.edu/download/97289683/uslaner_st-1.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000061",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 8,
+      "title_raw": "Mesolimbic dopamine signals the value of work",
+      "title_normalized": "mesolimbic dopamine signals the value of work",
+      "doi": null,
+      "url": "https://www.nature.com/articles/nn.4173",
+      "snippet": "\u2026 with reward rate and motivational vigor. Second-by-second dopamine release encoded an estimate of temporally discounted future reward (\u2026 related to this approach behavior than to the \u2026",
+      "authors_raw": "AA Hamid, JR Pettibone, OS Mabrouk, VL Hetrick",
+      "first_author_surname": "Hamid",
+      "publication_year": 2016,
+      "venue": "Nature \u2026",
+      "cited_by_count": 1032,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4696912/pdf/nihms-733226.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000062",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 9,
+      "title_raw": "Isolating the incentive salience of reward-associated stimuli: value, choice, and persistence",
+      "title_normalized": "isolating the incentive salience of reward associated stimuli value choice and persistence",
+      "doi": null,
+      "url": "https://learnmem.cshlp.org/content/22/2/116.short",
+      "snippet": "\u2026 The results reported here reveal a number of novel aspects of the attribution of incentive salience or value to reward-associated stimuli. First, localized, visual aspects of stimuli close to \u2026",
+      "authors_raw": "JS Beckmann, JJ Chow",
+      "first_author_surname": "Beckmann",
+      "publication_year": 2015,
+      "venue": "Learning & memory",
+      "cited_by_count": 115,
+      "resource_pdf_url": "https://learnmem.cshlp.org/content/22/2/116.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000063",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NM2"
+      ],
+      "discovered_query": "(\"incentive salience\" OR \"wanting liking dissociation\" OR \"mesolimbic dopamine\") AND (\"architectural preference\" OR \"place attachment\" OR \"approach behavior\") AND (\"built environment\" OR \"reward\" OR \"Berridge\") -review",
+      "discovered_query_display_id": "NM2",
+      "source_voi_score": 0.4537,
+      "discovered_at": "2026-05-31T00:17:05Z",
+      "result_position": 10,
+      "title_raw": "Reward selectively modulates the lingering neural representation of recently attended objects in natural scenes",
+      "title_normalized": "reward selectively modulates the lingering neural representation of recently attended objects in natural scenes",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/37/31/7297.abstract",
+      "snippet": "\u2026 for reward (eg, Schultz et al., 1997). One account of approach behavior, the \u201cincentive salience \u2026 In this hypothesis, the neural response to reward initially sensitizes the visual system to \u2026",
+      "authors_raw": "C Hickey, MV Peelen",
+      "first_author_surname": "Hickey",
+      "publication_year": 2017,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": 45,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/37/31/7297.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000064",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 1,
+      "title_raw": "Hapticity in Hybrid Space from an Enactive Perspective",
+      "title_normalized": "hapticity in hybrid space from an enactive perspective",
+      "doi": "10.1007/978-981-96-4749-1_4",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-96-4749-1_4",
+      "snippet": "\u2026 By activating the mirror neurons, we engage in an \u201cembodied simulation\u201d, a basic functional \u2026 It introduces a new mode of co-presence, transforming the configurations of public spaces \u2026",
+      "authors_raw": "J Yang",
+      "first_author_surname": "Yang",
+      "publication_year": 2024,
+      "venue": "International Conference on Architecture across \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1007/978-981-96-4749-1_4.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000065",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 4,
+      "title_raw": "Seeing minds directly: Revisiting direct perception theory in social cognition",
+      "title_normalized": "seeing minds directly revisiting direct perception theory in social cognition",
+      "doi": "10.1177/18724981251387330",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/18724981251387330",
+      "snippet": "\u2026 analysis, and embodied simulation protocols are possible \u2026 affectivity, and relational co-presence, this model situates \u2026 for relational, embodied educational space design; and in clinical \u2026",
+      "authors_raw": "N Xu",
+      "first_author_surname": "Xu",
+      "publication_year": 2025,
+      "venue": "Intelligent Decision Technologies",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000066",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 6,
+      "title_raw": "Intentional attunement: Embodied simulation and its role in social cognition",
+      "title_normalized": "intentional attunement embodied simulation and its role in social cognition",
+      "doi": "10.1007/88-470-0550-7_12",
+      "url": "https://link.springer.com/chapter/10.1007/88-470-0550-7_12",
+      "snippet": "\u2026 with others, which in turn constitutes a shared manifold of intersubjectivity. This we-centric space allows us to directly experience the \u2026 This modeling mechanism is embodied simulation. \u2026",
+      "authors_raw": "V Gallese",
+      "first_author_surname": "Gallese",
+      "publication_year": 2006,
+      "venue": "Psychoanalysis and neuroscience",
+      "cited_by_count": 34,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Christian-Salas-3/post/In-your-opinion-why-is-Freuds-Project-for-a-scientific-psychology-so-neglected-within-the-Psychoanalytic-mainstream/attachment/59d62a56c49f478072e9ce98/AS%3A272538519703553%401441989655009/download/psychoanalysis+and+neuroscience+%28mancia+book%29.pdf#page=272"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000067",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 2,
+      "title_raw": "The Interactive 'Social Brain': Behavioral and Neural Substrates for the Processing of Potential Engagement in Motor Interactions",
+      "title_normalized": "the interactive social brain behavioral and neural substrates for the processing of potential engagement in motor interactions",
+      "doi": null,
+      "url": "https://www.repository.unipr.it/bitstream/1889/6150/4/Edoardo_Arcuri_PhD_thesis_2025.pdf",
+      "snippet": "\u2026 They demonstrated the existence of different types of mirror neurons, from interneurons to cortico-spinal and cortico-striatal cells, exhibiting different functional properties in response to \u2026",
+      "authors_raw": "E Arcuri",
+      "first_author_surname": "Arcuri",
+      "publication_year": 2025,
+      "venue": null,
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://www.repository.unipr.it/bitstream/1889/6150/4/Edoardo_Arcuri_PhD_thesis_2025.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000068",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 3,
+      "title_raw": "Enacting Interpersonal Space: the Role of the Body in Social Cognition",
+      "title_normalized": "enacting interpersonal space the role of the body in social cognition",
+      "doi": null,
+      "url": "https://www.academia.edu/download/91970358/SkepsiDe_Parsing_bodies_2012.pdf#page=11",
+      "snippet": "\u2026 Specifically, it wants to show that human copresence and social interactions (high-level \u2026 since the discovery of mirror neurons in the premotor cortex. In fact, mirror neurons not only fire \u2026",
+      "authors_raw": "C Teneggi",
+      "first_author_surname": "Teneggi",
+      "publication_year": 2012,
+      "venue": "The Skepsi team",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://www.academia.edu/download/91970358/SkepsiDe_Parsing_bodies_2012.pdf#page=11"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000069",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 5,
+      "title_raw": "S33-03-From mirror neurons to embodied simulation: A new neuroscientific perspective on intersubjectivity",
+      "title_normalized": "s33 03 from mirror neurons to embodied simulation a new neuroscientific perspective on intersubjectivity",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0924933811738305",
+      "snippet": "\u2026 of a shared \u201cwe-centric\u201d space. I have proposed that this shared manifold space can be characterized at the functional level as embodied simulation, a basic functional mechanism by \u2026",
+      "authors_raw": "V Gallese",
+      "first_author_surname": "Gallese",
+      "publication_year": 2011,
+      "venue": "European Psychiatry",
+      "cited_by_count": 5,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000070",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 7,
+      "title_raw": "A computational model of cooperative spatial behaviour for virtual humans",
+      "title_normalized": "a computational model of cooperative spatial behaviour for virtual humans",
+      "doi": null,
+      "url": "https://pub.uni-bielefeld.de/record/2512954",
+      "snippet": "\u2026 As an additional spatial map we define a goal space within the peripersonal space. This \u2026 Mirror neurons differentially encode the peripersonal and extrapersonal space of monkeys. \u2026",
+      "authors_raw": "N Nguyen, I Wachsmuth",
+      "first_author_surname": "Nguyen",
+      "publication_year": 2013,
+      "venue": "\u2026 Space in Cognition: Interrelations of \u2026",
+      "cited_by_count": 2,
+      "resource_pdf_url": "https://pub.uni-bielefeld.de/download/2512954/2633271/C1_OUP_NguyenWachsmuth.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000071",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 8,
+      "title_raw": "Embodied social interaction constitutes social cognition in pairs of humans: a minimalist virtual reality experiment",
+      "title_normalized": "embodied social interaction constitutes social cognition in pairs of humans a minimalist virtual reality experiment",
+      "doi": null,
+      "url": "https://www.nature.com/articles/srep03672",
+      "snippet": "\u2026 Some uncertainties arise while the conventions of mutual interaction are negotiated and modified over later trials, but co-presence tends to be re-established reliably. All clicks correctly \u2026",
+      "authors_raw": "T Froese, H Iizuka, T Ikegami",
+      "first_author_surname": "Froese",
+      "publication_year": 2014,
+      "venue": "Scientific reports",
+      "cited_by_count": 179,
+      "resource_pdf_url": "https://www.nature.com/articles/srep03672.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000072",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 9,
+      "title_raw": "As If: Connecting Phenomenology, Mirror Neurons, Empathy, and Laughter",
+      "title_normalized": "as if connecting phenomenology mirror neurons empathy and laughter",
+      "doi": null,
+      "url": "https://phaenex.uwindsor.ca/index.php/phaenex/article/view/3301",
+      "snippet": "\u2026 -centric\u201d shared meaningful interpersonal space \u2026 I propose that this shared manifold space can be characterized at the functional level as embodied simulation, a specific mechanism, \u2026",
+      "authors_raw": "CA Kramer",
+      "first_author_surname": "Kramer",
+      "publication_year": 2012,
+      "venue": "PhaenEx",
+      "cited_by_count": 17,
+      "resource_pdf_url": "https://phaenex.uwindsor.ca/index.php/phaenex/article/download/3301/2787"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000073",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "CSMP1-step2"
+      ],
+      "discovered_query": "(\"mirror neurons\" OR \"embodied simulation\" OR \"motor resonance\") AND (\"social presence\" OR \"co-presence\" OR \"shared manifold\") AND (\"architecture\" OR \"built environment\" OR \"space\") -review",
+      "discovered_query_display_id": "CSMP1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:21Z",
+      "result_position": 10,
+      "title_raw": "Intentional attunement: A neurophysiological perspective on social cognition and its disruption in autism",
+      "title_normalized": "intentional attunement a neurophysiological perspective on social cognition and its disruption in autism",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0006899306001673",
+      "snippet": "\u2026 This modeling mechanism is embodied simulation. In parallel with the detached sensory \u2026 A defective intentional attunement caused by a lack of embodied simulation might cause \u2026",
+      "authors_raw": "V Gallese",
+      "first_author_surname": "Gallese",
+      "publication_year": 2006,
+      "venue": "Brain research",
+      "cited_by_count": 777,
+      "resource_pdf_url": "https://www.academia.edu/download/30257953/intentional_attunement.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000074",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 8,
+      "title_raw": "Making the world safe for our children: Down-regulating defence and up-regulating social engagement to 'optimise'the human experience",
+      "title_normalized": "making the world safe for our children down regulating defence and up regulating social engagement to optimisethe human experience",
+      "doi": "10.3316/informit.t2025082200003701506012063",
+      "url": "https://www.cambridge.org/core/journals/children-australia/article/making-the-world-safe-for-our-children-downregulating-defence-and-upregulating-social-engagement-to-optimise-the-human-experience/502AEEB10946FBD6C529F344C502A22C",
+      "snippet": "\u2026 effect of internalising the negative features in the environment that trigger danger and fear. \u2026 associated with social engagement behaviours. For example, Polyvagal Theory predicts that \u2026",
+      "authors_raw": "SW Porges",
+      "first_author_surname": "Porges",
+      "publication_year": 2015,
+      "venue": "Children Australia",
+      "cited_by_count": 215,
+      "resource_pdf_url": "https://search.informit.org/doi/pdf/10.3316/informit.T2025082200003701506012063"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000075",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 1,
+      "title_raw": "Polyvagal theory and the social engagement system",
+      "title_normalized": "polyvagal theory and the social engagement system",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=3dQuDwAAQBAJ&oi=fnd&pg=PA221&dq=(%22polyvagal+theory%22+OR+%22ventral+vagal%22+OR+%22respiratory+sinus+arrhythmia%22)+AND+(%22safety+signal%22+OR+%22social+engagement%22+OR+%22vagal+tone%22)+AND+(%22architecture%22+OR+%22built+environment%22+OR+%22environment%22)+-review&ots=5zYLuJCRy9&sig=1pWdY-Iuk98JuLp_orBfCfckBSk",
+      "snippet": "\u2026 The nervous system processes sensory information from the environment and from the viscera to evaluate risk continuously. Polyvagal theory proposes that this neural evaluation of risk \u2026",
+      "authors_raw": "SW Porges, CS Carter",
+      "first_author_surname": "Porges",
+      "publication_year": 2017,
+      "venue": "Complementary and integrative \u2026",
+      "cited_by_count": 90,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000076",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 2,
+      "title_raw": "Polyvagal theory: The neuroscience of safety in trauma-informed practice",
+      "title_normalized": "polyvagal theory the neuroscience of safety in trauma informed practice",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=JmPHEAAAQBAJ&oi=fnd&pg=PA51&dq=(%22polyvagal+theory%22+OR+%22ventral+vagal%22+OR+%22respiratory+sinus+arrhythmia%22)+AND+(%22safety+signal%22+OR+%22social+engagement%22+OR+%22vagal+tone%22)+AND+(%22architecture%22+OR+%22built+environment%22+OR+%22environment%22)+-review&ots=T8PLb5c3Cs&sig=KB7MXfXIK9EdFrsFYooPeGCQSq0",
+      "snippet": "\u2026 they contract when there is strong ventral vagal tone to promote social communication and co\u2026 communicating outside our awareness of how safe the environment is perceived:'... without \u2026",
+      "authors_raw": "SW Porges",
+      "first_author_surname": "Porges",
+      "publication_year": 2024,
+      "venue": "The Handbook of Trauma-Transformative Practice \u2026",
+      "cited_by_count": 11,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000077",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 3,
+      "title_raw": "Understanding Polyvagal Theory: The Science of Safety",
+      "title_normalized": "understanding polyvagal theory the science of safety",
+      "doi": null,
+      "url": "https://elementalhealthandnutrition.com.au/polyvagal-theory-adelaide-vagus-nerve-stress-nervous-system-regulation/",
+      "snippet": "\u2026 the ventral vagal complex (social engagement), the sympathetic nervous system (mobilisation), and the dorsal vagal pathway (immobilisation). Rather than a simple fight-or-flight model, \u2026",
+      "authors_raw": "R Smith",
+      "first_author_surname": "Smith",
+      "publication_year": null,
+      "venue": "elementalhealthandnutrition.com.au",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000078",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 4,
+      "title_raw": "The Role of Social Engagement",
+      "title_normalized": "the role of social engagement",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=lQlAEAAAQBAJ&oi=fnd&pg=PA33&dq=(%22polyvagal+theory%22+OR+%22ventral+vagal%22+OR+%22respiratory+sinus+arrhythmia%22)+AND+(%22safety+signal%22+OR+%22social+engagement%22+OR+%22vagal+tone%22)+AND+(%22architecture%22+OR+%22built+environment%22+OR+%22environment%22)+-review&ots=E6eDdAhXf7&sig=bijHCdakVL3fDnkmm9HZsa-_s94",
+      "snippet": "\u2026 A model of social engagement derived from the Polyvagal Theory is presented. The model \u2026 Based on the relative risk of the environment, both social engagement and defense behaviors \u2026",
+      "authors_raw": "SW PORGES",
+      "first_author_surname": "PORGES",
+      "publication_year": 2015,
+      "venue": "Attachment and Bonding: A New Synthesis",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000079",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 5,
+      "title_raw": "The polyvagal foundation of Theraplay treatment: Combining social engagement, play, and nurture to create safety, regulation, and resilience",
+      "title_normalized": "the polyvagal foundation of theraplay treatment combining social engagement play and nurture to create safety regulation and resilience",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=AWV6DwAAQBAJ&oi=fnd&pg=PT247&dq=(%22polyvagal+theory%22+OR+%22ventral+vagal%22+OR+%22respiratory+sinus+arrhythmia%22)+AND+(%22safety+signal%22+OR+%22social+engagement%22+OR+%22vagal+tone%22)+AND+(%22architecture%22+OR+%22built+environment%22+OR+%22environment%22)+-review&ots=QHNibVc5Y1&sig=MDLuB_JlZvHjiJ8bzvRzT6NJc30",
+      "snippet": "\u2026 of safety in the caregiving environment and giving the child \u2026 social engagement, play, and nurture with Polyvagal Theory \u2026 and decisions in light of Polyvagal Theory are illustrated for a \u2026",
+      "authors_raw": "S Lindaman, J M\u00e4kel\u00e4",
+      "first_author_surname": "Lindaman",
+      "publication_year": 2018,
+      "venue": "\u2026 applications of the polyvagal theory: The \u2026",
+      "cited_by_count": 12,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000080",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 6,
+      "title_raw": "Polyvagal theory and vagal tone in babies",
+      "title_normalized": "polyvagal theory and vagal tone in babies",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=6QRpDQAAQBAJ&oi=fnd&pg=PA58&dq=(%22polyvagal+theory%22+OR+%22ventral+vagal%22+OR+%22respiratory+sinus+arrhythmia%22)+AND+(%22safety+signal%22+OR+%22social+engagement%22+OR+%22vagal+tone%22)+AND+(%22architecture%22+OR+%22built+environment%22+OR+%22environment%22)+-review&ots=G5Yl_ZLxEl&sig=hlAUjPmU2fPkhU7mpuNnjOXkIzc",
+      "snippet": "\u2026 what is known as the Polyvagal Theory. \u2026 of social engagement by using appropriate prosody, facial expression and slowing their movements down to encourage positive vagal tone. \u2026",
+      "authors_raw": "C Goh",
+      "first_author_surname": "Goh",
+      "publication_year": 2017,
+      "venue": "An Integrative Approach to Treating Babies and \u2026",
+      "cited_by_count": 4,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000081",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 7,
+      "title_raw": "Polyvagal Theory and How It. Relates to Social Cues",
+      "title_normalized": "polyvagal theory and how it relates to social cues",
+      "doi": null,
+      "url": "https://www.iahe.com/storage/docs/articles/Polyvagal-Theory-and-How-It-Relates-to-Social-Cues.pdf",
+      "snippet": "\u2026 polyvagal theory, Dr. Porges describes the process in which our neural circuits are reading cues of danger in our environment \u2026 Our social engagement allows us to interact more fluidly \u2026",
+      "authors_raw": "J Clarke, S Gans",
+      "first_author_surname": "Clarke",
+      "publication_year": 2019,
+      "venue": "VeryWellMind. Retrieved April",
+      "cited_by_count": 5,
+      "resource_pdf_url": "https://www.iahe.com/storage/docs/articles/Polyvagal-Theory-and-How-It-Relates-to-Social-Cues.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000082",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 10,
+      "title_raw": "SSP Therapy: Transforming Lives Through Sound and Safety",
+      "title_normalized": "ssp therapy transforming lives through sound and safety",
+      "doi": null,
+      "url": "https://neurolaunch.com/ssp-therapy/",
+      "snippet": "\u2026 our auditory system and our social engagement responses. It\u2019\u2026 The polyvagal theory suggests that we have three distinct \u2026 The key is to create a calm, supportive environment that allows \u2026",
+      "authors_raw": "T In, SSP Is",
+      "first_author_surname": "In",
+      "publication_year": null,
+      "venue": "neurolaunch.com",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000083",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:31Z",
+      "result_position": 9,
+      "title_raw": "Polyvagal Informed Parenting",
+      "title_normalized": "polyvagal informed parenting",
+      "doi": null,
+      "url": "https://www.parentsuitcase.com/blog/tag/family+health",
+      "snippet": "\u2026 internal and external environment to help shift our physiology towards a ventral vagal state. As \u2026 It is through this social engagement system that we are able to influence the physiological \u2026",
+      "authors_raw": "S Kemmerer",
+      "first_author_surname": "Kemmerer",
+      "publication_year": null,
+      "venue": "parentsuitcase.com",
+      "cited_by_count": null,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260531-000436-000084",
+      "discovery_run_id": "RUN-20260531-000436",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NVR1-step2"
+      ],
+      "discovered_query": "(\"polyvagal theory\" OR \"ventral vagal\" OR \"respiratory sinus arrhythmia\") AND (\"safety signal\" OR \"social engagement\" OR \"vagal tone\") AND (\"architecture\" OR \"built environment\" OR \"environment\") -review",
+      "discovered_query_display_id": "NVR1-step2",
+      "source_voi_score": 0.443,
+      "discovered_at": "2026-05-31T00:17:33Z",
+      "result_position": 9,
+      "title_raw": "Polyvagal Informed Parenting",
+      "title_normalized": "polyvagal informed parenting",
+      "doi": null,
+      "url": "https://www.parentsuitcase.com/blog/tag/family+health",
+      "snippet": "internal and external environment to help shift our physiology towards a ventral vagal state.  As  It is through this social engagement system that we are able to influence the physiological",
+      "authors_raw": "S Kemmerer",
+      "first_author_surname": "Kemmerer",
+      "publication_year": null,
+      "venue": "NA",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://www.parentsuitcase.com/blog/tag/family+health"
+    }
+  ],
+  "null_results": [
+    {
+      "discovered_query_display_id": "SC3-step3",
+      "discovered_query": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"buildings\") AND \"threshold event\" -review",
+      "source_voi_score": 0.478,
+      "reason": "zero_results_across_all_sources",
+      "queried_at": "2026-05-31T00:04:37Z"
+    },
+    {
+      "discovered_query_display_id": "L4-step3",
+      "discovered_query": "(\"chronobiological\" OR \"circadian rhythm\" OR \"ipRGC\") AND (\"melanopsin\") AND \"cone-melanopsin opponent channel\" -review",
+      "source_voi_score": 0.443,
+      "reason": "zero_results_across_all_sources",
+      "queried_at": "2026-05-31T00:17:11Z"
+    }
+  ],
+  "skipped_queries": []
+}

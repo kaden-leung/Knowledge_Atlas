@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RUN-P5-20260602-192128",
+  "started_at": "2026-06-02T19:21:28Z",
+  "ended_at": "2026-06-02T19:21:32Z",
+  "rows_processed": 3,
+  "acquired": {
+    "unpaywall": 0,
+    "openalex": 0,
+    "scidownl": 0
+  },
+  "failed_all_sources": 0,
+  "scidownl_gate_blocked": 2,
+  "no_doi": 1,
+  "errors": []
+}
