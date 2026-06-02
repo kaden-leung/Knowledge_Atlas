@@ -1,0 +1,17 @@
+{
+  "abstract": "Abstract Energy retrofits of existing multi-unit residential buildings (MURBs) are necessary to reduce their carbon emissions. While doing so there is an opportunity to influence the indoor environment. There is a need to quantify retrofit impacts across multiple dimensions, in terms of emissions and indoor environment, but also occupant perceptions. This paper characterizes carbon emissions and changes to indoor thermal conditions associated with energy-retrofits, such as replacement or updating of boilers, air-handling units, piping, valves, ducts, in-suite radiators and controls in seven social housing MURBs. MURBs are a building type opportune for energy-savings, and social housing residents may be more susceptible to heat stress. Using hygrothermal measurements taken inside a sample of apartments, modelled thermal comfort in most buildings showed statistically significant changes (in both directions), however nearly all of these changes were small (a less than10% change in time comfortable). Despite being of the same vintage, construction and location, pairs of buildings with similar retrofits did not always result in the same direction of changes to thermal comfort, either modelled or surveyed. Within individual buildings, modelled thermal comfort does not always agree with occupant survey responses about their overall seasonal comfort. Finally, a life cycle assessment of retrofit measures results in an important savings of annual global warming potential. Annual natural gas savings are of a magnitude such that the operational carbon savings to embodied carbon investment range from 23:1 to 97:1. The associated energy cost savings does not, on average, offset the capital costs if only taking into account reduced energy for space heating. More generally, these results suggest mechanical retrofits of MURBs may save energy and carbon, but may not consistently improve residents\u2019 thermal comfort. These results have practical relevance to those interested in the design and operation of low-carbon, comfortable housing, although it is unknown whether these findings are generalizable due to the small number of empirical results. Further studies are needed to understand the implications of different energy-retrofit actions and better understand the difference in perceptions.",
+  "abstract_source": "semantic_scholar",
+  "discovered_via": [
+    "review_pdf_extract"
+  ],
+  "discovery_run_id": "RUN-20260528-120000",
+  "doi": "10.1016/j.enbuild.2021.110950",
+  "handoff_version": "1.0",
+  "publication_year": 2021,
+  "reference_id": "REF-2026-05-30-000430",
+  "title": "Quantifying thermal comfort and carbon savings from energy-retrofits in social housing",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": null,
+  "voi_score": 0.443
+}

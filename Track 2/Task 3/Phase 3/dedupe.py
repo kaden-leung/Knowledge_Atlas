@@ -9,6 +9,7 @@ See SCHEMA_CONTRACT.md §8 for the decision tree.
 from __future__ import annotations
 
 import csv
+import re
 import sqlite3
 import sys
 from dataclasses import dataclass, field
@@ -102,10 +103,21 @@ class CorpusSnapshot:
 # Helpers
 # ---------------------------------------------------------------------------
 
+# A valid DOI must have the registrant prefix (4+ digits), a slash, and at least
+# 3 non-whitespace characters in the suffix. Strings like "10.1016/j" (truncated
+# Elsevier prefix) have a single-char suffix and are treated as absent so they
+# don't waste API calls or pollute the DOI unique index.
+_VALID_DOI_RE = re.compile(r"^10\.\d{4,9}/\S{3,}")
+
+
 def normalize_doi(value: str | None) -> str | None:
-    """Wrap ae_corpus_dedupe.normalize_doi to return None instead of empty string."""
+    """Wrap ae_corpus_dedupe.normalize_doi; return None for empty or malformed DOIs."""
     result = _af_normalize_doi(value)
-    return result if result else None
+    if not result:
+        return None
+    if not _VALID_DOI_RE.match(result):
+        return None
+    return result
 
 
 def utc_now_iso() -> str:

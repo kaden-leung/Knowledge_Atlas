@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RUN-4D-RETRY-20260601",
+  "generated_at": "2026-06-02T01:48:51Z",
+  "edge_cases": [
+    {
+      "reference_id": "REF-2026-05-31-000046",
+      "title_raw": "Impact of a single, short morning bright light exposure on tryptophan pathways and visuo-and sensorimotor performance: a crossover study",
+      "doi": "10.1186/s40101-018-0173-y",
+      "venue": "Journal of Physiological \u2026",
+      "abstract_text": "BACKGROUND: Bright light (BL) has been shown to be effective in enhancing both cognitive and physical performances. Alterations in nighttime melatonin levels have also been observed. However, evaluations of light-induced changes in the preceding biochemical processes are absent. Therefore, the impact of a single morning BL exposure on sensorimotor and visuomotor performance, as well as tryptophan (trp) and trp metabolites, was evaluated in this study. METHODS: In a crossover design, 33 healthy volunteers were randomly exposed to 30\u00a0min of <\u2009150\u00a0lx at eye level (office light, OL) and 5000\u00a0lx at eye level (bright light, BL) of 6500\u00a0K in the morning hours. Trp, sulfatoxymelatonin (aMT6s), and kynurenine (kyn) courses over the morning hours were analyzed, and changes in sensori- and visuomotor measures were examined. RESULTS: Motoric performance increased in both setups, independent of light intensity. aMT6s and kyn decreased equally under both lighting conditions. Trp levels decreased from a mean (95% confidence interval) of 82.0 (77.2-86.9) to 66.5 (62.5-70.1) in the OL setup only. CONCLUSION: These data suggest that BL in the morning hours has a limited effect on visuo- and sensorimotor performance. Nevertheless, trp degradation pathways in the morning show diverse courses after OL and BL exposure. This suggests that trp courses can potentially be altered by BL exposure.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.45",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.4537
+    },
+    {
+      "reference_id": "REF-2026-05-30-000126",
+      "title_raw": "Appraisal theories of emotion: State of the art and future development",
+      "doi": "10.1177/1754073912468165",
+      "venue": null,
+      "abstract_text": "I reject Lindquist et al.'s implicit claim that all emotion theories other than constructionist ones subscribe to a \"brain locationist\" approach. The neural mechanisms underlying relevance detection, reward, attention, conceptualization, or language use are consistent with many theories of emotion, in particular componential appraisal theories. I also question the authors' claim that the meta-analysis they report provides support for the specific assumptions of constructionist theories.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000133",
+      "title_raw": "The complex relationship between emotions, approaches to learning, study success and study progress during the transition to university",
+      "doi": "10.1007/s10734-016-0096-8",
+      "venue": null,
+      "abstract_text": "Borderline personality disorder (BPD) is characterized by a range of interpersonal difficulties, which are, in part, related to adverse experiences during childhood. Unresponsive parenting and traumatization may cause functional impairment of mentalization, i.e. the ability to reflect upon own and others' mental states. However, the relationship of poor parenting, trauma and mentalization in BPD has not exhaustively been studied. Thirty patients diagnosed with BPD and 30 matched control subjects were asked to sequence a novel cartoon-based mentalization task involving complex emotions such as jealousy, shame, guilt etc. In addition, they were required to reason about cognitive and affective mental states of the cartoon characters. The quality of parental care was assessed using a self-report measure for recalled parental rearing style, and childhood trauma was measured in retrospect using the Childhood Trauma Questionnaire. Patients with BPD performed more poorly in all aspects of the cartoon task. Mentalizing skills, particularly relating to affective mental states, were uniquely associated with the quality of recalled parental care and childhood trauma. Together, the quality of parental care and the experience of childhood trauma negatively impact on mentalization in BPD, even in an experimental \"offline\" task.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000344",
+      "title_raw": "particular schema influenced the evaluation of environmental quality",
+      "doi": null,
+      "venue": null,
+      "abstract_text": "Background: Pregnancy is a crucial stage in a woman\u2019s life and can be affected by epigenetic and environmental factors. Diet also plays a key role in gestation. This study aimed to evaluate how a greater or lesser adherence to the Mediterranean Diet (MD) influences specific parameters of mother and newborn. Methods: After delivery, the women participating in the study answered a questionnaire: demographic information; anthropometric data (pre-pregnancy weight, height, and gestational weight gain); dietary habits information (adherence to MD before and during pregnancy, using the validated Mediterranean Diet Adherence Screener (MEDAS), quality of protein intake); pregnancy information (onset of complications, cesarean/vaginal delivery, gestational age at birth, birth weight, birth length); and clinical practitioner for personalized dietary patterns during pregnancy. Results: A total of 501 respondents have been included in the study, and 135 were excluded for complications. Women who followed the advice of clinical nutritionists showed better adherence to MD (p = 0.02), and the baby\u2019s birth weight was higher (p = 0.02). Significant differences in gestational weight gain (p < 0.01) between groups with dissimilar diet adherence were demonstrated. Conclusion: Our data demonstrate a significant relationship between adherence to MD and birthweight.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000415",
+      "title_raw": "The Canadian Index of Wellbeing",
+      "doi": "10.3389/frsus.2022.807984",
+      "venue": null,
+      "abstract_text": "Sustainability and wellbeing are two key global policy priorities, which despite considerable overlap, are invariably isolated. In wellbeing, the importance of social dimensions is an emergent conclusion, but recognition of the environment and nature is embryonic. In sustainability, wellbeing remains poorly characterized. Despite some procedural advantages, in practice, a continued ambiguity risks compromising both goals, and improved conceptual integration is therefore necessary. In this review article, key contemporary wellbeing accounts are considered, including preferences, needs, capabilities, happiness, psychological wellbeing, and physical wellness. Wellbeing literature suggests that a holistic multidimensional account is strongly supported, that is context- and value-dependent, with a prominent role for social and relational dimensions. A transdisciplinary systems thinking approach is appropriate to integrate from the individualism characteristic of wellbeing, to the interdependent human and environmental systems of sustainability. It is recognized that both wellbeing and sustainability are complex and value-laden, requiring the surfacing of values and ethics. A synthesis of the two branches of literature asserts four fundamental lenses: the framing of growth and change; social justice; the ethics of freedom; and the value of nature. The conceptual synthesis both platforms the relational approach of \u201ccare,\u201d and underlines the imperative to reconsider the place of consumption. An integrated \u201csustainable wellbeing\u201d offers the potential for win-win outcomes, in transformation to a flourishing of human wellbeing and the natural world.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000673",
+      "title_raw": "99. Fukumoto,H.;Shimoda,M.;Hoshino,S.Theeffectsofdifferentdesignsofindoorbiophil",
+      "doi": null,
+      "venue": null,
+      "abstract_text": "Summary\n               \n                  Background\n                  In December, 2019, a pneumonia associated with the 2019 novel coronavirus (2019-nCoV) emerged in Wuhan, China. We aimed to further clarify the epidemiological and clinical characteristics of 2019-nCoV pneumonia.\n               \n               \n                  Methods\n                  In this retrospective, single-centre study, we included all confirmed cases of 2019-nCoV in Wuhan Jinyintan Hospital from Jan 1 to Jan 20, 2020. Cases were confirmed by real-time RT-PCR and were analysed for epidemiological, demographic, clinical, and radiological features and laboratory data. Outcomes were followed up until Jan 25, 2020.\n               \n               \n                  Findings\n                  Of the 99 patients with 2019-nCoV pneumonia, 49 (49%) had a history of exposure to the Huanan seafood market. The average age of the patients was 55\u00b75 years (SD 13\u00b71), including 67 men and 32 women. 2019-nCoV was detected in all patients by real-time RT-PCR. 50 (51%) patients had chronic diseases. Patients had clinical manifestations of fever (82 [83%] patients), cough (81 [82%] patients), shortness of breath (31 [31%] patients), muscle ache (11 [11%] patients), confusion (nine [9%] patients), headache (eight [8%] patients), sore throat (five [5%] patients), rhinorrhoea (four [4%] patients), chest pain (two [2%] patients), diarrhoea (two [2%] patients), and nausea and vomiting (one [1%] patient). According to imaging examination, 74 (75%) patients showed bilateral pneumonia, 14 (14%) patients showed multiple mottling and ground-glass opacity, and one (1%) patient had pneumothorax. 17 (17%) patients developed acute respiratory distress syndrome and, among them, 11 (11%) patients worsened in a short period of time and died of multiple organ failure.\n               \n               \n                  Interpretation\n                  The 2019-nCoV infection was of clustering onset, is more likely to affect older males with comorbidities, and can result in severe and even fatal respiratory diseases such as acute respiratory distress syndrome. In general, characteristics of patients who died were in line with the MuLBSTA score, an early warning model for predicting mortality in viral pneumonia. Further investigation is needed to explore the applicability of the MuLBSTA score in predicting the risk of mortality in 2019-nCoV infection.\n               \n               \n                  Funding\n                  National Key R&D Program of China.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000715",
+      "title_raw": "6\u201312, https://doi.org/10.1016/j.pbj.2016.11.003. comfort level in a shared office, Build Env. 142 (2018) 312\u2013326, https:",
+      "doi": "10.1016/j.pbj.2016.11.003",
+      "venue": null,
+      "abstract_text": "HIGHLIGHTS: The distinction among the concepts of comfort, well-being and QoL is often unclear.This ambiguity can lead to redundancies, gaps, and knowledge dispersion.The concepts are not surrogate terms but related concepts sharing common attributes. AIM: To analyze the differences and similarities of the concepts of comfort, well-being and quality of life (QoL). METHODS: ) and Scielo, using the search terms \"Comfort\", \"Well-being\", \"Quality of Life\" and \"Concept Analysis\". RESULTS: Eighteen studies were included. Comfort is a broader holistic concept while well-being is mainly related to psycho-spiritual dimensions. QoL reflects the individual perception of satisfaction with life. CONCLUSIONS: The concepts are not surrogate terms, but related concepts sharing common attributes. Caution should be taken in further research, particularly as regards the correct use and framing of the concepts.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000830",
+      "title_raw": "Comparison of mood and task performance in exposure to bright light, as compared to dim light, decreases sleepiness and improves naturally-lit and artificially-lit environments",
+      "doi": "10.1177/1420326x13507792",
+      "venue": null,
+      "abstract_text": "The article presents the results of a laboratory study conducted at Shanghai Tongji University. The study compares participants\u2019 mood and task performance between naturally-lit and artificially-lit environments, with a view to identify negative impacts, such as lighting variation and temperature asymmetry caused by dynamic natural light. It was observed that the mood change in the naturally-lit environment was more significant, especially the decrease of positive mood, than in the artificially-lit environment. For the subjects in the naturally-lit environment, performance scores decreased with increase in the light intensity and temperature asymmetry. Based on the study results, suitable daylighting design was recommended for classrooms or offices.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000834",
+      "title_raw": "illuminance induces alertness even during office hours: Findings on subjective Indoor exposure to natural bright light prevents afternoon sleepiness",
+      "doi": "10.1016/j.physbeh.2012.04.028",
+      "venue": null,
+      "abstract_text": "PURPOSE: The aim of this study was to evaluate the auditory evoked potential (AEP) index as a hypnosis monitor during nitrous oxide (N(2)O) sedation added to spinal analgesia. METHODS: Forty-five patients scheduled to undergo surgery under spinal anesthesia were recruited after giving informed consent. Adequate anesthesia levels were confirmed, and a disposable AEP index sensor (aepEX, Medical Device Management) was placed. A tight facemask was fitted, and a fresh gas flow of 100% oxygen 10\u00a0L/min was provided. AEP index monitoring was then initiated, and measurements and observer assessment of alertness/sedation (OAA/S) scores were recorded manually. N(2)O was administered in stepwise increases in the end-tidal concentration of 33%, 50%, and 67%. Paired AEP index and OAA/S scores were obtained immediately before each change in N(2)O concentration. RESULTS: Sixteen patients were excluded from final analysis because of nausea, vomiting, or abnormal excitatory behaviors. The increases in N(2)O concentration induced significant decreases in OAA/S scores and no substantial AEP index changes. Although OAA/S scores of 1 and 2 were observed in only two and five patients, respectively, a reduction in the OAA/S score from 5 to 1 was associated with a significant decrease in AEP index to the level indicative of moderate sedation. CONCLUSION: The AEP index might not be a suitable indicator of light hypnosis as defined by an OAA/S score of \u22653 during sedation with N(2)O alone.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.45,voi=0.44",
+      "classifier_confidence": 0.45,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-31-000035",
+      "title_raw": "Hyperactivity in novel environment with increased dopamine and impaired novelty preference in apoptosis signal-regulating kinase 1 (ASK1)-deficient mice",
+      "doi": null,
+      "venue": "Neuroscience \u2026",
+      "abstract_text": "Apoptosis signal-regulating kinase 1 (ASK1) is a mitogen-activated protein (MAP) kinase kinase kinase family member, which induces apoptosis in various cells through JNK and p38 MAP kinase cascades. In addition to apoptosis signaling, a number of recent in vitro studies have suggested that ASK1 may play roles in neural function. However, the behavioral significance of ASK1 has remained unclear. Here, we subjected ASK1 (-/-) mice to a battery of behavioral tests and found that they displayed temporary hyperactivity in an open-field test. Activities in the familiar field were normal, indicating that the hyperactivity observed was specific to the novel environment. ASK1 (-/-) mice also exhibited impairment of novelty preference 24h after training and superior performance on the rotarod test. Brain tissue contents of dopamine and 4-dihydroxyphenylacetic acid (DOPAC) were elevated in ASK1 (-/-) mice. Our findings thus demonstrate novel behavioral functions of ASK1, including regulation of locomotor activity, novelty preference, and motor coordination with dopaminergic transmission.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.45",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.4537
+    },
+    {
+      "reference_id": "REF-2026-05-31-000049",
+      "title_raw": "Bright ambient light conditions reduce the effect of tryptophan depletion in healthy females",
+      "doi": null,
+      "venue": "Psychiatry \u2026",
+      "abstract_text": "INTRODUCTION: Tryptophan depletion (TD) is an established method to influence the serotonergic system and mood. The purpose of this study was to examine the effect of TD under different ambient light conditions, measured through serotonin-associated plasma levels and a visual analog scale (VAS), on healthy females. METHODS: Thirty-eight healthy female s-allele carriers of the serotonin transporter promoter gene (5-HTTLPR) were administered a TD under dim light conditions (75 lx). A sub-group of 8 participants repeated the procedure randomized in two additional light conditions (585 lx and 1530 lx respectively). Prior to, and 5h following administration of TD, various variables (serotonin-associated plasma levels, VAS) were measured. Due to not normal distributed data, non-parametric statistical tests were used. RESULTS: Overall analysis showed a significant mood lowering effect of TD. Moreover, TD decreased all measured serotonin-associated plasma levels significantly. Significant differences in varying light conditions were found for the VAS and plasma tryptophan, with the greatest effect of TD in the 75 lx condition. CONCLUSION: Results of our study showed an influence of even slight differences in ambient light intensity on the effect of TD concerning mood as well as on the serotonergic system.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.45",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.4537
+    },
+    {
+      "reference_id": "REF-2026-05-30-000023",
+      "title_raw": "Environmental psychology for design",
+      "doi": null,
+      "venue": null,
+      "abstract_text": "It is universally accepted that nursing practice is predicated upon the notion of holistic care, in that nurses need to address not only the physical needs of ill patients but also their psychological, social, spiritual, and environmental needs. However, there is considerable evidence to suggest that nurses often inadequately identify and respond to patients' psychological needs, sometimes with adverse consequences for physical health and recovery. This may be because they do not fully understand the concept of psychological care, or have been inadequately prepared or educated to deliver it in practice. Following a summary of relevant literature and an overview of findings from a larger study of the nature and experience of psychological caregiving, this paper discusses specific findings on preparing nurses for their psychological caregiving role. The paper proposes a curriculum framework designed to enhance awareness, knowledge, and skill in effective psychological caregiving in nursing practice, to the ultimate benefit of physically ill patients. For the purposes of this paper, psychological care is taken to mean one element of the broader concept of care, rather than being synonymous with it.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000046",
+      "title_raw": "A critical quantitative analysis of students\u2019 sense of belonging: Perspectives on race, generation status, and collegiate environments",
+      "doi": "10.1353/csd.2020.0014",
+      "venue": null,
+      "abstract_text": "Abstract:Guided by Astin\u2019s I-E-O model and critical quantitative inquiry, we examined institutional environments that contributed to belongingness, especially for students from different racial groups, college generation statuses, and the intersection of both. Using multiple linear regression analyses, we analyzed data from 7,888 students and found that belonging was associated with participation in numerous collegiate environments. Moreover, significant results emerged for certain races, generation statuses, and groups at the intersection of both. Models were then run to discern the conditional effects of collegiate environments when considering the interactions between race and generation status. Findings revealed several conditional effects for groups at the intersections of these identities.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000127",
+      "title_raw": "Defensible citadel: History and architectural character of the Lahore Railway Station",
+      "doi": null,
+      "venue": null,
+      "abstract_text": "Abstract This study aims to investigate the defensible character of the Lahore railway station built in response to \u201cthe war of independence in 1857,\u201d which greatly impacted the location and design of the building. This study demonstrates the integral role played by the railway station in the development of the new colonial city, which the British wants to be defensive in every aspect. Railways were introduced in Pakistan (India) soon after their inauguration in Britain. Beginning from the mode of transportation, the multifaced contribution of railways toward the urban growth, new architectural style, mode of construction, and technology cannot be recanted. The research is based on the documentation and analysis of the history of Lahore railway station design. First, this study uses primary and secondary data to offer a history of the Lahore railway station from its inception to final execution. Second, it explores the criteria adopted by the British for its site selection to make the station a defensible post. The research finding includes the visual features that enhanced the architectural character of the building. Qualitative methods are used including several other approaches, namely, literature review, archival data collection, analysis of photographs, and study of architectural drawings and old maps, to achieve the objectives.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000152",
+      "title_raw": "College classroom environment: Effects of sterility versus amiability on student and teacher performance",
+      "doi": "10.1177/0013916581136004",
+      "venue": null,
+      "abstract_text": "Effects of classroom physical environment were studied by adding bright wall paint, posters, kites, rugs, softer lighting, cushions, and plants to a college classroom while an identical control classroom was left barren and sterile. Two Introductory Psychology classes (students and instructors) were exposed to both experimental and control classrooms for one-half quarter (five weeks). Dependent variables were: amount of learning as measured by scores on academic tests taken in each room, student evaluation of teacher performance, student-teacher interaction, student attitude toward classroom environments, and amount of vandalism in each room. It was found that students had significantly higher percentage correct on the tests (F = 5.11, df = 1.90, p &lt;.0005), and teachers were rated significantly more positively in the experimental room. Differences in student-teacher interaction were not significantly different between the class-rooms. Student attitudes toward the experimental room were significantly more positive than toward the control room, and no vandalism occurred in either room.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000420",
+      "title_raw": "On happiness and human potentials: A review of research on hedonic and eudaimonic well-being",
+      "doi": "10.1017/cbo9780511527470",
+      "venue": null,
+      "abstract_text": "This book addresses key topics in social theory such as the basic structures of social life, the character of human activity, and the nature of individuality. Drawing on the work of Wittgenstein, the author develops an account of social existence that argues that social practices are the fundamental  phenomenon in social life. This approach offers insight into the social formation of individuals, surpassing and critiquing the existing practice theories of Bourdieu, Giddens, Lyotard and Oakeshott. In bringing Wittgenstein's work to bear on issues of social theory the book shows the relevance of his work to a body of thought to which it has never been applied. The book will be of particular interest to philosophers of the social sciences, a wide range of social theorists in political science and sociology, as well as some literary theorists.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000421",
+      "title_raw": "Trying to measure local well-being: Indicator development as a site of discursive struggles",
+      "doi": "10.1068/c10127",
+      "venue": null,
+      "abstract_text": "The New Labour government in the UK encouraged all local authorities to develop quality-of-life indicators. Development of these indicators was intended to engage local people in a shared vision for their area and to effect improvements in local well-being and sustainability. However, international research has reported a failure of such instruments to generate concrete policy change. This paper reports on a three-year ethnographic study in one local authority in North East England which took a discursive approach to analysing indicator development. The research shows how indicator development acted as a \u2018site of struggle\u2019 between competing discourses. These discursive struggles may have hampered the development of a set of indicators, but they allowed different conceptions of well-being, participation, indicators, and the policy-making process to be discussed and deliberated, inducing discursive shifts in the political arena. Policy makers and scholars should therefore place more focus on the process of developing indicators rather than the indicators that are produced, as it is these which have the potential to produce longer term effects on policy making.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000425",
+      "title_raw": "Which \u2018being\u2019 in wellbeing? Ontology, wellness and the geographies of happiness",
+      "doi": "10.1177/0309132517717100",
+      "venue": null,
+      "abstract_text": "This article examines current approaches to wellbeing research in the social sciences, reviewing their underlying ontologies to explore which \u2018being\u2019 is implied in contemporary research on wellbeing. It critically analyses themes from the \u2018science of happiness\u2019 for their focus on a decontextualized and individualized subject and highlights the emergence of an alternative, developing geographical research agenda in the study of wellbeing, termed here \u2018intra-active wellbeing\u2019. It is argued that this research agenda draws together formerly disparate aspects of geographical thought \u2013 classically humanistic wellbeing research and more-than-human inquiry \u2013 and creates space for a more pluralistic field of wellbeing scholarship.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000428",
+      "title_raw": "Integrating health, housing, and energy policies: Social practices of cooling",
+      "doi": "10.1080/09613218.2011.562720",
+      "venue": null,
+      "abstract_text": "Health, housing, and energy policies to address hot weather and heatwaves are typically based on divided &amp;#039;technical&amp;#039; and &amp;#039;behavioural&amp;#039; strategies and tend to be developed in isolation. This approach results in conflicting outcomes both within and across public policies, potentially leaving households more vulnerable to heat. The cooling practices of Australian householders are analysed using social practice theory to highlight inherent contradictions and tensions in current policies. A range of successful adaptive strategies is identified in participants of a dynamic peak pricing electricity programme or residents of an eco-living development without air-conditioning. The findings demonstrate how householders&amp;#039; ability to respond to heat is shaped by the elements of cooling practices, including common understandings about air-conditioners, practical knowledge and available housing infrastructures. There is a critical need to move towards a coordinated, multi-pronged and flexible public policy response framed around the dynamic cooling practices of households. This requires policies that prioritize and support adaptive cooling infrastructures, and that recognize, support and share householders&amp;#039; existing adaptive capacity to respond to heat.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000436",
+      "title_raw": "Wellbeing as an emergent property of social practice",
+      "doi": "10.1080/09585192.2016.1192053",
+      "venue": null,
+      "abstract_text": "Although working long hours is a common practice, scholars still know little about what really causes employees to work long hours. Drawing on social information processing and social learning theory, this study examines the role of social contextual antecedents (i.e. supervisor working hours and the perceived overtime climate of one\u2019s workgroup) in influencing employee working hours, after controlling for individual background and job characteristics. Further, we examine whether such relationships are contingent on employees\u2019 individual differences in their identification with leader and a collectivist tendency. A field study of 200 supervisor-subordinate dyads in South Korea revealed a strong positive relationship between the contextual antecedents and employees\u2019 working hours, as well as the moderating effects of the two individual difference variables. Specifically, we found that the relationship between supervisor working hours and employee working hours was more positive for low identifiers than for high identifiers, while the relationship between the perceived overtime climate and employee working hours was more positive for those low in collectivism than for those high in collectivism. Finally, we found that working long hours was associated with lower job satisfaction, higher psychological distress, lower in-role performance, but not with organizational citizenship behavior.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    },
+    {
+      "reference_id": "REF-2026-05-30-000836",
+      "title_raw": "jenvp.2013.09.004 The world health organization health and work performance questionnaire (HPQ)",
+      "doi": "10.1097/01.jom.0000052967.43131.51",
+      "venue": null,
+      "abstract_text": "This report describes the World Health Organization Health and Work Performance Questionnaire (HPQ), a self-report instrument designed to estimate the workplace costs of health problems in terms of reduced job performance, sickness absence, and work-related accidents-injuries. Calibration data are presented on the relationship between individual-level HPQ reports and archival measures of work performance and absenteeism obtained from employer archives in four groups: airline reservation agents (n = 441), customer service representatives (n = 505), automobile company executives (n = 554), and railroad engineers (n = 850). Good concordance is found between the HPQ and the archival measures in all four occupations. The paper closes with a brief discussion of the calibration methodology used to monetize HPQ reports and of future directions in substantive research based on the HPQ.",
+      "triage_reason": "edge_marginal_topic_medium_voi:clf=0.25,voi=0.44",
+      "classifier_confidence": 0.25,
+      "voi_score": 0.443
+    }
+  ]
+}

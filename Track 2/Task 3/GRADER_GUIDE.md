@@ -1,0 +1,154 @@
+# Track 2 Grader Guide
+
+**Start here.** This guide is the fastest path through the submission.
+
+---
+
+## 1. What this project is
+
+This submission is a gap-driven literature discovery pipeline for the cognitive neuroscience of architecture (CNFA).
+
+Task 2 supplies the search intent: it extracts epistemic gaps from the upstream knowledge system and converts them into targeted Boolean and AI-Citation queries. Task 3 then executes those queries, triages the results, and hands off accepted papers to a downstream consumer.
+
+The central finding supported by the evaluation:
+
+**Retrieval coverage, not triage accuracy, is the dominant source of missed relevant literature.**
+
+---
+
+## 2. Pipeline architecture
+
+```text
+TASK 2 — Gap Extraction + Query Generation
+  Article_Eater knowledge base (CNFA frameworks)
+      |
+      v  [gap_extractor.py]
+  Identified epistemic gaps (VOI-scored, gap-typed, fingerprinted)
+      |
+      v  [query_generator.py]
+  Boolean + AI-Citation queries  →  query_results.json
+
+TASK 3 — Literature Discovery Pipeline
+  query_results.json
+      |
+      v  [search_runner.py]
+  SerpAPI / scholarly / paperscraper  →  search_results.json
+      |
+      v  [db_loader.py + reference_harvester.py]
+  article_references  (1,193 candidates, incl. PDF-harvested)
+      |
+      v  [stage1_metadata_triage.py]
+  Stage 1 metadata screen  (984 rejected; 209 to Stage 2A)
+      |
+      v  [abstract_collector.py]
+  Stage 2A abstract collection  S2 → CrossRef → PubMed → OpenAlex
+      |
+      v  [stage2b_triage_decision.py]
+  Stage 2B triage decision  (10 ACCEPT, 21 EDGE_CASE, 36 REJECT)
+      |
+      v  [pdf_acquirer.py]
+  v_acquisition_queue  →  Unpaywall → OpenAlex OA → scidownl (gated)
+      |
+      v  [ae_handoff.py]
+  handoff_outbox/*.json  (9 artifacts exported)
+      |
+      v  [ae_inbox_stub.py]
+  AE validation  →  9/9 valid, 0 invalid
+```
+
+All stages log atomic transitions to `lifecycle_transitions`. Every row in `article_references` can be traced from first discovery through final decision.
+
+---
+
+## 3. One-command verification
+
+```bash
+cd "Track 2/Task 3"
+python3 verify_track2_workflow.py
+```
+
+Expected output: `CHAIN: 9/9 checks passed`
+
+To regenerate all evidence artifacts:
+
+```bash
+python3 run_pipeline.py --mode all-evidence
+```
+
+Task 2 reproducibility (requires local Article_Eater checkout — see [HOW_TO_RUN.md](Track 2/Task 2/HOW_TO_RUN.md)):
+
+```bash
+cd "Track 2/Task 2"
+bash run_gap_extraction.sh --output /tmp/gap_report.json --top-n 10
+```
+
+---
+
+## 4. Fastest document review path
+
+Three documents cover the full submission:
+
+1. This file — architecture, navigation, one-command verification
+2. [TRACK2_EVALUATION_REPORT.md](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) — benchmark, recall, precision, error taxonomy, ablation, retrieval-bottleneck finding
+3. [PROVEIT_WORKS.md](Track 2/Task 3/PROVEIT_WORKS.md) — one paper traced end-to-end through all 10 lifecycle stages including AE handoff
+
+Supporting references:
+
+- [BENCHMARK_EVALUATION.md](Track 2/Task 3/BENCHMARK_EVALUATION.md) — authoritative metric table (cite this for all numbers; full methodology in TRACK2_EVALUATION_REPORT.md)
+- [FAILURE_ANALYSIS.md](Track 2/Task 3/FAILURE_ANALYSIS.md) — failure modes connected into one measurement → discovery → action story
+- [LESSONS_LEARNED.md](Track 2/Task 3/LESSONS_LEARNED.md) — what evaluation changed about the project
+- [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) — manual precision review and threshold sensitivity
+- [NULL_RESULTS_REPORT.md](Track 2/Task 3/NULL_RESULTS_REPORT.md) — 2 null queries and 225 MISSING_ABSTRACT rows, documented
+- [MANIFEST.md](Track 2/Task 3/MANIFEST.md) — single-page audit trail for Task 3
+- [Track 2/Task 2/MANIFEST.md](Track 2/Task 2/MANIFEST.md) — Task 2 deliverables and autograder result
+- [Phase 7/handoff_outbox/handoff_manifest.json](Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json) — downstream-ready export evidence
+
+---
+
+## 5. Implemented vs demonstrated
+
+| Component | Implemented | Demonstrated | Evidence |
+|---|---|---|---|
+| Task 2 gap extraction | Yes | Yes | [gap_results.json](Track 2/Task 2/Phase 2/gap_results.json) |
+| Task 2 query generation | Yes | Yes | [query_results.json](Track 2/Task 2/Phase 3/query_results.json) |
+| Retrieval pipeline | Yes | Yes | [search_results.json](Track 2/Task 3/Phase 2/search_results.json) |
+| DB buffer + lifecycle logging | Yes | Yes | task3_pipeline_lifecycle.db |
+| Stage 1 triage | Yes | Yes | [MANIFEST.md](Track 2/Task 3/MANIFEST.md) |
+| Stage 2A abstract collection | Yes | Yes | [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) |
+| Stage 2B triage | Yes | Yes | [PROVEIT_WORKS.md](Track 2/Task 3/PROVEIT_WORKS.md) |
+| PDF acquisition logic | Yes | Dry-run only | [STAGE3_EVIDENCE_AUDIT.md](Track 2/Task 3/STAGE3_EVIDENCE_AUDIT.md) |
+| AE handoff layer | Yes | Yes, local validation | [handoff_manifest.json](Track 2/Task 3/Phase 7/handoff_outbox/handoff_manifest.json) |
+| One-command wrapper | Yes | Yes | [run_pipeline.py](Track 2/Task 3/run_pipeline.py) |
+| Chain verifier | Yes | Yes — 9/9 | [verify_track2_workflow.py](Track 2/Task 3/verify_track2_workflow.py) |
+
+---
+
+## 6. What this submission provides beyond the rubric
+
+The rubric requires: query generation, search, triage, and PDF acquisition.
+
+This submission additionally provides:
+
+| Addition | Evidence document |
+|---|---|
+| 30-paper gold-standard benchmark corpus | [CNFA_GOLD_STANDARD.md](Track 2/Task 3/CNFA_GOLD_STANDARD.md) |
+| Retrieval recall measured against benchmark | [TRACK2_EVALUATION_REPORT.md §4](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
+| ACCEPT precision — manual relevance assessment | [HUMAN_VALIDATION.md](Track 2/Task 3/HUMAN_VALIDATION.md) |
+| Error taxonomy — failure mode decomposition | [FAILURE_ANALYSIS.md](Track 2/Task 3/FAILURE_ANALYSIS.md) |
+| Query ablation study (K=1,3,5,8,9) | [TRACK2_EVALUATION_REPORT.md §6.1](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
+| VOI–ACCEPT correlation (negative finding) | [TRACK2_EVALUATION_REPORT.md §6.2](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
+| Baseline query comparison | [TRACK2_EVALUATION_REPORT.md §6.3](Track 2/Task 3/TRACK2_EVALUATION_REPORT.md) |
+| End-to-end chain verifier (9/9 checks) | [verify_track2_workflow.py](Track 2/Task 3/verify_track2_workflow.py) |
+| Downstream handoff + AE validation layer | [Phase 7/ae_handoff.py](Track 2/Task 3/Phase 7/ae_handoff.py), [ae_inbox_stub.py](Track 2/Task 3/Phase 7/ae_inbox_stub.py) |
+
+---
+
+## 7. Known limits
+
+- Task 3 PDF acquisition is dry-run evidenced, not live-demonstrated in the current verified snapshot.
+- The local handoff layer exports 9 valid artifacts; 1 ACCEPT row is withheld because it lacks a usable abstract.
+- The demonstrated classifier is keyword fallback, not the intended semantic classifier.
+- Task 2 reproducibility depends on a local Article_Eater checkout (not bundled).
+- The AE handoff is local stub validation, not production AE ingestion.
+
+The strongest evaluation claim is about retrieval coverage: the pipeline correctly identifies and stages papers for its targeted gaps; it does not cover the broader CNFA literature because it was not given queries that cover it.

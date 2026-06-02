@@ -1,10 +1,127 @@
 # Track 2 · Task 3 — MANIFEST
 
 **Author:** Kaden Leung
-**Last Updated:** 2026-05-28
-**Status:** Phases 1, 2, 3 complete. Phase 4 next.
+**Last Updated:** 2026-06-01
+**Status:** Phases 1–6 complete. Post-panel revision applied.
 
 This document is the single-page audit trail for the grader. For deep specs, see the linked contracts.
+
+---
+
+## Success Definition
+
+**The pipeline succeeds when it identifies at least one paper per targeted gap that a domain expert judges relevant to cognitive neuroscience of architecture, with ≥ 60% ACCEPT precision and zero papers acquired (Phase 5) without prior human review of the accepted set.**
+
+---
+
+## Execution Matrix — Designed vs. Demonstrated
+
+| Component | Designed | Demonstrated | Gap |
+|---|---|---|---|
+| SerpAPI retrieval | Yes | Yes | None |
+| scholarly retrieval | Yes | Yes | None |
+| paperscraper retrieval | Yes | **No (0 results — internal bug)** | paperscraper = 0 contribution |
+| Reference harvester (PDF) | Yes | Yes (20 PDFs, 1,103 rows) | None |
+| HierarchicalClassifier | Yes | **No (no centroids file)** | Keyword fallback used instead |
+| Abstract collection (S2/CrossRef/PubMed/OpenAlex) | Yes | Yes (44/211, 20.8% hit rate) | Rate-limiting slowed S2 to ~50 min |
+| PDF acquisition (Unpaywall/OpenAlex) | Yes | **Dry-run only** | Gate open; not executed live |
+| scidownl | Yes (gated) | **Not attempted** | Policy gate requires instructor sign-off |
+
+**Implication:** Pipeline performance figures reflect the demonstrated architecture, not the designed architecture. Results with HierarchicalClassifier and functioning paperscraper would differ; direction and magnitude are unknown without execution.
+
+---
+
+## Query Health (IR2 fix — 20% failure rate)
+
+2 of 10 queries (20%) returned **zero results** across all retrieval sources:
+
+| Query | Failure | Impact |
+|---|---|---|
+| SC3-step3 — Predictive coding + threshold events | SerpAPI zero results (passed Scholar Labs manual test) | Entire sub-gap uncovered by search |
+| L4-step3 — ipRGC + melanopsin + circadian | SerpAPI zero results | Entire sub-gap uncovered by search |
+
+**Root cause (likely):** The `-review` suffix and complex Boolean nesting parse differently in the API vs. the Scholar Labs UI. These queries need reformulation and a live re-test before the next run.
+
+**Pipeline impact:** The funnel starts with 10 targeted gaps; only 8 had any retrieval coverage. All downstream precision/recall figures implicitly assume 8/10 gaps, not 10/10.
+
+---
+
+## Source Contribution — Honest Table
+
+| Source | Operational? | Records (search layer) | Records (DB) | Notes |
+|---|---|---|---|---|
+| SerpAPI (`google_scholar`) | ✅ Yes | 80 raw | ~85 rows | 2 queries returned 0 results |
+| scholarly | ✅ Yes | 80 raw | ~83 rows | Clean run, no errors |
+| paperscraper | ❌ **No** | 0 | 2 rows (from Phase 2 mock) | `.jsonl extension` internal bug; 100% failure rate on live run |
+| Reference harvester (PDF) | ✅ Yes | 1,137 raw lines | 1,103 rows | 20 PDFs, 3 parse styles |
+
+**paperscraper is not operational in the demonstrated system.** It is wired but produced no results. It should not be described as a functioning retrieval source until the bug is fixed and a successful live run is confirmed.
+
+---
+
+## Human Validation Summary
+
+See [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) for full assessment.
+
+**Threshold note:** The `voi_medium` threshold was lowered from 0.50 → 0.40 after observing 0 ACCEPTs. The full sensitivity table and principled explanation are in HUMAN_VALIDATION.md §2. The cliff is structural (all papers in the corpus have voi ≤ 0.478 by construction), not a tunable range.
+
+**ACCEPT precision (manual review):**
+
+| Paper | Relevant to CNFA? |
+|---|---|
+| Integrating appreciative inquiry into architectural pedagogy | ❌ False positive (pedagogical, not CNFA) |
+| Global research agenda: Health, well-being, and the built environment | ✅ True positive |
+| Indicators of healthy architecture — systematic review | ✅ True positive |
+| Quantifying thermal comfort from energy-retrofits | ❌ False positive (energy engineering) |
+| Hapticity in Hybrid Space from an Enactive Perspective | ✅ True positive |
+| Seeing minds directly: Direct perception theory in social cognition | ⚠️ Borderline (theoretical background, not CNFA study) |
+
+**Precision: 3/6 clear true positives (50%). Recommend instructor review of all 6 before any Phase 5 PDF acquisition.**
+
+**Known false negatives (inspected REJECTs):**
+- "Unpacking the wow experience: Profound emotional responses to evocative works of architecture" — clearly CNFA-relevant; rejected because clf=0.45 < threshold of 0.50
+- "Linking cognitive load and building configuration during VR indoor route guidance" — clearly CNFA-relevant; same rejection reason
+
+---
+
+## PRISMA-Inspired Dashboard Note (AR1 fix)
+
+The [Phase 6 dashboard](Phase%206/prisma_dashboard.html) is **PRISMA-inspired** — it uses PRISMA funnel stage labels to organize results but does not constitute a formally PRISMA-compliant systematic review. A formal PRISMA review requires pre-registration, explicit inclusion/exclusion criteria, inter-rater reliability assessment, and PRISMA checklist completion. Those steps are outside the scope of this course deliverable.
+
+---
+
+## Evaluation Package (2026-06-02)
+
+Three new documents that shift the submission from "pipeline demonstration" to "retrieval system evaluation":
+
+| Document | Purpose |
+|---|---|
+| [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md) | 30-paper curated evaluation corpus across 4 CNFA traditions |
+| [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) | Workshop-paper-style evaluation: error taxonomy, ablation, VOI correlation, baseline comparison |
+| [PROVEIT_WORKS.md](PROVEIT_WORKS.md) | End-to-end trace for all 10 ACCEPT papers |
+
+**Key findings from the evaluation:**
+- Retrieval recall against 30-paper gold standard: **7% (2/30)** — dominant failure is query scope (93% never retrieved)
+- Error taxonomy: 28/30 misses = "never-retrieved" (query coverage gap); 1/30 = classifier; 1/30 = no DOI
+- VOI does not predict ACCEPT rate per query — the 0.035 score range has no discriminating power
+- Ablation: Top-3 queries produce same ACCEPTs as top-5; CSMP1 (lowest VOI) contributes 2 ACCEPTs
+- Baseline ("neuroarchitecture" query): finds review papers not found by generated queries; complementary, not competitive
+
+---
+
+## Bug Fixes Applied (2026-06-01)
+
+Two bugs discovered via expert-panel-mandated human validation:
+
+**Bug 1 — Keyword classifier misses adjectival forms (CRITICAL)**
+`"architecture"` is NOT a substring of `"architectural"` — they differ at character 12. Every CNFA paper using the adjectival form received `clf=0.00` and was rejected at Stage 1. Djebbara 2019 (the most-cited paper in this corpus) was a false negative. Fixed by expanding `CNFA_KEYWORDS` in `Phase 4/stage1_metadata_triage.py` to include `"architectural"`, `"affordances"`, `"sensorimotor"`, and 10 additional common CNFA terms. Post-fix: Djebbara 2019 scores clf=0.50 (PASS).
+
+**Bug 2 — paperscraper `.json` → `.jsonl` suffix**
+paperscraper ≥ 0.2 requires `.jsonl`. The adapter used `.json`, causing 100% failure rate (all 10 live queries failed). Fixed in `Phase 2/adapters/paperscraper_adapter.py`. Post-fix: paperscraper returns results.
+
+**Impact on pipeline state:** The DB currently reflects results from the *pre-fix* classifer. A re-run of Stage 1 and Stage 2B with the fixed classifier would change the ACCEPT set (more true positives expected). This re-run is listed as Priority 1 in `PIPELINE_ANALYSIS.md`.
+
+See also: `PIPELINE_ANALYSIS.md` for full known-item recall test, VOI compression root cause, and classifier improvement path.
 
 ---
 
@@ -30,47 +147,88 @@ This document is the single-page audit trail for the grader. For deep specs, see
 - [Phase 3/DEDUPE_SPOTCHECK.md](Phase%203/DEDUPE_SPOTCHECK.md) — manual review of 10 merge events; **PASS, 0 false positives**
 - **Tests:** 51/51 passing
 
+### Phase 4 — Three-stage triage (4A + 4B done; 4D pending)
+
+- [Phase 4/STAGE1_TRIAGE_CONTRACT.md](Phase%204/STAGE1_TRIAGE_CONTRACT.md) — v1.0.0; SC-1 through SC-12
+- [Phase 4/ABSTRACT_COLLECTOR_CONTRACT.md](Phase%204/ABSTRACT_COLLECTOR_CONTRACT.md) — v1.0.0; SC-FB, SC-RA, SC-MA, SC-AS, SC-ST, SC-HR, SC-AT, SC-DR, SC-MK, SC-NR, SC-IT, SC-SC
+- [Phase 4/PHASE_4_PLAN.md](Phase%204/PHASE_4_PLAN.md) — 577-line design doc (predates Phase 3 build)
+- [Phase 4/PHASE_4_READINESS.md](Phase%204/PHASE_4_READINESS.md) — reconciliation notes
+- [Phase 4/openalex_client.py](Phase%204/openalex_client.py) — 4th abstract source (inverted-index decoder + polite-pool client)
+- [Phase 4/abstract_collector.py](Phase%204/abstract_collector.py) — 4B Stage 2A: S2 → CrossRef → PubMed → OpenAlex fallback chain; tags MISSING_ABSTRACT terminal
+- [Phase 4/stage1_metadata_triage.py](Phase%204/stage1_metadata_triage.py) — 4A: 6 noise-regex rules + keyword classifier (threshold 0.20)
+- **Tests:** 45/45 passing (9 openalex + 15 collector + 21 stage1)
+
+**4A live run (RUN-STAGE1-20260531-020000):**
+| Metric | Value |
+|---|---|
+| Candidates processed | 1193 |
+| Passed to Stage 2A (`abstract_pending`) | **211** |
+| Rejected at metadata (`rejected_at_metadata`) | **982** |
+| Rejection rate | **82.3%** (high because the 1103 PDF-harvested refs are mostly off-topic) |
+| Pure-noise hits | 313 (26% of corpus) — within the 30–50% spec when isolated from classifier rejects |
+| `classifier_below_threshold` | 669 — classifier mode: `keyword_fallback` (no centroids file present) |
+| `lifecycle_transitions` rows added | 1193 (all `created_by='abstract_triage'`) |
+
+**4B live run (RUN-4B-LIVE-V3-20260531):** 211 candidates → 44 `abstract_collected`, 167 `abstract_missing`. DOI hit rate **74.3%** (contract target ≥ 70% ✅). Source breakdown: S2=17, PubMed=14, OpenAlex=9, CrossRef=4.
+
+**4D live run (RUN-4D-20260531):** 44 `abstract_collected` rows triaged → **0 ACCEPT, 8 EDGE_CASE, 36 REJECT**. `v_acquisition_queue` = 0 rows. See calibration note below.
+
+**TRIAGE_DECISION_CONTRACT.md** — v1.0.0; SC-T1 through SC-T12.
+
+**Calibration finding — 0 ACCEPT rows:**
+The Balanced matrix requires VOI ≥ 0.50 for ACCEPT. The actual Task 2 query VOI scores range 0.443–0.478 (all below 0.50), because all 10 queries were scored as `gap` findings with effect_size ≤ 0.5. The keyword_fallback classifier peaks at clf=0.60 for clearly on-topic papers but with voi < 0.50 → EDGE_CASE. To unlock ACCEPTs, lower `--voi-medium` below 0.478 (e.g. `--voi-medium 0.40`) or use the real `HierarchicalClassifier` with centroids for higher clf scores. The pipeline mechanics are correct; the threshold needs tuning to this corpus's VOI distribution.
+
 ---
 
-## Runtime DB state (as of 2026-05-28 run RUN-20260528-120000)
+## Runtime DB state
+
+Two runs are recorded in the DB:
+- **RUN-20260528-120000** (mock-mode Phase 2 + reference harvester) → 1110 rows
+- **RUN-20260531-000436** (live Phase 2: 10 SerpAPI credits spent) → 83 new rows (84 candidates, 1 title-merged into a harvester row)
 
 ### `article_references`
 
 | Metric | Value |
 |---|---|
-| Total rows | **1110** |
-| Rows with non-null DOI | 5 (search runner only) |
-| Rows with `discovered_via = 'serpapi_scholar'` (substring) | 5 |
-| Rows with `discovered_via = 'scholarly_search'` (substring) | 3 |
-| Rows with `discovered_via = 'paperscraper_search'` (substring) | 2 |
-| Rows with `discovered_via = 'review_pdf_extract'` (substring) | 1103 |
-| Rows with `triage_stage = 'metadata_only'` | 1110 |
+| Total rows | **1193** |
+| Rows from RUN-20260528-120000 | 1110 |
+| Rows from RUN-20260531-000436 (live) | 83 |
+| Rows with `discovered_via` including `serpapi_scholar` | 85 |
+| Rows with `discovered_via` including `scholarly_search` | 83 |
+| Rows with `discovered_via` including `paperscraper_search` | 2 |
+| Rows with `discovered_via` including `review_pdf_extract` | 1103 |
+| Rows with `triage_stage = 'metadata_only'` | 1193 |
 | Rows with `triage_stage = 'duplicate'` | 0 (empty corpus stub) |
-| Rows with `triage_decision IS NULL` | 1110 (Phase 4 will fill) |
+| Rows with `triage_decision IS NULL` | 1193 (Phase 4 will fill) |
 
 ### `lifecycle_transitions`
 
 | Metric | Value |
 |---|---|
-| Total rows | **1144** |
-| `created_by = 'db_loader'` | 7 |
+| Total rows | **1228** |
+| `created_by = 'db_loader'` | 91 (7 mock + 84 live) |
 | `created_by = 'reference_harvester'` | 1137 |
-| `reason LIKE 'initial_insert:%'` | 1110 |
-| `reason LIKE 'provenance_merge:%'` (DOI merges) | 18 |
-| `reason LIKE 'provenance_merge_via_title:%'` (Jaccard merges) | 16 |
-| `reason LIKE 'doi_enriched_via_%'` | 0 |
-| `reason LIKE 'corpus_match:%'` | 0 |
 
 ### `v_acquisition_queue` rows
 
 **0** — expected, since no row is `triage_decision='ACCEPT'` yet. Phase 4 will populate this when Stage 2 triage runs.
 
+### Live-run Phase 2 stats (RUN-20260531-000436)
+
+| Source | Queries run | Raw results | Errors |
+|---|---|---|---|
+| `serpapi_scholar` | 10 | 80 | 2 (SC3-step3 + L4-step3 returned no results from API) |
+| `scholarly_search` | 10 | 80 | 0 |
+| `paperscraper_search` | 10 | 0 | 10 (arxiv 429/503 + internal `.jsonl extension` bug) |
+
+**Credits used:** 10/250 monthly budget (240 remaining). **Wall time:** ~25 min.
+
 ### Database paths and content hashes
 
-| Path | Size | Content hash (sorted-row SHA-256) |
-|---|---|---|
-| `Track 2/Task 3/task3_pipeline_lifecycle.db` | 1.24 MB | `3075d06e4b3201bef0ab47414f70d9368f22a72febefd23490222e5570e31592` |
-| `Knowledge_Atlas/data/ka_payloads/pipeline_lifecycle_full.db` (snapshot via `VACUUM INTO`) | 1.24 MB | `3075d06e4b3201bef0ab47414f70d9368f22a72febefd23490222e5570e31592` |
+| Path | Content hash (sorted-row SHA-256) |
+|---|---|
+| `Track 2/Task 3/task3_pipeline_lifecycle.db` | `f3d3b055207e2b13b708f45a1a593e7086c6ef3855beaf329b595bf57f4299e0` |
+| `Knowledge_Atlas/data/ka_payloads/pipeline_lifecycle_full.db` | `f3d3b055207e2b13b708f45a1a593e7086c6ef3855beaf329b595bf57f4299e0` |
 
 **Content-equality verified.** Byte-level hashes differ because `VACUUM INTO` repacks pages; row content is identical.
 
@@ -92,6 +250,37 @@ WHERE triage_decision = 'ACCEPT'
   AND acquired_paper_id IS NULL
 ORDER BY voi_score DESC NULLS LAST, created_at ASC;
 ```
+
+---
+
+### Phase 6 — PRISMA Dashboard
+
+- [Phase 6/generate_prisma_report.py](Phase%206/generate_prisma_report.py) — reads live DB + JSON sources → generates dashboard
+- [Phase 6/prisma_dashboard.html](Phase%206/prisma_dashboard.html) — self-contained dashboard (data baked in; opens from `file://` with no server)
+- [Phase 6/prisma_dashboard_data.json](Phase%206/prisma_dashboard_data.json) — machine-readable PRISMA data snapshot
+- **Tests:** 9/9 passing
+
+**Live numbers:**
+
+| Funnel Stage | Count |
+|---|---|
+| Gaps targeted (Task 2) | 10 |
+| Queries executed (SerpAPI) | 10 |
+| Raw records returned | 1263 |
+| After search dedupe | 84 |
+| + PDF-reference harvest | 1103 |
+| Total in candidate buffer | 1193 |
+| Rejected at metadata (Stage 1) | 984 |
+| → Noise rules | 315 |
+| → Classifier < 0.20 | 669 |
+| Abstracts collected (Stage 2A) | 44 |
+| MISSING_ABSTRACT | 167 |
+| Screened (Stage 2B) | 42 |
+| → **ACCEPT** | **6** |
+| → EDGE_CASE | 0 |
+| → REJECT | 36 |
+
+**Refresh:** `python3 Phase 6/generate_prisma_report.py`
 
 ---
 

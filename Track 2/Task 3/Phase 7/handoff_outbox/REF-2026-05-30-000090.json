@@ -1,0 +1,17 @@
+{
+  "abstract": "In recent years, school building policy in New Zealand has emphasised the development of flexible learning spaces (fls). Through deliberate design choices, flexible learning spaces are intended to promote student-centred and collaborative teaching practice, creating an innovative learning environment which is adaptable and future-focussed. However, this intended practice is not always realised. This article draws on data from a study examining the practice of seven English teachers working in a flexible learning space in one New Zealand secondary school. Using Lefebvre\u2019s spatial triad of conceived, perceived and lived space, the author will argue that elements of the learning space are imbued with layers of visual symbolism, highlighting the tensions between the rhetoric and the reality of innovative practice in flexible learning spaces. While the policy intent of the flexible learning space is made visible through elements of its design, the use of the space by teachers and students indicates that their visual interpretations of these elements can serve to reinforce teaching and learning practices that flexible learning spaces are designed to disrupt. These findings highlight that teachers require increased spatial competence and critical awareness of visual learning space elements to maximise the potential of fls for innovative teaching and learning.",
+  "abstract_source": "semantic_scholar",
+  "discovered_via": [
+    "review_pdf_extract"
+  ],
+  "discovery_run_id": "RUN-20260528-120000",
+  "doi": "10.1163/23644583-bja10045",
+  "handoff_version": "1.0",
+  "publication_year": 2024,
+  "reference_id": "REF-2026-05-30-000090",
+  "title": "Possibilities, perceptions and practices: Visibilising the impact of flexible learning spaces",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": null,
+  "voi_score": 0.443
+}

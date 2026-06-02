@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "schema_version": "1.1.0",
+    "run_id": "RUN-PAPERSCRAPER-LIVE-20260601",
+    "generated_at": "2026-06-02T01:52:23Z",
+    "input_query_count": 10,
+    "queries_processed": 3,
+    "queries_skipped": {},
+    "sources_enabled": [
+      "paperscraper_search"
+    ],
+    "per_source_stats": {
+      "paperscraper_search": {
+        "queries_run": 3,
+        "results_raw": 0,
+        "retries": 0,
+        "errors": 3
+      }
+    },
+    "credits_used": 0,
+    "credits_max": 50,
+    "candidates_total_raw": 0,
+    "candidates_after_dedupe": 0,
+    "null_result_queries": 3,
+    "mock_mode": false,
+    "serpapi_engine": "google_scholar"
+  },
+  "results": [],
+  "null_results": [
+    {
+      "discovered_query_display_id": "SC3-step3",
+      "discovered_query": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"buildings\") AND \"threshold event\" -review",
+      "source_voi_score": 0.478,
+      "reason": "zero_results_across_all_sources",
+      "queried_at": "2026-06-02T01:39:35Z"
+    },
+    {
+      "discovered_query_display_id": "SC3-step6",
+      "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+      "source_voi_score": 0.478,
+      "reason": "zero_results_across_all_sources",
+      "queried_at": "2026-06-02T01:43:27Z"
+    },
+    {
+      "discovered_query_display_id": "SC1-step2",
+      "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+      "source_voi_score": 0.478,
+      "reason": "zero_results_across_all_sources",
+      "queried_at": "2026-06-02T01:47:15Z"
+    }
+  ],
+  "skipped_queries": []
+}

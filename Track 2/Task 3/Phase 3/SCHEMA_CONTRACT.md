@@ -166,21 +166,26 @@ Phase 4 will add `classifier_below_threshold`, `abstract_collected:<source>`, `t
 |---|---|---|
 | `db_loader` | `db_loader.py` | 3 |
 | `reference_harvester` | `reference_harvester.py` | 3 |
-| `abstract_collector` | (future) | 4 |
-| `abstract_triage` | (future) | 4 |
-| `pdf_acquirer` | (future) | 5 |
+| `abstract_collector` | `abstract_collector.py` | 4 |
+| `abstract_triage` | `stage1_metadata_triage.py`, `stage2b_triage_decision.py` | 4 |
+| `pdf_acquirer` | `pdf_acquirer.py` | 5 |
 | `manual_edit` | Reserved for ad-hoc human SQL edits | — |
 
 A linter test (`test_transition_created_by_in_enum`) verifies every `INSERT INTO lifecycle_transitions` in Phase 3 code passes one of these.
 
-### 7.2 `triage_stage` enum (Phase 3 emits)
+### 7.2 `triage_stage` enum (Phase 3 + Phase 4 emit)
 
 | Value | Set by | Meaning |
 |---|---|---|
 | `metadata_only` | Phase 3 initial insert | Default — row exists, no triage yet |
 | `duplicate` | Phase 3 corpus match | Row matches the existing corpus; PRISMA counts as "identified, removed at dedupe" |
+| `rejected_at_metadata` | Phase 4 Stage 1 (`abstract_triage`) | Title noise or classifier confidence < 0.20; terminal |
+| `abstract_pending` | Phase 4 Stage 1 (`abstract_triage`) | Passed metadata screen; awaiting abstract collection |
+| `abstract_collected` | Phase 4 Stage 2A (`abstract_collector`) | Abstract found, ready for Stage 2B decision |
+| `abstract_missing` | Phase 4 Stage 2A (`abstract_collector`) | No abstract from any source; terminal with `triage_decision='MISSING_ABSTRACT'` |
+| `triage_complete` | Phase 4 Stage 2B (`abstract_triage`) | Final triage decision applied (ACCEPT/EDGE_CASE/REJECT) |
 
-Phase 4 will add `rejected_at_metadata`, `abstract_pending`, `triaged`. Phase 3's contract owns only `metadata_only` and `duplicate`.
+The DDL on `article_references.triage_stage` is `TEXT NOT NULL DEFAULT 'metadata_only'` — there is no CHECK constraint. Enforcement of valid enum values is application-side in the writer modules.
 
 ---
 

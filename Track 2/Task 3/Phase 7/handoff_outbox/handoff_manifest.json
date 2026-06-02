@@ -1,0 +1,24 @@
+{
+  "artifact_files": [
+    "REF-2026-05-30-000006.json",
+    "REF-2026-05-30-000090.json",
+    "REF-2026-05-30-000137.json",
+    "REF-2026-05-30-000409.json",
+    "REF-2026-05-30-000416.json",
+    "REF-2026-05-30-000417.json",
+    "REF-2026-05-30-000430.json",
+    "REF-2026-05-31-000064.json",
+    "REF-2026-05-31-000065.json"
+  ],
+  "db_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Track 2/Task 3/task3_pipeline_lifecycle.db",
+  "handoff_version": "1.0",
+  "normalized_doi_count": 8,
+  "selected_accept_rows": 10,
+  "skipped": [
+    {
+      "reason": "missing_abstract",
+      "reference_id": "REF-2026-05-30-000001"
+    }
+  ],
+  "written_count": 9
+}

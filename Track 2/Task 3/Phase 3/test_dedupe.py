@@ -14,6 +14,7 @@ from dedupe import (
     CorpusSnapshot,
     insert_or_dedupe_reference,
     merge_discovered_via,
+    normalize_doi,
     title_jaccard,
 )
 
@@ -68,8 +69,8 @@ def test_doi_exact_match_merges_via(db):
 
 def test_doi_match_preserves_first_inserted_id(db):
     """Branch A returns the existing reference_id, not a new one."""
-    c1 = Candidate(title_raw="Foo", doi="10.1000/x", discovered_via="serpapi_scholar")
-    c2 = Candidate(title_raw="Foo (alt cap)", doi="10.1000/x", discovered_via="paperscraper_search")
+    c1 = Candidate(title_raw="Foo", doi="10.1000/xyz.001", discovered_via="serpapi_scholar")
+    c2 = Candidate(title_raw="Foo (alt cap)", doi="10.1000/xyz.001", discovered_via="paperscraper_search")
     o1 = _insert(db, c1)
     o2 = _insert(db, c2)
     assert o2.reference_id == o1.reference_id
@@ -220,3 +221,42 @@ def test_title_jaccard_arithmetic():
     assert title_jaccard("", "anything") == 0.0
     # 3 shared of 4 union → 0.75
     assert title_jaccard("a b c", "a b c d") == pytest.approx(0.75)
+
+
+# ---------------------------------------------------------------------------
+# Truncated / corrupt DOI validation
+# ---------------------------------------------------------------------------
+
+def test_truncated_doi_treated_as_absent():
+    """normalize_doi() returns None for truncated DOIs like '10.1016/j' (no suffix)."""
+    assert normalize_doi("10.1016/j") is None
+    assert normalize_doi("10.1016/") is None
+    assert normalize_doi("10.x/") is None  # too short registrant
+
+
+def test_valid_doi_not_affected():
+    """Full well-formed DOIs pass through normalize_doi correctly."""
+    assert normalize_doi("10.1073/pnas.1912264116") == "10.1073/pnas.1912264116"
+    assert normalize_doi("https://doi.org/10.1016/j.neuron.2012.09.005") == "10.1016/j.neuron.2012.09.005"
+
+
+def test_truncated_doi_not_used_as_match_key(db):
+    """A candidate with a truncated DOI is NOT matched by DOI — falls through to title or fresh insert."""
+    # Insert a row with a proper title (no DOI)
+    c1 = Candidate(title_raw="Architectural affordances and predictive spatial coding",
+                   discovered_via="serpapi_scholar", doi=None)
+    with db:
+        o1 = insert_or_dedupe_reference(c1, db, run_id="RUN-T", created_by="db_loader", now=_FIXED_NOW)
+
+    # Now insert a second candidate with a truncated DOI and same title
+    c2 = Candidate(title_raw="Architectural affordances and predictive spatial coding",
+                   discovered_via="scholarly_search", doi="10.1016/j")  # truncated — should be ignored
+    with db:
+        o2 = insert_or_dedupe_reference(c2, db, run_id="RUN-T", created_by="db_loader", now=_FIXED_NOW)
+
+    # Should NOT have created a second row (title dedup fires, not DOI dedup)
+    n = db.execute("SELECT COUNT(*) FROM article_references").fetchone()[0]
+    assert n == 1
+    # The truncated DOI must not have been stored either
+    stored_doi = db.execute("SELECT doi FROM article_references").fetchone()[0]
+    assert stored_doi is None

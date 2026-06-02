@@ -22,3 +22,6 @@ prisma_counts.json
 
 # Phase 5: policy gate (must be manually created, never pre-committed)
 Phase 5/policy_clearance.json
+# Phase 5: downloaded PDFs (binary artifacts, reproducible)
+Phase 5/acquired_pdfs/
+Phase 5/acquisition_report.json

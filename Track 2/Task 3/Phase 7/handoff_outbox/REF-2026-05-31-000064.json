@@ -1,0 +1,18 @@
+{
+  "abstract": "Abstract\n          The integration of digital technology offers new opportunities to design, visualize, and experience physical spaces. Recent research suggest that virtual spaces can stimulate genuine physiological reactions and emotions, creating a sense of embodiment. This paper focuses on the potential to use the \u201cvirtual affordance\u201d in real space to stimulate more architecture-body interactions. The challenge lies in establishing meaningful connections between virtual information and the physical environment to enrich the experience of hybrid space in architecture. Hapticity plays a significant role in shaping the architectural experience. Beyond the traditional ascription of the sense of touch, this paper re-examines the expanded understanding of hapticity. Drawing from these new understandings and the interplay of perception and action within the framework of embodied cognition, this study explores how individuals simultaneously perceive and engage in both virtual and physical spaces, enriching the haptic quality of these hybrid environments through the mirror neuron system. It examines relevant architectural cases and various strategies, such as cognitive efforts, bodily movement, situatedness, and shared experiences. The paper explores how the digital layer could be a valid stimulus to evoke a sense of hapticity and bodily movement, thereby better engaging people with the physical space and information.",
+  "abstract_source": "crossref",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260531-000436",
+  "doi": "10.1007/978-981-96-4749-1_4",
+  "handoff_version": "1.0",
+  "publication_year": 2024,
+  "reference_id": "REF-2026-05-31-000064",
+  "title": "Hapticity in Hybrid Space from an Enactive Perspective",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "International Conference on Architecture across \u2026",
+  "voi_score": 0.443
+}

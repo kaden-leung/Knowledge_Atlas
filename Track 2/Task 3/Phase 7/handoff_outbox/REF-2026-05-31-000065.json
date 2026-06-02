@@ -1,0 +1,18 @@
+{
+  "abstract": "The Direct Perception Theory (DPT) in social cognition is a tacit social cognitive process that allows us to directly perceive another person's feelings, intentions or mind state through body expression, without drawing an internal inference or mental simulation of the person's emotional experience. This paper invites the reader to rethink some of the core assumptions of social cognition with a new viewing of the DPT, in combination with a novel Phenomenological-Embodied-Relational (PER) Model. Countering inferentialist and theory-of-mind accounts, the paper argues that social understanding does not arise from anything internal to the observer, such as simulation or representational inference, but rather from direct, embodied interaction between individuals. According to such a model, distilled from distinctive viewpoints in phenomenology, embodied cognition, and enactive intersubjectivity, humans perceive emotions, intentions, and mental states directly through expressive bodily acts-those would be facial expressions, gestures, posture, and affective resonance-in real-time, meaningful contexts. In this view, social cognition lies in a pre-reflective or participatory mode of experience through mutual bodily engagement, as opposed to a reflective mode of abstract mental reasoning or a detached mode of third-person observation. Social cognition is an integrative concept that situates it as a co-regulated process unfolding within shared lifeworlds. With the PER model highlighting not only the lived, relational, and embodied components of social understanding, but also trying to avoid the Cartesian dualism separating mind from body or cognition from perception.",
+  "abstract_source": "semantic_scholar",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260531-000436",
+  "doi": "10.1177/18724981251387330",
+  "handoff_version": "1.0",
+  "publication_year": 2025,
+  "reference_id": "REF-2026-05-31-000065",
+  "title": "Seeing minds directly: Revisiting direct perception theory in social cognition",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "Intelligent Decision Technologies",
+  "voi_score": 0.443
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRISMA-Inspired Dashboard — Track 2 Task 3</title>
+<style>
+:root {
+  --green: #2e7d32; --green-bg: #e8f5e9;
+  --red: #c62828;   --red-bg: #ffebee;
+  --yellow: #f57f17; --yellow-bg: #fffde7;
+  --grey: #546e7a;  --grey-bg: #eceff1;
+  --blue: #0d47a1;  --blue-bg: #e3f2fd;
+  --text: #212121;  --border: #dee2e6;
+  --bg: #f5f7fa;    --card: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--text); font-size: 14px; }
+header { background: #1a237e; color: #fff; padding: 20px 32px; }
+header h1 { font-size: 22px; font-weight: 600; }
+header p  { opacity: .75; font-size: 13px; margin-top: 4px; }
+.sections { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+.card { background: var(--card); border: 1px solid var(--border);
+        border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+.card h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px;
+           border-bottom: 2px solid var(--blue); padding-bottom: 8px; color: var(--blue); }
+.stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.stat-tile { background: var(--blue-bg); border-radius: 6px; padding: 12px 18px;
+             min-width: 130px; flex: 1; }
+.stat-tile.green { background: var(--green-bg); }
+.stat-tile.red   { background: var(--red-bg); }
+.stat-tile.grey  { background: var(--grey-bg); }
+.stat-tile .label { font-size: 11px; text-transform: uppercase; opacity: .65; margin-bottom: 4px; }
+.stat-tile .value { font-size: 28px; font-weight: 700; color: var(--blue); }
+.stat-tile.green .value { color: var(--green); }
+.stat-tile.red   .value { color: var(--red); }
+.stat-tile.grey  .value { color: var(--grey); }
+table { width: 100%; border-collapse: collapse; }
+th,td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-weight: 600; background: var(--bg); font-size: 12px; text-transform: uppercase; }
+tr:hover td { background: #f8f9ff; }
+.bar-container { height: 8px; background: var(--border); border-radius: 4px;
+                 min-width: 80px; display: inline-block; vertical-align: middle; }
+.bar-fill { height: 100%; border-radius: 4px; background: var(--blue); }
+.bar-fill.green  { background: var(--green); }
+.bar-fill.red    { background: var(--red); }
+.bar-fill.yellow { background: var(--yellow); }
+.bar-fill.grey   { background: var(--grey); }
+.indent { padding-left: 24px !important; color: #555; }
+.funnel-highlight-green { background: var(--green-bg) !important; }
+.funnel-highlight-red   { background: var(--red-bg) !important; }
+.funnel-highlight-yellow{ background: var(--yellow-bg) !important; }
+.funnel-highlight-grey  { background: var(--grey-bg) !important; }
+.funnel-highlight-red-light { background: #fff3f3 !important; }
+.voi-bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; font-size: 13px; }
+.voi-bar-label { width: 80px; font-weight: 600; color: var(--blue); flex-shrink: 0; }
+.voi-bar-track { flex: 1; height: 18px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.voi-bar-fill  { height: 100%; background: var(--blue); border-radius: 4px; display: flex; align-items: center;
+                 padding-left: 6px; color: #fff; font-size: 11px; font-weight: 600; min-width: 40px; }
+.source-badge { display: inline-block; padding: 2px 8px; border-radius: 12px;
+                font-size: 11px; font-weight: 600; background: var(--blue-bg); color: var(--blue); }
+.note { font-size: 12px; color: #777; margin-top: 8px; font-style: italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PRISMA-Inspired Dashboard — Track 2 · Task 3</h1>
+  <p>UCSD COGS 160 &nbsp;|&nbsp; Author: Kaden Leung &nbsp;|&nbsp; Generated: <span id="gen-at"></span></p>
+  <p style="opacity:.6;font-size:11px;margin-top:4px">Note: PRISMA-inspired funnel structure; not a formally PRISMA-compliant systematic review. See MANIFEST.md for full execution matrix and human validation.</p>
+</header>
+<div class="sections">
+
+<!-- 0. EXECUTION STATUS / WARNINGS -->
+<div class="card" style="border-color:#e53935">
+  <h2 style="color:#c62828">⚠ Execution Status — Demonstrated vs. Designed</h2>
+  <table>
+    <thead><tr><th>Component</th><th>Designed</th><th>Demonstrated</th><th>Impact</th></tr></thead>
+    <tbody>
+      <tr><td>SerpAPI retrieval</td><td>✅ Yes</td><td>✅ Yes</td><td>10 queries, 2 returned zero results (20% failure)</td></tr>
+      <tr><td>scholarly retrieval</td><td>✅ Yes</td><td>✅ Yes</td><td>80 results, clean</td></tr>
+      <tr><td>paperscraper retrieval</td><td>✅ Yes</td><td style="color:var(--red)">❌ Not operational</td><td>0 results — internal .jsonl bug; counts as 0 contribution</td></tr>
+      <tr><td>Reference harvester (PDF)</td><td>✅ Yes</td><td>✅ Yes</td><td>1,103 rows from 20 PDFs</td></tr>
+      <tr><td>HierarchicalClassifier</td><td>✅ Yes</td><td style="color:var(--red)">❌ Not available</td><td>Keyword fallback used; coarser signal</td></tr>
+      <tr><td>PDF acquisition</td><td>✅ Yes</td><td style="color:var(--yellow)">⚠ Dry-run only</td><td>Gate open; Unpaywall live run not executed</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:12px;font-size:12px;color:#666">ACCEPT precision (manual review): <strong>3/6 true positives (50%)</strong>. See HUMAN_VALIDATION.md for full assessment. Threshold was recalibrated from voi_medium=0.50 → 0.40 after observing 0 ACCEPTs; see sensitivity table in HUMAN_VALIDATION.md §2.</p>
+</div>
+
+<!-- 1. GAP SUMMARY -->
+<div class="card">
+  <h2>1. Gap Summary</h2>
+  <div class="stat-row">
+    <div class="stat-tile"><div class="label">Gaps Targeted</div><div class="value" id="total-gaps"></div></div>
+    <div class="stat-tile"><div class="label">Top VOI Score</div><div class="value" id="top-voi-score"></div></div>
+    <div class="stat-tile grey"><div class="label">Null Results</div><div class="value" id="null-count"></div></div>
+  </div>
+  <p style="font-weight:600; font-size:12px; text-transform:uppercase; opacity:.6; margin-bottom:8px;">Top 5 Gaps by VOI Score</p>
+  <div id="voi-bars"></div>
+</div>
+
+<!-- 2. SEARCH SUMMARY -->
+<div class="card">
+  <h2>2. Search Summary</h2>
+  <div class="stat-row">
+    <div class="stat-tile"><div class="label">Queries Run</div><div class="value" id="queries-run"></div></div>
+    <div class="stat-tile"><div class="label">Credits Used</div><div class="value" id="credits-used"></div></div>
+    <div class="stat-tile"><div class="label">Raw Records</div><div class="value" id="raw-records"></div></div>
+    <div class="stat-tile"><div class="label">After Dedupe</div><div class="value" id="after-dedupe"></div></div>
+  </div>
+  <table>
+    <thead><tr><th>Source</th><th>Queries Run</th><th>Results</th><th>Errors</th></tr></thead>
+    <tbody id="source-table"></tbody>
+  </table>
+  <div id="null-results-section"></div>
+</div>
+
+<!-- 3. ABSTRACT COLLECTION -->
+<div class="card">
+  <h2>3. Abstract Collection (Stage 2A)</h2>
+  <div class="stat-row">
+    <div class="stat-tile"><div class="label">Candidates In</div><div class="value" id="abs-in"></div></div>
+    <div class="stat-tile green"><div class="label">Abstracts Found</div><div class="value" id="abs-found"></div></div>
+    <div class="stat-tile grey"><div class="label">Missing Abstract</div><div class="value" id="abs-missing"></div></div>
+    <div class="stat-tile"><div class="label">Hit Rate</div><div class="value" id="abs-rate"></div></div>
+  </div>
+  <table>
+    <thead><tr><th>Source</th><th>Abstracts</th><th>Share</th></tr></thead>
+    <tbody id="abstract-source-table"></tbody>
+  </table>
+</div>
+
+<!-- 4. TRIAGE RESULTS -->
+<div class="card">
+  <h2>4. Triage Results</h2>
+  <div class="stat-row">
+    <div class="stat-tile green"><div class="label">ACCEPT</div><div class="value" id="t-accept"></div></div>
+    <div class="stat-tile" style="background:var(--yellow-bg)"><div class="label">EDGE_CASE</div><div class="value" style="color:var(--yellow)" id="t-edge"></div></div>
+    <div class="stat-tile red"><div class="label">REJECT (all stages)</div><div class="value" id="t-reject-all"></div></div>
+    <div class="stat-tile grey"><div class="label">MISSING_ABSTRACT</div><div class="value" id="t-missing"></div></div>
+  </div>
+  <table>
+    <thead><tr><th>Stage</th><th>Count</th></tr></thead>
+    <tbody id="triage-breakdown"></tbody>
+  </table>
+</div>
+
+<!-- 5. PRISMA FUNNEL -->
+<div class="card">
+  <h2>5. PRISMA Funnel</h2>
+  <table>
+    <thead><tr><th>Funnel Stage</th><th>Count</th><th style="min-width:120px">Proportion</th></tr></thead>
+    <tbody id="prisma-table"></tbody>
+  </table>
+  <p class="note">Proportion bars relative to total candidate buffer (1193).</p>
+</div>
+
+<!-- 6. NULL RESULTS -->
+<div class="card">
+  <h2>6. Null Results — Gaps With Zero Papers Found</h2>
+  <p id="null-results-intro"></p>
+  <table id="null-results-table" style="margin-top:12px">
+    <thead><tr><th>Query ID</th><th>Boolean Query</th><th>Reason</th></tr></thead>
+    <tbody id="null-results-body"></tbody>
+  </table>
+</div>
+
+</div><!-- /sections -->
+
+<script>
+// Data is embedded below by the Python generator
+const DATA = {"generated_at": "2026-06-02T09:49:41Z", "schema_version": "1.0.0", "execution_gaps": {"paperscraper_operational": false, "paperscraper_note": "Internal .jsonl extension bug; 0 results on all 10 live queries", "hierarchical_classifier": false, "hierarchical_classifier_note": "No .centroids.pkl file; keyword fallback used (coarser signal)", "pdf_acquisition_live": false, "pdf_acquisition_note": "Dry-run only; Unpaywall live run not executed", "query_failure_rate": 0.2, "failed_queries": ["SC3-step3", "L4-step3"]}, "human_validation": {"accept_precision": 0.5, "true_positives": 3, "false_positives": 2, "borderline": 1, "note": "Manual review by pipeline author (conflict of interest; instructor review recommended)"}, "gap_summary": {"total_gaps": 10, "top_voi": [{"display_id": "SC3", "step_number": 3, "voi_score": 0.478, "boolean_query": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"buildings\") AND \"threshold event\" -review"}, {"display_id": "SC3", "step_number": 6, "voi_score": 0.478, "boolean_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review"}, {"display_id": "SC1", "step_number": 2, "voi_score": 0.478, "boolean_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review"}, {"display_id": "L3", "step_number": 7, "voi_score": 0.458, "boolean_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review"}, {"display_id": "NM1", "step_number": null, "voi_score": 0.4537, "boolean_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review"}]}, "search_summary": {"queries_run": 10, "credits_used": 10, "raw_records": 160, "after_dedupe": 84, "duplicates_removed": 76, "null_result_count": 2, "null_results": [{"display_id": "SC3-step3", "reason": "zero_results_across_all_sources"}, {"display_id": "L4-step3", "reason": "zero_results_across_all_sources"}], "per_source": {"serpapi_scholar": {"queries_run": 10, "results_raw": 80, "errors": 2}, "scholarly_search": {"queries_run": 10, "results_raw": 80, "errors": 0}, "paperscraper_search": {"queries_run": 10, "results_raw": 0, "errors": 10}}}, "harvest_summary": {"pdfs_scanned": 20, "reference_lines_extracted": 1137, "harvested_rows": 1103}, "abstract_summary": {"candidates_entering": 291, "abstracts_found": 68, "missing_abstract": 222, "hit_rate": 0.2337, "by_source": {"semantic_scholar": 22, "crossref": 10, "pubmed": 23, "openalex": 13}}, "triage_summary": {"stage1_processed": 1193, "rejected_at_metadata": 904, "noise_rejects": 328, "classifier_rejects": 576, "passed_stage1": 291, "stage2b_processed": 67, "accept": 10, "edge_case": 21, "reject_stage2b": 36, "missing_abstract_terminal": 222}, "prisma_funnel": [{"stage": "Gaps targeted (Task 2)", "count": 10, "indent": false}, {"stage": "Queries executed (SerpAPI)", "count": 10, "indent": false}, {"stage": "Raw records returned (all sources)", "count": 1263, "indent": false}, {"stage": "Duplicates removed (search layer)", "count": 76, "indent": true}, {"stage": "Records after search dedupe", "count": 84, "indent": false}, {"stage": "PDF-reference harvest records", "count": 1103, "indent": false}, {"stage": "Total in candidate buffer", "count": 1193, "indent": false}, {"stage": "Rejected at metadata (Stage 1)", "count": 904, "indent": false, "highlight": "red-light"}, {"stage": "→ Noise rules", "count": 328, "indent": true}, {"stage": "→ Classifier < 0.20", "count": 576, "indent": true}, {"stage": "Abstracts collected (Stage 2A)", "count": 68, "indent": false}, {"stage": "MISSING_ABSTRACT (no abstract found)", "count": 222, "indent": false, "highlight": "grey"}, {"stage": "Screened by classifier (Stage 2B)", "count": 67, "indent": false}, {"stage": "→ ACCEPT (on-topic, threshold VOI)", "count": 10, "indent": true, "highlight": "green"}, {"stage": "→ EDGE_CASE (borderline)", "count": 21, "indent": true, "highlight": "yellow"}, {"stage": "→ REJECT (off-topic)", "count": 36, "indent": true, "highlight": "red"}], "acquisition_summary": {"in_queue": 10, "acquired": 0, "failed": 0, "gate_blocked": 0}};
+
+// Render helpers
+const el = id => document.getElementById(id);
+const fmt = n => n === null || n === undefined ? '—' : n.toLocaleString();
+
+function pct(n, total) {
+  if (!total) return 0;
+  return Math.round((n / total) * 100);
+}
+
+function barHtml(n, total, cls='') {
+  const p = Math.min(pct(n, total), 100);
+  return `<span class="bar-container" style="width:100px"><span class="bar-fill ${cls}" style="width:${p}%"></span></span>`;
+}
+
+// Header
+el('gen-at').textContent = DATA.generated_at;
+
+// 1. Gap Summary
+el('total-gaps').textContent = fmt(DATA.gap_summary.total_gaps);
+el('top-voi-score').textContent = DATA.gap_summary.top_voi[0]?.voi_score?.toFixed(3) ?? '—';
+el('null-count').textContent = fmt(DATA.search_summary.null_result_count);
+
+const voiBarsEl = el('voi-bars');
+const maxVoi = Math.max(...DATA.gap_summary.top_voi.map(g => g.voi_score));
+DATA.gap_summary.top_voi.forEach(g => {
+  const pct = Math.round((g.voi_score / 1.0) * 100);
+  const label = g.step_number != null ? `${g.display_id}-step${g.step_number}` : g.display_id;
+  voiBarsEl.innerHTML += `
+    <div class="voi-bar-row">
+      <div class="voi-bar-label">${label}</div>
+      <div class="voi-bar-track">
+        <div class="voi-bar-fill" style="width:${pct}%">${g.voi_score.toFixed(3)}</div>
+      </div>
+    </div>`;
+});
+
+// 2. Search Summary
+el('queries-run').textContent = fmt(DATA.search_summary.queries_run);
+el('credits-used').textContent = fmt(DATA.search_summary.credits_used);
+el('raw-records').textContent = fmt(DATA.search_summary.raw_records);
+el('after-dedupe').textContent = fmt(DATA.search_summary.after_dedupe);
+
+const srcTbody = el('source-table');
+Object.entries(DATA.search_summary.per_source).forEach(([src, s]) => {
+  const name = src.replace('_', ' ');
+  srcTbody.innerHTML += `<tr>
+    <td><span class="source-badge">${name}</span></td>
+    <td>${fmt(s.queries_run)}</td>
+    <td>${fmt(s.results_raw)}</td>
+    <td>${s.errors > 0 ? `<span style="color:var(--red)">${s.errors}</span>` : '0'}</td>
+  </tr>`;
+});
+
+// 3. Abstract Collection
+const abs = DATA.abstract_summary;
+el('abs-in').textContent = fmt(abs.candidates_entering);
+el('abs-found').textContent = fmt(abs.abstracts_found);
+el('abs-missing').textContent = fmt(abs.missing_abstract);
+el('abs-rate').textContent = (abs.hit_rate * 100).toFixed(1) + '%';
+
+const absSrcTbody = el('abstract-source-table');
+const totalAbs = abs.abstracts_found || 1;
+Object.entries(abs.by_source).forEach(([src, n]) => {
+  absSrcTbody.innerHTML += `<tr>
+    <td><span class="source-badge">${src.replace('_', ' ')}</span></td>
+    <td>${fmt(n)}</td>
+    <td>${barHtml(n, totalAbs)}</td>
+  </tr>`;
+});
+
+// 4. Triage Results
+const tr = DATA.triage_summary;
+el('t-accept').textContent  = fmt(tr.accept);
+el('t-edge').textContent    = fmt(tr.edge_case);
+el('t-reject-all').textContent = fmt(tr.rejected_at_metadata + tr.reject_stage2b);
+el('t-missing').textContent = fmt(tr.missing_abstract_terminal);
+
+const triageBreakdownEl = el('triage-breakdown');
+[
+  ['Total in candidate buffer', tr.stage1_processed],
+  ['Rejected at metadata (Stage 1)', tr.rejected_at_metadata],
+  ['  → Noise rules', tr.noise_rejects],
+  ['  → Classifier < 0.20', tr.classifier_rejects],
+  ['Passed Stage 1 → abstract pending', tr.passed_stage1],
+  ['Abstracts collected (Stage 2A)', tr.stage2b_processed - tr.edge_case],
+  ['MISSING_ABSTRACT (no abstract)', tr.missing_abstract_terminal],
+  ['Triaged by Stage 2B', tr.stage2b_processed],
+  ['  → ACCEPT', tr.accept],
+  ['  → EDGE_CASE', tr.edge_case],
+  ['  → REJECT', tr.reject_stage2b],
+].forEach(([label, count]) => {
+  const indent = label.startsWith('  ');
+  triageBreakdownEl.innerHTML += `<tr>
+    <td class="${indent ? 'indent' : ''}">${label.trim()}</td>
+    <td><strong>${fmt(count)}</strong></td>
+  </tr>`;
+});
+
+// 5. PRISMA Funnel
+const totalForBar = DATA.triage_summary.stage1_processed;
+const prismaTbody = el('prisma-table');
+DATA.prisma_funnel.forEach(row => {
+  const hlClass = row.highlight ? `funnel-highlight-${row.highlight}` : '';
+  const indentClass = row.indent ? 'indent' : '';
+  const barCls = row.highlight === 'green' ? 'green'
+               : row.highlight === 'red' || row.highlight === 'red-light' ? 'red'
+               : row.highlight === 'yellow' ? 'yellow'
+               : row.highlight === 'grey' ? 'grey' : '';
+  prismaTbody.innerHTML += `<tr class="${hlClass}">
+    <td class="${indentClass}">${row.indent ? '→ ' : ''}${row.stage}</td>
+    <td><strong>${fmt(row.count)}</strong></td>
+    <td>${barHtml(row.count, totalForBar, barCls)}</td>
+  </tr>`;
+});
+
+// 6. Null Results
+const nr = DATA.search_summary.null_results;
+el('null-results-intro').textContent = nr.length === 0
+  ? 'All queries returned at least one result.'
+  : `${nr.length} quer${nr.length === 1 ? 'y' : 'ies'} returned zero papers across all sources:`;
+
+const nrBody = el('null-results-body');
+if (nr.length === 0) {
+  nrBody.innerHTML = '<tr><td colspan="3" style="color:#888">None</td></tr>';
+} else {
+  nr.forEach(n => {
+    // Find the original boolean query from gap_summary
+    const gap = DATA.gap_summary.top_voi.find(g => {
+      const label = g.step_number != null ? `${g.display_id}-step${g.step_number}` : g.display_id;
+      return label === n.display_id;
+    });
+    nrBody.innerHTML += `<tr>
+      <td><strong>${n.display_id}</strong></td>
+      <td style="font-family:monospace;font-size:11px">${gap ? gap.boolean_query.substring(0, 80) + '…' : '(query text unavailable)'}</td>
+      <td>${n.reason}</td>
+    </tr>`;
+  });
+}
+
+// Also show null results from search_results.json in Section 2
+const nullSecEl = el('null-results-section');
+if (nr.length > 0) {
+  nullSecEl.innerHTML = `<p style="margin-top:12px;color:var(--red);font-size:13px">⚠ ${nr.length} null-result quer${nr.length===1?'y':'ies'}: ${nr.map(n=>n.display_id).join(', ')}</p>`;
+}
+</script>
+</body>
+</html>

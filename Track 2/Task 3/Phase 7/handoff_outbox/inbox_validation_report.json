@@ -1,0 +1,18 @@
+{
+  "artifacts_seen": 9,
+  "inbox_version": "1.0",
+  "invalid_count": 0,
+  "invalid_files": [],
+  "valid_count": 9,
+  "valid_files": [
+    "REF-2026-05-30-000006.json",
+    "REF-2026-05-30-000090.json",
+    "REF-2026-05-30-000137.json",
+    "REF-2026-05-30-000409.json",
+    "REF-2026-05-30-000416.json",
+    "REF-2026-05-30-000417.json",
+    "REF-2026-05-30-000430.json",
+    "REF-2026-05-31-000064.json",
+    "REF-2026-05-31-000065.json"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RUN-STAGE1-FIXED-20260601",
+  "started_at": "2026-06-01T21:49:49Z",
+  "ended_at": "2026-06-01T21:49:49Z",
+  "classifier_mode": "keyword_fallback",
+  "candidates_processed": 669,
+  "passed_to_stage2a": 80,
+  "rejected_total": 589,
+  "rejection_rate": 0.8804,
+  "reject_reasons": {
+    "classifier_below_threshold:0.00-0.19": 576,
+    "noise:doi_url_artifact": 13
+  },
+  "errors": []
+}

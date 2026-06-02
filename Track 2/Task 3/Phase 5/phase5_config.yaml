@@ -1,0 +1,16 @@
+# Phase 5 PDF Acquisition Configuration
+# See PDF_ACQUISITION_CONTRACT.md §5 for the scidownl policy gate documentation.
+#
+# WARNING: Do NOT set enable_paid_or_grey_sources to true without:
+#   1. Obtaining a countersigned policy_clearance.json from your instructor
+#   2. Understanding that scidownl accesses Sci-Hub mirrors (legality varies by jurisdiction)
+
+acquisition:
+  email: kadenleung00@gmail.com   # polite-pool email for Unpaywall + OpenAlex
+  output_dir: Phase 5/acquired_pdfs
+  timeout_seconds: 60
+
+# Last-resort gate — defaults to false.
+# Even setting this to true does NOT enable scidownl unless policy_clearance.json
+# also exists and is countersigned. Both conditions are independently required.
+enable_paid_or_grey_sources: false

@@ -62,12 +62,22 @@ class PaperscraperAdapter:
         self._limiter.wait()
         keywords = _parse_boolean_to_keywords(query)
 
-        tmp_fd, tmp_path = tempfile.mkstemp(suffix=".json", prefix="ps_tmp_")
+        # paperscraper ≥ 0.2 requires a .jsonl extension; older versions used .json.
+        # The error "Please provide a filepath with .jsonl extension" means the installed
+        # version enforces this. We write JSONL, parse it line-by-line, and discard the file.
+        tmp_fd, tmp_path = tempfile.mkstemp(suffix=".jsonl", prefix="ps_tmp_")
         os.close(tmp_fd)
         try:
             get_and_dump_arxiv_papers(keywords, tmp_path, max_results=num_results)
+            raw_results = []
             with open(tmp_path) as f:
-                raw_results = json.load(f)
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        try:
+                            raw_results.append(json.loads(line))
+                        except json.JSONDecodeError:
+                            pass
         except Exception as exc:
             raise RuntimeError(f"paperscraper error: {exc}") from exc
         finally:

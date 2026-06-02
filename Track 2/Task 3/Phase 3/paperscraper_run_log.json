@@ -1,0 +1,20 @@
+{
+  "run_id": "RUN-PAPERSCRAPER-LIVE-20260601",
+  "started_at": "2026-06-02T01:39:35Z",
+  "ended_at": "2026-06-02T01:52:23Z",
+  "sources": [
+    "paperscraper_search"
+  ],
+  "queries_processed": 3,
+  "credits_used": 0,
+  "per_source_stats": {
+    "paperscraper_search": {
+      "queries_run": 3,
+      "results_raw": 0,
+      "retries": 0,
+      "errors": 3
+    }
+  },
+  "null_result_queries": 3,
+  "skipped_queries": 0
+}

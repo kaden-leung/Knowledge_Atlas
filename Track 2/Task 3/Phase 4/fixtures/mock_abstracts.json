@@ -1,0 +1,20 @@
+[
+  {
+    "doi": "10.1073/pnas.1912264116",
+    "title": "Sensorimotor brain dynamics reflect architectural affordances",
+    "abstract": "Predictive mechanisms originating from the motor system allow for inferring actions from environmental affordances in architectural transitions. We used mobile EEG to record brain activity during participants' active navigation through transitions of varying width. Alpha and theta band activity tracked the transition affordance, suggesting embodied predictive coding.",
+    "source": "semantic_scholar"
+  },
+  {
+    "doi": "10.1016/j.neuron.2012.09.005",
+    "title": "Less is more: expectation sharpens representations in the primary visual cortex",
+    "abstract": "Perceptual expectation reduces neural response amplitude in V1 while improving stimulus representation. We tested whether expected stimuli evoke sharper neural representations through pattern classification of fMRI BOLD signal. Results support predictive coding theory.",
+    "source": "crossref"
+  },
+  {
+    "doi": "10.1101/2026.01.15.123456",
+    "title": "Architecture shapes event boundaries: Theta dynamics of event segmentation during spatial transitions",
+    "abstract": "We investigated neural dynamics associated with event boundaries during active navigation through architectural transitions using mobile EEG and VR. Reports a robust theta-band power increase over temporo-occipital regions after passing through a doorway, consistent with event segmentation theory.",
+    "source": "openalex"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "_note": "This is a TEMPLATE only. The real policy_clearance.json must be countersigned by your instructor before scidownl access is enabled. Talk to your instructor before obtaining the signed version. NEVER commit the signed file — it is gitignored.",
+  "_instructions": "Replace this file with 'policy_clearance.json' (not the TEMPLATE version) after your instructor signs it. The file's existence at the expected path is what the gate checks — its content is logged but not cryptographically verified.",
+  "student": "Kaden Leung",
+  "course": "UCSD COGS 160",
+  "countersigned_by": "INSTRUCTOR_NAME_HERE",
+  "date": "YYYY-MM-DD",
+  "scope": "Single-run access for Track 2 Task 3 Phase 5 PDF acquisition",
+  "limitations": "scidownl access only for papers already triaged ACCEPT in task3_pipeline_lifecycle.db"
+}

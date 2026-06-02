@@ -1,0 +1,17 @@
+{
+  "abstract": "Wellbeing in buildings is often approached by practitioners and researchers as the aggregate result of individual interactions between building occupants and building features. This sum-of-the-parts approach, however, ignores the ways in which broader social (i.e. sense of ownership and belonging) and symbolic (i.e. what it means to be \u2018well\u2019 in a specific culture at a particular place and time) components of wellbeing influence occupant experience of the built environment. A social practice perspective on wellbeing in buildings is proposed that accounts for these elements. Beginning with discussions of how wellbeing has been assessed and the foundations of social practice theory, it is suggested that occupant wellbeing is emergent not just from individual interactions with building features but also from broader social and symbolic elements. Policy relevanceA social practice perspective on wellbeing in buildings has implications for both the assessment of wellbeing and the role of wellbeing in the building design process. Integrating social and symbolic elements into measures of wellbeing pushes assessment beyond the typical focus on comfort and spatial experience (indoor environmental quality). These more nuanced assessments may in turn shape how wellbeing is addressed in building design, construction, and management.",
+  "abstract_source": "openalex",
+  "discovered_via": [
+    "review_pdf_extract"
+  ],
+  "discovery_run_id": "RUN-20260528-120000",
+  "doi": "10.5334/bc.262",
+  "handoff_version": "1.0",
+  "publication_year": 2021,
+  "reference_id": "REF-2026-05-30-000409",
+  "title": "Global research agenda: Health, well-being, and the built Morgan et al. 770 Buildings and Cities environment",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": null,
+  "voi_score": 0.443
+}

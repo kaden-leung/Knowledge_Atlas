@@ -1,0 +1,17 @@
+{
+  "abstract": "Recently there has been a growing trend to encourage learning outside the classrooms, so-called \u2018universities without walls.\u2019 To this end, mechanisms for learning beyond the boundaries of classroom settings can provide enhanced and challenging learning opportunities. This paper introduces Appreciative Inquiry (AI) as a mechanism that integrates various forms of inquiry into learning. AI is operationalized as a Walking Tour assessment project which was introduced as part of the class Cultural and Behavioural Factors in Architecture and Urbanism delivered at the Department of Architecture, University of Strathclyde \u2013 Glasgow where thirty-two Master of Architecture students were enrolled. The Walking Tour assessment involved the exploration of 6 factors that delineate key design characteristics in three retrofitted buildings in Glasgow: Theatre Royal, Reid Building, and The Lighthouse. Working in groups, students assessed factors that included context, massing, interface, wayfinding, socio-spatial, and comfort. Findings reveal that students were able to focus on critical issues that go beyond those adopted in traditional teaching practices while accentuating the value of introducing AI and utilizing the built environment as an educational medium. Conclusions are drawn to emphasize the need for structured learning experiences that enable making judgments about building qualities while effectively interrogating various characteristics.",
+  "abstract_source": "semantic_scholar",
+  "discovered_via": [
+    "review_pdf_extract"
+  ],
+  "discovery_run_id": "RUN-20260528-120000",
+  "doi": "10.1016/j.foar.2017.02.001",
+  "handoff_version": "1.0",
+  "publication_year": 2017,
+  "reference_id": "REF-2026-05-30-000137",
+  "title": "Integrating appreciative inquiry (AI) into architectural pedagogy: An assessment experiment of three retrofitted buildings in the city of Glasgow",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": null,
+  "voi_score": 0.443
+}

@@ -1,0 +1,18 @@
+{
+  "abstract": "Action is a medium of collecting sensory information about the environment, which in turn is shaped by architectural affordances. Affordances characterize the fit between the physical structure of the body and capacities for movement and interaction with the environment, thus relying on sensorimotor processes associated with exploring the surroundings. Central to sensorimotor brain dynamics, the attentional mechanisms directing the gating function of sensory signals share neuronal resources with motor-related processes necessary to inferring the external causes of sensory signals. Such a predictive coding approach suggests that sensorimotor dynamics are sensitive to architectural affordances that support or suppress specific kinds of actions for an individual. However, how architectural affordances relate to the attentional mechanisms underlying the gating function for sensory signals remains unknown. Here we demonstrate that event-related desynchronization of alpha-band oscillations in parieto-occipital and medio-temporal regions covary with the architectural affordances. Source-level time-frequency analysis of data recorded in a motor-priming Mobile Brain/Body Imaging experiment revealed strong event-related desynchronization of the alpha band to originate from the posterior cingulate complex, the parahippocampal region as well as the occipital cortex. Our results firstly contribute to the understanding of how the brain resolves architectural affordances relevant to behaviour. Second, our results indicate that the alpha-band originating from the occipital cortex and parahippocampal region covaries with the architectural affordances before participants interact with the environment, whereas during the interaction, the posterior cingulate cortex and motor areas dynamically reflect the affordable behaviour. We conclude that the sensorimotor dynamics reflect behaviour-relevant features in the designed environment.",
+  "abstract_source": "pubmed",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260528-120000",
+  "doi": null,
+  "handoff_version": "1.0",
+  "publication_year": 2021,
+  "reference_id": "REF-2026-05-30-000006",
+  "title": "The brain dynamics of architectural affordances during transition",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.85,voi=0.48",
+  "venue": "Scientific Reports",
+  "voi_score": 0.478
+}

@@ -1,0 +1,17 @@
+{
+  "abstract": "The design of the built environment plays an important role as a determinant of health. As a society, we are spending an increasing proportion of our time indoors and now spend over 80% of our life inside, so the design of buildings can greatly impact on human health. Accordingly, architecture health indices (AHIs) are used to evidence the effects on human health associated with the design of buildings. AHIs provide quantitative and empirical data upon which architects, clients, users and other stakeholders might monitor and evaluate the healthiness (or otherwise) of architectural design. A systematic literature review was conducted to reveal the current state of knowledge, reveal gaps, explore potential usage and highlight best practice in this area. Whilst there are a number of different health indicators for the built/urban environments more generally, the scope of this review is limited to the scale of a building and specifically those aspects within the remit of a professional architect. In order to examine the range and characteristics of AHIs currently in use, this review explored three electronic bibliographic databases from January 2008 to January 2019. A two-stage selection was undertaken and screening against eligibility criteria checklist carried out. From 15 included studies, 127 documents were identified, and these included 101 AHI. A sample of the most commonly used AHIs was then analysed at an item level. The review reveals that most AHIs are limited to measuring communicable diseases that directly affect physical health through e.g. air quality or water quality. There are very few indicators focusing on factors affecting mental and social health; given the increase in mental and social health problems, greater focus on AHIs related to these health issues should be included. Furthermore, the research reveals an absence of AHIs that address non-communicable diseases (NCDs). As the majority of all poor health outcomes globally are now related to NCDs, and many are associated with the design of the built environment, there is an urgent need to address this situation.",
+  "abstract_source": "semantic_scholar",
+  "discovered_via": [
+    "review_pdf_extract"
+  ],
+  "discovery_run_id": "RUN-20260528-120000",
+  "doi": "10.1007/s11524-020-00469-z",
+  "handoff_version": "1.0",
+  "publication_year": 2020,
+  "reference_id": "REF-2026-05-30-000417",
+  "title": "Indicators of healthy architecture\u2014A systematic literature review",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": null,
+  "voi_score": 0.443
+}

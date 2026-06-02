@@ -1,0 +1,216 @@
+{
+  "generated_at": "2026-06-02T09:49:41Z",
+  "schema_version": "1.0.0",
+  "execution_gaps": {
+    "paperscraper_operational": false,
+    "paperscraper_note": "Internal .jsonl extension bug; 0 results on all 10 live queries",
+    "hierarchical_classifier": false,
+    "hierarchical_classifier_note": "No .centroids.pkl file; keyword fallback used (coarser signal)",
+    "pdf_acquisition_live": false,
+    "pdf_acquisition_note": "Dry-run only; Unpaywall live run not executed",
+    "query_failure_rate": 0.2,
+    "failed_queries": [
+      "SC3-step3",
+      "L4-step3"
+    ]
+  },
+  "human_validation": {
+    "accept_precision": 0.5,
+    "true_positives": 3,
+    "false_positives": 2,
+    "borderline": 1,
+    "note": "Manual review by pipeline author (conflict of interest; instructor review recommended)"
+  },
+  "gap_summary": {
+    "total_gaps": 10,
+    "top_voi": [
+      {
+        "display_id": "SC3",
+        "step_number": 3,
+        "voi_score": 0.478,
+        "boolean_query": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"buildings\") AND \"threshold event\" -review"
+      },
+      {
+        "display_id": "SC3",
+        "step_number": 6,
+        "voi_score": 0.478,
+        "boolean_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review"
+      },
+      {
+        "display_id": "SC1",
+        "step_number": 2,
+        "voi_score": 0.478,
+        "boolean_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review"
+      },
+      {
+        "display_id": "L3",
+        "step_number": 7,
+        "voi_score": 0.458,
+        "boolean_query": "(\"correlated color temperature\" OR \"CCT\" OR \"cone-opponent\") AND (\"melanopsin\" OR \"ipRGC\" OR \"melanopic irradiance\") AND (\"circadian\" OR \"entrainment\" OR \"spectral sensitivity\") -review"
+      },
+      {
+        "display_id": "NM1",
+        "step_number": null,
+        "voi_score": 0.4537,
+        "boolean_query": "(\"reward prediction error\" OR \"dopamine\" OR \"novelty response\") AND (\"novel environment\" OR \"spatial exploration\" OR \"architecture\") AND (\"VTA\" OR \"substantia nigra\" OR \"information seeking\") -review"
+      }
+    ]
+  },
+  "search_summary": {
+    "queries_run": 10,
+    "credits_used": 10,
+    "raw_records": 160,
+    "after_dedupe": 84,
+    "duplicates_removed": 76,
+    "null_result_count": 2,
+    "null_results": [
+      {
+        "display_id": "SC3-step3",
+        "reason": "zero_results_across_all_sources"
+      },
+      {
+        "display_id": "L4-step3",
+        "reason": "zero_results_across_all_sources"
+      }
+    ],
+    "per_source": {
+      "serpapi_scholar": {
+        "queries_run": 10,
+        "results_raw": 80,
+        "errors": 2
+      },
+      "scholarly_search": {
+        "queries_run": 10,
+        "results_raw": 80,
+        "errors": 0
+      },
+      "paperscraper_search": {
+        "queries_run": 10,
+        "results_raw": 0,
+        "errors": 10
+      }
+    }
+  },
+  "harvest_summary": {
+    "pdfs_scanned": 20,
+    "reference_lines_extracted": 1137,
+    "harvested_rows": 1103
+  },
+  "abstract_summary": {
+    "candidates_entering": 291,
+    "abstracts_found": 68,
+    "missing_abstract": 222,
+    "hit_rate": 0.2337,
+    "by_source": {
+      "semantic_scholar": 22,
+      "crossref": 10,
+      "pubmed": 23,
+      "openalex": 13
+    }
+  },
+  "triage_summary": {
+    "stage1_processed": 1193,
+    "rejected_at_metadata": 904,
+    "noise_rejects": 328,
+    "classifier_rejects": 576,
+    "passed_stage1": 291,
+    "stage2b_processed": 67,
+    "accept": 10,
+    "edge_case": 21,
+    "reject_stage2b": 36,
+    "missing_abstract_terminal": 222
+  },
+  "prisma_funnel": [
+    {
+      "stage": "Gaps targeted (Task 2)",
+      "count": 10,
+      "indent": false
+    },
+    {
+      "stage": "Queries executed (SerpAPI)",
+      "count": 10,
+      "indent": false
+    },
+    {
+      "stage": "Raw records returned (all sources)",
+      "count": 1263,
+      "indent": false
+    },
+    {
+      "stage": "Duplicates removed (search layer)",
+      "count": 76,
+      "indent": true
+    },
+    {
+      "stage": "Records after search dedupe",
+      "count": 84,
+      "indent": false
+    },
+    {
+      "stage": "PDF-reference harvest records",
+      "count": 1103,
+      "indent": false
+    },
+    {
+      "stage": "Total in candidate buffer",
+      "count": 1193,
+      "indent": false
+    },
+    {
+      "stage": "Rejected at metadata (Stage 1)",
+      "count": 904,
+      "indent": false,
+      "highlight": "red-light"
+    },
+    {
+      "stage": "→ Noise rules",
+      "count": 328,
+      "indent": true
+    },
+    {
+      "stage": "→ Classifier < 0.20",
+      "count": 576,
+      "indent": true
+    },
+    {
+      "stage": "Abstracts collected (Stage 2A)",
+      "count": 68,
+      "indent": false
+    },
+    {
+      "stage": "MISSING_ABSTRACT (no abstract found)",
+      "count": 222,
+      "indent": false,
+      "highlight": "grey"
+    },
+    {
+      "stage": "Screened by classifier (Stage 2B)",
+      "count": 67,
+      "indent": false
+    },
+    {
+      "stage": "→ ACCEPT (on-topic, threshold VOI)",
+      "count": 10,
+      "indent": true,
+      "highlight": "green"
+    },
+    {
+      "stage": "→ EDGE_CASE (borderline)",
+      "count": 21,
+      "indent": true,
+      "highlight": "yellow"
+    },
+    {
+      "stage": "→ REJECT (off-topic)",
+      "count": 36,
+      "indent": true,
+      "highlight": "red"
+    }
+  ],
+  "acquisition_summary": {
+    "in_queue": 10,
+    "acquired": 0,
+    "failed": 0,
+    "gate_blocked": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RUN-4B-FIXED-20260601",
+  "started_at": "2026-06-01T21:51:40Z",
+  "ended_at": "2026-06-01T22:14:08Z",
+  "candidates_processed": 80,
+  "abstracts_found": 22,
+  "missing_abstracts": 58,
+  "hit_rate": 0.275,
+  "hit_rate_doi_only": 0.6522,
+  "source_breakdown": {
+    "semantic_scholar": 6,
+    "MISSING_ABSTRACT": 58,
+    "pubmed": 6,
+    "crossref": 6,
+    "openalex": 4
+  },
+  "study_type_breakdown": {
+    "(none)": 69,
+    "experimental": 2,
+    "longitudinal": 1,
+    "review": 5,
+    "survey": 2,
+    "rct": 1
+  },
+  "errors": []
+}

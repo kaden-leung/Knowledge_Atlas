@@ -1,0 +1,23 @@
+[
+  {
+    "discovered_query_display_id": "SC3-step3",
+    "discovered_query": "(\"PE signal\" OR \"active inference\" OR \"predictive coding\") AND (\"buildings\") AND \"threshold event\" -review",
+    "source_voi_score": 0.478,
+    "reason": "zero_results_across_all_sources",
+    "queried_at": "2026-06-02T01:39:35Z"
+  },
+  {
+    "discovered_query_display_id": "SC3-step6",
+    "discovered_query": "(\"predictive coding\" OR \"prediction error\" OR \"active inference\") AND (\"partial occlusion\" OR \"visual preview\" OR \"sequential disclosure\") AND (\"threshold\" OR \"spatial anticipation\" OR \"arousal\") -review",
+    "source_voi_score": 0.478,
+    "reason": "zero_results_across_all_sources",
+    "queried_at": "2026-06-02T01:43:27Z"
+  },
+  {
+    "discovered_query_display_id": "SC1-step2",
+    "discovered_query": "(\"space syntax\" OR \"spatial integration\" OR \"angular depth\") AND (\"working memory\" OR \"cognitive load\" OR \"route schema\") AND (\"wayfinding\" OR \"built environment\" OR \"navigation\") -review",
+    "source_voi_score": 0.478,
+    "reason": "zero_results_across_all_sources",
+    "queried_at": "2026-06-02T01:47:15Z"
+  }
+]
