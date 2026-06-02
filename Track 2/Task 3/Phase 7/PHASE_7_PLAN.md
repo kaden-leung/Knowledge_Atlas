@@ -291,11 +291,13 @@ This order is optimized for grading impact and dependency safety.
 - `FAILURE_ANALYSIS.md`
 - `LESSONS_LEARNED.md`
 
-**Recommended rule:**
+**Recommended rule** *(superseded 2026-06-02 — see note below):*
 
 - `TRACK2_EVALUATION_REPORT.md` is the single source of truth for recall, precision, ablation, and baseline comparisons.
 - `BENCHMARK_EVALUATION.md` is a navigation alias that points to the authoritative report without duplicating metrics.
 - Other docs may interpret those numbers, but not restate different versions.
+
+> **Superseded:** authority was later split for clarity — `BENCHMARK_EVALUATION.md` is the authoritative source for metric **values** (it holds the metric table), and `TRACK2_EVALUATION_REPORT.md` is authoritative for **methodology**. They are complementary, not competing.
 
 **What `FAILURE_ANALYSIS.md` should focus on:**
 
