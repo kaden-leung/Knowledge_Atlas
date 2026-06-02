@@ -76,7 +76,9 @@ cd "Track 2/Task 3"
 python3 verify_track2_workflow.py
 ```
 
-Expected output: `CHAIN: 9/9 checks passed`
+Expected output: `CHAIN: 9/9 checks passed` (verified from a clean checkout — the DB and evidence files it reads are committed).
+
+**Authoritative database:** the committed `Track 2/Task 3/task3_pipeline_lifecycle.db` is the single source of truth for verification. (A separate `Knowledge_Atlas/data/ka_payloads/pipeline_lifecycle_full.db` exists as a course-path placeholder but is an earlier, stale materialization — it is not used here. See [MANIFEST.md](MANIFEST.md) → "Authoritative database for Task 3 verification".)
 
 To regenerate all evidence artifacts:
 
