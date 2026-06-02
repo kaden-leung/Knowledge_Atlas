@@ -22,8 +22,8 @@ This submission is strongest when presented as a gap-driven retrieval and evalua
 | Triage outcome | 10 rows are `ACCEPT` and 10 rows appear in `v_acquisition_queue` | [task3_pipeline_lifecycle.db](task3_pipeline_lifecycle.db), [PROVEIT_WORKS.md](PROVEIT_WORKS.md) |
 | Acquisition evidence | Phase 5 ran live 2026-06-02: 3 rows processed, 9 acquisition transitions in DB, 0 PDFs acquired (both DOI rows paywalled; scidownl gated) | [Phase 5/acquisition_report.json](<Phase 5/acquisition_report.json>), [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md) |
 | Downstream handoff | 9 downstream-ready artifacts were exported and validated; 1 ACCEPT row was skipped for missing abstract | [Phase 7 handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>), [Phase 7 inbox_validation_report.json](<Phase 7/handoff_outbox/inbox_validation_report.json>) |
-| Benchmark authority | The 30-paper evaluation report is the authoritative benchmark source | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) |
-| Benchmark alias | `BENCHMARK_EVALUATION.md` points to the authoritative report without duplicating metrics | [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) |
+| Metric authority | `BENCHMARK_EVALUATION.md` is the single authoritative source for benchmark metric values | [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) |
+| Methodology authority | The 30-paper evaluation report is authoritative for benchmark methodology and full analysis | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) |
 | One-command verification | The repo now has a canonical evidence-check command that passes on the current snapshot | [verify_track2_workflow.py](verify_track2_workflow.py) |
 | One-command evidence wrapper | The repo now has a thin wrapper for regenerating local evidence and rerunning verification | [run_pipeline.py](run_pipeline.py) |
 
@@ -41,7 +41,7 @@ This submission is strongest when presented as a gap-driven retrieval and evalua
 - The AE handoff layer now exists as a local validation path, not as an external integrated consumer.
 - `run_pipeline.py` exists as a thin evidence wrapper; live search still requires an explicit `--confirm-live` gate.
 - Task 2 still depends on the sibling `Article_Eater` checkout, so portability is improved but not fully self-contained.
-- The repo still contains multiple evaluation documents, but `BENCHMARK_EVALUATION.md` and `GRADER_GUIDE.md` now point graders to the authoritative benchmark file.
+- The repo contains multiple evaluation documents, but authority is unambiguous: `BENCHMARK_EVALUATION.md` owns metric values, `TRACK2_EVALUATION_REPORT.md` owns methodology, and `GRADER_GUIDE.md` is the entry point.
 
 ## 5. Claims that are safe to make
 

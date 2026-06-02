@@ -50,11 +50,14 @@ def build_prisma_data(
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # --- Load JSON sources (with graceful fallback on missing files) ---
+    # Every source is optional: `_load_json` returns None for a missing/unreadable
+    # file, so `or {}` guarantees a dict even when a gitignored runtime report is
+    # absent from a clean checkout (the dashboard then reports 0 for those stats).
     sr = _load_json(search_results_json) or {}
     qr = _load_json(query_results_json) or {}
-    s1 = _load_json(stage1_report_json) if stage1_report_json else {}
-    abr = _load_json(abstract_report_json) if abstract_report_json else {}
-    hr = _load_json(harvest_report_json) if harvest_report_json else {}
+    s1 = (_load_json(stage1_report_json) or {}) if stage1_report_json else {}
+    abr = (_load_json(abstract_report_json) or {}) if abstract_report_json else {}
+    hr = (_load_json(harvest_report_json) or {}) if harvest_report_json else {}
 
     # --- DB queries ---
     conn = sqlite3.connect(str(db_path))

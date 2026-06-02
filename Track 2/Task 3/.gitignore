@@ -22,10 +22,11 @@ memory/
 null_results.json
 run_log.json
 db_load_report.json
-reference_harvest_results.json
 triage_results.json
 acquisition_results.json
 prisma_counts.json
+# Note: Phase 3/reference_harvest_results.json IS committed as evidence — the
+# PRISMA dashboard reads it for harvest stats (pdfs_scanned, raw_reference_lines).
 
 # Phase 5: policy gate (must be manually created, never pre-committed)
 Phase 5/policy_clearance.json

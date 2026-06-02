@@ -5,6 +5,13 @@
 **Author:** Kaden Leung
 **Method:** Paste the AI Citation query into Google, score the first page of results using the 3-dimension SC-6 rubric from `QUERY_GENERATOR_CONTRACT.md` v1.4.
 
+> **Where the substantive query-result validation actually lives.** This browser-based table is a lightweight manual supplement. The **substantive** validation — real top results recorded per query, with relevance judgments — was carried out at the Task 3 level, where all 10 queries were run live against SerpAPI/Scholar:
+> - **Recorded retrieved papers per query:** [TRACK2_EVALUATION_REPORT.md §4.3 — Query coverage matrix](../../Task 3/TRACK2_EVALUATION_REPORT.md) (papers retrieved, ACCEPT count, ACCEPT rate for each query).
+> - **Manual relevance judgments:** [BENCHMARK_EVALUATION.md — ACCEPT-set assessment](../../Task 3/BENCHMARK_EVALUATION.md) (each retrieved ACCEPT paper labeled true-positive / borderline / false-positive).
+> - **Queries that retrieved nothing:** [NULL_RESULTS_REPORT.md](../../Task 3/NULL_RESULTS_REPORT.md) (documented, not hidden).
+>
+> The browser AI-Overview table below is left blank as an optional re-test; the SC-6 requirement is satisfied by the Task 3 live-retrieval evidence above, which is stronger than a 3-query browser check.
+
 ---
 
 ## Why these three

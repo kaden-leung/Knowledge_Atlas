@@ -1,6 +1,6 @@
 # Track 2 Evaluation Report — Automated CNFA Literature Discovery
 
-**Authoritative benchmark note:** This is the authoritative benchmark document for Track 2 recall, precision, ablation, baseline comparison, and the retrieval-bottleneck claim. Other evaluation documents are supporting context, not competing benchmark authorities.
+**Authority note:** This document is authoritative for the benchmark **methodology and full analysis** — corpus construction, recall/precision derivation, error taxonomy, ablation, baseline comparison, and the retrieval-bottleneck argument. The headline **metric values** are owned by [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) (the single metric source); where a number here and there could appear to differ, BENCHMARK_EVALUATION.md takes precedence. The two are complementary, not competing: numbers there, methodology here.
 
 **Author:** Kaden Leung
 **Date:** 2026-06-02

@@ -15,7 +15,7 @@ This matrix maps major Track 2 requirements to concrete evidence in the reposito
 | Stage 2B triage | ACCEPT decisions and queue population | [PROVEIT_WORKS.md](PROVEIT_WORKS.md) |
 | Null results + `MISSING_ABSTRACT` | Documented as expected terminal states | [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) |
 | Evaluation / benchmark | 30-paper benchmark, error taxonomy, ablation, baseline | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) |
-| Benchmark entry point | Alias that points to the single authoritative benchmark report | [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) |
+| Benchmark metric authority | Single authoritative source for metric values (methodology in TRACK2_EVALUATION_REPORT.md) | [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) |
 | Human validation | Manual precision review of ACCEPT set | [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) |
 | Reproducibility / setup verification | Environment check script | [setup_verify.py](setup_verify.py) |
 | End-to-end validation command | Artifact and DB evidence checks | [verify_track2_workflow.py](verify_track2_workflow.py) |

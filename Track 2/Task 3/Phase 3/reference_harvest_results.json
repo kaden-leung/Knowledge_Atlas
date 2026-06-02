@@ -1,0 +1,369 @@
+{
+  "metadata": {
+    "schema_version": "1.0.0",
+    "run_id": "RUN-20260528-120000",
+    "generated_at": "2026-05-30T22:37:30Z",
+    "started_at": "2026-05-30T22:37:02Z",
+    "pdf_dirs": [
+      "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs",
+      "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs"
+    ],
+    "pdfs_scanned": 20,
+    "pdfs_with_references_section": 20,
+    "raw_reference_lines": 1137,
+    "parsed_lines": {
+      "numbered": 644,
+      "bracketed": 142,
+      "name_year": 197,
+      "unparseable": 154
+    },
+    "inserted_into_db": 1103,
+    "merged_count": 34,
+    "marked_duplicate_count": 0
+  },
+  "per_pdf": [
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Design_for_Subjective_well-being.pdf",
+      "pdf_id": "PDF-Design_for_Subjective_well-being",
+      "references_section_found": true,
+      "raw_lines": 31,
+      "parsed_lines": 31,
+      "unparseable_lines": 0,
+      "inserted": 31,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Exploring_Campus_Architecture.pdf",
+      "pdf_id": "PDF-Exploring_Campus_Architecture",
+      "references_section_found": true,
+      "raw_lines": 41,
+      "parsed_lines": 41,
+      "unparseable_lines": 0,
+      "inserted": 41,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Mapping_Architectural_Students'_Perception.pdf",
+      "pdf_id": "PDF-Mapping_Architectural_Students__Perception",
+      "references_section_found": true,
+      "raw_lines": 74,
+      "parsed_lines": 74,
+      "unparseable_lines": 0,
+      "inserted": 73,
+      "merged": 1,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Sense_of_Place_and_Belonging.pdf",
+      "pdf_id": "PDF-Sense_of_Place_and_Belonging",
+      "references_section_found": true,
+      "raw_lines": 80,
+      "parsed_lines": 80,
+      "unparseable_lines": 0,
+      "inserted": 80,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Architecture_of_Belonging.pdf",
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "references_section_found": true,
+      "raw_lines": 13,
+      "parsed_lines": 2,
+      "unparseable_lines": 11,
+      "inserted": 13,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Influence_of_Urban_Lighting.pdf",
+      "pdf_id": "PDF-The_Influence_of_Urban_Lighting",
+      "references_section_found": true,
+      "raw_lines": 41,
+      "parsed_lines": 41,
+      "unparseable_lines": 0,
+      "inserted": 41,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Restorative_Role_of_Traditional_Architecture.pdf",
+      "pdf_id": "PDF-The_Restorative_Role_of_Traditional_Architecture",
+      "references_section_found": true,
+      "raw_lines": 24,
+      "parsed_lines": 24,
+      "unparseable_lines": 0,
+      "inserted": 24,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Spatial_Role_of_Ceramics.pdf",
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "references_section_found": true,
+      "raw_lines": 27,
+      "parsed_lines": 2,
+      "unparseable_lines": 25,
+      "inserted": 27,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Study_of_Spatial_Quality.pdf",
+      "pdf_id": "PDF-The_Study_of_Spatial_Quality",
+      "references_section_found": true,
+      "raw_lines": 76,
+      "parsed_lines": 0,
+      "unparseable_lines": 76,
+      "inserted": 70,
+      "merged": 6,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Wellbeing_as_an_emergent_property_of_social_practice.pdf",
+      "pdf_id": "PDF-Wellbeing_as_an_emergent_property_of_social_practice",
+      "references_section_found": true,
+      "raw_lines": 30,
+      "parsed_lines": 29,
+      "unparseable_lines": 1,
+      "inserted": 29,
+      "merged": 1,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Are_Biophilic-Designed_Site_Office_Buidlings.pdf",
+      "pdf_id": "PDF-Are_Biophilic-Designed_Site_Office_Buidlings",
+      "references_section_found": true,
+      "raw_lines": 50,
+      "parsed_lines": 50,
+      "unparseable_lines": 0,
+      "inserted": 50,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Biophilic_Architecture.pdf",
+      "pdf_id": "PDF-Biophilic_Architecture",
+      "references_section_found": true,
+      "raw_lines": 29,
+      "parsed_lines": 29,
+      "unparseable_lines": 0,
+      "inserted": 28,
+      "merged": 1,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Cross-Sectional_Study_of_a_biophilic_building.pdf",
+      "pdf_id": "PDF-Cross-Sectional_Study_of_a_biophilic_building",
+      "references_section_found": true,
+      "raw_lines": 61,
+      "parsed_lines": 61,
+      "unparseable_lines": 0,
+      "inserted": 60,
+      "merged": 1,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Development_of_a_Building_Evaluation.pdf",
+      "pdf_id": "PDF-Development_of_a_Building_Evaluation",
+      "references_section_found": true,
+      "raw_lines": 134,
+      "parsed_lines": 134,
+      "unparseable_lines": 0,
+      "inserted": 134,
+      "merged": 0,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Evaluating_comfort_and_well-being.pdf",
+      "pdf_id": "PDF-Evaluating_comfort_and_well-being",
+      "references_section_found": true,
+      "raw_lines": 18,
+      "parsed_lines": 17,
+      "unparseable_lines": 1,
+      "inserted": 16,
+      "merged": 2,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Impacts_of_Dynamic_LED_Lighting.pdf",
+      "pdf_id": "PDF-Impacts_of_Dynamic_LED_Lighting",
+      "references_section_found": true,
+      "raw_lines": 97,
+      "parsed_lines": 97,
+      "unparseable_lines": 0,
+      "inserted": 94,
+      "merged": 3,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Less_is_more?.pdf",
+      "pdf_id": "PDF-Less_is_more",
+      "references_section_found": true,
+      "raw_lines": 32,
+      "parsed_lines": 22,
+      "unparseable_lines": 10,
+      "inserted": 28,
+      "merged": 4,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Ocular_Light_Exposure.pdf",
+      "pdf_id": "PDF-Ocular_Light_Exposure",
+      "references_section_found": true,
+      "raw_lines": 104,
+      "parsed_lines": 104,
+      "unparseable_lines": 0,
+      "inserted": 99,
+      "merged": 5,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Recommendations_for_daytime_evening.pdf",
+      "pdf_id": "PDF-Recommendations_for_daytime_evening",
+      "references_section_found": true,
+      "raw_lines": 144,
+      "parsed_lines": 144,
+      "unparseable_lines": 0,
+      "inserted": 140,
+      "merged": 4,
+      "duplicated": 0,
+      "errors": []
+    },
+    {
+      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/The-Financial-Benefits-of-Biophilic-Design-in-the-Workplace.pdf",
+      "pdf_id": "PDF-The-Financial-Benefits-of-Biophilic-Design-in-the-Workplace",
+      "references_section_found": true,
+      "raw_lines": 31,
+      "parsed_lines": 1,
+      "unparseable_lines": 30,
+      "inserted": 25,
+      "merged": 6,
+      "duplicated": 0,
+      "errors": []
+    }
+  ],
+  "unparseable_lines_sample": [
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Aug\u00e9, M. (1995). Non-Places: An Introduction to an Anthropology of Supermodernity (J. Howe, Trans.). Verso. (Original work published",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "1992)",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Bachelard, G. (1958). La po\u00e9tique de l\u2019espace. Presses Universitaires de France.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Ba\u0161i\u0107, N. (2007). Morske orgulje: Grad i more ponovno u dijalogu. UPI-2M.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Ba\u0161i\u0107, N. (2009). Kornatski kri\u017eevi: O prostornosti sje\u0107anja. Arhitektonski fakultet Sveu\u010dili\u0161ta u Zagrebu.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Bhabha, H. K. (1994). The Location of Culture. Routledge.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Bogdanovi\u0107, B. (1983). Urbs & Logos. Beograd: BIGZ.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Coleridge, S. T. (1972). Aids to Reflection (J. H. Green, Ed.). Wipf and Stock. (Original work published 1825)",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Eco, U. (1986). Semiotics and the Philosophy of Language. Indiana University Press.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Frampton, K. (1983). Towards a Critical Regionalism: Six Points for an Architecture of Resistance. In H. Foster (Ed.), The Anti-Aesthetic:",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Architecture_of_Belonging",
+      "raw_citation": "Essays on Postmodern Culture (pp. 16\u201330). Bay Press.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": " \u015ea\u015fmazer, N., & Aksoy, F. (2018). Cesaretten De \u00d6te [More Than Courageous]. In K.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "Aliotti, N. \u015ea\u015fmazer, & F. Aksoy, F\u00fcreya (pp. 30-41). Istanbul: Kale.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "Antmen, A. (2018). Bir F\u00fcreya Miti [A F\u00fcreya Myth]. In K. Aliotti, \u015e. Nil\u00fcfer, & F. Aksoy, F\u00fcreya",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "(pp. 212-229). Istanbul: Kale.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "Arcasoy, A. (1983). Seramik Teknolojisi [Ceramic Technology]. \u0130stanbul: Marmara \u00dcniversitesi.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "B\u00f6hme, G. (2017). The Art Of The Stage Set As A Paradigm For An Aesthetics of Atmospheres.",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "B\u00fcy\u00fckkarag\u00f6z, T., & Yayan, G. (2019). \u00c7a\u011fda\u015f Tasar\u0131m Olgusu \u0130\u00e7erisinde F\u00fcreya Koral'\u0131n Yeri",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "[F\u00fcreya Koral's Place in the Phenomenon of Contemporary Design]. Journal of Turkish and",
+      "reason": "no_reference_marker"
+    },
+    {
+      "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
+      "raw_citation": "Islamic Social Research, 6(21), 73-86, 10.16989/TIDSAD.1727.",
+      "reason": "no_reference_marker"
+    }
+  ],
+  "errors": []
+}

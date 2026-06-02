@@ -266,6 +266,8 @@ Reason:
 - `TRACK2_EVALUATION_REPORT.md` is declared authoritative.
 - `BENCHMARK_EVALUATION.md` now exists as a navigation alias and does not duplicate metrics.
 
+> **Superseded (2026-06-02):** authority was later split for clarity — `BENCHMARK_EVALUATION.md` is now the authoritative source for metric **values** (it does hold the metric table), and `TRACK2_EVALUATION_REPORT.md` is authoritative for **methodology**. They are complementary, not competing.
+
 ### 11. `FAILURE_ANALYSIS.md`
 
 **Status:** Now exists  
