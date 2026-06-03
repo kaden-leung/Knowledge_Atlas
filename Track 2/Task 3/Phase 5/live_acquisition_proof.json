@@ -1,0 +1,11 @@
+{
+  "doi": "10.1371/journal.pone.0049236",
+  "source": "unpaywall",
+  "source_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0049236&type=printable",
+  "pdf_bytes": 734238,
+  "sha256": "62f8f7994062d72702184b9c93e8979669f8275a09d2ca36b473e1e5eed4a25e",
+  "validated_pdf_header": true,
+  "run_id": "RUN-P5-PROOF-20260603-113113",
+  "captured_at": "2026-06-03T11:31:13Z",
+  "note": "Capability proof on a known open-access gold-standard DOI. No DB writes; scidownl (grey source) not used. The evaluated 10-ACCEPT set yields 0 OA PDFs because those DOIs are paywalled/absent \u2014 a property of the retrieved corpus, not the acquisition code."
+}

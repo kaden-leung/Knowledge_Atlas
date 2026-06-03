@@ -175,6 +175,7 @@ class AcquisitionResult:
     pdf_sha256: str | None = None
     pdf_bytes: int | None = None
     error: str | None = None
+    source_url: str | None = None
 
 
 @dataclass
@@ -394,6 +395,58 @@ def _acquire_one(
         _log_attempt(conn, ref_id, run_id, "acquisition_failed_all_sources")
         return AcquisitionResult(ref_id, doi, "failed_all_sources",
                                  error=f"scidownl failed: {scidownl_err}")
+
+
+def acquire_by_doi(
+    doi: str,
+    output_dir: Path = DEFAULT_OUTPUT_DIR,
+    email: str = _POLITE_EMAIL,
+    timeout: int = 60,
+) -> AcquisitionResult:
+    """Capability proof for the free OA cascade on a single DOI.
+
+    Runs Unpaywall -> OpenAlex, downloads the OA PDF, validates the %PDF magic
+    header, and computes a SHA-256 — reusing the exact functions the production
+    cascade uses (`_unpaywall_get_pdf_url`, `OpenAlexClient.get_oa_pdf_url`,
+    `_download_pdf`, `_pdf_hash`). It performs NO DB writes and never touches the
+    policy-gated scidownl source, so it demonstrates that the acquisition
+    machinery works end-to-end on a known open-access paper WITHOUT mutating the
+    evaluated pipeline or its ACCEPT set. Returns an AcquisitionResult.
+    """
+    if not doi:
+        return AcquisitionResult("(by-doi)", doi, "no_doi", error="no_doi_provided")
+
+    dest = output_dir / f"{doi.replace('/', '_')}.pdf"
+
+    # Step 1: Unpaywall
+    url = _unpaywall_get_pdf_url(doi, email, timeout)
+    source = "unpaywall"
+
+    # Step 2: OpenAlex OA fallback
+    if not url:
+        try:
+            url = OpenAlexClient(min_delay=0.12).get_oa_pdf_url(doi)
+            source = "openalex"
+        except Exception:
+            url = None
+
+    if not url:
+        return AcquisitionResult(
+            "(by-doi)", doi, "failed_all_sources",
+            error="no_oa_url_from_unpaywall_or_openalex",
+        )
+
+    ok, err = _download_pdf(url, dest, email, timeout)
+    if not ok:
+        return AcquisitionResult(
+            "(by-doi)", doi, "failed_all_sources", error=err, source_url=url
+        )
+
+    return AcquisitionResult(
+        "(by-doi)", doi, f"acquired_{source}",
+        pdf_path=str(dest), pdf_sha256=_pdf_hash(dest),
+        pdf_bytes=dest.stat().st_size, source_url=url,
+    )
 
 
 def run_acquisition(

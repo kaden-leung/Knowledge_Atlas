@@ -6,7 +6,10 @@
 
 ## 1. Verdict
 
-Stage 3 acquisition logic is implemented and **live-demonstrated**: Phase 5 ran live on 2026-06-02 (run `RUN-P5-20260602-192128`) and logged **9 acquisition lifecycle transitions** across 3 queued rows. **0 PDFs were acquired** — the DOI-bearing rows are paywalled (Unpaywall/OpenAlex returned no OA URL) and scidownl is policy-gated.
+Stage 3 acquisition logic is implemented and **live-demonstrated** at two levels:
+
+1. **On the evaluated queue:** Phase 5 ran live on 2026-06-02 (run `RUN-P5-20260602-192128`) and logged **9 acquisition lifecycle transitions** across 3 queued rows. **0 PDFs were acquired from the evaluated set** — those DOI-bearing rows are paywalled (Unpaywall/OpenAlex returned no OA URL) and scidownl is policy-gated. This is a property of the *retrieved corpus*, not the code.
+2. **Capability proof:** the same download path was run live on a known open-access gold-standard DOI and **successfully acquired a real PDF** — see §8. So the acquisition machinery (`%PDF` validation + SHA-256 + source attribution) is proven end-to-end, independent of whether any specific ACCEPT row happens to be open-access.
 
 That means the safe claim is:
 
@@ -89,4 +92,26 @@ Current honest wording:
 
 - acquisition-ready state is demonstrated
 - live acquisition was **executed and logged** (9 transitions)
-- 0 PDFs acquired — attempted DOIs are paywalled and scidownl is policy-gated (an expected, correct outcome, not a failure)
+- 0 PDFs acquired *from the evaluated set* — attempted DOIs are paywalled and scidownl is policy-gated (an expected, correct outcome, not a failure)
+- the download path itself is **separately proven** on a known-OA DOI (§8)
+
+## 8. Live acquisition capability — proven on an open-access DOI
+
+Because the 10 evaluated ACCEPT rows are paywalled/no-DOI, the cascade's *successful-download* path could not be exercised on the evaluated set. To prove that path works end-to-end, the same code (`pdf_acquirer.acquire_by_doi`, reusing `_unpaywall_get_pdf_url` → `_download_pdf` → `_pdf_hash`) was run live on a known open-access **gold-standard** DOI. It performs **no DB writes** and never touches the policy-gated scidownl source.
+
+| Field | Value |
+|---|---|
+| DOI | `10.1371/journal.pone.0049236` (Tschacher et al. 2012, PLOS ONE — #25 in [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md)) |
+| Source | Unpaywall → `best_oa_location.url_for_pdf` |
+| Downloaded | **734,238 bytes**, `%PDF` magic header validated |
+| SHA-256 | `62f8f7994062d72702184b9c93e8979669f8275a09d2ca36b473e1e5eed4a25e` |
+| DB mutated | No (capability proof, outside the evaluated pipeline) |
+
+Evidence artifact: [Phase 5/live_acquisition_proof.json](<Phase 5/live_acquisition_proof.json>). Reproduce with:
+
+```bash
+cd "Track 2/Task 3"
+T2_LIVE=1 python3 -m pytest "Phase 5/test_live_acquisition.py" -q   # → 1 passed
+```
+
+The test is **skipped by default** (no `T2_LIVE`), so the standard 185-test suite stays fully offline and deterministic. This separates the honest evaluated-set result (0 OA PDFs) from the proven capability (real download + validation + hashing).

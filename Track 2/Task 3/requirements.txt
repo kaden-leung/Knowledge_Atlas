@@ -39,3 +39,9 @@ sentence-transformers>=2.2   # only needed if running the HierarchicalClassifier
 #   - Article_Eater/   (services.paper_fetcher: S2/CrossRef/PubMed/Unpaywall clients;
 #                        src/cmr/voi_scoring.py: score_voi)
 # These are required only for the live pipeline, not for grading verification.
+#
+# Portable test collection: from a checkout WITHOUT these siblings (e.g. a
+# Knowledge_Atlas-only clone), `python3 -m pytest` runs the standalone suites and
+# cleanly SKIPS the 6 sibling-dependent ones (see conftest.py) — it exits 0, not a
+# collection error. The full 185-test suite runs from a complete COGS-160 checkout
+# where Article_Finder/ and Article_Eater/ sit beside Track 2/.

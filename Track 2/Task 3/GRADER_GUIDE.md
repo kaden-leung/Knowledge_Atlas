@@ -128,7 +128,7 @@ Supporting references:
 | Stage 1 triage | Yes | Yes | [MANIFEST.md](MANIFEST.md) |
 | Stage 2A abstract collection | Yes | Yes | [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) |
 | Stage 2B triage | Yes | Yes | [PROVEIT_WORKS.md](PROVEIT_WORKS.md) |
-| PDF acquisition logic | Yes | Ran live — 9 transitions, 0 PDFs (paywalled) | [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md) |
+| PDF acquisition logic | Yes | Ran live — 9 transitions, 0 PDFs from the evaluated set (paywalled); **download path proven on a known-OA DOI** (734 KB PLOS PDF, %PDF-validated, SHA-256) | [STAGE3_EVIDENCE_AUDIT.md §8](STAGE3_EVIDENCE_AUDIT.md) |
 | AE handoff layer | Yes | Yes, local validation | [handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) |
 | One-command wrapper | Yes | Yes | [run_pipeline.py](run_pipeline.py) |
 | Chain verifier | Yes | Yes — 9/9 | [verify_track2_workflow.py](verify_track2_workflow.py) |
