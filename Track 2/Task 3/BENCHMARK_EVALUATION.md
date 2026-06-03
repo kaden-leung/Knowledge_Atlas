@@ -21,7 +21,8 @@ Full methodology, per-query tables, ablation details, and discussion are in [TRA
 | Benchmark corpus | 30 canonical CNFA papers | [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md) |
 | Retrieval recall (15-paper set) | **5/15 = 33%** | Papers entering `article_references` |
 | End-to-end recall (15-paper set) | **2/15 = 13%** | Papers reaching `triage_decision = ACCEPT` |
-| Retrieval recall (30-paper set) | **2/30 = 7%** | Full benchmark (books excluded from retrieval) |
+| Retrieval recall (30-paper set) | **2/30 = 7%** | Full benchmark (books excluded from retrieval) — gap-driven queries only |
+| Retrieval recall — subfield expansion | **10/30 = 33%** | 10 gap queries + 11 subfield queries; 4.7× lift — see [RETRIEVAL_ABLATION.md](RETRIEVAL_ABLATION.md) |
 | ACCEPT precision — conservative | **5/10 = 50%** | TP only; false positives = 3 |
 | ACCEPT precision — liberal | **7/10 = 70%** | TP + borderline (2) |
 | Abstract hit rate (DOI-bearing rows) | **73.2%** | S2 + CrossRef + PubMed + OpenAlex fallback chain |
@@ -70,6 +71,21 @@ Re-filtering existing results to simulate running only the top-K queries (by VOI
 | 9 | + NVR1-step2 | 90 | 4 | 0 (10 new papers, 0 new ACCEPTs) |
 
 Finding: ACCEPT count did not track VOI ranking. The lowest-VOI query (CSMP1-step2, VOI 0.443) contributed 2 ACCEPTs; the top-VOI query (SC3-step3, VOI 0.478) also contributed 2. Three queries with intermediate VOI contributed 0 ACCEPTs despite adding 43 papers. VOI does not predict per-query ACCEPT rate within this corpus's narrow score range (0.443–0.478).
+
+## Subfield Query Expansion Ablation
+
+A second ablation measured the effect of adding 11 CNFA-subfield queries (covering ART, SRT, biophilic, neuroaesthetics, environmental psychology, mobile EEG, CAVE VR, hospital views, art DMN, foundational reviews, embodied cognition) run manually in Google Scholar Labs on 2026-06-02.
+
+| Condition | 30-paper retrieval recall | Lift |
+|---|---|---|
+| 10 gap-driven queries only | 2/30 = **7%** | — |
+| 10 gap + 11 subfield queries | 10/30 = **33%** | **4.7×** |
+
+8 new gold-standard papers surfaced: Kaplan 1995 (#7), Berto 2014 (#26), Vartanian 2015 (#3), Coburn 2017 (#4), Gramann 2014 (#6), Fich 2014 (#5), Ulrich 1984 (#8), Vessel 2012 (#27).
+
+4 subfield queries returned relevant literature but still missed their gold-standard targets (Evans & McCoy 1998, Gifford 2014, Tschacher 2012, Sternberg & Wilson 2006, Wilson 2002), showing that even broad subfield coverage does not guarantee retrieval of every benchmarked paper.
+
+Full methodology and per-query table: [RETRIEVAL_ABLATION.md](RETRIEVAL_ABLATION.md)
 
 ---
 
