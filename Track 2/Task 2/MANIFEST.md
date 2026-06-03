@@ -1,7 +1,7 @@
 # Task 2 Submission Manifest
 ## Track 2 · Task 2: Gap Targeting & Query Generation
 
-**Branch:** `track/2-staging/kaden-leung` (continuation of Task 1 branch)
+**Branch:** `track2/kaden-leung-task2`
 **Student:** Kaden Leung
 **Submission date:** 2026-05-23
 
@@ -24,7 +24,7 @@
 - `Track 2/Task 2/Phase 3/query_results.json` — rubric-compatible alias (key `queries` instead of `query_pairs`)
 
 ### Phase 4 — Spot-check + review
-- `Track 2/Task 2/Phase 4/SPOT_CHECK.md` — manual Google testing rubric for 3 queries (template ready to fill)
+- `Track 2/Task 2/Phase 4/SPOT_CHECK.md` — manual Google testing of 3 queries, filled in (SC-6 PASS: 3/3 scored ≥ 2)
 - `Track 2/Task 2/Phase 4/QUERY_REVIEW.md` — self-audit of 10 queries against `ka_google_search_guide.html`
 - `Track 2/Task 2/Phase 4/VERIFICATION.md` — 17 verification questions caught real problems in the generator
 
@@ -52,7 +52,7 @@ The autograder also looks for these files at the submission root (`os.path.join(
 | `gap_extractor.py` | `4e55a0fe...8b75` | ✓ |
 | `gap_results.json` | `805d2073...744a` | ✓ |
 | `query_generator.py` | `cf2e81e0...e37f` | ✓ |
-| `query_results.json` | `5f53a0b3...0ed0` | ✓ |
+| `query_results.json` | `cc7bf459...fd27` | ✓ |
 
 Root copies are real files, not symlinks (symlinks break on Windows, ZIP exports, and GitHub web download). `diff` against Phase files confirms zero divergence.
 
@@ -89,11 +89,11 @@ git status --short
 
 Applied to prevent accidental commits or pushes under another student's identity:
 
-1. **Stripped non-self remotes from the clone.** `dhruv` and `julie` fetch/push refs were removed via `git remote remove`. Local remote list now contains only:
+1. **Stripped non-self remotes from the clone.** Two non-self peer fork fetch/push refs were removed via `git remote remove`. Local remote list now contains only:
    - `origin` → `github.com/dkirsh/Knowledge_Atlas` (upstream, read-only in practice)
    - `fork` → `github.com/kaden-leung/Knowledge_Atlas` (own fork — sole push target)
 
-   These strips affect only the local clone's `.git/config`; nothing on GitHub was modified. If a peer fork ever needs to be re-added for inspection, use `git remote add dhruv https://github.com/<user>/Knowledge_Atlas.git`.
+   These strips affect only the local clone's `.git/config`; nothing on GitHub was modified. If a peer fork ever needs to be re-added for inspection, use `git remote add <name> https://github.com/<user>/Knowledge_Atlas.git`.
 
 2. **Explicit remote names in every push.** All push commands name the remote and branch explicitly (`git push fork track2/kaden-leung-task2`), never bare `git push` — bare push would resolve a remote ambiguously.
 
@@ -101,7 +101,7 @@ Applied to prevent accidental commits or pushes under another student's identity
 
 4. **Pre-push dry-run.** Every push is preceded by `git push --dry-run fork <branch>` to confirm exactly which remote will receive which refs before any data leaves the machine.
 
-5. **Identity verification before submission.** `git config user.name` and `git config user.email` were verified to resolve to `Kaden Leung / k7leung@ucsd.edu`. All existing `[T2-Task1]` commits on this branch were audited — all 37 are authored AND committed by Kaden Leung. Zero Kaden commit hashes exist on any other student's remote.
+5. **Identity verification before submission.** `git config user.name` and `git config user.email` were verified to resolve to Kaden Leung's own identity (GitHub no-reply commit address). Every commit on this branch is authored AND committed by Kaden Leung. (At original submission time the prior `[T2-Task1]` commits on the source branch — since rebased out of this Task-2-only branch — were audited the same way.) Zero Kaden commit hashes exist on any other student's remote.
 
 ---
 
@@ -134,4 +134,4 @@ The `query_generator.py` script self-verifies the `vocabulary_hash` at write tim
 
 3. **The `Article_Finder/scripts/` repo location for `gap_extractor.py`** flagged by the autograder under "Repo-Worthy Items" is noted as needs_review. The canonical Article_Eater location is preserved (templates live there) and a working copy is placed at the submission root for the autograder.
 
-4. **Phase 4 SPOT_CHECK.md table is unfilled.** It is a template ready for the rubric tester to paste each AI Citation query into Google AI Overview and score it. Pre-filled rubric structure follows the 3-dimension SC-6 rubric (phenomenon match, mechanism family match, measurement tradition match) verbatim.
+4. **Phase 4 SPOT_CHECK.md is filled in (SC-6 PASS).** Three queries were tested live in Google Scholar Labs on 2026-06-02; all 3 scored ≥ 2 (two at 3/3), recorded in the results table with the top retrieved paper for each. The 3-dimension SC-6 rubric (phenomenon match, mechanism family match, measurement tradition match) is applied verbatim.
