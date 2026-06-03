@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T10:14:40Z",
+  "generated_at": "2026-06-03T10:49:11Z",
   "schema_version": "1.0.0",
   "execution_gaps": {
     "paperscraper_operational": false,
@@ -97,28 +97,28 @@
     "harvested_rows": 1103
   },
   "abstract_summary": {
-    "candidates_entering": 335,
-    "abstracts_found": 93,
-    "missing_abstract": 241,
-    "hit_rate": 0.2776,
+    "candidates_entering": 291,
+    "abstracts_found": 68,
+    "missing_abstract": 222,
+    "hit_rate": 0.2337,
     "by_source": {
-      "semantic_scholar": 28,
-      "crossref": 11,
-      "pubmed": 40,
-      "openalex": 14
+      "semantic_scholar": 22,
+      "crossref": 10,
+      "pubmed": 23,
+      "openalex": 13
     }
   },
   "triage_summary": {
-    "stage1_processed": 1258,
-    "rejected_at_metadata": 925,
-    "noise_rejects": 330,
-    "classifier_rejects": 595,
-    "passed_stage1": 335,
-    "stage2b_processed": 92,
-    "accept": 21,
-    "edge_case": 35,
+    "stage1_processed": 1193,
+    "rejected_at_metadata": 904,
+    "noise_rejects": 328,
+    "classifier_rejects": 576,
+    "passed_stage1": 291,
+    "stage2b_processed": 67,
+    "accept": 10,
+    "edge_case": 21,
     "reject_stage2b": 36,
-    "missing_abstract_terminal": 241
+    "missing_abstract_terminal": 222
   },
   "prisma_funnel": [
     {
@@ -153,50 +153,50 @@
     },
     {
       "stage": "Total in candidate buffer",
-      "count": 1258,
+      "count": 1193,
       "indent": false
     },
     {
       "stage": "Rejected at metadata (Stage 1)",
-      "count": 925,
+      "count": 904,
       "indent": false,
       "highlight": "red-light"
     },
     {
       "stage": "→ Noise rules",
-      "count": 330,
+      "count": 328,
       "indent": true
     },
     {
       "stage": "→ Classifier < 0.20",
-      "count": 595,
+      "count": 576,
       "indent": true
     },
     {
       "stage": "Abstracts collected (Stage 2A)",
-      "count": 93,
+      "count": 68,
       "indent": false
     },
     {
       "stage": "MISSING_ABSTRACT (no abstract found)",
-      "count": 241,
+      "count": 222,
       "indent": false,
       "highlight": "grey"
     },
     {
       "stage": "Screened by classifier (Stage 2B)",
-      "count": 92,
+      "count": 67,
       "indent": false
     },
     {
       "stage": "→ ACCEPT (on-topic, threshold VOI)",
-      "count": 21,
+      "count": 10,
       "indent": true,
       "highlight": "green"
     },
     {
       "stage": "→ EDGE_CASE (borderline)",
-      "count": 35,
+      "count": 21,
       "indent": true,
       "highlight": "yellow"
     },
@@ -208,7 +208,7 @@
     }
   ],
   "acquisition_summary": {
-    "in_queue": 21,
+    "in_queue": 10,
     "acquired": 0,
     "failed": 0,
     "gate_blocked": 0

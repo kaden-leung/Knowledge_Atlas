@@ -275,14 +275,14 @@ ORDER BY voi_score DESC NULLS LAST, created_at ASC;
 | After search dedupe | 84 |
 | + PDF-reference harvest | 1103 |
 | Total in candidate buffer | 1193 |
-| Rejected at metadata (Stage 1) | 984 |
-| → Noise rules | 315 |
-| → Classifier < 0.20 | 669 |
-| Abstracts collected (Stage 2A) | 44 |
-| MISSING_ABSTRACT | 167 |
-| Screened (Stage 2B) | 42 |
-| → **ACCEPT** | **6** |
-| → EDGE_CASE | 0 |
+| Rejected at metadata (Stage 1) | 904 |
+| → Noise rules | 328 |
+| → Classifier < 0.20 | 576 |
+| Abstracts collected (Stage 2A) | 67 |
+| MISSING_ABSTRACT | 222 |
+| Screened (Stage 2B) | 67 |
+| → **ACCEPT** | **10** |
+| → EDGE_CASE | 21 |
 | → REJECT | 36 |
 
 **Refresh:** `python3 Phase 6/generate_prisma_report.py`

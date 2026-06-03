@@ -8,28 +8,17 @@
     "REF-2026-05-30-000417.json",
     "REF-2026-05-30-000430.json",
     "REF-2026-05-31-000064.json",
-    "REF-2026-05-31-000065.json",
-    "REF-2026-06-03-000001.json",
-    "REF-2026-06-03-000011.json",
-    "REF-2026-06-03-000012.json",
-    "REF-2026-06-03-000014.json",
-    "REF-2026-06-03-000038.json",
-    "REF-2026-06-03-000040.json",
-    "REF-2026-06-03-000042.json",
-    "REF-2026-06-03-000043.json",
-    "REF-2026-06-03-000047.json",
-    "REF-2026-06-03-000052.json",
-    "REF-2026-06-03-000062.json"
+    "REF-2026-05-31-000065.json"
   ],
   "db_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Knowledge_Atlas/Track 2/Task 3/task3_pipeline_lifecycle.db",
   "handoff_version": "1.0",
-  "normalized_doi_count": 10,
-  "selected_accept_rows": 21,
+  "normalized_doi_count": 8,
+  "selected_accept_rows": 10,
   "skipped": [
     {
       "reason": "missing_abstract",
       "reference_id": "REF-2026-05-30-000001"
     }
   ],
-  "written_count": 20
+  "written_count": 9
 }

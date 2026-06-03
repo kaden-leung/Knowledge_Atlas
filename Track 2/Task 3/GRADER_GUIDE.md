@@ -47,7 +47,7 @@ TASK 3 — Literature Discovery Pipeline
   article_references  (1,193 candidates, incl. PDF-harvested)
       |
       v  [stage1_metadata_triage.py]
-  Stage 1 metadata screen  (984 rejected; 209 to Stage 2A)
+  Stage 1 metadata screen  (904 rejected; 289 to Stage 2A)
       |
       v  [abstract_collector.py]
   Stage 2A abstract collection  S2 → CrossRef → PubMed → OpenAlex
