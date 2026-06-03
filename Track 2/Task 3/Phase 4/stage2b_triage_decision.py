@@ -31,7 +31,8 @@ DEFAULT_VOI_FALLBACK = 0.443
 
 # Default input paths
 DEFAULT_DB = _HERE.parent / "task3_pipeline_lifecycle.db"
-DEFAULT_QUERY_RESULTS = _HERE.parents[2] / "Track 2" / "Task 2" / "Phase 3" / "query_results.json"
+# Vendored Task 2 query artifact, local to Task 3 (see inputs/QUERY_PROVENANCE.md).
+DEFAULT_QUERY_RESULTS = _HERE.parent / "inputs" / "query_results.json"
 
 
 def utc_now_iso() -> str:

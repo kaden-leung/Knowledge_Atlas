@@ -1,9 +1,9 @@
 {
-  "artifacts_seen": 9,
+  "artifacts_seen": 20,
   "inbox_version": "1.0",
   "invalid_count": 0,
   "invalid_files": [],
-  "valid_count": 9,
+  "valid_count": 20,
   "valid_files": [
     "REF-2026-05-30-000006.json",
     "REF-2026-05-30-000090.json",
@@ -13,6 +13,17 @@
     "REF-2026-05-30-000417.json",
     "REF-2026-05-30-000430.json",
     "REF-2026-05-31-000064.json",
-    "REF-2026-05-31-000065.json"
+    "REF-2026-05-31-000065.json",
+    "REF-2026-06-03-000001.json",
+    "REF-2026-06-03-000011.json",
+    "REF-2026-06-03-000012.json",
+    "REF-2026-06-03-000014.json",
+    "REF-2026-06-03-000038.json",
+    "REF-2026-06-03-000040.json",
+    "REF-2026-06-03-000042.json",
+    "REF-2026-06-03-000043.json",
+    "REF-2026-06-03-000047.json",
+    "REF-2026-06-03-000052.json",
+    "REF-2026-06-03-000062.json"
   ]
 }

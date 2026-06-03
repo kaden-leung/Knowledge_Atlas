@@ -8,10 +8,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-# Task 2 query output lives one level up, in the sibling Task 2 directory.
-# This sibling path resolves correctly from both the author working tree and a
-# fresh Knowledge_Atlas checkout (where Task 2 and Task 3 sit side by side).
-TASK2_QUERY = ROOT.parent / "Task 2" / "Phase 3" / "query_results.json"
+# Task 2 query output is vendored into this task as a committed input artifact so
+# that Task 3 verifies self-contained, without assuming a sibling Task 2 directory.
+# Provenance: Track 2/Task 3/inputs/QUERY_PROVENANCE.md
+TASK2_QUERY = ROOT / "inputs" / "query_results.json"
 SEARCH_RESULTS = ROOT / "Phase 2" / "search_results.json"
 DB_PATH = ROOT / "task3_pipeline_lifecycle.db"
 ACQUISITION_REPORT = ROOT / "Phase 5" / "acquisition_report.json"

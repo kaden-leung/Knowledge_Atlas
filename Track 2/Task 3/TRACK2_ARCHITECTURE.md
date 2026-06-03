@@ -54,8 +54,8 @@ Without Task 2, Task 3 would be a generic search-and-triage pipeline. With Task 
 
 | Stage | Main evidence |
 |---|---|
-| Gap extraction | [Track 2/Task 2/Phase 2/gap_results.json](<../Task 2/Phase 2/gap_results.json>) |
-| Query generation | [Track 2/Task 2/Phase 3/query_results.json](<../Task 2/Phase 3/query_results.json>) |
+| Gap extraction | Task 2 deliverable (separate submission, branch `track2/kaden-leung-task2`) |
+| Query generation | [inputs/query_results.json](<inputs/query_results.json>) (vendored from Task 2 — see [inputs/QUERY_PROVENANCE.md](<inputs/QUERY_PROVENANCE.md>)) |
 | Retrieval | [Track 2/Task 3/Phase 2/search_results.json](<Phase 2/search_results.json>) |
 | DB buffer | [task3_pipeline_lifecycle.db](task3_pipeline_lifecycle.db) |
 | Stage 1 + Stage 2A + Stage 2B | [MANIFEST.md](MANIFEST.md) |

@@ -1,0 +1,17 @@
+{
+  "abstract": "Attention is a cornerstone of cognitive function, and understanding its neural mechanisms is of great significance for both cognitive science and clinical applications. A critical aspect of this endeavor involves elucidating how the brain's network architecture shifts between internally- and externally-directed states. However, the distinct organizational principles of neural networks in these states, as well as the pivotal brain regions and connections that mediate such transitions, remain largely unclear. To investigate these network dynamics, this study analyzed stereo-electroencephalography (SEEG) data from 17 patients with refractory epilepsy performing a modified gradual-onset continuous performance task (gradCPT) designed to induce distinct internal and external attention states. High-frequency broadband (HFB, 70-170 Hz) signals were extracted as indicators of neural activity, and neural Granger causality analysis was employed to construct effective connectivity networks between brain regions. For the effective connectivity networks, we systematically applied modular analysis to quantify network segregation, node role classification to identify hub regions, and machine learning methods to evaluate the discriminative power of the identified connectivity differences. The results showed that the external attention state exhibited significantly stronger global causal connectivity and a topological profile dominated by connector hubs. In contrast, the internal attention state displayed higher modularity and a prevalence of peripheral nodes, reflecting a segregated network architecture. Eight pairs of brain region connections showed significant differences between the two states, primarily involving the parietal-temporal network. A support vector machine (SVM) classifier achieved 77.8% accuracy in distinguishing attention states under cross-subject conditions using the identified directed connectivity features, demonstrating the discriminative power of network differences. Feature importance analysis identified the intrinsic dynamics of the hippocampus (HIP) and its directed outflow to the middle temporal gyrus (MTG) as the most significant discriminative features. Consequently, the hippocampus operates in concert with temporal and parietal regions to mediate these transitions, suggesting that flexible cognitive control depends on the dynamic coupling between memory systems and cortical networks. These results provide potential neural biomarkers for attention-related disorders and advance our mechanistic understanding of how the brain adaptively organizes information flow to meet varying cognitive demands.",
+  "abstract_source": "pubmed",
+  "discovered_via": [
+    "scholarly_search"
+  ],
+  "discovery_run_id": "RUN-20260603-020713",
+  "doi": null,
+  "handoff_version": "1.0",
+  "publication_year": 2026,
+  "reference_id": "REF-2026-06-03-000047",
+  "title": "Hippocampal-parietal directed connectivity mediates brain network reconfiguration between internal and external attention: An intracranial EEG study",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "NeuroImage",
+  "voi_score": 0.443
+}

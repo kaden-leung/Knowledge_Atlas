@@ -1,0 +1,18 @@
+{
+  "abstract": "The free-energy principle proposes that the brain maintains and updates a generative model to minimize variational free energy, thereby reducing surprise in its sensory inputs. Perception, action, and learning are cast as complementary processes that refine predictions and shape the environment to match them. Extending this framework to future outcomes yields expected free energy, which unifies exploratory and goal-directed behavior. Predictive coding emerges as a practical formulation of this principle, describing perception as hierarchical prediction-error minimization. Recent experimental and computational advances demonstrate the growing applicability of this framework to understanding cognition and building adaptive artificial agents.",
+  "abstract_source": "openalex",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260603-020713",
+  "doi": "10.1007/978-981-95-1327-7_14",
+  "handoff_version": "1.0",
+  "publication_year": 2026,
+  "reference_id": "REF-2026-06-03-000011",
+  "title": "Free-Energy Principle and Predictive Coding: A Computational Theory Explaining Various Brain Functions",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "\u2026 Discussion about Cognition, Language and Society",
+  "voi_score": 0.443
+}

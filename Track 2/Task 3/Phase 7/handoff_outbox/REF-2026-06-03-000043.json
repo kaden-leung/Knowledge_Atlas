@@ -1,0 +1,18 @@
+{
+  "abstract": "It is well established that the frontal eye-fields (FEF) in the dorsal attention network (DAN) guide top-down selective attention. In addition, converging evidence implies a causal role for the FEF in attention shifting, which is also known to recruit the ventral attention network (VAN) and fronto-striatal regions. To investigate the causal influence of the FEF as (part of) a central hub between these networks, we applied thetaburst transcranial magnetic stimulation (TBS) off-line, combined with functional magnetic resonance (fMRI) during a cued visuo-spatial attention shifting paradigm. We found that TBS over the right FEF impaired performance on a visual discrimination task in both hemifields following attention shifts, while only left hemifield performance was affected when participants were cued to maintain the focus of attention. These effects recovered ca. 20min post stimulation. Furthermore, particularly following attention shifts, TBS suppressed the neural signal in bilateral FEF, right inferior and superior parietal lobule (IPL/SPL) and bilateral supramarginal gyri (SMG). Immediately post stimulation, functional connectivity was impaired between right FEF and right SMG as well as right putamen. Importantly, the extent of decreased connectivity between right FEF and right SMG correlated with behavioural impairment following attention shifts. The main finding of this study demonstrates that influences from right FEF on SMG in the ventral attention network causally underly attention shifts, presumably by enabling disengagement from the current focus of attention.",
+  "abstract_source": "pubmed",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260603-020713",
+  "doi": null,
+  "handoff_version": "1.0",
+  "publication_year": 2017,
+  "reference_id": "REF-2026-06-03-000043",
+  "title": "Functional connectivity between prefrontal and parietal cortex drives visuo-spatial attention shifts",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "Neuropsychologia",
+  "voi_score": 0.443
+}

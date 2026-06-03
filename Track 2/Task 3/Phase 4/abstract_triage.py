@@ -35,7 +35,8 @@ from abstract_collector import run_collection
 from stage2b_triage_decision import run_stage2b_triage
 
 DEFAULT_DB = _TASK3 / "task3_pipeline_lifecycle.db"
-DEFAULT_QUERY_RESULTS = _TASK3.parent / "Task 2" / "Phase 3" / "query_results.json"
+# Vendored Task 2 query artifact, local to Task 3 (see inputs/QUERY_PROVENANCE.md).
+DEFAULT_QUERY_RESULTS = _TASK3 / "inputs" / "query_results.json"
 DEFAULT_FIXTURES = _HERE / "fixtures"
 
 

@@ -4,9 +4,9 @@ This matrix maps major Track 2 requirements to concrete evidence in the reposito
 
 | Rubric requirement | Evidence | File |
 |---|---|---|
-| Gap extraction | 554-gap output, contract, manifest | [Track 2/Task 2/Phase 2/gap_results.json](<../Task 2/Phase 2/gap_results.json>) |
-| Query generation | 10 query pairs, contract, verification log | [Track 2/Task 2/Phase 3/query_results.json](<../Task 2/Phase 3/query_results.json>) |
-| Verification questions | 17 caught problems in generator implementation | [Track 2/Task 2/Phase 4/VERIFICATION.md](<../Task 2/Phase 4/VERIFICATION.md>) |
+| Gap extraction | 554-gap output, contract, manifest | Task 2 submission (separate PR, branch `track2/kaden-leung-task2`) |
+| Query generation | 10 query pairs, contract, verification log | [inputs/query_results.json](<inputs/query_results.json>) (vendored from Task 2) |
+| Verification questions | 17 caught problems in generator implementation | Task 2 submission (separate PR) |
 | Retrieval pipeline | Live run over 10 Task 2 queries, 84 candidates after dedupe | [Track 2/Task 3/Phase 2/search_results.json](<Phase 2/search_results.json>) |
 | DB candidate buffer | 1,193 rows in `article_references` | [task3_pipeline_lifecycle.db](task3_pipeline_lifecycle.db) |
 | Reference harvesting | 20 PDFs harvested into shared DB buffer | [MANIFEST.md](MANIFEST.md) |

@@ -42,7 +42,7 @@ VOI map keyed by either the boolean query string or the query's display_id. Valu
 |---|---|---|
 | `db_path` | `Track 2/Task 3/task3_pipeline_lifecycle.db` | Local DB |
 | `run_id` | required | Stamped on every transition row |
-| `query_results_json` | `Track 2/Task 2/Phase 3/query_results.json` | Source of `voi_score` lookups |
+| `query_results_json` | `Track 2/Task 3/inputs/query_results.json` (vendored Task 2 output) | Source of `voi_score` lookups |
 | `classifier_on_topic` | `0.50` | Confidence ≥ this → "on-topic" |
 | `classifier_off_topic` | `0.20` | Confidence < this → "off-topic" |
 | `voi_high` | `0.70` | VOI ≥ this → "high" |

@@ -15,7 +15,7 @@ PHASE_4_PLAN.md was drafted on 2026-05-27, before Phase 3 was built. This docume
 | `article_references` table with 24 cols incl. `abstract_text`, `abstract_source`, `triage_decision`, `triage_reason`, `classifier_confidence`, `voi_score` | DDL has all these | ✓ |
 | `lifecycle_transitions` audit log with `created_by` | Built; FK enforced ON DELETE CASCADE | ✓ |
 | `insert_or_dedupe_reference()` only for INSERTs; Phase 4 only UPDATEs existing rows | Single mutation path doc'd in SCHEMA_CONTRACT §3, §8 | ✓ |
-| `query_results.json` from Task 2 for VOI lookup | Path: `Track 2/Task 2/Phase 3/query_results.json` (also mirrored at root) | ✓ |
+| `query_results.json` from Task 2 for VOI lookup | Path: `Track 2/Task 3/inputs/query_results.json` (vendored Task 2 output) | ✓ |
 | Reuses `SemanticScholarClient`, `CrossRefClient`, `PubMedClient` from `Article_Eater/src/services/paper_fetcher.py` | Confirmed in Phase 1B review; clients import cleanly | ✓ |
 | Reuses `HierarchicalClassifier` from `Article_Finder/triage/classifier.py` | File exists per plan §3C; need to confirm at execution time | To verify |
 

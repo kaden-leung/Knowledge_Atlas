@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-02  
 **Method:** Repository reconstruction from file contents, not filenames alone  
-**Scope:** `Track 2/Task 2`, `Track 2/Task 3`, mirrored Task 2 files in `Knowledge_Atlas`, and the strongest existing evaluation/validation artifacts
+**Scope:** `Track 2/Task 3` and the strongest existing evaluation/validation artifacts. Task 2 is delivered as a separate submission (branch `track2/kaden-leung-task2`); Task 3 consumes only its query output, vendored at [inputs/query_results.json](<inputs/query_results.json>).
 
 ## 1. What the system does
 
@@ -33,9 +33,9 @@ The strongest existing project claim is not merely that the pipeline runs. It is
 
 ### Fully implemented and evidenced
 
-- Task 2 gap extraction outputs and query generation outputs exist under [Track 2/Task 2/MANIFEST.md](<../Task 2/MANIFEST.md>).
-- Task 2 query generation is contract-heavy and verification-heavy, with 17 documented verification questions in [VERIFICATION.md](<../Task 2/Phase 4/VERIFICATION.md>).
-- Task 2 Phase 3 deliverables are mirrored into `Knowledge_Atlas/Track 2/Task 2/Phase 3/`, which partially solves discoverability.
+- Task 2 gap extraction and query generation outputs are delivered in the separate Task 2 submission (branch `track2/kaden-leung-task2`); Task 3 consumes the query output, vendored at [inputs/query_results.json](<inputs/query_results.json>).
+- Task 2 query generation is contract-heavy and verification-heavy, with 17 documented verification questions (in the Task 2 submission).
+- Task 2's query output is vendored into Task 3 at `inputs/query_results.json`, so Task 3 verifies self-contained without assuming a sibling Task 2 directory.
 - Task 3 search, DB loading, reference harvesting, triage, acquisition logic, and reporting code all exist and are documented in [MANIFEST.md](MANIFEST.md).
 - Task 3 setup verification already has a one-command script in [setup_verify.py](setup_verify.py).
 - End-to-end trace evidence exists in [PROVEIT_WORKS.md](PROVEIT_WORKS.md).
@@ -67,8 +67,8 @@ The following now exist and close earlier visibility and reproducibility gaps:
 - [run_pipeline.py](run_pipeline.py)
 - [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md)
 - [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
-- [HOW_TO_RUN.md](<../Task 2/HOW_TO_RUN.md>)
-- [run_gap_extraction.sh](<../Task 2/run_gap_extraction.sh>)
+- [inputs/query_results.json](<inputs/query_results.json>) — vendored Task 2 query output ([provenance](<inputs/QUERY_PROVENANCE.md>))
+- Task 2 run guide and `run_gap_extraction.sh` — in the separate Task 2 submission
 
 ## 4. What appears duplicated
 
@@ -89,8 +89,7 @@ The cleanest fix is to designate one benchmark authority and let the other evalu
 
 - There is no obvious `START HERE` entry point for a grader beyond discovering [MANIFEST.md](MANIFEST.md) manually.
 - There is no short architecture document connecting Task 2 -> Task 3 -> evaluation.
-- Task 2 reproducibility is weaker than its manifest suggests. The manifest describes submission-root copies and reproduction commands, but the actual `Track 2/Task 2` directory currently does not contain the claimed root copies `gap_extractor.py`, `query_generator.py`, `gap_results.json`, and `query_results.json`.
-- Task 2 also lacks a clean wrapper for the PYTHONPATH-sensitive extraction path.
+- Task 2 is delivered as a separate submission (branch `track2/kaden-leung-task2`); Task 3 no longer depends on the Task 2 directory being present. The one input Task 3 requires — the query set — is vendored at `inputs/query_results.json` (see [inputs/QUERY_PROVENANCE.md](<inputs/QUERY_PROVENANCE.md>)).
 - Stage 3 evidence is now documented in [STAGE3_EVIDENCE_AUDIT.md](STAGE3_EVIDENCE_AUDIT.md), which makes the dry-run-only boundary explicit.
 - There is no dedicated rubric traceability matrix that maps requirement to evidence in one table.
 - There is no dedicated demonstrated-vs-implemented matrix that makes overclaiming hard to miss.

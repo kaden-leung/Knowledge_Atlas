@@ -1,0 +1,17 @@
+{
+  "abstract": "Stimulus-driven attention can improve working memory (WM) when drawn to behaviorally relevant information, but the neural mechanisms underlying this effect are unclear. The present study used functional magnetic resonance imaging (fMRI) to test competing hypotheses regarding the nature of the benefits of stimulus-driven attention to WM: that stimulus-driven attention benefits WM directly via salience detection, that stimulus-driven attention benefits WM incidentally via cognitive control mechanisms recruited to reduce interference from salient features, or that both mechanisms are co-involved in enhancing WM for salient information. To test these hypotheses, we observed activation in brain regions associated with cognitive control and salience detection. We found 2 cognitive control regions that were associated with enhanced memory for salient stimuli: a region in the right superior parietal lobule and a region in the right inferior frontal junction. No regions associated with salience detection were found to show this effect. These fMRI results support the hypothesis that benefits to WM from stimulus-driven attention occur primarily as a result of cognitive control and top-down factors rather than pure bottom-up aspects of stimulus-driven attention.",
+  "abstract_source": "pubmed",
+  "discovered_via": [
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260603-020713",
+  "doi": null,
+  "handoff_version": "1.0",
+  "publication_year": 2017,
+  "reference_id": "REF-2026-06-03-000042",
+  "title": "Neural mechanisms for the benefits of stimulus-driven attention",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "Cerebral \u2026",
+  "voi_score": 0.443
+}

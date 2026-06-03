@@ -88,12 +88,11 @@ To regenerate all evidence artifacts:
 python3 run_pipeline.py --mode all-evidence
 ```
 
-Task 2 reproducibility (requires local Article_Eater checkout — see [HOW_TO_RUN.md](<../Task 2/HOW_TO_RUN.md>)):
-
-```bash
-cd "Track 2/Task 2"
-bash run_gap_extraction.sh --output /tmp/gap_report.json --top-n 10
-```
+Task 2 (gap extraction + query generation) is delivered as a **separate submission**
+(branch `track2/kaden-leung-task2`). Task 3 consumes only Task 2's query output, which is
+vendored here as a committed input at [inputs/query_results.json](<inputs/query_results.json>)
+— see [inputs/QUERY_PROVENANCE.md](<inputs/QUERY_PROVENANCE.md>). Task 3 therefore verifies
+self-contained, with no dependency on a sibling Task 2 directory.
 
 ---
 
@@ -113,7 +112,7 @@ Supporting references:
 - [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) — manual precision review and threshold sensitivity
 - [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 225 MISSING_ABSTRACT rows, documented
 - [MANIFEST.md](MANIFEST.md) — single-page audit trail for Task 3
-- [Track 2/Task 2/MANIFEST.md](<../Task 2/MANIFEST.md>) — Task 2 deliverables and autograder result
+- Task 2 deliverables and autograder result — in the separate Task 2 submission (branch `track2/kaden-leung-task2`)
 - [Phase 7/handoff_outbox/handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) — downstream-ready export evidence
 
 ---
@@ -122,8 +121,8 @@ Supporting references:
 
 | Component | Implemented | Demonstrated | Evidence |
 |---|---|---|---|
-| Task 2 gap extraction | Yes | Yes | [gap_results.json](<../Task 2/Phase 2/gap_results.json>) |
-| Task 2 query generation | Yes | Yes | [query_results.json](<../Task 2/Phase 3/query_results.json>) |
+| Task 2 gap extraction | Yes | Yes | Task 2 submission (separate PR) |
+| Task 2 query generation | Yes | Yes | [inputs/query_results.json](<inputs/query_results.json>) (vendored) |
 | Retrieval pipeline | Yes | Yes | [search_results.json](<Phase 2/search_results.json>) |
 | DB buffer + lifecycle logging | Yes | Yes | task3_pipeline_lifecycle.db |
 | Stage 1 triage | Yes | Yes | [MANIFEST.md](MANIFEST.md) |

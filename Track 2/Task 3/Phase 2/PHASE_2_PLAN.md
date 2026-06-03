@@ -81,7 +81,7 @@ This split keeps Phase 2 testable without a database and earns 13 of the 75 task
 
 ### Files Phase 2 references but does not create
 
-- `Track 2/Task 2/Phase 3/query_results.json` ← from Task 2 (input).
+- `inputs/query_results.json` ← vendored Task 2 query output (input; see `inputs/QUERY_PROVENANCE.md`).
 - `Article_Finder/core/ae_corpus_dedupe.py` → reuse `normalize_doi`, `normalize_title`.
 - `Phase 3/migrations/001_article_references.sql` ← Phase 3 will create; Phase 2 names match Phase 3's INSERT columns.
 
@@ -400,7 +400,7 @@ def make_candidate_id(run_id: str, idx: int) -> str: ...
 
 ```
 python search_runner.py \
-    --queries "../Task 2/Phase 3/query_results.json" \
+    --queries "inputs/query_results.json" \
     --output Phase\ 2/search_results.json \
     --null-output Phase\ 2/null_results.json \
     --run-log Phase\ 2/run_log.json \

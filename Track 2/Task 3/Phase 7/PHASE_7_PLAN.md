@@ -39,7 +39,7 @@ This plan is based on repository inspection, not assumptions.
 
 ### 1.1 Verified strengths already present
 
-- Task 2 Phase 3 deliverables are already mirrored into `Knowledge_Atlas/Track 2/Task 2/Phase 3/`.
+- Task 2's query output is vendored into Task 3 at `inputs/query_results.json` (Task 2 ships as a separate submission, branch `track2/kaden-leung-task2`).
 - Task 3 Phases 2-6 code exists, including search, DB loading, reference harvesting, Stage 1 triage, abstract collection, Stage 2B triage, PDF acquisition logic, and Phase 6 reporting.
 - Evaluation artifacts already exist:
   - `Track 2/Task 3/TRACK2_EVALUATION_REPORT.md`
@@ -70,8 +70,7 @@ This plan is based on repository inspection, not assumptions.
 - `Track 2/Task 3/run_pipeline.py`
 - `Track 2/Task 3/BENCHMARK_EVALUATION.md`
 - `Track 2/Task 3/LESSONS_LEARNED.md`
-- `Track 2/Task 2/HOW_TO_RUN.md`
-- `Track 2/Task 2/run_gap_extraction.sh`
+- `Track 2/Task 3/inputs/query_results.json` (vendored Task 2 query output; Task 2 run guide ships with the Task 2 submission)
 
 ### 1.4 Important nuance
 
@@ -144,15 +143,14 @@ This order is optimized for grading impact and dependency safety.
 - `Track 2/Task 3/GRADER_GUIDE.md`
 - `Track 2/Task 3/TRACK2_ARCHITECTURE.md`
 - `Track 2/Task 3/RUBRIC_TRACEABILITY.md`
-- `Track 2/Task 2/HOW_TO_RUN.md`
-- `Track 2/Task 2/run_gap_extraction.sh`
+- `Track 2/Task 3/inputs/QUERY_PROVENANCE.md` (vendored Task 2 query output; Task 2 run guide ships with the Task 2 submission)
 - If needed, one small Knowledge Atlas index file linking Task 2 -> Task 3 -> Evaluation
 
 **What this step should do:**
 
 - Point the grader to the best starting files.
 - Explain the submission flow in one page.
-- Explicitly say that Task 2 mirrored outputs are under `Knowledge_Atlas/Track 2/Task 2/Phase 3/`.
+- Explicitly say that Task 2's query output is vendored at `Track 2/Task 3/inputs/query_results.json` and Task 2 ships as a separate submission.
 - Point to the benchmark authority, human validation, and end-to-end trace.
 - Provide one documented command for Task 2 setup and execution.
 - Provide one canonical validation command for Task 3 evidence checks.

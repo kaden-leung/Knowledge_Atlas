@@ -1,0 +1,18 @@
+{
+  "abstract": "Tasks that demand externalized attention reliably suppress default network activity while activating the dorsal attention network. These networks have an intrinsic competitive relationship; activation of one suppresses activity of the other. Consequently, many assume that default network activity is suppressed during goal-directed cognition. We challenge this assumption in an fMRI study of planning. Recent studies link default network activity with internally focused cognition, such as imagining personal future events, suggesting a role in autobiographical planning. However, it is unclear how goal-directed cognition with an internal focus is mediated by these opposing networks. A third anatomically interposed 'frontoparietal control network' might mediate planning across domains, flexibly coupling with either the default or dorsal attention network in support of internally versus externally focused goal-directed cognition, respectively. We tested this hypothesis by analyzing brain activity during autobiographical versus visuospatial planning. Autobiographical planning engaged the default network, whereas visuospatial planning engaged the dorsal attention network, consistent with the anti-correlated domains of internalized and externalized cognition. Critically, both planning tasks engaged the frontoparietal control network. Task-related activation of these three networks was anatomically consistent with independently defined resting-state functional connectivity MRI maps. Task-related functional connectivity analyses demonstrate that the default network can be involved in goal-directed cognition when its activity is coupled with the frontoparietal control network. Additionally, the frontoparietal control network may flexibly couple with the default and dorsal attention networks according to task domain, serving as a cortical mediator linking the two networks in support of goal-directed cognitive processes.",
+  "abstract_source": "pubmed",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260603-020713",
+  "doi": null,
+  "handoff_version": "1.0",
+  "publication_year": 2010,
+  "reference_id": "REF-2026-06-03-000038",
+  "title": "Default network activity, coupled with the frontoparietal control network, supports goal-directed cognition",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "Neuroimage",
+  "voi_score": 0.443
+}

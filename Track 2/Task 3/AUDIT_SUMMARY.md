@@ -1,7 +1,7 @@
 # Track 2 Audit Summary
 
 **Date:** 2026-06-02  
-**Scope:** Repository-state audit for `Track 2/Task 2` and `Track 2/Task 3`  
+**Scope:** Repository-state audit for `Track 2/Task 3` (Task 2 is delivered as a separate submission, branch `track2/kaden-leung-task2`)  
 **Method:** Verified against current files, current DB state, and current validation commands
 
 ## 1. Project thesis
@@ -14,8 +14,8 @@ This submission is strongest when presented as a gap-driven retrieval and evalua
 
 | Area | Verified state | Main evidence |
 |---|---|---|
-| Task 2 role | Task 2 supplies the search intent for Task 3 by converting epistemic gaps into Boolean queries | [Track 2/Task 2/Phase 3/query_results.json](<../Task 2/Phase 3/query_results.json>), [TRACK2_ARCHITECTURE.md](TRACK2_ARCHITECTURE.md) |
-| Task 2 reproducibility | Wrapper and run guide now exist for gap extraction and query generation | [HOW_TO_RUN.md](<../Task 2/HOW_TO_RUN.md>), [run_gap_extraction.sh](<../Task 2/run_gap_extraction.sh>) |
+| Task 2 role | Task 2 supplies the search intent for Task 3 by converting epistemic gaps into Boolean queries; its query output is vendored here | [inputs/query_results.json](<inputs/query_results.json>), [TRACK2_ARCHITECTURE.md](TRACK2_ARCHITECTURE.md) |
+| Task 2 reproducibility | Gap extraction wrapper and run guide ship with the Task 2 submission | Task 2 submission (separate PR, branch `track2/kaden-leung-task2`) |
 | Retrieval | 10 queries ran, 84 candidates remained after dedupe, 2 queries returned zero results | [Phase 2/search_results.json](<Phase 2/search_results.json>), [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) |
 | DB buffer | `article_references` currently contains 1,193 rows | [task3_pipeline_lifecycle.db](task3_pipeline_lifecycle.db) |
 | Lifecycle logging | DB currently contains 2,748 lifecycle transitions, including 1,226 `abstract_triage` and 294 `abstract_collector` transitions | [task3_pipeline_lifecycle.db](task3_pipeline_lifecycle.db) |

@@ -14,4 +14,5 @@ for _p in (
         sys.path.insert(0, _p)
 
 FIXTURES_DIR = _HERE / "fixtures"
-QUERY_RESULTS_PATH = _HERE.parents[1] / "Task 2" / "Phase 3" / "query_results.json"
+# Vendored Task 2 query artifact, local to Task 3 (see inputs/QUERY_PROVENANCE.md).
+QUERY_RESULTS_PATH = _HERE.parents[0] / "inputs" / "query_results.json"

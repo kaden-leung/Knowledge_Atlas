@@ -377,8 +377,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Task 3 Phase 2 — Search Runner")
     parser.add_argument(
         "--queries",
-        default=str(_HERE.parents[1] / "Task 2" / "Phase 3" / "query_results.json"),
-        help="Path to query_results.json from Task 2",
+        default=str(_HERE.parents[0] / "inputs" / "query_results.json"),
+        help="Path to vendored Task 2 query_results.json (see inputs/QUERY_PROVENANCE.md)",
     )
     parser.add_argument("--output", default=str(_HERE / "search_results.json"))
     parser.add_argument("--null-output", default=str(_HERE / "null_results.json"))

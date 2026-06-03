@@ -66,7 +66,7 @@ def run_live_search(confirm_live: bool) -> None:
             PYTHON,
             "Phase 2/search_runner.py",
             "--queries",
-            "../Task 2/Phase 3/query_results.json",
+            "inputs/query_results.json",
             "--confirm-live",
         ],
     )

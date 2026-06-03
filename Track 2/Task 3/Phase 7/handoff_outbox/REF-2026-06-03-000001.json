@@ -1,0 +1,18 @@
+{
+  "abstract": "Abstract Natural environments, and particularly visual stimuli in nature, are usually perceived as restorative following stress and attention fatigue. Studies extending these findings to auditory natural stimuli have used soundscapes comprising multiple types of sound. Birdsong recurs as a type of sound used in such studies, but little is known about restorative perceptions of bird sounds on their own and how these may relate to existing theories of environmental restoration. Via semi-structured interviews with twenty adult participants, bird songs and calls were found to be the type of natural sound most commonly associated with perceived stress recovery and attention restoration. However, not all bird sounds were regarded as helpful for such processes. Three themes formed the basis of these perceived relationships: affective appraisals, cognitive appraisals, and relationships with nature. Sub-themes of the acoustic, aesthetic, and associative properties of bird sounds were also related to restorative perceptions. Future studies should quantitatively examine the potential of a variety of bird sounds to aid attention restoration and stress recovery, and how these might be predicted by acoustic, aesthetic, and associative properties, in order to better understand how and why sounds such as birdsong might provide restorative benefits.",
+  "abstract_source": "semantic_scholar",
+  "discovered_via": [
+    "scholarly_search",
+    "serpapi_scholar"
+  ],
+  "discovery_run_id": "RUN-20260603-020713",
+  "doi": null,
+  "handoff_version": "1.0",
+  "publication_year": 2013,
+  "reference_id": "REF-2026-06-03-000001",
+  "title": "Bird sounds and their contributions to perceived attention restoration and stress recovery",
+  "triage_decision": "ACCEPT",
+  "triage_reason": "accept_topic_and_voi:clf=0.60,voi=0.44",
+  "venue": "Journal of Environmental \u2026",
+  "voi_score": 0.443
+}

@@ -20,12 +20,12 @@ from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
 _TASK3 = _HERE.parent
-_TRACK2 = _TASK3.parent
 
 # Default paths (all relative to Track 2/Task 3/)
 DEFAULT_DB = _TASK3 / "task3_pipeline_lifecycle.db"
 DEFAULT_SEARCH_RESULTS = _TASK3 / "Phase 2" / "search_results.json"
-DEFAULT_QUERY_RESULTS = _TRACK2 / "Task 2" / "Phase 3" / "query_results.json"
+# Vendored Task 2 query artifact, local to Task 3 (see inputs/QUERY_PROVENANCE.md).
+DEFAULT_QUERY_RESULTS = _TASK3 / "inputs" / "query_results.json"
 DEFAULT_STAGE1_REPORT = _TASK3 / "Phase 4" / "stage1_triage_report.json"
 DEFAULT_ABSTRACT_REPORT = _TASK3 / "Phase 4" / "abstract_collection_report.json"
 DEFAULT_HARVEST_REPORT = _TASK3 / "Phase 3" / "reference_harvest_results.json"
