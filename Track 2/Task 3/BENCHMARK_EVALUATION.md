@@ -22,7 +22,7 @@ Full methodology, per-query tables, ablation details, and discussion are in [TRA
 | Retrieval recall (15-paper set) | **5/15 = 33%** | Papers entering `article_references` |
 | End-to-end recall (15-paper set) | **2/15 = 13%** | Papers reaching `triage_decision = ACCEPT` |
 | Retrieval recall (30-paper set) | **2/30 = 7%** | Full benchmark (books excluded from retrieval) — gap-driven queries only |
-| Retrieval recall — subfield expansion | **10/30 = 33%** | 10 gap queries + 11 subfield queries; 4.7× lift — see [RETRIEVAL_ABLATION.md](RETRIEVAL_ABLATION.md) |
+| Retrieval recall — subfield expansion (final) | **12/30 = 40%** | 10 gap queries + 17 Scholar Labs queries + 6 SerpAPI new-template queries; 5.7× lift — see [RETRIEVAL_ABLATION.md](RETRIEVAL_ABLATION.md) |
 | ACCEPT precision — conservative | **5/10 = 50%** | TP only; false positives = 3 |
 | ACCEPT precision — liberal | **7/10 = 70%** | TP + borderline (2) |
 | Abstract hit rate (DOI-bearing rows) | **73.2%** | S2 + CrossRef + PubMed + OpenAlex fallback chain |
