@@ -357,7 +357,7 @@ python3 -m pytest -v
 
 ## Path deviations from course spec
 
-The course spec assumes a specific set of dependencies. Three substitutions documented (see [memory/project_t3_phase3_spec.md](memory/project_t3_phase3_spec.md) for the verbatim spec):
+The course spec assumes a specific set of dependencies. Three substitutions documented (the verbatim Task-3 spec is `160sp/rubrics/t2/T2_TASK3_SEARCH_EXECUTION_TRIAGE.md`):
 
 | Course spec | Local state | Substitution |
 |---|---|---|
