@@ -1,7 +1,7 @@
 # Track 2 · Task 2: Gap Targeting & Query Generation
 
 **Student:** Kaden Leung
-**Branch:** `track2/kaden-leung-task2` (Task 2 commits rebased onto `master`)
+**Branch:** `track2/kaden-leung-task2` (off `track/2-staging`)
 **Submission date:** 2026-05-23
 
 ---
@@ -14,7 +14,7 @@ Built an end-to-end gap targeting and query generation pipeline. Extracted 554 e
 
 ## Reviewer notes
 
-- **Do not squash before merge.** The first four commits map 1-to-1 onto the rubric phases (1: pipeline diagram + 5 priority gaps · 2: gap extractor · 3: query generator · 4: spot-check + review + verification). The remaining commits are pre-submission and pre-PR hardening passes (reviewer-feedback fixes, manual testing of all 10 queries, documentation/usability additions, and a portability cleanup that removed a leaked absolute path). Phase separation is intended evidence of process discipline, not noise.
+- **Do not squash before merge.** Commits 1–4 map 1-to-1 onto the rubric phases (1: pipeline diagram + 5 priority gaps · 2: gap extractor · 3: query generator · 4: spot-check + review + verification). Commits 5–6 are pre-submission hardening passes that address reviewer feedback (null-confidence rationale, DIRECTION-domination explanation, three before/after query rewrites, VOI provenance, template-count consistency, corpus-minimum correction). Phase separation is intended evidence of process discipline, not noise.
 - **Reviewer diff tip:** the four submission-root files (`gap_extractor.py`, `query_generator.py`, `gap_results.json`, `query_results.json`) are byte-identical copies of the corresponding `Phase 2/` and `Phase 3/` canonical files. SHA-256s are listed in `MANIFEST.md` § "Submission-root copies" for direct verification.
 
 ---
@@ -29,7 +29,7 @@ Run: `python3 160sp/autograders/t2_task2_grader.py "Track 2/Task 2" kaden-leung`
 | VOI scoring | **10/10** | PASS | All entries carry `voi_score`; sorted descending |
 | AI Citation queries | **10/10** | PASS | 10/10 follow 5-component pattern (`ka_google_search_guide.html`) |
 | Boolean queries | **10/10** | PASS | 10/10 use AND/OR + quoted phrases; ≤256 char API limit |
-| Spot-check | **5/5** | PASS | `Phase 4/SPOT_CHECK.md` present and filled — SC-6 PASS (3 queries scored live, all ≥ 2) |
+| Spot-check | **5/5** | PASS | `Phase 4/SPOT_CHECK.md` present with pre-filled rubric |
 | Verification questions | 5/10 | WARN — manual review | Autograder hardcodes "Manual review required" with `pts_earned=5`; the remaining 5 points are reviewable via `Phase 4/VERIFICATION.md` (17 problems caught and fixed during contract iteration) |
 
 The 5 missing points are **outside autograder scope** — the grader hardcodes a 5/10 with the comment "Manual review required" for the verification-questions criterion. The `Phase 4/VERIFICATION.md` document documents 17 distinct verification questions asked against `gap_extractor.py` and `query_generator.py`, each with the implementation problem caught and the fix applied. Manual grading can lift the score to 60/60.
@@ -59,10 +59,8 @@ The 5 missing points are **outside autograder scope** — the grader hardcodes a
 - `Track 2/Task 2/Phase 4/QUERY_REVIEW.md` — self-audit of 10 queries against `ka_google_search_guide.html` patterns; before/after metrics for 6 generator improvements
 - `Track 2/Task 2/Phase 4/VERIFICATION.md` — 17 verification questions caught real problems in the implementation
 
-### MANIFEST + reproduction
-- `Track 2/Task 2/MANIFEST.md` — file inventory, canonical/alias distinction, byte-identity SHA-256s, autograder result, push-safety safeguards applied to this clone
-- `Track 2/Task 2/HOW_TO_RUN.md` — shortest honest reproduction path (PYTHONPATH + wrapper; documents the `Article_Eater` dependency)
-- `Track 2/Task 2/run_gap_extraction.sh` — self-locating wrapper around `Article_Eater/gap_extractor.py`
+### MANIFEST
+- `Track 2/Task 2/MANIFEST.md` — file inventory, byte-identity SHA-256s, autograder result, push-safety safeguards applied to this clone
 
 ---
 
@@ -78,16 +76,13 @@ The strongest property is auditability — the system is reviewable, not merely 
 | Explicit fallback semantics | `ai_citation_composed_from` + `ai_citation_semantic_confidence` per entry |
 | Structured validation taxonomy | `QUERY_GENERATOR_CONTRACT.md` SC-1 through SC-10 + Validation Checklist |
 | Documented known limitations | `QUERY_GENERATOR_CONTRACT.md` § Known limitations (11 items: NM ontology overload, canonical-query compression ceiling, retrieval-target Phase-4 deferral, etc.) |
-| Pre-submission identity audit | `MANIFEST.md` § "Identity-safety safeguards" — peer remotes stripped, all commits author-verified |
+| Pre-submission identity audit | `MANIFEST.md` § "Identity-safety safeguards" — peer remotes stripped, prior commits author-verified |
 
 ---
 
 ## File manifest
 
-Generated at PR-open time via `git diff --name-only upstream/master`:
-
 ```
-Track 2/Task 2/HOW_TO_RUN.md
 Track 2/Task 2/MANIFEST.md
 Track 2/Task 2/PR_BODY.md
 Track 2/Task 2/Phase 1/PIPELINE_DIAGRAM.md
@@ -105,7 +100,6 @@ Track 2/Task 2/gap_extractor.py
 Track 2/Task 2/gap_results.json
 Track 2/Task 2/query_generator.py
 Track 2/Task 2/query_results.json
-Track 2/Task 2/run_gap_extraction.sh
 ```
 
 ---
@@ -120,10 +114,10 @@ python3 query_generator.py --gaps Phase\ 2/gap_report.json --output /tmp/r2.json
 diff <(jq 'del(.metadata.generated_at)' /tmp/r1.json) <(jq 'del(.metadata.generated_at)' /tmp/r2.json)
 
 # Byte-identity check of root copies vs Phase canonical files
-shasum -a 256 query_generator.py "Phase 3/query_generator.py" \
+shasum -a 256 gap_extractor.py "Phase 2/gap_extractor.py" 2>/dev/null \
+              query_generator.py "Phase 3/query_generator.py" \
               gap_results.json "Phase 2/gap_results.json" \
               query_results.json "Phase 3/query_results.json"
-# (gap_extractor.py is a verbatim copy of Article_Eater/gap_extractor.py — compare against that repo)
 
 # Autograder
 python3 ../../160sp/autograders/t2_task2_grader.py "." kaden-leung

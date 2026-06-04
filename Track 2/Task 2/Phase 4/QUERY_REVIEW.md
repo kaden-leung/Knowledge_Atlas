@@ -75,50 +75,6 @@ After applying #2, the new measurement phrases ("psychophysiological studies mea
 
 ---
 
-## Before/after examples (three representative rewrites)
-
-### Rewrite A — NM1: wrong anchor replaced (Issue 1)
-
-**Before** (anchor = Stress Recovery Theory, structurally wrong for a reward-learning gap):
-
-> When Gottlieb et al.'s account that novelty drives exploratory attention through a salience-gated prediction-error signal diverges from Daw et al.'s wanting/liking dissociation, which is better supported by experimental studies in participants exploring novel built environments, as predicted by Stress Recovery Theory?
-
-**After** (anchor override fires on `"novelty|dopamine|RPE"` vocabulary signature):
-
-> When Gottlieb et al.'s account that novelty drives exploratory attention through a salience-gated prediction error signal diverges from Daw et al.'s wanting/liking dissociation, which is better supported by fMRI and dopaminergic-imaging studies measuring prediction error signals and novelty-evoked BOLD responses in participants exploring novel built environments, as predicted by dopaminergic reward-learning theory?
-
-*Change:* SRT → dopaminergic reward-learning theory (anchor); added "fMRI and dopaminergic-imaging studies measuring prediction error signals and novelty-evoked BOLD responses" (measurement). `structural_component_count` 2 → 5.
-
----
-
-### Rewrite B — L3-7: measurement injection into Pattern F (Issue 2)
-
-**Before** (component 2 missing — anchor and condition present, measurement absent):
-
-> When Foster et al.'s melanopsin circadian account of correlated-color-temperature effects diverges from classical cone-opponency accounts, which is better supported by experimental studies in participants exposed to time-varying daylight, as predicted by circadian photobiology?
-
-**After** (Pattern F with measurement phrase injected into "supported by" clause):
-
-> When Foster et al.'s melanopsin circadian account of correlated-color-temperature effects diverges from classical cone-opponency accounts, which is better supported by chronobiology studies measuring melanopic irradiance or melatonin suppression in participants exposed to time-varying daylight, as predicted by circadian photobiology and the two-photoreceptor model of non-visual light responses?
-
-*Change:* Added "chronobiology studies measuring melanopic irradiance or melatonin suppression" (component 2 injected via `FRAMEWORK_MEASURE["L"]`). `structural_component_count` 3 → 5.
-
----
-
-### Rewrite C — NM7: grammar fix (Issue 5)
-
-**Before** (subject-verb agreement error; "et al." takes plural verb):
-
-> Lewy et al. **argues** that daylight-correlated serotonin synthesis explains mood-modulation in building occupants, but competing accounts attribute the effect to circadian melatonin suppression — which account is better supported by chronobiology studies measuring melanopic irradiance or melatonin in participants exposed to time-varying daylight, under circadian and neurohormonal regulation theory?
-
-**After** (plural verb applied; `_argue_intro()` detects `\bet al\.?` and switches to "argue"):
-
-> Lewy et al. **argue** that daylight-correlated serotonin synthesis explains mood-modulation in building occupants, but competing accounts attribute the effect to circadian melatonin suppression — which account is better supported by chronobiology studies measuring melanopic irradiance or melatonin in participants exposed to time-varying daylight, under circadian and neurohormonal regulation theory?
-
-*Change:* "argues" → "argue". Single-token fix; root cause was the `_argue_intro()` verb-selection branch not checking for `\bet al\.?` before choosing between "argues" and "argue."
-
----
-
 ## Post-improvement state
 
 After all six fixes, the 10 query pairs:

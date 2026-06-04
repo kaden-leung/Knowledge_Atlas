@@ -33,13 +33,6 @@ Unresolved contradictions (DIRECTION) propagate through downstream inference —
 
 This policy is **not absolute** — a foundational MECHANISM gap with high cascade risk can still outscore a peripheral DIRECTION gap, because the weighted combination in `calculate_voi()` includes structural factors. The priority weight is one input, not the sole determinant.
 
-### VOI computation provenance
-The Step 5 formula is computed **inline** by the extractor, not by calling `VOICalculator.calculate_voi()` directly as the authoritative path. The reason: `VOICalculator` requires a populated `WebOfBelief` instance to compute graph centrality; this is unavailable in Phase 2 (templates are not yet ingested into the graph), so `VOICalculator` falls back to a default centrality of 0.5 — which would erase the structural ranking signal entirely.
-
-To verify alignment, the extractor **also** calls `VOICalculator.calculate_voi(gap_type, belief, web=None)` per gap and records the result in `voi_components.voi_calc_crosscheck` (see `gap_extractor.py:307–339`). The inline value is authoritative; the cross-check value uses `VOICalculator`'s default centrality and is provided for comparison only.
-
-Weights (`α`, `priority_weight`, `LEVEL_IMPORTANCE`) are imported from `VOICalculator` constants and not altered. Only `centrality_proxy` is computed locally — and the result of that substitution is exposed in every output entry for audit.
-
 ### Heuristic vs epistemic-quality boundary
 `specificity_score` is heuristic and sensitive to authoring style; it measures **lexical specificity, not epistemic quality**. A concise precise rebuttal ("threshold nonlinearity unresolved") may score lower than a verbose vague one. The extractor surfaces the metric for downstream filtering; it should never be treated as ground truth for gap importance.
 
@@ -181,8 +174,6 @@ For each `(param_name, param_obj)` where `param_obj.confidence < threshold`:
 
 **Invariant:** `primary_gap_type ∈ gap_tags`.
 
-**Scoring vs. tagging boundary:** `primary_gap_type` drives `priority_weight` and `α` in Step 5 — it is the only label that affects VOI. `gap_tags` is descriptive: it enables downstream filtering (e.g., "show all gaps tagged DIRECTION even if VALIDATION is primary") without changing the score.
-
 ### Step 4 — Build proxy `Belief` object
 
 ```python
@@ -201,8 +192,6 @@ belief = Belief(
     domain    = primary_t1_framework or "",
 )
 ```
-
-> **Null-confidence rationale.** `null` confidence (49 of 554 gaps in the full corpus) does not mean the panel assessed the claim as near-certainly false — it means the panel declined to assign a numeric estimate, which is itself an epistemic signal: the mechanism is not yet characterized well enough to warrant a credence. The provisional value **0.35** is a conservative prior, not an inferred measurement. Rationale for 0.35: the lowest explicitly assigned confidence observed in `gap_report.json` is **0.30**; treating `null` as 0.35 places these gaps just above the corpus floor and below the structured-but-uncertain range (0.45–0.55). A value of 0.0 or 0.1 would falsely imply near-certain-falsehood. Null-confidence gaps are identifiable in the output by `confidence: null` paired with `voi_components.uncertainty: 0.65`. (A dedicated `confidence_imputed: true` flag is planned for schema v3.4 to make this status surface-level explicit.)
 
 **`_level_from_warrant`:**
 
@@ -369,9 +358,9 @@ Float rounding to 6 decimals prevents 1-ULP artifacts. Determinism is guaranteed
     "extractor_version": "3.1",
     "input_hash": "sha256:abc123...",
     "input_hash_method": "content_sha256_per_file_aggregated",
-    "templates_attempted": 166,
-    "templates_loaded": 166,
-    "templates_skipped": 0,
+    "templates_attempted": 167,
+    "templates_loaded": 165,
+    "templates_skipped": 2,
     "validation_failures": [
       {"file": "broken.json", "rule": "json_parse_failure", "detail": "..."},
       {"template_id": "X", "rule": "phantom_cascade_reference", "detail": "interaction_with_NONEXISTENT_001"},
@@ -778,8 +767,6 @@ SC3 step 6 fixture — `competing_accounts: []` but rebuttal contains "reduces r
 | 8 | L4 | 3 | DIRECTION | 0.443 | dense |
 | 9 | CSMP1 | 2 | DIRECTION | 0.443 | dense |
 | 10 | NVR1 | 2 | DIRECTION | 0.443 | dense |
-
-> **Why all 10 are DIRECTION.** DIRECTION accounts for only 51 of 554 gaps (9.2% of the corpus). Their concentration at the top is a structural consequence of the weighting formula, not a classification artifact. DIRECTION receives `priority_weight=1.0` vs 0.5 for MECHANISM and 0.7 for VALIDATION. Because the weight multiplies the combined VOI before the `min(..., 1.0)` cap, any DIRECTION gap with moderate structural and epistemic scores will outscore MECHANISM gaps that require higher uncertainty or centrality to compensate. Put differently: the top of the ranked list is the intended output of the priority policy — unresolved contradictions (DIRECTION) are evaluated as the highest-value epistemic targets. If the desired output were a mix of types, the priority weights would need to be adjusted, not the classifier.
 
 **Known open issues from this run (Phase 3 inputs):**
 1. **SC-4 partial** — SC3-5, CREA1-1, L1-3 rank lower than expected because they are VALIDATION/MECHANISM type. VOI formula is working as specified; Phase 1 ranking intuitions assumed DIRECTION priority. Not a bug.
