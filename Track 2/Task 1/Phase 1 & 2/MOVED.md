@@ -5,10 +5,10 @@ so they are visible in the submission PR diff.
 
 | Original file | Canonical location in repo |
 |---|---|
-| `Track_2_Context` | [`Knowledge_Atlas/160sp/contracts/Track_2_Context.md`](../../../../160sp/contracts/Track_2_Context.md) |
-| `contracts/CLASSIFIER_INTEGRATION_CONTRACT_2026-05-09.md` | [`Knowledge_Atlas/160sp/contracts/CLASSIFIER_INTEGRATION_CONTRACT_2026-05-09.md`](../../../../160sp/contracts/CLASSIFIER_INTEGRATION_CONTRACT_2026-05-09.md) |
-| `contracts/schemas/classifier_response.json` | [`Knowledge_Atlas/160sp/contracts/schemas/classifier_response.json`](../../../../160sp/contracts/schemas/classifier_response.json) |
-| `contracts/schemas/classifier_response.legacy.json` | [`Knowledge_Atlas/160sp/contracts/schemas/classifier_response.legacy.json`](../../../../160sp/contracts/schemas/classifier_response.legacy.json) |
+| `Track_2_Context` | `Knowledge_Atlas/160sp/contracts/Track_2_Context.md` |
+| `contracts/CLASSIFIER_INTEGRATION_CONTRACT_2026-05-09.md` | `Knowledge_Atlas/160sp/contracts/CLASSIFIER_INTEGRATION_CONTRACT_2026-05-09.md` |
+| `contracts/schemas/classifier_response.json` | `Knowledge_Atlas/160sp/contracts/schemas/classifier_response.json` |
+| `contracts/schemas/classifier_response.legacy.json` | `Knowledge_Atlas/160sp/contracts/schemas/classifier_response.legacy.json` |
 
 The originals are preserved locally as `.MOVED` files (e.g. `Track_2_Context.MOVED`)
 and are not checked into git. Edit the repo copies going forward.
