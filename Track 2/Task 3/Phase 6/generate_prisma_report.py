@@ -637,10 +637,19 @@ def main(argv: list[str] | None = None) -> int:
     json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Written: {json_path}", file=sys.stderr)
 
+    html = build_html(data)
     html_path = Path(args.output_html)
-    html_path.write_text(build_html(data), encoding="utf-8")
+    html_path.write_text(html, encoding="utf-8")
     print(f"Written: {html_path}", file=sys.stderr)
     print(f"Open in browser: open {html_path}", file=sys.stderr)
+
+    # Also emit the submission-root deliverable name required by the Task-3 spec
+    # + autograder (ka_topic_proposer.html). It is a byte-identical EXPORT of the
+    # canonical dashboard above — one generator, two output paths, so the funnel
+    # numbers can never drift between them. See MANIFEST "Submission-root deliverables".
+    root_html = _HERE.parent / "ka_topic_proposer.html"
+    root_html.write_text(html, encoding="utf-8")
+    print(f"Written: {root_html}", file=sys.stderr)
 
     # Print summary
     t = data["triage_summary"]
