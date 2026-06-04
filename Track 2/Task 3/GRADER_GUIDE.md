@@ -34,14 +34,15 @@ The central finding supported by the evaluation:
 
 ---
 
-**If you have 5 minutes:**
+**If you have 5-10 minutes, use this 6-document fast path:**
 1. Read this file — architecture, navigation, one-command verification
-2. Read [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — all key metrics, error taxonomy, per-paper precision assessment
-3. Read [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced through all 10 lifecycle stages
-4. Read [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — evidence for the autograder's manually capped points
-5. For limitations, read [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md), [TEST_ISOLATION_NOTE.md](TEST_ISOLATION_NOTE.md), and [AE_HANDOFF_BOUNDARY.md](AE_HANDOFF_BOUNDARY.md)
+2. Read [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — evidence for the autograder's manually capped points
+3. Read [VERIFICATION.md](VERIFICATION.md) — numbered verification findings and measured fixes
+4. Read [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced through all 10 lifecycle stages
+5. Read [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — null-result and `MISSING_ABSTRACT` handling
+6. Read [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — authoritative metrics and per-paper precision assessment
 
-Those documents capture the architecture, evaluation, validation, manual-review evidence, and limitations of the project. Everything else is supporting detail.
+Those documents capture the architecture, manual-review evidence, validation trace, null-result handling, evaluation metrics, and limitations of the project. Everything else is supporting detail.
 
 ---
 
@@ -118,20 +119,21 @@ self-contained, with no dependency on a sibling Task 2 directory.
 
 ## 4. Fastest document review path
 
-Three documents cover the full submission:
+Six documents cover the full submission:
 
 1. This file — architecture, navigation, one-command verification
-2. [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) — benchmark, recall, precision, error taxonomy, ablation, retrieval-bottleneck finding
-3. [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced end-to-end through all 10 lifecycle stages including AE handoff
+2. [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — explains the 68/75 automatic score and evidence for the 7 manual-review points
+3. [VERIFICATION.md](VERIFICATION.md) — numbered findings showing what failed, what was fixed, and what remains bounded
+4. [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced end-to-end through all 10 lifecycle stages including AE handoff
+5. [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 222 current MISSING_ABSTRACT rows, documented as terminal states
+6. [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — authoritative metric table, error taxonomy, and per-paper precision assessment
 
-Supporting references:
+For an extended audit, add these supporting references:
 
-- [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — authoritative metric table (cite this for all numbers; full methodology in TRACK2_EVALUATION_REPORT.md)
-- [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) — failure modes connected into one measurement → discovery → action story
+- [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) — full benchmark methodology, recall, precision, ablation, retrieval-bottleneck finding
+- [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) — failure modes connected into one measurement-to-action story
 - [LESSONS_LEARNED.md](LESSONS_LEARNED.md) — what evaluation changed about the project
 - [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) — manual precision review and threshold sensitivity
-- [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — explains the 68/75 automatic score and evidence for the 7 manual-review points
-- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 222 current MISSING_ABSTRACT rows, documented
 - [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) — small labeled abstract-evaluation confusion table
 - [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) — Track 2 scalar VOI compared with Article Eater / BN / Bayesian VOI
 - [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md) — PR-only vs full-workspace verification boundary

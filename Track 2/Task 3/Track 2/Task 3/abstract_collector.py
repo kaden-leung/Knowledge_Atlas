@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compatibility shim for the autograder's relative-path ruthless invocation.
+"""Compatibility shim for the autograder's relative-path invocation.
 
 When the Task 3 grader is called with a relative submission path, it sets
 ``cwd`` to the submission directory but also passes the same relative path to

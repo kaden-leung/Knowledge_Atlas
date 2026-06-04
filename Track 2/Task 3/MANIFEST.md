@@ -2,7 +2,7 @@
 
 **Author:** Kaden Leung
 **Last Updated:** 2026-06-04
-**Status:** Phases 1–7 complete. Post-panel / ruthless-review revision applied.
+**Status:** Phases 1–7 complete. Post-panel / official-grader revision applied.
 
 This document is the single-page audit trail for the grader. For deep specs, see the linked contracts.
 
@@ -23,9 +23,9 @@ The course Task-3 spec (`160sp/rubrics/t2/T2_TASK3_SEARCH_EXECUTION_TRIAGE.md` �
 
 The `.py` shims contain no business logic — each re-execs its `Phase N/` counterpart as `__main__`, preserving argv. `triage_results.json` regenerates deterministically from the committed DB.
 
-**Relative-path grader compatibility:** the official grader's ruthless helper sets `cwd` to the submission directory while also passing the relative submission path to Python. When the grader is invoked as `python3 .../t2_task3_grader.py "Track 2/Task 3" kaden-leung`, that helper looks for `Track 2/Task 3/Track 2/Task 3/abstract_collector.py`. The nested file at that path is a compatibility shim for this relative invocation only; it delegates to the real submission-root `abstract_collector.py` and keeps absolute-path grading unchanged.
+**Relative-path grader compatibility:** the official grader helper sets `cwd` to the submission directory while also passing the relative submission path to Python. When the grader is invoked as `python3 .../t2_task3_grader.py "Track 2/Task 3" kaden-leung`, that helper looks for `Track 2/Task 3/Track 2/Task 3/abstract_collector.py`. The nested file at that path is a compatibility shim for this relative invocation only; it delegates to the real submission-root `abstract_collector.py` and keeps absolute-path grading unchanged.
 
-**Official autograder:** `python3 160sp/autograders/t2_task3_grader.py "Track 2/Task 3" kaden-leung` → **68 / 75**. The ruthless script check passes. The 7 withheld points are the grader's hard-capped "manual review" lines (Null-results 3/5, Verification-questions 5/10); the supporting evidence for both is consolidated in `MANUAL_REVIEW_PACKET.md`, with details in `NULL_RESULTS_REPORT.md`, `VERIFICATION_ANSWERS.md`, and `FAILURE_ANALYSIS.md`.
+**Official autograder:** `python3 160sp/autograders/t2_task3_grader.py "Track 2/Task 3" kaden-leung` → **68 / 75**. The helper script check passes. The 7 withheld points are the grader's hard-capped "manual review" lines (Null-results 3/5, Verification-questions 5/10); the supporting evidence for both is consolidated in `MANUAL_REVIEW_PACKET.md`, with details in `VERIFICATION.md`, `NULL_RESULTS_REPORT.md`, `VERIFICATION_ANSWERS.md`, and `FAILURE_ANALYSIS.md`.
 
 ---
 
@@ -78,6 +78,12 @@ The `.py` shims contain no business logic — each re-execs its `Phase N/` count
 
 **paperscraper contribution note.** In the committed live search run, paperscraper contributed 0 results because of the `.jsonl` suffix bug. The adapter has since been fixed and covered by tests, but the live retrieval statistics above still reflect the original run. Do not claim post-fix live paperscraper yield unless a new live run is executed and documented.
 
+## Expansion Experiment Boundary (not merged into evaluated DB)
+
+`RUN-20260603-020713` was a controlled retrieval experiment, not a new graded pipeline state. It used 6 SerpAPI credits plus scholarly search, produced 120 raw results, deduped to 67 candidates, and recorded 0 null-result queries in [Phase 2/search_results_new_templates.json](Phase%202/search_results_new_templates.json); see [Phase 2/EXPERIMENT_ONLY.md](Phase%202/EXPERIMENT_ONLY.md) for the artifact boundary. These candidates were intentionally not loaded into `task3_pipeline_lifecycle.db`; the current DB has 0 rows with `discovery_run_id = 'RUN-20260603-020713'`.
+
+The evaluated submission therefore remains the precision-reviewed 10-ACCEPT state traced in [PROVEIT_WORKS.md](PROVEIT_WORKS.md), measured in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md), and verified by [verify_track2_workflow.py](verify_track2_workflow.py). Do not treat the 67 experiment candidates as missing DB work.
+
 ---
 
 ## Human Validation Summary
@@ -121,6 +127,7 @@ Core documents that shift the submission from "pipeline demonstration" to "retri
 | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) | Workshop-paper-style evaluation: error taxonomy, ablation, VOI correlation, baseline comparison |
 | [PROVEIT_WORKS.md](PROVEIT_WORKS.md) | End-to-end trace for all 10 ACCEPT papers |
 | [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) | Evidence for the autograder's manually capped 7 points |
+| [VERIFICATION.md](VERIFICATION.md) | Numbered verification findings, measured fixes, and bounded limitations |
 | [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) | Track 2 scalar VOI compared with Article Eater / BN / Bayesian VOI |
 | [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) | Small labeled classifier confusion table |
 | [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md) | PR-only vs full-workspace dependency boundary |
@@ -263,6 +270,8 @@ This was **0** before final triage. In the authoritative committed DB, Stage 2B 
 | `abstract_triage` transitions | 1,226 |
 | `abstract_collector` transitions | 294 |
 | Phase 5 acquisition transitions | 9 (live run RUN-P5-20260602-192128) |
+
+**Phase 5 timeline note.** The current acquisition queue has 10 ACCEPT rows. The live Phase 5 sample processed 3 rows and logged 9 acquisition transitions. It acquired 0 PDFs from the evaluated rows because those rows were paywalled or lacked DOI/open-access resolution; the successful download path is separately proven with a known-open-access DOI in [Phase 5/live_acquisition_proof.json](Phase%205/live_acquisition_proof.json).
 
 **Note on the course-path snapshot.** `Knowledge_Atlas/data/ka_payloads/pipeline_lifecycle_full.db` was an earlier `VACUUM INTO` materialization (hash `f3d3b055…`) made *before* the Stage 1 classifier fix and the Phase 5 live run. It is therefore **no longer content-current** (it predates the 6→10 ACCEPT change and the 9 acquisition transitions) and is retained only as the literal course-path placeholder. It is **not** used for verification — the committed Task 3 DB above is the source of truth.
 
