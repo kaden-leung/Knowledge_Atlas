@@ -17,7 +17,7 @@ The autograder reports **70 / 75**. The remaining 5 points are the manual diagno
 ## Outputs
 
 - A contribute page with classifier/result/verdict language visible in the submitted artifact.
-- Review notes documenting the failure analysis and peer-comparison findings.
+- Review notes documenting the failure analysis and self-audit findings.
 - A file-level manifest in this guide for the grader.
 
 ## Success Conditions

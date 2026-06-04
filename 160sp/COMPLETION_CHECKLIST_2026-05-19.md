@@ -119,7 +119,6 @@ A per-rubric-line audit. Every item is `DONE`, `PARTIAL`, or `DEFERRED` with a c
 | 5.1 | File manifest with one-line purpose per file | DONE | `160sp/MANIFEST.md` |
 | 5.2 | `git diff --name-only origin/master..HEAD` output included | DONE | `MANIFEST.md` §"Files changed vs origin/master" |
 | 5.3 | Storage proof (sqlite query output) | DONE | `MANIFEST.md` §"Storage proof" — full SQL + output for `articles`, `audit_log`, quarantine dir listing |
-| 5.4 | PR body draft | DONE | `160sp/PR_BODY.md` — structured to rubric headings |
 | 5.5 | PR opened against `dkirsh/Knowledge_Atlas:master` | DONE | https://github.com/dkirsh/Knowledge_Atlas/pull/9 |
 | 5.6 | Branch rebased onto current origin/master (no spurious deletions) | DONE | Confirmed in earlier audit — branch tip is on top of `7fb7539`; diff shows only added/modified files, no Track 2/3 deletions |
 | 5.7 | Commit emails use GitHub noreply alias (no private email exposure) | DONE | All 30 commits use `kaden-leung@users.noreply.github.com` (rewritten during submission) |
