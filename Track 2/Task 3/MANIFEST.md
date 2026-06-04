@@ -1,8 +1,8 @@
 # Track 2 · Task 3 — MANIFEST
 
 **Author:** Kaden Leung
-**Last Updated:** 2026-06-01
-**Status:** Phases 1–6 complete. Post-panel revision applied.
+**Last Updated:** 2026-06-04
+**Status:** Phases 1–7 complete. Post-panel / ruthless-review revision applied.
 
 This document is the single-page audit trail for the grader. For deep specs, see the linked contracts.
 
@@ -23,7 +23,7 @@ The course Task-3 spec (`160sp/rubrics/t2/T2_TASK3_SEARCH_EXECUTION_TRIAGE.md` �
 
 The `.py` shims contain no business logic — each re-execs its `Phase N/` counterpart as `__main__`, preserving argv. `triage_results.json` regenerates deterministically from the committed DB.
 
-**Official autograder:** `python3 160sp/autograders/t2_task3_grader.py "Track 2/Task 3" kaden-leung` → **68 / 75**. The 7 withheld points are the grader's hard-capped "manual review" lines (Null-results 3/5, Verification-questions 5/10); the supporting evidence for both is in `NULL_RESULTS_REPORT.md` and `FAILURE_ANALYSIS.md`.
+**Official autograder:** `python3 160sp/autograders/t2_task3_grader.py "Track 2/Task 3" kaden-leung` → **68 / 75**. The ruthless script check passes. The 7 withheld points are the grader's hard-capped "manual review" lines (Null-results 3/5, Verification-questions 5/10); the supporting evidence for both is consolidated in `MANUAL_REVIEW_PACKET.md`, with details in `NULL_RESULTS_REPORT.md`, `VERIFICATION_ANSWERS.md`, and `FAILURE_ANALYSIS.md`.
 
 ---
 
@@ -39,7 +39,7 @@ The `.py` shims contain no business logic — each re-execs its `Phase N/` count
 |---|---|---|---|
 | SerpAPI retrieval | Yes | Yes | None |
 | scholarly retrieval | Yes | Yes | None |
-| paperscraper retrieval | Yes | **No (0 results — internal bug)** | paperscraper = 0 contribution |
+| paperscraper retrieval | Yes | Unit-tested post-fix; original live run contributed 0 | Original live run hit a `.jsonl` suffix bug; adapter is fixed, but no post-fix live rerun is claimed |
 | Reference harvester (PDF) | Yes | Yes (20 PDFs, 1,103 rows) | None |
 | HierarchicalClassifier | Yes | **No (no centroids file)** | Keyword fallback used instead |
 | Abstract collection (S2/CrossRef/PubMed/OpenAlex) | Yes | Yes (44/211, 20.8% hit rate) | Rate-limiting slowed S2 to ~50 min |
@@ -74,7 +74,7 @@ The `.py` shims contain no business logic — each re-execs its `Phase N/` count
 | paperscraper | ❌ **No** | 0 | 2 rows (from Phase 2 mock) | `.jsonl extension` internal bug; 100% failure rate on live run |
 | Reference harvester (PDF) | ✅ Yes | 1,137 raw lines | 1,103 rows | 20 PDFs, 3 parse styles |
 
-**paperscraper is not operational in the demonstrated system.** It is wired but produced no results. It should not be described as a functioning retrieval source until the bug is fixed and a successful live run is confirmed.
+**paperscraper contribution note.** In the committed live search run, paperscraper contributed 0 results because of the `.jsonl` suffix bug. The adapter has since been fixed and covered by tests, but the live retrieval statistics above still reflect the original run. Do not claim post-fix live paperscraper yield unless a new live run is executed and documented.
 
 ---
 
@@ -109,19 +109,22 @@ The [Phase 6 dashboard](Phase%206/prisma_dashboard.html) is **PRISMA-inspired** 
 
 ---
 
-## Evaluation Package (2026-06-02)
+## Evaluation Package (2026-06-04)
 
-Three new documents that shift the submission from "pipeline demonstration" to "retrieval system evaluation":
+Core documents that shift the submission from "pipeline demonstration" to "retrieval system evaluation":
 
 | Document | Purpose |
 |---|---|
 | [CNFA_GOLD_STANDARD.md](CNFA_GOLD_STANDARD.md) | 30-paper curated evaluation corpus across 4 CNFA traditions |
 | [TRACK2_EVALUATION_REPORT.md](TRACK2_EVALUATION_REPORT.md) | Workshop-paper-style evaluation: error taxonomy, ablation, VOI correlation, baseline comparison |
 | [PROVEIT_WORKS.md](PROVEIT_WORKS.md) | End-to-end trace for all 10 ACCEPT papers |
+| [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) | Evidence for the autograder's manually capped 7 points |
+| [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) | Track 2 scalar VOI compared with Article Eater / BN / Bayesian VOI |
+| [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) | Small labeled classifier confusion table |
 
 **Key findings from the evaluation:**
-- Retrieval recall against 30-paper gold standard: **7% (2/30)** — dominant failure is query scope (93% never retrieved)
-- Error taxonomy: 28/30 misses = "never-retrieved" (query coverage gap); 1/30 = classifier; 1/30 = no DOI
+- Retrieval recall against 30-paper gold standard: **7% (2/30)** for the 10 gap-driven queries, rising to **40% (12/30)** after documented subfield expansion.
+- Error taxonomy for the gap-driven run: most misses are "never-retrieved" (query coverage gap); classifier errors are secondary.
 - VOI does not predict ACCEPT rate per query — the 0.035 score range has no discriminating power
 - Ablation: Top-3 queries produce same ACCEPTs as top-5; CSMP1 (lowest VOI) contributes 2 ACCEPTs
 - Baseline ("neuroarchitecture" query): finds review papers not found by generated queries; complementary, not competitive
@@ -138,7 +141,7 @@ Two bugs discovered via expert-panel-mandated human validation:
 **Bug 2 — paperscraper `.json` → `.jsonl` suffix**
 paperscraper ≥ 0.2 requires `.jsonl`. The adapter used `.json`, causing 100% failure rate (all 10 live queries failed). Fixed in `Phase 2/adapters/paperscraper_adapter.py`. Post-fix: paperscraper returns results.
 
-**Impact on pipeline state:** The DB currently reflects results from the *pre-fix* classifer. A re-run of Stage 1 and Stage 2B with the fixed classifier would change the ACCEPT set (more true positives expected). This re-run is listed as Priority 1 in `PIPELINE_ANALYSIS.md`.
+**Impact on pipeline state:** The authoritative committed DB now reflects the post-fix calibrated state used by `verify_track2_workflow.py`: 1,193 candidates, 10 ACCEPT rows, 21 EDGE_CASE rows, 940 REJECT rows, and 222 MISSING_ABSTRACT rows. Historical sections below are preserved as run-level provenance when explicitly labeled as a specific earlier run.
 
 See also: `PIPELINE_ANALYSIS.md` for full known-item recall test, VOI compression root cause, and classifier improvement path.
 
@@ -177,7 +180,7 @@ See also: `PIPELINE_ANALYSIS.md` for full known-item recall test, VOI compressio
 - [Phase 4/stage1_metadata_triage.py](Phase%204/stage1_metadata_triage.py) — 4A: 6 noise-regex rules + keyword classifier (threshold 0.20)
 - **Tests:** 45/45 passing (9 openalex + 15 collector + 21 stage1)
 
-**4A live run (RUN-STAGE1-20260531-020000):**
+**Historical 4A live run (RUN-STAGE1-20260531-020000):**
 | Metric | Value |
 |---|---|
 | Candidates processed | 1193 |
@@ -188,9 +191,9 @@ See also: `PIPELINE_ANALYSIS.md` for full known-item recall test, VOI compressio
 | `classifier_below_threshold` | 669 — classifier mode: `keyword_fallback` (no centroids file present) |
 | `lifecycle_transitions` rows added | 1193 (all `created_by='abstract_triage'`) |
 
-**4B live run (RUN-4B-LIVE-V3-20260531):** 211 candidates → 44 `abstract_collected`, 167 `abstract_missing`. DOI hit rate **74.3%** for this specific run (contract target ≥ 70% ✅). Source breakdown: S2=17, PubMed=14, OpenAlex=9, CrossRef=4. (The authoritative submission-wide DOI hit rate is **73.2%** — see [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md); the small difference reflects different run snapshots.)
+**Historical 4B live run (RUN-4B-LIVE-V3-20260531):** 211 candidates → 44 `abstract_collected`, 167 `abstract_missing`. DOI hit rate **74.3%** for this specific run (contract target ≥ 70%). Source breakdown: S2=17, PubMed=14, OpenAlex=9, CrossRef=4. The authoritative submission-wide DOI hit rate is **73.2%** — see [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md); the small difference reflects different run snapshots.
 
-**4D live run (RUN-4D-20260531):** 44 `abstract_collected` rows triaged → **0 ACCEPT, 8 EDGE_CASE, 36 REJECT**. `v_acquisition_queue` = 0 rows. See calibration note below.
+**Historical 4D live run (RUN-4D-20260531):** 44 `abstract_collected` rows triaged → **0 ACCEPT, 8 EDGE_CASE, 36 REJECT** before the later threshold calibration and classifier keyword expansion. The authoritative committed DB now has **10 ACCEPT** rows.
 
 **TRIAGE_DECISION_CONTRACT.md** — v1.0.0; SC-T1 through SC-T12.
 
@@ -199,9 +202,11 @@ The Balanced matrix requires VOI ≥ 0.50 for ACCEPT. The actual Task 2 query VO
 
 ---
 
-## Runtime DB state
+## Historical runtime DB state before final triage calibration
 
-Two runs are recorded in the DB:
+The next two tables are retained as provenance for the original Phase 2/3 loading runs. They are not the final triage state; see "Authoritative database for Task 3 verification" below.
+
+Two loading runs are recorded in the DB:
 - **RUN-20260528-120000** (mock-mode Phase 2 + reference harvester) → 1110 rows
 - **RUN-20260531-000436** (live Phase 2: 10 SerpAPI credits spent) → 83 new rows (84 candidates, 1 title-merged into a harvester row)
 
@@ -216,9 +221,8 @@ Two runs are recorded in the DB:
 | Rows with `discovered_via` including `scholarly_search` | 83 |
 | Rows with `discovered_via` including `paperscraper_search` | 2 |
 | Rows with `discovered_via` including `review_pdf_extract` | 1103 |
-| Rows with `triage_stage = 'metadata_only'` | 1193 |
-| Rows with `triage_stage = 'duplicate'` | 0 (empty corpus stub) |
-| Rows with `triage_decision IS NULL` | 1193 (Phase 4 will fill) |
+| Rows initially loaded before Phase 4 triage | 1193 |
+| Rows with `triage_stage = 'duplicate'` at load time | 0 (empty corpus stub) |
 
 ### `lifecycle_transitions`
 
@@ -230,7 +234,7 @@ Two runs are recorded in the DB:
 
 ### `v_acquisition_queue` rows
 
-**0** — expected, since no row is `triage_decision='ACCEPT'` yet. Phase 4 will populate this when Stage 2 triage runs.
+This was **0** before final triage. In the authoritative committed DB, Stage 2B has populated the ACCEPT set and the acquisition/handoff evidence has been generated.
 
 ### Live-run Phase 2 stats (RUN-20260531-000436)
 

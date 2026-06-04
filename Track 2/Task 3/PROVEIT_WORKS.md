@@ -188,7 +188,7 @@ Validation checks passed before export: DOI normalised, abstract non-null, triag
 | Schema check | PASS — all required fields present |
 | DOI check | PASS — lowercase, matches `^10\.\d{4,9}/\S{3,}` |
 | Abstract check | PASS — non-null, plausibility check passed |
-| Verdict | **VALID — ready for AE ingestion** |
+| Verdict | **VALID for the local handoff contract** — real Article Eater ingestion remains a future production smoke test |
 
 ---
 

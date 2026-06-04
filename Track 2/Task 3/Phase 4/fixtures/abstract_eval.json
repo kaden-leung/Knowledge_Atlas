@@ -1,0 +1,44 @@
+[
+  {
+    "doi": "10.1016/j.foar.2017.02.001",
+    "title": "Integrating appreciative inquiry into architectural pedagogy",
+    "venue": "Forum for Architectural Research",
+    "abstract": "This paper evaluates pedagogical approaches for architecture students using appreciative inquiry. Outcomes focus on student learning and curriculum design rather than human cognitive or physiological responses to built environments.",
+    "label": "NOT_RELEVANT"
+  },
+  {
+    "doi": "10.5334/bc.262",
+    "title": "Global research agenda: Health, well-being, and the built environment",
+    "venue": "Building and Cities",
+    "abstract": "This research agenda synthesizes evidence linking built-environment features with human health and wellbeing, discusses mechanisms, and highlights research priorities for interdisciplinary work connecting architecture and health.",
+    "label": "RELEVANT"
+  },
+  {
+    "doi": "10.1007/s11524-020-00469-z",
+    "title": "Indicators of healthy architecture — A systematic literature review",
+    "venue": "Journal of Urban Health",
+    "abstract": "A systematic review of architectural indicators associated with health outcomes. The review catalogs study designs, outcomes, and implications for design practice relevant to human physiological and psychological wellbeing.",
+    "label": "RELEVANT"
+  },
+  {
+    "doi": "10.1016/j.enbuild.2021.110950",
+    "title": "Quantifying thermal comfort and carbon savings from energy-retrofits in social housing",
+    "venue": "Energy and Buildings",
+    "abstract": "This study quantifies retrofit energy savings and occupant thermal comfort surveys. The primary contribution is engineering and energy analysis; occupant perceptions are secondary outcome measures.",
+    "label": "NOT_RELEVANT"
+  },
+  {
+    "doi": "10.1007/978-981-96-4749-1_4",
+    "title": "Hapticity in Hybrid Space from an Enactive Perspective",
+    "venue": "Enactive Architecture",
+    "abstract": "An enactive perspective on hybrid (virtual+physical) spaces, arguing for embodied interactions and sensory affordances that engage sensorimotor systems in architectural contexts.",
+    "label": "RELEVANT"
+  },
+  {
+    "doi": "10.1177/18724981251387330",
+    "title": "Seeing minds directly: Revisiting direct perception theory in social cognition",
+    "venue": "Phenomenology and the Cognitive Sciences",
+    "abstract": "A theoretical paper revisiting direct perception theory in social cognition. The emphasis is on person-to-person perception rather than built-environment effects.",
+    "label": "NOT_RELEVANT"
+  }
+]

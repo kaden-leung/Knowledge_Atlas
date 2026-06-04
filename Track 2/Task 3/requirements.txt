@@ -27,7 +27,7 @@ PyYAML>=6.0                  # Phase 5 config parsing (optional; hand-parser fal
 python-dotenv>=1.0           # loads SERPAPI_KEY etc. from .env (optional)
 
 # --- Testing ---
-pytest>=7.0                  # 185/185 unit tests across all phases
+pytest>=7.0                  # full offline unit suite across all phases
 
 # --- Optional: intended-but-not-demonstrated semantic classifier ---
 sentence-transformers>=2.2   # only needed if running the HierarchicalClassifier path
@@ -43,5 +43,5 @@ sentence-transformers>=2.2   # only needed if running the HierarchicalClassifier
 # Portable test collection: from a checkout WITHOUT these siblings (e.g. a
 # Knowledge_Atlas-only clone), `python3 -m pytest` runs the standalone suites and
 # cleanly SKIPS the 6 sibling-dependent ones (see conftest.py) — it exits 0, not a
-# collection error. The full 185-test suite runs from a complete COGS-160 checkout
+# collection error. The full suite runs from a complete COGS-160 checkout
 # where Article_Finder/ and Article_Eater/ sit beside Track 2/.

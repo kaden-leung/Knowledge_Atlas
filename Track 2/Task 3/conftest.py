@@ -45,6 +45,6 @@ if not _siblings_present:
     warnings.warn(
         "Article_Finder/Article_Eater siblings not found beside this checkout; "
         f"skipping {len(collect_ignore)} suite(s) that require them. Run from a "
-        "full COGS-160 checkout for the complete 185-test suite.",
+        "full COGS-160 checkout for the complete offline test suite.",
         stacklevel=1,
     )

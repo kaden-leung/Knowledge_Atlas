@@ -1,0 +1,1896 @@
+{
+  "metadata": {
+    "schema_version": "1.1.0",
+    "run_id": "RUN-20260603-020713",
+    "generated_at": "2026-06-03T02:07:53Z",
+    "input_query_count": 6,
+    "queries_processed": 6,
+    "queries_skipped": {},
+    "sources_enabled": [
+      "serpapi_scholar",
+      "scholarly_search"
+    ],
+    "per_source_stats": {
+      "serpapi_scholar": {
+        "queries_run": 6,
+        "results_raw": 60,
+        "retries": 0,
+        "errors": 0
+      },
+      "scholarly_search": {
+        "queries_run": 6,
+        "results_raw": 60,
+        "retries": 0,
+        "errors": 0
+      }
+    },
+    "credits_used": 6,
+    "credits_max": 10,
+    "candidates_total_raw": 120,
+    "candidates_after_dedupe": 67,
+    "null_result_queries": 0,
+    "mock_mode": false,
+    "serpapi_engine": "google_scholar"
+  },
+  "results": [
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000001",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 1,
+      "title_raw": "Bird sounds and their contributions to perceived attention restoration and stress recovery",
+      "title_normalized": "bird sounds and their contributions to perceived attention restoration and stress recovery",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0272494413000650",
+      "snippet": "\u2026 By qualitatively exploring reasons why birdsong might be regarded as restorative, we hoped to explore whether such phenomena might be explained by aspects of the ART framework. \u2026",
+      "authors_raw": "E Ratcliffe, B Gatersleben, PT Sowden",
+      "first_author_surname": "Ratcliffe",
+      "publication_year": 2013,
+      "venue": "Journal of Environmental \u2026",
+      "cited_by_count": 742,
+      "resource_pdf_url": "https://openresearch.surrey.ac.uk/view/delivery/44SUR_INST/12138476820002346/13140642810002346"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000002",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 2,
+      "title_raw": "Comparative study on birdsong and its multi-sensory combinational effects on physio-psychological restoration",
+      "title_normalized": "comparative study on birdsong and its multi sensory combinational effects on physio psychological restoration",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0272494422001244",
+      "snippet": "\u2026 Integrating visual stimuli of birdsong improved physiological restoration, and \u2026 of birdsong had an adverse restoration physiologically and no significant effect on psychological restoration \u2026",
+      "authors_raw": "Y Qi, Q Chen, F Lin, Q Liu, X Zhang, J Guo, L Qiu",
+      "first_author_surname": "Qi",
+      "publication_year": 2022,
+      "venue": "Journal of \u2026",
+      "cited_by_count": 77,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000003",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 3,
+      "title_raw": "Effects of natural sound on human stress recovery based on EEG techniques",
+      "title_normalized": "effects of natural sound on human stress recovery based on eeg techniques",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0272494424001385",
+      "snippet": "\u2026 part of a restorative environment. Although \u2026 stress recovery by comparing a silent environment (control group) with three experimental groups exposed to flowing water sound, birdsong, \u2026",
+      "authors_raw": "C Liu, X Jing, J Shi, J Li, Y Zhang, W Gao",
+      "first_author_surname": "Liu",
+      "publication_year": 2024,
+      "venue": "Journal of Environmental \u2026",
+      "cited_by_count": 45,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000004",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 4,
+      "title_raw": "An application of artificial intelligence techniques in prediction of birds soundscape impact on tourists' mental restoration in natural urban areas",
+      "title_normalized": "an application of artificial intelligence techniques in prediction of birds soundscape impact on tourists mental restoration in natural urban areas",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1618866721001138",
+      "snippet": "The characteristics of birds' sounds assume a primary role in tourists' mental restoration and stress recovery. The aim of this research is the evaluation of birds' sound composition in \u2026",
+      "authors_raw": "A Jahani, S Kalantary, A Alitavoli",
+      "first_author_surname": "Jahani",
+      "publication_year": 2021,
+      "venue": "Urban Forestry & Urban Greening",
+      "cited_by_count": 60,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000005",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 5,
+      "title_raw": "Effects of auditory-visual combinations on perceived restorative potential of urban green space",
+      "title_normalized": "effects of auditory visual combinations on perceived restorative potential of urban green space",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X18300847",
+      "snippet": "\u2026 the promoters for the restorative quality of silent landscape; (2\u2026 the birdsong to this landscape will produce higher restorative \u2026 a better choice to improve the restorative capacity; (4) adding \u2026",
+      "authors_raw": "J Zhao, W Xu, L Ye",
+      "first_author_surname": "Zhao",
+      "publication_year": 2018,
+      "venue": "Applied acoustics",
+      "cited_by_count": 181,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000006",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 6,
+      "title_raw": "The Role of Natural Soundscapes in Psychological Restoration in Urban Public Spaces",
+      "title_normalized": "the role of natural soundscapes in psychological restoration in urban public spaces",
+      "doi": null,
+      "url": "https://repository.gyaanarth.com/ijriss/9/11/the-role-of-natural-soundscapes-in-psychological-restoration-in-urban-public-spaces-3693",
+      "snippet": "\u2026 Birdsong, running water, and rustling leaves are examples of natural soundscapes that \u2026 This study examines how natural soundscapes might aid in psychological healing in urban \u2026",
+      "authors_raw": "F Naeim, L Dongyu, M Yunjie",
+      "first_author_surname": "Naeim",
+      "publication_year": 2025,
+      "venue": "International Journal of \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://repository.gyaanarth.com/pdfs/ijriss/vol9-iss11-pg7042-7048-202512_pdf.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000007",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 7,
+      "title_raw": "The restorative potential of soundscapes: A physiological investigation",
+      "title_normalized": "the restorative potential of soundscapes a physiological investigation",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X15000808",
+      "snippet": "\u2026 Together these findings suggest that autonomic function during stress recovery and at rest can be \u2026 Birdsong and Ocean sounds were judged the most pleasant and arousing, while \u2026",
+      "authors_raw": "O Medvedev, D Shepherd, MJ Hautus",
+      "first_author_surname": "Medvedev",
+      "publication_year": 2015,
+      "venue": "Applied Acoustics",
+      "cited_by_count": 334,
+      "resource_pdf_url": "https://www.academia.edu/download/115767711/j.apacoust.2015.03.00420240607-1-fvae9z.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000008",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 8,
+      "title_raw": "Music and soundscape effects on young adults' psychophysiological restoration in virtual reality: a longitudinal study",
+      "title_normalized": "music and soundscape effects on young adults psychophysiological restoration in virtual reality a longitudinal study",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26000629",
+      "snippet": "This longitudinal study investigated the long-term psychophysiological restorative effects of combining music and soundscapes in a virtual environment. It explores the potential of this \u2026",
+      "authors_raw": "JY Jeon, BB Santika, H Lee, H Yoon, D Ahn, JS Kim",
+      "first_author_surname": "Jeon",
+      "publication_year": 2026,
+      "venue": "Applied Acoustics",
+      "cited_by_count": 2,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000009",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 9,
+      "title_raw": "The production of a perceived restorativeness soundscape scale",
+      "title_normalized": "the production of a perceived restorativeness soundscape scale",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X11003008",
+      "snippet": "\u2026 restorative potential than an urban park soundscape, which was perceived as lower in restorative \u2026 positive benefit of soundscapes, psychological restoration, via the PRSS is discussed. \u2026",
+      "authors_raw": "SR Payne",
+      "first_author_surname": "Payne",
+      "publication_year": 2013,
+      "venue": "Applied acoustics",
+      "cited_by_count": 420,
+      "resource_pdf_url": "https://researchportal.hw.ac.uk/files/9976552/Payne_The_Production_of_a_Perceived_Restorativeness_Soundscape_Scale._Revised._VERSION_FOR_WEBSITES.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000010",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "SSB1-step2"
+      ],
+      "discovered_query": "(\"birdsong\" OR \"natural soundscapes\" OR \"bird song\") AND (\"restoration\" OR \"restorative\") AND (\"attention\" OR \"stress recovery\") -review",
+      "discovered_query_display_id": "SSB1-step2",
+      "source_voi_score": 0.375,
+      "discovered_at": "2026-06-03T02:07:14Z",
+      "result_position": 10,
+      "title_raw": "Welcome to the Jungle: Aesthetic Preference Mediates Soundscape Evaluation, With Limited Effects of Ultrasound Exposure",
+      "title_normalized": "welcome to the jungle aesthetic preference mediates soundscape evaluation with limited effects of ultrasound exposure",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0272494426000678",
+      "snippet": "\u2026 Additionally, there was no effect of ultrasound on either affect or perceived restoration. Notably, although nature soundscapes facilitated affective and perceived restoration, these effects \u2026",
+      "authors_raw": "A Cotton, SC Van Hedger, E Macpherson",
+      "first_author_surname": "Cotton",
+      "publication_year": 2026,
+      "venue": "Journal of Environmental \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000011",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 1,
+      "title_raw": "Free-Energy Principle and Predictive Coding: A Computational Theory Explaining Various Brain Functions",
+      "title_normalized": "free energy principle and predictive coding a computational theory explaining various brain functions",
+      "doi": "10.1007/978-981-95-1327-7_14",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-95-1327-7_14",
+      "snippet": "\u2026 the theoretical aspects of the free-energy principle and predictive coding. Finally, we \u2026 computational models based on the free-energy principle (active inference) to analyze behavioral \u2026",
+      "authors_raw": "S Murata",
+      "first_author_surname": "Murata",
+      "publication_year": 2026,
+      "venue": "\u2026 Discussion about Cognition, Language and Society",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1007/978-981-95-1327-7_14.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000012",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:22Z",
+      "result_position": 9,
+      "title_raw": "Active inference and agency",
+      "title_normalized": "active inference and agency",
+      "doi": "10.1080/17588928.2014.905517",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/17588928.2014.905517",
+      "snippet": "Active inference tries to understand action and perception as working hand-in-hand to   When surprise is quantified by prediction error we get predictive coding or processing. So why",
+      "authors_raw": "K Friston",
+      "first_author_surname": "Friston",
+      "publication_year": 2014,
+      "venue": "Cognitive Neuroscience",
+      "cited_by_count": 24,
+      "resource_pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/17588928.2014.905517"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000013",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 2,
+      "title_raw": "Active Inference and the Primacy of the 'I Can'",
+      "title_normalized": "active inference and the primacy of the i can",
+      "doi": null,
+      "url": "https://philpapers.org/rec/BRUAIA-5",
+      "snippet": "\u2026 I take it that both predictive-coding and the free-energy principle have these ambitions. A related distinctive feature of the enactive-affordance based account compared to the rationalist \u2026",
+      "authors_raw": "J Bruineberg",
+      "first_author_surname": "Bruineberg",
+      "publication_year": 2017,
+      "venue": null,
+      "cited_by_count": 47,
+      "resource_pdf_url": "https://philpapers.org/archive/BRUAIA-5.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000014",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 3,
+      "title_raw": "Modelling and Measuring the Predictive Brain",
+      "title_normalized": "modelling and measuring the predictive brain",
+      "doi": null,
+      "url": "https://ses.library.usyd.edu.au/handle/2123/22993",
+      "snippet": "\u2026 models: predictive coding and active inference, which together \u2026 the classic formulation of predictive coding by examining the \u2026 how, under active inference or predictive coding, perceptual \u2026",
+      "authors_raw": "C Whyte",
+      "first_author_surname": "Whyte",
+      "publication_year": 2020,
+      "venue": null,
+      "cited_by_count": null,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000015",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 4,
+      "title_raw": "Active Inference without Internalism: Enactive Inference and Processual Perspectivism",
+      "title_normalized": "active inference without internalism enactive inference and processual perspectivism",
+      "doi": null,
+      "url": "https://philpapers.org/rec/LEIAIW",
+      "snippet": "\u2026 This article has not rejected Predictive Processing or Active Inference on these grounds. It has argued that their formal strengths are best preserved when their ontology is revised. \u2026",
+      "authors_raw": "G Leidig",
+      "first_author_surname": "Leidig",
+      "publication_year": null,
+      "venue": "philpapers.org",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://philarchive.org/archive/LEIAIW"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000016",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 5,
+      "title_raw": "Anodal tDCS enhances decision precision during biological motion perception: a computational active inference perspective",
+      "title_normalized": "anodal tdcs enhances decision precision during biological motion perception a computational active inference perspective",
+      "doi": null,
+      "url": "https://iris.unipa.it/handle/10447/706968",
+      "snippet": "\u2026 social perception, the underlying computational mechanisms remain unclear. Using Active Inference\u2026 effect on synaptic gain control mechanisms proposed by predictive coding theories. \u2026",
+      "authors_raw": "A Cangelosi, U Quartetti, G Musotto",
+      "first_author_surname": "Cangelosi",
+      "publication_year": 2026,
+      "venue": "JOURNAL OF \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000017",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 6,
+      "title_raw": "Balancing active inference and active learning with deep variational predictive coding for EEG",
+      "title_normalized": "balancing active inference and active learning with deep variational predictive coding for eeg",
+      "doi": null,
+      "url": "https://ieeexplore.ieee.org/abstract/document/9283147/",
+      "snippet": "\u2026 made in applying deep predictive coding networks to EEG in the \u2026 predictive coding network for EEG with sequential latent prediction and connect it to active learning and active inference\u2026",
+      "authors_raw": "A Ofner, S Stober",
+      "first_author_surname": "Ofner",
+      "publication_year": 2020,
+      "venue": "\u2026 on Systems, Man, and Cybernetics (SMC)",
+      "cited_by_count": null,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000018",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 7,
+      "title_raw": "Dual-Process State Space Models for Digital Twins with Nested Predictive Coding and Parallel Active Inference",
+      "title_normalized": "dual process state space models for digital twins with nested predictive coding and parallel active inference",
+      "doi": null,
+      "url": "https://www.researchgate.net/profile/Ahri-Steele/publication/403037634_Dual-Process_State_Space_Models_for_Digital_Twins_with_Nested_Predictive_Coding_and_Parallel_Active_Inference/links/69c0edd63c6189430669bb9a/Dual-Process-State-Space-Models-for-Digital-Twins-with-Nested-Predictive-Coding-and-Parallel-Active-Inference.pdf",
+      "snippet": "\u2026 twin control, extending our prior work on living predictive coding (PC) hierarchies. The System 1 \u2026 An active inference (AIF) loop operates in parallel across both subsystems, selecting \u2026",
+      "authors_raw": "A Steele",
+      "first_author_surname": "Steele",
+      "publication_year": 2026,
+      "venue": null,
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Ahri-Steele/publication/403037634_Dual-Process_State_Space_Models_for_Digital_Twins_with_Nested_Predictive_Coding_and_Parallel_Active_Inference/links/69c0edd63c6189430669bb9a/Dual-Process-State-Space-Models-for-Digital-Twins-with-Nested-Predictive-Coding-and-Parallel-Active-Inference.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000019",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 8,
+      "title_raw": "Active Vision with Predictive Coding and Uncertainty Minimization",
+      "title_normalized": "active vision with predictive coding and uncertainty minimization",
+      "doi": null,
+      "url": "https://openreview.net/forum?id=PfdpAPRxf5",
+      "snippet": "\u2026 We base the perception component of our model on the theory of predictive coding Rao and \u2026 Active inference and the free energy principle In general, the theoretical formulation of our \u2026",
+      "authors_raw": "A Sharafeldin, N Imam, H Choi",
+      "first_author_surname": "Sharafeldin",
+      "publication_year": 2023,
+      "venue": "NeurIPS 2023 workshop: Information \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://openreview.net/pdf?id=PfdpAPRxf5"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000020",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 9,
+      "title_raw": "Active inference in string diagrams: A categorical account of predictive processing and free energy",
+      "title_normalized": "active inference in string diagrams a categorical account of predictive processing and free energy",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2308.00861",
+      "snippet": "\u2026 frameworks of Predictive Processing (PP) and Active Inference, \u2026 , active inference, and free energy. In particular we present a diagrammatic derivation of the formula for active inference \u2026",
+      "authors_raw": "S Tull, J Kleiner, TSC Smithe",
+      "first_author_surname": "Tull",
+      "publication_year": 2023,
+      "venue": "arXiv preprint arXiv:2308.00861",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://arxiv.org/pdf/2308.00861"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000021",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:22Z",
+      "result_position": 8,
+      "title_raw": "Active Inference in Spectral Form: Precision, Hazard, and Self-Binding",
+      "title_normalized": "active inference in spectral form precision hazard and self binding",
+      "doi": null,
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5731123",
+      "snippet": "4.8 Integrating Predictive Processing (PP) 405 Predictive Processing (PP) and Active  Inference are often treated as interchangeable; in practice, PP emphasises precision-weighted",
+      "authors_raw": "N Nehmer",
+      "first_author_surname": "Nehmer",
+      "publication_year": 2025,
+      "venue": "Hazard, and Self-Binding (November 10, 2025)",
+      "cited_by_count": 2,
+      "resource_pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5731123"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000022",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:22Z",
+      "result_position": 10,
+      "title_raw": "Prefrontal computation as active inference",
+      "title_normalized": "prefrontal computation as active inference",
+      "doi": null,
+      "url": "https://academic.oup.com/cercor/article-abstract/30/2/682/5529899",
+      "snippet": "processes) can be regarded as equivalent to predictive coding for continuous states (ie, state   the form of the variational message passing mandated by active inference. On the right, we",
+      "authors_raw": "T Parr, RV Rikhye, MM Halassa, KJ Friston",
+      "first_author_surname": "Parr",
+      "publication_year": 2020,
+      "venue": "Cerebral Cortex",
+      "cited_by_count": 73,
+      "resource_pdf_url": "https://academic.oup.com/cercor/article-pdf/30/2/682/33678278/bhz118.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000023",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:20Z",
+      "result_position": 10,
+      "title_raw": "Hybrid Active Inference",
+      "title_normalized": "hybrid active inference",
+      "doi": null,
+      "url": "https://arxiv.org/abs/1810.02647",
+      "snippet": "\u2026 based versions of the predictive coding and active inference process, we \u2026 predictive coding or active inference. Here, it might be a sensible approach to start with predictive coding \u2026",
+      "authors_raw": "A Ofner, S Stober",
+      "first_author_surname": "Ofner",
+      "publication_year": 2018,
+      "venue": "arXiv preprint arXiv:1810.02647",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://arxiv.org/pdf/1810.02647"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000024",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step2"
+      ],
+      "discovered_query": "(\"active inference\" OR \"free energy principle\" OR \"precision weighting\") AND (\"predictive coding\" OR \"predictive processing\") AND (\"perception\" OR \"action\") -review",
+      "discovered_query_display_id": "AI1-step2",
+      "source_voi_score": 0.3525,
+      "discovered_at": "2026-06-03T02:07:22Z",
+      "result_position": 7,
+      "title_raw": "Hybrid Active Inference",
+      "title_normalized": "hybrid active inference",
+      "doi": null,
+      "url": "https://arxiv.org/abs/1810.02647",
+      "snippet": "based versions of the predictive coding and active inference process, we  predictive  coding or active inference. Here, it might be a sensible approach to start with predictive coding",
+      "authors_raw": "A Ofner, S Stober",
+      "first_author_surname": "Ofner",
+      "publication_year": 2018,
+      "venue": "arXiv preprint arXiv:1810.02647",
+      "cited_by_count": 1,
+      "resource_pdf_url": "https://arxiv.org/pdf/1810.02647"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000025",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 3,
+      "title_raw": "Ergonomic Quality in Green Building Protocols",
+      "title_normalized": "ergonomic quality in green building protocols",
+      "doi": "10.1007/978-3-319-96068-5_56",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-96068-5_56",
+      "snippet": "\u2026 interaction between user and built environment as a whole, \u2026 a strong impact on the psychological wellbeing of users is the \u2026 take their place in promoting environmental building \u2026",
+      "authors_raw": "I Oberti, F Plantamura",
+      "first_author_surname": "Oberti",
+      "publication_year": 2018,
+      "venue": "Congress of the International Ergonomics \u2026",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000026",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 4,
+      "title_raw": "Data related to social determinants of health captured in the National health and nutrition examination survey",
+      "title_normalized": "data related to social determinants of health captured in the national health and nutrition examination survey",
+      "doi": "10.2105/ajph.2023.307490",
+      "url": "https://ajph.aphapublications.org/doi/abs/10.2105/AJPH.2023.307490",
+      "snippet": "\u2026 , and neighborhood and built environment. Evidence shows that \u2026 could be used to evaluate crowding. Earlier cycles of NHANES \u2026 of stress, such as allostatic load measures, is being \u2026",
+      "authors_raw": "DT Lau, N Ahluwalia, CD Fryar",
+      "first_author_surname": "Lau",
+      "publication_year": 2023,
+      "venue": "\u2026 Journal of Public \u2026",
+      "cited_by_count": 28,
+      "resource_pdf_url": "https://ajph.aphapublications.org/doi/pdf/10.2105/AJPH.2023.307490?download=true"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000027",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 5,
+      "title_raw": "3D visualization, 8",
+      "title_normalized": "3d visualization 8",
+      "doi": "10.1002/9781119241072.index",
+      "url": "https://onlinelibrary.wiley.com/doi/chapter-epub/10.1002/9781119241072.index",
+      "snippet": "\u2026 see also built environment \u2026 gender and attitudes towards wildlife, 87 and crowding, 40 and personal experience with nature, 79 general adaptation syndrome (GAS), 38 Geographical \u2026",
+      "authors_raw": "BC ABC",
+      "first_author_surname": "ABC",
+      "publication_year": 2019,
+      "venue": "blood pressure",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000028",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 1,
+      "title_raw": "Affective experiences of built environments and the promotion of urban walking",
+      "title_normalized": "affective experiences of built environments and the promotion of urban walking",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0965856417313368",
+      "snippet": "According to psychological theories of environmental affect, the physical environment moderates the walking experience and its psychological wellbeing benefits. The present paper \u2026",
+      "authors_raw": "A Bornioli, G Parkhurst, PL Morgan",
+      "first_author_surname": "Bornioli",
+      "publication_year": 2019,
+      "venue": "\u2026 research part A: policy and practice",
+      "cited_by_count": 121,
+      "resource_pdf_url": "https://orca.cardiff.ac.uk/id/eprint/117718/1/Morgan.%20Affective%20experiences.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000029",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 2,
+      "title_raw": "The impacts of social and physical context on neighbourhood satisfaction in the suburbs",
+      "title_normalized": "the impacts of social and physical context on neighbourhood satisfaction in the suburbs",
+      "doi": null,
+      "url": "https://archscience.org/wp-content/uploads/2017/11/ASA_2017_Abass-_Tucker.pdf",
+      "snippet": "\u2026 to psychological wellbeing and sustainable community. This paper asks whether physical built environment \u2026 Physical built environment characteristics such as provision of open spaces, \u2026",
+      "authors_raw": "Z Abass, R Tucker",
+      "first_author_surname": "Abass",
+      "publication_year": 2017,
+      "venue": "Back to the Future: The Next",
+      "cited_by_count": 5,
+      "resource_pdf_url": "https://archscience.org/wp-content/uploads/2017/11/ASA_2017_Abass-_Tucker.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000030",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 6,
+      "title_raw": "Walkability and stress: Insights from Generation Z during global disruption",
+      "title_normalized": "walkability and stress insights from generation z during global disruption",
+      "doi": null,
+      "url": "https://www.az.itu.edu.tr/jfa/article/download/1128/792/23372",
+      "snippet": "\u2026 The research aims to understand how the built environment\u2019s physical components \u2026 chronic stress are increasingly recognized as significant issues. Research indicates that crowding, \u2026",
+      "authors_raw": "IB SA\u011eTA\u015e, EA HAKLIDIR",
+      "first_author_surname": "SA\u011eTA\u015e",
+      "publication_year": null,
+      "venue": "Editorial Board",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://www.az.itu.edu.tr/jfa/article/download/1128/792/23372"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000031",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 8,
+      "title_raw": "Healthy housing and biosafety: strategies of analysis of the risk factors present in built environments",
+      "title_normalized": "healthy housing and biosafety strategies of analysis of the risk factors present in built environments",
+      "doi": null,
+      "url": "https://www.scielosp.org/article/sdeb/2019.v43n123/1194-1204/en/",
+      "snippet": "\u2026 risk factors in the built environment that impact human and \u2026 , rational spatial solutions, building quality and durability, safety \u2026 achieving physical and psychological wellbeing for a building\u2026",
+      "authors_raw": "SC Cohen, TAO Cardoso, MBMA Navarro",
+      "first_author_surname": "Cohen",
+      "publication_year": 2020,
+      "venue": "Sa\u00fade em \u2026",
+      "cited_by_count": 1,
+      "resource_pdf_url": "https://www.scielosp.org/article/ssm/content/raw/?resource_ssm_path=/media/assets/sdeb/v43n123/0103-1104-sdeb-43-123-1194.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000032",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 9,
+      "title_raw": "Associations between vacant urban lands and public health outcomes in growing and shrinking cities",
+      "title_normalized": "associations between vacant urban lands and public health outcomes in growing and shrinking cities",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1618866723002984",
+      "snippet": "Vacant urban land, although not officially designated as a green space, often exhibits a semi-wild natural state due to being left open to colonization by nature. Attention to the effects of \u2026",
+      "authors_raw": "R Zhu, G Newman, D Li, Y Song, L Zou",
+      "first_author_surname": "Zhu",
+      "publication_year": 2023,
+      "venue": "Urban forestry & urban greening",
+      "cited_by_count": 17,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10810287/pdf/nihms-1957321.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000033",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 10,
+      "title_raw": "Mental health and quality of residential environment",
+      "title_normalized": "mental health and quality of residential environment",
+      "doi": null,
+      "url": "https://www.cambridge.org/core/journals/the-british-journal-of-psychiatry/article/mental-health-and-quality-of-residential-environment/1935EDD98411A76F5A166D3E24D17735",
+      "snippet": "\u2026 strategy The study was part of a research programme \u2013 Housing And Neighbourhood And Health (HANAH) \u2013 developed to investigate the relationships between the built environment, \u2026",
+      "authors_raw": "H Thomas, N Weaver, J Patterson, P Jones",
+      "first_author_surname": "Thomas",
+      "publication_year": 2007,
+      "venue": "The British Journal of \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1935EDD98411A76F5A166D3E24D17735/S0007125000247624a.pdf/mental_health_and_quality_of_residential_environment.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000034",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:27Z",
+      "result_position": 10,
+      "title_raw": "Programmatic Flexibility and Temporal Adaptability",
+      "title_normalized": "programmatic flexibility and temporal adaptability",
+      "doi": null,
+      "url": "https://artsandculturalstudies.ku.dk/research/art-and-earth/environmental-humanities-glossary/indeterminacy/",
+      "snippet": "Spatial \u2018indeterminacy\u2019centers on the capacity of architecture to remain unfinished in intent  but complete in possibility, offering enough structure for occupation while maintaining",
+      "authors_raw": "K Kral",
+      "first_author_surname": "Kral",
+      "publication_year": null,
+      "venue": "NA",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://artsandculturalstudies.ku.dk/research/art-and-earth/environmental-humanities-glossary/indeterminacy/"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000035",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:23Z",
+      "result_position": 7,
+      "title_raw": "Designing healthy communities",
+      "title_normalized": "designing healthy communities",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=J756SPqarZQC&oi=fnd&pg=PR7&dq=(%22building+quality%22+OR+%22architectural+stressor%22+OR+%22crowding%22)+AND+(%22psychological+wellbeing%22+OR+%22chronic+stress%22+OR+%22allostatic+load%22)+AND+(%22built+environment%22)+-review&ots=lR8JQ6xbKw&sig=fxir9jorZcEJmilvmuMl3jyJ5Io",
+      "snippet": "\u2026 We now realize that how we design the built environment \u2026 The built environment, the physical one that we humans make, \u2026 Most of us spend 99 percent of our time in the built environment \u2026",
+      "authors_raw": "RJ Jackson",
+      "first_author_surname": "Jackson",
+      "publication_year": 2011,
+      "venue": null,
+      "cited_by_count": null,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000036",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ESW1-step2"
+      ],
+      "discovered_query": "(\"building quality\" OR \"architectural stressor\" OR \"crowding\") AND (\"psychological wellbeing\" OR \"chronic stress\" OR \"allostatic load\") AND (\"built environment\") -review",
+      "discovered_query_display_id": "ESW1-step2",
+      "source_voi_score": 0.35,
+      "discovered_at": "2026-06-03T02:07:27Z",
+      "result_position": 7,
+      "title_raw": "Designing healthy communities",
+      "title_normalized": "designing healthy communities",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=J756SPqarZQC&oi=fnd&pg=PR7&dq=(%22building+quality%22+OR+%22architectural+stressor%22+OR+%22crowding%22)+AND+(%22psychological+wellbeing%22+OR+%22chronic+stress%22+OR+%22allostatic+load%22)+AND+(%22built+environment%22)+-review&ots=lR8JQ6xbKA&sig=79Co1H7K-TBtHSkVpoFRIcE_GDA",
+      "snippet": "We now realize that how we design the built environment  The built environment, the physical  one that we humans make,  Most of us spend 99 percent of our time in the built environment",
+      "authors_raw": "RJ Jackson",
+      "first_author_surname": "Jackson",
+      "publication_year": 2011,
+      "venue": "NA",
+      "cited_by_count": 109,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000037",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 5,
+      "title_raw": "Directed flow of beta band communication during reorienting of attention within the dorsal attention network",
+      "title_normalized": "directed flow of beta band communication during reorienting of attention within the dorsal attention network",
+      "doi": "10.1089/brain.2020.0885",
+      "url": "https://journals.sagepub.com/doi/abs/10.1089/brain.2020.0885",
+      "snippet": "\u2026 by identifying the frequency-specific causal interactions between frontal and parietal regions belonging to the dorsal attention network supporting spatial reorienting response. \u2026",
+      "authors_raw": "S Spadone, M Wyczesany, S Della Penna",
+      "first_author_surname": "Spadone",
+      "publication_year": 2021,
+      "venue": "Brain \u2026",
+      "cited_by_count": 32,
+      "resource_pdf_url": "https://digitalcommons.wustl.edu/cgi/viewcontent.cgi?article=12015&context=open_access_pubs"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000038",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 6,
+      "title_raw": "Functional coupling between frontoparietal control subnetworks bridges the default and dorsal attention networks",
+      "title_normalized": "functional coupling between frontoparietal control subnetworks bridges the default and dorsal attention networks",
+      "doi": "10.1007/s00429-022-02517-7",
+      "url": "https://link.springer.com/article/10.1007/s00429-022-02517-7",
+      "snippet": "\u2026 The frontoparietal control network (FPCN) plays a central role in tuning connectivity \u2026 , whereas the FPCNb is connected to the dorsal attention network (DAN) that deals with externally \u2026",
+      "authors_raw": "S Yin, Y Li, A Chen",
+      "first_author_surname": "Yin",
+      "publication_year": 2022,
+      "venue": "Brain Structure and Function",
+      "cited_by_count": 24,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000039",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:32Z",
+      "result_position": 6,
+      "title_raw": "Representation of top-down versus bottom-up attention in the right dorsolateral prefrontal cortex and superior parietal lobule",
+      "title_normalized": "representation of top down versus bottom up attention in the right dorsolateral prefrontal cortex and superior parietal lobule",
+      "doi": "10.1186/s12993-025-00297-8",
+      "url": "https://link.springer.com/article/10.1186/s12993-025-00297-8",
+      "snippet": "preparation and goal-directed orientation of top-down attention. The ventral attention system,   Functional connectivity between ventral and dorsal attention network nodes modulates the",
+      "authors_raw": "Q Zhang, W Li, T Zhang, R Xiong, J Zhang",
+      "first_author_surname": "Zhang",
+      "publication_year": 2025,
+      "venue": "Behavioral and Brain \u2026",
+      "cited_by_count": 4,
+      "resource_pdf_url": "https://link.springer.com/content/pdf/10.1186/s12993-025-00297-8.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000040",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 1,
+      "title_raw": "Default network activity, coupled with the frontoparietal control network, supports goal-directed cognition",
+      "title_normalized": "default network activity coupled with the frontoparietal control network supports goal directed cognition",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1053811910008608",
+      "snippet": "\u2026 A third anatomically interposed \u2018frontoparietal control network\u2019 might mediate planning \u2026 default or dorsal attention network in support of internally versus externally focused goal-directed \u2026",
+      "authors_raw": "RN Spreng, WD Stevens, JP Chamberlain, AW Gilmore",
+      "first_author_surname": "Spreng",
+      "publication_year": 2010,
+      "venue": "Neuroimage",
+      "cited_by_count": 1550,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2914129/pdf/nihms214687.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000041",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 2,
+      "title_raw": "Theta-band functional connectivity in the dorsal fronto-parietal network predicts goal-directed attention",
+      "title_normalized": "theta band functional connectivity in the dorsal fronto parietal network predicts goal directed attention",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0028393216302561",
+      "snippet": "\u2026 In patients with severe deficits of spatial attention this network is often structurally preserved. \u2026 predicts impaired goal-directed processing in stroke patients with spatial attention deficits. \u2026",
+      "authors_raw": "J Fellrath, A Mottaz, A Schnider, AG Guggisberg",
+      "first_author_surname": "Fellrath",
+      "publication_year": 2016,
+      "venue": "Neuropsychologia",
+      "cited_by_count": 93,
+      "resource_pdf_url": "https://www.sciencedirect.com/science/article/am/pii/S0028393216302561"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000042",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 3,
+      "title_raw": "Stimulus-driven orienting of visuo-spatial attention in complex dynamic environments",
+      "title_normalized": "stimulus driven orienting of visuo spatial attention in complex dynamic environments",
+      "doi": null,
+      "url": "https://www.cell.com/neuron/fulltext/S0896-6273(11)00118-8",
+      "snippet": "\u2026 signals for the orienting of spatial attention by measuring eye \u2026 transient activation of the ventral attention system. Our results \u2026 of stimulus-driven signals in both dorsal and ventral attention \u2026",
+      "authors_raw": "D Nardo, V Santangelo, E Macaluso",
+      "first_author_surname": "Nardo",
+      "publication_year": 2011,
+      "venue": "Neuron",
+      "cited_by_count": 88,
+      "resource_pdf_url": "https://www.cell.com/neuron/pdf/S0896-6273(11)00118-8.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000043",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2",
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 4,
+      "title_raw": "Functional connectivity between ventral and dorsal frontoparietal networks underlies stimulus-driven and working memory-driven sources of visual distraction",
+      "title_normalized": "functional connectivity between ventral and dorsal frontoparietal networks underlies stimulus driven and working memory driven sources of visual distraction",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1053811913009245",
+      "snippet": "\u2026 Bottom-up, stimulus-driven distraction has typically been \u2026 Here we show that the ventral attention network may be \u2026 nodes of ventral and dorsal frontoparietal regions. The findings further \u2026",
+      "authors_raw": "CM Greene, D Soto",
+      "first_author_surname": "Greene",
+      "publication_year": 2014,
+      "venue": "NeuroImage",
+      "cited_by_count": 34,
+      "resource_pdf_url": "https://researchrepository.ucd.ie/bitstreams/9a0feba6-089d-45ec-86e3-866723f690d9/download"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000044",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 7,
+      "title_raw": "Neural mechanisms for the benefits of stimulus-driven attention",
+      "title_normalized": "neural mechanisms for the benefits of stimulus driven attention",
+      "doi": null,
+      "url": "https://academic.oup.com/cercor/article-abstract/27/11/5294/3056479",
+      "snippet": "\u2026 Although our proposal resembles dual attention networks such as that of Corbetta and Shulman (2002), unlike Corbetta and colleagues, who focus on a top-down attention network that \u2026",
+      "authors_raw": "KM Wills, J Liu, J Hakun, DC Zhu, E Hazeltine",
+      "first_author_surname": "Wills",
+      "publication_year": 2017,
+      "venue": "Cerebral \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://academic.oup.com/cercor/article-pdf/27/11/5294/21587287/bhw308.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000045",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 8,
+      "title_raw": "Functional connectivity between prefrontal and parietal cortex drives visuo-spatial attention shifts",
+      "title_normalized": "functional connectivity between prefrontal and parietal cortex drives visuo spatial attention shifts",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0028393217300696",
+      "snippet": "\u2026 The main finding of this study demonstrates that influences from right FEF on SMG in the ventral attention network causally underly attention shifts, presumably by enabling \u2026",
+      "authors_raw": "K Heinen, E Feredoes, CC Ruff, J Driver",
+      "first_author_surname": "Heinen",
+      "publication_year": 2017,
+      "venue": "Neuropsychologia",
+      "cited_by_count": 65,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000046",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 9,
+      "title_raw": "Deconstructing the architecture of dorsal and ventral attention systems with dynamic causal modeling",
+      "title_normalized": "deconstructing the architecture of dorsal and ventral attention systems with dynamic causal modeling",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/32/31/10637.short",
+      "snippet": "\u2026 A bilateral dorsal frontoparietal network, comprising the intraparietal sulcus (IPS) and the \u2026 a right-lateralized ventral frontoparietal network comprising the temporoparietal junction (TPJ) \u2026",
+      "authors_raw": "S Vossel, R Weidner, J Driver, KJ Friston",
+      "first_author_surname": "Vossel",
+      "publication_year": 2012,
+      "venue": "Journal of \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/32/31/10637.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000047",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:28Z",
+      "result_position": 10,
+      "title_raw": "Distinct representations of attentional control during voluntary and stimulus-driven shifts across objects and locations",
+      "title_normalized": "distinct representations of attentional control during voluntary and stimulus driven shifts across objects and locations",
+      "doi": null,
+      "url": "https://academic.oup.com/cercor/article-abstract/23/6/1351/429907",
+      "snippet": "\u2026 Higher activity during voluntary than during stimulus-driven orienting occurred in regions classically described to belong to the frontoparietal attention network, including IPS, SPL, FEF, \u2026",
+      "authors_raw": "CM Stoppel, CN Boehler, H Strumpf, RM Krebs",
+      "first_author_surname": "Stoppel",
+      "publication_year": 2013,
+      "venue": "Cerebral \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://academic.oup.com/cercor/article-pdf/23/6/1351/17307414/bhs116.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000048",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:32Z",
+      "result_position": 7,
+      "title_raw": "Goal-directed visual processing differentially impacts human ventral and dorsal visual representations",
+      "title_normalized": "goal directed visual processing differentially impacts human ventral and dorsal visual representations",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/37/36/8767.abstract",
+      "snippet": "would not put shape at the focus of spatial attention and thus would not activate these regions   and shape were both at the focus of spatial attention in both tasks. This could explain why",
+      "authors_raw": "M Vaziri-Pashkam, Y Xu",
+      "first_author_surname": "Vaziri-Pashkam",
+      "publication_year": 2017,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": 126,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/37/36/8767.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000049",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:32Z",
+      "result_position": 8,
+      "title_raw": "Hippocampal-parietal directed connectivity mediates brain network reconfiguration between internal and external attention: An intracranial EEG study",
+      "title_normalized": "hippocampal parietal directed connectivity mediates brain network reconfiguration between internal and external attention an intracranial eeg study",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1053811926002077",
+      "snippet": "Attention is a cornerstone of cognitive function, and understanding its neural mechanisms is  of great significance for both cognitive science and clinical applications. A critical aspect of",
+      "authors_raw": "L Yang, H Huang, X Qiao, ST Ong, X Li, Z Li, S Chen",
+      "first_author_surname": "Yang",
+      "publication_year": 2026,
+      "venue": "NeuroImage",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://www.sciencedirect.com/science/article/pii/S1053811926002077"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000050",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:32Z",
+      "result_position": 9,
+      "title_raw": "The amygdala and basal forebrain as a pathway for motivationally guided attention",
+      "title_normalized": "the amygdala and basal forebrain as a pathway for motivationally guided attention",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/34/41/13757.short",
+      "snippet": "Visual stimuli associated with rewards attract spatial attention predicts the allocation of spatial  attention. One neural  have specific effects on frontoparietal networks that mediate attention",
+      "authors_raw": "CJ Peck, CD Salzman",
+      "first_author_surname": "Peck",
+      "publication_year": 2014,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": 76,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/34/41/13757.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000051",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "ECS1-step2"
+      ],
+      "discovered_query": "(\"dorsal attention\" OR \"ventral attention\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"attention network\") -review",
+      "discovered_query_display_id": "ECS1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:32Z",
+      "result_position": 10,
+      "title_raw": "Towards a reconceptualization of the temporoparietal junction in stimulus-driven attention",
+      "title_normalized": "towards a reconceptualization of the temporoparietal junction in stimulus driven attention",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/34/40/13277.short",
+      "snippet": "Blood-oxygen level-dependent (BOLD) responses to oddball trials were measured within  core nodes of the ventral attention network (TPJ and IFJ) and the salience network (AI and",
+      "authors_raw": "CJ Lynch",
+      "first_author_surname": "Lynch",
+      "publication_year": 2014,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": 7,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/34/40/13277.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000052",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 7,
+      "title_raw": "Art, the brain, and family resemblances: Some considerations on neuroaesthetics",
+      "title_normalized": "art the brain and family resemblances some considerations on neuroaesthetics",
+      "doi": "10.1080/09515089.2011.562643",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/09515089.2011.562643",
+      "snippet": "\u2026 that neuroaesthetics and the study of neural correlates of \u2026 neuroaesthetics is not limited to this: more generally, it is the study of the neural correlates of taste and of reactions to beauty. A \u2026",
+      "authors_raw": "M Frixione",
+      "first_author_surname": "Frixione",
+      "publication_year": 2011,
+      "venue": "Philosophical Psychology",
+      "cited_by_count": 14,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000053",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 10,
+      "title_raw": "Beauty and the Brain: Neuroaesthetics",
+      "title_normalized": "beauty and the brain neuroaesthetics",
+      "doi": "10.1007/978-3-030-23580-2_3",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-23580-2_3",
+      "snippet": "\u2026 Through this neural architecture we can extract pleasure \u2026 how our brain dedicates to beauty a specific area, which \u2026 of functional magnetic resonance imaging (fMRI). Zeki thus discovered \u2026",
+      "authors_raw": "E Grassi, M Aguggia",
+      "first_author_surname": "Grassi",
+      "publication_year": 2019,
+      "venue": "Brain and Art: From Aesthetics to Therapeutics",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000054",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 1,
+      "title_raw": "Individual differences in aesthetic engagement are reflected in resting-state fMRI connectivity: Implications for stress resilience",
+      "title_normalized": "individual differences in aesthetic engagement are reflected in resting state fmri connectivity implications for stress resilience",
+      "doi": null,
+      "url": "https://www.sciencedirect.com/science/article/pii/S1053811918305494",
+      "snippet": "\u2026 Resting-state fMRI connectivity was extracted for 361 regions in the brain including cortical, subcortical and cerebellar regions for each participant, using participant-specific \u2026",
+      "authors_raw": "PG Williams, KT Johnson, BJ Curtis, JB King",
+      "first_author_surname": "Williams",
+      "publication_year": 2018,
+      "venue": "NeuroImage",
+      "cited_by_count": 56,
+      "resource_pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6410354/pdf/nihms-1007017.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000055",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 2,
+      "title_raw": "The Aesthetic Foundations of Restorative Landscapes. Empirical aesthetics for design: An international workshop",
+      "title_normalized": "the aesthetic foundations of restorative landscapes empirical aesthetics for design an international workshop",
+      "doi": null,
+      "url": "https://iris.univr.it/handle/11562/1182932",
+      "snippet": "\u2026 2000s, with renovations and architectural adaptations necessary to accommodate the \u2026 neuroaesthetics must expand from positive aesthetic evaluations to ascertain neural correlates \u2026",
+      "authors_raw": "V Mariani, L Laezza, M Pasini, R Burro",
+      "first_author_surname": "Mariani",
+      "publication_year": 2025,
+      "venue": "Empirical aesthetics for design \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": "https://iris.univr.it/bitstream/11562/1182932/1/vpdvp2025.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000056",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 3,
+      "title_raw": "On Aesthetic Consciousness of Media Building Skin Based on Cognitive Neuroscience",
+      "title_normalized": "on aesthetic consciousness of media building skin based on cognitive neuroscience",
+      "doi": null,
+      "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11049272",
+      "snippet": "\u2026 This study holds that the feeling of beauty obtained in the media building skin is related to \u2026 This connection between digital multimedia images and architecture can be found in almost \u2026",
+      "authors_raw": "Y You, T Cho",
+      "first_author_surname": "You",
+      "publication_year": 2022,
+      "venue": "\ud55c\uad6d\ub514\uc790\uc778\ubb38\ud654\ud559\ud68c\uc9c0",
+      "cited_by_count": 1,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000057",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 4,
+      "title_raw": "Rethinking neuroaesthetics: Toward a multidimensional and integrative science of aesthetic experience",
+      "title_normalized": "rethinking neuroaesthetics toward a multidimensional and integrative science of aesthetic experience",
+      "doi": null,
+      "url": "https://www.cell.com/neuron/abstract/S0896-6273(26)00039-5",
+      "snippet": "\u2026 architecture and the nuanced interplay of the contributing processes. \u2026 valuable insights into the neural correlates of beauty and liking, \u2026 Future progress in neuroaesthetics will depend on \u2026",
+      "authors_raw": "Y Lin, J Wagemans, HO de Beeck",
+      "first_author_surname": "Lin",
+      "publication_year": 2026,
+      "venue": "Neuron",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000058",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 5,
+      "title_raw": "Kinds of Beauty and the Prefrontal Cortex",
+      "title_normalized": "kinds of beauty and the prefrontal cortex",
+      "doi": null,
+      "url": "https://books.google.com/books?hl=en&lr=&id=8_dQEAAAQBAJ&oi=fnd&pg=PA66&dq=(%22neuroaesthetics%22+OR+%22architectural+aesthetics%22)+AND+(%22fMRI%22+OR+%22neural+correlates%22)+AND+(%22beauty%22+OR+%22aesthetic+judgment%22)+AND+(%22architecture%22+OR+%22architectural%22)+-review&ots=wVJ_GJTPTE&sig=k7Cj8ECh8xlc45afjAU-Xw5xxo4",
+      "snippet": "\u2026 associated with each type of beauty (fans cheering for just one \u2026 aging (fMRI) while healthy participants judged the beauty of \u2026 the architecture, we uncover the story of how the architecture \u2026",
+      "authors_raw": "T Pegors",
+      "first_author_surname": "Pegors",
+      "publication_year": 2021,
+      "venue": "\u2026 , Beauty, and Art: Essays Bringing Neuroaesthetics \u2026",
+      "cited_by_count": 0,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000059",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 6,
+      "title_raw": "Expertise and aesthetic liking",
+      "title_normalized": "expertise and aesthetic liking",
+      "doi": null,
+      "url": "https://www.researchgate.net/profile/Martin-Skov-2/publication/344713028_Expertise_and_aesthetic_liking/links/5f8af8f292851c14bccc847a/Expertise-and-aesthetic-liking.pdf",
+      "snippet": "\u2026 The ambition of the fMRI experiment we conducted together \u2026 to the two groups\u2019 difference in architecture expertise, we had to \u2026 their aesthetic value, neuroaesthetics is still some way from \u2026",
+      "authors_raw": "M Skov, U Kirk",
+      "first_author_surname": "Skov",
+      "publication_year": 2022,
+      "venue": "Brain, beauty, and art",
+      "cited_by_count": 5,
+      "resource_pdf_url": "https://www.researchgate.net/profile/Martin-Skov-2/publication/344713028_Expertise_and_aesthetic_liking/links/5f8af8f292851c14bccc847a/Expertise-and-aesthetic-liking.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000060",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 8,
+      "title_raw": "Brain-inspired deep networks for image aesthetics assessment",
+      "title_normalized": "brain inspired deep networks for image aesthetics assessment",
+      "doi": null,
+      "url": "https://arxiv.org/abs/1601.04155",
+      "snippet": "\u2026 human visual perception and neuroaesthetics, we design Brain-\u2026 architecture in BDN facilitates the learning. Such a specific \u2026 Neural correlates of object indeterminacy in art compositions. \u2026",
+      "authors_raw": "Z Wang, S Chang, F Dolcos, D Beck, D Liu",
+      "first_author_surname": "Wang",
+      "publication_year": 2016,
+      "venue": "arXiv preprint arXiv \u2026",
+      "cited_by_count": 88,
+      "resource_pdf_url": "https://arxiv.org/pdf/1601.04155"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000061",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "NA1-step2"
+      ],
+      "discovered_query": "(\"neuroaesthetics\" OR \"architectural aesthetics\") AND (\"fMRI\" OR \"neural correlates\") AND (\"beauty\" OR \"aesthetic judgment\") AND (\"architecture\" OR \"architectural\") -review",
+      "discovered_query_display_id": "NA1-step2",
+      "source_voi_score": 0.335,
+      "discovered_at": "2026-06-03T02:07:33Z",
+      "result_position": 9,
+      "title_raw": "Aesthetic evaluation of art: A formal approach",
+      "title_normalized": "aesthetic evaluation of art a formal approach",
+      "doi": null,
+      "url": "https://www.academia.edu/download/125274517/Aesthetic_Evaluation_of_Art_A_Formal_Approach.pdf",
+      "snippet": "\u2026 Our approach to modeling the aesthetic judgment can be seen in the context of earlier \u2026 golden ratio (phi \u03c6) as a source of architectural aesthetics, whereby two quantities are said to be \u2026",
+      "authors_raw": "AJ Huston, JP Huston",
+      "first_author_surname": "Huston",
+      "publication_year": 2015,
+      "venue": "Art, Aesthetics, and the Brain",
+      "cited_by_count": 9,
+      "resource_pdf_url": "https://www.academia.edu/download/125274517/Aesthetic_Evaluation_of_Art_A_Formal_Approach.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000062",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention network\" OR \"ventral attention network\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"Corbetta\") -review",
+      "discovered_query_display_id": "AI1-step1",
+      "source_voi_score": 0.3275,
+      "discovered_at": "2026-06-03T02:07:51Z",
+      "result_position": 4,
+      "title_raw": "The neurobiology of attention",
+      "title_normalized": "the neurobiology of attention",
+      "doi": "10.4324/9781410610324-9/neurobiology-attention-sara-ann-schuchert",
+      "url": "https://www.taylorfrancis.com/chapters/edit/10.4324/9781410610324-9/neurobiology-attention-sara-ann-schuchert",
+      "snippet": "\u2026 interact when goal-directed behaviors and stimulus-driven re\u2026 Corbetta proposed that these states are at least partially \u2026 I propose that these frontoparietal circuits provide the additional \u2026",
+      "authors_raw": "SA Schuchert",
+      "first_author_surname": "Schuchert",
+      "publication_year": 2014,
+      "venue": "The neurobiology of learning",
+      "cited_by_count": 12,
+      "resource_pdf_url": null
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000063",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "scholarly_search",
+      "merged_from_sources": [
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention network\" OR \"ventral attention network\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"Corbetta\") -review",
+      "discovered_query_display_id": "AI1-step1",
+      "source_voi_score": 0.3275,
+      "discovered_at": "2026-06-03T02:07:53Z",
+      "result_position": 8,
+      "title_raw": "Independence of anticipatory signals for spatial attention from number of nontarget stimuli in the visual field",
+      "title_normalized": "independence of anticipatory signals for spatial attention from number of nontarget stimuli in the visual field",
+      "doi": "10.1152/jn.00030.2008",
+      "url": "https://journals.physiology.org/doi/abs/10.1152/jn.00030.2008",
+      "snippet": "We conclude that the topography of spatial attention\u2013related anticipatory BOLD signal  modulation across visual cortex, specifically decrements at unattended locations, is mainly",
+      "authors_raw": ", G d'Avossa, GL Shulman, M Corbetta",
+      "first_author_surname": null,
+      "publication_year": 2008,
+      "venue": "Journal of \u2026",
+      "cited_by_count": 17,
+      "resource_pdf_url": "https://journals.physiology.org/doi/prev/20171106-aop/pdf/10.1152/jn.00030.2008"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000064",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention network\" OR \"ventral attention network\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"Corbetta\") -review",
+      "discovered_query_display_id": "AI1-step1",
+      "source_voi_score": 0.3275,
+      "discovered_at": "2026-06-03T02:07:51Z",
+      "result_position": 5,
+      "title_raw": "Neural basis and recovery of spatial attention deficits in spatial neglect",
+      "title_normalized": "neural basis and recovery of spatial attention deficits in spatial neglect",
+      "doi": null,
+      "url": "https://www.nature.com/articles/nn1574",
+      "snippet": "\u2026 Areas in orange (ventral system) mediate stimulus-driven reorienting. The shading in light \u2026 of two interacting frontoparietal attention networks. The recovery of spatial attention deficits, \u2026",
+      "authors_raw": "M Corbetta, MJ Kincade, C Lewis, AZ Snyder",
+      "first_author_surname": "Corbetta",
+      "publication_year": 2005,
+      "venue": "Nature \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://www.academia.edu/download/54630141/Corbetta_et_al..pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000065",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention network\" OR \"ventral attention network\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"Corbetta\") -review",
+      "discovered_query_display_id": "AI1-step1",
+      "source_voi_score": 0.3275,
+      "discovered_at": "2026-06-03T02:07:51Z",
+      "result_position": 8,
+      "title_raw": "Modulation of ventral and dorsal attention networks during target detection: an EEG/fMRI study",
+      "title_normalized": "modulation of ventral and dorsal attention networks during target detection an eegfmri study",
+      "doi": null,
+      "url": "https://www.academia.edu/download/83884619/Modulation_of_ventral_and_dorsal_attenti20220411-30676-1kyxb6h.pdf",
+      "snippet": "\u2026 by the presentation of the rare stimuli (ventral attention network), and other areas that are \u2026 orienting and is thought to mediate goal-directed stimulusresponse selection. Interestingly, our \u2026",
+      "authors_raw": "D Mantiniab, M Corbettaabcd, S Cuginiab",
+      "first_author_surname": "Mantiniab",
+      "publication_year": 2007,
+      "venue": "International Journal of \u2026",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://www.academia.edu/download/83884619/Modulation_of_ventral_and_dorsal_attenti20220411-30676-1kyxb6h.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000066",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar",
+        "scholarly_search"
+      ],
+      "merged_from_queries": [
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention network\" OR \"ventral attention network\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"Corbetta\") -review",
+      "discovered_query_display_id": "AI1-step1",
+      "source_voi_score": 0.3275,
+      "discovered_at": "2026-06-03T02:07:51Z",
+      "result_position": 9,
+      "title_raw": "Top-down control of human visual cortex by frontal and parietal cortex in anticipatory visual spatial attention",
+      "title_normalized": "top down control of human visual cortex by frontal and parietal cortex in anticipatory visual spatial attention",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/28/40/10056.short",
+      "snippet": "\u2026 Granger causality was tested for every voxel pair in each of the 60 frontoparietal-occipital ROI pairs in top-down (from FEF or IPS to visual occipital) and bottom-up (from visual occipital \u2026",
+      "authors_raw": ", CM Sylvester, GL Shulman, M Corbetta",
+      "first_author_surname": null,
+      "publication_year": 2008,
+      "venue": "Journal of \u2026",
+      "cited_by_count": 751,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/28/40/10056.full.pdf"
+    },
+    {
+      "candidate_id": "CAND-RUN-20260603-020713-000067",
+      "discovery_run_id": "RUN-20260603-020713",
+      "discovered_via": "serpapi_scholar",
+      "merged_from_sources": [
+        "serpapi_scholar"
+      ],
+      "merged_from_queries": [
+        "AI1-step1"
+      ],
+      "discovered_query": "(\"dorsal attention network\" OR \"ventral attention network\" OR \"frontoparietal\") AND (\"goal-directed\" OR \"stimulus-driven\") AND (\"spatial attention\" OR \"Corbetta\") -review",
+      "discovered_query_display_id": "AI1-step1",
+      "source_voi_score": 0.3275,
+      "discovered_at": "2026-06-03T02:07:51Z",
+      "result_position": 10,
+      "title_raw": "A role for the locus ceruleus in reward processing: encoding behavioral energy required for goal-directed actions",
+      "title_normalized": "a role for the locus ceruleus in reward processing encoding behavioral energy required for goal directed actions",
+      "doi": null,
+      "url": "https://www.jneurosci.org/content/35/29/10387.short",
+      "snippet": "\u2026 ventral and dorsal frontoparietal attentional networks, which are involved in stimulus-driven attention (\u2026 ), respectively (Corbetta et al., 2008). This shift of activity between goal-driven and \u2026",
+      "authors_raw": "J Hofmeister, V Sterpenich",
+      "first_author_surname": "Hofmeister",
+      "publication_year": 2015,
+      "venue": "Journal of Neuroscience",
+      "cited_by_count": null,
+      "resource_pdf_url": "https://www.jneurosci.org/content/jneuro/35/29/10387.full.pdf"
+    }
+  ],
+  "null_results": [],
+  "skipped_queries": []
+}

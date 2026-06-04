@@ -23,8 +23,11 @@ import sys
 from pathlib import Path
 
 _IMPL = Path(__file__).resolve().parent / "Phase 2" / "search_runner.py"
+_IMPL_DIR = _IMPL.parent
 
 if __name__ == "__main__":
     # Re-exec the canonical Phase 2 implementation as __main__, preserving argv.
+    if str(_IMPL_DIR) not in sys.path:
+        sys.path.insert(0, str(_IMPL_DIR))
     sys.argv[0] = str(_IMPL)
     runpy.run_path(str(_IMPL), run_name="__main__")

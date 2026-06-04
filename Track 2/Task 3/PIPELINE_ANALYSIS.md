@@ -109,24 +109,27 @@ The seed papers JSON must be created from known-relevant CNFA papers. This is a 
 
 ---
 
-## 5. Updated Precision / Recall Estimates
+## 5. Precision / Recall Estimates
 
 ### Precision (measured)
-**Current (with pre-fix classifier):** 3/6 = 50% on ACCEPT bucket
+The authoritative final precision numbers are in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md):
 
-**Estimated post-fix (with fixed keyword classifier):** Cannot be directly measured without re-running Stage 1 and Stage 2B. However, the bug fix expands the ACCEPT pool (Djebbara 2019 would now pass Stage 1 if it had an abstract). If 1–2 additional true positives enter ACCEPT and no new false positives are added, precision improves to 4–5/7 = 57–71%.
+- Conservative ACCEPT precision: **5/10 = 50%**
+- Liberal ACCEPT precision: **7/10 = 70%** when two CNFA-adjacent borderlines are counted
+
+The earlier 3/6 figure was the pre-fix ACCEPT bucket used during debugging. It is retained only as historical context; it is not the submission metric.
 
 **Estimated post-real-classifier:** Likely 70–85% based on the improvement pattern observed: the false positives (pedagogical paper, energy engineering paper) have weak architectural-cognition signals that embeddings would capture; the true positives have strong signals.
 
 ### Recall (partial measurement)
-**Known-item test:** 4/7 (57%) — measures retrieval coverage only, not full pipeline recall
+The authoritative final recall numbers are also in [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md):
 
-**Full pipeline recall** (retrieval + abstract collection + Stage 1 + Stage 2B) is unmeasured. Based on known-item test:
-- Retrieval: ~57% (4 of 7 entered the pipeline)
-- Post-retrieval survival rate: 1/4 (25%) reached abstract collection; 0/4 reached ACCEPT
-- **End-to-end recall on known items: 0/7 (0%)** — none of the known CNFA gold-standard papers reached ACCEPT
+- Gap-driven retrieval recall, 15-paper set: **5/15 = 33%**
+- End-to-end ACCEPT recall, 15-paper set: **2/15 = 13%**
+- Gap-driven retrieval recall, 30-paper set: **2/30 = 7%**
+- Retrieval recall after documented subfield expansion: **12/30 = 40%**
 
-This is the most important unresolved issue. The pipeline successfully identified 3 true positives in ACCEPT, but none of them are the canonical CNFA papers. The pipeline is finding papers that are CNFA-adjacent (health + built environment) rather than papers in the core CNFA theoretical tradition.
+The most important unresolved issue remains retrieval coverage. The pipeline can stage, collect, triage, and hand off papers, but the original 10 gap-driven queries miss much of the canonical CNFA corpus. Subfield query expansion improves recall substantially, which supports the retrieval-bottleneck diagnosis.
 
 ---
 

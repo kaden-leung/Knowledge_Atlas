@@ -4,6 +4,24 @@
 
 ---
 
+## Prerequisites
+
+Before running verification or the pipeline, ensure the environment meets these prerequisites:
+
+- **Python:** 3.10 or newer (see `setup_verify.py` for checks).
+- **Virtualenv:** activate the repository `.venv` when present: `source .venv/bin/activate`.
+- **Dependencies:** install via `pip install -r requirements.txt` when needed.
+- **`atlas_shared` dependency:** some Task 2/Knowledge_Atlas checks and optional classifier integrations use `atlas_shared`. Provide one of the following so the suite is portable:
+    - Install a published package (if available): `pip install atlas_shared`.
+    - Point to a local checkout by setting `KA_ATLAS_SHARED_SRC` to the `src` directory of an `atlas_shared` clone, e.g.
+
+        export KA_ATLAS_SHARED_SRC=/path/to/atlas_shared/src
+
+    - Place a sibling checkout next to this repository so the path `../atlas_shared/src` exists (the test probes for sibling paths).
+
+If `atlas_shared` is absent the suites that depend on it will be skipped cleanly (see `conftest.py`), and Stage 1 will fall back to the keyword classifier. Documenting this dependency avoids hidden sibling-path assumptions.
+
+
 ## 1. What this project is
 
 This submission is a gap-driven literature discovery pipeline for the cognitive neuroscience of architecture (CNFA).
@@ -20,8 +38,9 @@ The central finding supported by the evaluation:
 1. Read this file — architecture, navigation, one-command verification
 2. Read [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — all key metrics, error taxonomy, per-paper precision assessment
 3. Read [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced through all 10 lifecycle stages
+4. Read [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — evidence for the autograder's manually capped points
 
-Those three documents capture the architecture, evaluation, validation, and limitations of the project. Everything else is supporting detail.
+Those four documents capture the architecture, evaluation, validation, manual-review evidence, and limitations of the project. Everything else is supporting detail.
 
 ---
 
@@ -110,7 +129,10 @@ Supporting references:
 - [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) — failure modes connected into one measurement → discovery → action story
 - [LESSONS_LEARNED.md](LESSONS_LEARNED.md) — what evaluation changed about the project
 - [HUMAN_VALIDATION.md](HUMAN_VALIDATION.md) — manual precision review and threshold sensitivity
-- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 225 MISSING_ABSTRACT rows, documented
+- [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — explains the 68/75 automatic score and evidence for the 7 manual-review points
+- [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 222 current MISSING_ABSTRACT rows, documented
+- [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) — small labeled abstract-evaluation confusion table
+- [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) — Track 2 scalar VOI compared with Article Eater / BN / Bayesian VOI
 - [MANIFEST.md](MANIFEST.md) — single-page audit trail for Task 3
 - Task 2 deliverables and autograder result — in the separate Task 2 submission (branch `track2/kaden-leung-task2`)
 - [Phase 7/handoff_outbox/handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) — downstream-ready export evidence
@@ -149,6 +171,9 @@ This submission additionally provides:
 | Error taxonomy — failure mode decomposition | [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md) |
 | Query ablation study (K=1,3,5,8,9) | [TRACK2_EVALUATION_REPORT.md §6.1](TRACK2_EVALUATION_REPORT.md) |
 | VOI–ACCEPT correlation (negative finding) | [TRACK2_EVALUATION_REPORT.md §6.2](TRACK2_EVALUATION_REPORT.md) |
+| VOI comparison to Article Eater / BN / Bayesian VOI | [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) |
+| Labeled abstract-classifier sanity evaluation | [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) |
+| Autograder manual-review evidence packet | [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) |
 | Baseline query comparison | [TRACK2_EVALUATION_REPORT.md §6.3](TRACK2_EVALUATION_REPORT.md) |
 | End-to-end chain verifier (9/9 checks) | [verify_track2_workflow.py](verify_track2_workflow.py) |
 | Downstream handoff + AE validation layer | [Phase 7/ae_handoff.py](<Phase 7/ae_handoff.py>), [ae_inbox_stub.py](<Phase 7/ae_inbox_stub.py>) |

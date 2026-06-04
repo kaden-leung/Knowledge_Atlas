@@ -28,7 +28,7 @@ Full methodology, per-query tables, ablation details, and discussion are in [TRA
 | Abstract hit rate (DOI-bearing rows) | **73.2%** | S2 + CrossRef + PubMed + OpenAlex fallback chain |
 | Query success rate | **8/10 = 80%** | 2 null-result queries documented |
 | AE handoff validation | **9/9 valid** | `inbox_validation_report.json` |
-| Test suite | **185/185 passing** | `pytest` across all phases |
+| Test suite | **186 passed, 1 skipped** | `pytest` across all phases in the dependency-ready environment |
 | Chain verifier | **9/9 checks** | `verify_track2_workflow.py` |
 
 ---

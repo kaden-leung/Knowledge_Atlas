@@ -1,0 +1,14 @@
+{
+  "run_id": "RUN-20260603-020713",
+  "stages": {
+    "stage2b": {
+      "candidates_processed": 25,
+      "decisions": {
+        "ACCEPT": 11,
+        "EDGE_CASE": 14,
+        "REJECT": 0
+      },
+      "classifier_mode": "keyword_fallback"
+    }
+  }
+}

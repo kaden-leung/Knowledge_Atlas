@@ -38,7 +38,7 @@ That changed the project from a simple pipeline demonstration into a measured re
 
 **Tests passing did not mean retrieval was working.**
 
-Before running the benchmark, 185/185 unit tests passed and the pipeline executed end-to-end without errors. That looked like success. The benchmark showed 33% retrieval recall and 13% end-to-end recall. The gap between "the pipeline runs correctly" and "the pipeline finds the right papers" was much larger than expected. A test suite can verify that a search engine reliably queries APIs and stores results — it cannot verify that the right papers are being found. That distinction was not obvious before measurement.
+Before running the benchmark, the full offline unit suite passed and the pipeline executed end-to-end without errors. That looked like success. The benchmark showed 33% retrieval recall and 13% end-to-end recall. The gap between "the pipeline runs correctly" and "the pipeline finds the right papers" was much larger than expected. A test suite can verify that a search engine reliably queries APIs and stores results — it cannot verify that the right papers are being found. That distinction was not obvious before measurement.
 
 **VOI did not predict which queries would find useful papers.**
 
