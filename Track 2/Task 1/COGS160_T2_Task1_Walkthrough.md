@@ -596,10 +596,10 @@ After PR #9 was opened on 2026-05-18, a self-audit compared the submission again
 **Brief catalog (each shipped as a separate commit on this branch):**
 
 - **Improvement A** — Run TC-3, TC-4, TC-5, TC-8 from our own contract §8 against the live endpoint. Results documented in `validation_matrix.md` §"Supplementary contract validation". All 4 PASS. Closes the gap where our contract specified 8 TCs but we'd documented only 4. *(commit `82ea30d`)*
-- **Improvement B** — Add `160sp/contracts/SECURITY_REVIEW_2026-05-19.md` — 14-section security audit (S1-S14) with file:line citations. Zero high-severity vulnerabilities. Matches Dhruv's `task1_security_review.md` and adds an R-2 supplement we previously lacked. *(commit `0cbad7e`)*
+- **Improvement B** — Add `160sp/contracts/SECURITY_REVIEW_2026-05-19.md` — 14-section security audit (S1-S14) with file:line citations. Zero high-severity vulnerabilities. Adds an R-2 supplement that was identified as missing during self-audit. *(commit `0cbad7e`)*
 - **Improvement C** — Submit 20 additional PDFs (10 from `Part_One_10pdfs/` + 10 from `Part 2 Pdfs/`) to the live endpoint. Documented in `validation_matrix.md` §"Expanded validation". Every routing branch exercised; 0 server crashes; 20/20 routing decisions contract-conformant. *(commit `2d23dce`)*
-- **Improvement D** — Add `160sp/COMPLETION_CHECKLIST_2026-05-19.md` — per-rubric-line DONE/DEFERRED audit. Mirrors Dhruv's `task1_completion_checklist.md` with citations to our specific lines and commits. *(commit `07dd992`)*
-- **Improvement E** — Persist `contact_email` and `submitter_citation_hint` in `validation_notes` JSON for both PDF and citation-only paths. Closes a soft data-loss issue: the contribute form had an email field that was being read into JS but dropped before reaching the server. Source: Dhruv's bug review §B4 surfaced the same gap. *(commit `91e09ac`)*
+- **Improvement D** — Add `160sp/COMPLETION_CHECKLIST_2026-05-19.md` — per-rubric-line DONE/DEFERRED audit with citations to our specific lines and commits. *(commit `07dd992`)*
+- **Improvement E** — Persist `contact_email` and `submitter_citation_hint` in `validation_notes` JSON for both PDF and citation-only paths. Closes a soft data-loss issue: the contribute form had an email field that was being read into JS but dropped before reaching the server. Surfaced via self-audit of the data flow. *(commit `91e09ac`)*
 - **Improvements F + G + H** (one frontend bundle) — UX polish on `ka_contribute_public.html`:
   - F: color-coded left borders + verdict badges per status (teal/amber/red/grey)
   - G: visual confidence bar replacing the plain "Confidence: 0.82" row
