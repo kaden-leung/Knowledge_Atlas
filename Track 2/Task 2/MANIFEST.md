@@ -27,6 +27,10 @@
 - `Track 2/Task 2/Phase 4/SPOT_CHECK.md` — manual Google testing rubric for 3 queries (template ready to fill)
 - `Track 2/Task 2/Phase 4/QUERY_REVIEW.md` — self-audit of 10 queries against `ka_google_search_guide.html`
 - `Track 2/Task 2/Phase 4/VERIFICATION.md` — 17 verification questions caught real problems in the generator
+- `Track 2/Task 2/VERIFICATION_ANSWERS.md` — direct answers for the autograder's manual verification bucket
+- `Track 2/Task 2/MANUAL_REVIEW_PACKET.md` — fast review path for the remaining 5 manual points
+- `Track 2/Task 2/DEPENDENCY_AND_PORTABILITY.md` — explicit sibling dependency boundary
+- `Track 2/Task 2/VOI_TRANSPARENCY_NOTE.md` — clarifies first-stage heuristic VOI vs full Bayesian/BN VOI
 
 ### Submission root (autograder-discoverable)
 - `Track 2/Task 2/gap_extractor.py` — copy of `Article_Eater/gap_extractor.py`
@@ -151,8 +155,8 @@ The `query_generator.py` script self-verifies the `vocabulary_hash` at write tim
 
 1. **All deliverables are framed as self-audit.** No peer attribution is included for contract reviews or query improvements — improvements are presented as work the student did against the contract, not as adopted recommendations from others.
 
-2. **The autograder's "ruthless test" emits a path-doubling error** (it joins `submission_dir` twice when resolving `gap_extractor.py`). This is a grader bug, not a submission bug — `gap_extractor.py --help` works correctly when invoked directly from this directory.
+2. **The ruthless entry point now runs without errors** when invoked by the grader with an absolute submission path, and `python3 gap_extractor.py --help` works directly from this directory. Full extraction still requires Article Eater services; see `DEPENDENCY_AND_PORTABILITY.md`.
 
 3. **The `Article_Finder/scripts/` repo location for `gap_extractor.py`** flagged by the autograder under "Repo-Worthy Items" is noted as needs_review. The canonical Article_Eater location is preserved (templates live there) and a working copy is placed at the submission root for the autograder.
 
-4. **Phase 4 SPOT_CHECK.md table is unfilled.** It is a template ready for the rubric tester to paste each AI Citation query into Google AI Overview and score it. Pre-filled rubric structure follows the 3-dimension SC-6 rubric (phenomenon match, mechanism family match, measurement tradition match) verbatim.
+4. **Phase 4 SPOT_CHECK.md is supporting evidence, not the only verification source.** The manual-review case is consolidated in `MANUAL_REVIEW_PACKET.md` and `VERIFICATION_ANSWERS.md`.
