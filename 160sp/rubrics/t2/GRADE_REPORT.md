@@ -1,7 +1,7 @@
 # T2 Task 1 — Grade Report
 
 **Student:** Kaden Leung
-**Email:** kadenleung00@gmail.com
+**Email:** kaden-leung@users.noreply.github.com
 **Grader:** auto
 **Date:** 2026-05-18 22:40 UTC
 
