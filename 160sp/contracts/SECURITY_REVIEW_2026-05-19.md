@@ -163,7 +163,7 @@ The explicit `HTTPException(400, …)` calls (e.g., line 802 for missing input, 
 - `ka_contribute_public.html` (frontend; no secrets)
 - `160sp/contracts/...` (markdown contract docs; no secrets)
 - `160sp/verification_log.md`, `validation_matrix.md`, `validation_T*.json`, `validation_TC*.json` (Phase 3-4 evidence; no secrets in any of the response JSONs — verified via inspection)
-- `160sp/MANIFEST.md`, `PR_BODY.md`, `rubrics/t2/GRADE_REPORT.md` (submission artifacts; no secrets)
+- `160sp/MANIFEST.md`, `rubrics/t2/GRADE_REPORT.md` (submission artifacts; no secrets)
 - `tests/validate_classifier_integration.py`, `tests/fixtures/INDEX.md` (test scaffolding; no secrets)
 
 **No API keys, OAuth tokens, database passwords, or credentials appear in any file added or modified by this PR.** Verified by grep against the usual sensitive patterns (`api[_-]?key`, `token`, `password`, `secret`, `bearer`, `pk_live`, `sk_live`, `BEGIN PRIVATE KEY`).

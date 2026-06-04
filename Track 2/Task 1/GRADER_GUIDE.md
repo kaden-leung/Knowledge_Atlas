@@ -34,7 +34,6 @@ Relevant Task 1 files in this PR:
 - `Track 2/Task 1/ka_contribute_public.html`
 - `Track 2/Task 1/AUDIT_2026-05-18.md`
 - `Track 2/Task 1/COGS160_T2_Task1_Walkthrough.md`
-- `Track 2/Task 1/PEER_PR_COMPARISON_2026-05-19.md`
 - `Track 2/Task 1/MANUAL_REVIEW_PACKET.md`
 - `Track 2/Task 1/DIAGNOSIS_OF_FAILURES.md`
 - `Track 2/Task 1/REPO_WORTHY_NOTE.md`
