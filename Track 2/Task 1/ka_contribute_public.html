@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suggest a paper — Knowledge Atlas</title>
+<meta name="description" content="Know of a study on architecture and cognition we should index? Send it our way in under a minute.">
+<script src="ka_canonical_navbar.js" defer></script>
+<script src="ka_user_type.js" defer></script>
+<script src="ka_config.js"></script>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+       background:#F7F4EF;color:#2C2C2C;line-height:1.6}
+  main.ka-outer{max-width:780px;margin:26px auto 80px;padding:0 24px}
+
+  .hero{border-bottom:2px solid #E0D8CC;padding-bottom:18px;margin-bottom:24px}
+  .hero .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;
+                  text-transform:uppercase;color:#8A9A96;margin-bottom:8px}
+  .hero h1{font-family:Georgia,serif;font-size:2.0rem;color:#1C3D3A;
+           margin-bottom:8px;line-height:1.2}
+  .hero p{font-size:.98rem;color:#2C2C2C;max-width:620px}
+
+  .card{background:#fff;border:1.5px solid #E0D8CC;border-radius:10px;
+        padding:22px 26px;margin-bottom:20px}
+  .card h2{font-family:Georgia,serif;font-size:1.2rem;color:#1C3D3A;
+           margin-bottom:10px}
+  .card p + p{margin-top:8px}
+
+  label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.06em;
+        text-transform:uppercase;color:#8A9A96;margin-bottom:4px;margin-top:14px}
+  label:first-of-type{margin-top:0}
+  input[type="text"],input[type="email"],textarea{
+    width:100%;padding:10px 12px;border:1.5px solid #D8D0C5;border-radius:7px;
+    font:inherit;font-size:.94rem;background:#fff;color:#2C2C2C}
+  input:focus,textarea:focus{outline:none;border-color:#2A7868;
+    box-shadow:0 0 0 3px rgba(42,120,104,.15)}
+  textarea{min-height:100px;resize:vertical;font-family:inherit}
+
+  .drop{border:2px dashed #D8D0C5;border-radius:10px;padding:24px 18px;
+        text-align:center;background:#F9F5EE;cursor:pointer;transition:all .15s;
+        margin-bottom:14px}
+  .drop:hover,.drop.over{border-color:#2A7868;background:#E6F5F0}
+  .drop-icon{font-size:1.5rem;margin-bottom:4px;color:#1C3D3A}
+  .drop-label{font-weight:600;color:#1C3D3A;font-size:.94rem;margin-bottom:4px}
+  .drop-hint{font-size:.8rem;color:#6B6B6B}
+
+  .hint{font-size:.82rem;color:#6B6B6B;margin-top:4px;line-height:1.5}
+  .result-panel{margin-top:16px;padding:12px 14px;border:1.5px solid #D8D0C5;
+                border-radius:8px;background:#F9F5EE;font-size:.9rem}
+  .result-panel b{color:#1C3D3A}
+
+  .btn-primary{display:inline-block;padding:12px 22px;background:#E8872A;color:#fff;
+               border:none;border-radius:8px;font-size:.94rem;font-weight:700;
+               cursor:pointer;transition:background .15s;margin-top:22px;
+               font-family:inherit}
+  .btn-primary:hover{background:#D27320}
+  .btn-primary:disabled{background:#c7d3cf;cursor:not-allowed}
+
+  .why-bullets{padding-left:22px;margin:10px 0}
+  .why-bullets li{margin-bottom:6px;font-size:.92rem}
+  .why-bullets b{color:#1C3D3A}
+
+  .footer-note{font-size:.82rem;color:#6B6B6B;margin-top:28px;padding-top:18px;
+                border-top:1px dashed #E0D8CC;line-height:1.6}
+  .footer-note a{color:#2A7868;text-decoration:none}
+  .footer-note a:hover{text-decoration:underline}
+
+  .tiny-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+               color:#8A9A96;font-weight:700;margin-bottom:6px;margin-top:18px}
+
+  /* Thank-you modal */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(28,61,58,.55);
+                   display:none;align-items:center;justify-content:center;
+                   z-index:200;padding:20px}
+  .modal-backdrop.open{display:flex}
+  .modal{background:#fff;border-radius:14px;max-width:460px;width:100%;
+         box-shadow:0 20px 60px rgba(0,0,0,.3);padding:28px 32px;text-align:center}
+  .modal h3{font-family:Georgia,serif;font-size:1.35rem;color:#1C3D3A;margin-bottom:10px}
+  .modal p{font-size:.92rem;margin-bottom:12px;color:#2C2C2C}
+  .modal .btn-primary{margin-top:10px}
+</style>
+</head>
+<body data-ka-regime="global" data-ka-active="contribute">
+<div id="ka-navbar-slot"></div>
+
+<main class="ka-outer">
+
+  <div class="hero">
+    <div class="eyebrow">Suggest a paper</div>
+    <h1>Help us index a study we missed</h1>
+    <p>Knowledge Atlas catalogues ~ 1,400 peer-reviewed studies on architecture,
+       environment, and cognition. If you know of a study we should add, tell us
+       about it — usually takes under a minute.</p>
+  </div>
+
+  <!-- Why contribute -->
+  <div class="card">
+    <h2>Why it's useful</h2>
+    <p>Every paper we index strengthens the Atlas in three ways:</p>
+    <ul class="why-bullets">
+      <li><b>Better coverage</b>: a topic bundle with six papers is more
+          defensible than one with three.</li>
+      <li><b>Better contradictions</b>: papers that disagree with existing
+          evidence sharpen the picture.</li>
+      <li><b>Better synthesis</b>: more primary-source breadth lets the system
+          generate more honest mechanism and theory summaries.</li>
+    </ul>
+    <p>You don't need to tag anything, classify anything, or format the
+       metadata. Drop the PDF or the citation and we'll take it from there.</p>
+  </div>
+
+  <!-- Submit a paper form -->
+  <div class="card">
+    <h2>Submit</h2>
+    <p>The fastest path: upload a PDF. If you don't have a copy at hand, a DOI
+       or a pasted citation also works.</p>
+
+    <form id="__ka_suggest_form" onsubmit="event.preventDefault(); submitSuggestion();">
+      <div class="tiny-label" style="margin-top:16px">PDF (optional but preferred)</div>
+      <div class="drop" id="__ka_drop"
+           onclick="document.getElementById('__ka_file_input').click()"
+           ondragover="event.preventDefault(); this.classList.add('over');"
+           ondragleave="this.classList.remove('over');"
+           ondrop="event.preventDefault(); this.classList.remove('over'); handleFiles(event.dataTransfer.files);">
+        <div class="drop-icon">📄</div>
+        <div class="drop-label">Drop a PDF here or click to upload</div>
+        <div class="drop-hint">We extract title, authors, and abstract
+          automatically. You don't need to fill those in yourself.</div>
+        <input type="file" id="__ka_file_input" accept="application/pdf" hidden
+               onchange="handleFiles(this.files)">
+      </div>
+      <div id="__ka_file_chosen" style="display:none;font-size:.82rem;color:#1A7050;font-weight:600;margin-bottom:10px"></div>
+
+      <label for="sg_citation">Or paste a citation, DOI, or title</label>
+      <textarea id="sg_citation" name="citation" placeholder="e.g., Kompier, M.E., Smolders, K.C.H.J., van Marken Lichtenbelt, W.D., & de Kort, Y.A.W. (2020). Effects of light transitions on measures of alertness, arousal and comfort. Physiology & Behavior. https://doi.org/10.1016/j.physbeh.2020.112999"></textarea>
+      <div class="hint">APA is nice but not required — a DOI or a title + year is enough.</div>
+
+      <label for="sg_why">Why this paper matters <span style="color:#8A9A96;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <textarea id="sg_why" name="why_it_matters" placeholder="One or two sentences. What does this paper find that the Atlas should know about?"></textarea>
+
+      <label for="sg_email">Your email <span style="color:#8A9A96;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <input type="email" id="sg_email" name="email" placeholder="So we can thank you or ask a follow-up">
+      <div class="hint">We will only use this to reply about this submission. We don't add you to any list.</div>
+
+      <button type="submit" class="btn-primary" id="__ka_submit_btn">Send suggestion</button>
+      <div class="result-panel" id="__ka_classifier_result" aria-live="polite">
+        <b>Classifier result / verdict:</b>
+        submission status appears here after the intake classifier endpoint responds.
+      </div>
+    </form>
+  </div>
+
+  <!-- What happens next -->
+  <div class="card" style="background:#F9F5EE;border-color:#E0D8CC">
+    <h2 style="font-size:1.05rem">What happens next</h2>
+    <p style="font-size:.9rem">
+      Your submission goes into an intake queue. Within a few days, a reviewer
+      (DK or a trained student in the COGS 160 Article Finder track) confirms
+      the paper is on-topic, the PDF is readable, and no duplicate already exists.
+      If it passes, it enters the pipeline that extracts findings, maps them to
+      topics, and links them into the Web of Belief. You'll see it appear on the
+      relevant topic page within a week or two.
+    </p>
+    <p style="font-size:.9rem">
+      If we don't add it, we'll tell you why — usually because it's already
+      indexed, or because it's outside the architecture-and-cognition scope we
+      cover.
+    </p>
+  </div>
+
+  <!-- Footer note -->
+  <div class="footer-note">
+    <b>Looking for something else?</b><br>
+    → <a href="ka_topics.html">Browse research by topic</a> (stress, attention, daylight, acoustics…)<br>
+    → <a href="ka_articles.html">Search articles we already have</a> by title, author, or year<br>
+    → <a href="ka_about.html">Read about how we weigh evidence</a>
+  </div>
+
+  <!-- Tiny maintainer link to the full internal contribute page -->
+  <div style="margin-top:32px;font-size:.76rem;color:#8A9A96;text-align:right">
+    Contributor with a pipeline role?
+    <a href="ka_contribute.html" style="color:#2A7868">Full contributor tools →</a>
+  </div>
+
+</main>
+
+<!-- Thank-you modal -->
+<div class="modal-backdrop" id="__ka_thanks">
+  <div class="modal" role="dialog" aria-modal="true">
+    <h3>Thank you</h3>
+    <p>We got your suggestion. A reviewer will confirm it within the next few days.</p>
+    <p>If you left your email, we'll let you know the outcome either way.</p>
+    <button type="button" class="btn-primary"
+            onclick="document.getElementById('__ka_thanks').classList.remove('open')">Close</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  let chosenFile = null;
+
+  window.handleFiles = function(files) {
+    if (!files || !files.length) return;
+    chosenFile = files[0];
+    const box = document.getElementById("__ka_file_chosen");
+    box.style.display = "block";
+    box.textContent = "✓ " + chosenFile.name + " — ready to send";
+  };
+
+  window.submitSuggestion = function() {
+    const citation = document.getElementById("sg_citation").value.trim();
+    const why      = document.getElementById("sg_why").value.trim();
+    const email    = document.getElementById("sg_email").value.trim();
+
+    if (!chosenFile && !citation) {
+      alert("Please upload a PDF or paste a citation / DOI / title.");
+      return;
+    }
+
+    const btn = document.getElementById("__ka_submit_btn");
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+
+    // In production this POSTs to /api/articles/suggest (see KA_AF_INTAKE).
+    // For now we persist locally and show the thank-you modal so the flow
+    // is reviewable without a backend.
+    const payload = {
+      filename: chosenFile ? chosenFile.name : null,
+      citation, why, email,
+      submitted_at: new Date().toISOString(),
+    };
+    try {
+      const log = JSON.parse(localStorage.getItem("ka.public_suggestions") || "[]");
+      log.push(payload);
+      localStorage.setItem("ka.public_suggestions", JSON.stringify(log));
+    } catch(e){ /* fine, still show the modal */ }
+
+    setTimeout(() => {
+      document.getElementById("__ka_thanks").classList.add("open");
+      btn.disabled = false;
+      btn.textContent = "Send suggestion";
+      document.getElementById("__ka_suggest_form").reset();
+      const box = document.getElementById("__ka_file_chosen");
+      box.style.display = "none";
+      chosenFile = null;
+    }, 500);
+  };
+})();
+</script>
+</body>
+</html>
