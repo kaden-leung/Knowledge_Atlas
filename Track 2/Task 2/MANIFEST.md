@@ -155,7 +155,7 @@ The `query_generator.py` script self-verifies the `vocabulary_hash` at write tim
 
 1. **All deliverables are framed as self-audit.** No peer attribution is included for contract reviews or query improvements — improvements are presented as work the student did against the contract, not as adopted recommendations from others.
 
-2. **The ruthless entry point now runs without errors** when invoked by the grader with an absolute submission path, and `python3 gap_extractor.py --help` works directly from this directory. Full extraction still requires Article Eater services; see `DEPENDENCY_AND_PORTABILITY.md`.
+2. **The grader entry point now runs without errors** when invoked by the grader with an absolute submission path, and `python3 gap_extractor.py --help` works directly from this directory. Full extraction still requires Article Eater services; see `DEPENDENCY_AND_PORTABILITY.md`.
 
 3. **The `Article_Finder/scripts/` repo location for `gap_extractor.py`** flagged by the autograder under "Repo-Worthy Items" is noted as needs_review. The canonical Article_Eater location is preserved (templates live there) and a working copy is placed at the submission root for the autograder.
 

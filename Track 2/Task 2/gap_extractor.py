@@ -23,7 +23,7 @@ if __name__ == "__main__" and any(arg in {"-h", "--help"} for arg in sys.argv[1:
         "[--all-templates] [--output OUTPUT]\n\n"
         "Track 2 Task 2 gap extractor. Full execution requires the "
         "Article_Eater services package; --help is self-contained for "
-        "portable grading/ruthless checks."
+        "portable grading checks."
     )
     raise SystemExit(0)
 

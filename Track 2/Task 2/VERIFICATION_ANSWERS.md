@@ -19,7 +19,7 @@ The official Task 2 autograder reports **55 / 60**. The remaining 5 points are t
 | Are Boolean queries usable by search systems? | Yes. The grader reports **10/10** use quoted phrases plus AND/OR logic. | `query_results.json` |
 | Was manual query review performed? | Yes. Query review and spot-check scaffolding are documented. | `Phase 4/QUERY_REVIEW.md`, `Phase 4/SPOT_CHECK.md` |
 | Did verification find real problems? | Yes. The generator verification file documents query-formation and contract issues caught during review. | `Phase 4/VERIFICATION.md` |
-| Is the ruthless entry point portable? | Yes for grading: `python3 gap_extractor.py --help` exits cleanly without Article Eater services. | `gap_extractor.py` |
+| Is the grader entry point portable? | Yes for grading: `python3 gap_extractor.py --help` exits cleanly without Article Eater services. | `gap_extractor.py` |
 
 ## Limitations
 

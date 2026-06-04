@@ -21,7 +21,7 @@ Full gap extraction requires Article Eater service modules:
 - `services.web_of_belief_components.enums`
 - the Article Eater template corpus
 
-This is an explicit dependency, not a hidden assumption. The root `gap_extractor.py --help` path is self-contained so the ruthless grader can verify the entry point without installing the full sibling stack.
+This is an explicit dependency, not a hidden assumption. The root `gap_extractor.py --help` path is self-contained so the official grader can verify the entry point without installing the full sibling stack.
 
 ## Class-Grading Boundary
 
