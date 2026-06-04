@@ -121,6 +121,10 @@ Core documents that shift the submission from "pipeline demonstration" to "retri
 | [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) | Evidence for the autograder's manually capped 7 points |
 | [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) | Track 2 scalar VOI compared with Article Eater / BN / Bayesian VOI |
 | [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) | Small labeled classifier confusion table |
+| [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md) | PR-only vs full-workspace dependency boundary |
+| [TEST_ISOLATION_NOTE.md](TEST_ISOLATION_NOTE.md) | SQLite/test isolation status and production CI blocker |
+| [AE_HANDOFF_BOUNDARY.md](AE_HANDOFF_BOUNDARY.md) | Local handoff contract vs real AE ingestion |
+| [RETRIEVAL_NEXT_STEPS.md](RETRIEVAL_NEXT_STEPS.md) | Concrete next fixes for retrieval recall |
 
 **Key findings from the evaluation:**
 - Retrieval recall against 30-paper gold standard: **7% (2/30)** for the 10 gap-driven queries, rising to **40% (12/30)** after documented subfield expansion.

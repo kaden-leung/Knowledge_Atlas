@@ -32,6 +32,9 @@ The verification evidence is concentrated in:
 - [verify_track2_workflow.py](verify_track2_workflow.py)
 - [GRADER_GUIDE.md](GRADER_GUIDE.md)
 - [RUBRIC_TRACEABILITY.md](RUBRIC_TRACEABILITY.md)
+- [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md)
+- [TEST_ISOLATION_NOTE.md](TEST_ISOLATION_NOTE.md)
+- [AE_HANDOFF_BOUNDARY.md](AE_HANDOFF_BOUNDARY.md)
 
 The canonical verification command is:
 
@@ -61,3 +64,7 @@ Current result:
 ## Manual Review Claim
 
 The automatic score of 68/75 should be read as "all machine-checkable rubric items pass; two human-review categories remain." The evidence above supports awarding the remaining 7 points for an A-level Task 3 submission.
+
+## Production Boundary
+
+For class grading: **GO**. For limited internal pilot use: **GO WITH CONTROLS**. For enterprise production: **NO-GO** until real AE ingestion, stronger classifier validation, dependency packaging, resettable integration tests, and quarantine/rollback controls exist.

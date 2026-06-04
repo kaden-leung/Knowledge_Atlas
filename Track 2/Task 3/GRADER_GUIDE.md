@@ -39,8 +39,9 @@ The central finding supported by the evaluation:
 2. Read [BENCHMARK_EVALUATION.md](BENCHMARK_EVALUATION.md) — all key metrics, error taxonomy, per-paper precision assessment
 3. Read [PROVEIT_WORKS.md](PROVEIT_WORKS.md) — one paper traced through all 10 lifecycle stages
 4. Read [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) — evidence for the autograder's manually capped points
+5. For limitations, read [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md), [TEST_ISOLATION_NOTE.md](TEST_ISOLATION_NOTE.md), and [AE_HANDOFF_BOUNDARY.md](AE_HANDOFF_BOUNDARY.md)
 
-Those four documents capture the architecture, evaluation, validation, manual-review evidence, and limitations of the project. Everything else is supporting detail.
+Those documents capture the architecture, evaluation, validation, manual-review evidence, and limitations of the project. Everything else is supporting detail.
 
 ---
 
@@ -133,6 +134,10 @@ Supporting references:
 - [NULL_RESULTS_REPORT.md](NULL_RESULTS_REPORT.md) — 2 null queries and 222 current MISSING_ABSTRACT rows, documented
 - [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) — small labeled abstract-evaluation confusion table
 - [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) — Track 2 scalar VOI compared with Article Eater / BN / Bayesian VOI
+- [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md) — PR-only vs full-workspace verification boundary
+- [TEST_ISOLATION_NOTE.md](TEST_ISOLATION_NOTE.md) — SQLite/test isolation status and production CI blocker
+- [AE_HANDOFF_BOUNDARY.md](AE_HANDOFF_BOUNDARY.md) — local handoff contract vs real AE ingestion
+- [RETRIEVAL_NEXT_STEPS.md](RETRIEVAL_NEXT_STEPS.md) — next fixes for the retrieval bottleneck
 - [MANIFEST.md](MANIFEST.md) — single-page audit trail for Task 3
 - Task 2 deliverables and autograder result — in the separate Task 2 submission (branch `track2/kaden-leung-task2`)
 - [Phase 7/handoff_outbox/handoff_manifest.json](<Phase 7/handoff_outbox/handoff_manifest.json>) — downstream-ready export evidence
@@ -174,6 +179,9 @@ This submission additionally provides:
 | VOI comparison to Article Eater / BN / Bayesian VOI | [VOI_COMPARISON_NOTE.md](VOI_COMPARISON_NOTE.md) |
 | Labeled abstract-classifier sanity evaluation | [ABSTRACT_CLASSIFIER_EVALUATION.md](ABSTRACT_CLASSIFIER_EVALUATION.md) |
 | Autograder manual-review evidence packet | [MANUAL_REVIEW_PACKET.md](MANUAL_REVIEW_PACKET.md) |
+| Dependency portability boundary | [DEPENDENCY_PORTABILITY.md](DEPENDENCY_PORTABILITY.md) |
+| Test isolation and production CI boundary | [TEST_ISOLATION_NOTE.md](TEST_ISOLATION_NOTE.md) |
+| AE handoff honesty | [AE_HANDOFF_BOUNDARY.md](AE_HANDOFF_BOUNDARY.md) |
 | Baseline query comparison | [TRACK2_EVALUATION_REPORT.md §6.3](TRACK2_EVALUATION_REPORT.md) |
 | End-to-end chain verifier (9/9 checks) | [verify_track2_workflow.py](verify_track2_workflow.py) |
 | Downstream handoff + AE validation layer | [Phase 7/ae_handoff.py](<Phase 7/ae_handoff.py>), [ae_inbox_stub.py](<Phase 7/ae_inbox_stub.py>) |
