@@ -8,6 +8,25 @@ This document is the single-page audit trail for the grader. For deep specs, see
 
 ---
 
+## Submission-root deliverables (course spec + autograder)
+
+The course Task-3 spec (`160sp/rubrics/t2/T2_TASK3_SEARCH_EXECUTION_TRIAGE.md` → "Files You Must Change or Create") and the autograder (`t2_task3_grader.py`, 75 pts) expect the deliverable files at the **submission root**. This project keeps the real implementation under `Phase N/` (with full contracts, tests, and evidence); the root files below make the deliverables resolve from the root **without duplicating logic**.
+
+| Root file | Type | Canonical source |
+|---|---|---|
+| `search_runner.py` | shim — re-execs canonical via `runpy` | `Phase 2/search_runner.py` |
+| `abstract_collector.py` | shim | `Phase 4/abstract_collector.py` |
+| `abstract_triage.py` | shim | `Phase 4/abstract_triage.py` |
+| `search_results.json` | verbatim copy | `Phase 2/search_results.json` |
+| `triage_results.json` | generated, deterministic | `task3_pipeline_lifecycle.db` (every row with a `triage_decision`; emitted under key `decision`) |
+| `ka_topic_proposer.html` | verbatim copy (the PRISMA dashboard) | `Phase 6/prisma_dashboard.html` |
+
+The `.py` shims contain no business logic — each re-execs its `Phase N/` counterpart as `__main__`, preserving argv. `triage_results.json` regenerates deterministically from the committed DB.
+
+**Official autograder:** `python3 160sp/autograders/t2_task3_grader.py "Track 2/Task 3" kaden-leung` → **68 / 75**. The 7 withheld points are the grader's hard-capped "manual review" lines (Null-results 3/5, Verification-questions 5/10); the supporting evidence for both is in `NULL_RESULTS_REPORT.md` and `FAILURE_ANALYSIS.md`.
+
+---
+
 ## Success Definition
 
 **The pipeline succeeds when it identifies at least one paper per targeted gap that a domain expert judges relevant to cognitive neuroscience of architecture, with ≥ 60% ACCEPT precision and zero papers acquired (Phase 5) without prior human review of the accepted set.**
