@@ -2,7 +2,7 @@
 
 **Author:** Kaden Leung
 **Last Updated:** 2026-06-04
-**Status:** Phases 1–7 complete. Post-review revision applied.
+**Status:** Phases 1–7 complete. Post-panel / ruthless-review revision applied.
 
 This document is the single-page audit trail for the grader. For deep specs, see the linked contracts.
 
