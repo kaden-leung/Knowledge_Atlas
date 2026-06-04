@@ -10,7 +10,7 @@
     "REF-2026-05-31-000064.json",
     "REF-2026-05-31-000065.json"
   ],
-  "db_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Knowledge_Atlas/Track 2/Task 3/task3_pipeline_lifecycle.db",
+  "db_path": "task3_pipeline_lifecycle.db",
   "handoff_version": "1.0",
   "normalized_doi_count": 8,
   "selected_accept_rows": 10,

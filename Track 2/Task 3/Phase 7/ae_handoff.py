@@ -112,7 +112,7 @@ def main() -> int:
 
     manifest = {
         "handoff_version": "1.0",
-        "db_path": str(args.db),
+        "db_path": args.db.name,  # filename only — keep absolute/home paths out of committed evidence
         "selected_accept_rows": len(rows),
         "written_count": len(artifact_files),
         "normalized_doi_count": normalized_dois,

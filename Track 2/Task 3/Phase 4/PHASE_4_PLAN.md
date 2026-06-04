@@ -85,7 +85,7 @@ OpenAlex exposes a free, unauthenticated REST API. No API key required; polite p
 ```python
 class OpenAlexClient:
     BASE = "https://api.openalex.org"
-    POLITE_EMAIL = "kadenleung00@gmail.com"
+    POLITE_EMAIL = "kaden-leung@users.noreply.github.com"
 
     def __init__(self) -> None:
         self._limiter = _RateLimiter(min_delay=0.12)   # ~8 req/s, polite pool

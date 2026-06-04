@@ -39,7 +39,7 @@ Only rows where `triage_decision = 'ACCEPT'` and `acquired_paper_id IS NULL` app
 
 | Key | Default | Meaning |
 |---|---|---|
-| `acquisition.email` | `kadenleung00@gmail.com` | Polite-pool email for Unpaywall and OpenAlex |
+| `acquisition.email` | `kaden-leung@users.noreply.github.com` | Polite-pool email for Unpaywall and OpenAlex |
 | `acquisition.output_dir` | `Phase 5/acquired_pdfs` | Where PDFs are saved (gitignored) |
 | `acquisition.timeout_seconds` | `60` | Per-request download timeout |
 | `enable_paid_or_grey_sources` | `false` | Must be `true` before scidownl is even considered |

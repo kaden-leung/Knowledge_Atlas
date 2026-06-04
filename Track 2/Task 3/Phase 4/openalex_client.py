@@ -22,7 +22,7 @@ try:
 except ImportError:
     _SSL_CTX = ssl.create_default_context()
 
-POLITE_EMAIL = "kadenleung00@gmail.com"
+POLITE_EMAIL = "kaden-leung@users.noreply.github.com"
 BASE = "https://api.openalex.org"
 
 

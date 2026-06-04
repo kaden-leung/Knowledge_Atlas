@@ -5,8 +5,8 @@
     "generated_at": "2026-05-30T22:37:30Z",
     "started_at": "2026-05-30T22:37:02Z",
     "pdf_dirs": [
-      "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs",
-      "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs"
+      "Part 2 Pdfs",
+      "Part_One_10pdfs"
     ],
     "pdfs_scanned": 20,
     "pdfs_with_references_section": 20,
@@ -23,7 +23,7 @@
   },
   "per_pdf": [
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Design_for_Subjective_well-being.pdf",
+      "pdf_path": "Part 2 Pdfs/Design_for_Subjective_well-being.pdf",
       "pdf_id": "PDF-Design_for_Subjective_well-being",
       "references_section_found": true,
       "raw_lines": 31,
@@ -35,7 +35,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Exploring_Campus_Architecture.pdf",
+      "pdf_path": "Part 2 Pdfs/Exploring_Campus_Architecture.pdf",
       "pdf_id": "PDF-Exploring_Campus_Architecture",
       "references_section_found": true,
       "raw_lines": 41,
@@ -47,7 +47,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Mapping_Architectural_Students'_Perception.pdf",
+      "pdf_path": "Part 2 Pdfs/Mapping_Architectural_Students'_Perception.pdf",
       "pdf_id": "PDF-Mapping_Architectural_Students__Perception",
       "references_section_found": true,
       "raw_lines": 74,
@@ -59,7 +59,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Sense_of_Place_and_Belonging.pdf",
+      "pdf_path": "Part 2 Pdfs/Sense_of_Place_and_Belonging.pdf",
       "pdf_id": "PDF-Sense_of_Place_and_Belonging",
       "references_section_found": true,
       "raw_lines": 80,
@@ -71,7 +71,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Architecture_of_Belonging.pdf",
+      "pdf_path": "Part 2 Pdfs/The_Architecture_of_Belonging.pdf",
       "pdf_id": "PDF-The_Architecture_of_Belonging",
       "references_section_found": true,
       "raw_lines": 13,
@@ -83,7 +83,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Influence_of_Urban_Lighting.pdf",
+      "pdf_path": "Part 2 Pdfs/The_Influence_of_Urban_Lighting.pdf",
       "pdf_id": "PDF-The_Influence_of_Urban_Lighting",
       "references_section_found": true,
       "raw_lines": 41,
@@ -95,7 +95,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Restorative_Role_of_Traditional_Architecture.pdf",
+      "pdf_path": "Part 2 Pdfs/The_Restorative_Role_of_Traditional_Architecture.pdf",
       "pdf_id": "PDF-The_Restorative_Role_of_Traditional_Architecture",
       "references_section_found": true,
       "raw_lines": 24,
@@ -107,7 +107,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Spatial_Role_of_Ceramics.pdf",
+      "pdf_path": "Part 2 Pdfs/The_Spatial_Role_of_Ceramics.pdf",
       "pdf_id": "PDF-The_Spatial_Role_of_Ceramics",
       "references_section_found": true,
       "raw_lines": 27,
@@ -119,7 +119,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/The_Study_of_Spatial_Quality.pdf",
+      "pdf_path": "Part 2 Pdfs/The_Study_of_Spatial_Quality.pdf",
       "pdf_id": "PDF-The_Study_of_Spatial_Quality",
       "references_section_found": true,
       "raw_lines": 76,
@@ -131,7 +131,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part 2 Pdfs/Wellbeing_as_an_emergent_property_of_social_practice.pdf",
+      "pdf_path": "Part 2 Pdfs/Wellbeing_as_an_emergent_property_of_social_practice.pdf",
       "pdf_id": "PDF-Wellbeing_as_an_emergent_property_of_social_practice",
       "references_section_found": true,
       "raw_lines": 30,
@@ -143,7 +143,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Are_Biophilic-Designed_Site_Office_Buidlings.pdf",
+      "pdf_path": "Part_One_10pdfs/Are_Biophilic-Designed_Site_Office_Buidlings.pdf",
       "pdf_id": "PDF-Are_Biophilic-Designed_Site_Office_Buidlings",
       "references_section_found": true,
       "raw_lines": 50,
@@ -155,7 +155,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Biophilic_Architecture.pdf",
+      "pdf_path": "Part_One_10pdfs/Biophilic_Architecture.pdf",
       "pdf_id": "PDF-Biophilic_Architecture",
       "references_section_found": true,
       "raw_lines": 29,
@@ -167,7 +167,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Cross-Sectional_Study_of_a_biophilic_building.pdf",
+      "pdf_path": "Part_One_10pdfs/Cross-Sectional_Study_of_a_biophilic_building.pdf",
       "pdf_id": "PDF-Cross-Sectional_Study_of_a_biophilic_building",
       "references_section_found": true,
       "raw_lines": 61,
@@ -179,7 +179,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Development_of_a_Building_Evaluation.pdf",
+      "pdf_path": "Part_One_10pdfs/Development_of_a_Building_Evaluation.pdf",
       "pdf_id": "PDF-Development_of_a_Building_Evaluation",
       "references_section_found": true,
       "raw_lines": 134,
@@ -191,7 +191,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Evaluating_comfort_and_well-being.pdf",
+      "pdf_path": "Part_One_10pdfs/Evaluating_comfort_and_well-being.pdf",
       "pdf_id": "PDF-Evaluating_comfort_and_well-being",
       "references_section_found": true,
       "raw_lines": 18,
@@ -203,7 +203,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Impacts_of_Dynamic_LED_Lighting.pdf",
+      "pdf_path": "Part_One_10pdfs/Impacts_of_Dynamic_LED_Lighting.pdf",
       "pdf_id": "PDF-Impacts_of_Dynamic_LED_Lighting",
       "references_section_found": true,
       "raw_lines": 97,
@@ -215,7 +215,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Less_is_more?.pdf",
+      "pdf_path": "Part_One_10pdfs/Less_is_more?.pdf",
       "pdf_id": "PDF-Less_is_more",
       "references_section_found": true,
       "raw_lines": 32,
@@ -227,7 +227,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Ocular_Light_Exposure.pdf",
+      "pdf_path": "Part_One_10pdfs/Ocular_Light_Exposure.pdf",
       "pdf_id": "PDF-Ocular_Light_Exposure",
       "references_section_found": true,
       "raw_lines": 104,
@@ -239,7 +239,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/Recommendations_for_daytime_evening.pdf",
+      "pdf_path": "Part_One_10pdfs/Recommendations_for_daytime_evening.pdf",
       "pdf_id": "PDF-Recommendations_for_daytime_evening",
       "references_section_found": true,
       "raw_lines": 144,
@@ -251,7 +251,7 @@
       "errors": []
     },
     {
-      "pdf_path": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Part_One_10pdfs/The-Financial-Benefits-of-Biophilic-Design-in-the-Workplace.pdf",
+      "pdf_path": "Part_One_10pdfs/The-Financial-Benefits-of-Biophilic-Design-in-the-Workplace.pdf",
       "pdf_id": "PDF-The-Financial-Benefits-of-Biophilic-Design-in-the-Workplace",
       "references_section_found": true,
       "raw_lines": 31,

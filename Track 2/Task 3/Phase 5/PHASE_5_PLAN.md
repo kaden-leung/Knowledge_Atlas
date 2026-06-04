@@ -80,7 +80,7 @@ Phase 5 reads this view unmodified. The `pdf_acquisition_attempts < 3` guard lim
 ### Source 1: Unpaywall
 
 ```python
-uw = UnpaywallClient(email="kadenleung00@gmail.com")  # imported from Article_Eater
+uw = UnpaywallClient(email="kaden-leung@users.noreply.github.com")  # imported from Article_Eater
 result = uw.check_oa_status(doi)
 if result["is_oa"] and result["best_oa_url"]:
     pdf_bytes = download_pdf(result["best_oa_url"])

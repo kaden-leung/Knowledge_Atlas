@@ -52,7 +52,7 @@ DEFAULT_OUTPUT_DIR = _HERE / "acquired_pdfs"
 DEFAULT_REPORT = _HERE / "acquisition_report.json"
 
 _UNPAYWALL_BASE = "https://api.unpaywall.org/v2"
-_POLITE_EMAIL = "kadenleung00@gmail.com"
+_POLITE_EMAIL = "kaden-leung@users.noreply.github.com"
 
 
 def utc_now_iso() -> str:

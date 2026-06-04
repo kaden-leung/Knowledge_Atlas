@@ -6,7 +6,7 @@
 #   2. Understanding that scidownl accesses Sci-Hub mirrors (legality varies by jurisdiction)
 
 acquisition:
-  email: kadenleung00@gmail.com   # polite-pool email for Unpaywall + OpenAlex
+  email: kaden-leung@users.noreply.github.com   # polite-pool email for Unpaywall + OpenAlex
   output_dir: Phase 5/acquired_pdfs
   timeout_seconds: 60
 

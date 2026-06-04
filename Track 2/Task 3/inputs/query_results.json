@@ -12,7 +12,7 @@
       "F": 9,
       "C": 1
     },
-    "vocabulary_source": "/Users/bigdaddy/Downloads/UCSD/COGS 160/Article_Eater/contracts/vocab/cross_field_vocabulary.yaml",
+    "vocabulary_source": "Article_Eater/contracts/vocab/cross_field_vocabulary.yaml",
     "vocabulary_hash": "sha256:e3204733541a9fa786d2f462c5883e8beb2afe0da770242177f5ba4a4289e272",
     "boolean_query_revisions": {
       "revised_at": "2026-05-27T00:00:00Z",
