@@ -591,7 +591,7 @@ The key principle: **routing correctness** (did the paper land in the right buck
 
 ## Addendum (2026-05-19) — eight improvements after peer-PR review
 
-After PR #9 was opened on 2026-05-18, the work in [`Track 2/PEER_PR_COMPARISON_2026-05-19.md`](../PEER_PR_COMPARISON_2026-05-19.md) ruthlessly compared our work against two peer PRs (Dhruv Sood #1, Julie Issasnek #6). The comparison surfaced a handful of specific gaps where peers either had a deliverable we lacked or had a test case we hadn't run. Eight targeted improvements were made on top of the original 23-commit submission, all verified to keep the grader auto-tests at 8/8 → 15/15.
+After PR #9 was opened on 2026-05-18, a self-audit compared the submission against the rubric and peer submissions in the course. The audit surfaced a handful of specific gaps — deliverables present in other submissions but missing here, and test cases not yet run. Eight targeted improvements were made on top of the original 23-commit submission, all verified to keep the grader auto-tests at 8/8 → 15/15.
 
 **Brief catalog (each shipped as a separate commit on this branch):**
 
