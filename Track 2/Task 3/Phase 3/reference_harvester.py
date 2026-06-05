@@ -26,7 +26,13 @@ from migrate import apply_migrations
 
 _HERE = Path(__file__).resolve().parent
 DEFAULT_DB_PATH = _HERE.parent / "task3_pipeline_lifecycle.db"
-_COGS160 = _HERE.parents[2]  # Phase 3 → Task 3 → Track 2 → COGS 160
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_workspace_root  # noqa: E402
+
+_COGS160 = find_workspace_root(_HERE)
 DEFAULT_PDF_DIRS = [
     _COGS160 / "Part 2 Pdfs",
     _COGS160 / "Part_One_10pdfs",

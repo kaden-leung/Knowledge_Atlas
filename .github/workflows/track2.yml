@@ -1,0 +1,46 @@
+name: Track 2 Task 3 CI
+
+on:
+  push:
+    paths:
+      - "Track 2/Task 3/**"
+      - ".github/workflows/track2.yml"
+  pull_request:
+    paths:
+      - "Track 2/Task 3/**"
+      - ".github/workflows/track2.yml"
+
+concurrency:
+  group: track2-task3-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  task3:
+    name: Task 3 contract and offline verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: "Track 2/Task 3/requirements.txt"
+      - name: Install Task 3 dependencies
+        run: python -m pip install -r "Track 2/Task 3/requirements.txt"
+      - name: Enforce official grader result
+        run: python "Track 2/Task 3/ci_checks.py" grader --min-score 68
+      - name: Verify evidence chain
+        working-directory: "Track 2/Task 3"
+        run: python verify_track2_workflow.py
+      - name: Run standalone offline tests
+        working-directory: "Track 2/Task 3"
+        env:
+          SERPAPI_KEY: mock_unused_in_tests
+        run: python -m pytest -q --tb=short
+      - name: Verify PR-only setup
+        working-directory: "Track 2/Task 3"
+        run: python setup_verify.py --mode pr-only
+      - name: Audit local Markdown links
+        run: python "Track 2/Task 3/ci_checks.py" links
+      - name: Scan tracked files for local artifacts and secrets
+        run: python "Track 2/Task 3/ci_checks.py" artifacts

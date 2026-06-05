@@ -16,7 +16,6 @@ from pathlib import Path
 from typing import Callable
 
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]
 
 # Reuse Stage 1's classifier loader (handles HierarchicalClassifier + keyword fallback)
 sys.path.insert(0, str(_HERE))
@@ -33,6 +32,36 @@ DEFAULT_VOI_FALLBACK = 0.443
 DEFAULT_DB = _HERE.parent / "task3_pipeline_lifecycle.db"
 # Vendored Task 2 query artifact, local to Task 3 (see inputs/QUERY_PROVENANCE.md).
 DEFAULT_QUERY_RESULTS = _HERE.parent / "inputs" / "query_results.json"
+REQUIRED_RUNTIME_COLUMNS = {
+    "article_references": {"model_version", "voi_breakdown"},
+    "lifecycle_transitions": {"pipeline_version"},
+}
+
+
+class SchemaPreflightError(RuntimeError):
+    """Raised before triage when the selected runtime DB is not migrated."""
+
+
+def validate_runtime_db(db_path: Path) -> None:
+    """Refuse the committed evidence DB and require migration 005 columns."""
+    if db_path.resolve() == DEFAULT_DB.resolve():
+        raise SchemaPreflightError(
+            "Refusing to mutate the committed evidence DB. Copy it first, then run "
+            "`python3 'Phase 3/migrate.py' --db <runtime-copy.db>` and pass "
+            "`--db <runtime-copy.db>`."
+        )
+    with sqlite3.connect(str(db_path)) as conn:
+        for table, required in REQUIRED_RUNTIME_COLUMNS.items():
+            present = {
+                row[1] for row in conn.execute(f"PRAGMA table_info({table})").fetchall()
+            }
+            missing = sorted(required - present)
+            if missing:
+                raise SchemaPreflightError(
+                    f"{db_path} is missing {table} column(s): {', '.join(missing)}. "
+                    "Run `python3 'Phase 3/migrate.py' --db "
+                    f"'{db_path}'` before Stage 2B."
+                )
 
 
 def utc_now_iso() -> str:
@@ -218,6 +247,19 @@ class Stage2BReport:
 # DB orchestration
 # ---------------------------------------------------------------------------
 
+def _build_voi_breakdown(voi: float, classifier_mode: str, voi_hit: bool) -> str:
+    """Serialize a voi_breakdown JSON string for the DB column."""
+    return json.dumps({
+        "track2_scalar": round(voi, 4),
+        "classifier_mode": classifier_mode,
+        "voi_source": "query_results_json" if voi_hit else "fallback_default",
+        "note": (
+            "First-stage search-ranking score only. "
+            "AE/BN structural and epistemic VOI not computed at this stage."
+        ),
+    }, separators=(",", ":"))
+
+
 def _write_back(
     conn: sqlite3.Connection,
     reference_id: str,
@@ -226,8 +268,11 @@ def _write_back(
     confidence: float,
     voi: float,
     run_id: str,
+    classifier_mode: str = "keyword_fallback",
+    voi_hit: bool = False,
 ) -> None:
     now = utc_now_iso()
+    voi_breakdown = _build_voi_breakdown(voi, classifier_mode, voi_hit)
     conn.execute(
         """
         UPDATE article_references
@@ -235,19 +280,24 @@ def _write_back(
                triage_reason = ?,
                classifier_confidence = ?,
                voi_score = ?,
+               voi_breakdown = ?,
+               model_version = ?,
                triage_stage = 'triage_complete',
                updated_at = ?
          WHERE reference_id = ? AND triage_stage = 'abstract_collected'
         """,
-        (triage_decision, triage_reason, confidence, voi, now, reference_id),
+        (triage_decision, triage_reason, confidence, voi,
+         voi_breakdown, classifier_mode, now, reference_id),
     )
     conn.execute(
         """
         INSERT INTO lifecycle_transitions
-          (reference_id, run_id, from_stage, to_stage, reason, created_by)
-        VALUES (?, ?, 'abstract_collected', 'triage_complete', ?, 'abstract_triage')
+          (reference_id, run_id, from_stage, to_stage, reason, created_by,
+           pipeline_version)
+        VALUES (?, ?, 'abstract_collected', 'triage_complete', ?,
+                'abstract_triage', ?)
         """,
-        (reference_id, run_id, triage_reason),
+        (reference_id, run_id, triage_reason, "track2-stage2b-v1"),
     )
 
 
@@ -302,6 +352,7 @@ def run_stage2b_triage(
     edge_cases_output: Path | None = None,
 ) -> Stage2BReport:
     """Walk every `triage_stage='abstract_collected'` row through the decision matrix."""
+    validate_runtime_db(db_path)
     if classifier is None:
         classifier, classifier_mode = load_stage2b_classifier()
     elif classifier_mode is None:
@@ -362,7 +413,10 @@ def run_stage2b_triage(
                 voi_high=voi_high, voi_medium=voi_medium,
             )
             report.decisions[triage_decision] = report.decisions.get(triage_decision, 0) + 1
-            _write_back(conn, ref_id, triage_decision, triage_reason, confidence, voi, run_id)
+            _write_back(
+                conn, ref_id, triage_decision, triage_reason, confidence, voi, run_id,
+                classifier_mode=classifier_mode, voi_hit=hit,
+            )
 
         conn.commit()
 
@@ -381,7 +435,11 @@ def run_stage2b_triage(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Phase 4 Stage 2B triage decision")
-    parser.add_argument("--db", default=str(DEFAULT_DB))
+    parser.add_argument(
+        "--db",
+        required=True,
+        help="Migrated runtime DB copy; the committed evidence DB is read-only",
+    )
     parser.add_argument("--query-results", default=str(DEFAULT_QUERY_RESULTS))
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--max-candidates", type=int, default=None)

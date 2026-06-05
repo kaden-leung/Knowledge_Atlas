@@ -24,6 +24,15 @@ data/storage/
 data/v7_lite_uploads/
 data/v7_lite_article_images/
 logs/
+Track 2/Task 3/logs/
+Track 2/Task 3/human_review_log.json
+Track 2/Task 3/knowledge_atlas.db
+Track 2/Task 3/runtime*.db
+Track 2/Task 3/runtime*.db-*
+Track 2/Task 3/pilot*.db
+Track 2/Task 3/pilot*.db-*
+Track 2/Task 3/Phase 5/policy_clearance.json
+Track 2/Task 3/Phase 5/acquired_pdfs/
 ka_server.pid
 .venv/
 docs/runtime_smoke_reports/*.md

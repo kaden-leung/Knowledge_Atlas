@@ -31,16 +31,22 @@ except ImportError:
     pass
 
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_repository  # noqa: E402
+
+_AF_ROOT = find_repository("Article_Finder", _HERE)
 _PHASE4 = _HERE.parent / "Phase 4"
 
 # Add paths for Article_Finder and Phase 4's openalex_client
 for p in (
-    str(_COGS160 / "Article_Finder"),
-    str(_COGS160 / "Article_Finder" / "ingest"),
+    str(_AF_ROOT) if _AF_ROOT else "",
+    str(_AF_ROOT / "ingest") if _AF_ROOT else "",
     str(_PHASE4),
 ):
-    if p not in sys.path:
+    if p and p not in sys.path:
         sys.path.insert(0, p)
 
 from openalex_client import OpenAlexClient  # noqa: E402
@@ -48,6 +54,7 @@ from openalex_client import OpenAlexClient  # noqa: E402
 DEFAULT_DB = _HERE.parent / "task3_pipeline_lifecycle.db"
 DEFAULT_CONFIG = _HERE / "phase5_config.yaml"
 DEFAULT_POLICY_CLEARANCE = _HERE / "policy_clearance.json"
+DEFAULT_HUMAN_REVIEW_LOG = _HERE.parent / "human_review_log.json"
 DEFAULT_OUTPUT_DIR = _HERE / "acquired_pdfs"
 DEFAULT_REPORT = _HERE / "acquisition_report.json"
 
@@ -57,6 +64,126 @@ _POLITE_EMAIL = "kaden-leung@users.noreply.github.com"
 
 def utc_now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+# ---------------------------------------------------------------------------
+# Human review gate
+# ---------------------------------------------------------------------------
+
+class HumanReviewGateError(RuntimeError):
+    """Raised when Phase 5 is invoked without a valid human review sign-off."""
+
+
+def check_human_review_gate(
+    db_path: Path,
+    run_id: str,
+    policy_clearance_path: Path = DEFAULT_POLICY_CLEARANCE,
+    review_log_path: Path = DEFAULT_HUMAN_REVIEW_LOG,
+) -> None:
+    """Enforce that a human has reviewed the ACCEPT set before acquisition runs.
+
+    Requires:
+      1. policy_clearance.json explicitly approves this run and is current.
+      2. human_review_log.json exists and contains a verdict entry for every
+         ACCEPT row currently in the DB.
+
+    Raises HumanReviewGateError if any condition is unmet.
+    Exits silently if the ACCEPT set is empty (nothing to review).
+    """
+    from datetime import date, timedelta
+
+    # ── 1. Policy clearance ──────────────────────────────────────────────────
+    if not policy_clearance_path.exists():
+        raise HumanReviewGateError(
+            f"policy_clearance.json not found at {policy_clearance_path}.\n"
+            "Create it with human_reviewer_sign_off=true and sign_off_date=YYYY-MM-DD."
+        )
+    clearance = json.loads(policy_clearance_path.read_text(encoding="utf-8"))
+    if not clearance.get("human_reviewer_sign_off"):
+        raise HumanReviewGateError(
+            "policy_clearance.json: human_reviewer_sign_off is not true."
+        )
+    required_text = ("reviewer", "reviewer_notes", "approved_run_id", "decision")
+    missing_text = [
+        field for field in required_text
+        if not isinstance(clearance.get(field), str) or not clearance[field].strip()
+    ]
+    if missing_text:
+        raise HumanReviewGateError(
+            "policy_clearance.json missing non-empty field(s): "
+            + ", ".join(missing_text)
+        )
+    if clearance["decision"].strip().upper() != "APPROVED":
+        raise HumanReviewGateError("policy_clearance.json: decision must be APPROVED.")
+    if clearance["approved_run_id"].strip() != run_id:
+        raise HumanReviewGateError(
+            "policy_clearance.json: approved_run_id does not match the requested run."
+        )
+
+    sign_off_raw = clearance.get("sign_off_date", "")
+    expires_raw = clearance.get("expires_on", "")
+    try:
+        sign_off = date.fromisoformat(sign_off_raw)
+    except (ValueError, TypeError):
+        raise HumanReviewGateError(
+            f"policy_clearance.json: sign_off_date '{sign_off_raw}' is not a valid YYYY-MM-DD date."
+        )
+    try:
+        expires_on = date.fromisoformat(expires_raw)
+    except (ValueError, TypeError):
+        raise HumanReviewGateError(
+            f"policy_clearance.json: expires_on '{expires_raw}' is not a valid YYYY-MM-DD date."
+        )
+    today = date.today()
+    if sign_off > today:
+        raise HumanReviewGateError(
+            f"policy_clearance.json: sign_off_date {sign_off_raw} is in the future."
+        )
+    if today - sign_off > timedelta(days=30):
+        raise HumanReviewGateError(
+            f"policy_clearance.json: sign_off_date {sign_off_raw} is more than 30 days old. "
+            "Re-review the ACCEPT set and update sign_off_date."
+        )
+    if expires_on < today:
+        raise HumanReviewGateError(
+            f"policy_clearance.json: approval expired on {expires_raw}."
+        )
+
+    # ── 2. Review log covers all ACCEPT rows ─────────────────────────────────
+    if not review_log_path.exists():
+        raise HumanReviewGateError(
+            f"human_review_log.json not found at {review_log_path}.\n"
+            "Create it with a verdict entry for each ACCEPT row before running acquisition."
+        )
+    review_log = json.loads(review_log_path.read_text(encoding="utf-8"))
+    reviewed_ids: set[str] = {
+        entry["reference_id"]
+        for entry in review_log.get("reviewed_papers", [])
+        if entry.get("reviewer_verdict") in {"approved", "true_positive"}
+        and isinstance(entry.get("reviewer_notes"), str)
+        and entry["reviewer_notes"].strip()
+    }
+
+    conn = sqlite3.connect(str(db_path))
+    accept_ids = {
+        row[0] for row in conn.execute(
+            "SELECT reference_id FROM article_references "
+            "WHERE triage_decision='ACCEPT' AND acquired_paper_id IS NULL"
+        ).fetchall()
+    }
+    conn.close()
+
+    if not accept_ids:
+        return  # nothing queued — gate passes vacuously
+
+    missing = accept_ids - reviewed_ids
+    if missing:
+        raise HumanReviewGateError(
+            f"{len(missing)} ACCEPT row(s) have no verdict in human_review_log.json: "
+            + ", ".join(sorted(missing)[:5])
+            + (" ..." if len(missing) > 5 else "")
+            + "\nAdd reviewer_verdict entries for each before running acquisition."
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -456,6 +583,7 @@ def run_acquisition(
     output_dir: Path = DEFAULT_OUTPUT_DIR,
     config_path: Path | None = DEFAULT_CONFIG,
     policy_clearance_path: Path = DEFAULT_POLICY_CLEARANCE,
+    human_review_log_path: Path = DEFAULT_HUMAN_REVIEW_LOG,
     max_rows: int | None = None,
     mock: bool = False,
     mock_unpaywall_url: str | None = None,
@@ -463,6 +591,17 @@ def run_acquisition(
     mock_scidownl_success: bool = False,
     dry_run: bool = False,
 ) -> AcquisitionReport:
+    # Enforce human review gate on every live run. Mock and dry-run modes are
+    # non-production test paths and never write to the selected DB.
+    if not mock and not dry_run:
+        if db_path.resolve() == DEFAULT_DB.resolve():
+            raise HumanReviewGateError(
+                "Refusing to mutate the committed evidence DB. Pass a runtime DB copy."
+            )
+        check_human_review_gate(
+            db_path, run_id, policy_clearance_path, human_review_log_path
+        )
+
     config = load_config(config_path)
     email = config.get("acquisition", {}).get("email", _POLITE_EMAIL)
     timeout = config.get("acquisition", {}).get("timeout_seconds", 60)
@@ -556,6 +695,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR))
     parser.add_argument("--config", default=str(DEFAULT_CONFIG))
     parser.add_argument("--policy-clearance", default=str(DEFAULT_POLICY_CLEARANCE))
+    parser.add_argument("--human-review-log", default=str(DEFAULT_HUMAN_REVIEW_LOG))
     parser.add_argument("--max-rows", type=int, default=None)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--report", default=str(DEFAULT_REPORT))
@@ -569,6 +709,7 @@ def main(argv: list[str] | None = None) -> int:
         output_dir=Path(args.output_dir),
         config_path=Path(args.config),
         policy_clearance_path=Path(args.policy_clearance),
+        human_review_log_path=Path(args.human_review_log),
         max_rows=args.max_rows,
         dry_run=args.dry_run,
     )

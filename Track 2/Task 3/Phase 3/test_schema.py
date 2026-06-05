@@ -201,7 +201,7 @@ def test_migrations_idempotent(tmp_path):
     db_path = tmp_path / "idem.db"
     first = apply_migrations(db_path, MIGRATIONS_DIR)
     second = apply_migrations(db_path, MIGRATIONS_DIR)
-    assert len(first) == 4
+    assert len(first) == 5  # 001–004 original + 005_model_version
     assert second == []  # Nothing new applied second time
 
 

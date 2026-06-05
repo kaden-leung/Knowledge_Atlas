@@ -7,6 +7,7 @@ Why we ship our own:
 """
 from __future__ import annotations
 
+import re
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
@@ -57,8 +58,22 @@ def apply_migrations(
             if sql_file.name in already:
                 continue
             sql = sql_file.read_text(encoding="utf-8")
+            # Strip inline -- comments before splitting so that a semicolon
+            # inside a comment (e.g. "-- soft FK; not enforced") does not
+            # break the statement boundary detection.
+            sql_stripped = re.sub(r"--[^\n]*", "", sql)
             with conn:
-                conn.executescript(sql)
+                for stmt in sql_stripped.split(";"):
+                    stmt = stmt.strip()
+                    if not stmt:
+                        continue
+                    try:
+                        conn.execute(stmt)
+                    except sqlite3.OperationalError as exc:
+                        msg = str(exc).lower()
+                        if "duplicate column" in msg or "already exists" in msg:
+                            continue  # idempotent — column already added
+                        raise
                 conn.execute(
                     "INSERT INTO _schema_versions(filename, applied_at) VALUES (?, ?)",
                     (sql_file.name, _utc_now_iso()),

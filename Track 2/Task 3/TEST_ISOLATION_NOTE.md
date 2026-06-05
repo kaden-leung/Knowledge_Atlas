@@ -17,7 +17,7 @@ The full dependency-ready workspace runs:
 The chain verifier reads the committed evidence database and reports:
 
 ```text
-CHAIN: 9/9 checks passed
+CHAIN: 10/10 checks passed
 ```
 
 ## What Is Isolated

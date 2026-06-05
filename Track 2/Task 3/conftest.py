@@ -18,11 +18,16 @@ and decide what to collect.
 """
 from __future__ import annotations
 
+import sqlite3
+import sys
 import warnings
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent      # Track 2/Task 3
-_COGS160 = _HERE.parents[1]                   # Track 2/Task 3 -> Track 2 -> COGS 160
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
+
+from workspace_paths import find_repository  # noqa: E402
 
 # Suites whose import chain pulls in the sibling repos (verified empirically: each
 # fails with "ModuleNotFoundError: No module named 'core'" when the siblings are
@@ -32,12 +37,21 @@ _SIBLING_DEPENDENT = [
     "Phase 2/test_search_runner.py",
     "Phase 3/test_db_loader.py",
     "Phase 3/test_dedupe.py",
+    "Phase 3/test_idempotency.py",
     "Phase 3/test_reference_harvester.py",
     "Phase 4/test_abstract_collector.py",
 ]
 
-# `core` (the dependency that breaks all six) lives at Article_Finder/core.
-_siblings_present = (_COGS160 / "Article_Finder" / "core").is_dir()
+# `core` lives at Article_Finder/core. Article Eater is also required by the
+# abstract-collection suites.
+_article_finder = find_repository("Article_Finder", _HERE)
+_article_eater = find_repository("Article_Eater", _HERE)
+_siblings_present = bool(
+    _article_finder
+    and (_article_finder / "core").is_dir()
+    and _article_eater
+    and (_article_eater / "src").is_dir()
+)
 
 collect_ignore: list[str] = []
 if not _siblings_present:
@@ -48,3 +62,44 @@ if not _siblings_present:
         "full COGS-160 checkout for the complete offline test suite.",
         stacklevel=1,
     )
+
+# ---------------------------------------------------------------------------
+# Shared fixtures
+# ---------------------------------------------------------------------------
+
+_MIGRATIONS_DIR = _HERE / "Phase 3" / "migrations"
+
+
+def _apply_migrations(conn: sqlite3.Connection) -> None:
+    """Apply all Phase 3 migrations to a connection in order."""
+    for sql_file in sorted(_MIGRATIONS_DIR.glob("*.sql")):
+        conn.executescript(sql_file.read_text(encoding="utf-8"))
+    conn.commit()
+
+
+def fresh_db(tmp_path):
+    """Return a path to a freshly migrated, empty SQLite DB in tmp_path.
+
+    All integration tests that write data should use this fixture instead of
+    opening the committed task3_pipeline_lifecycle.db, which is a read-only
+    evidence artifact for the chain verifier.
+    """
+    import pytest  # noqa: F401 — imported here so conftest doesn't require pytest at import time
+    db_path = tmp_path / "test_pipeline.db"
+    conn = sqlite3.connect(str(db_path))
+    _apply_migrations(conn)
+    conn.close()
+    return db_path
+
+
+# Register as a pytest fixture so tests can request it by name
+try:
+    import pytest
+
+    @pytest.fixture
+    def fresh_db_path(tmp_path):
+        """Pytest fixture: freshly migrated empty DB in a temp directory."""
+        return fresh_db(tmp_path)
+
+except ImportError:
+    pass

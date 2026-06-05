@@ -4,13 +4,19 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]  # Phase 2 → Task 3 → Track 2 → COGS 160
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_repository  # noqa: E402
+
+_AF_ROOT = find_repository("Article_Finder", _HERE)
 
 for _p in (
     str(_HERE),
-    str(_COGS160 / "Article_Finder"),
+    str(_AF_ROOT) if _AF_ROOT else "",
 ):
-    if _p not in sys.path:
+    if _p and _p not in sys.path:
         sys.path.insert(0, _p)
 
 FIXTURES_DIR = _HERE / "fixtures"

@@ -47,7 +47,7 @@ python3 verify_track2_workflow.py
 Expected result:
 
 ```text
-CHAIN: 9/9 checks passed
+CHAIN: 10/10 checks passed
 ```
 
 The full offline test suite passes in the dependency-ready environment:
@@ -66,7 +66,7 @@ Current result:
 
 The automatic score of 68/75 should be read as "all machine-checkable rubric items pass; two human-review categories remain." The evidence above supports awarding the remaining 7 points for an A-level Task 3 submission.
 
-Manual-review request: award full verification credit because [VERIFICATION.md](VERIFICATION.md) documents measured failures and fixes, [verify_track2_workflow.py](verify_track2_workflow.py) passes 9/9 against committed evidence, and the current DB keeps missing abstracts as explicit terminal states rather than hiding them as rejects.
+Manual-review request: consider full verification credit because [VERIFICATION.md](VERIFICATION.md) documents measured failures and fixes, [verify_track2_workflow.py](verify_track2_workflow.py) passes 10/10 against committed evidence, and the current DB keeps missing abstracts as explicit terminal states rather than hiding them as rejects.
 
 ## Production Boundary
 

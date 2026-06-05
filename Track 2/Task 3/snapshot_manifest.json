@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-05T09:17:24Z",
+  "db_file": "task3_pipeline_lifecycle.db",
+  "db_sha256": "86bdc857ae87e72f096ee2a4b80e6fe02c770d59e50aee3052b3db125c989810",
+  "row_counts": {
+    "article_references": 1193,
+    "article_references_accept": 10,
+    "lifecycle_transitions": 2757
+  },
+  "run_ids_present": [
+    "RUN-20260528-120000",
+    "RUN-20260531-000436",
+    "RUN-4B-FIXED-20260601",
+    "RUN-4B-LIVE-V3-20260531",
+    "RUN-4D-FIXED-20260601",
+    "RUN-4D-RETRY-20260601",
+    "RUN-4D-V2-20260601",
+    "RUN-ABSTRACT-RETRY-20260601",
+    "RUN-P5-20260602-192128",
+    "RUN-STAGE1-20260531-020000",
+    "RUN-STAGE1-FIX-20260601",
+    "RUN-STAGE1-FIXED-20260601"
+  ],
+  "pipeline_versions": {
+    "search_runner_contract": "1.2.0",
+    "schema_contract": "1.0.0",
+    "triage_decision_contract": "1.0.0",
+    "classifier_mode": "keyword_fallback_v1"
+  },
+  "note": "This manifest is checked by verify_track2_workflow.py. Regenerate after any pipeline run that changes the committed DB."
+}

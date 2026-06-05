@@ -187,7 +187,7 @@ python3 verify_track2_workflow.py
 Expected result:
 
 ```text
-CHAIN: 9/9 checks passed
+CHAIN: 10/10 checks passed
 ```
 
 Run this from `Knowledge_Atlas`:

@@ -29,9 +29,18 @@ from dedupe import (
 from migrate import apply_migrations
 
 _HERE = Path(__file__).resolve().parent
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_repository  # noqa: E402
+
+_KA_ROOT = find_repository("Knowledge_Atlas", _HERE)
 DEFAULT_DB_PATH = _HERE.parent / "task3_pipeline_lifecycle.db"
 DEFAULT_SHARED_SNAPSHOT = (
-    _HERE.parents[3] / "Knowledge_Atlas" / "data" / "ka_payloads" / "pipeline_lifecycle_full.db"
+    (_KA_ROOT / "data" / "ka_payloads" / "pipeline_lifecycle_full.db")
+    if _KA_ROOT
+    else _HERE / "missing_pipeline_lifecycle_full.db"
 )
 DEFAULT_CORPUS_CSV = _HERE / "pdf_identity_inventory_local.csv"
 DEFAULT_SEARCH_RESULTS = _HERE.parent / "Phase 2" / "search_results.json"

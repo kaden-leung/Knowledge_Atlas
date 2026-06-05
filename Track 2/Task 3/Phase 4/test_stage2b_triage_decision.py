@@ -18,13 +18,26 @@ if str(_HERE) not in sys.path:
 from migrate import apply_migrations  # noqa: E402
 
 from stage2b_triage_decision import (  # noqa: E402
+    SchemaPreflightError,
     decide,
     load_voi_map,
     lookup_voi,
     run_stage2b_triage,
     keyword_fallback_classify_with_abstract,
+    validate_runtime_db,
     DEFAULT_VOI_FALLBACK,
 )
+
+
+def test_schema_preflight_rejects_unmigrated_db(tmp_path):
+    db_path = tmp_path / "unmigrated.db"
+    conn = sqlite3.connect(str(db_path))
+    conn.execute("CREATE TABLE article_references (reference_id TEXT)")
+    conn.execute("CREATE TABLE lifecycle_transitions (run_id TEXT)")
+    conn.commit()
+    conn.close()
+    with pytest.raises(SchemaPreflightError, match="missing article_references"):
+        validate_runtime_db(db_path)
 
 
 # ---------------------------------------------------------------------------

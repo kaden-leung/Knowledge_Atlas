@@ -19,8 +19,13 @@ from typing import Iterable
 
 # Wire up Article_Finder so we can reuse normalize_doi / normalize_title
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]
-_AF_ROOT = _COGS160 / "Article_Finder"
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import require_repository  # noqa: E402
+
+_AF_ROOT = require_repository("Article_Finder", _HERE)
 if str(_AF_ROOT) not in sys.path:
     sys.path.insert(0, str(_AF_ROOT))
 

@@ -26,14 +26,21 @@ except ImportError:
     pass
 
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_repository  # noqa: E402
 
 # Wire up Article_Eater paper_fetcher directly (bypasses Article_Eater/src/core
 # which has competing __init__.py that imports from `src.core.logging`).
 # Also wire up Article_Finder for normalize_doi / normalize_title.
-_AE_SERVICES = _COGS160 / "Article_Eater" / "src" / "services"
-_AF = _COGS160 / "Article_Finder"
+_AE = find_repository("Article_Eater", _HERE)
+_AE_SERVICES = _AE / "src" / "services" if _AE else None
+_AF = find_repository("Article_Finder", _HERE)
 for p in (_AE_SERVICES, _AF):  # Article_Finder ends up first → wins `core` lookups
+    if p is None:
+        continue
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 

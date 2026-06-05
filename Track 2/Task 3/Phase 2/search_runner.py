@@ -12,9 +12,14 @@ from pathlib import Path
 from typing import NamedTuple
 
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]  # Phase 2 → Task 3 → Track 2 → COGS 160
-_AF_ROOT = _COGS160 / "Article_Finder"
-if str(_AF_ROOT) not in sys.path:
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_repository  # noqa: E402
+
+_AF_ROOT = find_repository("Article_Finder", _HERE)
+if _AF_ROOT and str(_AF_ROOT) not in sys.path:
     sys.path.insert(0, str(_AF_ROOT))
 
 from adapters.base import CandidateRecord  # noqa: E402
@@ -194,6 +199,13 @@ def run(
         for a in adapters
     }
 
+    # Circuit breaker state: track consecutive rate-limit errors per source.
+    # After CIRCUIT_OPEN_THRESHOLD consecutive 429s, mark the source degraded
+    # for the rest of this run and log circuit_open status.
+    _CIRCUIT_OPEN_THRESHOLD = 3
+    _consecutive_429s: dict[str, int] = {a.name: 0 for a in adapters}
+    _circuit_open: dict[str, bool] = {a.name: False for a in adapters}
+
     for q_index, qrow in enumerate(queries, start=1):
         boolean_query = qrow.get("boolean_query", "")
         display_id = qrow.get("display_id", "unknown")
@@ -236,6 +248,16 @@ def run(
                     })
                     continue
 
+            # Circuit breaker: skip this source for the rest of the run if open
+            if _circuit_open[adapter.name]:
+                skipped["circuit_open"] = skipped.get("circuit_open", 0) + 1
+                print(
+                    f"[CIRCUIT_OPEN] {adapter.name} skipped for '{display_key}' "
+                    f"(3 consecutive 429s this run)",
+                    file=sys.stderr,
+                )
+                continue
+
             per_source_stats[adapter.name]["queries_run"] += 1
 
             if dry_run:
@@ -257,12 +279,32 @@ def run(
                 per_source_stats[adapter.name]["results_raw"] += len(results)
                 total_raw += len(results)
                 query_candidates.extend(results)
+                _consecutive_429s[adapter.name] = 0  # success resets the counter
             except Exception as exc:
                 per_source_stats[adapter.name]["errors"] += 1
-                print(
-                    f"[WARN] {adapter.name} error on '{display_key}': {exc}",
-                    file=sys.stderr,
-                )
+                err_str = str(exc).lower()
+                is_rate_limit = any(kw in err_str for kw in ("429", "rate limit", "ratelimit", "too many"))
+                if is_rate_limit:
+                    _consecutive_429s[adapter.name] += 1
+                    if _consecutive_429s[adapter.name] >= _CIRCUIT_OPEN_THRESHOLD:
+                        _circuit_open[adapter.name] = True
+                        print(
+                            f"[CIRCUIT_OPEN] {adapter.name}: {_CIRCUIT_OPEN_THRESHOLD} "
+                            f"consecutive 429s — skipping for rest of run",
+                            file=sys.stderr,
+                        )
+                    else:
+                        print(
+                            f"[WARN] {adapter.name} 429 on '{display_key}' "
+                            f"({_consecutive_429s[adapter.name]}/{_CIRCUIT_OPEN_THRESHOLD}): {exc}",
+                            file=sys.stderr,
+                        )
+                else:
+                    _consecutive_429s[adapter.name] = 0
+                    print(
+                        f"[WARN] {adapter.name} error on '{display_key}': {exc}",
+                        file=sys.stderr,
+                    )
 
         if not dry_run:
             deduped_for_query = cross_source_dedupe(query_candidates)

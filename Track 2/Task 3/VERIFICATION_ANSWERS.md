@@ -62,7 +62,7 @@ spend.
 
 ```bash
 cd "Track 2/Task 3"
-python3 verify_track2_workflow.py    # → CHAIN: 9/9 checks passed
+python3 verify_track2_workflow.py    # → CHAIN: 10/10 checks passed
 ```
 
 7) Where is the evidence for the two autograder manual-review items?

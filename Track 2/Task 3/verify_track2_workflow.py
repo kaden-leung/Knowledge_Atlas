@@ -7,6 +7,8 @@ import sqlite3
 from pathlib import Path
 
 
+import hashlib
+
 ROOT = Path(__file__).resolve().parent
 # Task 2 query output is vendored into this task as a committed input artifact so
 # that Task 3 verifies self-contained, without assuming a sibling Task 2 directory.
@@ -19,6 +21,7 @@ HANDOFF_MANIFEST = ROOT / "Phase 7" / "handoff_outbox" / "handoff_manifest.json"
 INBOX_REPORT = ROOT / "Phase 7" / "handoff_outbox" / "inbox_validation_report.json"
 PROVEIT = ROOT / "PROVEIT_WORKS.md"
 BENCHMARK = ROOT / "TRACK2_EVALUATION_REPORT.md"
+SNAPSHOT_MANIFEST = ROOT / "snapshot_manifest.json"
 
 
 def load_json(path: Path) -> dict:
@@ -97,6 +100,71 @@ def check_acquisition_evidence(cur: sqlite3.Cursor) -> str:
     return f"Phase 5 live evidence ok ({processed} rows processed; {transitions} acquisition transitions)"
 
 
+def check_snapshot_manifest() -> str:
+    """Check 10: snapshot manifest exactly describes the committed evidence DB."""
+    if not SNAPSHOT_MANIFEST.exists():
+        raise RuntimeError("missing snapshot_manifest.json")
+    manifest = load_json(SNAPSHOT_MANIFEST)
+    if manifest.get("db_file") != DB_PATH.name:
+        raise RuntimeError(
+            f"snapshot_manifest.json: db_file must be {DB_PATH.name!r}"
+        )
+    expected_hash = manifest.get("db_sha256", "")
+    if not expected_hash:
+        raise RuntimeError("snapshot_manifest.json: db_sha256 field missing")
+    actual_hash = hashlib.sha256(DB_PATH.read_bytes()).hexdigest()
+    if actual_hash != expected_hash:
+        raise RuntimeError(
+            f"DB hash mismatch: manifest={expected_hash[:16]}… "
+            f"actual={actual_hash[:16]}… — regenerate snapshot_manifest.json"
+        )
+    with sqlite3.connect(str(DB_PATH)) as conn:
+        actual_counts = {
+            "article_references": conn.execute(
+                "SELECT COUNT(*) FROM article_references"
+            ).fetchone()[0],
+            "article_references_accept": conn.execute(
+                "SELECT COUNT(*) FROM article_references "
+                "WHERE triage_decision='ACCEPT'"
+            ).fetchone()[0],
+            "lifecycle_transitions": conn.execute(
+                "SELECT COUNT(*) FROM lifecycle_transitions"
+            ).fetchone()[0],
+        }
+        actual_run_ids = [
+            row[0]
+            for row in conn.execute(
+                "SELECT DISTINCT run_id FROM lifecycle_transitions "
+                "WHERE run_id IS NOT NULL ORDER BY run_id"
+            ).fetchall()
+        ]
+    if manifest.get("row_counts") != actual_counts:
+        raise RuntimeError(
+            "snapshot manifest row_counts do not match the committed DB: "
+            f"manifest={manifest.get('row_counts')} actual={actual_counts}"
+        )
+    if manifest.get("run_ids_present") != actual_run_ids:
+        raise RuntimeError(
+            "snapshot manifest run_ids_present is incomplete or out of order"
+        )
+    versions = manifest.get("pipeline_versions", {})
+    required_versions = {
+        "search_runner_contract",
+        "schema_contract",
+        "triage_decision_contract",
+        "classifier_mode",
+    }
+    if not required_versions.issubset(versions):
+        missing = sorted(required_versions - set(versions))
+        raise RuntimeError(f"snapshot manifest missing version fields: {missing}")
+    return (
+        f"snapshot manifest ok (hash verified; "
+        f"{actual_counts['article_references']} refs, "
+        f"{actual_counts['article_references_accept']} ACCEPT, "
+        f"{len(actual_run_ids)} run IDs)"
+    )
+
+
 def check_trace_and_benchmark() -> str:
     if not PROVEIT.exists():
         raise RuntimeError("missing PROVEIT_WORKS.md")
@@ -140,6 +208,7 @@ def main() -> int:
 
     checks.append(("Phase 7 handoff", check_handoff_artifacts()))
     checks.append(("Trace + benchmark docs", check_trace_and_benchmark()))
+    checks.append(("Snapshot manifest", check_snapshot_manifest()))
 
     print("Track 2 workflow verification")
     print("=" * 32)

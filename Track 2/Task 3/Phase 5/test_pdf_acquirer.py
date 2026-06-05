@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import sqlite3
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
@@ -21,7 +22,9 @@ if str(_HERE) not in sys.path:
 
 from migrate import apply_migrations  # noqa: E402
 from pdf_acquirer import (  # noqa: E402
+    HumanReviewGateError,
     _scidownl_gate_passes,
+    check_human_review_gate,
     run_acquisition,
 )
 
@@ -63,6 +66,75 @@ def _run(db_path, tmp_path, **kwargs):
         policy_clearance_path=tmp_path / "no_clearance.json",  # doesn't exist
         **kwargs,
     )
+
+
+def _write_review_files(tmp_path, run_id, reference_ids):
+    today = date.today()
+    clearance = tmp_path / "policy_clearance.json"
+    clearance.write_text(json.dumps({
+        "human_reviewer_sign_off": True,
+        "reviewer": "course-reviewer",
+        "reviewer_notes": "Reviewed the complete ACCEPT queue.",
+        "approved_run_id": run_id,
+        "decision": "APPROVED",
+        "sign_off_date": today.isoformat(),
+        "expires_on": (today + timedelta(days=7)).isoformat(),
+    }))
+    review_log = tmp_path / "human_review_log.json"
+    review_log.write_text(json.dumps({
+        "reviewed_papers": [
+            {
+                "reference_id": reference_id,
+                "reviewer_verdict": "approved",
+                "reviewer_notes": "Relevant and approved for acquisition.",
+            }
+            for reference_id in reference_ids
+        ]
+    }))
+    return clearance, review_log
+
+
+def test_human_review_gate_accepts_complete_current_approval(db, tmp_path):
+    db_path, _ = db
+    clearance, review_log = _write_review_files(
+        tmp_path, "RUN-APPROVED", ["REF-ACCEPT-001", "REF-ACCEPT-002"]
+    )
+    check_human_review_gate(
+        db_path, "RUN-APPROVED", clearance, review_log
+    )
+
+
+def test_human_review_gate_rejects_run_mismatch(db, tmp_path):
+    db_path, _ = db
+    clearance, review_log = _write_review_files(
+        tmp_path, "RUN-OTHER", ["REF-ACCEPT-001", "REF-ACCEPT-002"]
+    )
+    with pytest.raises(HumanReviewGateError, match="approved_run_id"):
+        check_human_review_gate(db_path, "RUN-REQUESTED", clearance, review_log)
+
+
+def test_human_review_gate_rejects_future_signoff(db, tmp_path):
+    db_path, _ = db
+    clearance, review_log = _write_review_files(
+        tmp_path, "RUN-FUTURE", ["REF-ACCEPT-001", "REF-ACCEPT-002"]
+    )
+    payload = json.loads(clearance.read_text())
+    payload["sign_off_date"] = (date.today() + timedelta(days=1)).isoformat()
+    clearance.write_text(json.dumps(payload))
+    with pytest.raises(HumanReviewGateError, match="future"):
+        check_human_review_gate(db_path, "RUN-FUTURE", clearance, review_log)
+
+
+def test_human_review_gate_requires_notes_for_every_accept(db, tmp_path):
+    db_path, _ = db
+    clearance, review_log = _write_review_files(
+        tmp_path, "RUN-NOTES", ["REF-ACCEPT-001", "REF-ACCEPT-002"]
+    )
+    payload = json.loads(review_log.read_text())
+    payload["reviewed_papers"][1]["reviewer_notes"] = ""
+    review_log.write_text(json.dumps(payload))
+    with pytest.raises(HumanReviewGateError, match="no verdict"):
+        check_human_review_gate(db_path, "RUN-NOTES", clearance, review_log)
 
 
 # ---------------------------------------------------------------------------

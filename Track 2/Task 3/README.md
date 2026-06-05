@@ -8,7 +8,7 @@
 
 ```bash
 cd "Track 2/Task 3"
-python3 verify_track2_workflow.py        # → CHAIN: 9/9 checks passed
+python3 verify_track2_workflow.py        # → CHAIN: 10/10 checks passed
 ```
 
 No `pip install`, API key, or network access is required to verify: the command reads the committed database and JSON evidence using only the Python standard library. To re-run the *live* pipeline instead, see [requirements.txt](requirements.txt) and `setup_verify.py`.

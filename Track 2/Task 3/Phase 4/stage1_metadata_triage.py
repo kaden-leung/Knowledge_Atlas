@@ -17,7 +17,11 @@ from pathlib import Path
 from typing import Callable
 
 _HERE = Path(__file__).resolve().parent
-_COGS160 = _HERE.parents[2]
+_TASK3 = _HERE.parent
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import find_repository  # noqa: E402
 
 DEFAULT_THRESHOLD = 0.20
 SIGNIFICANT_WORD_MIN_CHARS = 3
@@ -116,10 +120,12 @@ def load_classifier() -> Callable[[str | None, str | None], tuple[str, float]]:
     Tries to load HierarchicalClassifier first; on any failure falls back to
     the keyword classifier (which always works).
     """
-    af_path = _COGS160 / "Article_Finder"
-    if str(af_path) not in sys.path:
+    af_path = find_repository("Article_Finder", _HERE)
+    if af_path is not None and str(af_path) not in sys.path:
         sys.path.insert(0, str(af_path))
     try:
+        if af_path is None:
+            raise FileNotFoundError("Article_Finder sibling repository not found")
         from triage.classifier import HierarchicalClassifier  # type: ignore
         # Look for centroids file
         centroids = af_path / "triage" / ".centroids.pkl"

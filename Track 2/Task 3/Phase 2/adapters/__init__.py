@@ -2,8 +2,14 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-_COGS160 = Path(__file__).resolve().parents[4]
-_AF_ROOT = _COGS160 / "Article_Finder"
+_HERE = Path(__file__).resolve().parent
+_TASK3 = _HERE.parents[1]
+if str(_TASK3) not in sys.path:
+    sys.path.insert(0, str(_TASK3))
+
+from workspace_paths import require_repository  # noqa: E402
+
+_AF_ROOT = require_repository("Article_Finder", _HERE)
 if str(_AF_ROOT) not in sys.path:
     sys.path.insert(0, str(_AF_ROOT))
 
